@@ -8,5 +8,10 @@ namespace MoBot.Structure
 {
     class Controller
     {
+        internal Model model;
+        internal void HandleConnect()
+        {
+            model.Ping("151.80.33.194", 24444);
+        }
     }
 }

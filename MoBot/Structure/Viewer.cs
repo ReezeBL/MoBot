@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoBot.Structure.Actions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace MoBot.Structure
 {
     partial class Viewer : Form, IObserver<SysAction>
     {
-        Controller mainController;
+        internal Controller mainController;
         public Viewer()
         {
             InitializeComponent();
@@ -30,7 +31,24 @@ namespace MoBot.Structure
 
         public void OnNext(SysAction value)
         {
-            throw new NotImplementedException();
+           if(value is ActionConnect)
+            {
+                var connect = value as ActionConnect;
+                if (connect.Connected)
+                    consoleWindow.AppendText("Client connected!" + Environment.NewLine);
+                else
+                    consoleWindow.AppendText("Client disnnected!" + Environment.NewLine);
+            }
+           else if(value is ActionMessage)
+            {
+                var message = value as ActionMessage;
+                consoleWindow.AppendText(message.message + Environment.NewLine);
+            }
+        }
+
+        private void buttonConnect_Click(object sender, EventArgs e)
+        {
+            mainController.HandleConnect();
         }
     }
 }

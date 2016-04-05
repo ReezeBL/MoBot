@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoBot.Structure
+namespace MoBot.Structure.Actions
 {
-    enum SysAction
+    abstract class SysAction
     {
-        Connect,
-        Disconnect
+       
     }
 }
