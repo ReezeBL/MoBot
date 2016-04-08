@@ -67,10 +67,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Protocol\Channel.cs" />
+    <Compile Include="Protocol\Handlers\ClientHandler.cs" />
     <Compile Include="Protocol\Handlers\IHandler.cs" />
     <Compile Include="Protocol\Packet.cs" />
     <Compile Include="Protocol\PacketBuffer.cs" />
-    <Compile Include="Protocol\PacketEncriptionResponse.cs" />
+    <Compile Include="Protocol\Packets\Handshake\PacketEncriptionResponse.cs" />
     <Compile Include="Protocol\Packets\Handshake\PacketLoginStart.cs" />
     <Compile Include="Protocol\Packets\PacketDisconnect.cs" />
     <Compile Include="Protocol\Packets\Handshake\EmptyPacket.cs" />
@@ -78,11 +79,18 @@
     <Compile Include="Protocol\Packets\Handshake\PacketEncriptionRequest.cs" />
     <Compile Include="Protocol\Packets\Handshake\PacketHandshake.cs" />
     <Compile Include="Protocol\Packets\Handshake\PacketResponse.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketChat.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketCustomPayload.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketJoinGame.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketKeepAlive.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketPlayerPosLook.cs" />
+    <Compile Include="Protocol\WritingThread.cs" />
     <Compile Include="Structure\Actions\ActionConnect.cs" />
     <Compile Include="Structure\Actions\ActionMessage.cs" />
     <Compile Include="Structure\Controller.cs" />
     <Compile Include="Structure\Model.cs" />
     <Compile Include="Structure\Actions\SysAction.cs" />
+    <Compile Include="Structure\ReadingThread.cs" />
     <Compile Include="Structure\Viewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +99,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="UserIDS.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="App.config" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

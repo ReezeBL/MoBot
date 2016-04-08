@@ -11,7 +11,7 @@ namespace MoBot.Structure
         internal Model model;
         internal void HandleConnect()
         {
-            model.Ping("151.80.33.194", 24444);
+            model.Connect("151.80.33.194", 24444, "NoliSum");
         }
     }
 }
