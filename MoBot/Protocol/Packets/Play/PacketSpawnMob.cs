@@ -7,28 +7,24 @@ using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketJoinGame : Packet
+    class PacketSpawnMob : Packet
     {
         public int EntityID;
-        public byte Gamemode;
-        public int Dimension;
-        public byte Difficulty;
-        public byte MaxPlayers;
-        public String LevelType;
+        public byte Type;
+        public double X, Y, Z;
 
         public override void HandlePacket(IHandler handler)
         {
-            handler.HandlePacketJoinGame(this);
+            handler.HandlePacketSpawnMoob(this);
         }
 
         public override void ReadPacketData(PacketBuffer buff)
         {
-            EntityID = buff.ReadInt();
-            Gamemode = buff.ReadByte();
-            Dimension = buff.ReadByte();
-            Difficulty = buff.ReadByte();
-            MaxPlayers = buff.ReadByte();
-            LevelType = buff.ReadString();
+            EntityID = buff.ReadVarInt();
+            Type = buff.ReadByte();
+            X = buff.ReadInt() / 32.0;
+            Y = buff.ReadInt() / 32.0;
+            Z = buff.ReadInt() / 32.0;
         }
 
         public override void WritePacketData(PacketBuffer buff)

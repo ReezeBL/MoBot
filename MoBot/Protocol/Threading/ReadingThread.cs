@@ -1,4 +1,5 @@
 ﻿using MoBot.Protocol;
+using MoBot.Structure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,9 +7,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MoBot.Structure
+namespace MoBot.Protocol.Threading
 {
-    class ReadingThread
+    class ReadingThread : BaseThread
     {
         private object queueLocker = new object();
         public Thread readThread { get; private set; }
@@ -21,7 +22,7 @@ namespace MoBot.Structure
             this.model = model;
             readThread = new Thread(() =>
             {
-                while (true)
+                while (Process)
                 {
                     Packet packet = model.mainChannel.GetPacket();
                     if (packet != null)
@@ -37,7 +38,7 @@ namespace MoBot.Structure
             { IsBackground = true };
             processThread = new Thread(() =>
             {
-                while (true)
+                while (Process)
                 {
                     lock (queueLocker)
                     {

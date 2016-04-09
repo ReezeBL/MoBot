@@ -10,26 +10,32 @@ using MoBot.Protocol;
 using MoBot.Protocol.Packets.Handshake;
 using Newtonsoft.Json.Linq;
 using MoBot.Protocol.Handlers;
+using MoBot.Protocol.Threading;
 
 namespace MoBot.Structure
 {
     class Model : IObservable<SysAction>
     {
-        Viewer viewer;
+        public IObserver<SysAction> viewer { get; private set; }
         public Channel mainChannel { get; private set; }
         public IHandler handler { get; private set; }
         public String username { get; private set; }
         public JArray modList { get; private set; }
         private WritingThread threadWrite;
         private ReadingThread threadRead;
+        public Game.GameController controller
+        {
+            get; private set;
+        }
         public IDisposable Subscribe(IObserver<SysAction> observer)
         {
-            viewer = observer as Viewer;
+            viewer = observer;
             return null;
         }
 
         public void Connect(String ServerIP, int port, String name)
         {
+            #region InitVariables
             dynamic response = Ping(ServerIP, port);
             modList = response.modinfo.modList;
             TcpClient client = new TcpClient(ServerIP, port);
@@ -38,15 +44,19 @@ namespace MoBot.Structure
             handler = new ClientHandler(this);
             threadWrite = new WritingThread(this);
             threadRead = new ReadingThread(this);
+            controller = new Game.GameController(this);
+            #endregion
+            #region BeginConnect
+            viewer.OnNext(new ActionConnect { Connected = true });
             SendPacket(new PacketHandshake { hostname = ServerIP, port = (ushort)port, nextState = 2, protocolVersion = (int)response.version.protocol});
             SendPacket(new PacketLoginStart { Name = name });
+            #endregion
         }
         public void Disconnect()
         {
             viewer.OnNext(new ActionConnect { Connected = false });
-            threadWrite.thread.Join();
-            threadRead.processThread.Join();
-            threadRead.processThread.Join();
+            threadWrite.Stop();
+            threadRead.Stop();
         }
         public void Message(String message)
         {

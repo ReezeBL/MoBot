@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MoBot.Protocol
+namespace MoBot.Protocol.Threading
 {
-    class WritingThread
+    class WritingThread : BaseThread
     {
         private Model model;
         public Object queueLocker { get; private set; } = new object();
@@ -19,7 +19,7 @@ namespace MoBot.Protocol
             this.model = model;
             thread = new Thread(() =>
             {
-                while (true)
+                while (Process)
                 {
                     lock (queueLocker)
                     {

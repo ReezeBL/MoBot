@@ -7,22 +7,26 @@ using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketChat : Packet
+    class PacketUpdateHelath : Packet
     {
-        public String message;
+        public float Health;
+        public short Food;
+        public float Saturation;
         public override void HandlePacket(IHandler handler)
         {
-            handler.HandlePacketChat(this);
+            handler.HandlePacketUpdateHealth(this);
         }
 
         public override void ReadPacketData(PacketBuffer buff)
         {
-            message = buff.ReadString();
+            Health = buff.ReadSingle();
+            Food = buff.ReadShort();
+            Saturation = buff.ReadSingle();
         }
 
         public override void WritePacketData(PacketBuffer buff)
         {
-            buff.WriteString(message);
+            throw new NotImplementedException();
         }
     }
 }

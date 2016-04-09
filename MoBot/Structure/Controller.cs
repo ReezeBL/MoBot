@@ -8,10 +8,15 @@ namespace MoBot.Structure
 {
     class Controller
     {
-        internal Model model;
-        internal void HandleConnect()
+        public Model model;
+        public void HandleConnect()
         {
             model.Connect("151.80.33.194", 24444, "NoliSum");
+        }
+
+        public void HandleChatMessage(String message)
+        {
+            model.controller.SendChatMessage(message);
         }
     }
 }

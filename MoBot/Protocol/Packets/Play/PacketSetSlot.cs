@@ -4,25 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MoBot.Protocol.Handlers;
+using MoBot.Structure.Game;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketChat : Packet
+    class PacketSetSlot : Packet
     {
-        public String message;
+        public byte WindowID;
+        public short Slot;
+        public Item item;
         public override void HandlePacket(IHandler handler)
         {
-            handler.HandlePacketChat(this);
+            handler.HandlePacketSetSlot(this);
         }
 
         public override void ReadPacketData(PacketBuffer buff)
         {
-            message = buff.ReadString();
+            WindowID = buff.ReadByte();
+            Slot = buff.ReadShort();
+            item = Packet.ReadItem(buff);
         }
 
         public override void WritePacketData(PacketBuffer buff)
         {
-            buff.WriteString(message);
+            throw new NotImplementedException();
         }
     }
 }

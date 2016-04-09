@@ -7,22 +7,26 @@ using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketChat : Packet
+    class PacketDestroyEntities : Packet
     {
-        public String message;
+        public byte Length;
+        public int[] IDList;
         public override void HandlePacket(IHandler handler)
         {
-            handler.HandlePacketChat(this);
+            handler.HandlePacketDestroyEntities(this);
         }
 
         public override void ReadPacketData(PacketBuffer buff)
         {
-            message = buff.ReadString();
+            Length = buff.ReadByte();
+            IDList = new int[Length];
+            for (int i = 0; i < Length; i++)
+                IDList[i] = buff.ReadInt();
         }
 
         public override void WritePacketData(PacketBuffer buff)
         {
-            buff.WriteString(message);
+            throw new NotImplementedException();
         }
     }
 }

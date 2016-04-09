@@ -7,33 +7,35 @@ using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketJoinGame : Packet
+    class PacketEntity : Packet
     {
         public int EntityID;
-        public byte Gamemode;
-        public int Dimension;
-        public byte Difficulty;
-        public byte MaxPlayers;
-        public String LevelType;
+        public double x, y, z;
 
         public override void HandlePacket(IHandler handler)
         {
-            handler.HandlePacketJoinGame(this);
+            handler.HandlePacketEntity(this);
         }
 
         public override void ReadPacketData(PacketBuffer buff)
         {
             EntityID = buff.ReadInt();
-            Gamemode = buff.ReadByte();
-            Dimension = buff.ReadByte();
-            Difficulty = buff.ReadByte();
-            MaxPlayers = buff.ReadByte();
-            LevelType = buff.ReadString();
         }
 
         public override void WritePacketData(PacketBuffer buff)
         {
             throw new NotImplementedException();
+        }
+
+        public class PacketEntityMove : PacketEntity
+        {
+            public override void ReadPacketData(PacketBuffer buff)
+            {
+                base.ReadPacketData(buff);
+                x = (sbyte)buff.ReadByte() / 32.0;
+                y = (sbyte)buff.ReadByte() / 32.0;
+                z = (sbyte)buff.ReadByte() / 32.0;
+            }
         }
     }
 }

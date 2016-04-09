@@ -18,6 +18,10 @@ using System.IO;
 using System.Net.Sockets;
 using MoBot.Protocol.Packets.Play;
 using Newtonsoft.Json.Linq;
+using MoBot.Structure.Game;
+using MoBot.Structure.Actions;
+using MinecraftEmuPTS.Encription;
+using MinecraftEmuPTS.GameData;
 
 namespace MoBot.Protocol.Handlers
 {
@@ -138,12 +142,10 @@ namespace MoBot.Protocol.Handlers
         {
             model.mainChannel.ChangeState(Channel.State.Play);
         }
-
         public void HandlePacketKeepAlive(PacketKeepAlive packetKeepAlive)
         {
             model.SendPacket(packetKeepAlive);
         }
-
         public void HandlePacketCustomPayload(PacketCustomPayload packetCustomPayload)
         {
             if(packetCustomPayload.channel == "FML|HS")
@@ -189,6 +191,130 @@ namespace MoBot.Protocol.Handlers
                 }
                 else
                     log.Info("Unhandled FmlDescriptor : {0}", Discriminator);
+            }
+        }
+        public void HandlePacketJoinGame(PacketJoinGame packetJoinGame)
+        {
+            model.controller.CreatePlayer(packetJoinGame.EntityID, model.username);
+        }
+        public void HandlePacketPlayerAbliities(PacketPlayerAbilities packetPlayerAbilities)
+        {
+            return;
+        }
+        public void HandlePacketHeldItemChange(PacketHeldItemChange packetHeldItemChange)
+        {
+            model.controller.player.HeldItem = packetHeldItemChange.Slot;
+        }
+        public void HandlePacketPlayerPosLook(PacketPlayerPosLook packetPlayerPosLook)
+        {
+            model.controller.player.x = packetPlayerPosLook.X;
+            model.controller.player.y = packetPlayerPosLook.Y;
+            model.controller.player.z = packetPlayerPosLook.Z;
+            model.controller.player.yaw = packetPlayerPosLook.yaw;
+            model.controller.player.pitch = packetPlayerPosLook.pitch;
+        }
+        public void HandlePacketWindowItems(PacketWindowItems packetWindowItems)
+        {
+            if(packetWindowItems.WindowID == 0)
+            {
+                packetWindowItems.Items.CopyTo(model.controller.player.inventory,0);
+            }
+        }
+        public void HandlePacketSetSlot(PacketSetSlot packetSetSlot)
+        {
+            if(packetSetSlot.WindowID == 0)
+            {
+                model.controller.player.inventory[packetSetSlot.Slot] = packetSetSlot.item;
+            }
+        }
+        public void HandlePacketSpawnMoob(PacketSpawnMob packetSpawnMob)
+        {
+            Mob mob = model.controller.createMob(packetSpawnMob.EntityID, packetSpawnMob.Type);
+            mob.x = packetSpawnMob.X;
+            mob.y = packetSpawnMob.Y;
+            mob.z = packetSpawnMob.Z;
+        }
+        public void HandlePacketChat(PacketChat packetChat)
+        {
+            model.viewer.OnNext(new ActionChatMessage { JSONMessage = packetChat.message });
+        }
+        public void HandlePacketMapChunk(PacketMapChunk packetMapChunk)
+        {
+            byte[] mas = new byte[packetMapChunk.DataLength - 2];
+            Array.Copy(packetMapChunk.ChunkData, 2, mas, 0, packetMapChunk.DataLength - 2);
+            Decompressor dc = new Decompressor(mas);
+            byte[] dced = dc.decompress();
+
+            for (int i = 0; i < packetMapChunk.ChunkNumber; i++)
+            {
+                dced = packetMapChunk.chunks[i].getData(dced);
+                model.controller.world.AddChunk(packetMapChunk.chunks[i]);
+            }
+        }
+        public void HandlePacketChunkData(PacketChunkData packetChunkData)
+        {
+            if (packetChunkData.RemoveChunk)
+            {
+                model.controller.world.RemoveChunk(packetChunkData.x, packetChunkData.z);
+            }
+            else
+            {
+                byte[] mas = new byte[packetChunkData.Length - 2];
+                Array.Copy(packetChunkData.ChunkData, 2, mas, 0, packetChunkData.Length - 2);
+                Decompressor dc = new Decompressor(mas);
+                byte[] dced = dc.decompress();
+
+                packetChunkData.chunk.getData(dced);
+                model.controller.world.AddChunk(packetChunkData.chunk);
+            }
+        }
+        public void HandlePacketEntity(PacketEntity packetEntity)
+        {
+            LivingEntity entity = model.controller.entityList[packetEntity.EntityID] as LivingEntity;
+            entity.x += packetEntity.x;
+            entity.y += packetEntity.y;
+            entity.z += packetEntity.z;
+        }
+        public void HandlePacketEntityTeleport(PacketEntityTeleport packetEntityTeleport)
+        {
+            LivingEntity entity = model.controller.entityList[packetEntityTeleport.EntityID] as LivingEntity;
+            entity.x = packetEntityTeleport.x;
+            entity.y = packetEntityTeleport.y;
+            entity.z = packetEntityTeleport.z;
+        }
+        public void HandlePacketDestroyEntities(PacketDestroyEntities packetDestroyEntities)
+        {
+            foreach(int ID in packetDestroyEntities.IDList)
+            {
+                model.controller.entityList.Remove(ID);
+            }
+        }
+        public void HandlePacketBlockChange(PacketBlockChange packetBlockChange)
+        {
+            model.controller.world.UpdateBlock(packetBlockChange.X, packetBlockChange.Y, packetBlockChange.Z, packetBlockChange.BlockID);
+        }
+        public void HandlePacketUpdateHealth(PacketUpdateHelath packetUpdateHelath)
+        {
+            model.controller.player.Health = packetUpdateHelath.Health;
+            model.controller.player.Food = packetUpdateHelath.Food;
+            model.controller.player.Saturation = packetUpdateHelath.Saturation;
+        }
+        public void HandlePacketMultiBlockChange(PacketMultiBlockChange packetMultiBlockChange)
+        {
+            Chunk chunk = model.controller.world.GetChunk(packetMultiBlockChange.chunkXPosiiton, packetMultiBlockChange.chunkZPosition);
+            if(packetMultiBlockChange.metadata != null)
+            {
+                PacketBuffer buff = new PacketBuffer(packetMultiBlockChange.metadata);
+                for (int i = 0; i < packetMultiBlockChange.size; i++)
+                {
+                    short short1 = buff.ReadShort();
+                    short short2 = buff.ReadShort();
+                    int ID = short2 >> 4 & 4095;
+                    int x = short1 >> 12 & 15;
+                    int z = short1 >> 8 & 15;
+                    int y = short1 & 255;
+                    chunk.updateBlock(x, y, z, ID);
+                }
             }
         }
     }

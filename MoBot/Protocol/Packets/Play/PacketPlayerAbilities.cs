@@ -7,22 +7,28 @@ using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketChat : Packet
+    class PacketPlayerAbilities : Packet
     {
-        public String message;
+        public byte Flags;
+        public float FlyingSpeed;
+        public float ViewModifier;
         public override void HandlePacket(IHandler handler)
         {
-            handler.HandlePacketChat(this);
+            handler.HandlePacketPlayerAbliities(this);
         }
 
         public override void ReadPacketData(PacketBuffer buff)
         {
-            message = buff.ReadString();
+            Flags = buff.ReadByte();
+            FlyingSpeed = buff.ReadSingle();
+            ViewModifier = buff.ReadSingle();
         }
 
         public override void WritePacketData(PacketBuffer buff)
         {
-            buff.WriteString(message);
+            buff.WriteByte(Flags);
+            buff.WriteSingle(FlyingSpeed);
+            buff.WriteSingle(ViewModifier);
         }
     }
 }
