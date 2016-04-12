@@ -70,8 +70,11 @@
     <Compile Include="Protocol\Handlers\ClientHandler.cs" />
     <Compile Include="Protocol\Handlers\IHandler.cs" />
     <Compile Include="Protocol\Packet.cs" />
-    <Compile Include="Protocol\PacketBlockChange.cs" />
-    <Compile Include="Protocol\PacketBuffer.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketSpawnPlayer.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketBlockChange.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketEntityStatus.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketSpawnObject.cs" />
+    <Compile Include="Protocol\StreamWrapper.cs" />
     <Compile Include="Protocol\Packets\Handshake\PacketEncriptionResponse.cs" />
     <Compile Include="Protocol\Packets\Handshake\PacketLoginStart.cs" />
     <Compile Include="Protocol\Packets\PacketDisconnect.cs" />
@@ -99,6 +102,12 @@
     <Compile Include="Protocol\Packets\Play\PacketWindowItems.cs" />
     <Compile Include="Protocol\Threading\BaseThread.cs" />
     <Compile Include="Protocol\Threading\WritingThread.cs" />
+    <Compile Include="Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Structure\Actions\ActionChatMessage.cs" />
     <Compile Include="Structure\Actions\ActionConnect.cs" />
     <Compile Include="Structure\Actions\ActionMessage.cs" />
@@ -136,6 +145,11 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Structure\Viewer.resx">

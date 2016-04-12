@@ -15,12 +15,12 @@ namespace MoBot.Protocol.Packets.Play
             handler.HandlePacketChat(this);
         }
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             message = buff.ReadString();
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             buff.WriteString(message);
         }

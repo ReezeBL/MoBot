@@ -20,7 +20,7 @@ namespace MoBot.Protocol.Packets.Play
             handler.HandlePacketMapChunk(this);
         }
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             ChunkNumber = buff.ReadShort();
             DataLength = buff.ReadInt();
@@ -38,7 +38,7 @@ namespace MoBot.Protocol.Packets.Play
             }
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             throw new NotImplementedException();
         }

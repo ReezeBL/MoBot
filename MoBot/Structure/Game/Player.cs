@@ -13,5 +13,16 @@ namespace MoBot.Structure.Game
 
         public short Food;
         public float Saturation;
+        public string Name = "";
+
+        public Player(string name)
+        {
+            Name = name;
+        }
+
+        public override string ToString()
+        {
+            return $"Player: {Name}, ({(int)x} | {(int)y} | {(int)z})";
+        }
     }
 }

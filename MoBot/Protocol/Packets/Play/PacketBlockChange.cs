@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MoBot.Protocol.Handlers;
 
-namespace MoBot.Protocol
+namespace MoBot.Protocol.Packets.Play
 {
     class PacketBlockChange : Packet
     {
@@ -18,7 +18,7 @@ namespace MoBot.Protocol
             handler.HandlePacketBlockChange(this);
         }
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             X = buff.ReadInt();
             Y = buff.ReadByte();
@@ -27,7 +27,7 @@ namespace MoBot.Protocol
             BlockMetadata = buff.ReadByte();
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             throw new NotImplementedException();
         }

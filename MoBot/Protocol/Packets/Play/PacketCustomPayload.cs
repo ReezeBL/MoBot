@@ -13,21 +13,21 @@ namespace MoBot.Protocol.Packets.Play
         public ushort PayloadLength { get; private set; }
         public byte[] Payload { get; private set; }
 
-        public PacketBuffer.Buffer MyPayload;
+        public StreamWrapper.Buffer MyPayload;
 
         public override void HandlePacket(IHandler handler)
         {
             handler.HandlePacketCustomPayload(this);
         }
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             channel = buff.ReadString();
             PayloadLength = (ushort)buff.ReadShort();
             Payload = buff.ReadBytes(PayloadLength);
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             buff.WriteString(channel);
             buff.WriteShort((short)MyPayload.ActualLength);

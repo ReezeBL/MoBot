@@ -18,12 +18,12 @@ namespace MoBot.Protocol.Handshake
             throw new NotImplementedException();
         }
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             throw new NotImplementedException();
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             buff.WriteShort((short)SharedSecretLength);
             buff.WriteBytes(SharedSecret);

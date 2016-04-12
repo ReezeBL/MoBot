@@ -18,14 +18,14 @@ namespace MoBot.Protocol.Packets.Play
             handler.HandlePacketSetSlot(this);
         }
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             WindowID = buff.ReadByte();
             Slot = buff.ReadShort();
             item = Packet.ReadItem(buff);
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             throw new NotImplementedException();
         }

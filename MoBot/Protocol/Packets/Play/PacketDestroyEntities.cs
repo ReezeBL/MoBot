@@ -16,7 +16,7 @@ namespace MoBot.Protocol.Packets.Play
             handler.HandlePacketDestroyEntities(this);
         }
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             Length = buff.ReadByte();
             IDList = new int[Length];
@@ -24,7 +24,7 @@ namespace MoBot.Protocol.Packets.Play
                 IDList[i] = buff.ReadInt();
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             throw new NotImplementedException();
         }

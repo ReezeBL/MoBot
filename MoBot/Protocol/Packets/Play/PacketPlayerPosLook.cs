@@ -20,7 +20,7 @@ namespace MoBot.Protocol.Packets.Play
             handler.HandlePacketPlayerPosLook(this);
         }
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             X = buff.ReadDouble();
             Y = buff.ReadDouble();
@@ -30,9 +30,10 @@ namespace MoBot.Protocol.Packets.Play
             onGround = buff.ReadBool();
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             buff.WriteDouble(X);
+            buff.WriteDouble(Y - 1.62);
             buff.WriteDouble(Y);
             buff.WriteDouble(Z);
             buff.WriteSingle(yaw);

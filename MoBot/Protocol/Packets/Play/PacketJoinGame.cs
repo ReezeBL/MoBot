@@ -21,7 +21,7 @@ namespace MoBot.Protocol.Packets.Play
             handler.HandlePacketJoinGame(this);
         }
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             EntityID = buff.ReadInt();
             Gamemode = buff.ReadByte();
@@ -31,7 +31,7 @@ namespace MoBot.Protocol.Packets.Play
             LevelType = buff.ReadString();
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             throw new NotImplementedException();
         }

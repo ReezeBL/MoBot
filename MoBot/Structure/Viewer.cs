@@ -1,4 +1,5 @@
 ﻿using MoBot.Structure.Actions;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,33 +32,41 @@ namespace MoBot.Structure
 
         public void OnNext(SysAction value)
         {
-            if (this.InvokeRequired)
-            {
-                this.Invoke(new Action<SysAction>(OnNext), value);
-                return;
-            }
             if (value is ActionConnect)
             {
                 var connect = value as ActionConnect;
                 if (connect.Connected)
-                    consoleWindow.AppendText("Client connected!" + Environment.NewLine);
+                    putsc($"Client connected!{Environment.NewLine}", Color.DarkGoldenrod);
             }
             else if (value is ActionMessage)
             {
                 var message = value as ActionMessage;
-                consoleWindow.AppendText(message.message + Environment.NewLine);
+                putsc($"{message.message}{Environment.NewLine}", Color.DarkGoldenrod);
             }
             else if (value is ActionChatMessage)
             {
                 var message = value as ActionChatMessage;
-                dynamic parsed = Newtonsoft.Json.Linq.JObject.Parse(message.JSONMessage);
-                consoleWindow.AppendText(message.JSONMessage + Environment.NewLine);
+                dynamic response = JObject.Parse(message.JSONMessage);
+                foreach(Object obj in response.extra as JArray)
+                {
+                    if( obj is JValue)
+                    {
+                        putsc($"{obj.ToString()}", Color.White);
+                    }
+                    else if (obj is JToken)
+                    {
+                        JToken token = obj as JToken;
+                        putsc($"{token.Value<string>("text")}", Color.FromName(token.Value<string>("color")));
+                    }
+                }
+                putsc(Environment.NewLine, Color.White);
+                //putsc($"{message.JSONMessage}{Environment.NewLine}", Color.Black);
             }
         }
 
         private void buttonConnect_Click(object sender, EventArgs e)
         {
-            mainController.HandleConnect();
+            mainController.HandleConnect(usernameTextBox.Text, serverTextbox.Text);
         }
 
         private void buttonSendMessage_Click(object sender, EventArgs e)
@@ -69,41 +78,43 @@ namespace MoBot.Structure
             }
         }
 
-
-        private static string strip_codes(string text)
+        
+        private void putsc(String text, Color color, String style = "")
         {
-            // Strips the color codes from text.
-            string smessage = text;
-            if (smessage.Contains("§"))
+            if (this.InvokeRequired)
             {
-
-                smessage = smessage.Replace("§0", "");
-                smessage = smessage.Replace("§1", "");
-                smessage = smessage.Replace("§2", "");
-                smessage = smessage.Replace("§3", "");
-                smessage = smessage.Replace("§4", "");
-                smessage = smessage.Replace("§5", "");
-                smessage = smessage.Replace("§6", "");
-                smessage = smessage.Replace("§7", "");
-                smessage = smessage.Replace("§8", "");
-                smessage = smessage.Replace("§9", "");
-                smessage = smessage.Replace("§a", "");
-                smessage = smessage.Replace("§b", "");
-                smessage = smessage.Replace("§c", "");
-                smessage = smessage.Replace("§d", "");
-                smessage = smessage.Replace("§e", "");
-                smessage = smessage.Replace("§f", "");
-                smessage = smessage.Replace("§l", "");
-                smessage = smessage.Replace("§r", "");
-                smessage = smessage.Replace("§A", "");
-                smessage = smessage.Replace("§B", "");
-                smessage = smessage.Replace("§C", "");
-                smessage = smessage.Replace("§D", "");
-                smessage = smessage.Replace("§E", "");
-                smessage = smessage.Replace("§F", "");
-
+                this.Invoke(new Action<string, Color, string>(putsc), text, color, style);
             }
-            return smessage;
+            else
+            {
+                consoleWindow.SelectionStart = consoleWindow.Text.Length + 1;
+                consoleWindow.AppendText(text);
+                consoleWindow.SelectionLength = consoleWindow.Text.Length - consoleWindow.SelectionStart + 1;
+                consoleWindow.SelectionColor = color;
+                if (style == "italic")
+                    consoleWindow.SelectionFont = new Font("Cambria", 12, FontStyle.Italic);
+                if (text.Contains("\n") || text.Contains("\r"))
+                {
+                    consoleWindow.SelectionStart = consoleWindow.Text.Length;
+                    consoleWindow.SelectionLength = 0;
+                    consoleWindow.ScrollToCaret();
+                }
+            }
+        }
+
+        private void Viewer_Load(object sender, EventArgs e)
+        {
+            Settings settings = Settings.Default;
+            serverTextbox.Text = settings.Server;
+            usernameTextBox.Text = settings.Username;
+        }
+
+        private void Viewer_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Settings settings = Settings.Default;
+            settings.Server = serverTextbox.Text;
+            settings.Username = usernameTextBox.Text;
+            settings.Save(); 
         }
     }
 }

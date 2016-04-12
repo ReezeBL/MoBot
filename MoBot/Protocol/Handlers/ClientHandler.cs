@@ -30,6 +30,28 @@ namespace MoBot.Protocol.Handlers
         Model model;
         private NLog.Logger log = Program.getLogger();
 
+        private string POSTUrl(PacketEncriptionRequest packetEncriptionRequest, byte[] SecretKey, string ID)
+        {
+            WebRequest request = WebRequest.Create(String.Format("http://ex-server.ru/joinserver.php?user={0}&sessionId={1}&serverId={2}", model.username, ID, GetServerIdHash(packetEncriptionRequest.ServerID, SecretKey, packetEncriptionRequest.Key)));
+            var response = request.GetResponse();
+            var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+            return responseString;
+        }
+        private string GetUserSession()
+        {
+            XmlDocument document = new XmlDocument();
+            document.Load("UserIDS.xml");
+            var Root = document.DocumentElement;
+            string ID = "";
+            foreach (XmlNode Child in Root)
+            {
+                if (Child.Attributes.GetNamedItem("name").Value == model.username)
+                    ID = Child.InnerText;
+            }
+
+            return ID;
+        }
+       
         #region ServerHashCalculations
         private String GetServerIdHash(String ServerId, byte[] SecretKey, byte[] PublicKey)
         {
@@ -100,22 +122,12 @@ namespace MoBot.Protocol.Handlers
             var CryptedKey = cipher.DoFinal(SecretKey);
             var CryptedToken = cipher.DoFinal(packetEncriptionRequest.Token);
             #region PostURL
-            Thread post = new Thread(() =>
+            new Task(() =>
             {
                 try
                 {
-                    XmlDocument document = new XmlDocument();
-                    document.Load("UserIDS.xml");
-                    var Root = document.DocumentElement;
-                    string ID = "";
-                    foreach (XmlNode Child in Root)
-                    {
-                        if (Child.Attributes.GetNamedItem("name").Value == model.username)
-                            ID = Child.InnerText;
-                    }
-                    WebRequest request = WebRequest.Create(String.Format("http://ex-server.ru/joinserver.php?user={0}&sessionId={1}&serverId={2}", model.username, ID, GetServerIdHash(packetEncriptionRequest.ServerID, SecretKey, packetEncriptionRequest.Key)));
-                    var response = request.GetResponse();
-                    var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                    string ID = GetUserSession();
+                    string responseString = POSTUrl(packetEncriptionRequest, SecretKey, ID);
                     if (responseString != "OK")
                         log.Error("Auth failed!\nAuth username: {1}\nAuth ID:{2}\nAuth response : {0}", responseString, model.username, ID);
                 }
@@ -131,9 +143,7 @@ namespace MoBot.Protocol.Handlers
                 {
                     log.Error("Unable to proceed XML file");
                 }
-            })
-            { IsBackground = true };
-            post.Start();
+            }).Start();           
             #endregion
             model.mainChannel.SendPacket(new PacketEncriptionResponse { SharedSecret = CryptedKey, SharedSecretLength = CryptedKey.Length, Token = CryptedToken, TokenLength = CryptedToken.Length });
             model.mainChannel.EncriptChannel(SecretKey);
@@ -150,16 +160,16 @@ namespace MoBot.Protocol.Handlers
         {
             if(packetCustomPayload.channel == "FML|HS")
             {
-                PacketBuffer payload = new PacketBuffer(packetCustomPayload.Payload);
+                StreamWrapper payload = new StreamWrapper(packetCustomPayload.Payload);
                 byte Discriminator = payload.ReadByte();
                 if (Discriminator == 0)
                 {
-                    PacketBuffer answer = new PacketBuffer();
+                    StreamWrapper answer = new StreamWrapper();
                     byte Version = payload.ReadByte();
                     answer.WriteByte(1);
                     answer.WriteByte(Version);
                     model.SendPacket(new PacketCustomPayload { channel = "FML|HS", MyPayload = answer.GetBlob() });
-                    answer = new PacketBuffer();
+                    answer = new StreamWrapper();
                     answer.WriteByte(2);
                     answer.WriteVarInt(model.modList.Count);
                     foreach (JObject obj in model.modList)
@@ -171,7 +181,7 @@ namespace MoBot.Protocol.Handlers
                 }
                 else if(Discriminator == 2)
                 {
-                    PacketBuffer answer = new PacketBuffer();
+                    StreamWrapper answer = new StreamWrapper();
                     answer.WriteByte(255);
                     answer.WriteByte(2);
                     model.SendPacket(new PacketCustomPayload { channel = "FML|HS", MyPayload = answer.GetBlob() });
@@ -179,7 +189,7 @@ namespace MoBot.Protocol.Handlers
                 else if(Discriminator == 255)
                 {
                     byte stage = payload.ReadByte();
-                    PacketBuffer answer = new PacketBuffer();
+                    StreamWrapper answer = new StreamWrapper();
                     answer.WriteByte(255);
                     if (stage == 3)
                         answer.WriteByte(5);
@@ -195,7 +205,7 @@ namespace MoBot.Protocol.Handlers
         }
         public void HandlePacketJoinGame(PacketJoinGame packetJoinGame)
         {
-            model.controller.CreatePlayer(packetJoinGame.EntityID, model.username);
+            model.controller.CreateUser(packetJoinGame.EntityID, model.username);
         }
         public void HandlePacketPlayerAbliities(PacketPlayerAbilities packetPlayerAbilities)
         {
@@ -212,6 +222,7 @@ namespace MoBot.Protocol.Handlers
             model.controller.player.z = packetPlayerPosLook.Z;
             model.controller.player.yaw = packetPlayerPosLook.yaw;
             model.controller.player.pitch = packetPlayerPosLook.pitch;
+            model.SendPacket(packetPlayerPosLook);
         }
         public void HandlePacketWindowItems(PacketWindowItems packetWindowItems)
         {
@@ -270,17 +281,30 @@ namespace MoBot.Protocol.Handlers
         }
         public void HandlePacketEntity(PacketEntity packetEntity)
         {
-            LivingEntity entity = model.controller.entityList[packetEntity.EntityID] as LivingEntity;
-            entity.x += packetEntity.x;
-            entity.y += packetEntity.y;
-            entity.z += packetEntity.z;
+            try {
+                LivingEntity entity = model.controller.entityList[packetEntity.EntityID] as LivingEntity;
+                entity.x += packetEntity.x;
+                entity.y += packetEntity.y;
+                entity.z += packetEntity.z;
+            }
+            catch (KeyNotFoundException)
+            {
+                //log.Warn($"Trying to update positin of entity, that is not presented! EntityID: {packetEntity.EntityID}");
+            }
         }
         public void HandlePacketEntityTeleport(PacketEntityTeleport packetEntityTeleport)
         {
-            LivingEntity entity = model.controller.entityList[packetEntityTeleport.EntityID] as LivingEntity;
-            entity.x = packetEntityTeleport.x;
-            entity.y = packetEntityTeleport.y;
-            entity.z = packetEntityTeleport.z;
+            try
+            {
+                LivingEntity entity = model.controller.entityList[packetEntityTeleport.EntityID] as LivingEntity;
+                entity.x = packetEntityTeleport.x;
+                entity.y = packetEntityTeleport.y;
+                entity.z = packetEntityTeleport.z;
+            }
+            catch (KeyNotFoundException)
+            {
+                
+            }
         }
         public void HandlePacketDestroyEntities(PacketDestroyEntities packetDestroyEntities)
         {
@@ -301,10 +325,12 @@ namespace MoBot.Protocol.Handlers
         }
         public void HandlePacketMultiBlockChange(PacketMultiBlockChange packetMultiBlockChange)
         {
-            Chunk chunk = model.controller.world.GetChunk(packetMultiBlockChange.chunkXPosiiton, packetMultiBlockChange.chunkZPosition);
+            int chunkX = packetMultiBlockChange.chunkXPosiiton * 16;
+            int chunkZ = packetMultiBlockChange.chunkZPosition * 16;
+
             if(packetMultiBlockChange.metadata != null)
             {
-                PacketBuffer buff = new PacketBuffer(packetMultiBlockChange.metadata);
+                StreamWrapper buff = new StreamWrapper(packetMultiBlockChange.metadata);
                 for (int i = 0; i < packetMultiBlockChange.size; i++)
                 {
                     short short1 = buff.ReadShort();
@@ -313,9 +339,37 @@ namespace MoBot.Protocol.Handlers
                     int x = short1 >> 12 & 15;
                     int z = short1 >> 8 & 15;
                     int y = short1 & 255;
-                    chunk.updateBlock(x, y, z, ID);
+                    model.controller.world.UpdateBlock(chunkX + x, y, chunkZ + z, ID);
                 }
             }
+        }
+        public void HandlePacketEntityStatus(PacketEntityStatus packetEntityStatus)
+        {
+            if(packetEntityStatus.EntityStatus == 2)
+            {
+                try {
+                    model.controller.entityList.Remove(packetEntityStatus.EntityID);
+                }
+                catch (KeyNotFoundException)
+                {
+                    log.Warn($"Attempting to change status of Entity, that is not presented! EntityID: {packetEntityStatus.EntityID}");
+                }
+            }
+        }
+        public void HandlePacketSpawnObject(PacketSpawnObject packetSpawnObject)
+        {
+            LivingEntity entity = model.controller.createLivingEntity(packetSpawnObject.EntityID, packetSpawnObject.Type);
+            entity.x = packetSpawnObject.X;
+            entity.y = packetSpawnObject.Y;
+            entity.z = packetSpawnObject.Z;
+        }
+
+        public void HandlePacketSpawnPlayer(PacketSpawnPlayer packetSpawnPlayer)
+        {
+            Player player = model.controller.CreatePlayer(packetSpawnPlayer.EntityID, packetSpawnPlayer.name);
+            player.x = packetSpawnPlayer.x;
+            player.y = packetSpawnPlayer.y;
+            player.z = packetSpawnPlayer.z;
         }
     }
 }

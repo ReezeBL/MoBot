@@ -1,24 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MoBot.Protocol.Handlers;
 
-namespace MoBot.Protocol.Packets.Play
+namespace MoBot.Protocol
 {
-    class PacketEntityTeleport : Packet
+    class PacketSpawnPlayer : Packet
     {
         public int EntityID;
+        public string name;
         public double x, y, z;
         public override void HandlePacket(IHandler handler)
         {
-            handler.HandlePacketEntityTeleport(this);
+            handler.HandlePacketSpawnPlayer(this);
         }
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            EntityID = buff.ReadInt();
+            EntityID = buff.ReadVarInt();
+            String UUID = buff.ReadString();
+            name = buff.ReadString();
+            int len = buff.ReadVarInt();
+            for (int i = 0; i < len; i++) 
+            {
+                buff.ReadString();
+                buff.ReadString();
+                buff.ReadString();
+            }
+
             x = buff.ReadInt() / 32.0;
             y = buff.ReadInt() / 32.0;
             z = buff.ReadInt() / 32.0;

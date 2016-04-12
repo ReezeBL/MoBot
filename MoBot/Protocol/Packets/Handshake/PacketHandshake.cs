@@ -19,7 +19,7 @@ namespace MoBot.Protocol.Packets.Handshake
             throw new NotImplementedException();
         }
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             protocolVersion = buff.ReadVarInt();
             hostname = buff.ReadString();
@@ -27,7 +27,7 @@ namespace MoBot.Protocol.Packets.Handshake
             nextState = buff.ReadVarInt();
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             buff.WriteVarInt(protocolVersion);
             buff.WriteString(hostname);

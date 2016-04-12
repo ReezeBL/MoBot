@@ -16,12 +16,12 @@ namespace MoBot.Protocol.Packets.Handshake
             throw new NotImplementedException();
         }
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             JSONResponse = buff.ReadString();
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             throw new NotImplementedException();
         }

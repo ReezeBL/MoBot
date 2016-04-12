@@ -14,7 +14,7 @@ namespace MoBot.Protocol.Packets.Play
         public short ItemCount;
         public Item[] Items;
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             WindowID = buff.ReadByte();
             ItemCount = buff.ReadShort();
@@ -25,7 +25,7 @@ namespace MoBot.Protocol.Packets.Play
             }
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             throw new NotImplementedException();
         }

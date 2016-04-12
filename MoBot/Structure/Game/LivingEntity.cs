@@ -11,5 +11,10 @@ namespace MoBot.Structure.Game
         public double x, y, z;
         public float yaw, pitch;
         public float Health;
+
+        public override string ToString()
+        {
+            return $"Utyped Living Entity ({(int)x} | {(int)y} | {(int)z})";
+        }
     }
 }

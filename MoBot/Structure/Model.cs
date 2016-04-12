@@ -42,9 +42,9 @@ namespace MoBot.Structure
             mainChannel = new Channel(client.GetStream(), Channel.State.Login);
             username = name;
             handler = new ClientHandler(this);
-            threadWrite = new WritingThread(this);
-            threadRead = new ReadingThread(this);
             controller = new Game.GameController(this);
+            threadWrite = new WritingThread(this);
+            threadRead = new ReadingThread(this);          
             #endregion
             #region BeginConnect
             viewer.OnNext(new ActionConnect { Connected = true });

@@ -1,4 +1,5 @@
-﻿using MoBot.Structure;
+﻿using MoBot.Protocol.Packets.Play;
+using MoBot.Structure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,18 @@ namespace MoBot.Protocol.Threading
                             if (pack != null)
                                 model.mainChannel.SendPacket(pack);
                         }
+                        //if (model.controller.InGameLoaded)
+                        //{
+                        //    model.mainChannel.SendPacket(new PacketPlayerPosLook
+                        //    {
+                        //        X = model.controller.player.x,
+                        //        Y = model.controller.player.y,
+                        //        Z = model.controller.player.z,
+                        //        yaw = model.controller.player.yaw,
+                        //        pitch = model.controller.player.pitch,
+                        //        onGround = true
+                        //    });
+                        //}
                     }
                     Thread.Sleep(50);
                 }

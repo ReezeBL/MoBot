@@ -17,19 +17,19 @@ namespace MoBot.Protocol.Packets.Play
             handler.HandlePacketEntity(this);
         }
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             EntityID = buff.ReadInt();
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             throw new NotImplementedException();
         }
 
         public class PacketEntityMove : PacketEntity
         {
-            public override void ReadPacketData(PacketBuffer buff)
+            public override void ReadPacketData(StreamWrapper buff)
             {
                 base.ReadPacketData(buff);
                 x = (sbyte)buff.ReadByte() / 32.0;

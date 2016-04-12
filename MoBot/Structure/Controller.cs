@@ -18,5 +18,11 @@ namespace MoBot.Structure
         {
             model.controller.SendChatMessage(message);
         }
+
+        internal void HandleConnect(string username, string serverIP)
+        {
+            String[] split = serverIP.Split(':');
+            model.Connect(split[0], int.Parse(split[1]), username);
+        }
     }
 }

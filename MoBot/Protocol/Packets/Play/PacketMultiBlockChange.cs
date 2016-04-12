@@ -19,7 +19,7 @@ namespace MoBot.Protocol.Packets.Play
             handler.HandlePacketMultiBlockChange(this);
         }
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             chunkXPosiiton = buff.ReadInt();
             chunkZPosition = buff.ReadInt();
@@ -29,7 +29,7 @@ namespace MoBot.Protocol.Packets.Play
                 metadata = buff.ReadBytes(length);
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             throw new NotImplementedException();
         }

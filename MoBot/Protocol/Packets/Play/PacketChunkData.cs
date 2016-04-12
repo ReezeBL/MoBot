@@ -20,7 +20,7 @@ namespace MoBot.Protocol.Packets.Play
             handler.HandlePacketChunkData(this);
         }
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             x = buff.ReadInt();
             z = buff.ReadInt();
@@ -33,7 +33,7 @@ namespace MoBot.Protocol.Packets.Play
             RemoveChunk = pbitmap == 0;
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             throw new NotImplementedException();
         }

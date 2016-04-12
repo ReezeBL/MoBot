@@ -18,7 +18,7 @@ namespace MoBot.Protocol.Packets.Play
             handler.HandlePacketSpawnMoob(this);
         }
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             EntityID = buff.ReadVarInt();
             Type = buff.ReadByte();
@@ -27,7 +27,7 @@ namespace MoBot.Protocol.Packets.Play
             Z = buff.ReadInt() / 32.0;
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             throw new NotImplementedException();
         }

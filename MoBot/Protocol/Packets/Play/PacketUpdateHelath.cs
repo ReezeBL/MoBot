@@ -17,14 +17,14 @@ namespace MoBot.Protocol.Packets.Play
             handler.HandlePacketUpdateHealth(this);
         }
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             Health = buff.ReadSingle();
             Food = buff.ReadShort();
             Saturation = buff.ReadSingle();
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             throw new NotImplementedException();
         }

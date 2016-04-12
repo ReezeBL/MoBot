@@ -15,12 +15,12 @@ namespace MoBot.Protocol.Packets.Play
             handler.HandlePacketHeldItemChange(this);
         }
 
-        public override void ReadPacketData(PacketBuffer buff)
+        public override void ReadPacketData(StreamWrapper buff)
         {
             Slot = buff.ReadByte();
         }
 
-        public override void WritePacketData(PacketBuffer buff)
+        public override void WritePacketData(StreamWrapper buff)
         {
             buff.WriteByte(Slot);
         }
