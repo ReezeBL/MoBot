@@ -11,15 +11,18 @@ namespace MoBot.Structure.Game
     class GameController
     {
         private NLog.Logger log = Program.getLogger();
-        private Model model;       
+        public Model model { get; private set; }       
         public GameController(Model model)
         {
             this.model = model;
-        }
-
+            this.aiHandler = new AI.AIHandler(this);
+        }   
         public Dictionary<int, Entity> entityList { get; private set; } = new Dictionary<int, Entity>();
+        public AI.AIHandler aiHandler { get; private set; }
         public Player player { get; private set; }
         public World world { get; private set; } = new World();
+        public DateTime lastMove = DateTime.Now;
+
         public void CreateUser(int UID, String name = "")
         {
             player = CreatePlayer(UID, name);
@@ -37,30 +40,54 @@ namespace MoBot.Structure.Game
             entityList.Add(ID, mob);
             return mob; 
         }
-
         public void SendChatMessage(String message)
         {
-            if(!message.StartsWith("-"))
-                model.SendPacket(new PacketChat { message = message });
-            else
-            {
-                if(message == "-elist")
-                {
-                    StringBuilder sb = new StringBuilder();
-                    foreach(Entity e in model.controller.entityList.Values)
-                    {
-                        sb.AppendLine(e.ToString());
-                    }
-                    model.viewer.OnNext(new Actions.ActionMessage { message = sb.ToString() });
-                }
-            }
+            model.SendPacket(new PacketChat { message = message });                       
         }
-
-        internal LivingEntity createLivingEntity(int entityID, byte type)
+        public LivingEntity createLivingEntity(int entityID, byte type)
         {
             LivingEntity entity = new LivingEntity();
             entityList.Add(entityID, entity);
             return entity;
+        }
+        private async Task updateMotion(bool OnGround = true)
+        {
+            await Task.Run(() =>
+                model.SendPacket(new PacketPlayerPosLook
+                {
+                    X = player.x,
+                    Y = player.y,
+                    Z = player.z,
+                    yaw = player.yaw,
+                    pitch = player.pitch,
+                    onGround = OnGround
+                })
+            );
+        }
+        public async Task respawn()
+        {
+            await Task.Run(() => model.SendPacket(new PacketClientStatus { Action = 0 }));
+        }
+        public async Task openInventory()
+        {
+            await Task.Run(() => model.SendPacket(new PacketClientStatus { Action = 2 }));
+        }
+        public async Task SetPlayerPos(double x, double y, double z)
+        {
+            bool onGround = true;
+            bool moved = false;
+            if (player.x != x || player.z != z)
+                moved = true;
+            player.x = x;
+            if (y != player.y)
+            {
+                onGround = false; moved = true;
+                player.y = y;
+            }
+            player.z = z;
+            await updateMotion(onGround);
+            if (moved)
+                lastMove = DateTime.Now;
         }
     }
 }

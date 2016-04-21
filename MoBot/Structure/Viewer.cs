@@ -41,23 +41,30 @@ namespace MoBot.Structure
             else if (value is ActionMessage)
             {
                 var message = value as ActionMessage;
-                putsc($"{message.message}{Environment.NewLine}", Color.DarkGoldenrod);
+                putsc($"{message.message}{Environment.NewLine}", Color.Black);
             }
             else if (value is ActionChatMessage)
             {
                 var message = value as ActionChatMessage;
                 dynamic response = JObject.Parse(message.JSONMessage);
-                foreach(Object obj in response.extra as JArray)
+                if (response.extra != null)
                 {
-                    if( obj is JValue)
+                    foreach (Object obj in response.extra as JArray)
                     {
-                        putsc($"{obj.ToString()}", Color.White);
+                        if (obj is JValue)
+                        {
+                            putsc($"{obj.ToString()}", Color.White);
+                        }
+                        else if (obj is JToken)
+                        {
+                            JToken token = obj as JToken;
+                            putsc($"{token.Value<string>("text")}", Color.FromName(token.Value<string>("color")));
+                        }
                     }
-                    else if (obj is JToken)
-                    {
-                        JToken token = obj as JToken;
-                        putsc($"{token.Value<string>("text")}", Color.FromName(token.Value<string>("color")));
-                    }
+                }
+                else
+                {
+                    putsc(message.JSONMessage, Color.Black);
                 }
                 putsc(Environment.NewLine, Color.White);
                 //putsc($"{message.JSONMessage}{Environment.NewLine}", Color.Black);

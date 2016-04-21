@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MoBot.Protocol.Threading
 {
-    class BaseThread
+    abstract class BaseThread
     {
         protected bool Process = true;
         public void Stop()

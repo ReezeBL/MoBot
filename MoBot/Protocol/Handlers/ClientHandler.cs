@@ -131,7 +131,7 @@ namespace MoBot.Protocol.Handlers
                     if (responseString != "OK")
                         log.Error("Auth failed!\nAuth username: {1}\nAuth ID:{2}\nAuth response : {0}", responseString, model.username, ID);
                 }
-                catch (SocketException e)
+                catch (SocketException)
                 {
                     log.Error("Unable to connect to login server!");
                 }
@@ -139,7 +139,7 @@ namespace MoBot.Protocol.Handlers
                 {
                     log.Error("No UserIDS.xml file in directory!");
                 }
-                catch (XmlException e)
+                catch (XmlException)
                 {
                     log.Error("Unable to proceed XML file");
                 }
@@ -363,7 +363,6 @@ namespace MoBot.Protocol.Handlers
             entity.y = packetSpawnObject.Y;
             entity.z = packetSpawnObject.Z;
         }
-
         public void HandlePacketSpawnPlayer(PacketSpawnPlayer packetSpawnPlayer)
         {
             Player player = model.controller.CreatePlayer(packetSpawnPlayer.EntityID, packetSpawnPlayer.name);

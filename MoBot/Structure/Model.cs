@@ -57,6 +57,10 @@ namespace MoBot.Structure
             viewer.OnNext(new ActionConnect { Connected = false });
             threadWrite.Stop();
             threadRead.Stop();
+            foreach (var thread in controller.aiHandler.moduleList.Values)
+            {
+                thread.Stop();
+            }
         }
         public void Message(String message)
         {
