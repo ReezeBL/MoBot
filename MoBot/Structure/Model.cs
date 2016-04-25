@@ -35,22 +35,29 @@ namespace MoBot.Structure
 
         public void Connect(String ServerIP, int port, String name)
         {
-            #region InitVariables
-            dynamic response = Ping(ServerIP, port);
-            modList = response.modinfo.modList;
-            TcpClient client = new TcpClient(ServerIP, port);
-            mainChannel = new Channel(client.GetStream(), Channel.State.Login);
-            username = name;
-            handler = new ClientHandler(this);
-            controller = new Game.GameController(this);
-            threadWrite = new WritingThread(this);
-            threadRead = new ReadingThread(this);          
-            #endregion
-            #region BeginConnect
-            viewer.OnNext(new ActionConnect { Connected = true });
-            SendPacket(new PacketHandshake { hostname = ServerIP, port = (ushort)port, nextState = 2, protocolVersion = (int)response.version.protocol});
-            SendPacket(new PacketLoginStart { Name = name });
-            #endregion
+            try
+            {
+                #region InitVariables
+                dynamic response = Ping(ServerIP, port);
+                modList = response.modinfo.modList;
+                TcpClient client = new TcpClient(ServerIP, port);
+                mainChannel = new Channel(client.GetStream(), Channel.State.Login);
+                username = name;
+                handler = new ClientHandler(this);
+                controller = new Game.GameController(this);
+                threadWrite = new WritingThread(this);
+                threadRead = new ReadingThread(this);
+                #endregion
+                #region BeginConnect
+                viewer.OnNext(new ActionConnect { Connected = true });
+                SendPacket(new PacketHandshake { hostname = ServerIP, port = (ushort)port, nextState = 2, protocolVersion = (int)response.version.protocol });
+                SendPacket(new PacketLoginStart { Name = name });
+                #endregion
+            }
+            catch (Exception)
+            {
+                viewer.OnNext(new ActionMessage { message = "Unable to connect to server!" });
+            }
         }
         public void Disconnect()
         {

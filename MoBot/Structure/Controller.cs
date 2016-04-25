@@ -1,4 +1,6 @@
 ﻿using MoBot.Structure.Game;
+using MoBot.Structure.Game.AI.Modules;
+using MoBot.Structure.Game.AI.Pathfinding;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +51,19 @@ namespace MoBot.Structure
                         sb.AppendLine($"--{name}");
                     }
                     model.viewer.OnNext(new Actions.ActionMessage { message = sb.ToString() });
+                }
+                else if(split[0] == "-property")
+                {
+                    model.controller.aiHandler.moduleList[split[1]].SetProperty(split[2], split[3]);
+                }
+                else if(split[0] == "-move")
+                {
+                    if (!model.controller.aiHandler.moduleList.ContainsKey("Movement"))
+                        model.controller.aiHandler.RegisterModule(typeof(Movement));
+                    var move = model.controller.aiHandler.moduleList["Movement"].module as Movement;
+                    if (move.destPoint == null)
+                        move.destPoint = new PathPoint { x = int.Parse(split[1]), y = (int)(model.controller.model.controller.player.y - 1.6), z = int.Parse(split[2]) };
+                    
                 }
             }
         }

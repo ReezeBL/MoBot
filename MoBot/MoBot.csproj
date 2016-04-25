@@ -45,6 +45,10 @@
       <HintPath>..\packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Priority Queue, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OptimizedPriorityQueue.2.0.0\lib\net45\Priority Queue.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.Composition.registration" />
@@ -118,6 +122,10 @@
     <Compile Include="Structure\Game\AI\AIModule.cs" />
     <Compile Include="Protocol\Threading\AIThread.cs" />
     <Compile Include="Structure\Game\AI\Modules\AntiAFK.cs" />
+    <Compile Include="Structure\Game\AI\Modules\Movement.cs" />
+    <Compile Include="Structure\Game\AI\Pathfinding\Path.cs" />
+    <Compile Include="Structure\Game\AI\Pathfinding\PathFinder.cs" />
+    <Compile Include="Structure\Game\AI\Pathfinding\PathPoint.cs" />
     <Compile Include="Structure\Game\Entity.cs" />
     <Compile Include="Structure\Game\GameController.cs" />
     <Compile Include="Structure\Game\Item.cs" />

@@ -1,5 +1,6 @@
 ﻿using MinecraftEmuPTS.GameData;
 using MoBot.Protocol.Packets.Play;
+using MoBot.Structure.Game.AI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace MoBot.Structure.Game
         public GameController(Model model)
         {
             this.model = model;
-            this.aiHandler = new AI.AIHandler(this);
+            aiHandler = new AIHandler(this);
         }   
         public Dictionary<int, Entity> entityList { get; private set; } = new Dictionary<int, Entity>();
         public AI.AIHandler aiHandler { get; private set; }

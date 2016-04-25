@@ -12,7 +12,7 @@ namespace MoBot.Structure.Game.AI
         protected AIHandler aiHandler;
         public void SetMainAIController(AIHandler aiHandler)
         {
-            this.mainAIController = aiHandler.controller;
+            mainAIController = aiHandler.controller;
             this.aiHandler = aiHandler;
         }
         public abstract void tick();

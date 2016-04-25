@@ -27,9 +27,9 @@ namespace MoBot.Structure.Game.AI
                 module.SetMainAIController(this);
                 moduleList.Add(name, new AIThread(module));
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                log.Error($"Cannot load Module with name: {name}");
+                log.Error($"Cannot load Module with name: {name}, error: { e.Message}");
             }
         }
 
@@ -37,13 +37,13 @@ namespace MoBot.Structure.Game.AI
         {
             try
             {
-                AIModule module = Activator.CreateInstance(type) as AIModule;
+                AIModule module = Activator.CreateInstance(type, null) as AIModule;
                 module.SetMainAIController(this);
                 moduleList.Add(type.Name, new AIThread(module));
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                log.Error($"Cannot load Module with name: {type.Name}");
+                log.Error($"Cannot load Module with name: {type.Name}, error: {e.GetType()}");
             }
         }
 
