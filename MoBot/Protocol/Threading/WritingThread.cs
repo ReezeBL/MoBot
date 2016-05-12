@@ -24,24 +24,16 @@ namespace MoBot.Protocol.Threading
                 {
                     lock (queueLocker)
                     {
-                        while (SendingQueue.Count > 0)
+                        try
                         {
-                            Packet pack = SendingQueue.Dequeue();
-                            if (pack != null)
-                                model.mainChannel.SendPacket(pack);
+                            while (SendingQueue.Count > 0)
+                            {
+                                Packet pack = SendingQueue.Dequeue();
+                                if (pack != null)
+                                    model.mainChannel.SendPacket(pack);
+                            }
                         }
-                        //if (model.controller.InGameLoaded)
-                        //{
-                        //    model.mainChannel.SendPacket(new PacketPlayerPosLook
-                        //    {
-                        //        X = model.controller.player.x,
-                        //        Y = model.controller.player.y,
-                        //        Z = model.controller.player.z,
-                        //        yaw = model.controller.player.yaw,
-                        //        pitch = model.controller.player.pitch,
-                        //        onGround = true
-                        //    });
-                        //}
+                        catch (Exception) { }                        
                     }
                     Thread.Sleep(50);
                 }

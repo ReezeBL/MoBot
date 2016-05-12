@@ -13,5 +13,10 @@ namespace MoBot.Structure.Game
         public short ItemDamage;
 
         public byte[] NBTData;
+
+        public override string ToString()
+        {
+            return ID.ToString();
+        }
     }
 }

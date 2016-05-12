@@ -33,8 +33,8 @@ namespace MoBot.Protocol.Packets.Play
         public override void WritePacketData(StreamWrapper buff)
         {
             buff.WriteDouble(X);
-            buff.WriteDouble(Y - 1.62);
             buff.WriteDouble(Y);
+            buff.WriteDouble(Y + 1.62);
             buff.WriteDouble(Z);
             buff.WriteSingle(yaw);
             buff.WriteSingle(pitch);

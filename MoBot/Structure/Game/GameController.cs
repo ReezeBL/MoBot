@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MoBot.Structure.Game
@@ -12,6 +13,7 @@ namespace MoBot.Structure.Game
     class GameController
     {
         private NLog.Logger log = Program.getLogger();
+        private static int TransactionID = 1;
         public Model model { get; private set; }       
         public GameController(Model model)
         {
@@ -51,7 +53,7 @@ namespace MoBot.Structure.Game
             entityList.Add(entityID, entity);
             return entity;
         }
-        private async Task updateMotion(bool OnGround = true)
+        public async Task updateMotion()
         {
             await Task.Run(() =>
                 model.SendPacket(new PacketPlayerPosLook
@@ -61,7 +63,7 @@ namespace MoBot.Structure.Game
                     Z = player.z,
                     yaw = player.yaw,
                     pitch = player.pitch,
-                    onGround = OnGround
+                    onGround = player.onGround
                 })
             );
         }
@@ -74,21 +76,36 @@ namespace MoBot.Structure.Game
             await Task.Run(() => model.SendPacket(new PacketClientStatus { Action = 2 }));
         }
         public async Task SetPlayerPos(double x, double y, double z)
-        {
-            bool onGround = true;
-            bool moved = false;
-            if (player.x != x || player.z != z)
-                moved = true;
-            player.x = x;
-            if (y != player.y)
-            {
-                onGround = false; moved = true;
-                player.y = y;
-            }
-            player.z = z;
-            await updateMotion(onGround);
+        {            
+            double dx = x - player.x;
+            double dy = y - player.y;
+            double dz = z - player.z;
+            bool moved = dx * dx + dy * dy + dz * dz >= 9e-4;
+            player.onGround = Math.Abs(dy) >= 0.1;
+            player.x = x; player.y = y; player.z = z;
+            await updateMotion();
             if (moved)
                 lastMove = DateTime.Now;
+        }
+        public void RotatePlayer(double x, double y, double z)
+        {
+            double r = Math.Sqrt(x * x + y * y + z * z);
+            double yaw = -Math.Atan2(x, z) / Math.PI * 180;
+            double pitch = -Math.Asin(y / r) / Math.PI * 180;
+            player.yaw = (float)yaw;
+            player.pitch = (float)pitch;
+        }
+        public void ClickInventorySlot(int slot)
+        {
+            model.SendPacket(new PacketClickWindow { WindowID = 0, Mode = 0, ActionNumber = (short)TransactionID++, Button = 0, Slot = (short)slot, ItemStack = player.inventory[slot] });
+        }
+        public void ExchangeInventorySlots(int slot1, int slot2)
+        {
+            ClickInventorySlot(slot1);
+            Thread.Sleep(100);
+            ClickInventorySlot(slot2);
+            Thread.Sleep(100);
+            ClickInventorySlot(slot1);
         }
     }
 }

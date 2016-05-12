@@ -10,6 +10,7 @@ namespace MoBot.Structure.Game
     {
         public Item[] inventory = new Item[45];
         public int HeldItem = 0;
+        public bool onGround;
 
         public short Food;
         public float Saturation;
@@ -18,6 +19,26 @@ namespace MoBot.Structure.Game
         public Player(string name)
         {
             Name = name;
+        }
+   
+        public int getItemSlot(int id)
+        {
+            for (int i = 9; i < 45; i++)
+            {
+                if (inventory[i] != null && inventory[i].ID == id)
+                    return i;
+            }
+            return -1;
+        }
+
+        public int getFreeSlot()
+        {
+            for (int i = 9; i < 45; i++)
+            {
+                if (inventory[i] == null || inventory[i].ID == -1)
+                    return i;
+            }
+            return -1;
         }
 
         public override string ToString()

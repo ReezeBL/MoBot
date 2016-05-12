@@ -40,7 +40,7 @@ namespace MoBot.Protocol.Handlers
         private string GetUserSession()
         {
             XmlDocument document = new XmlDocument();
-            document.Load("UserIDS.xml");
+            document.Load("Settings/UserIDS.xml");
             var Root = document.DocumentElement;
             string ID = "";
             foreach (XmlNode Child in Root)
@@ -122,28 +122,25 @@ namespace MoBot.Protocol.Handlers
             var CryptedKey = cipher.DoFinal(SecretKey);
             var CryptedToken = cipher.DoFinal(packetEncriptionRequest.Token);
             #region PostURL
-            new Task(() =>
+            try
             {
-                try
-                {
-                    string ID = GetUserSession();
-                    string responseString = POSTUrl(packetEncriptionRequest, SecretKey, ID);
-                    if (responseString != "OK")
-                        log.Error("Auth failed!\nAuth username: {1}\nAuth ID:{2}\nAuth response : {0}", responseString, model.username, ID);
-                }
-                catch (SocketException)
-                {
-                    log.Error("Unable to connect to login server!");
-                }
-                catch (FileNotFoundException)
-                {
-                    log.Error("No UserIDS.xml file in directory!");
-                }
-                catch (XmlException)
-                {
-                    log.Error("Unable to proceed XML file");
-                }
-            }).Start();           
+                string ID = GetUserSession();
+                string responseString = POSTUrl(packetEncriptionRequest, SecretKey, ID);
+                if (responseString != "OK")
+                    log.Error("Auth failed!\nAuth username: {1}\nAuth ID:{2}\nAuth response : {0}", responseString, model.username, ID);
+            }
+            catch (SocketException)
+            {
+                log.Error("Unable to connect to login server!");
+            }
+            catch (FileNotFoundException)
+            {
+                log.Error("No UserIDS.xml file in directory!");
+            }
+            catch (XmlException)
+            {
+                log.Error("Unable to proceed XML file");
+            }
             #endregion
             model.mainChannel.SendPacket(new PacketEncriptionResponse { SharedSecret = CryptedKey, SharedSecretLength = CryptedKey.Length, Token = CryptedToken, TokenLength = CryptedToken.Length });
             model.mainChannel.EncriptChannel(SecretKey);
@@ -218,10 +215,11 @@ namespace MoBot.Protocol.Handlers
         public void HandlePacketPlayerPosLook(PacketPlayerPosLook packetPlayerPosLook)
         {
             model.controller.player.x = packetPlayerPosLook.X;
-            model.controller.player.y = packetPlayerPosLook.Y;
+            model.controller.player.y = packetPlayerPosLook.Y - 1.62;
             model.controller.player.z = packetPlayerPosLook.Z;
             model.controller.player.yaw = packetPlayerPosLook.yaw;
             model.controller.player.pitch = packetPlayerPosLook.pitch;
+            model.controller.player.onGround = packetPlayerPosLook.onGround;
             model.SendPacket(packetPlayerPosLook);
         }
         public void HandlePacketWindowItems(PacketWindowItems packetWindowItems)
@@ -369,6 +367,15 @@ namespace MoBot.Protocol.Handlers
             player.x = packetSpawnPlayer.x;
             player.y = packetSpawnPlayer.y;
             player.z = packetSpawnPlayer.z;
+        }
+
+        public void HandlePacketConfirmTransaction(PacketConfirmTransaction packetConfirmTransaction)
+        {
+            if (!packetConfirmTransaction.Accepted)
+            {               
+                packetConfirmTransaction.Accepted = true;
+                model.SendPacket(packetConfirmTransaction);
+            }           
         }
     }
 }

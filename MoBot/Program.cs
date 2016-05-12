@@ -1,10 +1,6 @@
 ﻿using MoBot.Structure;
 using NLog;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MoBot
@@ -22,11 +18,12 @@ namespace MoBot
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Protocol.Channel.InitDicts();
+            Structure.Game.GameBlock.loadBlocks();
             Model model = new Model();
             Controller controller = new Controller { model = model };
             Viewer viewer = new Viewer { mainController = controller };
             model.Subscribe(viewer);
-            Application.Run(viewer);        
+            Application.Run(viewer);
         }
     }
 }

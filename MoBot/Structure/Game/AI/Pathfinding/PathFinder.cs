@@ -1,5 +1,6 @@
 ﻿using MinecraftEmuPTS.GameData;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,68 +10,129 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 {
     class PathFinder
     {
-        public World world;        
+        public World world;
+        private Hashtable pointSet = new Hashtable();    
         public Path flatPath(LivingEntity entity, PathPoint end)
         {
-            return flatPath(new PathPoint { x = (int)entity.x, y = (int)(entity.y - 1.6), z = (int)entity.z }, end);
+            return flatPath(new PathPoint { x = MathHelper.floor_double(entity.x), y = MathHelper.floor_double(entity.y), z =MathHelper.floor_double(entity.z) }, end);
         }
 
         public Path flatPath(PathPoint start, PathPoint end)
         {
-            var frontier = new Priority_Queue.FastPriorityQueue<PathPoint>(1000);
-            Dictionary<PathPoint, int> start_cost = new Dictionary<PathPoint, int>();
-            frontier.Enqueue(start, 0);
-            start.prev = null;
-            start_cost.Add(start, 0);
-            while(frontier.Count > 0)
-            {
-                var current = frontier.Dequeue();
-                if (current.Equals(end))
+            try {              
+                var frontier = new Priority_Queue.FastPriorityQueue<PathPoint>(300);
+                Hashtable start_cost = new Hashtable();               
+                frontier.Enqueue(start, 0);
+                start.prev = null;
+                start_cost.Add(start, 0);               
+                while (frontier.Count > 0)
                 {
-                    end = current;
-                    break;
+                    var current = frontier.Dequeue();                                      
+                    if (current.Equals(end))
+                    {
+                        end = current;
+                        break;
+                    }                    
+                    foreach (var next in getNeighbours(current))
+                    {
+                        int cost = (int)start_cost[current] + 1;
+                        if (!start_cost.ContainsKey(next))
+                        {
+                            start_cost.Add(next, cost);
+                            frontier.Enqueue(next, cost + next.DistanceTo(end));
+                            next.prev = current;
+                        }
+                        else if ((int)start_cost[next] > cost)
+                        {
+                            start_cost[next] = cost;
+                            frontier.UpdatePriority(next, cost + next.DistanceTo(end));                          
+                            next.prev = current;
+                        }
+                    }
+                    
                 }
-                foreach(var next in getNeighbours(current))
+                List<PathPoint> pathfrom = new List<PathPoint>();
+                while (end != null)
                 {
-                    int cost = start_cost[current] + 1;
-                    if (!start_cost.ContainsKey(next))
-                    {
-                        start_cost.Add(next, cost);
-                        frontier.Enqueue(next, cost + next.DistanceTo(end));
-                        next.prev = current;
-                    }
-                    else if (start_cost[next] > cost)
-                    {
-                        start_cost[next] = cost;
-                        frontier.Enqueue(next, cost + next.DistanceTo(end));
-                        next.prev = current;
-                    }
+                    pathfrom.Add(end);
+                    end = end.prev;
                 }
+                pathfrom.Reverse();
+                Console.WriteLine($"Debugging path from {start} to {end}");
+                foreach (var pp in pathfrom)
+                {
+                    Console.WriteLine($"Path point: {pp}");
+                }                      
+                return new Path(pathfrom);
             }
-            List<PathPoint> pathfrom = new List<PathPoint>();
-            while(end != null)
+            catch(Exception e)
             {
-                pathfrom.Add(end);
-                end = end.prev;
+                Program.getLogger().Error($"Cant create path! Error : {e.ToString()}");
+                return null;
             }
-            pathfrom.Reverse();
-            return new Path(pathfrom);
         }
 
         IEnumerable<PathPoint> getNeighbours(PathPoint point)
         {
             List<PathPoint> candidats = new List<PathPoint>();
-            for (int i = -1; i <= 1; i++)
-                for (int j = -1; j <= 1; j++)
-                    if (i != 0 || j != 0)
-                        candidats.Add(isCollideable(world.GetBlock(point.x + i, point.y, point.z + j)) ? new PathPoint { x = point.x + i, y = point.y, z = point.z + j } : null);
-            var result = candidats.Where(a => a != null);
-            return result;
+            int canJump = canMoveTo(point.x, point.y + 1, point.z) ? 1 : 0;
+            candidats.Add(getSafePoint(point.x + 1, point.y, point.z, canJump));
+            candidats.Add(getSafePoint(point.x - 1, point.y, point.z, canJump));
+            candidats.Add(getSafePoint(point.x, point.y, point.z + 1, canJump));
+            candidats.Add(getSafePoint(point.x, point.y, point.z - 1, canJump));
+            IEnumerable<PathPoint> res = candidats.Where(x => x != null);
+            return res;
         }
 
-        private bool isCollideable(Block a)
+        private PathPoint getSafePoint(int x, int y, int z, int jumpBlocks = 0)
         {
-            return a==null || a.ID == 0;
+            PathPoint res = null;
+            if (canMoveTo(x, y, z))
+                res = createPoint(x, y, z);
+            else if(jumpBlocks > 0)
+            {
+                if (canMoveTo(x, y + jumpBlocks, z))
+                {
+                    res = createPoint(x, y + jumpBlocks, z);
+                    y += jumpBlocks;
+                }
+            }
+
+            if(res != null)
+            {
+                while (y > 0)
+                    if (canMoveTo(x, y - 1, z))
+                        y--;
+                    else
+                        break;
+                res = createPoint(x, y, z);
+            }
+            return res;
+        }
+
+        private bool canMoveTo(int x, int y, int z)
+        {
+            x = x < 0 ? x - 1 : x;
+            z = z < 0 ? z - 1 : z;
+
+            Block floor = world.GetBlock(x, y, z);
+            Block upper = world.GetBlock(x, y + 1, z);
+
+            return isBlockFree(floor) && isBlockFree(upper);
+        }
+
+        private bool isBlockFree(Block b)
+        {
+            return b == null || GameBlock.blockRegistry[b.ID].transparent;
+        }
+        private PathPoint createPoint(int x, int y, int z)
+        {      
+            var p =  new PathPoint { x = x, y = y, z = z };
+            if (pointSet.ContainsKey(p))
+                return pointSet[p] as PathPoint;
+            else
+                pointSet.Add(p, p);
+            return p;
         }
     }
 }

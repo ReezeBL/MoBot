@@ -1,4 +1,5 @@
-﻿using MoBot.Structure.Actions;
+﻿using MoBot.Settings;
+using MoBot.Structure.Actions;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -111,14 +112,14 @@ namespace MoBot.Structure
 
         private void Viewer_Load(object sender, EventArgs e)
         {
-            Settings settings = Settings.Default;
+            GameSettings settings = GameSettings.Default;
             serverTextbox.Text = settings.Server;
             usernameTextBox.Text = settings.Username;
         }
 
         private void Viewer_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Settings settings = Settings.Default;
+            GameSettings settings = GameSettings.Default;
             settings.Server = serverTextbox.Text;
             settings.Username = usernameTextBox.Text;
             settings.Save(); 

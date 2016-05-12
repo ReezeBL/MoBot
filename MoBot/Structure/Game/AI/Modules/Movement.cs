@@ -13,28 +13,39 @@ namespace MoBot.Structure.Game.AI.Modules
         private Path currPath = null;
         private PathPoint currPoint = null;
         public PathPoint destPoint = null;
-        public float speed = 0.3f;       
+        public float speed = 0.3f;
         public override void tick()
         {
-            if( pf == null)
+            mainAIController.updateMotion().Wait();
+            if (pf == null)
             {
                 pf = new PathFinder { world = mainAIController.world };
             }
-            if(destPoint != null)
+            if (destPoint != null)
             {
                 currPath = pf.flatPath(mainAIController.player, destPoint);
-                destPoint = null;
-                currPoint = currPath.dequeue();
+                destPoint = null;   
+                if(currPath != null)
+                    currPoint = currPath.dequeue();
             }
-            if(currPoint != null)
+            if (currPoint != null)
             {
-                double dx = mainAIController.player.x - (currPoint.x + 0.5);
-                double dz = mainAIController.player.z - (currPoint.z + 0.5);
-                double abs = Math.Sqrt(dx * dx + dz * dz);
+                double dx = (currPoint.x + 0.5 * Math.Sign(currPoint.x)) - mainAIController.player.x;
+                double dz = (currPoint.z + 0.5 * Math.Sign(currPoint.z)) - mainAIController.player.z;
+                double dy = currPoint.y - mainAIController.player.y;
+                double abs = Math.Sqrt(dx * dx + dz * dz + dy * dy);
+                double hAbs = Math.Sqrt(dx * dx + dz * dz);
                 if (abs <= speed)
                     currPoint = currPath.dequeue();
-                else
-                    mainAIController.SetPlayerPos(mainAIController.player.x - dx / abs * speed, mainAIController.player.y, mainAIController.player.z - dz / abs * speed).Wait();
+                else {
+                    mainAIController.RotatePlayer(dx, dy, dz);
+                    if(dy > 0.1)                  
+                        mainAIController.SetPlayerPos(mainAIController.player.x, mainAIController.player.y + dy, mainAIController.player.z).Wait();                    
+                    else if(hAbs > 0.2)
+                        mainAIController.SetPlayerPos(mainAIController.player.x + dx / abs * speed, mainAIController.player.y, mainAIController.player.z + dz / abs * speed).Wait();
+                    else
+                        mainAIController.SetPlayerPos(mainAIController.player.x, mainAIController.player.y + dy, mainAIController.player.z).Wait();
+                }
             }
         }
     }

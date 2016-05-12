@@ -34,36 +34,55 @@ namespace MoBot.Structure
                     }
                     model.viewer.OnNext(new Actions.ActionMessage { message = sb.ToString() });
                 }
-                else if(split[0] == "-load")
+                else if (split[0] == "-load")
                 {
                     model.controller.aiHandler.RegisterInternalModule(split[1]);
                 }
-                else if(split[0] == "-unload")
+                else if (split[0] == "-unload")
                 {
                     model.controller.aiHandler.UnregisterModule(split[1]);
                 }
-                else if(split[0] == "-modules")
+                else if (split[0] == "-modules")
                 {
                     StringBuilder sb = new StringBuilder();
                     sb.AppendLine("Loaded modules:");
-                    foreach(String name in model.controller.aiHandler.moduleList.Keys)
+                    foreach (String name in model.controller.aiHandler.moduleList.Keys)
                     {
                         sb.AppendLine($"--{name}");
                     }
                     model.viewer.OnNext(new Actions.ActionMessage { message = sb.ToString() });
                 }
-                else if(split[0] == "-property")
+                else if (split[0] == "-property")
                 {
                     model.controller.aiHandler.moduleList[split[1]].SetProperty(split[2], split[3]);
                 }
-                else if(split[0] == "-move")
+                else if (split[0] == "-move")
                 {
                     if (!model.controller.aiHandler.moduleList.ContainsKey("Movement"))
                         model.controller.aiHandler.RegisterModule(typeof(Movement));
                     var move = model.controller.aiHandler.moduleList["Movement"].module as Movement;
                     if (move.destPoint == null)
-                        move.destPoint = new PathPoint { x = int.Parse(split[1]), y = (int)(model.controller.model.controller.player.y - 1.6), z = int.Parse(split[2]) };
-                    
+                        move.destPoint = new PathPoint { x = int.Parse(split[1]), y = int.Parse(split[2]), z = int.Parse(split[3]) };
+                }
+                else if (split[0] == "-set")
+                {
+                    ((AntiAFK)model.controller.aiHandler.moduleList["AntiAFK"].module).Add((int)model.controller.player.x, (int)model.controller.player.y, (int)model.controller.player.z);
+                }
+                else if(split[0] == "-inventory")
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.AppendLine("Player inventory:");
+                    for(int i = 1;i<=4;i++)
+                    {
+                        for(int j=0;j<9;j++)
+                            sb.Append($"{i * 9 + j} : {model.controller.player.inventory[i * 9 + j].ToString()} ");
+                        sb.AppendLine();
+                    }
+                    Console.WriteLine(sb.ToString());
+                }
+                else if(split[0] == "-swap")
+                {
+                    model.controller.ExchangeInventorySlots(int.Parse(split[1]), int.Parse(split[2]));
                 }
             }
         }

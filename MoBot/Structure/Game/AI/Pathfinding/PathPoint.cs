@@ -4,11 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Json;
+using System.Runtime.Serialization;
+using MoBot.Structure.Game.AI.Modules;
 
 namespace MoBot.Structure.Game.AI.Pathfinding
 {
+    
     class PathPoint : Priority_Queue.FastPriorityQueueNode
     {
+        [DataMember]
         public int x, y, z;
         public PathPoint(Block block)
         {
@@ -47,7 +52,11 @@ namespace MoBot.Structure.Game.AI.Pathfinding
         {
             return $"({x} | {y} | {z})";
         }
-
         public PathPoint prev;
+
+        public static implicit operator PathPoint(Point v)
+        {
+            return new PathPoint { x = v.x, y = v.y, z = v.z };
+        }
     }
 }
