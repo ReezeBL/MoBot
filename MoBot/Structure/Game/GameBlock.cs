@@ -10,7 +10,7 @@ namespace MoBot.Structure.Game
 {
     class GameBlock
     {
-        public static Dictionary<int, GameBlock> blockRegistry = new Dictionary<int, GameBlock>();
+        private static Dictionary<int, GameBlock> blockRegistry = new Dictionary<int, GameBlock>();
 
         public static void loadBlocks()
         {
@@ -28,14 +28,18 @@ namespace MoBot.Structure.Game
                 }
             }
         }
-            
-
+          
+        public static GameBlock getBlock(int id)
+        {
+            GameBlock res;
+            if (!blockRegistry.TryGetValue(id, out res))
+                res = new GameBlock { id = id };
+            return res;
+        }
+          
         public int id;
-        public String name;
-        public String displayName;
-        public float hardness;
-        public int stackSize;
-        public bool diggable;
-        public bool transparent;
+        public String name = "";
+        public float hardness = -1.0f;
+        public bool transparent = false;
     }
 }

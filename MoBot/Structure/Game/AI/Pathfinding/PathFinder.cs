@@ -123,7 +123,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 
         private bool isBlockFree(Block b)
         {
-            return b == null || GameBlock.blockRegistry[b.ID].transparent;
+            return b == null || GameBlock.getBlock(b.ID).transparent;
         }
         private PathPoint createPoint(int x, int y, int z)
         {      
