@@ -1,98 +1,91 @@
-﻿using MoBot.Structure.Actions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net;
+﻿using System;
 using System.Net.Sockets;
 using MoBot.Protocol;
-using MoBot.Protocol.Packets.Handshake;
-using Newtonsoft.Json.Linq;
 using MoBot.Protocol.Handlers;
+using MoBot.Protocol.Packets.Handshake;
 using MoBot.Protocol.Threading;
+using MoBot.Structure.Actions;
+using MoBot.Structure.Game;
+using Newtonsoft.Json.Linq;
 
 namespace MoBot.Structure
 {
     class Model : IObservable<SysAction>
     {
-        public IObserver<SysAction> viewer { get; private set; }
-        public Channel mainChannel { get; private set; }
-        public IHandler handler { get; private set; }
-        public String username { get; private set; }
-        public JArray modList { get; private set; }
-        private WritingThread threadWrite;
-        private ReadingThread threadRead;
-        public Game.GameController controller
-        {
-            get; private set;
-        }
+        private static Model _instance;
+        private Model() { }
+        public IObserver<SysAction> Viewer { get; private set; }
+        public Channel MainChannel { get; private set; }
+        public IHandler Handler { get; private set; }
+        public String Username { get; private set; }
+        public JArray ModList { get; private set; }
+        private WritingThread _threadWrite;
+        private ReadingThread _threadRead;        
         public IDisposable Subscribe(IObserver<SysAction> observer)
         {
-            viewer = observer;
+            Viewer = observer;
             return null;
         }
-
-        public void Connect(String ServerIP, int port, String name)
+        public static Model GetInstance()
+        {
+            if (_instance == null)
+                return _instance = new Model();
+            return _instance;
+        }
+        public void Connect(string serverIp, int port, string name)
         {
             try
             {
                 #region InitVariables
-                dynamic response = Ping(ServerIP, port);
-                modList = response.modinfo.modList;
-                TcpClient client = new TcpClient(ServerIP, port);
-                mainChannel = new Channel(client.GetStream(), Channel.State.Login);
-                username = name;
-                handler = new ClientHandler(this);
-                controller = new Game.GameController(this);
-                threadWrite = new WritingThread(this);
-                threadRead = new ReadingThread(this);
+                dynamic response = Ping(serverIp, port);
+                ModList = response.modinfo.modList;
+                TcpClient client = new TcpClient(serverIp, port);
+                MainChannel = new Channel(client.GetStream(), Channel.State.Login);
+                Username = name;
+                Handler = new ClientHandler();               
+                _threadWrite = new WritingThread(this);
+                _threadRead = new ReadingThread(this);
                 #endregion
                 #region BeginConnect
-                viewer.OnNext(new ActionConnect { Connected = true });
-                SendPacket(new PacketHandshake { hostname = ServerIP, port = (ushort)port, nextState = 2, protocolVersion = (int)response.version.protocol });
+                Viewer.OnNext(new ActionConnect { Connected = true });
+                SendPacket(new PacketHandshake { hostname = serverIp, port = (ushort)port, nextState = 2, protocolVersion = (int)response.version.protocol });
                 SendPacket(new PacketLoginStart { Name = name });
                 #endregion
             }
             catch (Exception)
             {
-                viewer.OnNext(new ActionMessage { message = "Unable to connect to server!" });
+                Viewer.OnNext(new ActionMessage { message = "Unable to connect to server!" });
             }
         }
         public void Disconnect()
         {
-            viewer.OnNext(new ActionConnect { Connected = false });
-            threadWrite.Stop();
-            threadRead.Stop();
-            foreach (var thread in controller.aiHandler.moduleList.Values)
-            {
-                thread.Stop();
-            }
+            Viewer.OnNext(new ActionConnect { Connected = false });
+            _threadWrite.Stop();
+            _threadRead.Stop();           
         }
-        public void Message(String message)
+        public void Message(string message)
         {
-            viewer.OnNext(new ActionMessage { message = message });
+            Viewer.OnNext(new ActionMessage { message = message });
         }
-        public dynamic Ping(String ServerIP, int port, bool message = false)
+        public dynamic Ping(string serverIp, int port, bool message = false)
         {
-            TcpClient client = new TcpClient(ServerIP, port);
-            Channel channel = new Channel(client.GetStream());
-            channel.SendPacket(new PacketHandshake() { hostname = ServerIP, port = (ushort)port, nextState = 1, protocolVersion = 47 });
+            var client = new TcpClient(serverIp, port);
+            var channel = new Channel(client.GetStream());
+            channel.SendPacket(new PacketHandshake { hostname = serverIp, port = (ushort)port, nextState = 1, protocolVersion = 47 });
             channel.SendPacket(new EmptyPacket());
-            PacketResponse result = channel.GetPacket() as PacketResponse;
+            var result = channel.GetPacket() as PacketResponse;
+            if (result == null) return null;
             dynamic response = JObject.Parse(result.JSONResponse);
             client.Close();
             if(message)
-                viewer.OnNext(new ActionMessage { message = String.Format("Name: {1}\nProtocol: {0}\nOnline: {2}", response.version.protocol, response.description, response.players.online) });           
+                Viewer.OnNext(new ActionMessage { message = String.Format("Name: {1}\nProtocol: {0}\nOnline: {2}", response.version.protocol, response.description, response.players.online) });           
             return response;
         }
-
-
         public void SendPacket(Packet packet)
         {
-            lock (threadWrite.queueLocker)
+            lock (_threadWrite.queueLocker)
             {
-                threadWrite.SendingQueue.Enqueue(packet);
+                _threadWrite.SendingQueue.Enqueue(packet);
             }
         }
     }

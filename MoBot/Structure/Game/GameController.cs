@@ -4,108 +4,85 @@ using MoBot.Structure.Game.AI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace MoBot.Structure.Game
 {
     class GameController
-    {
-        private NLog.Logger log = Program.getLogger();
-        private static int TransactionID = 1;
-        public Model model { get; private set; }       
-        public GameController(Model model)
+    {       
+        private static GameController _instance;   
+        public static GameController GetInstance()
         {
-            this.model = model;
-            aiHandler = new AIHandler(this);
-        }   
-        public Dictionary<int, Entity> entityList { get; private set; } = new Dictionary<int, Entity>();
-        public AI.AIHandler aiHandler { get; private set; }
-        public Player player { get; private set; }
-        public World world { get; private set; } = new World();
-        public DateTime lastMove = DateTime.Now;
+            if (_instance == null)
+                return _instance = new GameController();
+            return _instance;
+        }
 
-        public void CreateUser(int UID, String name = "")
+        private GameController()
         {
-            player = CreatePlayer(UID, name);
+            AiHandler = new AIHandler(this);
+            _actionManager = new ActionManager(this);
+        }
+
+        private readonly Dictionary<int, Entity> _entityList = new Dictionary<int, Entity>();
+        public AIHandler AiHandler { get; private set; }
+        public Player Player { get; private set; }
+        public World World { get; private set; } = new World();
+
+        public ActionManager ActionManager
+        {
+            get { return _actionManager; }
+        }
+
+        private readonly ActionManager _actionManager;
+
+        public Entity GetEntity(int id)
+        {
+            Entity res;
+            _entityList.TryGetValue(id, out res);
+            return res;
+        }
+        public Entity GetEntity()
+        {
+            return _entityList.Values.FirstOrDefault();
+        }
+        public Entity GetEntity<T>() where T : Entity
+        {
+            return _entityList.Values.OfType<T>().FirstOrDefault();
+        }
+        public IEnumerable<T> GetEntities<T>()
+        {
+            return _entityList.Values.OfType<T>();
+        }
+        public void RemoveEntity(int id)
+        {
+            if(_entityList.ContainsKey((id)))
+                _entityList.Remove(id);
+        }
+        public void CreateUser(int uid, string name = "")
+        {
+            Player = CreatePlayer(uid, name);
             
         }
-        public Player CreatePlayer(int UID, String name)
+        public Player CreatePlayer(int uid, String name)
         {
             Player player = new Player(name);
-            entityList.Add(UID, player);
+            _entityList.Add(uid, player);
             return player;
         }
-        public Mob createMob(int ID, byte Type = 0)
+        public Mob CreateMob(int id, byte type = 0)
         {
-            Mob mob = new Mob() { Type = Type };
-            entityList.Add(ID, mob);
+            Mob mob = new Mob() { Type = type };
+            _entityList.Add(id, mob);
             return mob; 
         }
-        public void SendChatMessage(String message)
-        {
-            model.SendPacket(new PacketChat { message = message });                       
-        }
-        public LivingEntity createLivingEntity(int entityID, byte type)
+
+        public LivingEntity CreateLivingEntity(int entityId, byte type)
         {
             LivingEntity entity = new LivingEntity();
-            entityList.Add(entityID, entity);
+            _entityList.Add(entityId, entity);
             return entity;
-        }
-        public async Task updateMotion()
-        {
-            await Task.Run(() =>
-                model.SendPacket(new PacketPlayerPosLook
-                {
-                    X = player.x,
-                    Y = player.y,
-                    Z = player.z,
-                    yaw = player.yaw,
-                    pitch = player.pitch,
-                    onGround = player.onGround
-                })
-            );
-        }
-        public async Task respawn()
-        {
-            await Task.Run(() => model.SendPacket(new PacketClientStatus { Action = 0 }));
-        }
-        public async Task openInventory()
-        {
-            await Task.Run(() => model.SendPacket(new PacketClientStatus { Action = 2 }));
-        }
-        public async Task SetPlayerPos(double x, double y, double z)
-        {            
-            double dx = x - player.x;
-            double dy = y - player.y;
-            double dz = z - player.z;
-            bool moved = dx * dx + dy * dy + dz * dz >= 9e-4;
-            player.onGround = Math.Abs(dy) >= 0.1;
-            player.x = x; player.y = y; player.z = z;
-            await updateMotion();
-            if (moved)
-                lastMove = DateTime.Now;
-        }
-        public void RotatePlayer(double x, double y, double z)
-        {
-            double r = Math.Sqrt(x * x + y * y + z * z);
-            double yaw = -Math.Atan2(x, z) / Math.PI * 180;
-            double pitch = -Math.Asin(y / r) / Math.PI * 180;
-            player.yaw = (float)yaw;
-            player.pitch = (float)pitch;
-        }
-        public void ClickInventorySlot(int slot)
-        {
-            model.SendPacket(new PacketClickWindow { WindowID = 0, Mode = 0, ActionNumber = (short)TransactionID++, Button = 0, Slot = (short)slot, ItemStack = player.inventory[slot] });
-        }
-        public void ExchangeInventorySlots(int slot1, int slot2)
-        {
-            ClickInventorySlot(slot1);
-            Thread.Sleep(100);
-            ClickInventorySlot(slot2);
-            Thread.Sleep(100);
-            ClickInventorySlot(slot1);
         }
     }
 }

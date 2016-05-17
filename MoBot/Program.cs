@@ -7,20 +7,20 @@ namespace MoBot
 {
     class Program
     {
-        private static Logger log = LogManager.GetCurrentClassLogger();
-        public static Logger getLogger()
+        private static readonly Logger Log = LogManager.GetCurrentClassLogger();
+        public static Logger GetLogger()
         {
-            return log;
+            return Log;
         }
         [STAThread]
-        static void Main(string[] args)
+        static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Protocol.Channel.InitDicts();
             Structure.Game.GameBlock.loadBlocks();
-            Model model = new Model();
-            Controller controller = new Controller { model = model };
+            Model model = Model.GetInstance();
+            Controller controller = new Controller { Model = model };
             Viewer viewer = new Viewer { mainController = controller };
             model.Subscribe(viewer);
             Application.Run(viewer);

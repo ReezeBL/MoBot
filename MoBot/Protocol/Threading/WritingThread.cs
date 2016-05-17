@@ -30,7 +30,7 @@ namespace MoBot.Protocol.Threading
                             {
                                 Packet pack = SendingQueue.Dequeue();
                                 if (pack != null)
-                                    model.mainChannel.SendPacket(pack);
+                                    model.MainChannel.SendPacket(pack);
                             }
                         }
                         catch (Exception) { }                        

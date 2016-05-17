@@ -121,6 +121,7 @@
     <Compile Include="Structure\Actions\ActionMessage.cs" />
     <Compile Include="Structure\Controller.cs" />
     <Compile Include="Structure\Decompressor.cs" />
+    <Compile Include="Structure\Game\ActionManager.cs" />
     <Compile Include="Structure\Game\AI\AIHandler.cs" />
     <Compile Include="Structure\Game\AI\AIModule.cs" />
     <Compile Include="Protocol\Threading\AIThread.cs" />

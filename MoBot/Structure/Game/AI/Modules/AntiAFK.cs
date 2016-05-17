@@ -34,16 +34,15 @@ namespace MoBot.Structure.Game.AI.Modules
         public override void tick()
         {
             try {
-                double diff = (DateTime.Now - mainAIController.lastMove).TotalSeconds;
+                double diff = (DateTime.Now - mainAIController.ActionManager.LastMove).TotalSeconds;
                 if (diff >= delay)
                 {
-                    Player player = mainAIController.player;
+                    Player player = mainAIController.Player;
                     var playerPoint = new Pathfinding.PathPoint { x = (int)player.x, y = (int)player.y, z = (int)player.z };
                     var minDist = wayPoints.Min(e => e.DistanceTo(playerPoint));
                     var pathPoint = wayPoints.Where(e => e.DistanceTo(playerPoint) == minDist).FirstOrDefault();
                     pathPoint = wayPoints[(wayPoints.IndexOf(pathPoint) + 1) % wayPoints.Count];
-                    ((Movement)mainAIController.aiHandler.moduleList["Movement"].module).destPoint = pathPoint;
-                    mainAIController.model.viewer.OnNext(new Actions.ActionMessage { message = $"Anti-afk move to {pathPoint.x}|{pathPoint.y}|{pathPoint.z}" });
+                    Model.GetInstance().Viewer.OnNext(new Actions.ActionMessage { message = $"Anti-afk move to {pathPoint.x}|{pathPoint.y}|{pathPoint.z}" });
                 }
             }
             catch (Exception) { }

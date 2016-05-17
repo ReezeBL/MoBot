@@ -24,11 +24,11 @@ namespace MoBot.Protocol.Threading
             {
                 while (Process)
                 {
-                    Packet packet = model.mainChannel.GetPacket();
+                    Packet packet = model.MainChannel.GetPacket();
                     if (packet != null)
                     {
                         if (packet.ProceedNow())
-                            packet.HandlePacket(model.handler);
+                            packet.HandlePacket(model.Handler);
                         else
                             lock (queueLocker)
                                 processQueue.Enqueue(packet);
@@ -43,7 +43,7 @@ namespace MoBot.Protocol.Threading
                     lock (queueLocker)
                     {
                         while (processQueue.Count > 0)
-                            processQueue.Dequeue().HandlePacket(model.handler);
+                            processQueue.Dequeue().HandlePacket(model.Handler);
                     }
                     Thread.Sleep(50);
                 }

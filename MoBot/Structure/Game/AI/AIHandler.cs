@@ -11,8 +11,8 @@ namespace MoBot.Structure.Game.AI
     class AIHandler
     {
         public GameController controller { get; private set; }
-        private NLog.Logger log = Program.getLogger();
-        public Dictionary<String, AIThread> moduleList { get; private set; } = new Dictionary<String, AIThread>();
+        private NLog.Logger log = Program.GetLogger();
+        public Dictionary<string, AIModule> moduleList { get; private set; } = new Dictionary<string, AIModule>();
 
         public AIHandler(GameController controller)
         {
@@ -25,7 +25,7 @@ namespace MoBot.Structure.Game.AI
             {
                 AIModule module = Activator.CreateInstance(null,$"MoBot.Structure.Game.AI.Modules.{name}").Unwrap() as AIModule;
                 module.SetMainAIController(this);
-                moduleList.Add(name, new AIThread(module));
+                moduleList.Add(name, module);
             }
             catch (Exception e)
             {
@@ -39,7 +39,7 @@ namespace MoBot.Structure.Game.AI
             {
                 AIModule module = Activator.CreateInstance(type, null) as AIModule;
                 module.SetMainAIController(this);
-                moduleList.Add(type.Name, new AIThread(module));
+                moduleList.Add(type.Name, module);
             }
             catch (Exception e)
             {
@@ -51,8 +51,6 @@ namespace MoBot.Structure.Game.AI
         {
             try
             {
-                AIThread thread = moduleList[name];
-                thread.Stop();
                 moduleList.Remove(name);
             }
             catch (Exception)

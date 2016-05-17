@@ -16,5 +16,6 @@ namespace MoBot.Structure.Game.AI
             this.aiHandler = aiHandler;
         }
         public abstract void tick();
+        public virtual void onLoad() { }
     }
 }

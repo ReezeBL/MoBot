@@ -40,7 +40,7 @@ namespace MoBot.Protocol.Threading
             }
             catch (Exception)
             {
-                Program.getLogger().Error($"Cant set property {property_name} in class {moduleType.Name}!");
+                Program.GetLogger().Error($"Cant set property {property_name} in class {moduleType.Name}!");
             }
         }
     }

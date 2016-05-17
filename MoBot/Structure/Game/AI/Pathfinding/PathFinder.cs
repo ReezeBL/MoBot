@@ -67,7 +67,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
             }
             catch(Exception e)
             {
-                Program.getLogger().Error($"Cant create path! Error : {e.ToString()}");
+                Program.GetLogger().Error($"Cant create path! Error : {e.ToString()}");
                 return null;
             }
         }
