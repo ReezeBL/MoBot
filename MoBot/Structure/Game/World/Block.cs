@@ -1,29 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace MinecraftEmuPTS.GameData
+namespace MoBot.Structure.Game.World
 {
-    class Block
+    internal class Block
     {
        public static List<int> CollidableBlocks;
-       public int ID;
+       public int Id;
        public string Name;
-       public int x;
-       public int y;
-       public int z;
-       public int cx;
-       public int cz;
+       public int X;
+       public int Y;
+       public int Z;
+       public int Cx;
+       public int Cz;
 
-       public Block(int id, int X, int Y, int Z,int CX, int CZ)
+       public Block(int id, int x, int y, int z,int cx, int cz)
        {
-           ID = id;
-           x = X;
-           y = Y;
-           z = Z;
-           cx = CX;
-           cz = CZ;
+           Id = id;
+           X = x;
+           Y = y;
+           Z = z;
+           Cx = cx;
+           Cz = cz;
 
            Name = "";
        }

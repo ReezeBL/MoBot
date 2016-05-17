@@ -297,7 +297,7 @@ namespace MoBot.Protocol.Handlers
 
             for (var i = 0; i < packetMapChunk.ChunkNumber; i++)
             {
-                dced = packetMapChunk.chunks[i].getData(dced);
+                dced = packetMapChunk.chunks[i].GetData(dced);
                 _gameController.World.AddChunk(packetMapChunk.chunks[i]);
             }
         }
@@ -315,7 +315,7 @@ namespace MoBot.Protocol.Handlers
                 var dc = new Decompressor(mas);
                 var dced = dc.Decompress();
 
-                packetChunkData.chunk.getData(dced);
+                packetChunkData.chunk.GetData(dced);
                 _gameController.World.AddChunk(packetChunkData.chunk);
             }
         }

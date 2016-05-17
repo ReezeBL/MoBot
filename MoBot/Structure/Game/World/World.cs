@@ -1,69 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace MinecraftEmuPTS.GameData
+namespace MoBot.Structure.Game.World
 {
     class World
     {
-        private List<Chunk> chunks = new List<Chunk>();
-        private object chunkLocker = new object();                
+        private readonly List<Chunk> _chunks = new List<Chunk>();
+        private readonly object _chunkLocker = new object();                
         public void AddChunk(Chunk c)
         {
-            lock (chunkLocker)
+            lock (_chunkLocker)
             {
-                chunks.Add(c);
+                _chunks.Add(c);
             }
         }
         public void RemoveChunk(int x, int z)
         {
-            lock (chunkLocker)
+            lock (_chunkLocker)
             {
                 Chunk c = GetChunk(x, z);
                 if (c != null)
-                    chunks.Remove(c);
+                    _chunks.Remove(c);
             }
         }
         public Block GetBlock(int x, int y, int z)
         {
-            Chunk chunk = this.GetChunk(x, z);
-            if (chunk != null)
-            {
-                return chunk.getBlock(x, y, z);
-            }
-            else
-                return null;
+            Chunk chunk = GetChunk(x, z);
+            return chunk?.GetBlock(x, y, z);
         }
-        public void UpdateBlock(int x, int y, int z, int ID)
+        public void UpdateBlock(int x, int y, int z, int id)
         {
-            Chunk chunk = this.GetChunk(x, z);
-            lock (chunkLocker)
+            Chunk chunk = GetChunk(x, z);
+            lock (_chunkLocker)
             {
-                if (chunk != null)
-                {
-                    chunk.updateBlock(x, y, z, ID);
-                }
+                chunk?.UpdateBlock(x, y, z, id);
             }
         }
         public Chunk GetChunk(int x, int z)
         {
-            lock (chunkLocker)
+            lock (_chunkLocker)
             {
                 int chunkX = (int)Math.Floor(decimal.Divide(x, 16));
                 int chunkZ = (int)Math.Floor(decimal.Divide(z, 16));
-
-                Chunk thisChunk = null;
-
-                foreach (Chunk b in chunks)
-                {
-                    if (b.x == chunkX & b.z == chunkZ)
-                    {
-                        thisChunk = b;
-                        break;
-                    }
-                }
-                return thisChunk;
+                return _chunks.FirstOrDefault(b => b.X == chunkX & b.Z == chunkZ);
             }
         }   
     }

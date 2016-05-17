@@ -1,12 +1,11 @@
-﻿using MinecraftEmuPTS.GameData;
-using MoBot.Structure.Game.AI;
+﻿using MoBot.Structure.Game.AI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace MoBot.Structure.Game
 {
-    class GameController
+    internal class GameController
     {
         private static GameController _instance;
 
@@ -61,8 +60,9 @@ namespace MoBot.Structure.Game
             Player = CreatePlayer(uid, name);
         }
 
-        public Player CreatePlayer(int uid, String name)
+        public Player CreatePlayer(int uid, string name)
         {
+            if (name == null) throw new ArgumentNullException(nameof(name));
             Player player = new Player(name);
             _entityList.Add(uid, player);
             return player;

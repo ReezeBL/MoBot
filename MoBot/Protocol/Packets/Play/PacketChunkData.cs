@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MoBot.Protocol.Handlers;
-using MinecraftEmuPTS.GameData;
+using MoBot.Structure.Game.World;
 
 namespace MoBot.Protocol.Packets.Play
 {

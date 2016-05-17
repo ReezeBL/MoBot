@@ -1,6 +1,6 @@
-﻿using MinecraftEmuPTS.GameData;
-using System;
+﻿using System;
 using System.Runtime.Serialization;
+using MoBot.Structure.Game.World;
 
 namespace MoBot.Structure.Game.AI.Pathfinding
 {
@@ -18,9 +18,9 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 
         public PathPoint(Block block)
         {
-            X = block.x;
-            Y = block.y;
-            Z = block.z;
+            X = block.X;
+            Y = block.Y;
+            Z = block.Z;
         }
 
         public PathPoint() { }

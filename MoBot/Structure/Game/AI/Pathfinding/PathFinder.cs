@@ -1,8 +1,8 @@
-﻿using MinecraftEmuPTS.GameData;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using MoBot.Structure.Game.World;
 
 namespace MoBot.Structure.Game.AI.Pathfinding
 {
@@ -122,7 +122,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 
         private static bool IsBlockFree(Block b)
         {
-            return b == null || GameBlock.getBlock(b.ID).transparent;
+            return b == null || GameBlock.getBlock(b.Id).transparent;
         }
 
         private PathPoint CreatePoint(int x, int y, int z)
