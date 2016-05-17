@@ -122,12 +122,6 @@
     <Compile Include="Structure\Controller.cs" />
     <Compile Include="Structure\Decompressor.cs" />
     <Compile Include="Structure\Game\ActionManager.cs" />
-    <Compile Include="Structure\Game\AI\AIHandler.cs" />
-    <Compile Include="Structure\Game\AI\AIModule.cs" />
-    <Compile Include="Protocol\Threading\AIThread.cs" />
-    <Compile Include="Structure\Game\AI\Modules\AntiAFK.cs" />
-    <Compile Include="Structure\Game\AI\Modules\Movement.cs" />
-    <Compile Include="Structure\Game\AI\Modules\Point.cs" />
     <Compile Include="Structure\Game\AI\Pathfinding\Path.cs" />
     <Compile Include="Structure\Game\AI\Pathfinding\PathFinder.cs" />
     <Compile Include="Structure\Game\AI\Pathfinding\PathPoint.cs" />

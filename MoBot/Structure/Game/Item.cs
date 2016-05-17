@@ -1,38 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MoBot.Structure.Game
 {
     class Item
     {
-        public short ID = -1;
+        public short Id = -1;
         public byte ItemCount;
         public short ItemDamage;
 
-        public byte[] NBTData;
+        public byte[] NbtData;
 
-        private static Dictionary<int, Item> itemRegistry = new Dictionary<int, Item>();
+        private static readonly Dictionary<int, Item> ItemRegistry = new Dictionary<int, Item>();
         public static void InitRegistry(){
-
+            ItemRegistry.Add(0, null);
         }
 
         public override string ToString()
         {
-            return ID.ToString();
+            return Id.ToString();
         }
 
-        public static Item getItem(int id)
+        public static Item GetItem(int id)
         {
-            Item res = null;
-            if (!itemRegistry.TryGetValue(id, out res))
-                res = new Item() { ID = (short)id };
+            Item res;
+            if (!ItemRegistry.TryGetValue(id, out res))
+                res = new Item() { Id = (short)id };
             return res;
         }
 
-        public virtual float getItemEffectivness(GameBlock block)
+        public virtual float GetItemEffectivness(GameBlock block)
         {
             if (block.hardness < 0)
                 return -1.0f;

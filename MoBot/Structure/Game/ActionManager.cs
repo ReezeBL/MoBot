@@ -26,12 +26,12 @@ namespace MoBot.Structure.Game
             await Task.Run(() =>
                 Model.GetInstance().SendPacket(new PacketPlayerPosLook
                 {
-                    X = _gameController.Player.x,
-                    Y = _gameController.Player.y,
-                    Z = _gameController.Player.z,
-                    yaw = _gameController.Player.yaw,
-                    pitch = _gameController.Player.pitch,
-                    onGround = _gameController.Player.onGround
+                    X = _gameController.Player.X,
+                    Y = _gameController.Player.Y,
+                    Z = _gameController.Player.Z,
+                    yaw = _gameController.Player.Yaw,
+                    pitch = _gameController.Player.Pitch,
+                    onGround = _gameController.Player.OnGround
                 })
                 );
         }
@@ -48,14 +48,14 @@ namespace MoBot.Structure.Game
 
         public async Task SetPlayerPos(double x, double y, double z)
         {            
-            double dx = x - _gameController.Player.x;
-            double dy = y - _gameController.Player.y;
-            double dz = z - _gameController.Player.z;
+            double dx = x - _gameController.Player.X;
+            double dy = y - _gameController.Player.Y;
+            double dz = z - _gameController.Player.Z;
             bool moved = dx * dx + dy * dy + dz * dz >= 9e-4;
-            _gameController.Player.onGround = Math.Abs(dy) >= 0.1;
-            _gameController.Player.x = x;
-            _gameController.Player.y = y;
-            _gameController.Player.z = z;
+            _gameController.Player.OnGround = Math.Abs(dy) >= 0.1;
+            _gameController.Player.X = x;
+            _gameController.Player.Y = y;
+            _gameController.Player.Z = z;
             await UpdateMotion();
             if (moved)
                 LastMove = DateTime.Now;
@@ -66,13 +66,13 @@ namespace MoBot.Structure.Game
             double r = Math.Sqrt(x * x + y * y + z * z);
             double yaw = -Math.Atan2(x, z) / Math.PI * 180;
             double pitch = -Math.Asin(y / r) / Math.PI * 180;
-            _gameController.Player.yaw = (float)yaw;
-            _gameController.Player.pitch = (float)pitch;
+            _gameController.Player.Yaw = (float)yaw;
+            _gameController.Player.Pitch = (float)pitch;
         }
 
         public void ClickInventorySlot(int slot)
         {
-            Model.GetInstance().SendPacket(new PacketClickWindow { WindowID = 0, Mode = 0, ActionNumber = (short) _transactionId++, Button = 0, Slot = (short)slot, ItemStack = _gameController.Player.inventory[slot] });
+            Model.GetInstance().SendPacket(new PacketClickWindow { WindowID = 0, Mode = 0, ActionNumber = (short) _transactionId++, Button = 0, Slot = (short)slot, ItemStack = _gameController.Player.Inventory[slot] });
         }
 
         public void ExchangeInventorySlots(int slot1, int slot2)

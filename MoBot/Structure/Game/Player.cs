@@ -1,41 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MoBot.Structure.Game
+﻿namespace MoBot.Structure.Game
 {
     class Player : LivingEntity
     {
-        public Item[] inventory = new Item[45];
+        public Item[] Inventory = new Item[45];
         public int HeldItem = 0;
-        public bool onGround;
+        public bool OnGround;
 
         public short Food;
         public float Saturation;
-        public string Name = "";
+        public string Name;
 
-        public Player(string name)
+        public Player(string name) : base(0, 0, 0)
         {
             Name = name;
         }
-   
-        public int getItemSlot(int id)
+
+        public int GetItemSlot(int id)
         {
             for (int i = 9; i < 45; i++)
             {
-                if (inventory[i] != null && inventory[i].ID == id)
+                if (Inventory[i] != null && Inventory[i].Id == id)
                     return i;
             }
             return -1;
         }
 
-        public int getFreeSlot()
+        public int GetFreeSlot()
         {
             for (int i = 9; i < 45; i++)
             {
-                if (inventory[i] == null || inventory[i].ID == -1)
+                if (Inventory[i] == null || Inventory[i].Id == -1)
                     return i;
             }
             return -1;
@@ -43,7 +37,7 @@ namespace MoBot.Structure.Game
 
         public override string ToString()
         {
-            return $"Player: {Name}, ({(int)x} | {(int)y} | {(int)z})";
+            return $"Player: {Name}, ({(int)X} | {(int)Y} | {(int)Z})";
         }
     }
 }

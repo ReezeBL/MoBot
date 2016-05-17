@@ -5,7 +5,6 @@ using MoBot.Protocol.Handlers;
 using MoBot.Protocol.Packets.Handshake;
 using MoBot.Protocol.Threading;
 using MoBot.Structure.Actions;
-using MoBot.Structure.Game;
 using Newtonsoft.Json.Linq;
 
 namespace MoBot.Structure
@@ -43,8 +42,8 @@ namespace MoBot.Structure
                 MainChannel = new Channel(client.GetStream(), Channel.State.Login);
                 Username = name;
                 Handler = new ClientHandler();               
-                _threadWrite = new WritingThread(this);
-                _threadRead = new ReadingThread(this);
+                _threadWrite = new WritingThread();
+                _threadRead = new ReadingThread();
                 #endregion
                 #region BeginConnect
                 Viewer.OnNext(new ActionConnect { Connected = true });
@@ -83,7 +82,7 @@ namespace MoBot.Structure
         }
         public void SendPacket(Packet packet)
         {
-            lock (_threadWrite.queueLocker)
+            lock (_threadWrite.QueueLocker)
             {
                 _threadWrite.SendingQueue.Enqueue(packet);
             }

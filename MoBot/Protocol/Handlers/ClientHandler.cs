@@ -8,7 +8,6 @@ using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
 using System.Xml;
-using MinecraftEmuPTS.Encription;
 using MoBot.Protocol.Handshake;
 using MoBot.Protocol.Packets;
 using MoBot.Protocol.Packets.Handshake;
@@ -251,12 +250,12 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketPlayerPosLook(PacketPlayerPosLook packetPlayerPosLook)
         {
-            _gameController.Player.x = packetPlayerPosLook.X;
-            _gameController.Player.y = packetPlayerPosLook.Y - 1.62;
-            _gameController.Player.z = packetPlayerPosLook.Z;
-            _gameController.Player.yaw = packetPlayerPosLook.yaw;
-            _gameController.Player.pitch = packetPlayerPosLook.pitch;
-            _gameController.Player.onGround = packetPlayerPosLook.onGround;
+            _gameController.Player.X = packetPlayerPosLook.X;
+            _gameController.Player.Y = packetPlayerPosLook.Y - 1.62;
+            _gameController.Player.Z = packetPlayerPosLook.Z;
+            _gameController.Player.Yaw = packetPlayerPosLook.yaw;
+            _gameController.Player.Pitch = packetPlayerPosLook.pitch;
+            _gameController.Player.OnGround = packetPlayerPosLook.onGround;
             _model.SendPacket(packetPlayerPosLook);
         }
 
@@ -264,7 +263,7 @@ namespace MoBot.Protocol.Handlers
         {
             if (packetWindowItems.WindowID == 0)
             {
-                packetWindowItems.Items.CopyTo(_gameController.Player.inventory, 0);
+                packetWindowItems.Items.CopyTo(_gameController.Player.Inventory, 0);
             }
         }
 
@@ -272,16 +271,16 @@ namespace MoBot.Protocol.Handlers
         {
             if (packetSetSlot.WindowID == 0)
             {
-                _gameController.Player.inventory[packetSetSlot.Slot] = packetSetSlot.item;
+                _gameController.Player.Inventory[packetSetSlot.Slot] = packetSetSlot.item;
             }
         }
 
         public void HandlePacketSpawnMoob(PacketSpawnMob packetSpawnMob)
         {
             var mob = _gameController.CreateMob(packetSpawnMob.EntityID, packetSpawnMob.Type);
-            mob.x = packetSpawnMob.X;
-            mob.y = packetSpawnMob.Y;
-            mob.z = packetSpawnMob.Z;
+            mob.X = packetSpawnMob.X;
+            mob.Y = packetSpawnMob.Y;
+            mob.Z = packetSpawnMob.Z;
         }
 
         public void HandlePacketChat(PacketChat packetChat)
@@ -294,7 +293,7 @@ namespace MoBot.Protocol.Handlers
             var mas = new byte[packetMapChunk.DataLength - 2];
             Array.Copy(packetMapChunk.ChunkData, 2, mas, 0, packetMapChunk.DataLength - 2);
             var dc = new Decompressor(mas);
-            var dced = dc.decompress();
+            var dced = dc.Decompress();
 
             for (var i = 0; i < packetMapChunk.ChunkNumber; i++)
             {
@@ -314,7 +313,7 @@ namespace MoBot.Protocol.Handlers
                 var mas = new byte[packetChunkData.Length - 2];
                 Array.Copy(packetChunkData.ChunkData, 2, mas, 0, packetChunkData.Length - 2);
                 var dc = new Decompressor(mas);
-                var dced = dc.decompress();
+                var dced = dc.Decompress();
 
                 packetChunkData.chunk.getData(dced);
                 _gameController.World.AddChunk(packetChunkData.chunk);
@@ -327,9 +326,9 @@ namespace MoBot.Protocol.Handlers
             {
                 var entity = _gameController.GetEntity(packetEntity.EntityID) as LivingEntity;
                 if (entity == null) return;
-                entity.x += packetEntity.x;
-                entity.y += packetEntity.y;
-                entity.z += packetEntity.z;
+                entity.X += packetEntity.x;
+                entity.Y += packetEntity.y;
+                entity.Z += packetEntity.z;
             }
             catch (KeyNotFoundException)
             {
@@ -343,9 +342,9 @@ namespace MoBot.Protocol.Handlers
             {
                 var entity = _gameController.GetEntity(packetEntityTeleport.EntityID) as LivingEntity;
                 if (entity == null) return;
-                entity.x = packetEntityTeleport.x;
-                entity.y = packetEntityTeleport.y;
-                entity.z = packetEntityTeleport.z;
+                entity.X = packetEntityTeleport.x;
+                entity.Y = packetEntityTeleport.y;
+                entity.Z = packetEntityTeleport.z;
             }
             catch (KeyNotFoundException)
             {
@@ -405,17 +404,17 @@ namespace MoBot.Protocol.Handlers
         public void HandlePacketSpawnObject(PacketSpawnObject packetSpawnObject)
         {
             var entity = _gameController.CreateLivingEntity(packetSpawnObject.EntityID, packetSpawnObject.Type);
-            entity.x = packetSpawnObject.X;
-            entity.y = packetSpawnObject.Y;
-            entity.z = packetSpawnObject.Z;
+            entity.X = packetSpawnObject.X;
+            entity.Y = packetSpawnObject.Y;
+            entity.Z = packetSpawnObject.Z;
         }
 
         public void HandlePacketSpawnPlayer(PacketSpawnPlayer packetSpawnPlayer)
         {
             var player = _gameController.CreatePlayer(packetSpawnPlayer.EntityID, packetSpawnPlayer.name);
-            player.x = packetSpawnPlayer.x;
-            player.y = packetSpawnPlayer.y;
-            player.z = packetSpawnPlayer.z;
+            player.X = packetSpawnPlayer.x;
+            player.Y = packetSpawnPlayer.y;
+            player.Z = packetSpawnPlayer.z;
         }
 
         public void HandlePacketConfirmTransaction(PacketConfirmTransaction packetConfirmTransaction)

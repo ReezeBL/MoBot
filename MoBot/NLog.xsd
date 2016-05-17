@@ -330,7 +330,7 @@
       <xs:extension base="WrapperTargetBase">
         <xs:choice minOccurs="0" maxOccurs="unbounded">
           <xs:element name="name" minOccurs="0" maxOccurs="1" type="xs:string" />
-          <xs:element name="bufferSize" minOccurs="0" maxOccurs="1" type="xs:integer" />
+          <xs:element name="BytesSize" minOccurs="0" maxOccurs="1" type="xs:integer" />
           <xs:element name="flushTimeout" minOccurs="0" maxOccurs="1" type="xs:integer" />
           <xs:element name="slidingTimeout" minOccurs="0" maxOccurs="1" type="xs:boolean" />
         </xs:choice>
@@ -339,14 +339,14 @@
             <xs:documentation>Name of the target.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="bufferSize" type="xs:integer">
+        <xs:attribute name="BytesSize" type="xs:integer">
           <xs:annotation>
-            <xs:documentation>Number of log events to be buffered.</xs:documentation>
+            <xs:documentation>Number of log events to be Bytesed.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="flushTimeout" type="xs:integer">
           <xs:annotation>
-            <xs:documentation>Timeout (in milliseconds) after which the contents of buffer will be flushed if there's no write in the specified period of time. Use -1 to disable timed flushes.</xs:documentation>
+            <xs:documentation>Timeout (in milliseconds) after which the contents of Bytes will be flushed if there's no write in the specified period of time. Use -1 to disable timed flushes.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="slidingTimeout" type="xs:boolean">
@@ -985,7 +985,7 @@
           <xs:element name="concurrentWriteAttemptDelay" minOccurs="0" maxOccurs="1" type="xs:integer" />
           <xs:element name="autoFlush" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="openFileCacheSize" minOccurs="0" maxOccurs="1" type="xs:integer" />
-          <xs:element name="bufferSize" minOccurs="0" maxOccurs="1" type="xs:integer" />
+          <xs:element name="BytesSize" minOccurs="0" maxOccurs="1" type="xs:integer" />
         </xs:choice>
         <xs:attribute name="name" type="xs:string">
           <xs:annotation>
@@ -1129,7 +1129,7 @@
         </xs:attribute>
         <xs:attribute name="autoFlush" type="xs:boolean">
           <xs:annotation>
-            <xs:documentation>Indicates whether to automatically flush the file buffers after each log message.</xs:documentation>
+            <xs:documentation>Indicates whether to automatically flush the file Bytess after each log message.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="openFileCacheSize" type="xs:integer">
@@ -1137,9 +1137,9 @@
             <xs:documentation>Number of files to be kept open. Setting this to a higher value may improve performance in a situation where a single File target is writing to many files (such as splitting by level or by logger).</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="bufferSize" type="xs:integer">
+        <xs:attribute name="BytesSize" type="xs:integer">
           <xs:annotation>
-            <xs:documentation>Log file buffer size in bytes.</xs:documentation>
+            <xs:documentation>Log file Bytes size in bytes.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>

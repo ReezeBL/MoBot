@@ -42,7 +42,7 @@ namespace MoBot.Structure
                         for(var i = 1;i<=4;i++)
                         {
                             for(var  j=0;j<9;j++)
-                                sb.Append($"{i * 9 + j} : {controller.Player.inventory[i * 9 + j]} ");
+                                sb.Append($"{i * 9 + j} : {controller.Player.Inventory[i * 9 + j]} ");
                             sb.AppendLine();
                         }
                         Console.WriteLine(sb.ToString());

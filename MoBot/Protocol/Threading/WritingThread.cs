@@ -1,28 +1,24 @@
-﻿using MoBot.Protocol.Packets.Play;
-using MoBot.Structure;
+﻿using MoBot.Structure;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace MoBot.Protocol.Threading
 {
-    class WritingThread : BaseThread
+    internal class WritingThread : BaseThread
     {
-        private Model model;
-        public Object queueLocker { get; private set; } = new object();
+        private readonly Model _model;
+        public object QueueLocker { get; } = new object();
         public Queue<Packet> SendingQueue { get; private set; } = new Queue<Packet>();
-        public Thread thread { get; private set; }
-        public WritingThread(Model model)
+        private Thread Thread { get; }
+        public WritingThread()
         {
-            this.model = model;
-            thread = new Thread(() =>
+            _model = Model.GetInstance();
+            Thread = new Thread(() =>
             {
                 while (Process)
                 {
-                    lock (queueLocker)
+                    lock (QueueLocker)
                     {
                         try
                         {
@@ -30,16 +26,18 @@ namespace MoBot.Protocol.Threading
                             {
                                 Packet pack = SendingQueue.Dequeue();
                                 if (pack != null)
-                                    model.MainChannel.SendPacket(pack);
+                                    _model.MainChannel.SendPacket(pack);
                             }
                         }
-                        catch (Exception) { }                        
+                        catch (Exception)
+                        {
+                            // ignored
+                        }
                     }
                     Thread.Sleep(50);
                 }
-            });
-            thread.IsBackground = true;
-            thread.Start();
+            }) {IsBackground = true};
+            Thread.Start();
         }
     }
 }
