@@ -69,6 +69,28 @@ namespace MoBot.Structure.Game.AI.Pathfinding
             }
         }
 
+        public IEnumerator DynamicPath(Entity entity, PathPoint endPoint)
+        {
+            return DynamicPath(new PathPoint((int) entity.X, (int) entity.Y, (int) entity.Z),  endPoint);
+        }
+        public IEnumerator<PathPoint> DynamicPath(PathPoint startPoint, PathPoint endPoint)
+        {
+            Path path = null;
+            var validation = 0;
+            while (true)
+            {              
+                if (validation != _world.WorldValidation)
+                {
+                    path = StaticPath(startPoint, endPoint);
+                    validation = _world.WorldValidation;
+                }
+                startPoint = path?.Dequeue();
+                if (startPoint == null || startPoint.Equals(endPoint))
+                    yield break;
+                yield return startPoint;
+            }
+        }
+
         private IEnumerable<PathPoint> GetNeighbours(PathPoint point)
         {
             List<PathPoint> candidats = new List<PathPoint>();

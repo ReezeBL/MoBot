@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 using MoBot.Protocol.Packets.Play;
+using MoBot.Structure.Game.AI.Pathfinding;
 
 namespace MoBot.Structure.Game
 {
@@ -90,6 +91,16 @@ namespace MoBot.Structure.Game
             ClickInventorySlot(slot2);
             Thread.Sleep(100);
             ClickInventorySlot(slot1);
+        }
+
+        public void MoveToLocation(PathPoint endPoint)
+        {
+            PathFinder pf = new PathFinder();
+            var path = pf.DynamicPath(_gameController.Player, endPoint);
+            for (var point = path.Current; point != null; path.MoveNext(), point = path.Current)
+            {
+                
+            } 
         }
     }
 }

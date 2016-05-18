@@ -301,6 +301,7 @@ namespace MoBot.Protocol.Handlers
                 dced = packetMapChunk.chunks[i].GetData(dced);
                 _gameController.World.AddChunk(packetMapChunk.chunks[i]);
             }
+            _gameController.World.Invalidate();
         }
 
         public void HandlePacketChunkData(PacketChunkData packetChunkData)
@@ -319,6 +320,7 @@ namespace MoBot.Protocol.Handlers
                 packetChunkData.chunk.GetData(dced);
                 _gameController.World.AddChunk(packetChunkData.chunk);
             }
+            _gameController.World.Invalidate();
         }
 
         public void HandlePacketEntity(PacketEntity packetEntity)
@@ -351,6 +353,7 @@ namespace MoBot.Protocol.Handlers
         {
             _gameController.World.UpdateBlock(packetBlockChange.X, packetBlockChange.Y, packetBlockChange.Z,
                 packetBlockChange.BlockID);
+            _gameController.World.Invalidate();
         }
 
         public void HandlePacketUpdateHealth(PacketUpdateHelath packetUpdateHelath)
@@ -379,6 +382,7 @@ namespace MoBot.Protocol.Handlers
                     _gameController.World.UpdateBlock(chunkX + x, y, chunkZ + z, id);
                 }
             }
+            _gameController.World.Invalidate();
         }
 
         public void HandlePacketEntityStatus(PacketEntityStatus packetEntityStatus)
