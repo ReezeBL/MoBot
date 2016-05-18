@@ -135,7 +135,7 @@
     <Compile Include="Structure\Game\World\Block.cs" />
     <Compile Include="Structure\Game\World\Chunk.cs" />
     <Compile Include="Structure\Game\World\Section.cs" />
-    <Compile Include="Structure\Game\World\World.cs" />
+    <Compile Include="Structure\Game\World\GameWorld.cs" />
     <Compile Include="Structure\MathHelper.cs" />
     <Compile Include="Structure\Model.cs" />
     <Compile Include="Structure\Actions\SysAction.cs" />

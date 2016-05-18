@@ -278,6 +278,7 @@ namespace MoBot.Protocol.Handlers
         public void HandlePacketSpawnMoob(PacketSpawnMob packetSpawnMob)
         {
             var mob = _gameController.CreateMob(packetSpawnMob.EntityID, packetSpawnMob.Type);
+            if (mob == null) return;
             mob.X = packetSpawnMob.X;
             mob.Y = packetSpawnMob.Y;
             mob.Z = packetSpawnMob.Z;
@@ -322,33 +323,20 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketEntity(PacketEntity packetEntity)
         {
-            try
-            {
-                var entity = _gameController.GetEntity(packetEntity.EntityID) as LivingEntity;
-                if (entity == null) return;
-                entity.X += packetEntity.x;
-                entity.Y += packetEntity.y;
-                entity.Z += packetEntity.z;
-            }
-            catch (KeyNotFoundException)
-            {
-                //log.Warn($"Trying to update positin of entity, that is not presented! EntityID: {packetEntity.EntityID}");
-            }
+            var entity = _gameController.GetEntity(packetEntity.EntityID) as LivingEntity;
+            if (entity == null) return;
+            entity.X += packetEntity.x;
+            entity.Y += packetEntity.y;
+            entity.Z += packetEntity.z;
         }
 
         public void HandlePacketEntityTeleport(PacketEntityTeleport packetEntityTeleport)
         {
-            try
-            {
-                var entity = _gameController.GetEntity(packetEntityTeleport.EntityID) as LivingEntity;
-                if (entity == null) return;
-                entity.X = packetEntityTeleport.x;
-                entity.Y = packetEntityTeleport.y;
-                entity.Z = packetEntityTeleport.z;
-            }
-            catch (KeyNotFoundException)
-            {
-            }
+            var entity = _gameController.GetEntity(packetEntityTeleport.EntityID) as LivingEntity;
+            if (entity == null) return;
+            entity.X = packetEntityTeleport.x;
+            entity.Y = packetEntityTeleport.y;
+            entity.Z = packetEntityTeleport.z;
         }
 
         public void HandlePacketDestroyEntities(PacketDestroyEntities packetDestroyEntities)
@@ -404,6 +392,7 @@ namespace MoBot.Protocol.Handlers
         public void HandlePacketSpawnObject(PacketSpawnObject packetSpawnObject)
         {
             var entity = _gameController.CreateLivingEntity(packetSpawnObject.EntityID, packetSpawnObject.Type);
+            if (entity == null) return;
             entity.X = packetSpawnObject.X;
             entity.Y = packetSpawnObject.Y;
             entity.Z = packetSpawnObject.Z;
@@ -412,6 +401,7 @@ namespace MoBot.Protocol.Handlers
         public void HandlePacketSpawnPlayer(PacketSpawnPlayer packetSpawnPlayer)
         {
             var player = _gameController.CreatePlayer(packetSpawnPlayer.EntityID, packetSpawnPlayer.name);
+            if (player == null) return;
             player.X = packetSpawnPlayer.x;
             player.Y = packetSpawnPlayer.y;
             player.Z = packetSpawnPlayer.z;

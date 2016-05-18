@@ -5,6 +5,7 @@ using MoBot.Protocol.Handlers;
 using MoBot.Protocol.Packets.Handshake;
 using MoBot.Protocol.Threading;
 using MoBot.Structure.Actions;
+using MoBot.Structure.Game;
 using Newtonsoft.Json.Linq;
 
 namespace MoBot.Structure
@@ -16,7 +17,7 @@ namespace MoBot.Structure
         public IObserver<SysAction> Viewer { get; private set; }
         public Channel MainChannel { get; private set; }
         public IHandler Handler { get; private set; }
-        public String Username { get; private set; }
+        public string Username { get; private set; }
         public JArray ModList { get; private set; }
         private WritingThread _threadWrite;
         private ReadingThread _threadRead;        
@@ -41,6 +42,7 @@ namespace MoBot.Structure
                 TcpClient client = new TcpClient(serverIp, port);
                 MainChannel = new Channel(client.GetStream(), Channel.State.Login);
                 Username = name;
+                GameController.GetInstance().Clear();
                 Handler = new ClientHandler();               
                 _threadWrite = new WritingThread();
                 _threadRead = new ReadingThread();

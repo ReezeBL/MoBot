@@ -19,5 +19,10 @@
         public LivingEntity() : base(0, 0, 0)
         {
         }
+
+        public LivingEntity(int entityId) : base(entityId)
+        {
+            
+        }
     }
 }

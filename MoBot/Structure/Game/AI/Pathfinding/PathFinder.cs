@@ -6,20 +6,20 @@ using MoBot.Structure.Game.World;
 
 namespace MoBot.Structure.Game.AI.Pathfinding
 {
-    class PathFinder
+    internal class PathFinder
     {
-        public World World;
+        private readonly GameWorld _world = GameController.GetInstance().World;
         private readonly Hashtable _pointSet = new Hashtable();
 
-        public Path FlatPath(LivingEntity entity, PathPoint end)
+        public Path StaticPath(LivingEntity entity, PathPoint end)
         {
             return
-                FlatPath(
+                StaticPath(
                     new PathPoint(MathHelper.floor_double(entity.X), MathHelper.floor_double(entity.Y),
                         MathHelper.floor_double(entity.Z)), end);
         }
 
-        public Path FlatPath(PathPoint start, PathPoint end)
+        public Path StaticPath(PathPoint start, PathPoint end)
         {
             try
             {
@@ -60,10 +60,6 @@ namespace MoBot.Structure.Game.AI.Pathfinding
                     end = end.Prev;
                 }
                 pathfrom.Reverse();
-                foreach (var pp in pathfrom)
-                {
-                    Console.WriteLine($"Path point: {pp}");
-                }
                 return new Path(pathfrom);
             }
             catch (Exception e)
@@ -114,8 +110,8 @@ namespace MoBot.Structure.Game.AI.Pathfinding
             x = x < 0 ? x - 1 : x;
             z = z < 0 ? z - 1 : z;
 
-            Block floor = World.GetBlock(x, y, z);
-            Block upper = World.GetBlock(x, y + 1, z);
+            Block floor = _world.GetBlock(x, y, z);
+            Block upper = _world.GetBlock(x, y + 1, z);
 
             return IsBlockFree(floor) && IsBlockFree(upper);
         }
@@ -130,8 +126,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
             var p = new PathPoint(x, y, z);
             if (_pointSet.ContainsKey(p))
                 return _pointSet[p] as PathPoint;
-            else
-                _pointSet.Add(p, p);
+            _pointSet.Add(p, p);
             return p;
         }
     }
