@@ -2,6 +2,7 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using MoBot.Structure.Game.AI;
 using MoBot.Structure.Game.World;
 
 namespace MoBot.Structure.Game
@@ -10,7 +11,7 @@ namespace MoBot.Structure.Game
     {
         private static GameController _instance;
 
-        public static GameController GetInstance()
+        private static GameController GetInstance()
         {
             if (_instance == null)
                 return _instance = new GameController();
@@ -19,77 +20,81 @@ namespace MoBot.Structure.Game
 
         private GameController()
         {           
-            ActionManager = new ActionManager(this);
+            
         }
 
-        private readonly ConcurrentDictionary<int, Entity> _entities = new ConcurrentDictionary<int, Entity>();   
-        public Player Player { get; private set; }
-        public GameWorld World { get; private set; } = new GameWorld();
+        private readonly ConcurrentDictionary<int, Entity> _entities = new ConcurrentDictionary<int, Entity>();
+        private Player _player;
+        private readonly GameWorld _world = new GameWorld();      
+        public static GameWorld World => _instance?._world;       
+        public AiHandler AiHandler { get; private set; }
 
-        public ActionManager ActionManager { get; }
+        public static Player Player => _instance?._player;
 
-        public Entity GetEntity(int id)
+        public static Entity GetEntity(int id)
         {
             Entity res;
-            _entities.TryGetValue(id, out res);
+            GetInstance()._entities.TryGetValue(id, out res);
             return res;
         }
 
-        public Entity GetEntity()
+        public static Entity GetEntity()
         {
-            return _entities.Values.FirstOrDefault();
+            return GetInstance()._entities.Values.FirstOrDefault();
         }
 
-        public Entity GetEntity<T>() where T : Entity
+        public static Entity GetEntity<T>() where T : Entity
         {
-            return _entities.Values.OfType<T>().FirstOrDefault();
+            return GetInstance()._entities.Values.OfType<T>().FirstOrDefault();
         }
 
-        public IEnumerable<T> GetEntities<T>()
+        public static IEnumerable<T> GetEntities<T>()
         {
-            return _entities.Values.OfType<T>();
+            return GetInstance()._entities.Values.OfType<T>();
         }
 
-        public void RemoveEntity(int id)
+        public static void RemoveEntity(int id)
         {
             Entity entity;
-            _entities.TryRemove(id, out entity);
+            GetInstance()._entities.TryRemove(id, out entity);
         }
 
-        public void CreateUser(int uid, string name = "")
+        public static void CreateUser(int uid, string name = "")
         {
-            Player = CreatePlayer(uid, name);
+            GetInstance()._player = CreatePlayer(uid, name);
         }
 
-        public Player CreatePlayer(int uid, string name)
+        public static Player CreatePlayer(int uid, string name)
         {
-            Player player = new Player(name);
-            if (_entities.TryAdd(uid, player)) return player;
+            var player = new Player(uid, name);
+            if (GetInstance()._entities.TryAdd(uid, player)) return player;
             Console.WriteLine($"Cannot add Entity {uid} to collection!");
             return null;
         }
 
-        public Mob CreateMob(int entityId, byte type = 0)
+        public static Mob CreateMob(int entityId, byte type = 0)
         {
-            Mob entity = new Mob {Type = type};
-            if (_entities.TryAdd(entityId, entity)) return entity;
+            Mob entity = new Mob(entityId) {Type = type};
+            if (GetInstance()._entities.TryAdd(entityId, entity)) return entity;
             Console.WriteLine($"Cannot add Entity {entityId} to collection!");
             return null;
         }
 
-        public LivingEntity CreateLivingEntity(int entityId, byte type)
+        public static LivingEntity CreateLivingEntity(int entityId, byte type)
         {
             LivingEntity entity = new LivingEntity(entityId);
-            if (_entities.TryAdd(entityId, entity)) return entity;
+            if (GetInstance()._entities.TryAdd(entityId, entity)) return entity;
             Console.WriteLine($"Cannot add Entity {entityId} to collection!");
             return null;
         }
 
-        public void Clear()
+        public static void Clear()
         {
-            _entities.Clear();
-            World = new GameWorld();
-            Player = null;
+            var instance = GetInstance();
+            instance._entities.Clear();
+            instance._world.Clear();
+            instance.AiHandler = new AiHandler(new BasicRoutine());
+            instance._player = null;
         }
 
     }

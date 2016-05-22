@@ -19,8 +19,8 @@ namespace MoBot
             Application.SetCompatibleTextRenderingDefault(false);
             Protocol.Channel.InitDicts();
             Structure.Game.GameBlock.loadBlocks();
-            Model model = Model.GetInstance();
-            Controller controller = new Controller { Model = model };
+            NetworkController model = NetworkController.GetInstance();
+            Controller controller = new Controller();
             Viewer viewer = new Viewer { mainController = controller };
             model.Subscribe(viewer);
             Application.Run(viewer);

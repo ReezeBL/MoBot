@@ -1,38 +1,43 @@
 ﻿using MoBot.Structure.Game;
 using System;
 using System.Text;
+using MoBot.Structure.Game.AI.Pathfinding;
 
 namespace MoBot.Structure
 {
     internal class Controller
-    {
-        public Model Model;
-  
+    {       
         public void HandleConnect()
         {
-            Model.Connect("151.80.33.194", 24444, "NoliSum");
+            NetworkController.Connect("151.80.33.194", 24444, "NoliSum");
         }
 
         public void HandleChatMessage(string message)
         {
-            var manager = GameController.GetInstance().ActionManager;
-            var controller = GameController.GetInstance();
+            if (!NetworkController.Connected)
+                return;   
             if (!message.StartsWith("-"))
-                manager.SendChatMessage(message);
+                ActionManager.SendChatMessage(message);
             else
             {
                 var split = message.Split(' ');
                 switch (split[0])
                 {
+                    case "-disconnect":
+                    {
+                        NetworkController.Disconnect();   
+                        NetworkController.NotifyViewer("Client diconnected!");                    
+                    }
+                        break;
                     case "-elist":
                     {
-                        StringBuilder sb = new StringBuilder();
+                        var sb = new StringBuilder();
                         sb.AppendLine("Nearby entities:");
-                        foreach (var e in controller.GetEntities<LivingEntity>())
+                        foreach (var e in GameController.GetEntities<LivingEntity>())
                         {
                             sb.AppendLine($"--{e}");
                         }
-                        Model.Viewer.OnNext(new Actions.ActionMessage { message = sb.ToString() });
+                        NetworkController.NotifyViewer(sb.ToString());
                     }
                         break;
                     case "-inventory":
@@ -42,14 +47,25 @@ namespace MoBot.Structure
                         for(var i = 1;i<=4;i++)
                         {
                             for(var  j=0;j<9;j++)
-                                sb.Append($"{i * 9 + j} : {controller.Player.Inventory[i * 9 + j]} ");
+                                sb.Append($"{i * 9 + j} : {GameController.Player.Inventory[i * 9 + j]} ");
                             sb.AppendLine();
                         }
                         Console.WriteLine(sb.ToString());
                     }
                         break;
                     case "-swap":
-                        manager.ExchangeInventorySlots(int.Parse(split[1]), int.Parse(split[2]));
+                        ActionManager.ExchangeInventorySlots(int.Parse(split[1]), int.Parse(split[2]));
+                        break;
+                    case "-move":
+                    {                      
+                       ActionManager.MoveToLocation(
+                            new PathPoint(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3])));
+                    }
+                        break;
+                    default:
+                    {
+                        NetworkController.NotifyViewer("Unknown command!");
+                    }
                         break;
                 }
             }
@@ -57,8 +73,8 @@ namespace MoBot.Structure
 
         internal void HandleConnect(string username, string serverIp)
         {
-            String[] split = serverIp.Split(':');
-            Model.Connect(split[0], int.Parse(split[1]), username);
+            var split = serverIp.Split(':');
+            NetworkController.Connect(split[0], int.Parse(split[1]), username);
         }
     }
 }

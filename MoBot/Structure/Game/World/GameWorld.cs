@@ -57,5 +57,13 @@ namespace MoBot.Structure.Game.World
                 return _chunks.FirstOrDefault(b => b.X == chunkX & b.Z == chunkZ);
             }
         }
+
+        public void Clear()
+        {
+            lock (_chunkLocker)
+            {
+                _chunks.Clear();
+            }
+        }
     }
 }

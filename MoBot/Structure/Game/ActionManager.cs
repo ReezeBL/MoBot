@@ -1,5 +1,6 @@
 using System;
 using System.Threading;
+using AForge.Math;
 using MoBot.Protocol.Packets.Play;
 using MoBot.Structure.Game.AI.Pathfinding;
 
@@ -7,84 +8,116 @@ namespace MoBot.Structure.Game
 {
     internal class ActionManager
     {
-        private static int _transactionId = 1;
-        private readonly GameController _gameController;
-        public DateTime LastMove = DateTime.Now;
+        private static int _transactionId = 1;       
+        public static DateTime LastMove = DateTime.Now;
 
-        public ActionManager(GameController gameController)
+        private ActionManager()
         {
-            _gameController = gameController;
+            
         }
 
-        public void SendChatMessage(string message)
+        public static void SendChatMessage(string message)
         {
-            Model.GetInstance().SendPacket(new PacketChat { message = message });                       
+            NetworkController.SendPacket(new PacketChat { message = message });                       
         }
 
-        public void UpdateMotion()
+        public static void UpdateMotion()
         {
-
-            Model.GetInstance().SendPacket(new PacketPlayerPosLook
-            {
-                X = _gameController.Player.X,
-                Y = _gameController.Player.Y,
-                Z = _gameController.Player.Z,
-                yaw = _gameController.Player.Yaw,
-                pitch = _gameController.Player.Pitch,
-                onGround = _gameController.Player.OnGround
+            var player = GameController.Player;
+            NetworkController.SendPacket(new PacketPlayerPosLook
+            {              
+                X = player.X,
+                Y = player.Y,
+                Z = player.Z,
+                Yaw = player.Yaw,
+                Pitch = player.Pitch,
+                OnGround = player.OnGround
             });
 
         }
 
-        public void Respawn()
+        public static void Respawn()
         {
-            Model.GetInstance().SendPacket(new PacketClientStatus {Action = 0});
+            NetworkController.SendPacket(new PacketClientStatus {Action = 0});
         }
 
-        public void OpenInventory()
+        public static void OpenInventory()
         {
-            Model.GetInstance().SendPacket(new PacketClientStatus {Action = 2});
+            NetworkController.SendPacket(new PacketClientStatus {Action = 2});
         }
 
-        public void SetPlayerPos(double x, double y, double z)
-        {            
-            double dx = x - _gameController.Player.X;
-            double dy = y - _gameController.Player.Y;
-            double dz = z - _gameController.Player.Z;
-            bool moved = dx * dx + dy * dy + dz * dz >= 9e-4;
-            _gameController.Player.OnGround = Math.Abs(dy) >= 0.1;
-            _gameController.Player.X = x;
-            _gameController.Player.Y = y;
-            _gameController.Player.Z = z;
+        public static void SetPlayerPos(double x, double y, double z)
+        {
+            var player = GameController.Player;
+            var dx = x - player.X;
+            var dy = y - player.Y;
+            var dz = z - player.Z;
+            var moved = dx*dx + dy*dy + dz*dz >= 9e-4;
+            player.OnGround = Math.Abs(dy) >= 0.1;
+            player.SetPosition(x,y,z);
             UpdateMotion();
             if (moved)
                 LastMove = DateTime.Now;
         }
 
-        public void RotatePlayer(double x, double y, double z)
+        public static void SetPlayerPos(Vector3 newPos)
         {
+            var player = GameController.Player;
+            var dir = player.Position - newPos;
+            var moved = dir.Square >= 9e-4;
+            player.OnGround = Math.Abs(dir.Y) >= 0.1;
+            player.SetPosition(newPos);
+            UpdateMotion();
+            if (moved)
+                LastMove = DateTime.Now;
+        }
+
+        public static void MovePlayer(double dx, double dy, double dz)
+        {
+            var player = GameController.Player;
+            var moved = dx * dx + dy * dy + dz * dz >= 9e-4;
+            player.OnGround = Math.Abs(dy) >= 0.1;
+            player.Move(dx, dy, dz);
+            UpdateMotion();
+            if (moved)
+                LastMove = DateTime.Now;
+        }
+
+        public static void MovePlayer(Vector3 dir)
+        {
+            var player = GameController.Player;
+            var moved = dir.Square >= 9e-4;
+            player.OnGround = Math.Abs(dir.Y) >= 0.1;
+            player.Move(dir);
+            UpdateMotion();
+            if (moved)
+                LastMove = DateTime.Now;
+        }
+
+        public static void RotatePlayer(double x, double y, double z)
+        {
+            var player = GameController.Player;
             double r = Math.Sqrt(x * x + y * y + z * z);
             double yaw = -Math.Atan2(x, z) / Math.PI * 180;
             double pitch = -Math.Asin(y / r) / Math.PI * 180;
-            _gameController.Player.Yaw = (float)yaw;
-            _gameController.Player.Pitch = (float)pitch;
+            player.Yaw = (float)yaw;
+            player.Pitch = (float)pitch;
         }
 
-        public void ClickInventorySlot(int slot)
+        public static void ClickInventorySlot(int slot)
         {
-            Model.GetInstance()
-                .SendPacket(new PacketClickWindow
+            NetworkController.SendPacket(new PacketClickWindow
                 {
                     WindowID = 0,
                     Mode = 0,
                     ActionNumber = (short) _transactionId++,
                     Button = 0,
                     Slot = (short) slot,
-                    ItemStack = _gameController.Player.Inventory[slot]
+                    ItemStack = GameController.Player.Inventory[slot]
                 });
         }
 
-        public void ExchangeInventorySlots(int slot1, int slot2)
+        public static void ExchangeInventorySlots(int slot1, int slot2)
         {
             ClickInventorySlot(slot1);
             Thread.Sleep(100);
@@ -93,14 +126,52 @@ namespace MoBot.Structure.Game
             ClickInventorySlot(slot1);
         }
 
-        public void MoveToLocation(PathPoint endPoint)
+        public static void MoveToLocation(PathPoint endPoint)
         {
-            PathFinder pf = new PathFinder();
-            var path = pf.DynamicPath(_gameController.Player, endPoint);
+            var pf = new PathFinder();
+            var path = pf.DynamicPath(GameController.Player, endPoint);
+            path.MoveNext();       
             for (var point = path.Current; point != null; path.MoveNext(), point = path.Current)
             {
-                
-            } 
+                Console.WriteLine(point);
+                SmoothMove(point);
+            }
+        }
+        public static void MoveToLocationS(PathPoint endPoint)
+        {
+            
+            var pf = new PathFinder();
+            var path = pf.StaticPath(GameController.Player, endPoint);
+            while (path.HasNext())
+            {
+                var point = path.Dequeue();
+                Console.WriteLine(point);
+                SmoothMove(point);
+            }
+        }
+
+        private static void SmoothMove(PathPoint point)
+        {
+            const float speed = 0.4f;          
+            var player = GameController.Player;
+            while (true)
+            {              
+                var vertical = new Vector3(0f, point.Y - player.Y, 0f);               
+                var horizontal = new Vector3(point.X + 0.5f * Math.Sign(point.X) - player.X, 0, point.Z + 0.5f * Math.Sign(point.Z) - player.Z);               
+                var dir = vertical + horizontal;
+                if (dir.Square < speed)
+                    break;
+                vertical.Normalize();
+                horizontal.Normalize();                             
+                RotatePlayer(dir.X, dir.Y, dir.Z);
+                if (vertical.Square > 0.1f)
+                    MovePlayer(vertical);
+                else if (horizontal.Square > 0.2f)
+                   MovePlayer(horizontal*speed);
+                else
+                    MovePlayer(vertical);
+                Thread.Sleep(100);
+            }
         }
     }
 }

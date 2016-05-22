@@ -4,9 +4,9 @@ namespace MoBot.Structure.Game.AI
 {
     internal class BasicRoutine : IRoutine
     {
-        public Task<bool> Logic()
+        public Task Logic()
         {
-            return new Task<bool>(() => true);
+            return new Task(action: () => { });
         }
     }
 }

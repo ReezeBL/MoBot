@@ -8,7 +8,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 {
     internal class PathFinder
     {
-        private readonly GameWorld _world = GameController.GetInstance().World;
+        private readonly GameWorld _world = GameController.World;
         private readonly Hashtable _pointSet = new Hashtable();
 
         public Path StaticPath(LivingEntity entity, PathPoint end)
@@ -69,14 +69,14 @@ namespace MoBot.Structure.Game.AI.Pathfinding
             }
         }
 
-        public IEnumerator DynamicPath(Entity entity, PathPoint endPoint)
+        public IEnumerator<PathPoint> DynamicPath(Entity entity, PathPoint endPoint)
         {
             return DynamicPath(new PathPoint((int) entity.X, (int) entity.Y, (int) entity.Z),  endPoint);
         }
         public IEnumerator<PathPoint> DynamicPath(PathPoint startPoint, PathPoint endPoint)
         {
             Path path = null;
-            var validation = 0;
+            var validation = -1;
             while (true)
             {              
                 if (validation != _world.WorldValidation)
@@ -84,7 +84,10 @@ namespace MoBot.Structure.Game.AI.Pathfinding
                     path = StaticPath(startPoint, endPoint);
                     validation = _world.WorldValidation;
                 }
-                startPoint = path?.Dequeue();
+                var tmp = path?.Dequeue();
+                if (tmp != null && tmp.Equals(startPoint))
+                    tmp = path.Dequeue();
+                startPoint = tmp;
                 if (startPoint == null || startPoint.Equals(endPoint))
                     yield break;
                 yield return startPoint;

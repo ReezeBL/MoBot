@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MoBot.Structure
+﻿namespace MoBot.Structure
 {
-    class MathHelper
+    internal class MathHelper
     {
-        public static int floor_double(double p_76128_0_)
+        public static int floor_double(double p)
         {
-            int i = (int)p_76128_0_;
-            return p_76128_0_ < (double)i ? i : i;
+            var i = (int)p;
+            return i;
         }
     }
 }

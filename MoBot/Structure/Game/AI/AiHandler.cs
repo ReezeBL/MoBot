@@ -9,7 +9,7 @@ namespace MoBot.Structure.Game.AI
     {
         private IRoutine _mainRoutine;
         private readonly Thread _aiThread;
-        private readonly ConcurrentQueue<Task<bool>> _tasks = new ConcurrentQueue<Task<bool>>();
+        private readonly ConcurrentQueue<Task> _tasks = new ConcurrentQueue<Task>();
         private bool _threadContinue = true;
 
         public AiHandler(IRoutine routine)
@@ -21,7 +21,7 @@ namespace MoBot.Structure.Game.AI
                 {
                     while (_tasks.Count > 0)
                     {
-                        Task<bool> result;
+                        Task result;
                         _tasks.TryDequeue(out result);
                         await result;
                     }
@@ -38,9 +38,9 @@ namespace MoBot.Structure.Game.AI
             _aiThread.Start();
         }
 
-        public void EnqueueTask(Func<bool> func)
+        public void EnqueueTask(Action func)
         {
-            _tasks.Enqueue(new Task<bool>(func));
+            _tasks.Enqueue(new Task(func));
         }
     }
 }

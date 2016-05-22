@@ -9,20 +9,17 @@ namespace MoBot.Protocol.Threading
         private readonly object _queueLocker = new object();
         private Thread ReadThread { get; set; }
         private Thread ProcessThread { get; set; }
-
-        private readonly Model _model;
         private readonly Queue<Packet> _processQueue = new Queue<Packet>();
         public ReadingThread()
-        {
-            _model = Model.GetInstance();
+        {           
             ReadThread = new Thread(() =>
             {
                 while (Process)
                 {
-                    var packet = _model.MainChannel.GetPacket();
+                    var packet = NetworkController.MainChannel.GetPacket();
                     if (packet == null) continue;
                     if (packet.ProceedNow())
-                        packet.HandlePacket(_model.Handler);
+                        packet.HandlePacket(NetworkController.Handler);
                     else
                         lock (_queueLocker)
                             _processQueue.Enqueue(packet);
@@ -36,7 +33,7 @@ namespace MoBot.Protocol.Threading
                     lock (_queueLocker)
                     {
                         while (_processQueue.Count > 0)
-                            _processQueue.Dequeue().HandlePacket(_model.Handler);
+                            _processQueue.Dequeue().HandlePacket(NetworkController.Handler);
                     }
                     Thread.Sleep(50);
                 }

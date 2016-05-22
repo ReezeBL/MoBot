@@ -10,7 +10,7 @@
         public float Saturation;
         public string Name;
 
-        public Player(string name) : base(0, 0, 0)
+        public Player(int id, string name) : base(id)
         {
             Name = name;
         }
