@@ -131,7 +131,7 @@ namespace MoBot.Protocol.Handlers
                     _log.Error("Auth failed!\nAuth username: {1}\nAuth ID:{2}\nAuth response : {0}", responseString,
                         NetworkController.Username, id);
             }
-            catch (SocketException)
+            catch (WebException)
             {
                 _log.Error("Unable to connect to login server!");
             }
@@ -242,8 +242,9 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketPlayerPosLook(PacketPlayerPosLook packetPlayerPosLook)
         {
-            Console.WriteLine($"Assigning player position from {{{(int) GameController.Player.X}|{(int) GameController.Player.Y}|{(int) GameController.Player.Z}}} to {{{(int) packetPlayerPosLook.X}|{(int) (packetPlayerPosLook.Y - 1.62)}|{(int) packetPlayerPosLook.Z}}}");
-            GameController.Player.SetPosition(packetPlayerPosLook.X, packetPlayerPosLook.Y - 1.62, packetPlayerPosLook.Z);         
+            //Console.WriteLine($"Assigning player position from {{{(int) GameController.Player.X}|{(int) GameController.Player.Y}|{(int) GameController.Player.Z}}} to {{{(int) packetPlayerPosLook.X}|{(int) (packetPlayerPosLook.Y - 1.62)}|{(int) packetPlayerPosLook.Z}}}");
+            //Console.WriteLine($"Assigning player position from {{{GameController.Player.X}|{GameController.Player.Y}|{GameController.Player.Z}}} to {{{(float)packetPlayerPosLook.X}|{(float)(packetPlayerPosLook.Y - 1.62)}|{(float)packetPlayerPosLook.Z}}}");
+            GameController.Player.SetPosition(packetPlayerPosLook.X, packetPlayerPosLook.Y -= 1.62, packetPlayerPosLook.Z);         
             GameController.Player.Yaw = packetPlayerPosLook.Yaw;
             GameController.Player.Pitch = packetPlayerPosLook.Pitch;
             GameController.Player.OnGround = packetPlayerPosLook.OnGround;

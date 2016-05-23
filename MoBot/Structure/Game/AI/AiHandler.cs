@@ -9,38 +9,44 @@ namespace MoBot.Structure.Game.AI
     {
         private IRoutine _mainRoutine;
         private readonly Thread _aiThread;
-        private readonly ConcurrentQueue<Task> _tasks = new ConcurrentQueue<Task>();
+        private readonly ConcurrentQueue<Action> _tasks = new ConcurrentQueue<Action>();
         private bool _threadContinue = true;
 
         public AiHandler(IRoutine routine)
         {
             _mainRoutine = routine;
-            _aiThread = new Thread(async () =>
+            _aiThread = new Thread(() =>
             {
                 while (_threadContinue)
                 {
-                    while (_tasks.Count > 0)
+                    if (NetworkController.Connected && GameController.Player != null)
                     {
-                        Task result;
-                        _tasks.TryDequeue(out result);
-                        await result;
+                        while (_tasks.Count > 0)
+                        {
+                            Action result;
+                            _tasks.TryDequeue(out result);
+                            result.Invoke();
+                        }
+                        _mainRoutine.Logic();
                     }
+                    
                     Thread.Sleep(50);
-                }
-                _tasks.Enqueue(routine.Logic());
+                }               
             }) {IsBackground = true};
+            _aiThread.Start();
         }
         public void HookNewRoutine(IRoutine routine)
         {
             _threadContinue = false;
             _aiThread.Join();
             _mainRoutine = routine;
+            _threadContinue = true;
             _aiThread.Start();
         }
 
         public void EnqueueTask(Action func)
         {
-            _tasks.Enqueue(new Task(func));
+            _tasks.Enqueue(func);
         }
     }
 }

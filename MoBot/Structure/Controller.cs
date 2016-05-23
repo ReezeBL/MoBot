@@ -9,6 +9,8 @@ namespace MoBot.Structure
     {       
         public void HandleConnect()
         {
+            if (NetworkController.Connected)
+                return;
             NetworkController.Connect("151.80.33.194", 24444, "NoliSum");
         }
 
@@ -57,9 +59,9 @@ namespace MoBot.Structure
                         ActionManager.ExchangeInventorySlots(int.Parse(split[1]), int.Parse(split[2]));
                         break;
                     case "-move":
-                    {                      
-                       ActionManager.MoveToLocation(
-                            new PathPoint(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3])));
+                    {
+                        GameController.AiHandler.EnqueueTask(() => ActionManager.MoveToLocation(
+                            new PathPoint(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3]))));
                     }
                         break;
                     default:
@@ -73,6 +75,8 @@ namespace MoBot.Structure
 
         internal void HandleConnect(string username, string serverIp)
         {
+            if (NetworkController.Connected)
+                return;
             var split = serverIp.Split(':');
             NetworkController.Connect(split[0], int.Parse(split[1]), username);
         }

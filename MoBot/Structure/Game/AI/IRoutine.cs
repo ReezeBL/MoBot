@@ -4,6 +4,6 @@ namespace MoBot.Structure.Game.AI
 {
     internal interface IRoutine
     {
-        Task Logic();
+        void Logic();
     }
 }

@@ -21,7 +21,7 @@ namespace MoBot.Structure.Game
             NetworkController.SendPacket(new PacketChat { message = message });                       
         }
 
-        public static void UpdateMotion()
+        public static void UpdatePosition()
         {
             var player = GameController.Player;
             NetworkController.SendPacket(new PacketPlayerPosLook
@@ -39,12 +39,7 @@ namespace MoBot.Structure.Game
         public static void Respawn()
         {
             NetworkController.SendPacket(new PacketClientStatus {Action = 0});
-        }
-
-        public static void OpenInventory()
-        {
-            NetworkController.SendPacket(new PacketClientStatus {Action = 2});
-        }
+        }       
 
         public static void SetPlayerPos(double x, double y, double z)
         {
@@ -55,7 +50,7 @@ namespace MoBot.Structure.Game
             var moved = dx*dx + dy*dy + dz*dz >= 9e-4;
             player.OnGround = Math.Abs(dy) >= 0.1;
             player.SetPosition(x,y,z);
-            UpdateMotion();
+            UpdatePosition();
             if (moved)
                 LastMove = DateTime.Now;
         }
@@ -67,7 +62,7 @@ namespace MoBot.Structure.Game
             var moved = dir.Square >= 9e-4;
             player.OnGround = Math.Abs(dir.Y) >= 0.1;
             player.SetPosition(newPos);
-            UpdateMotion();
+            UpdatePosition();
             if (moved)
                 LastMove = DateTime.Now;
         }
@@ -78,7 +73,7 @@ namespace MoBot.Structure.Game
             var moved = dx * dx + dy * dy + dz * dz >= 9e-4;
             player.OnGround = Math.Abs(dy) >= 0.1;
             player.Move(dx, dy, dz);
-            UpdateMotion();
+            UpdatePosition();
             if (moved)
                 LastMove = DateTime.Now;
         }
@@ -89,7 +84,7 @@ namespace MoBot.Structure.Game
             var moved = dir.Square >= 9e-4;
             player.OnGround = Math.Abs(dir.Y) >= 0.1;
             player.Move(dir);
-            UpdateMotion();
+            UpdatePosition();
             if (moved)
                 LastMove = DateTime.Now;
         }
@@ -130,47 +125,43 @@ namespace MoBot.Structure.Game
         {
             var pf = new PathFinder();
             var path = pf.DynamicPath(GameController.Player, endPoint);
-            path.MoveNext();       
-            for (var point = path.Current; point != null; path.MoveNext(), point = path.Current)
-            {
-                Console.WriteLine(point);
+            foreach(var point in path)             
                 SmoothMove(point);
-            }
+
         }
         public static void MoveToLocationS(PathPoint endPoint)
         {
             
             var pf = new PathFinder();
             var path = pf.StaticPath(GameController.Player, endPoint);
-            while (path.HasNext())
-            {
-                var point = path.Dequeue();
-                Console.WriteLine(point);
+            foreach (var point in path)
                 SmoothMove(point);
-            }
         }
 
         private static void SmoothMove(PathPoint point)
         {
-            const float speed = 0.4f;          
-            var player = GameController.Player;
+            var speed = 0.6f;          
+            var player = GameController.Player;           
             while (true)
             {              
                 var vertical = new Vector3(0f, point.Y - player.Y, 0f);               
                 var horizontal = new Vector3(point.X + 0.5f * Math.Sign(point.X) - player.X, 0, point.Z + 0.5f * Math.Sign(point.Z) - player.Z);               
                 var dir = vertical + horizontal;
-                if (dir.Square < speed)
+                if(dir.Norm < 0.1)
                     break;
-                vertical.Normalize();
-                horizontal.Normalize();                             
+                if (horizontal.Norm < speed)
+                    speed = horizontal.Norm;                                                                                                   
                 RotatePlayer(dir.X, dir.Y, dir.Z);
-                if (vertical.Square > 0.1f)
+                if (vertical.Y > 0.1f)
                     MovePlayer(vertical);
-                else if (horizontal.Square > 0.2f)
-                   MovePlayer(horizontal*speed);
+                else if (horizontal.Norm > 0.1f)
+                {
+                    horizontal.Normalize();
+                    MovePlayer(horizontal*speed);
+                }
                 else
                     MovePlayer(vertical);
-                Thread.Sleep(100);
+                Thread.Sleep(50);
             }
         }
     }

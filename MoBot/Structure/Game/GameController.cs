@@ -27,8 +27,7 @@ namespace MoBot.Structure.Game
         private Player _player;
         private readonly GameWorld _world = new GameWorld();      
         public static GameWorld World => _instance?._world;       
-        public AiHandler AiHandler { get; private set; }
-
+        public static AiHandler AiHandler { get; private set; } = new AiHandler(new BasicRoutine());
         public static Player Player => _instance?._player;
 
         public static Entity GetEntity(int id)
@@ -93,8 +92,7 @@ namespace MoBot.Structure.Game
             var instance = GetInstance();
             instance._entities.Clear();
             instance._world.Clear();
-            instance.AiHandler = new AiHandler(new BasicRoutine());
-            instance._player = null;
+            _instance._player = null;
         }
 
     }

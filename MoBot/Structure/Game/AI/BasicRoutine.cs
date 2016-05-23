@@ -4,9 +4,10 @@ namespace MoBot.Structure.Game.AI
 {
     internal class BasicRoutine : IRoutine
     {
-        public Task Logic()
+        public void Logic()
         {
-            return new Task(action: () => { });
+            if(GameController.Player.Health <= 0)
+                ActionManager.Respawn();
         }
     }
 }

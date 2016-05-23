@@ -30,9 +30,9 @@ namespace MoBot.Structure.Game
 
         public virtual float GetItemEffectivness(GameBlock block)
         {
-            if (block.hardness < 0)
+            if (block.Hardness < 0)
                 return -1.0f;
-            return 20.0f / (1.0f / block.hardness / 100);
+            return 20.0f / (1.0f / block.Hardness / 100);
         }
     }
 }

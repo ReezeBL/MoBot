@@ -8,7 +8,27 @@ namespace MoBot.Structure.Game.World
     {
         private readonly List<Chunk> _chunks = new List<Chunk>();
         private readonly object _chunkLocker = new object();
-        public int WorldValidation { get; private set; }
+        private readonly object _validationLocker = new object();
+        private int _validation;
+
+        public int WorldValidation
+        {
+            get
+            {
+                lock (_validationLocker)
+                {
+                    return _validation;
+                }
+            }
+            private set
+            {
+                lock (_validationLocker)
+                {
+                    _validation = value;
+                }
+            }
+        }
+
 
         public void Invalidate()
         {
@@ -64,6 +84,22 @@ namespace MoBot.Structure.Game.World
             {
                 _chunks.Clear();
             }
+        }
+
+        public bool CanMoveTo(int x, int y, int z)
+        {
+            x = x < 0 ? x - 1 : x;
+            z = z < 0 ? z - 1 : z;
+
+            Block floor = GetBlock(x, y, z);
+            Block upper = GetBlock(x, y + 1, z);
+
+            return IsBlockFree(floor) && IsBlockFree(upper);
+        }
+
+        private static bool IsBlockFree(Block b)
+        {
+            return b == null || GameBlock.GetBlock(b.Id).Transparent;
         }
     }
 }

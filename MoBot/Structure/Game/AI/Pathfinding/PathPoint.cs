@@ -23,6 +23,13 @@ namespace MoBot.Structure.Game.AI.Pathfinding
             Z = block.Z;
         }
 
+        public PathPoint(Entity entity)
+        {
+            X = (int) entity.X;
+            Y = (int) entity.Y;
+            Z = (int) entity.Z;
+        }
+
         public PathPoint() { }
 
         public double DistanceTo(PathPoint other)
