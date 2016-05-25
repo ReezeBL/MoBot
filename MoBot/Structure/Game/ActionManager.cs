@@ -123,8 +123,7 @@ namespace MoBot.Structure.Game
 
         public static void MoveToLocation(PathPoint endPoint)
         {
-            var pf = new PathFinder();
-            var path = pf.DynamicPath(GameController.Player, endPoint);
+            var path = PathFinder.DynamicPath(GameController.Player, endPoint);
             foreach(var point in path)             
                 SmoothMove(point);
 
@@ -132,8 +131,7 @@ namespace MoBot.Structure.Game
         public static void MoveToLocationS(PathPoint endPoint)
         {
             
-            var pf = new PathFinder();
-            var path = pf.StaticPath(GameController.Player, endPoint);
+            var path = PathFinder.StaticPath(GameController.Player, endPoint);
             foreach (var point in path)
                 SmoothMove(point);
         }

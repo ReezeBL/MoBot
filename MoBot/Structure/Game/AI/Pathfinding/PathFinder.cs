@@ -2,25 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using MoBot.Structure.Game.World;
 using Priority_Queue;
 
 namespace MoBot.Structure.Game.AI.Pathfinding
 {
-    internal class PathFinder
+    internal static class PathFinder
     {
-        public PathFinder(bool canFly = false, bool canDig = false)
-        {
-            _canFly = canFly;
-            _canDig = canDig;
-        }
-
-        private readonly GameWorld _world = GameController.World;
-        private readonly Hashtable _pointSet = new Hashtable();
-        private readonly bool _canFly;
-        private readonly bool _canDig;
-        private readonly FastPriorityQueue<PathPoint> _frontier = new FastPriorityQueue<PathPoint>(30000);
-        public Path StaticPath(LivingEntity entity, PathPoint end)
+        private static readonly Hashtable PointSet = new Hashtable();
+        private static readonly FastPriorityQueue<PathPoint> Frontier = new FastPriorityQueue<PathPoint>(30000);
+        public static Path StaticPath(LivingEntity entity, PathPoint end)
         {
             return
                 StaticPath(
@@ -28,18 +18,18 @@ namespace MoBot.Structure.Game.AI.Pathfinding
                         MathHelper.floor_double(entity.Z)), end);
         }
 
-        public Path StaticPath(PathPoint start, PathPoint end)
+        public static Path StaticPath(PathPoint start, PathPoint end)
         {
             try
             {
-                _frontier.Clear();
+                Frontier.Clear();
                 Hashtable startCost = new Hashtable();
-                _frontier.Enqueue(start, 0);
+                Frontier.Enqueue(start, 0);
                 start.Prev = null;
                 startCost.Add(start, 0);
-                while (_frontier.Count > 0)
+                while (Frontier.Count > 0)
                 {
-                    var current = _frontier.Dequeue();
+                    var current = Frontier.Dequeue();
                     if (current.Equals(end))
                     {
                         end = current;
@@ -51,13 +41,13 @@ namespace MoBot.Structure.Game.AI.Pathfinding
                         if (!startCost.ContainsKey(next))
                         {
                             startCost.Add(next, cost);
-                            _frontier.Enqueue(next, cost + next.DistanceTo(end));
+                            Frontier.Enqueue(next, cost + next.DistanceTo(end));
                             next.Prev = current;
                         }
                         else if ((int) startCost[next] > cost)
                         {
                             startCost[next] = cost;
-                            _frontier.UpdatePriority(next, cost + next.DistanceTo(end));
+                            Frontier.UpdatePriority(next, cost + next.DistanceTo(end));
                             next.Prev = current;
                         }
                     }
@@ -78,19 +68,19 @@ namespace MoBot.Structure.Game.AI.Pathfinding
             }
         }
 
-        public Path DynamicPath(Entity entity, PathPoint endPoint)
+        public static Path DynamicPath(Entity entity, PathPoint endPoint)
         {
             return new Path(DynamicPathGenerator(entity, endPoint));
         }
-        public Path DynamicPath(PathPoint start, PathPoint endPoint)
+        public static Path DynamicPath(PathPoint start, PathPoint endPoint)
         {
             return new Path(DynamicPathGenerator(start, endPoint));
         }
-        private IEnumerator<PathPoint> DynamicPathGenerator(Entity entity, PathPoint endPoint)
+        private static IEnumerator<PathPoint> DynamicPathGenerator(Entity entity, PathPoint endPoint)
         {
             return DynamicPathGenerator(new PathPoint((int) entity.X, (int) entity.Y, (int) entity.Z),  endPoint);
         }
-        private IEnumerator<PathPoint> DynamicPathGenerator(PathPoint startPoint, PathPoint endPoint)
+        private static IEnumerator<PathPoint> DynamicPathGenerator(PathPoint startPoint, PathPoint endPoint)
         {
             while(true)
             {
@@ -107,10 +97,10 @@ namespace MoBot.Structure.Game.AI.Pathfinding
             }
         }
 
-        private IEnumerable<PathPoint> GetNeighbours(PathPoint point)
+        private static IEnumerable<PathPoint> GetNeighbours(PathPoint point)
         {
             List<PathPoint> candidats = new List<PathPoint>();
-            int canJump = _world.CanMoveTo(point.X, point.Y + 1, point.Z) ? 1 : 0;
+            int canJump = GameController.World.CanMoveTo(point.X, point.Y + 1, point.Z) ? 1 : 0;
             candidats.Add(GetSafePoint(point.X + 1, point.Y, point.Z, canJump));
             candidats.Add(GetSafePoint(point.X - 1, point.Y, point.Z, canJump));
             candidats.Add(GetSafePoint(point.X, point.Y, point.Z + 1, canJump));
@@ -119,14 +109,14 @@ namespace MoBot.Structure.Game.AI.Pathfinding
             return res;
         }
 
-        private PathPoint GetSafePoint(int x, int y, int z, int jumpBlocks = 0)
+        private static PathPoint GetSafePoint(int x, int y, int z, int jumpBlocks = 0)
         {
             PathPoint res = null;
-            if (_world.CanMoveTo(x, y, z))
+            if (GameController.World.CanMoveTo(x, y, z))
                 res = CreatePoint(x, y, z);
             else if (jumpBlocks > 0)
             {
-                if (_world.CanMoveTo(x, y + jumpBlocks, z))
+                if (GameController.World.CanMoveTo(x, y + jumpBlocks, z))
                 {
                     res = CreatePoint(x, y + jumpBlocks, z);
                     y += jumpBlocks;
@@ -135,7 +125,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 
             if (res == null) return null;
             while (y > 0)
-                if (_world.CanMoveTo(x, y - 1, z))
+                if (GameController.World.CanMoveTo(x, y - 1, z))
                     y--;
                 else
                     break;
@@ -143,12 +133,12 @@ namespace MoBot.Structure.Game.AI.Pathfinding
             return res;
         }
 
-        private PathPoint CreatePoint(int x, int y, int z)
+        private static PathPoint CreatePoint(int x, int y, int z)
         {
             var p = new PathPoint(x, y, z);
-            if (_pointSet.ContainsKey(p))
-                return _pointSet[p] as PathPoint;
-            _pointSet.Add(p, p);
+            if (PointSet.ContainsKey(p))
+                return PointSet[p] as PathPoint;
+            PointSet.Add(p, p);
             return p;
         }
     }
