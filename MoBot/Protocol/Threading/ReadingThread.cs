@@ -1,14 +1,14 @@
-﻿using MoBot.Structure;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading;
+using MoBot.Structure;
 
 namespace MoBot.Protocol.Threading
 {
     class ReadingThread : BaseThread
     {
         private readonly object _queueLocker = new object();
-        private Thread ReadThread { get; set; }
-        private Thread ProcessThread { get; set; }
+        private Thread ReadThread { get; }
+        private Thread ProcessThread { get; }
         private readonly Queue<Packet> _processQueue = new Queue<Packet>();
         public ReadingThread()
         {           

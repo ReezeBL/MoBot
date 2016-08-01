@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MoBot.Structure.Game.AI.Pathfinding
 {
-    class Path : IEnumerable<PathPoint>
+    public class Path : IEnumerable<PathPoint>
     {
         readonly IEnumerable<PathPoint> _wayPoints;
         private readonly IEnumerator<PathPoint> _enumerator;

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MoBot.Protocol
 {
     //Provides combined Network stream reading and writing
-    class StreamWrapper : IDisposable
+    public class StreamWrapper : IDisposable
     {
         private readonly Stream _mem = new MemoryStream(); //Allocated memory stream
         private readonly BinaryReader _reader;

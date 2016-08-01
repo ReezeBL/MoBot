@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace MoBot.Structure.Game.World
 {
-    class GameWorld
+    public class GameWorld
     {
         private readonly List<Chunk> _chunks = new List<Chunk>();
         private readonly object _chunkLocker = new object();

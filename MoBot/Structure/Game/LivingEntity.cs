@@ -1,6 +1,6 @@
 ﻿namespace MoBot.Structure.Game
 {
-    internal class LivingEntity : Entity
+    public class LivingEntity : Entity
     {
         
         public float Yaw, Pitch;

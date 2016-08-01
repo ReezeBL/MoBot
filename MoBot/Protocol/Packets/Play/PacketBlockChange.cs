@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketBlockChange : Packet
+    public class PacketBlockChange : Packet
     {
         public int X, Z;
         public byte Y;
-        public int BlockID;
+        public int BlockId;
         public byte BlockMetadata;
         public override void HandlePacket(IHandler handler)
         {
@@ -23,7 +19,7 @@ namespace MoBot.Protocol.Packets.Play
             X = buff.ReadInt();
             Y = buff.ReadByte();
             Z = buff.ReadInt();
-            BlockID = buff.ReadVarInt();
+            BlockId = buff.ReadVarInt();
             BlockMetadata = buff.ReadByte();
         }
 

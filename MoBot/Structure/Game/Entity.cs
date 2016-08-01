@@ -2,7 +2,7 @@
 
 namespace MoBot.Structure.Game
 {
-    internal class Entity
+    public class Entity
     {
         public float X => Position.X;
         public float Y => Position.Y;

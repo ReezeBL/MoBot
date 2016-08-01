@@ -1,8 +1,6 @@
-﻿using System.Threading.Tasks;
-
-namespace MoBot.Structure.Game.AI
+﻿namespace MoBot.Structure.Game.AI
 {
-    internal interface IRoutine
+    public interface IRoutine
     {
         void Logic();
     }

@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets
 {
-    class PacketDisconnect : Packet
+    public class PacketDisconnect : Packet
     {
-        public String reason;
+        public string Reason;
         public override void HandlePacket(IHandler handler)
         {
             handler.HandlePacketDisconnect(this);
@@ -17,7 +13,7 @@ namespace MoBot.Protocol.Packets
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            reason = buff.ReadString();
+            Reason = buff.ReadString();
         }
 
         public override void WritePacketData(StreamWrapper buff)

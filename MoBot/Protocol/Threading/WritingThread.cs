@@ -1,14 +1,14 @@
-﻿using MoBot.Structure;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using MoBot.Structure;
 
 namespace MoBot.Protocol.Threading
 {
-    internal class WritingThread : BaseThread
+    public class WritingThread : BaseThread
     {     
         public object QueueLocker { get; } = new object();
-        public Queue<Packet> SendingQueue { get; private set; } = new Queue<Packet>();
+        public Queue<Packet> SendingQueue { get; } = new Queue<Packet>();
         private Thread Thread { get; }
         public WritingThread()
         {            
@@ -22,7 +22,7 @@ namespace MoBot.Protocol.Threading
                         {
                             while (SendingQueue.Count > 0)
                             {
-                                Packet pack = SendingQueue.Dequeue();
+                                var pack = SendingQueue.Dequeue();
                                 if (pack != null)
                                     NetworkController.MainChannel.SendPacket(pack);
                             }

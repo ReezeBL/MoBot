@@ -3,10 +3,9 @@ using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketClientStatus : Packet
+    public class PacketConfirmTransaction : Packet
     {
-        public Byte Action;
-
+        public bool Accepted { get; set; }
         public override void HandlePacket(IHandler handler)
         {
             throw new NotImplementedException();
@@ -19,7 +18,7 @@ namespace MoBot.Protocol.Packets.Play
 
         public override void WritePacketData(StreamWrapper buff)
         {
-            buff.WriteByte(Action);
+            throw new NotImplementedException();
         }
     }
 }

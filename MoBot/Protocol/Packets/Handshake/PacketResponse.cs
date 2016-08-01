@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Handshake
 {
-    class PacketResponse : Packet
+    public class PacketResponse : Packet
     {
-        public string JSONResponse;
+        public string JsonResponse;
 
         public override void HandlePacket(IHandler handler)
         {
@@ -18,7 +14,7 @@ namespace MoBot.Protocol.Packets.Handshake
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            JSONResponse = buff.ReadString();
+            JsonResponse = buff.ReadString();
         }
 
         public override void WritePacketData(StreamWrapper buff)

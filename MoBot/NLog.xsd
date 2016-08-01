@@ -15,24 +15,24 @@
         <xs:documentation>Watch config file for changes and reload automatically.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="internalLogToConsole" type="xs:boolean">
+    <xs:attribute name="publicLogToConsole" type="xs:boolean">
       <xs:annotation>
-        <xs:documentation>Print internal NLog messages to the console. Default value is: false</xs:documentation>
+        <xs:documentation>Print public NLog messages to the console. Default value is: false</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="internalLogToConsoleError" type="xs:boolean">
+    <xs:attribute name="publicLogToConsoleError" type="xs:boolean">
       <xs:annotation>
-        <xs:documentation>Print internal NLog messages to the console error output. Default value is: false</xs:documentation>
+        <xs:documentation>Print public NLog messages to the console error output. Default value is: false</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="internalLogFile" type="xs:string">
+    <xs:attribute name="publicLogFile" type="xs:string">
       <xs:annotation>
-        <xs:documentation>Write internal NLog messages to the specified file.</xs:documentation>
+        <xs:documentation>Write public NLog messages to the specified file.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="internalLogLevel" type="NLogLevel">
+    <xs:attribute name="publicLogLevel" type="NLogLevel">
       <xs:annotation>
-        <xs:documentation>Log level threshold for internal log messages. Default value is: Info.</xs:documentation>
+        <xs:documentation>Log level threshold for public log messages. Default value is: Info.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="globalThreshold" type="NLogLevel">
@@ -42,7 +42,7 @@
     </xs:attribute>
     <xs:attribute name="throwExceptions" type="xs:boolean">
       <xs:annotation>
-        <xs:documentation>Pass NLog internal exceptions to the application. Default value is: false.</xs:documentation>
+        <xs:documentation>Pass NLog public exceptions to the application. Default value is: false.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>

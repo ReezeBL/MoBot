@@ -6,7 +6,7 @@ using Priority_Queue;
 
 namespace MoBot.Structure.Game.AI.Pathfinding
 {
-    internal static class PathFinder
+    public static class PathFinder
     {
         private static readonly Hashtable PointSet = new Hashtable();
         private static readonly FastPriorityQueue<PathPoint> Frontier = new FastPriorityQueue<PathPoint>(30000);

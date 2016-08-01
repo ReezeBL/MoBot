@@ -4,11 +4,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
 using System.Xml;
-using MoBot.Protocol.Handshake;
 using MoBot.Protocol.Packets;
 using MoBot.Protocol.Packets.Handshake;
 using MoBot.Protocol.Packets.Play;
@@ -22,22 +20,22 @@ using Org.BouncyCastle.Security;
 
 namespace MoBot.Protocol.Handlers
 {
-    internal class ClientHandler : IHandler
+    public class ClientHandler : IHandler
     {     
         private readonly Logger _log = Program.GetLogger();
        
-        private string PostUrl(PacketEncriptionRequest packetEncriptionRequest, byte[] secretKey, string id)
+        private static string PostUrl(PacketEncriptionRequest packetEncriptionRequest, byte[] secretKey, string id)
         {
             var request =
                 WebRequest.Create(
-                    $"http://ex-server.ru/joinserver.php?user={NetworkController.Username}&sessionId={id}&serverId={GetServerIdHash(packetEncriptionRequest.ServerID, secretKey, packetEncriptionRequest.Key)}");
+                    $"http://ex-server.ru/joinserver.php?user={NetworkController.Username}&sessionId={id}&serverId={GetServerIdHash(packetEncriptionRequest.ServerId, secretKey, packetEncriptionRequest.Key)}");
             var responseStream = request.GetResponse().GetResponseStream();
             if (responseStream == null) return "";
             var responseString = new StreamReader(responseStream).ReadToEnd();
             return responseString;
         }
 
-        private string GetUserSession()
+        private static string GetUserSession()
         {
             var document = new XmlDocument();
             document.Load("Settings/UserIDS.xml");
@@ -105,7 +103,7 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketDisconnect(PacketDisconnect packetDisconnect)
         {
-            NetworkController.NotifyViewer($"You have been disconnected from the server! Reason: {packetDisconnect.reason}");
+            NetworkController.NotifyViewer($"You have been disconnected from the server! Reason: {packetDisconnect.Reason}");
             NetworkController.Disconnect();
         }
 
@@ -168,7 +166,7 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketCustomPayload(PacketCustomPayload packetCustomPayload)
         {
-            if (packetCustomPayload.channel != "FML|HS") return;
+            if (packetCustomPayload.Channel != "FML|HS") return;
             var payload = new StreamWrapper(packetCustomPayload.Payload);
             var discriminator = payload.ReadByte();
             switch (discriminator)
@@ -179,7 +177,7 @@ namespace MoBot.Protocol.Handlers
                     var version = payload.ReadByte();
                     answer.WriteByte(1);
                     answer.WriteByte(version);
-                    NetworkController.SendPacket(new PacketCustomPayload {channel = "FML|HS", MyPayload = answer.GetBlob()});
+                    NetworkController.SendPacket(new PacketCustomPayload {Channel = "FML|HS", MyPayload = answer.GetBlob()});
                     answer = new StreamWrapper();
                     answer.WriteByte(2);
                     answer.WriteVarInt(NetworkController.ModList.Count);
@@ -189,7 +187,7 @@ namespace MoBot.Protocol.Handlers
                         answer.WriteString((string) obj["modid"]);
                         answer.WriteString((string) obj["version"]);
                     }
-                    NetworkController.SendPacket(new PacketCustomPayload {channel = "FML|HS", MyPayload = answer.GetBlob()});
+                    NetworkController.SendPacket(new PacketCustomPayload {Channel = "FML|HS", MyPayload = answer.GetBlob()});
                 }
                     break;
                 case 2:
@@ -197,7 +195,7 @@ namespace MoBot.Protocol.Handlers
                     var answer = new StreamWrapper();
                     answer.WriteByte(255);
                     answer.WriteByte(2);
-                    NetworkController.SendPacket(new PacketCustomPayload {channel = "FML|HS", MyPayload = answer.GetBlob()});
+                    NetworkController.SendPacket(new PacketCustomPayload {Channel = "FML|HS", MyPayload = answer.GetBlob()});
                 }
                     break;
                 case 255:
@@ -217,7 +215,7 @@ namespace MoBot.Protocol.Handlers
                             _log.Info($"Unhandled Ack Stage : {stage}");
                             break;
                     }
-                    NetworkController.SendPacket(new PacketCustomPayload {channel = "FML|HS", MyPayload = answer.GetBlob()});
+                    NetworkController.SendPacket(new PacketCustomPayload {Channel = "FML|HS", MyPayload = answer.GetBlob()});
                 }
                     break;
                 default:
@@ -228,7 +226,7 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketJoinGame(PacketJoinGame packetJoinGame)
         {
-            GameController.CreateUser(packetJoinGame.EntityID, NetworkController.Username);
+            GameController.CreateUser(packetJoinGame.EntityId, NetworkController.Username);
         }
 
         public void HandlePacketPlayerAbliities(PacketPlayerAbilities packetPlayerAbilities)
@@ -253,7 +251,7 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketWindowItems(PacketWindowItems packetWindowItems)
         {
-            if (packetWindowItems.WindowID == 0)
+            if (packetWindowItems.WindowId == 0)
             {
                 packetWindowItems.Items.CopyTo(GameController.Player.Inventory, 0);
             }
@@ -261,22 +259,21 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketSetSlot(PacketSetSlot packetSetSlot)
         {
-            if (packetSetSlot.WindowID == 0)
+            if (packetSetSlot.WindowId == 0)
             {
-                GameController.Player.Inventory[packetSetSlot.Slot] = packetSetSlot.item;
+                GameController.Player.Inventory[packetSetSlot.Slot] = packetSetSlot.Item;
             }
         }
 
         public void HandlePacketSpawnMoob(PacketSpawnMob packetSpawnMob)
         {
-            var mob = GameController.CreateMob(packetSpawnMob.EntityID, packetSpawnMob.Type);
-            if (mob == null) return;
-            mob.SetPosition(packetSpawnMob.X, packetSpawnMob.Y, packetSpawnMob.Z);
+            var mob = GameController.CreateMob(packetSpawnMob.EntityId, packetSpawnMob.Type);
+            mob?.SetPosition(packetSpawnMob.X, packetSpawnMob.Y, packetSpawnMob.Z);
         }
 
         public void HandlePacketChat(PacketChat packetChat)
         {
-            NetworkController.NotifyChatMessage(packetChat.message);
+            NetworkController.NotifyChatMessage(packetChat.Message);
         }
 
         public void HandlePacketMapChunk(PacketMapChunk packetMapChunk)
@@ -288,8 +285,8 @@ namespace MoBot.Protocol.Handlers
 
             for (var i = 0; i < packetMapChunk.ChunkNumber; i++)
             {
-                dced = packetMapChunk.chunks[i].GetData(dced);
-                GameController.World.AddChunk(packetMapChunk.chunks[i]);
+                dced = packetMapChunk.Chunks[i].GetData(dced);
+                GameController.World.AddChunk(packetMapChunk.Chunks[i]);
             }
             GameController.World.Invalidate();
         }
@@ -298,7 +295,7 @@ namespace MoBot.Protocol.Handlers
         {
             if (packetChunkData.RemoveChunk)
             {
-                GameController.World.RemoveChunk(packetChunkData.x, packetChunkData.z);
+                GameController.World.RemoveChunk(packetChunkData.X, packetChunkData.Z);
             }
             else
             {
@@ -307,27 +304,27 @@ namespace MoBot.Protocol.Handlers
                 var dc = new Decompressor(mas);
                 var dced = dc.Decompress();
 
-                packetChunkData.chunk.GetData(dced);
-                GameController.World.AddChunk(packetChunkData.chunk);
+                packetChunkData.Chunk.GetData(dced);
+                GameController.World.AddChunk(packetChunkData.Chunk);
             }
             GameController.World.Invalidate();
         }
 
         public void HandlePacketEntity(PacketEntity packetEntity)
         {
-            var entity = GameController.GetEntity(packetEntity.EntityID) as LivingEntity;
-            entity?.Move(packetEntity.x, packetEntity.y, packetEntity.z);
+            var entity = GameController.GetEntity(packetEntity.EntityId) as LivingEntity;
+            entity?.Move(packetEntity.X, packetEntity.Y, packetEntity.Z);
         }
 
         public void HandlePacketEntityTeleport(PacketEntityTeleport packetEntityTeleport)
         {
-            var entity = GameController.GetEntity(packetEntityTeleport.EntityID) as LivingEntity;
-            entity?.SetPosition(packetEntityTeleport.x, packetEntityTeleport.y, packetEntityTeleport.z);
+            var entity = GameController.GetEntity(packetEntityTeleport.EntityId) as LivingEntity;
+            entity?.SetPosition(packetEntityTeleport.X, packetEntityTeleport.Y, packetEntityTeleport.Z);
         }
 
         public void HandlePacketDestroyEntities(PacketDestroyEntities packetDestroyEntities)
         {
-            foreach (var id in packetDestroyEntities.IDList)
+            foreach (var id in packetDestroyEntities.IdList)
             {
                 GameController.RemoveEntity(id);
             }
@@ -336,7 +333,7 @@ namespace MoBot.Protocol.Handlers
         public void HandlePacketBlockChange(PacketBlockChange packetBlockChange)
         {
             GameController.World.UpdateBlock(packetBlockChange.X, packetBlockChange.Y, packetBlockChange.Z,
-                packetBlockChange.BlockID);
+                packetBlockChange.BlockId);
             GameController.World.Invalidate();
         }
 
@@ -349,13 +346,13 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketMultiBlockChange(PacketMultiBlockChange packetMultiBlockChange)
         {
-            var chunkX = packetMultiBlockChange.chunkXPosiiton*16;
-            var chunkZ = packetMultiBlockChange.chunkZPosition*16;
+            var chunkX = packetMultiBlockChange.ChunkXPosiiton*16;
+            var chunkZ = packetMultiBlockChange.ChunkZPosition*16;
 
-            if (packetMultiBlockChange.metadata != null)
+            if (packetMultiBlockChange.Metadata != null)
             {
-                var buff = new StreamWrapper(packetMultiBlockChange.metadata);
-                for (var i = 0; i < packetMultiBlockChange.size; i++)
+                var buff = new StreamWrapper(packetMultiBlockChange.Metadata);
+                for (var i = 0; i < packetMultiBlockChange.Size; i++)
                 {
                     var short1 = buff.ReadShort();
                     var short2 = buff.ReadShort();
@@ -373,20 +370,20 @@ namespace MoBot.Protocol.Handlers
         {
             if (packetEntityStatus.EntityStatus == 2)
             {
-                GameController.RemoveEntity(packetEntityStatus.EntityID);
+                GameController.RemoveEntity(packetEntityStatus.EntityId);
             }
         }
 
         public void HandlePacketSpawnObject(PacketSpawnObject packetSpawnObject)
         {
-            var entity = GameController.CreateLivingEntity(packetSpawnObject.EntityID, packetSpawnObject.Type);
+            var entity = GameController.CreateLivingEntity(packetSpawnObject.EntityId, packetSpawnObject.Type);
             entity?.SetPosition(packetSpawnObject.X, packetSpawnObject.Y, packetSpawnObject.Z);
         }
 
         public void HandlePacketSpawnPlayer(PacketSpawnPlayer packetSpawnPlayer)
         {
-            var player = GameController.CreatePlayer(packetSpawnPlayer.EntityID, packetSpawnPlayer.name);
-            player?.SetPosition(packetSpawnPlayer.x, packetSpawnPlayer.y, packetSpawnPlayer.z);
+            var player = GameController.CreatePlayer(packetSpawnPlayer.EntityId, packetSpawnPlayer.Name);
+            player?.SetPosition(packetSpawnPlayer.X, packetSpawnPlayer.Y, packetSpawnPlayer.Z);
         }
 
         public void HandlePacketConfirmTransaction(PacketConfirmTransaction packetConfirmTransaction)

@@ -1,10 +1,11 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace MoBot.Structure.Game
 {
-    class GameBlock
+    public class GameBlock
     {
         private static readonly Dictionary<int, GameBlock> BlockRegistry = new Dictionary<int, GameBlock>();
 
@@ -13,7 +14,7 @@ namespace MoBot.Structure.Game
             using (var file = File.OpenText("Settings/blocks.json"))
             using (var reader = new JsonTextReader(file))
             {
-                dynamic loadedData = Newtonsoft.Json.Linq.JToken.ReadFrom(reader);
+                dynamic loadedData = JToken.ReadFrom(reader);
                 foreach (var data in loadedData)
                 {
                     if (data.id == null) continue;

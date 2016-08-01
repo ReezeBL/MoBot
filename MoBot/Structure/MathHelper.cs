@@ -1,6 +1,6 @@
 ﻿namespace MoBot.Structure
 {
-    internal class MathHelper
+    public class MathHelper
     {
         public static int floor_double(double p)
         {

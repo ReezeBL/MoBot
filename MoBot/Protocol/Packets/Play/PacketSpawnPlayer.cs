@@ -1,13 +1,13 @@
 ﻿using System;
 using MoBot.Protocol.Handlers;
 
-namespace MoBot.Protocol
+namespace MoBot.Protocol.Packets.Play
 {
-    class PacketSpawnPlayer : Packet
+    public class PacketSpawnPlayer : Packet
     {
-        public int EntityID;
-        public string name;
-        public double x, y, z;
+        public int EntityId;
+        public string Name;
+        public double X, Y, Z;
         public override void HandlePacket(IHandler handler)
         {
             handler.HandlePacketSpawnPlayer(this);
@@ -15,20 +15,20 @@ namespace MoBot.Protocol
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            EntityID = buff.ReadVarInt();
-            String UUID = buff.ReadString();
-            name = buff.ReadString();
+            EntityId = buff.ReadVarInt();
+            buff.ReadString();
+            Name = buff.ReadString();
             int len = buff.ReadVarInt();
-            for (int i = 0; i < len; i++) 
+            for (var i = 0; i < len; i++) 
             {
                 buff.ReadString();
                 buff.ReadString();
                 buff.ReadString();
             }
 
-            x = buff.ReadInt() / 32.0;
-            y = buff.ReadInt() / 32.0;
-            z = buff.ReadInt() / 32.0;
+            X = buff.ReadInt() / 32.0;
+            Y = buff.ReadInt() / 32.0;
+            Z = buff.ReadInt() / 32.0;
         }
 
         public override void WritePacketData(StreamWrapper buff)

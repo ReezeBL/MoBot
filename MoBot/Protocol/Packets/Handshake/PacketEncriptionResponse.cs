@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MoBot.Protocol.Handlers;
 
-namespace MoBot.Protocol.Handshake
+namespace MoBot.Protocol.Packets.Handshake
 {
-    class PacketEncriptionResponse : Packet
+    public class PacketEncriptionResponse : Packet
     {
         public int SharedSecretLength = 0;
         public byte[] SharedSecret = null;

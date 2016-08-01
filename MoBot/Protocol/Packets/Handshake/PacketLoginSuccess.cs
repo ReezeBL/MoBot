@@ -1,24 +1,22 @@
-﻿using System;
-using MoBot.Protocol.Handlers;
+﻿using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Handshake
 {
-    class PacketLoginStart : Packet
+    public class PacketLoginSuccess : Packet
     {
-        public String Name = "";
         public override void HandlePacket(IHandler handler)
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
         public override void WritePacketData(StreamWrapper buff)
         {
-            buff.WriteString(Name);
+            throw new System.NotImplementedException();
         }
     }
 }

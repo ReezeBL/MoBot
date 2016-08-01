@@ -1,11 +1,11 @@
-﻿using MoBot.Structure.Game;
-using System;
+﻿using System;
 using System.Text;
+using MoBot.Structure.Game;
 using MoBot.Structure.Game.AI.Pathfinding;
 
 namespace MoBot.Structure
 {
-    internal class Controller
+    public class Controller
     {       
         public void HandleConnect()
         {
@@ -73,7 +73,7 @@ namespace MoBot.Structure
             }
         }
 
-        internal void HandleConnect(string username, string serverIp)
+        public void HandleConnect(string username, string serverIp)
         {
             if (NetworkController.Connected)
                 return;

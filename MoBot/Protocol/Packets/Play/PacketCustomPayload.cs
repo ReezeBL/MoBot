@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MoBot.Protocol.Handlers;
+﻿using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketCustomPayload : Packet
+    public class PacketCustomPayload : Packet
     {
-        public String channel;
+        public string Channel;
         public ushort PayloadLength { get; private set; }
         public byte[] Payload { get; private set; }
 
@@ -22,14 +17,14 @@ namespace MoBot.Protocol.Packets.Play
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            channel = buff.ReadString();
+            Channel = buff.ReadString();
             PayloadLength = (ushort)buff.ReadShort();
             Payload = buff.ReadBytes(PayloadLength);
         }
 
         public override void WritePacketData(StreamWrapper buff)
         {
-            buff.WriteString(channel);
+            buff.WriteString(Channel);
             buff.WriteShort((short)MyPayload.ActualLength);
             buff.WriteBytes(MyPayload);
         }

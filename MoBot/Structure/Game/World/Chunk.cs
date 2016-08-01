@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace MoBot.Structure.Game.World
 {
-    class Chunk
+    public class Chunk
     {
         public int X, Z, NumBlocks, ABlocks;
         public bool Lighting, Groundup;

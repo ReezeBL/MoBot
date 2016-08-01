@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MoBot.Protocol.Handlers;
+﻿using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketHeldItemChange : Packet
+    public class PacketHeldItemChange : Packet
     {
         public byte Slot;
         public override void HandlePacket(IHandler handler)

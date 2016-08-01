@@ -1,12 +1,13 @@
 ﻿using System;
 using MoBot.Protocol.Handlers;
 
-namespace MoBot.Protocol.Packets.Play
+namespace MoBot.Protocol.Packets.Handshake
 {
-    class PacketClientStatus : Packet
+    public class PacketEncriptionRequest : Packet
     {
-        public Byte Action;
-
+        public byte[] Key;
+        public string ServerId;
+        public byte[] Token { get; set; }
         public override void HandlePacket(IHandler handler)
         {
             throw new NotImplementedException();
@@ -19,7 +20,7 @@ namespace MoBot.Protocol.Packets.Play
 
         public override void WritePacketData(StreamWrapper buff)
         {
-            buff.WriteByte(Action);
+            throw new NotImplementedException();
         }
     }
 }

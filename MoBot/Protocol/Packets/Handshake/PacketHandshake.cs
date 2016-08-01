@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Handshake
 {
     class PacketHandshake : Packet
     {
-        public int protocolVersion;
-        public string hostname;
-        public ushort port;
-        public int nextState;
+        public int ProtocolVersion;
+        public string Hostname;
+        public ushort Port;
+        public int NextState;
 
         public override void HandlePacket(IHandler handler)
         {
@@ -21,18 +17,18 @@ namespace MoBot.Protocol.Packets.Handshake
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            protocolVersion = buff.ReadVarInt();
-            hostname = buff.ReadString();
-            port = (ushort)buff.ReadShort();
-            nextState = buff.ReadVarInt();
+            ProtocolVersion = buff.ReadVarInt();
+            Hostname = buff.ReadString();
+            Port = (ushort)buff.ReadShort();
+            NextState = buff.ReadVarInt();
         }
 
         public override void WritePacketData(StreamWrapper buff)
         {
-            buff.WriteVarInt(protocolVersion);
-            buff.WriteString(hostname);
-            buff.WriteShort((short)port);
-            buff.WriteVarInt(nextState);
+            buff.WriteVarInt(ProtocolVersion);
+            buff.WriteString(Hostname);
+            buff.WriteShort((short)Port);
+            buff.WriteVarInt(NextState);
         }
     }
 }

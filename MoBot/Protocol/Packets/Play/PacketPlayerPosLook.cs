@@ -2,7 +2,7 @@
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketPlayerPosLook : Packet
+    public class PacketPlayerPosLook : Packet
     {
         public double X;
         public double Y;

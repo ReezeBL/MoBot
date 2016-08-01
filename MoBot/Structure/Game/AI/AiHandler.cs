@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace MoBot.Structure.Game.AI
 {
-    internal class AiHandler
+    public class AiHandler
     {
         private IRoutine _mainRoutine;
         private readonly Thread _aiThread;

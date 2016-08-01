@@ -6,7 +6,7 @@ using MoBot.Structure.Game.AI.Pathfinding;
 
 namespace MoBot.Structure.Game
 {
-    internal class ActionManager
+    public class ActionManager
     {
         private static int _transactionId = 1;       
         public static DateTime LastMove = DateTime.Now;
@@ -18,7 +18,7 @@ namespace MoBot.Structure.Game
 
         public static void SendChatMessage(string message)
         {
-            NetworkController.SendPacket(new PacketChat { message = message });                       
+            NetworkController.SendPacket(new PacketChat { Message = message });                       
         }
 
         public static void UpdatePosition()
@@ -103,7 +103,7 @@ namespace MoBot.Structure.Game
         {
             NetworkController.SendPacket(new PacketClickWindow
                 {
-                    WindowID = 0,
+                    WindowId = 0,
                     Mode = 0,
                     ActionNumber = (short) _transactionId++,
                     Button = 0,

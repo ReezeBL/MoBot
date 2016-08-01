@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Runtime.Serialization;
 using MoBot.Structure.Game.World;
+using Priority_Queue;
 
 namespace MoBot.Structure.Game.AI.Pathfinding
 {
-
-    class PathPoint : Priority_Queue.FastPriorityQueueNode
+    public class PathPoint : FastPriorityQueueNode
     {
         [DataMember]
         public readonly int X;

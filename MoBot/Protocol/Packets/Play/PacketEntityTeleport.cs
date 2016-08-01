@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketEntityTeleport : Packet
+    public class PacketEntityTeleport : Packet
     {
-        public int EntityID;
-        public double x, y, z;
+        public int EntityId;
+        public double X, Y, Z;
         public override void HandlePacket(IHandler handler)
         {
             handler.HandlePacketEntityTeleport(this);
@@ -18,10 +14,10 @@ namespace MoBot.Protocol.Packets.Play
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            EntityID = buff.ReadInt();
-            x = buff.ReadInt() / 32.0;
-            y = buff.ReadInt() / 32.0;
-            z = buff.ReadInt() / 32.0;
+            EntityId = buff.ReadInt();
+            X = buff.ReadInt() / 32.0;
+            Y = buff.ReadInt() / 32.0;
+            Z = buff.ReadInt() / 32.0;
         }
 
         public override void WritePacketData(StreamWrapper buff)

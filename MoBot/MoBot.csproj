@@ -86,10 +86,12 @@
     <Compile Include="Protocol\Channel.cs" />
     <Compile Include="Protocol\Handlers\ClientHandler.cs" />
     <Compile Include="Protocol\Handlers\IHandler.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketConfirmTransaction.cs" />
+    <Compile Include="Protocol\Packets\Handshake\PacketLoginSuccess.cs" />
     <Compile Include="Protocol\Packet.cs" />
+    <Compile Include="Protocol\Packets\Handshake\PacketEncriptionRequest.cs" />
     <Compile Include="Protocol\Packets\Play\PacketClickWindow.cs" />
     <Compile Include="Protocol\Packets\Play\PacketClientStatus.cs" />
-    <Compile Include="Protocol\Packets\Play\PacketConfirmTransaction.cs" />
     <Compile Include="Protocol\Packets\Play\PacketSpawnPlayer.cs" />
     <Compile Include="Protocol\Packets\Play\PacketBlockChange.cs" />
     <Compile Include="Protocol\Packets\Play\PacketEntityStatus.cs" />
@@ -99,8 +101,6 @@
     <Compile Include="Protocol\Packets\Handshake\PacketLoginStart.cs" />
     <Compile Include="Protocol\Packets\PacketDisconnect.cs" />
     <Compile Include="Protocol\Packets\Handshake\EmptyPacket.cs" />
-    <Compile Include="Protocol\Packets\Handshake\PacketLoginSuccess.cs" />
-    <Compile Include="Protocol\Packets\Handshake\PacketEncriptionRequest.cs" />
     <Compile Include="Protocol\Packets\Handshake\PacketHandshake.cs" />
     <Compile Include="Protocol\Packets\Handshake\PacketResponse.cs" />
     <Compile Include="Protocol\Packets\Play\PacketChat.cs" />

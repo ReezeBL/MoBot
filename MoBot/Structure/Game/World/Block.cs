@@ -2,7 +2,7 @@
 
 namespace MoBot.Structure.Game.World
 {
-    internal class Block
+    public class Block
     {
        public static List<int> CollidableBlocks;
        public int Id;
@@ -26,26 +26,29 @@ namespace MoBot.Structure.Game.World
        }
        public static void Init()
        {
-           CollidableBlocks = new List<int>();
-           CollidableBlocks.Add(0);
-           CollidableBlocks.Add(6);       
-           CollidableBlocks.Add(30);
-           CollidableBlocks.Add(31);
-           CollidableBlocks.Add(32);
-           CollidableBlocks.Add(50);
-           CollidableBlocks.Add(51);
-           CollidableBlocks.Add(65);
-           CollidableBlocks.Add(66);
-           CollidableBlocks.Add(69);
-           CollidableBlocks.Add(70);
-           CollidableBlocks.Add(72);
-           CollidableBlocks.Add(76);
-           CollidableBlocks.Add(77);
-           CollidableBlocks.Add(106);
-           CollidableBlocks.Add(131);
-           CollidableBlocks.Add(143);
-           CollidableBlocks.Add(147);
-           CollidableBlocks.Add(148);
+           CollidableBlocks = new List<int>
+           {
+               0,
+               6,
+               30,
+               31,
+               32,
+               50,
+               51,
+               65,
+               66,
+               69,
+               70,
+               72,
+               76,
+               77,
+               106,
+               131,
+               143,
+               147,
+               148
+           };
+
        }
     }
 }

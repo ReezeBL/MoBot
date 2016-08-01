@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MoBot.Protocol.Handlers;
 using MoBot.Structure.Game.World;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketMapChunk : Packet
+    public class PacketMapChunk : Packet
     {
         public short ChunkNumber;
         public int DataLength;
         public bool Flag;
-        public Chunk[] chunks;
+        public Chunk[] Chunks;
         public byte[] ChunkData;        
         public override void HandlePacket(IHandler handler)
         {
@@ -26,7 +22,7 @@ namespace MoBot.Protocol.Packets.Play
             DataLength = buff.ReadInt();
             Flag = buff.ReadBool();
             ChunkData = buff.ReadBytes(DataLength);
-            chunks = new Chunk[ChunkNumber];
+            Chunks = new Chunk[ChunkNumber];
             for(int i=0; i<ChunkNumber; i++)
             {
                 int x = buff.ReadInt();
@@ -34,7 +30,7 @@ namespace MoBot.Protocol.Packets.Play
                 short pbitmap = buff.ReadShort();
                 short abitmap = buff.ReadShort();
 
-                chunks[i] = new Chunk(x, z, pbitmap, abitmap, Flag, true);
+                Chunks[i] = new Chunk(x, z, pbitmap, abitmap, Flag, true);
             }
         }
 

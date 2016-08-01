@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketSpawnObject : Packet
+    public class PacketSpawnObject : Packet
     {
-        public int EntityID;
+        public int EntityId;
         public byte Type;
         public double X, Y, Z;
 
@@ -20,7 +16,7 @@ namespace MoBot.Protocol.Packets.Play
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            EntityID = buff.ReadVarInt();
+            EntityId = buff.ReadVarInt();
             Type = buff.ReadByte();
             X = buff.ReadInt() / 32.0;
             Y = buff.ReadInt() / 32.0;

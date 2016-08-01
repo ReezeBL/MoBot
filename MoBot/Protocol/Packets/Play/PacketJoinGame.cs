@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketJoinGame : Packet
+    public class PacketJoinGame : Packet
     {
-        public int EntityID;
+        public int EntityId;
         public byte Gamemode;
         public int Dimension;
         public byte Difficulty;
         public byte MaxPlayers;
-        public String LevelType;
+        public string LevelType;
 
         public override void HandlePacket(IHandler handler)
         {
@@ -23,7 +19,7 @@ namespace MoBot.Protocol.Packets.Play
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            EntityID = buff.ReadInt();
+            EntityId = buff.ReadInt();
             Gamemode = buff.ReadByte();
             Dimension = buff.ReadByte();
             Difficulty = buff.ReadByte();

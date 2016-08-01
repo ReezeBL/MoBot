@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MoBot.Protocol.Handlers;
+﻿using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketPlayerAbilities : Packet
+    public class PacketPlayerAbilities : Packet
     {
         public byte Flags;
         public float FlyingSpeed;

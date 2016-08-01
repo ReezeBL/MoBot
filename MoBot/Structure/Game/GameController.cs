@@ -7,7 +7,7 @@ using MoBot.Structure.Game.World;
 
 namespace MoBot.Structure.Game
 {
-    internal class GameController
+    public class GameController
     {
         private static GameController _instance;
 

@@ -2,7 +2,7 @@
 
 namespace MoBot.Structure.Game.World
 {
-    class Section
+    public class Section
     {
         public byte[] Blocks;
         public byte Y;

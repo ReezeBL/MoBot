@@ -1,6 +1,6 @@
 ﻿namespace MoBot.Structure.Game
 {
-    class Player : LivingEntity
+    public class Player : LivingEntity
     {
         public Item[] Inventory = new Item[45];
         public int HeldItem = 0;

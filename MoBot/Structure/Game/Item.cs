@@ -2,7 +2,7 @@
 
 namespace MoBot.Structure.Game
 {
-    class Item
+    public class Item
     {
         public short Id = -1;
         public byte ItemCount;
@@ -24,7 +24,7 @@ namespace MoBot.Structure.Game
         {
             Item res;
             if (!ItemRegistry.TryGetValue(id, out res))
-                res = new Item() { Id = (short)id };
+                res = new Item { Id = (short)id };
             return res;
         }
 

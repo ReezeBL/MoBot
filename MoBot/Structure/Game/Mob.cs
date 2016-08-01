@@ -1,6 +1,6 @@
 ﻿namespace MoBot.Structure.Game
 {
-    internal class Mob : LivingEntity
+    public class Mob : LivingEntity
     {
         public byte Type;
         public override string ToString()

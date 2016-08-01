@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MoBot.Protocol.Handlers;
+﻿using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketChat : Packet
+    public class PacketChat : Packet
     {
-        public String message;
+        public string Message;
         public override void HandlePacket(IHandler handler)
         {
             handler.HandlePacketChat(this);
@@ -17,12 +12,12 @@ namespace MoBot.Protocol.Packets.Play
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            message = buff.ReadString();
+            Message = buff.ReadString();
         }
 
         public override void WritePacketData(StreamWrapper buff)
         {
-            buff.WriteString(message);
+            buff.WriteString(Message);
         }
     }
 }

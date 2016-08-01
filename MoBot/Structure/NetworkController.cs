@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 namespace MoBot.Structure
 {
-    internal class NetworkController : IObservable<SysAction>
+    public class NetworkController : IObservable<SysAction>
     {
         private static NetworkController _instance;
 
@@ -64,10 +64,10 @@ namespace MoBot.Structure
                 instance._viewer.OnNext(new ActionConnect {Connected = true});
                 SendPacket(new PacketHandshake
                 {
-                    hostname = serverIp,
-                    port = (ushort) port,
-                    nextState = 2,
-                    protocolVersion = (int) response.version.protocol
+                    Hostname = serverIp,
+                    Port = (ushort) port,
+                    NextState = 2,
+                    ProtocolVersion = (int) response.version.protocol
                 });
                 SendPacket(new PacketLoginStart {Name = name});
                 Connected = true;
@@ -91,12 +91,12 @@ namespace MoBot.Structure
 
         public static void NotifyViewer(string message)
         {
-            GetInstance()._viewer.OnNext(new ActionMessage {message = message});
+            GetInstance()._viewer.OnNext(new ActionMessage {Message = message});
         }
 
         public static void NotifyChatMessage(string message)
         {
-            GetInstance()._viewer.OnNext(new ActionChatMessage { JSONMessage = message });
+            GetInstance()._viewer.OnNext(new ActionChatMessage { JsonMessage = message });
         }
 
         public static dynamic Ping(string serverIp, int port, bool message = false)
@@ -105,15 +105,15 @@ namespace MoBot.Structure
             var channel = new Channel(client.GetStream());
             channel.SendPacket(new PacketHandshake
             {
-                hostname = serverIp,
-                port = (ushort) port,
-                nextState = 1,
-                protocolVersion = 47
+                Hostname = serverIp,
+                Port = (ushort) port,
+                NextState = 1,
+                ProtocolVersion = 47
             });
             channel.SendPacket(new EmptyPacket());
             var result = channel.GetPacket() as PacketResponse;
             if (result == null) return null;
-            dynamic response = JObject.Parse(result.JSONResponse);
+            dynamic response = JObject.Parse(result.JsonResponse);
             client.Close();
             if (message)
                 NotifyViewer(string.Format("Name: {1}\nProtocol: {0}\nOnline: {2}", response.version.protocol,
