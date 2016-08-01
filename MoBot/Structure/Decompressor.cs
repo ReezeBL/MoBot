@@ -3,10 +3,10 @@ using System.IO.Compression;
 
 namespace MoBot.Structure
 {
-    class Decompressor
+    public class Decompressor
     {
         // ZLib Decompressor.
-        readonly byte[] _thisdata;
+        private readonly byte[] _thisdata;
 
         public Decompressor(byte[] data)
         {
