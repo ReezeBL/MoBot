@@ -1,56 +1,46 @@
-﻿using MoBot.Protocol;
-using MoBot.Structure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading;
-using System.Threading.Tasks;
+using MoBot.Structure;
 
 namespace MoBot.Protocol.Threading
 {
     class ReadingThread : BaseThread
     {
-        private object queueLocker = new object();
-        public Thread readThread { get; private set; }
-        public Thread processThread { get; private set; }
-
-        private Model model;
-        private Queue<Packet> processQueue = new Queue<Packet>();
-        public ReadingThread(Model model)
-        {
-            this.model = model;
-            readThread = new Thread(() =>
+        private readonly object _queueLocker = new object();
+        private Thread ReadThread { get; }
+        private Thread ProcessThread { get; }
+        private readonly Queue<Packet> _processQueue = new Queue<Packet>();
+        public ReadingThread()
+        {           
+            ReadThread = new Thread(() =>
             {
                 while (Process)
                 {
-                    Packet packet = model.mainChannel.GetPacket();
-                    if (packet != null)
-                    {
-                        if (packet.ProceedNow())
-                            packet.HandlePacket(model.handler);
-                        else
-                            lock (queueLocker)
-                                processQueue.Enqueue(packet);
-                    }
+                    var packet = NetworkController.MainChannel.GetPacket();
+                    if (packet == null) continue;
+                    if (packet.ProceedNow())
+                        packet.HandlePacket(NetworkController.Handler);
+                    else
+                        lock (_queueLocker)
+                            _processQueue.Enqueue(packet);
                 }
             })
             { IsBackground = true };
-            processThread = new Thread(() =>
+            ProcessThread = new Thread(() =>
             {
                 while (Process)
                 {
-                    lock (queueLocker)
+                    lock (_queueLocker)
                     {
-                        while (processQueue.Count > 0)
-                            processQueue.Dequeue().HandlePacket(model.handler);
+                        while (_processQueue.Count > 0)
+                            _processQueue.Dequeue().HandlePacket(NetworkController.Handler);
                     }
                     Thread.Sleep(50);
                 }
             })
             { IsBackground = true };
-            readThread.Start();
-            processThread.Start();
+            ReadThread.Start();
+            ProcessThread.Start();
         }
     }
 }

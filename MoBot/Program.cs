@@ -1,32 +1,30 @@
-﻿using MoBot.Structure;
-using NLog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+using MoBot.Structure;
+using MoBot.Structure.Game;
+using NLog;
 
 namespace MoBot
 {
     class Program
     {
-        private static Logger log = LogManager.GetCurrentClassLogger();
-        public static Logger getLogger()
+        private static readonly Logger Log = LogManager.GetCurrentClassLogger();
+        public static Logger GetLogger()
         {
-            return log;
+            return Log;
         }
         [STAThread]
-        static void Main(string[] args)
+        static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Protocol.Channel.InitDicts();
-            Model model = new Model();
-            Controller controller = new Controller { model = model };
-            Viewer viewer = new Viewer { mainController = controller };
+
+            GameBlock.LoadBlocks();
+            NetworkController model = NetworkController.GetInstance();
+            Controller controller = new Controller();
+            Viewer viewer = new Viewer { MainController = controller };
             model.Subscribe(viewer);
-            Application.Run(viewer);        
+            Application.Run(viewer);
         }
     }
 }

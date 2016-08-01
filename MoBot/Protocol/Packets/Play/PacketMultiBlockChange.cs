@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketMultiBlockChange : Packet
+    public class PacketMultiBlockChange : Packet
     {
-        public int chunkXPosiiton;
-        public int chunkZPosition;
-        public int size;
-        public int length;
-        public byte[] metadata;
+        public int ChunkXPosiiton;
+        public int ChunkZPosition;
+        public int Size;
+        public int Length;
+        public byte[] Metadata;
         public override void HandlePacket(IHandler handler)
         {
             handler.HandlePacketMultiBlockChange(this);
@@ -21,12 +17,12 @@ namespace MoBot.Protocol.Packets.Play
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            chunkXPosiiton = buff.ReadInt();
-            chunkZPosition = buff.ReadInt();
-            size = buff.ReadShort() & 65535;
-            length = buff.ReadInt();
-            if (length > 0)
-                metadata = buff.ReadBytes(length);
+            ChunkXPosiiton = buff.ReadInt();
+            ChunkZPosition = buff.ReadInt();
+            Size = buff.ReadShort() & 65535;
+            Length = buff.ReadInt();
+            if (Length > 0)
+                Metadata = buff.ReadBytes(Length);
         }
 
         public override void WritePacketData(StreamWrapper buff)

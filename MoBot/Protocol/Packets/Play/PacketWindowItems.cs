@@ -1,27 +1,23 @@
-﻿using MoBot.Structure.Game;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using MoBot.Protocol.Handlers;
+using MoBot.Structure.Game;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketWindowItems : Packet
+    public class PacketWindowItems : Packet
     {
-        public byte WindowID;
+        public byte WindowId;
         public short ItemCount;
         public Item[] Items;
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            WindowID = buff.ReadByte();
+            WindowId = buff.ReadByte();
             ItemCount = buff.ReadShort();
             Items = new Item[ItemCount];
             for(int i = 0; i < ItemCount; i++)
             {
-                Items[i] = Packet.ReadItem(buff);
+                Items[i] = ReadItem(buff);
             }
         }
 

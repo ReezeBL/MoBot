@@ -1,11 +1,15 @@
 ﻿namespace MoBot.Structure.Game
 {
-    class Mob : LivingEntity
+    public class Mob : LivingEntity
     {
         public byte Type;
         public override string ToString()
         {
-            return $"Mob : {Type} ({(int)x} | {(int)y} | {(int)z})";
+            return $"Mob : {Type} ({(int)X} | {(int)Y} | {(int)Z})";
+        }      
+
+        public Mob(int id): base(id)
+        {
         }
     }
 }

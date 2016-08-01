@@ -1,31 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace MinecraftEmuPTS.GameData
+namespace MoBot.Structure.Game.World
 {
-    class Section
+    public class Section
     {
-        public byte[] blocks;
-        public byte y;
+        public byte[] Blocks;
+        public byte Y;
 
-        public Section(byte Y)
+        public Section(byte y)
         {
-            y = Y;
-            blocks = new byte[4096];
+            Y = y;
+            Blocks = new byte[4096];
         }
 
-        public void setBlock(int x, int y, int z, int id)
+        public void SetBlock(int x, int y, int z, int id)
         {
             int index = x + (z * 16) + (y * 256);
-            blocks[index] = (byte)id;
+            Blocks[index] = (byte)id;
         }
 
-        public Block getBlock(int x, int y, int z)
+        public Block GetBlock(int x, int y, int z)
         {
             int index = x + (z * 16) + (y * 16 * 16);
-            Block thisBlock = new Block((int)blocks[index], x, y, z, (int)Math.Floor(decimal.Divide(x, 16)), (int)Math.Floor(decimal.Divide(z, 16)));
+            Block thisBlock = new Block(Blocks[index], x, y, z, (int)Math.Floor(decimal.Divide(x, 16)), (int)Math.Floor(decimal.Divide(z, 16)));
 
             return thisBlock;
         }

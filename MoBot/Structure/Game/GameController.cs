@@ -1,94 +1,99 @@
-﻿using MinecraftEmuPTS.GameData;
-using MoBot.Protocol.Packets.Play;
-using MoBot.Structure.Game.AI;
-using System;
+﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MoBot.Structure.Game.AI;
+using MoBot.Structure.Game.World;
 
 namespace MoBot.Structure.Game
 {
-    class GameController
+    public class GameController
     {
-        private NLog.Logger log = Program.getLogger();
-        public Model model { get; private set; }       
-        public GameController(Model model)
-        {
-            this.model = model;
-            aiHandler = new AIHandler(this);
-        }   
-        public Dictionary<int, Entity> entityList { get; private set; } = new Dictionary<int, Entity>();
-        public AI.AIHandler aiHandler { get; private set; }
-        public Player player { get; private set; }
-        public World world { get; private set; } = new World();
-        public DateTime lastMove = DateTime.Now;
+        private static GameController _instance;
 
-        public void CreateUser(int UID, String name = "")
+        private static GameController GetInstance()
         {
-            player = CreatePlayer(UID, name);
+            if (_instance == null)
+                return _instance = new GameController();
+            return _instance;
+        }
+
+        private GameController()
+        {           
             
         }
-        public Player CreatePlayer(int UID, String name)
+
+        private readonly ConcurrentDictionary<int, Entity> _entities = new ConcurrentDictionary<int, Entity>();
+        private Player _player;
+        private readonly GameWorld _world = new GameWorld();      
+        public static GameWorld World => _instance?._world;       
+        public static AiHandler AiHandler { get; private set; } = new AiHandler(new BasicRoutine());
+        public static Player Player => _instance?._player;
+
+        public static Entity GetEntity(int id)
         {
-            Player player = new Player(name);
-            entityList.Add(UID, player);
-            return player;
+            Entity res;
+            GetInstance()._entities.TryGetValue(id, out res);
+            return res;
         }
-        public Mob createMob(int ID, byte Type = 0)
+
+        public static Entity GetEntity()
         {
-            Mob mob = new Mob() { Type = Type };
-            entityList.Add(ID, mob);
-            return mob; 
+            return GetInstance()._entities.Values.FirstOrDefault();
         }
-        public void SendChatMessage(String message)
+
+        public static Entity GetEntity<T>() where T : Entity
         {
-            model.SendPacket(new PacketChat { message = message });                       
+            return GetInstance()._entities.Values.OfType<T>().FirstOrDefault();
         }
-        public LivingEntity createLivingEntity(int entityID, byte type)
+
+        public static IEnumerable<T> GetEntities<T>()
         {
-            LivingEntity entity = new LivingEntity();
-            entityList.Add(entityID, entity);
-            return entity;
+            return GetInstance()._entities.Values.OfType<T>();
         }
-        private async Task updateMotion(bool OnGround = true)
+
+        public static void RemoveEntity(int id)
         {
-            await Task.Run(() =>
-                model.SendPacket(new PacketPlayerPosLook
-                {
-                    X = player.x,
-                    Y = player.y,
-                    Z = player.z,
-                    yaw = player.yaw,
-                    pitch = player.pitch,
-                    onGround = OnGround
-                })
-            );
+            Entity entity;
+            GetInstance()._entities.TryRemove(id, out entity);
         }
-        public async Task respawn()
+
+        public static void CreateUser(int uid, string name = "")
         {
-            await Task.Run(() => model.SendPacket(new PacketClientStatus { Action = 0 }));
+            GetInstance()._player = CreatePlayer(uid, name);
         }
-        public async Task openInventory()
+
+        public static Player CreatePlayer(int uid, string name)
         {
-            await Task.Run(() => model.SendPacket(new PacketClientStatus { Action = 2 }));
+            var player = new Player(uid, name);
+            if (GetInstance()._entities.TryAdd(uid, player)) return player;
+            Console.WriteLine($"Cannot add Entity {uid} to collection!");
+            return null;
         }
-        public async Task SetPlayerPos(double x, double y, double z)
+
+        public static Mob CreateMob(int entityId, byte type = 0)
         {
-            bool onGround = true;
-            bool moved = false;
-            if (player.x != x || player.z != z)
-                moved = true;
-            player.x = x;
-            if (y != player.y)
-            {
-                onGround = false; moved = true;
-                player.y = y;
-            }
-            player.z = z;
-            await updateMotion(onGround);
-            if (moved)
-                lastMove = DateTime.Now;
+            Mob entity = new Mob(entityId) {Type = type};
+            if (GetInstance()._entities.TryAdd(entityId, entity)) return entity;
+            Console.WriteLine($"Cannot add Entity {entityId} to collection!");
+            return null;
         }
+
+        public static LivingEntity CreateLivingEntity(int entityId, byte type)
+        {
+            LivingEntity entity = new LivingEntity(entityId);
+            if (GetInstance()._entities.TryAdd(entityId, entity)) return entity;
+            Console.WriteLine($"Cannot add Entity {entityId} to collection!");
+            return null;
+        }
+
+        public static void Clear()
+        {
+            var instance = GetInstance();
+            instance._entities.Clear();
+            instance._world.Clear();
+            _instance._player = null;
+        }
+
     }
 }

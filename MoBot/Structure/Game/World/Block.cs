@@ -1,54 +1,54 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace MinecraftEmuPTS.GameData
+namespace MoBot.Structure.Game.World
 {
-    class Block
+    public class Block
     {
        public static List<int> CollidableBlocks;
-       public int ID;
+       public int Id;
        public string Name;
-       public int x;
-       public int y;
-       public int z;
-       public int cx;
-       public int cz;
+       public int X;
+       public int Y;
+       public int Z;
+       public int Cx;
+       public int Cz;
 
-       public Block(int id, int X, int Y, int Z,int CX, int CZ)
+       public Block(int id, int x, int y, int z,int cx, int cz)
        {
-           ID = id;
-           x = X;
-           y = Y;
-           z = Z;
-           cx = CX;
-           cz = CZ;
+           Id = id;
+           X = x;
+           Y = y;
+           Z = z;
+           Cx = cx;
+           Cz = cz;
 
            Name = "";
        }
        public static void Init()
        {
-           CollidableBlocks = new List<int>();
-           CollidableBlocks.Add(0);
-           CollidableBlocks.Add(6);       
-           CollidableBlocks.Add(30);
-           CollidableBlocks.Add(31);
-           CollidableBlocks.Add(32);
-           CollidableBlocks.Add(50);
-           CollidableBlocks.Add(51);
-           CollidableBlocks.Add(65);
-           CollidableBlocks.Add(66);
-           CollidableBlocks.Add(69);
-           CollidableBlocks.Add(70);
-           CollidableBlocks.Add(72);
-           CollidableBlocks.Add(76);
-           CollidableBlocks.Add(77);
-           CollidableBlocks.Add(106);
-           CollidableBlocks.Add(131);
-           CollidableBlocks.Add(143);
-           CollidableBlocks.Add(147);
-           CollidableBlocks.Add(148);
+           CollidableBlocks = new List<int>
+           {
+               0,
+               6,
+               30,
+               31,
+               32,
+               50,
+               51,
+               65,
+               66,
+               69,
+               70,
+               72,
+               76,
+               77,
+               106,
+               131,
+               143,
+               147,
+               148
+           };
+
        }
     }
 }

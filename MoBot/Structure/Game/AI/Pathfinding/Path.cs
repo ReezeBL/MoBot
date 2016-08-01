@@ -1,37 +1,35 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MoBot.Structure.Game.AI.Pathfinding
 {
-    class Path
+    public class Path : IEnumerable<PathPoint>
     {
-        Queue<PathPoint> pathQueue = new Queue<PathPoint>();
-        public void addPoint(PathPoint point)
+        readonly IEnumerable<PathPoint> _wayPoints;
+        private readonly IEnumerator<PathPoint> _enumerator;
+        
+
+        public Path(IEnumerable<PathPoint> list)
         {
-            pathQueue.Enqueue(point);
+            _wayPoints = list;
         }
 
-        public PathPoint dequeue()
+        public Path(IEnumerator<PathPoint> pathGenerator)
         {
-            if (hasNext())
-                return pathQueue.Dequeue();
-            else return null;
-        }
-
-        public Path(List<PathPoint> list)
-        {
-            pathQueue = new Queue<PathPoint>(list);
-        }
-
-        public bool hasNext()
-        {
-            return pathQueue.Count > 0;
-        }
+            _enumerator = pathGenerator;
+        }       
         public Path()
         {
+        }
+
+        public IEnumerator<PathPoint> GetEnumerator()
+        {
+            return _enumerator ?? _wayPoints.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

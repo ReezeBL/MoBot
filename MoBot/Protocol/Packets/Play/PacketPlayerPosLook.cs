@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MoBot.Protocol.Handlers;
+﻿using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketPlayerPosLook : Packet
+    public class PacketPlayerPosLook : Packet
     {
         public double X;
         public double Y;
         public double Z;
-        public float pitch;
-        public float yaw;
-        public bool onGround;
+        public float Pitch;
+        public float Yaw;
+        public bool OnGround;
         public override void HandlePacket(IHandler handler)
         {
             handler.HandlePacketPlayerPosLook(this);
@@ -25,20 +20,20 @@ namespace MoBot.Protocol.Packets.Play
             X = buff.ReadDouble();
             Y = buff.ReadDouble();
             Z = buff.ReadDouble();
-            yaw = buff.ReadSingle();
-            pitch = buff.ReadSingle();
-            onGround = buff.ReadBool();
+            Yaw = buff.ReadSingle();
+            Pitch = buff.ReadSingle();
+            OnGround = buff.ReadBool();
         }
 
         public override void WritePacketData(StreamWrapper buff)
         {
             buff.WriteDouble(X);
-            buff.WriteDouble(Y - 1.62);
             buff.WriteDouble(Y);
+            buff.WriteDouble(Y + 1.62);
             buff.WriteDouble(Z);
-            buff.WriteSingle(yaw);
-            buff.WriteSingle(pitch);
-            buff.WriteBool(onGround);
+            buff.WriteSingle(Yaw);
+            buff.WriteSingle(Pitch);
+            buff.WriteBool(OnGround);
         }
     }
 }

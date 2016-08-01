@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketEntityStatus : Packet
+    public class PacketEntityStatus : Packet
     {
-        public int EntityID;
+        public int EntityId;
         public byte EntityStatus;
         public override void HandlePacket(IHandler handler)
         {
@@ -18,7 +14,7 @@ namespace MoBot.Protocol.Packets.Play
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            EntityID = buff.ReadInt();
+            EntityId = buff.ReadInt();
             EntityStatus = buff.ReadByte();
         }
 

@@ -1,137 +1,118 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace MinecraftEmuPTS.GameData
+namespace MoBot.Structure.Game.World
 {
-    class Chunk
+    public class Chunk
     {
-        public int x, z, numBlocks, aBlocks;
-        public bool lighting, groundup = false;
-        public List<Section> sections;
+        public int X, Z, NumBlocks, ABlocks;
+        public bool Lighting, Groundup;
+        public List<Section> Sections;
 
-        public short pbitmap, abitmap;
-        private byte[] blocks;
+        public short Pbitmap, Abitmap;
+        private byte[] _blocks;
 
-        public Chunk(int X, int Z, short Pbitmap, short Abitmap, bool inLighting, bool Groundup)
+        public Chunk(int x, int z, short pbitmap, short abitmap, bool inLighting, bool groundup)
         {
             // Create chunk sections.
-            groundup = Groundup;
-            lighting = inLighting;
-            pbitmap = Pbitmap;
-            abitmap = Abitmap;
-            x = X;
-            z = Z;
-            sections = new List<Section>();
+            Groundup = groundup;
+            Lighting = inLighting;
+            Pbitmap = pbitmap;
+            Abitmap = abitmap;
+            X = x;
+            Z = z;
+            Sections = new List<Section>();
 
-            numBlocks = 0;
-            aBlocks = 0;
+            NumBlocks = 0;
+            ABlocks = 0;
 
             for (int i = 0; i < 16; i++)
             {
-                if (Convert.ToBoolean(Pbitmap & (1 << i)))
-                {
-                    numBlocks++; // "Sections"
-                    sections.Add(new Section((byte)i));
-                }
+                if (!Convert.ToBoolean(pbitmap & (1 << i))) continue;
+                NumBlocks++; // "Sections"
+                Sections.Add(new Section((byte)i));
             }
 
             for (int i = 0; i < 16; i++)
             {
-                if (Convert.ToBoolean(Abitmap & (1 << i)))
+                if (Convert.ToBoolean(abitmap & (1 << i)))
                 {
-                    aBlocks++;
+                    ABlocks++;
                 }
             }        
-            numBlocks = numBlocks * 4096;           
+            NumBlocks = NumBlocks * 4096;           
         }
-        private void populate()
+        private void Populate()
         {
            int offset = 0, current = 0;
 
             for (int i = 0; i < 16; i++)
             {
-                if (Convert.ToBoolean(pbitmap & (1 << i)))
-                {
+                if (!Convert.ToBoolean(Pbitmap & (1 << i))) continue;
+                byte[] temp = new byte[4096];
 
-                    byte[] temp = new byte[4096];
+                Array.Copy(_blocks, offset, temp, 0, 4096);
+                Section mySection = Sections[current];
 
-                    Array.Copy(blocks, offset, temp, 0, 4096);
-                    Section mySection = sections[current];
-
-                    mySection.blocks = temp;
-                    offset += 4096;
-                    current += 1;
-                }
+                mySection.Blocks = temp;
+                offset += 4096;
+                current += 1;
             }
         }
-        public int getBlockId(int Bx, int By, int Bz)
+        public int GetBlockId(int bx, int by, int bz)
         {
-            Section thisSection = GetSectionByNumber(By);
-            return thisSection.getBlock(getXinSection(Bx), GetPositionInSection(By), getZinSection(Bz)).ID;
+            Section thisSection = GetSectionByNumber(by);
+            return thisSection.GetBlock(GetXinSection(bx), GetPositionInSection(by), GetZinSection(bz)).Id;
         }
-        public Block getBlock(int Bx, int By, int Bz)
+        public Block GetBlock(int bx, int by, int bz)
         {
-            Section thisSection = GetSectionByNumber(By);
-            return thisSection.getBlock(getXinSection(Bx), GetPositionInSection(By), getZinSection(Bz));
+            Section thisSection = GetSectionByNumber(by);
+            return thisSection.GetBlock(GetXinSection(bx), GetPositionInSection(by), GetZinSection(bz));
         }
 
-        public void updateBlock(int Bx, int By, int Bz, int id)
+        public void UpdateBlock(int bx, int by, int bz, int id)
         {           
-            Section thisSection = GetSectionByNumber(By);
-            thisSection.setBlock(getXinSection(Bx), GetPositionInSection(By), getZinSection(Bz), id);
+            Section thisSection = GetSectionByNumber(by);
+            thisSection.SetBlock(GetXinSection(bx), GetPositionInSection(by), GetZinSection(bz), id);
         }
-        public byte[] getData(byte[] deCompressed)
+        public byte[] GetData(byte[] deCompressed)
         {           
-            blocks = new byte[numBlocks];
-            byte[] temp;
-            int removeable = numBlocks + aBlocks * 2048;
+            _blocks = new byte[NumBlocks];
+            int removeable = NumBlocks + ABlocks * 2048;
 
-            if (lighting)
-                removeable += (numBlocks / 2);
-            if (groundup)
+            if (Lighting)
+                removeable += (NumBlocks / 2);
+            if (Groundup)
                 removeable += 256;
-            Array.Copy(deCompressed, 0, blocks, 0, numBlocks);
-            temp = new byte[deCompressed.Length - (numBlocks + removeable)];
-            Array.Copy(deCompressed, (numBlocks + removeable), temp, 0, temp.Length);
-            populate();
+            Array.Copy(deCompressed, 0, _blocks, 0, NumBlocks);
+            var temp = new byte[deCompressed.Length - (NumBlocks + removeable)];
+            Array.Copy(deCompressed, (NumBlocks + removeable), temp, 0, temp.Length);
+            Populate();
             return temp;
         }
 
         #region Helping Methods
         private Section GetSectionByNumber(int blockY)
         {
-            Section thisSection = null;
-
-            foreach (Section y in sections)
-            {
-                if (y.y == blockY / 16)
-                {
-                    thisSection = y;
-                    break;
-                }
-            }
-
-            if (thisSection == null)
-            { // Add a new section, if it doesn't exist yet.
-                thisSection = new Section((byte)(blockY / 16));
-                sections.Add(thisSection);
-            }
+            Section thisSection = Sections.FirstOrDefault(y => y.Y == blockY/16);
+            if (thisSection != null) return thisSection;
+            thisSection = new Section((byte)(blockY / 16));
+            Sections.Add(thisSection);
 
             return thisSection;
         }
-        private int getXinSection(int BlockX)
+        private int GetXinSection(int blockX)
         {
-            return BlockX - (x * 16);
+            return blockX - (X * 16);
         }
         private int GetPositionInSection(int blockY)
         {
-            return blockY & (16 - 1); // Credits: SirCmpwn Craft.net
+            return blockY & (16 - 1); 
         }
-        private int getZinSection(int BlockZ)
+        private int GetZinSection(int blockZ)
         {
-            return BlockZ - (z * 16);
+            return blockZ - (Z * 16);
         }
         #endregion
     }

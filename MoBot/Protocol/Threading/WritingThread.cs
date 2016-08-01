@@ -1,53 +1,41 @@
-﻿using MoBot.Protocol.Packets.Play;
-using MoBot.Structure;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
+using MoBot.Structure;
 
 namespace MoBot.Protocol.Threading
 {
-    class WritingThread : BaseThread
-    {
-        private Model model;
-        public Object queueLocker { get; private set; } = new object();
-        public Queue<Packet> SendingQueue { get; private set; } = new Queue<Packet>();
-        public Thread thread { get; private set; }
-        public WritingThread(Model model)
-        {
-            this.model = model;
-            thread = new Thread(() =>
+    public class WritingThread : BaseThread
+    {     
+        public object QueueLocker { get; } = new object();
+        public Queue<Packet> SendingQueue { get; } = new Queue<Packet>();
+        private Thread Thread { get; }
+        public WritingThread()
+        {            
+            Thread = new Thread(() =>
             {
                 while (Process)
                 {
-                    lock (queueLocker)
+                    lock (QueueLocker)
                     {
-                        while (SendingQueue.Count > 0)
+                        try
                         {
-                            Packet pack = SendingQueue.Dequeue();
-                            if (pack != null)
-                                model.mainChannel.SendPacket(pack);
+                            while (SendingQueue.Count > 0)
+                            {
+                                var pack = SendingQueue.Dequeue();
+                                if (pack != null)
+                                    NetworkController.MainChannel.SendPacket(pack);
+                            }
                         }
-                        //if (model.controller.InGameLoaded)
-                        //{
-                        //    model.mainChannel.SendPacket(new PacketPlayerPosLook
-                        //    {
-                        //        X = model.controller.player.x,
-                        //        Y = model.controller.player.y,
-                        //        Z = model.controller.player.z,
-                        //        yaw = model.controller.player.yaw,
-                        //        pitch = model.controller.player.pitch,
-                        //        onGround = true
-                        //    });
-                        //}
+                        catch (Exception)
+                        {
+                            // ignored
+                        }
                     }
                     Thread.Sleep(50);
                 }
-            });
-            thread.IsBackground = true;
-            thread.Start();
+            }) {IsBackground = true};
+            Thread.Start();
         }
     }
 }

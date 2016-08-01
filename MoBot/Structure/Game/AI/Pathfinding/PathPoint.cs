@@ -1,31 +1,44 @@
-﻿using MinecraftEmuPTS.GameData;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using System.Runtime.Serialization;
+using MoBot.Structure.Game.World;
+using Priority_Queue;
 
 namespace MoBot.Structure.Game.AI.Pathfinding
 {
-    class PathPoint : Priority_Queue.FastPriorityQueueNode
+    public class PathPoint : FastPriorityQueueNode
     {
-        public int x, y, z;
+        [DataMember]
+        public readonly int X;
+
+        [DataMember]
+        public readonly int Y;
+
+        [DataMember]
+        public readonly int Z;
+
         public PathPoint(Block block)
         {
-            x = block.x;
-            y = block.y;
-            z = block.z;
+            X = block.X;
+            Y = block.Y;
+            Z = block.Z;
+        }
+
+        public PathPoint(Entity entity)
+        {
+            X = (int) entity.X;
+            Y = (int) entity.Y;
+            Z = (int) entity.Z;
         }
 
         public PathPoint() { }
 
         public double DistanceTo(PathPoint other)
         {
-            return Math.Sqrt((x - other.x) * (x - other.x) + (y - other.y) * (y - other.y) + (z - other.z) * (z - other.z));
+            return Math.Sqrt((X - other.X) * (X - other.X) + (Y - other.Y) * (Y - other.Y) + (Z - other.Z) * (Z - other.Z));
         }
         public override int GetHashCode()
         {
-            return y & 255 | (x & 32767) << 8 | (z & 32767) << 24 | (x < 0 ? int.MinValue : 0) | (z < 0 ? 32768 : 0);
+            return Y & 255 | (X & 32767) << 8 | (Z & 32767) << 24 | (X < 0 ? int.MinValue : 0) | (Z < 0 ? 32768 : 0);
         }
 
         public static int CalcHash(int x, int y, int z)
@@ -35,19 +48,23 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 
         public override bool Equals(object obj)
         {
-            if(obj is PathPoint)
-            {
-                var other = obj as PathPoint;
-                return x == other.x && y == other.y && z == other.z;
-            }
-            return false;
+            var point = obj as PathPoint;
+            if (point == null) return false;
+            var other = point;
+            return X == other.X && Y == other.Y && Z == other.Z;
         }
 
         public override string ToString()
         {
-            return $"({x} | {y} | {z})";
+            return $"({X} | {Y} | {Z})";
         }
+        public PathPoint Prev;
 
-        public PathPoint prev;
+        public PathPoint(int x, int y, int z)
+        {
+            X = x;
+            Y = y;
+            Z = z;
+        }        
     }
 }

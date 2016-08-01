@@ -12,6 +12,8 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -22,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,8 +34,17 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.7.4137.9688, Culture=neutral, PublicKeyToken=a4292a325f69b123, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.1.7.0\lib\Net40-Client\BouncyCastle.Crypto.dll</HintPath>
       <Private>True</Private>
@@ -55,6 +67,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Windows.Forms" />
@@ -73,7 +86,11 @@
     <Compile Include="Protocol\Channel.cs" />
     <Compile Include="Protocol\Handlers\ClientHandler.cs" />
     <Compile Include="Protocol\Handlers\IHandler.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketConfirmTransaction.cs" />
+    <Compile Include="Protocol\Packets\Handshake\PacketLoginSuccess.cs" />
     <Compile Include="Protocol\Packet.cs" />
+    <Compile Include="Protocol\Packets\Handshake\PacketEncriptionRequest.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketClickWindow.cs" />
     <Compile Include="Protocol\Packets\Play\PacketClientStatus.cs" />
     <Compile Include="Protocol\Packets\Play\PacketSpawnPlayer.cs" />
     <Compile Include="Protocol\Packets\Play\PacketBlockChange.cs" />
@@ -84,8 +101,6 @@
     <Compile Include="Protocol\Packets\Handshake\PacketLoginStart.cs" />
     <Compile Include="Protocol\Packets\PacketDisconnect.cs" />
     <Compile Include="Protocol\Packets\Handshake\EmptyPacket.cs" />
-    <Compile Include="Protocol\Packets\Handshake\PacketLoginSuccess.cs" />
-    <Compile Include="Protocol\Packets\Handshake\PacketEncriptionRequest.cs" />
     <Compile Include="Protocol\Packets\Handshake\PacketHandshake.cs" />
     <Compile Include="Protocol\Packets\Handshake\PacketResponse.cs" />
     <Compile Include="Protocol\Packets\Play\PacketChat.cs" />
@@ -107,10 +122,10 @@
     <Compile Include="Protocol\Packets\Play\PacketWindowItems.cs" />
     <Compile Include="Protocol\Threading\BaseThread.cs" />
     <Compile Include="Protocol\Threading\WritingThread.cs" />
-    <Compile Include="Settings.Designer.cs">
+    <Compile Include="Settings\GameSettings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
+      <DependentUpon>GameSettings.settings</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Structure\Actions\ActionChatMessage.cs" />
@@ -118,15 +133,15 @@
     <Compile Include="Structure\Actions\ActionMessage.cs" />
     <Compile Include="Structure\Controller.cs" />
     <Compile Include="Structure\Decompressor.cs" />
-    <Compile Include="Structure\Game\AI\AIHandler.cs" />
-    <Compile Include="Structure\Game\AI\AIModule.cs" />
-    <Compile Include="Protocol\Threading\AIThread.cs" />
-    <Compile Include="Structure\Game\AI\Modules\AntiAFK.cs" />
-    <Compile Include="Structure\Game\AI\Modules\Movement.cs" />
+    <Compile Include="Structure\Game\ActionManager.cs" />
+    <Compile Include="Structure\Game\AI\AiHandler.cs" />
+    <Compile Include="Structure\Game\AI\BasicRoutine.cs" />
+    <Compile Include="Structure\Game\AI\IRoutine.cs" />
     <Compile Include="Structure\Game\AI\Pathfinding\Path.cs" />
     <Compile Include="Structure\Game\AI\Pathfinding\PathFinder.cs" />
     <Compile Include="Structure\Game\AI\Pathfinding\PathPoint.cs" />
     <Compile Include="Structure\Game\Entity.cs" />
+    <Compile Include="Structure\Game\GameBlock.cs" />
     <Compile Include="Structure\Game\GameController.cs" />
     <Compile Include="Structure\Game\Item.cs" />
     <Compile Include="Structure\Game\LivingEntity.cs" />
@@ -135,8 +150,9 @@
     <Compile Include="Structure\Game\World\Block.cs" />
     <Compile Include="Structure\Game\World\Chunk.cs" />
     <Compile Include="Structure\Game\World\Section.cs" />
-    <Compile Include="Structure\Game\World\World.cs" />
-    <Compile Include="Structure\Model.cs" />
+    <Compile Include="Structure\Game\World\GameWorld.cs" />
+    <Compile Include="Structure\MathHelper.cs" />
+    <Compile Include="Structure\NetworkController.cs" />
     <Compile Include="Structure\Actions\SysAction.cs" />
     <Compile Include="Protocol\Threading\ReadingThread.cs" />
     <Compile Include="Structure\Viewer.cs">
@@ -147,7 +163,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="UserIDS.xml">
+    <Content Include="Settings\UserIDS.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="App.config" />
@@ -158,9 +174,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="Settings.settings">
+    <None Include="Settings\blocks.json" />
+    <None Include="Settings\GameSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <LastGenOutput>GameSettings.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -169,8 +186,12 @@
       <DependentUpon>Viewer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Libs\" />
+    <Folder Include="Structure\Game\Items\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

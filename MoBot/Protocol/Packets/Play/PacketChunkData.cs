@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MoBot.Protocol.Handlers;
-using MinecraftEmuPTS.GameData;
+using MoBot.Structure.Game.World;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketChunkData : Packet
+    public class PacketChunkData : Packet
     {
-        public Chunk chunk;
+        public Chunk Chunk;
         public byte[] ChunkData;
         public int Length;
         public bool RemoveChunk;
-        public int x, z;
+        public int X, Z;
         public override void HandlePacket(IHandler handler)
         {
             handler.HandlePacketChunkData(this);
@@ -22,14 +18,14 @@ namespace MoBot.Protocol.Packets.Play
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            x = buff.ReadInt();
-            z = buff.ReadInt();
+            X = buff.ReadInt();
+            Z = buff.ReadInt();
             bool groundUp = buff.ReadBool();
             short pbitmap = buff.ReadShort();
             short abitmap = buff.ReadShort();
             Length = buff.ReadInt();
             ChunkData = buff.ReadBytes(Length);
-            chunk = new Chunk(x, z, pbitmap, abitmap, groundUp, true);
+            Chunk = new Chunk(X, Z, pbitmap, abitmap, groundUp, true);
             RemoveChunk = pbitmap == 0;
         }
 

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MoBot.Structure.Actions
+﻿namespace MoBot.Structure.Actions
 {
-    abstract class SysAction
+    public abstract class SysAction
     {
        
     }

@@ -1,20 +1,15 @@
-﻿using MoBot.Structure.Actions;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using MoBot.Settings;
+using MoBot.Structure.Actions;
+using Newtonsoft.Json.Linq;
 
 namespace MoBot.Structure
 {
-    partial class Viewer : Form, IObserver<SysAction>
+    public partial class Viewer : Form, IObserver<SysAction>
     {
-        internal Controller mainController;
+        public Controller MainController;
         public Viewer()
         {
             InitializeComponent();
@@ -32,65 +27,66 @@ namespace MoBot.Structure
 
         public void OnNext(SysAction value)
         {
-            if (value is ActionConnect)
+            var actionConnect = value as ActionConnect;
+            if (actionConnect != null)
             {
-                var connect = value as ActionConnect;
+                var connect = actionConnect;
                 if (connect.Connected)
-                    putsc($"Client connected!{Environment.NewLine}", Color.DarkGoldenrod);
+                    Putsc($"Client connected!{Environment.NewLine}", Color.DarkGoldenrod);
             }
             else if (value is ActionMessage)
             {
-                var message = value as ActionMessage;
-                putsc($"{message.message}{Environment.NewLine}", Color.Black);
+                var message = (ActionMessage) value;
+                Putsc($"{message.Message}{Environment.NewLine}", Color.Black);
             }
-            else if (value is ActionChatMessage)
+            else
             {
-                var message = value as ActionChatMessage;
-                dynamic response = JObject.Parse(message.JSONMessage);
+                var chatMessage = value as ActionChatMessage;
+                if (chatMessage == null) return;
+                var message = chatMessage;
+                dynamic response = JObject.Parse(message.JsonMessage);
                 if (response.extra != null)
                 {
-                    foreach (Object obj in response.extra as JArray)
+                    foreach (var obj in (JArray) response.extra)
                     {
                         if (obj is JValue)
                         {
-                            putsc($"{obj.ToString()}", Color.White);
+                            Putsc($"{obj}", Color.White);
                         }
-                        else if (obj is JToken)
+                        else if (obj != null)
                         {
-                            JToken token = obj as JToken;
-                            putsc($"{token.Value<string>("text")}", Color.FromName(token.Value<string>("color")));
+                            JToken token = obj;
+                            Putsc($"{token.Value<string>("text")}", Color.FromName(token.Value<string>("color")));
                         }
                     }
                 }
                 else
                 {
-                    putsc(message.JSONMessage, Color.Black);
+                    Putsc(message.JsonMessage, Color.Black);
                 }
-                putsc(Environment.NewLine, Color.White);
+                Putsc(Environment.NewLine, Color.White);
                 //putsc($"{message.JSONMessage}{Environment.NewLine}", Color.Black);
             }
         }
 
         private void buttonConnect_Click(object sender, EventArgs e)
         {
-            mainController.HandleConnect(usernameTextBox.Text, serverTextbox.Text);
+            MainController.HandleConnect(usernameTextBox.Text, serverTextbox.Text);
         }
 
         private void buttonSendMessage_Click(object sender, EventArgs e)
         {
-            if(chatTextBox.Text != "")
-            {
-                mainController.HandleChatMessage(chatTextBox.Text);
-                chatTextBox.Text = "";
-            }
+            if (chatTextBox.Text == "") return;
+            MainController.HandleChatMessage(chatTextBox.Text);
+            chatTextBox.Text = "";
         }
 
         
-        private void putsc(String text, Color color, String style = "")
+        private void Putsc(String text, Color color, String style = "")
         {
-            if (this.InvokeRequired)
+            if (InvokeRequired)
             {
-                this.Invoke(new Action<string, Color, string>(putsc), text, color, style);
+                Invoke(new Action<string, Color, string>(Putsc), text, color, style);
             }
             else
             {
@@ -100,25 +96,23 @@ namespace MoBot.Structure
                 consoleWindow.SelectionColor = color;
                 if (style == "italic")
                     consoleWindow.SelectionFont = new Font("Cambria", 12, FontStyle.Italic);
-                if (text.Contains("\n") || text.Contains("\r"))
-                {
-                    consoleWindow.SelectionStart = consoleWindow.Text.Length;
-                    consoleWindow.SelectionLength = 0;
-                    consoleWindow.ScrollToCaret();
-                }
+                if (!text.Contains("\n") && !text.Contains("\r")) return;
+                consoleWindow.SelectionStart = consoleWindow.Text.Length;
+                consoleWindow.SelectionLength = 0;
+                consoleWindow.ScrollToCaret();
             }
         }
 
         private void Viewer_Load(object sender, EventArgs e)
         {
-            Settings settings = Settings.Default;
+            GameSettings settings = GameSettings.Default;
             serverTextbox.Text = settings.Server;
             usernameTextBox.Text = settings.Username;
         }
 
         private void Viewer_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Settings settings = Settings.Default;
+            GameSettings settings = GameSettings.Default;
             settings.Server = serverTextbox.Text;
             settings.Username = usernameTextBox.Text;
             settings.Save(); 
