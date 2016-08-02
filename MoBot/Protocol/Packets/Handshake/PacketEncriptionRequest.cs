@@ -10,17 +10,26 @@ namespace MoBot.Protocol.Packets.Handshake
         public byte[] Token { get; set; }
         public override void HandlePacket(IHandler handler)
         {
-            throw new NotImplementedException();
+            handler.HandlePacketEncriptionRequest(this);
         }
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            throw new NotImplementedException();
+            ServerId = buff.ReadString();
+            short length = buff.ReadShort();
+            Key = buff.ReadBytes(length);
+            length = buff.ReadShort();
+            Token = buff.ReadBytes(length);
         }
 
         public override void WritePacketData(StreamWrapper buff)
         {
             throw new NotImplementedException();
+        }
+
+        public override bool ProceedNow()
+        {
+            return true;
         }
     }
 }

@@ -3,7 +3,7 @@ using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    public class PacketUpdateHelath : Packet
+    public class PacketUpdateHealth : Packet
     {
         public float Health;
         public short Food;

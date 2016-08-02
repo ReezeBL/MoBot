@@ -86,6 +86,7 @@
     <Compile Include="Protocol\Channel.cs" />
     <Compile Include="Protocol\Handlers\ClientHandler.cs" />
     <Compile Include="Protocol\Handlers\IHandler.cs" />
+    <Compile Include="Protocol\PacketRespawn.cs" />
     <Compile Include="Protocol\Packets\Play\PacketConfirmTransaction.cs" />
     <Compile Include="Protocol\Packets\Handshake\PacketLoginSuccess.cs" />
     <Compile Include="Protocol\Packet.cs" />
@@ -118,7 +119,7 @@
     <Compile Include="Protocol\Packets\Play\PacketPlayerPosLook.cs" />
     <Compile Include="Protocol\Packets\Play\PacketSetSlot.cs" />
     <Compile Include="Protocol\Packets\Play\PacketSpawnMob.cs" />
-    <Compile Include="Protocol\Packets\Play\PacketUpdateHelath.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketUpdateHealth.cs" />
     <Compile Include="Protocol\Packets\Play\PacketWindowItems.cs" />
     <Compile Include="Protocol\Threading\BaseThread.cs" />
     <Compile Include="Protocol\Threading\WritingThread.cs" />

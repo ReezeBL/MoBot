@@ -6,12 +6,12 @@ namespace MoBot.Protocol.Packets.Handshake
     {
         public override void HandlePacket(IHandler handler)
         {
-            throw new System.NotImplementedException();
+            handler.HandlePacketLoginSucess(this);
         }
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public override void WritePacketData(StreamWrapper buff)

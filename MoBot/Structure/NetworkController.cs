@@ -74,8 +74,9 @@ namespace MoBot.Structure
 
                 #endregion
             }
-            catch (Exception)
+            catch (Exception exception)
             {
+                Console.WriteLine(exception.ToString());
                 NotifyViewer("Unable to connect to server!");
             }
         }
@@ -108,7 +109,7 @@ namespace MoBot.Structure
                 Hostname = serverIp,
                 Port = (ushort) port,
                 NextState = 1,
-                ProtocolVersion = 47
+                ProtocolVersion = 46
             });
             channel.SendPacket(new EmptyPacket());
             var result = channel.GetPacket() as PacketResponse;

@@ -29,7 +29,8 @@ namespace MoBot.Protocol.Handlers
         void HandlePacketSpawnMoob(PacketSpawnMob packetSpawnMob);
         void HandlePacketSpawnObject(PacketSpawnObject packetSpawnObject);
         void HandlePacketSpawnPlayer(PacketSpawnPlayer packetSpawnPlayer);
-        void HandlePacketUpdateHealth(PacketUpdateHelath packetUpdateHelath);
+        void HandlePacketUpdateHealth(PacketUpdateHealth packetUpdateHelath);
         void HandlePacketWindowItems(PacketWindowItems packetWindowItems);
+        void HandlePacketRespawn(PacketRespawn packetRespawn);
     }
 }

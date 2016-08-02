@@ -21,89 +21,14 @@ using Org.BouncyCastle.Security;
 namespace MoBot.Protocol.Handlers
 {
     public class ClientHandler : IHandler
-    {     
+    {
         private readonly Logger _log = Program.GetLogger();
-       
-        private static string PostUrl(PacketEncriptionRequest packetEncriptionRequest, byte[] secretKey, string id)
-        {
-            var request =
-                WebRequest.Create(
-                    $"http://ex-server.ru/joinserver.php?user={NetworkController.Username}&sessionId={id}&serverId={GetServerIdHash(packetEncriptionRequest.ServerId, secretKey, packetEncriptionRequest.Key)}");
-            var responseStream = request.GetResponse().GetResponseStream();
-            if (responseStream == null) return "";
-            var responseString = new StreamReader(responseStream).ReadToEnd();
-            return responseString;
-        }
 
-        private static string GetUserSession()
-        {
-            var document = new XmlDocument();
-            document.Load("Settings/UserIDS.xml");
-            var root = document.DocumentElement;
-            var id = "";
-            Debug.Assert(root != null, "root != null");
-            foreach (XmlNode child in root)
-            {
-                if (child.Attributes?.GetNamedItem("name").Value == NetworkController.Username)
-                    id = child.InnerText;
-            }
-
-            return id;
-        }
-
-        #region ServerHashCalculations
-
-        private static string GetServerIdHash(string serverId, byte[] secretKey, byte[] publicKey)
-        {
-            var idBytes = Encoding.ASCII.GetBytes(serverId);
-            var data = new byte[idBytes.Length + secretKey.Length + publicKey.Length];
-
-            idBytes.CopyTo(data, 0);
-            secretKey.CopyTo(data, idBytes.Length);
-            publicKey.CopyTo(data, idBytes.Length + secretKey.Length);
-
-            return JavaHexDigest(data);
-        }
-
-        private static string JavaHexDigest(byte[] data)
-        {
-            var sha1 = SHA1.Create();
-            var hash = sha1.ComputeHash(data);
-            var negative = (hash[0] & 0x80) == 0x80;
-            if (negative) // check for negative hashes
-                hash = TwosCompliment(hash);
-            // Create the string and trim away the zeroes
-            var digest = GetHexString(hash).TrimStart('0');
-            if (negative)
-                digest = "-" + digest;
-            return digest;
-        }
-
-        private static string GetHexString(IEnumerable<byte> p)
-        {
-            return p.Aggregate(string.Empty, (current, t) => current + t.ToString("x2"));
-        }
-
-        private static byte[] TwosCompliment(byte[] p) // little endian
-        {
-            int i;
-            var carry = true;
-            for (i = p.Length - 1; i >= 0; i--)
-            {
-                p[i] = (byte) ~p[i];
-                if (!carry) continue;
-                carry = p[i] == 0xFF;
-                p[i]++;
-            }
-            return p;
-        }
-
-        #endregion
-      
 
         public void HandlePacketDisconnect(PacketDisconnect packetDisconnect)
         {
-            NetworkController.NotifyViewer($"You have been disconnected from the server! Reason: {packetDisconnect.Reason}");
+            NetworkController.NotifyViewer(
+                $"You have been disconnected from the server! Reason: {packetDisconnect.Reason}");
             NetworkController.Disconnect();
         }
 
@@ -177,7 +102,11 @@ namespace MoBot.Protocol.Handlers
                     var version = payload.ReadByte();
                     answer.WriteByte(1);
                     answer.WriteByte(version);
-                    NetworkController.SendPacket(new PacketCustomPayload {Channel = "FML|HS", MyPayload = answer.GetBlob()});
+                    NetworkController.SendPacket(new PacketCustomPayload
+                    {
+                        Channel = "FML|HS",
+                        MyPayload = answer.GetBlob()
+                    });
                     answer = new StreamWrapper();
                     answer.WriteByte(2);
                     answer.WriteVarInt(NetworkController.ModList.Count);
@@ -187,7 +116,11 @@ namespace MoBot.Protocol.Handlers
                         answer.WriteString((string) obj["modid"]);
                         answer.WriteString((string) obj["version"]);
                     }
-                    NetworkController.SendPacket(new PacketCustomPayload {Channel = "FML|HS", MyPayload = answer.GetBlob()});
+                    NetworkController.SendPacket(new PacketCustomPayload
+                    {
+                        Channel = "FML|HS",
+                        MyPayload = answer.GetBlob()
+                    });
                 }
                     break;
                 case 2:
@@ -195,7 +128,11 @@ namespace MoBot.Protocol.Handlers
                     var answer = new StreamWrapper();
                     answer.WriteByte(255);
                     answer.WriteByte(2);
-                    NetworkController.SendPacket(new PacketCustomPayload {Channel = "FML|HS", MyPayload = answer.GetBlob()});
+                    NetworkController.SendPacket(new PacketCustomPayload
+                    {
+                        Channel = "FML|HS",
+                        MyPayload = answer.GetBlob()
+                    });
                 }
                     break;
                 case 255:
@@ -215,7 +152,11 @@ namespace MoBot.Protocol.Handlers
                             _log.Info($"Unhandled Ack Stage : {stage}");
                             break;
                     }
-                    NetworkController.SendPacket(new PacketCustomPayload {Channel = "FML|HS", MyPayload = answer.GetBlob()});
+                    NetworkController.SendPacket(new PacketCustomPayload
+                    {
+                        Channel = "FML|HS",
+                        MyPayload = answer.GetBlob()
+                    });
                 }
                     break;
                 default:
@@ -242,7 +183,8 @@ namespace MoBot.Protocol.Handlers
         {
             //Console.WriteLine($"Assigning player position from {{{(int) GameController.Player.X}|{(int) GameController.Player.Y}|{(int) GameController.Player.Z}}} to {{{(int) packetPlayerPosLook.X}|{(int) (packetPlayerPosLook.Y - 1.62)}|{(int) packetPlayerPosLook.Z}}}");
             //Console.WriteLine($"Assigning player position from {{{GameController.Player.X}|{GameController.Player.Y}|{GameController.Player.Z}}} to {{{(float)packetPlayerPosLook.X}|{(float)(packetPlayerPosLook.Y - 1.62)}|{(float)packetPlayerPosLook.Z}}}");
-            GameController.Player.SetPosition(packetPlayerPosLook.X, packetPlayerPosLook.Y -= 1.62, packetPlayerPosLook.Z);         
+            GameController.Player.SetPosition(packetPlayerPosLook.X, packetPlayerPosLook.Y -= 1.62,
+                packetPlayerPosLook.Z);
             GameController.Player.Yaw = packetPlayerPosLook.Yaw;
             GameController.Player.Pitch = packetPlayerPosLook.Pitch;
             GameController.Player.OnGround = packetPlayerPosLook.OnGround;
@@ -255,6 +197,10 @@ namespace MoBot.Protocol.Handlers
             {
                 packetWindowItems.Items.CopyTo(GameController.Player.Inventory, 0);
             }
+        }
+
+        public void HandlePacketRespawn(PacketRespawn packetRespawn)
+        {
         }
 
         public void HandlePacketSetSlot(PacketSetSlot packetSetSlot)
@@ -337,7 +283,7 @@ namespace MoBot.Protocol.Handlers
             GameController.World.Invalidate();
         }
 
-        public void HandlePacketUpdateHealth(PacketUpdateHelath packetUpdateHelath)
+        public void HandlePacketUpdateHealth(PacketUpdateHealth packetUpdateHelath)
         {
             GameController.Player.Health = packetUpdateHelath.Health;
             GameController.Player.Food = packetUpdateHelath.Food;
@@ -392,5 +338,81 @@ namespace MoBot.Protocol.Handlers
             packetConfirmTransaction.Accepted = true;
             NetworkController.SendPacket(packetConfirmTransaction);
         }
+
+        private static string PostUrl(PacketEncriptionRequest packetEncriptionRequest, byte[] secretKey, string id)
+        {
+            var request =
+                WebRequest.Create(
+                    $"http://ex-server.ru/joinserver.php?user={NetworkController.Username}&sessionId={id}&serverId={GetServerIdHash(packetEncriptionRequest.ServerId, secretKey, packetEncriptionRequest.Key)}");
+            var responseStream = request.GetResponse().GetResponseStream();
+            if (responseStream == null) return "";
+            var responseString = new StreamReader(responseStream).ReadToEnd();
+            return responseString;
+        }
+
+        private static string GetUserSession()
+        {
+            var document = new XmlDocument();
+            document.Load("Settings/UserIDS.xml");
+            var root = document.DocumentElement;
+            var id = "";
+            Debug.Assert(root != null, "root != null");
+            foreach (XmlNode child in root)
+            {
+                if (child.Attributes?.GetNamedItem("name").Value == NetworkController.Username)
+                    id = child.InnerText;
+            }
+
+            return id;
+        }
+
+        #region ServerHashCalculations
+
+        private static string GetServerIdHash(string serverId, byte[] secretKey, byte[] publicKey)
+        {
+            var idBytes = Encoding.ASCII.GetBytes(serverId);
+            var data = new byte[idBytes.Length + secretKey.Length + publicKey.Length];
+
+            idBytes.CopyTo(data, 0);
+            secretKey.CopyTo(data, idBytes.Length);
+            publicKey.CopyTo(data, idBytes.Length + secretKey.Length);
+
+            return JavaHexDigest(data);
+        }
+
+        private static string JavaHexDigest(byte[] data)
+        {
+            var sha1 = SHA1.Create();
+            var hash = sha1.ComputeHash(data);
+            var negative = (hash[0] & 0x80) == 0x80;
+            if (negative) // check for negative hashes
+                hash = TwosCompliment(hash);
+            // Create the string and trim away the zeroes
+            var digest = GetHexString(hash).TrimStart('0');
+            if (negative)
+                digest = "-" + digest;
+            return digest;
+        }
+
+        private static string GetHexString(IEnumerable<byte> p)
+        {
+            return p.Aggregate(string.Empty, (current, t) => current + t.ToString("x2"));
+        }
+
+        private static byte[] TwosCompliment(byte[] p) // little endian
+        {
+            int i;
+            var carry = true;
+            for (i = p.Length - 1; i >= 0; i--)
+            {
+                p[i] = (byte) ~p[i];
+                if (!carry) continue;
+                carry = p[i] == 0xFF;
+                p[i]++;
+            }
+            return p;
+        }
+
+        #endregion
     }
 }

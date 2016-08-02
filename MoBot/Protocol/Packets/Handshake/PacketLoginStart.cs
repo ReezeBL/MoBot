@@ -5,7 +5,7 @@ namespace MoBot.Protocol.Packets.Handshake
 {
     class PacketLoginStart : Packet
     {
-        public String Name = "";
+        public string Name = "";
         public override void HandlePacket(IHandler handler)
         {
             throw new NotImplementedException();
