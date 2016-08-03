@@ -1,5 +1,4 @@
-﻿using System;
-using MoBot.Protocol.Handlers;
+﻿using MoBot.Protocol.Handlers;
 using MoBot.Structure.Game;
 
 namespace MoBot.Protocol
@@ -17,12 +16,37 @@ namespace MoBot.Protocol
 
         protected static void WriteItem(StreamWrapper buff, Item itemStack)
         {
-            throw new NotImplementedException();
+            if (itemStack == null || itemStack.Id < 0)
+                buff.WriteShort(-1);
+            else
+            {
+                buff.WriteShort(itemStack.Id);
+                buff.WriteByte(itemStack.ItemCount);
+                buff.WriteShort(itemStack.ItemDamage);
+                if (itemStack.NbtData != null)
+                {
+                    buff.WriteShort((short) itemStack.NbtData.Length);
+                    buff.WriteBytes(itemStack.NbtData);
+                }
+                else
+                {
+                    buff.WriteShort(-1);
+                }
+            }
         }
 
         protected static Item ReadItem(StreamWrapper buff)
         {
-            throw new NotImplementedException();
+            var item = new Item {Id = buff.ReadShort()};
+            if (item.Id < 0) return item;
+
+            item.ItemCount = buff.ReadByte();
+            item.ItemDamage = buff.ReadShort();
+            var nbtLength = buff.ReadShort();
+            if (nbtLength < 0)
+                return item;
+            item.NbtData = buff.ReadBytes(nbtLength);
+            return item;
         }
     }
 }

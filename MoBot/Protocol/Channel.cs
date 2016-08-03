@@ -24,7 +24,19 @@ namespace MoBot.Protocol
 
         private StreamWrapper _channel;
 
-        private readonly HashSet<int> _ignoredIds = new HashSet<int>();
+        private readonly HashSet<int> _ignoredIds = new HashSet<int> {
+            3, //PacketTimeUpdate
+            4, //PacketEntityEquipment
+            5, //PacketSpawnPosition
+            22, //PacketEntityLook
+            25, //PacketEntityHeadLook
+            28, //PacketEntityMetadata
+            31, //PacketSetExperience
+            32, //PacketEntityProperties
+            41, //PacketSoundEffect
+            55, //PacketStatistics
+            56, //PacketPlayerListItem
+        };
 
         private readonly Dictionary<int, Type> _loginMap = new Dictionary<int, Type>
         {
@@ -77,7 +89,8 @@ namespace MoBot.Protocol
             {typeof(PacketHeldItemChange), 9},
             {typeof(PacketClickWindow), 14},
             {typeof(PacketConfirmTransaction), 15},
-            {typeof(PacketCustomPayload), 15}
+            {typeof(PacketClientStatus), 22 },
+            {typeof(PacketCustomPayload), 23}
         };
 
         private readonly Dictionary<Type, int> _reversePingMap = new Dictionary<Type, int>()
@@ -139,6 +152,11 @@ namespace MoBot.Protocol
 
         public void SendPacket(Packet packet)
         {
+            if (!_currentReverseMap.ContainsKey(packet.GetType()))
+            {
+                Console.WriteLine(packet.GetType());
+                return;
+            }
             var id = _currentReverseMap[packet.GetType()];
             var tmp = new StreamWrapper();
             tmp.WriteVarInt(id);

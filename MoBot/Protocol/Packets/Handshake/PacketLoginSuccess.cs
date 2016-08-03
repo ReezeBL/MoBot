@@ -18,5 +18,10 @@ namespace MoBot.Protocol.Packets.Handshake
         {
             throw new System.NotImplementedException();
         }
+
+        public override bool ProceedNow()
+        {
+            return true;
+        }
     }
 }
