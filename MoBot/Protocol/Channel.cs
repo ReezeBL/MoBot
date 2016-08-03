@@ -64,6 +64,7 @@ namespace MoBot.Protocol
 
         private readonly Dictionary<Type, int> _reverseLoginMap = new Dictionary<Type, int>
         {
+            {typeof(PacketHandshake), 0},
             {typeof(PacketLoginStart), 0},
             {typeof(PacketEncriptionResponse), 1}
         };
@@ -157,9 +158,9 @@ namespace MoBot.Protocol
             Type packetType;
             if (!_currentMap.TryGetValue(id, out packetType))
             {
-                if (_ignoredIds.Contains(id))
-                    return null;
-                throw new ArgumentException($"ID {id} is not registered in dictionary");
+                if (!_ignoredIds.Contains(id))
+                    Program.GetLogger().Error($"Unknown packet id : {id}");
+                return null;
             }
             Debug.Assert(packetType != null, $"Error in getting packet {id}");
             var packet = Activator.CreateInstance(packetType) as Packet;

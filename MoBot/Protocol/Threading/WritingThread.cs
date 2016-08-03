@@ -27,9 +27,9 @@ namespace MoBot.Protocol.Threading
                                     NetworkController.MainChannel.SendPacket(pack);
                             }
                         }
-                        catch (Exception)
+                        catch (Exception exception)
                         {
-                            // ignored
+                            Program.GetLogger().Error($"Writing thread: {exception.Message}");
                         }
                     }
                     Thread.Sleep(50);
