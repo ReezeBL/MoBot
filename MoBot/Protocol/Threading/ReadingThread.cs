@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading;
 using MoBot.Structure;
 
@@ -16,13 +18,20 @@ namespace MoBot.Protocol.Threading
             {
                 while (Process)
                 {
-                    var packet = NetworkController.MainChannel.GetPacket();
-                    if (packet == null) continue;
-                    if (packet.ProceedNow())
-                        packet.HandlePacket(NetworkController.Handler);
-                    else
-                        lock (_queueLocker)
-                            _processQueue.Enqueue(packet);
+                    try
+                    {
+                        var packet = NetworkController.MainChannel.GetPacket();
+                        if (packet == null) continue;
+                        if (packet.ProceedNow())
+                            packet.HandlePacket(NetworkController.Handler);
+                        else
+                            lock (_queueLocker)
+                                _processQueue.Enqueue(packet);
+                    }
+                    catch (Exception exception)
+                    {
+                        Program.GetLogger().Error($"Reading thread: {exception.Message}");
+                    }
                 }
             })
             { IsBackground = true };
@@ -30,10 +39,17 @@ namespace MoBot.Protocol.Threading
             {
                 while (Process)
                 {
-                    lock (_queueLocker)
+                    try
                     {
-                        while (_processQueue.Count > 0)
-                            _processQueue.Dequeue().HandlePacket(NetworkController.Handler);
+                        lock (_queueLocker)
+                        {
+                            while (_processQueue.Count > 0)
+                                _processQueue.Dequeue().HandlePacket(NetworkController.Handler);
+                        }
+                    }
+                    catch (Exception exception)
+                    {
+                        Program.GetLogger().Error($"Processing thread: {exception.Message}");
                     }
                     Thread.Sleep(50);
                 }

@@ -28,14 +28,18 @@ namespace MoBot.Protocol
             3, //PacketTimeUpdate
             4, //PacketEntityEquipment
             5, //PacketSpawnPosition
+            18,
+            19,
             22, //PacketEntityLook
             25, //PacketEntityHeadLook
-            28, //PacketEntityMetadata
-            31, //PacketSetExperience
+            28, //TODO: PacketEntityMetadata
+            31, //TODO: PacketSetExperience
             32, //PacketEntityProperties
             41, //PacketSoundEffect
+            53,
             55, //PacketStatistics
             56, //PacketPlayerListItem
+            62,
         };
 
         private readonly Dictionary<int, Type> _loginMap = new Dictionary<int, Type>

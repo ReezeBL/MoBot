@@ -11,16 +11,29 @@ namespace MoBot.Structure.Game
 
         public static void LoadBlocks()
         {
-            using (var file = File.OpenText("Settings/blocks.json"))
-            using (var reader = new JsonTextReader(file))
+            try
             {
-                dynamic loadedData = JToken.ReadFrom(reader);
-                foreach (var data in loadedData)
+                using (var file = File.OpenText("Settings/blocks.json"))
+                using (var reader = new JsonTextReader(file))
                 {
-                    if (data.id == null) continue;
-                    var block = new GameBlock { Id = (int)data.id, Name = (string)data.name, Hardness = (float)(data.hardness.Value ?? float.MaxValue), Transparent = (bool)data.transparent };
-                    BlockRegistry.Add(block.Id, block);
+                    dynamic loadedData = JToken.ReadFrom(reader);
+                    foreach (var data in loadedData)
+                    {
+                        if (data.id == null) continue;
+                        var block = new GameBlock
+                        {
+                            Id = (int) data.id,
+                            Name = (string) data.name,
+                            Hardness = (float) (data.hardness.Value ?? float.MaxValue),
+                            Transparent = (bool) data.transparent
+                        };
+                        BlockRegistry.Add(block.Id, block);
+                    }
                 }
+            }
+            catch (FileNotFoundException exception)
+            {
+                Program.GetLogger().Warn($"Cant find {exception.FileName} file!");   
             }
         }
           

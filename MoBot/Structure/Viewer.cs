@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using MoBot.Settings;
@@ -9,6 +10,18 @@ namespace MoBot.Structure
 {
     public partial class Viewer : Form, IObserver<SysAction>
     {
+        private static readonly Dictionary<string, Color> Colors = new Dictionary<string, Color>()
+        {
+            {"dark_blue", Color.DarkBlue},
+            {"gold", Color.Gold },
+            {"green", Color.Green },
+            {"red", Color.Red },
+            {"dark_green", Color.Green },
+            {"white", Color.White },
+            {"aqua", Color.Aqua },
+            {"dark_red", Color.DarkRed },
+        };
+
         public Controller MainController;
         public Viewer()
         {
@@ -56,7 +69,13 @@ namespace MoBot.Structure
                         else if (obj != null)
                         {
                             JToken token = obj;
-                            Putsc($"{token.Value<string>("text")}", Color.FromName(token.Value<string>("color")));
+                            Color color;
+
+                            string colorName = token.Value<string>("color");
+                            if (!Colors.TryGetValue(colorName, out color))
+                                color = Color.FromName(colorName);
+
+                            Putsc($"{token.Value<string>("text")}", color);
                         }
                     }
                 }
@@ -82,7 +101,7 @@ namespace MoBot.Structure
         }
 
         
-        private void Putsc(String text, Color color, String style = "")
+        private void Putsc(string text, Color color, string style = "")
         {
             if (InvokeRequired)
             {
@@ -90,9 +109,8 @@ namespace MoBot.Structure
             }
             else
             {
-                consoleWindow.SelectionStart = consoleWindow.Text.Length + 1;
-                consoleWindow.AppendText(text);
-                consoleWindow.SelectionLength = consoleWindow.Text.Length - consoleWindow.SelectionStart + 1;
+                consoleWindow.SelectionStart = consoleWindow.TextLength;
+                consoleWindow.SelectedText = text;
                 consoleWindow.SelectionColor = color;
                 if (style == "italic")
                     consoleWindow.SelectionFont = new Font("Cambria", 12, FontStyle.Italic);
