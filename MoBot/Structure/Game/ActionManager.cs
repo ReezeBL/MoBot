@@ -162,5 +162,10 @@ namespace MoBot.Structure.Game
                 Thread.Sleep(50);
             }
         }
+
+        public static void AttackEntity(int id)
+        {
+            NetworkController.SendPacket(new PacketUseEntity {TargetId = id, Type = 1});
+        }
     }
 }

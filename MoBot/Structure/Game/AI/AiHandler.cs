@@ -11,6 +11,8 @@ namespace MoBot.Structure.Game.AI
         private bool _threadContinue = true;
         private IBehaviourTreeNode _tree;
 
+        public readonly Protector Protector = new Protector();
+
         public AiHandler()
         {
             var aiThread = new Thread(() =>
@@ -48,7 +50,31 @@ namespace MoBot.Structure.Game.AI
         private void BuildTree()
         {
             var builder = new BehaviourTreeBuilder();
-            _tree = builder.Build();
+            _tree = builder.Selector("mainLoop").Splice(Protector.GetTreeNode()).End().Build();
+        }
+
+        
+    }
+
+    public class Protector
+    {
+        public Entity Target;
+
+        private BehaviourTreeStatus HasTarget(TimeData timeData)
+        {
+            return Target == null ? BehaviourTreeStatus.Failure : BehaviourTreeStatus.Success;
+        }
+
+        private BehaviourTreeStatus AttackTarget(TimeData timeData)
+        {
+            ActionManager.AttackEntity(Target.Id);
+            return BehaviourTreeStatus.Success;
+        }
+
+        public IBehaviourTreeNode GetTreeNode()
+        {
+            var builder = new BehaviourTreeBuilder();
+            return builder.Sequence("protection").Do("CheckForTarget", HasTarget).Do("AttackTarget", AttackTarget).End().Build();
         }
     }
 }

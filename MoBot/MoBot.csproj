@@ -85,6 +85,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ObjectExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Protocol\Channel.cs" />
@@ -140,8 +141,6 @@
     <Compile Include="Structure\Decompressor.cs" />
     <Compile Include="Structure\Game\ActionManager.cs" />
     <Compile Include="Structure\Game\AI\AiHandler.cs" />
-    <Compile Include="Structure\Game\AI\BasicRoutine.cs" />
-    <Compile Include="Structure\Game\AI\IRoutine.cs" />
     <Compile Include="Structure\Game\AI\Pathfinding\Path.cs" />
     <Compile Include="Structure\Game\AI\Pathfinding\PathFinder.cs" />
     <Compile Include="Structure\Game\AI\Pathfinding\PathPoint.cs" />
@@ -151,6 +150,7 @@
     <Compile Include="Structure\Game\Item.cs" />
     <Compile Include="Structure\Game\LivingEntity.cs" />
     <Compile Include="Structure\Game\Mob.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketUseEntity.cs" />
     <Compile Include="Structure\Game\Player.cs" />
     <Compile Include="Structure\Game\World\Block.cs" />
     <Compile Include="Structure\Game\World\Chunk.cs" />
