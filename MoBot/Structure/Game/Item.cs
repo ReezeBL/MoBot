@@ -23,9 +23,7 @@ namespace MoBot.Structure.Game
         public static Item GetItem(int id)
         {
             Item res;
-            if (!ItemRegistry.TryGetValue(id, out res))
-                res = new Item { Id = (short)id };
-            return res;
+            return !ItemRegistry.TryGetValue(id, out res) ? new Item { Id = (short)id } : res.CloneJson();
         }
 
         public virtual float GetItemEffectivness(GameBlock block)

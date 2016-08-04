@@ -6,7 +6,7 @@ using NLog;
 
 namespace MoBot
 {
-    class Program
+    public class Program
     {
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
         public static Logger GetLogger()
@@ -14,7 +14,7 @@ namespace MoBot
             return Log;
         }
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
