@@ -27,7 +27,7 @@ namespace MoBot.Structure.Game
         private Player _player;
         private readonly GameWorld _world = new GameWorld();      
         public static GameWorld World => _instance?._world;       
-        public static AiHandler AiHandler { get; private set; } = new AiHandler(new BasicRoutine());
+        public static AiHandler AiHandler { get; private set; } = new AiHandler();
         public static Player Player => _instance?._player;
 
         public static Entity GetEntity(int id)

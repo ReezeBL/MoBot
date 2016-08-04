@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Threading;
+using FluentBehaviourTree;
 
 namespace MoBot.Structure.Game.AI
 {
     public class AiHandler
     {
-        private IRoutine _mainRoutine;
-        private readonly Thread _aiThread;
         private readonly ConcurrentQueue<Action> _tasks = new ConcurrentQueue<Action>();
         private bool _threadContinue = true;
+        private IBehaviourTreeNode _tree;
 
-        public AiHandler(IRoutine routine)
+        public AiHandler()
         {
-            _mainRoutine = routine;
-            _aiThread = new Thread(() =>
+            var aiThread = new Thread(() =>
             {
                 while (_threadContinue)
                 {
@@ -23,29 +22,33 @@ namespace MoBot.Structure.Game.AI
                         while (_tasks.Count > 0)
                         {
                             Action result;
-                            _tasks.TryDequeue(out result);
-                            result.Invoke();
+                            if(_tasks.TryDequeue(out result))
+                                result.Invoke();
                         }
-                        _mainRoutine.Logic();
+                        _tree.Tick(new TimeData(50));
+                    }
+                    else
+                    {
+                        _threadContinue = false;
                     }
                     
                     Thread.Sleep(50);
                 }               
             }) {IsBackground = true};
-            _aiThread.Start();
-        }
-        public void HookNewRoutine(IRoutine routine)
-        {
-            _threadContinue = false;
-            _aiThread.Join();
-            _mainRoutine = routine;
-            _threadContinue = true;
-            _aiThread.Start();
+
+            BuildTree();
+            aiThread.Start();
         }
 
         public void EnqueueTask(Action func)
         {
             _tasks.Enqueue(func);
+        }
+
+        private void BuildTree()
+        {
+            var builder = new BehaviourTreeBuilder();
+            _tree = builder.Build();
         }
     }
 }
