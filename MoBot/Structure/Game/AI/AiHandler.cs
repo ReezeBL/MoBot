@@ -56,13 +56,30 @@ namespace MoBot.Structure.Game.AI
         
     }
 
-    public class Protector
+    public class WaitTask
+    {
+        private readonly float _waitingTime;
+
+        public WaitTask(float waitingTime)
+        {
+            _waitingTime = waitingTime;
+        }
+    }
+
+    public abstract class AiHandlerComponent
+    {
+        protected delegate BehaviourTreeStatus Task(TimeData data);
+
+        public abstract IBehaviourTreeNode GetTreeNode();
+    }
+
+    public class Protector : AiHandlerComponent
     {
         public Entity Target;
 
-        private BehaviourTreeStatus HasTarget(TimeData timeData)
+        private bool HasTarget(TimeData timeData)
         {
-            return Target == null ? BehaviourTreeStatus.Failure : BehaviourTreeStatus.Success;
+            return Target == null;
         }
 
         private BehaviourTreeStatus AttackTarget(TimeData timeData)
@@ -71,10 +88,10 @@ namespace MoBot.Structure.Game.AI
             return BehaviourTreeStatus.Success;
         }
 
-        public IBehaviourTreeNode GetTreeNode()
+        public override IBehaviourTreeNode GetTreeNode()
         {
             var builder = new BehaviourTreeBuilder();
-            return builder.Sequence("protection").Do("CheckForTarget", HasTarget).Do("AttackTarget", AttackTarget).End().Build();
+            return builder.Sequence("protection").Condition("CheckForTarget", HasTarget).Do("AttackTarget", AttackTarget).End().Build();
         }
     }
 }
