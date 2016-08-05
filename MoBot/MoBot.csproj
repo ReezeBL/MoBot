@@ -49,10 +49,6 @@
       <HintPath>..\packages\BouncyCastle.1.7.0\lib\Net40-Client\BouncyCastle.Crypto.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FluentBehaviourTree, Version=0.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentBehaviourTree.0.0.4.0\lib\net35\FluentBehaviourTree.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -83,6 +79,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="TreeSharp">
+      <HintPath>..\packages\TreeSharp\TreeSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ObjectExtensions.cs" />
@@ -144,6 +143,7 @@
     <Compile Include="Structure\Game\AI\Pathfinding\Path.cs" />
     <Compile Include="Structure\Game\AI\Pathfinding\PathFinder.cs" />
     <Compile Include="Structure\Game\AI\Pathfinding\PathPoint.cs" />
+    <Compile Include="Structure\Game\AI\Tasks\WaitTask.cs" />
     <Compile Include="Structure\Game\Entity.cs" />
     <Compile Include="Structure\Game\GameBlock.cs" />
     <Compile Include="Structure\Game\GameController.cs" />

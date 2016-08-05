@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Threading;
-using FluentBehaviourTree;
+using TreeSharp;
+using Action = System.Action;
 
 namespace MoBot.Structure.Game.AI
 {
@@ -9,9 +10,7 @@ namespace MoBot.Structure.Game.AI
     {
         private readonly ConcurrentQueue<Action> _tasks = new ConcurrentQueue<Action>();
         private bool _threadContinue = true;
-        private IBehaviourTreeNode _tree;
-
-        public readonly Protector Protector = new Protector();
+        private Composite _root;
 
         public AiHandler()
         {
@@ -27,7 +26,14 @@ namespace MoBot.Structure.Game.AI
                             if(_tasks.TryDequeue(out result))
                                 result.Invoke();
                         }
-                        _tree.Tick(new TimeData(50));
+
+                        _root.Tick(null);
+
+                        if (_root.LastStatus != RunStatus.Running)
+                        {
+                            _root.Stop(null);
+                            _root.Start(null);
+                        }
                     }
                     else
                     {
@@ -38,7 +44,7 @@ namespace MoBot.Structure.Game.AI
                 }               
             }) {IsBackground = true};
 
-            BuildTree();
+            _root.Start(null);
             aiThread.Start();
         }
 
@@ -46,52 +52,9 @@ namespace MoBot.Structure.Game.AI
         {
             _tasks.Enqueue(func);
         }
-
-        private void BuildTree()
-        {
-            var builder = new BehaviourTreeBuilder();
-            _tree = builder.Selector("mainLoop").Splice(Protector.GetTreeNode()).End().Build();
-        }
-
-        
     }
 
-    public class WaitTask
-    {
-        private readonly float _waitingTime;
+    
 
-        public WaitTask(float waitingTime)
-        {
-            _waitingTime = waitingTime;
-        }
-    }
-
-    public abstract class AiHandlerComponent
-    {
-        protected delegate BehaviourTreeStatus Task(TimeData data);
-
-        public abstract IBehaviourTreeNode GetTreeNode();
-    }
-
-    public class Protector : AiHandlerComponent
-    {
-        public Entity Target;
-
-        private bool HasTarget(TimeData timeData)
-        {
-            return Target == null;
-        }
-
-        private BehaviourTreeStatus AttackTarget(TimeData timeData)
-        {
-            ActionManager.AttackEntity(Target.Id);
-            return BehaviourTreeStatus.Success;
-        }
-
-        public override IBehaviourTreeNode GetTreeNode()
-        {
-            var builder = new BehaviourTreeBuilder();
-            return builder.Sequence("protection").Condition("CheckForTarget", HasTarget).Do("AttackTarget", AttackTarget).End().Build();
-        }
-    }
+    
 }

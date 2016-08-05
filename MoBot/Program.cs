@@ -24,6 +24,7 @@ namespace MoBot
             Controller controller = new Controller();
             Viewer viewer = new Viewer { MainController = controller };
             model.Subscribe(viewer);
+            model.Subscribe(viewer);
             Application.Run(viewer);
         }
     }
