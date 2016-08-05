@@ -143,7 +143,8 @@
     <Compile Include="Structure\Game\AI\Pathfinding\Path.cs" />
     <Compile Include="Structure\Game\AI\Pathfinding\PathFinder.cs" />
     <Compile Include="Structure\Game\AI\Pathfinding\PathPoint.cs" />
-    <Compile Include="Structure\Game\AI\Tasks\WaitTask.cs" />
+    <Compile Include="Structure\Game\AI\Tasks\Protector.cs" />
+    <Compile Include="Structure\Game\AI\Tasks\Task.cs" />
     <Compile Include="Structure\Game\Entity.cs" />
     <Compile Include="Structure\Game\GameBlock.cs" />
     <Compile Include="Structure\Game\GameController.cs" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Threading;
+using MoBot.Structure.Game.AI.Tasks;
 using TreeSharp;
 using Action = System.Action;
 
@@ -11,6 +12,7 @@ namespace MoBot.Structure.Game.AI
         private readonly ConcurrentQueue<Action> _tasks = new ConcurrentQueue<Action>();
         private bool _threadContinue = true;
         private Composite _root;
+        public Protector Protector { get; private set; } = new Protector();
 
         public AiHandler()
         {
@@ -44,13 +46,21 @@ namespace MoBot.Structure.Game.AI
                 }               
             }) {IsBackground = true};
 
+            CreateRoot();
+
             _root.Start(null);
+
             aiThread.Start();
         }
 
         public void EnqueueTask(Action func)
         {
             _tasks.Enqueue(func);
+        }
+
+        private void CreateRoot()
+        {
+            _root = new PrioritySelector(Protector);
         }
     }
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Threading;
 using AForge.Math;
 using MoBot.Protocol.Packets.Play;
@@ -130,13 +131,30 @@ namespace MoBot.Structure.Game
         }
         public static void MoveToLocationS(PathPoint endPoint)
         {
-            
             var path = PathFinder.StaticPath(GameController.Player, endPoint);
             foreach (var point in path)
-                SmoothMove(point);
+            {
+                SmoothMoveWrapper(point);
+            }
         }
 
-        private static void SmoothMove(PathPoint point)
+        public static IEnumerator MoveRoutineS(PathPoint endPoint)
+        {
+            var path = PathFinder.StaticPath(GameController.Player, endPoint);
+            foreach (var point in path)
+            {
+                yield return SmoothMove(point);
+            }
+        }
+
+        private static void SmoothMoveWrapper(PathPoint point)
+        {
+            var handler = SmoothMove(point);
+            while (handler.MoveNext())
+                Thread.Sleep(50);
+        } 
+
+        private static IEnumerator SmoothMove(PathPoint point)
         {
             var speed = 0.6f;          
             var player = GameController.Player;           
@@ -146,7 +164,7 @@ namespace MoBot.Structure.Game
                 var horizontal = new Vector3(point.X + 0.5f * Math.Sign(point.X) - player.X, 0, point.Z + 0.5f * Math.Sign(point.Z) - player.Z);               
                 var dir = vertical + horizontal;
                 if(dir.Norm < 0.1)
-                    break;
+                    yield break;
                 if (horizontal.Norm < speed)
                     speed = horizontal.Norm;                                                                                                   
                 RotatePlayer(dir.X, dir.Y, dir.Z);
@@ -159,7 +177,7 @@ namespace MoBot.Structure.Game
                 }
                 else
                     MovePlayer(vertical);
-                Thread.Sleep(50);
+                yield return null;
             }
         }
 
