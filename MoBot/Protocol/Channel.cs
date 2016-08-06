@@ -28,18 +28,17 @@ namespace MoBot.Protocol
             3, //PacketTimeUpdate
             4, //PacketEntityEquipment
             5, //PacketSpawnPosition
-            18,
-            19,
+            18,//PacketEntityVelocity
             22, //PacketEntityLook
             25, //PacketEntityHeadLook
             28, //TODO: PacketEntityMetadata
             31, //TODO: PacketSetExperience
             32, //PacketEntityProperties
             41, //PacketSoundEffect
-            53,
+            53, //PacketUpdateTileEntity
             55, //PacketStatistics
             56, //PacketPlayerListItem
-            62,
+            62, //PacketTeams
         };
 
         private readonly Dictionary<int, Type> _loginMap = new Dictionary<int, Type>
@@ -61,6 +60,7 @@ namespace MoBot.Protocol
             {12, typeof(PacketSpawnPlayer)},
             {14, typeof(PacketSpawnObject)},
             {15, typeof(PacketSpawnMob)},
+            {19, typeof(PacketDestroyEntities) },
             {20, typeof(PacketEntity)},
             {21, typeof(PacketEntity.PacketEntityMove)},
             {23, typeof(PacketEntity.PacketEntityMove)},
@@ -89,6 +89,7 @@ namespace MoBot.Protocol
         {
             {typeof(PacketKeepAlive), 0},
             {typeof(PacketChat), 1},
+            {typeof(PacketUseEntity), 2 },
             {typeof(PacketPlayerPosLook), 6},
             {typeof(PacketHeldItemChange), 9},
             {typeof(PacketClickWindow), 14},

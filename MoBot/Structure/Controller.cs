@@ -60,9 +60,9 @@ namespace MoBot.Structure
                         break;
                     case "-move":
                     {
-                        GameController.AiHandler.EnqueueTask(() => ActionManager.MoveToLocation(
-                            new PathPoint(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3]))));
-                    }
+                            GameController.AiHandler.Mover.SetDestination(
+                                new PathPoint(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3])));
+                        }
                         break;
                     default:
                     {

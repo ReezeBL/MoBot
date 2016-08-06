@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.Serialization;
+using AForge.Math;
 using MoBot.Structure.Game.World;
 using Priority_Queue;
 
@@ -65,6 +66,16 @@ namespace MoBot.Structure.Game.AI.Pathfinding
             X = x;
             Y = y;
             Z = z;
-        }        
+        }
+
+        public static implicit operator PathPoint(Vector3 vector)
+        {
+            return new PathPoint((int) vector.X, (int) vector.Y, (int) vector.Z);
+        }
+
+        public static implicit operator Vector3(PathPoint point)
+        {
+            return new Vector3(point.X, point.Y, point.Z);
+        }
     }
 }

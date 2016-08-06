@@ -185,5 +185,25 @@ namespace MoBot.Structure.Game
         {
             NetworkController.SendPacket(new PacketUseEntity {TargetId = id, Type = 1});
         }
+
+        public static void StartDigging(PathPoint place)
+        {
+            NetworkController.SendPacket(new PacketPlayerDigging {Status =  0, X = place.X, Y = (byte) place.Y, Z = place.Z, Face =  0});
+        }
+
+        public static void FinishDigging(PathPoint place)
+        {
+            NetworkController.SendPacket(new PacketPlayerDigging { Status = 2, X = place.X, Y = (byte)place.Y, Z = place.Z, Face = 0 });
+        }
+
+        public static void StartDigging(int x, int y, int z)
+        {
+            NetworkController.SendPacket(new PacketPlayerDigging { Status = 0, X = x, Y = (byte)y, Z = z, Face = 0 });
+        }
+
+        public static void FinishDigging(int x, int y, int z)
+        {
+            NetworkController.SendPacket(new PacketPlayerDigging { Status = 2, X = x, Y = (byte)y, Z = z, Face = 0 });
+        }
     }
 }

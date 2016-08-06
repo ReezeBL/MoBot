@@ -30,7 +30,15 @@ namespace MoBot.Structure.Game
         {
             if (block.Hardness < 0)
                 return -1.0f;
-            return 20.0f / (1.0f / block.Hardness / 100);
+            return 1.0f / block.Hardness / 100;
+        }
+
+        public static long GetWaitTime(float itemEffectivness)
+        {
+            var time = .0;
+            while (time < 1)
+                time += itemEffectivness;
+            return (long) time;
         }
     }
 }

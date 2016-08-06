@@ -10,6 +10,8 @@
         public float Saturation;
         public string Name;
 
+        public Item GetHeldItem => Inventory[HeldItem];
+
         public Player(int id, string name) : base(id)
         {
             Name = name;

@@ -2,7 +2,7 @@
 
 namespace MoBot.Structure.Game.AI.Tasks
 {
-    class Surviver : Task
+    public class Surviver : Task
     {
         public int MinFoodDanger = 5;
         public double MinHealthDanger = 5;

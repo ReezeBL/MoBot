@@ -97,6 +97,11 @@ namespace MoBot.Structure.Game.World
             return IsBlockFree(floor) && IsBlockFree(upper);
         }
 
+        public bool IsBlockFree(int x, int y, int z)
+        {
+            return IsBlockFree(GetBlock(x, y, z));
+        }
+
         private static bool IsBlockFree(Block b)
         {
             return b == null || GameBlock.GetBlock(b.Id).Transparent;

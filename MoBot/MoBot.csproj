@@ -97,6 +97,7 @@
     <Compile Include="Protocol\Packets\Handshake\PacketEncriptionRequest.cs" />
     <Compile Include="Protocol\Packets\Play\PacketClickWindow.cs" />
     <Compile Include="Protocol\Packets\Play\PacketClientStatus.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketPlayerDigging.cs" />
     <Compile Include="Protocol\Packets\Play\PacketSpawnPlayer.cs" />
     <Compile Include="Protocol\Packets\Play\PacketBlockChange.cs" />
     <Compile Include="Protocol\Packets\Play\PacketEntityStatus.cs" />
@@ -143,7 +144,9 @@
     <Compile Include="Structure\Game\AI\Pathfinding\Path.cs" />
     <Compile Include="Structure\Game\AI\Pathfinding\PathFinder.cs" />
     <Compile Include="Structure\Game\AI\Pathfinding\PathPoint.cs" />
+    <Compile Include="Structure\Game\AI\Tasks\Mover.cs" />
     <Compile Include="Structure\Game\AI\Tasks\Protector.cs" />
+    <Compile Include="Structure\Game\AI\Tasks\Surviver.cs" />
     <Compile Include="Structure\Game\AI\Tasks\Task.cs" />
     <Compile Include="Structure\Game\Entity.cs" />
     <Compile Include="Structure\Game\GameBlock.cs" />

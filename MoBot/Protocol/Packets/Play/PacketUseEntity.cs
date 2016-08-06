@@ -5,7 +5,7 @@ namespace MoBot.Protocol.Packets.Play
     internal class PacketUseEntity : Packet
     {
         public int TargetId { get; set; }
-        public int Type { get; set; }
+        public byte Type { get; set; }
 
         public override void HandlePacket(IHandler handler)
         {
@@ -19,8 +19,8 @@ namespace MoBot.Protocol.Packets.Play
 
         public override void WritePacketData(StreamWrapper buff)
         {
-            buff.WriteVarInt(TargetId);
-            buff.WriteVarInt(Type);
+            buff.WriteInt(TargetId);
+            buff.WriteByte(Type);
         }
     }
 }
