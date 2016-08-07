@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using MoBot.Structure;
 using MoBot.Structure.Game;
+using MoBot.Structure.Game.Items;
 using NLog;
 
 namespace MoBot
@@ -20,6 +21,8 @@ namespace MoBot
             Application.SetCompatibleTextRenderingDefault(false);
 
             GameBlock.LoadBlocks();
+            Item.LoadItems();
+
             NetworkController model = NetworkController.GetInstance();
             Controller controller = new Controller();
             Viewer viewer = new Viewer { MainController = controller };

@@ -1,8 +1,10 @@
-﻿namespace MoBot.Structure.Game
+﻿using MoBot.Structure.Game.Items;
+
+namespace MoBot.Structure.Game
 {
     public class Player : LivingEntity
     {
-        public Item[] Inventory = new Item[45];
+        public ItemStack[] Inventory = new ItemStack[45];
         public int HeldItem = 0;
         public bool OnGround;
 
@@ -10,7 +12,7 @@
         public float Saturation;
         public string Name;
 
-        public Item GetHeldItem => Inventory[HeldItem];
+        public Item GetHeldItem => Inventory[HeldItem].Item;
 
         public Player(int id, string name) : base(id)
         {
@@ -21,7 +23,7 @@
         {
             for (int i = 9; i < 45; i++)
             {
-                if (Inventory[i] != null && Inventory[i].Id == id)
+                if (Inventory[i] != null && Inventory[i].Item.Id == id)
                     return i;
             }
             return -1;
@@ -31,7 +33,7 @@
         {
             for (int i = 9; i < 45; i++)
             {
-                if (Inventory[i] == null || Inventory[i].Id == -1)
+                if (Inventory[i] == null || Inventory[i].Item.Id == -1)
                     return i;
             }
             return -1;
@@ -39,7 +41,7 @@
 
         public override string ToString()
         {
-            return $"Player: {Name}, ({(int)X} | {(int)Y} | {(int)Z})";
+            return $"Player: {Name}, ({MathHelper.floor_float(X)} | {(int)Y} | {MathHelper.floor_float(Z)})";
         }
     }
 }

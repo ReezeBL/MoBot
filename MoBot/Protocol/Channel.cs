@@ -25,15 +25,20 @@ namespace MoBot.Protocol
         private StreamWrapper _channel;
 
         private readonly HashSet<int> _ignoredIds = new HashSet<int> {
-            3, //PacketTimeUpdate
-            4, //PacketEntityEquipment
-            5, //PacketSpawnPosition
-            18,//PacketEntityVelocity
+            3,  //PacketTimeUpdate
+            4,  //PacketEntityEquipment
+            5,  //PacketSpawnPosition
+            11, //PacketAnimation
+            13, //PacketCollectItem
+            18, //PacketEntityVelocity
             22, //PacketEntityLook
             25, //PacketEntityHeadLook
             28, //TODO: PacketEntityMetadata
             31, //TODO: PacketSetExperience
             32, //PacketEntityProperties
+            37, //PacketBlockBreakAnim
+            40, //PacketEffect
+            43,
             41, //PacketSoundEffect
             53, //PacketUpdateTileEntity
             55, //PacketStatistics
@@ -91,6 +96,7 @@ namespace MoBot.Protocol
             {typeof(PacketChat), 1},
             {typeof(PacketUseEntity), 2 },
             {typeof(PacketPlayerPosLook), 6},
+            {typeof(PacketPlayerDigging), 7 },
             {typeof(PacketHeldItemChange), 9},
             {typeof(PacketClickWindow), 14},
             {typeof(PacketConfirmTransaction), 15},
@@ -151,7 +157,7 @@ namespace MoBot.Protocol
             output.Init(true, new ParametersWithIV(new KeyParameter(secretKey), secretKey, 0, 16));
             BufferedBlockCipher input = new BufferedBlockCipher(new CfbBlockCipher(new AesFastEngine(), 8));
             input.Init(false, new ParametersWithIV(new KeyParameter(secretKey), secretKey, 0, 16));
-            var cipherStream =  new CipherStream(_channel.GetStream(), input, output);
+            var cipherStream = new CipherStream(_channel.GetStream(), input, output);
             _channel = new StreamWrapper(cipherStream);
         }
 

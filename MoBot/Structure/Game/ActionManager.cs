@@ -61,7 +61,7 @@ namespace MoBot.Structure.Game
             var player = GameController.Player;
             var dir = player.Position - newPos;
             var moved = dir.Square >= 9e-4;
-            player.OnGround = Math.Abs(dir.Y) >= 0.1;
+            player.OnGround = Math.Abs(dir.Y) >= 0.35;
             player.SetPosition(newPos);
             UpdatePosition();
             if (moved)

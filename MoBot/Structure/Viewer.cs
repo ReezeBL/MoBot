@@ -123,17 +123,16 @@ namespace MoBot.Structure
 
         private void Viewer_Load(object sender, EventArgs e)
         {
-            GameSettings settings = GameSettings.Default;
-            serverTextbox.Text = settings.Server;
-            usernameTextBox.Text = settings.Username;
+            serverTextbox.Text = SettingsClass.ServerIp;
+            usernameTextBox.Text = SettingsClass.UserName;
         }
 
         private void Viewer_FormClosing(object sender, FormClosingEventArgs e)
         {
-            GameSettings settings = GameSettings.Default;
-            settings.Server = serverTextbox.Text;
-            settings.Username = usernameTextBox.Text;
-            settings.Save(); 
+            SettingsClass.ServerIp = serverTextbox.Text;
+            SettingsClass.UserName = usernameTextBox.Text;
+
+            SettingsClass.Serialize();
         }
     }
 }

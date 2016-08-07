@@ -1,0 +1,5731 @@
+[
+  {
+    "id": 394,
+    "name": "minecraft:poisonous_potato",
+    "effectivness": 1.0
+  },
+  {
+    "id": 3,
+    "name": "minecraft:dirt",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4215,
+    "name": "IC2:itemToolBronzeAxe",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [
+      "axe"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 440,
+    "name": "IC2:fluidBiogas",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4366,
+    "name": "IC2:itemIronBlockCuttingBlade",
+    "effectivness": 1.0
+  },
+  {
+    "id": 46,
+    "name": "minecraft:tnt",
+    "effectivness": 1.0
+  },
+  {
+    "id": 518,
+    "name": "economy:shopBlockBarter",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4318,
+    "name": "IC2:itemFuelPlantBall",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4660,
+    "name": "enderbag:enderBag",
+    "effectivness": 1.0
+  },
+  {
+    "id": 213,
+    "name": "appliedenergistics2:tile.ChiseledQuartzStairBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 192,
+    "name": "appliedenergistics2:tile.BlockInterface",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4396,
+    "name": "Forestry:brokenBronzeShovel",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4178,
+    "name": "IC2:itemHarz",
+    "effectivness": 1.0
+  },
+  {
+    "id": 223,
+    "name": "BuildCraft|Factory:autoWorkbenchBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4285,
+    "name": "IC2:reactorUraniumQuad",
+    "effectivness": 1.0
+  },
+  {
+    "id": 69,
+    "name": "minecraft:lever",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4105,
+    "name": "appliedenergistics2:item.ToolNetherQuartzSpade",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [
+      "shovel"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 4270,
+    "name": "IC2:itemBatLamaCrystal",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4346,
+    "name": "IC2:itemCropSeed",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4518,
+    "name": "ForestryExtras:item.fe.frame.frameLegendary",
+    "effectivness": 1.0
+  },
+  {
+    "id": 78,
+    "name": "minecraft:snow_layer",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4466,
+    "name": "Forestry:apiaristChest",
+    "effectivness": 1.0
+  },
+  {
+    "id": 53,
+    "name": "minecraft:oak_stairs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 195,
+    "name": "appliedenergistics2:tile.BlockEnergyAcceptor",
+    "effectivness": 1.0
+  },
+  {
+    "id": 455,
+    "name": "Forestry:fluid.milk",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4271,
+    "name": "IC2:itemBatSU",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4441,
+    "name": "Forestry:bucketBiomass",
+    "effectivness": 1.0
+  },
+  {
+    "id": 129,
+    "name": "minecraft:emerald_ore",
+    "effectivness": 1.0
+  },
+  {
+    "id": 241,
+    "name": "IC2:blockHarz",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4630,
+    "name": "ProjRed|Exploration:projectred.exploration.shovelperidot",
+    "material": "PERIDOT",
+    "effectivness": 1.0,
+    "toolClass": [
+      "shovel"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 162,
+    "name": "minecraft:log2",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4585,
+    "name": "IC2NuclearControl:ItemToolDigitalThermometer",
+    "effectivness": 1.0
+  },
+  {
+    "id": 305,
+    "name": "minecraft:chainmail_boots",
+    "effectivness": 1.0
+  },
+  {
+    "id": 450,
+    "name": "Forestry:fluid.biomass",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4529,
+    "name": "ForestryExtras:item.fe.frame.frameBronze",
+    "effectivness": 1.0
+  },
+  {
+    "id": 167,
+    "name": "appliedenergistics2:tile.BlockQuartz",
+    "effectivness": 1.0
+  },
+  {
+    "id": 50,
+    "name": "minecraft:torch",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4559,
+    "name": "Mantle:mantleBook",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4500,
+    "name": "ForestryExtras:item.fe.item.obsidianStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4517,
+    "name": "ForestryExtras:item.fe.frame.frameItarius",
+    "effectivness": 1.0
+  },
+  {
+    "id": 309,
+    "name": "minecraft:iron_boots",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4590,
+    "name": "IC2NuclearControl:ItemEnergySensorLocationCard",
+    "effectivness": 1.0
+  },
+  {
+    "id": 218,
+    "name": "BuildCraft|Energy:blockOil",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4549,
+    "name": "GraviSuite:itemSimpleItem",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4489,
+    "name": "ForestryExtras:item.fe.item.alfium ingot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4648,
+    "name": "ProjRed|Exploration:projectred.exploration.rubyleggings",
+    "effectivness": 1.0
+  },
+  {
+    "id": 32,
+    "name": "minecraft:deadbush",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4269,
+    "name": "IC2:itemBatCrystal",
+    "effectivness": 1.0
+  },
+  {
+    "id": 453,
+    "name": "Forestry:fluid.ice",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4104,
+    "name": "appliedenergistics2:item.ToolNetherQuartzHoe",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4217,
+    "name": "IC2:itemToolBronzeSpade",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [
+      "shovel"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 323,
+    "name": "minecraft:sign",
+    "effectivness": 1.0
+  },
+  {
+    "id": 434,
+    "name": "IC2:fluidUuMatter",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4256,
+    "name": "IC2:itemArmorQuantumBoots",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4419,
+    "name": "Forestry:waxCapsule",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4136,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsemerald",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4202,
+    "name": "IC2:itemUran238",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4200,
+    "name": "IC2:itemUran235",
+    "effectivness": 1.0
+  },
+  {
+    "id": 504,
+    "name": "ForestryExtras:tile.fe.block.crop checker",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4250,
+    "name": "IC2:itemArmorNanoChestplate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 437,
+    "name": "IC2:fluidHotCoolant",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4343,
+    "name": "IC2:itemBoat",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4437,
+    "name": "Forestry:refractoryLava",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4616,
+    "name": "ProjRed|Illumination:projectred.illumination.flightbutton",
+    "effectivness": 1.0
+  },
+  {
+    "id": 489,
+    "name": "Forestry:stairs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4459,
+    "name": "Forestry:pollen",
+    "effectivness": 1.0
+  },
+  {
+    "id": 409,
+    "name": "IC2:blockHeatGenerator",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4566,
+    "name": "ForgeMicroblock:sawDiamond",
+    "effectivness": 1.0
+  },
+  {
+    "id": 208,
+    "name": "appliedenergistics2:tile.SkyStoneBlockStairBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4321,
+    "name": "IC2:itemToolPainterBlack",
+    "effectivness": 1.0
+  },
+  {
+    "id": 155,
+    "name": "minecraft:quartz_block",
+    "effectivness": 1.0
+  },
+  {
+    "id": 263,
+    "name": "minecraft:coal",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4348,
+    "name": "IC2:itemFertilizer",
+    "effectivness": 1.0
+  },
+  {
+    "id": 243,
+    "name": "IC2:blockFenceIron",
+    "effectivness": 1.0
+  },
+  {
+    "id": 289,
+    "name": "minecraft:gunpowder",
+    "effectivness": 1.0
+  },
+  {
+    "id": 120,
+    "name": "minecraft:end_portal_frame",
+    "effectivness": 1.0
+  },
+  {
+    "id": 110,
+    "name": "minecraft:mycelium",
+    "effectivness": 1.0
+  },
+  {
+    "id": 39,
+    "name": "minecraft:brown_mushroom",
+    "effectivness": 1.0
+  },
+  {
+    "id": 491,
+    "name": "Forestry:leaves",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4542,
+    "name": "GraviSuite:ultimateLappack",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4463,
+    "name": "Forestry:waxCast",
+    "effectivness": 1.0
+  },
+  {
+    "id": 276,
+    "name": "minecraft:diamond_sword",
+    "effectivness": 1.0
+  },
+  {
+    "id": 381,
+    "name": "minecraft:ender_eye",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4472,
+    "name": "Forestry:treealyzer",
+    "effectivness": 1.0
+  },
+  {
+    "id": 416,
+    "name": "IC2:blockElectric",
+    "effectivness": 1.0
+  },
+  {
+    "id": 186,
+    "name": "appliedenergistics2:tile.BlockCharger",
+    "effectivness": 1.0
+  },
+  {
+    "id": 19,
+    "name": "minecraft:sponge",
+    "effectivness": 1.0
+  },
+  {
+    "id": 201,
+    "name": "appliedenergistics2:tile.BlockCraftingUnit",
+    "effectivness": 1.0
+  },
+  {
+    "id": 287,
+    "name": "minecraft:string",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4281,
+    "name": "IC2:reactorMOXDual",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4142,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsdiamond",
+    "effectivness": 1.0
+  },
+  {
+    "id": 49,
+    "name": "minecraft:obsidian",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4352,
+    "name": "IC2:itemWeedEx",
+    "effectivness": 1.0
+  },
+  {
+    "id": 372,
+    "name": "minecraft:nether_wart",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4146,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemssandstone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4309,
+    "name": "IC2:reactorCondensator",
+    "effectivness": 1.0
+  },
+  {
+    "id": 28,
+    "name": "minecraft:detector_rail",
+    "effectivness": 1.0
+  },
+  {
+    "id": 131,
+    "name": "minecraft:tripwire_hook",
+    "effectivness": 1.0
+  },
+  {
+    "id": 177,
+    "name": "appliedenergistics2:tile.BlockQuartzLamp",
+    "effectivness": 1.0
+  },
+  {
+    "id": 158,
+    "name": "minecraft:dropper",
+    "effectivness": 1.0
+  },
+  {
+    "id": 447,
+    "name": "Forestry:resourceStorage",
+    "effectivness": 1.0
+  },
+  {
+    "id": 119,
+    "name": "minecraft:end_portal",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4226,
+    "name": "IC2:itemToolDrill",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [
+      "pickaxe",
+      "shovel"
+    ],
+    "harvestLevel": [
+      2,
+      2
+    ]
+  },
+  {
+    "id": 4176,
+    "name": "BuildCraft|Silicon:redstoneChipset",
+    "effectivness": 1.0
+  },
+  {
+    "id": 373,
+    "name": "minecraft:potion",
+    "effectivness": 1.0
+  },
+  {
+    "id": 487,
+    "name": "Forestry:fences",
+    "effectivness": 1.0
+  },
+  {
+    "id": 417,
+    "name": "minecraft:iron_horse_armor",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4148,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsemzuli",
+    "effectivness": 1.0
+  },
+  {
+    "id": 255,
+    "name": "IC2:blockKineticGenerator",
+    "effectivness": 1.0
+  },
+  {
+    "id": 278,
+    "name": "minecraft:diamond_pickaxe",
+    "material": "EMERALD",
+    "effectivness": 1.0,
+    "toolClass": [
+      "pickaxe"
+    ],
+    "harvestLevel": [
+      3
+    ]
+  },
+  {
+    "id": 4638,
+    "name": "ProjRed|Exploration:projectred.exploration.sicklewood",
+    "material": "WOOD",
+    "effectivness": 1.0,
+    "toolClass": [],
+    "harvestLevel": []
+  },
+  {
+    "id": 5,
+    "name": "minecraft:planks",
+    "effectivness": 1.0
+  },
+  {
+    "id": 146,
+    "name": "minecraft:trapped_chest",
+    "effectivness": 1.0
+  },
+  {
+    "id": 202,
+    "name": "appliedenergistics2:tile.BlockCraftingStorage",
+    "effectivness": 1.0
+  },
+  {
+    "id": 234,
+    "name": "IC2:blockOreCopper",
+    "effectivness": 1.0
+  },
+  {
+    "id": 25,
+    "name": "minecraft:noteblock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4274,
+    "name": "IC2:itemBatChargeCrystal",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4509,
+    "name": "ForestryExtras:item.fe.frame.frameGold",
+    "effectivness": 1.0
+  },
+  {
+    "id": 292,
+    "name": "minecraft:iron_hoe",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4258,
+    "name": "IC2:itemArmorJetpackElectric",
+    "effectivness": 1.0
+  },
+  {
+    "id": 286,
+    "name": "minecraft:golden_axe",
+    "material": "GOLD",
+    "effectivness": 1.0,
+    "toolClass": [
+      "axe"
+    ],
+    "harvestLevel": [
+      0
+    ]
+  },
+  {
+    "id": 298,
+    "name": "minecraft:leather_helmet",
+    "effectivness": 1.0
+  },
+  {
+    "id": 122,
+    "name": "minecraft:dragon_egg",
+    "effectivness": 1.0
+  },
+  {
+    "id": 166,
+    "name": "appliedenergistics2:tile.OreQuartzCharged",
+    "effectivness": 1.0
+  },
+  {
+    "id": 257,
+    "name": "minecraft:iron_pickaxe",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [
+      "pickaxe"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 4503,
+    "name": "ForestryExtras:item.fe.item.legendaryStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 207,
+    "name": "appliedenergistics2:tile.SkyStoneStairBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 444,
+    "name": "Forestry:core",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4634,
+    "name": "ProjRed|Exploration:projectred.exploration.sawgold",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4649,
+    "name": "ProjRed|Exploration:projectred.exploration.rubyboots",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4378,
+    "name": "Forestry:sturdyMachine",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4535,
+    "name": "ForestryExtras:item.fe.nugget.draconic",
+    "effectivness": 1.0
+  },
+  {
+    "id": 427,
+    "name": "IC2:blockLuminatorDark",
+    "effectivness": 1.0
+  },
+  {
+    "id": 41,
+    "name": "minecraft:gold_block",
+    "effectivness": 1.0
+  },
+  {
+    "id": 275,
+    "name": "minecraft:stone_axe",
+    "material": "STONE",
+    "effectivness": 1.0,
+    "toolClass": [
+      "axe"
+    ],
+    "harvestLevel": [
+      1
+    ]
+  },
+  {
+    "id": 4099,
+    "name": "appliedenergistics2:item.ToolCertusQuartzPickaxe",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [
+      "pickaxe"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 4545,
+    "name": "GraviSuite:vajra",
+    "material": "EMERALD",
+    "effectivness": 1.0,
+    "toolClass": [],
+    "harvestLevel": []
+  },
+  {
+    "id": 526,
+    "name": "ProjRed|Exploration:projectred.exploration.stone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4267,
+    "name": "IC2:itemBatRE",
+    "effectivness": 1.0
+  },
+  {
+    "id": 362,
+    "name": "minecraft:melon_seeds",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4493,
+    "name": "ForestryExtras:item.fe.item.joshen ingot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 421,
+    "name": "minecraft:name_tag",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4586,
+    "name": "IC2NuclearControl:ItemRemoteSensorKit",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4600,
+    "name": "ProjRed|Core:projectred.core.part",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4641,
+    "name": "ProjRed|Exploration:projectred.exploration.sicklegold",
+    "material": "GOLD",
+    "effectivness": 1.0,
+    "toolClass": [],
+    "harvestLevel": []
+  },
+  {
+    "id": 197,
+    "name": "appliedenergistics2:tile.BlockQuartzGrowthAccelerator",
+    "effectivness": 1.0
+  },
+  {
+    "id": 311,
+    "name": "minecraft:diamond_chestplate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 346,
+    "name": "minecraft:fishing_rod",
+    "effectivness": 1.0
+  },
+  {
+    "id": 57,
+    "name": "minecraft:diamond_block",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4636,
+    "name": "ProjRed|Exploration:projectred.exploration.sawsapphire",
+    "effectivness": 1.0
+  },
+  {
+    "id": 266,
+    "name": "minecraft:gold_ingot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 134,
+    "name": "minecraft:spruce_stairs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 411,
+    "name": "IC2:blockReactorChamber",
+    "effectivness": 1.0
+  },
+  {
+    "id": 492,
+    "name": "Forestry:pods",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4551,
+    "name": "IronChest:goldDiamondUpgrade",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4277,
+    "name": "IC2:itemCellEmpty",
+    "effectivness": 1.0
+  },
+  {
+    "id": 347,
+    "name": "minecraft:clock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4170,
+    "name": "BuildCraft|Transport:pipeWire",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4231,
+    "name": "IC2:itemTreetapElectric",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [],
+    "harvestLevel": []
+  },
+  {
+    "id": 4224,
+    "name": "IC2:itemLathingTool",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4427,
+    "name": "Forestry:waxCapsuleFuel",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4637,
+    "name": "ProjRed|Exploration:projectred.exploration.sawperidot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 296,
+    "name": "minecraft:wheat",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4130,
+    "name": "BuildCraft|Core:goldGearItem",
+    "effectivness": 1.0
+  },
+  {
+    "id": 163,
+    "name": "minecraft:acacia_stairs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4450,
+    "name": "Forestry:beePrincessGE",
+    "effectivness": 1.0
+  },
+  {
+    "id": 493,
+    "name": "Forestry:arboriculture",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4562,
+    "name": "statues:statues.item.palette",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4654,
+    "name": "ProjRed|Exploration:projectred.exploration.peridothelmet",
+    "effectivness": 1.0
+  },
+  {
+    "id": 246,
+    "name": "IC2:blockAlloyGlass",
+    "effectivness": 1.0
+  },
+  {
+    "id": 253,
+    "name": "IC2:blockMetal",
+    "effectivness": 1.0
+  },
+  {
+    "id": 262,
+    "name": "minecraft:arrow",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4185,
+    "name": "IC2:itemPurifiedCrushedOre",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4504,
+    "name": "ForestryExtras:item.fe.item.alfiumStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4350,
+    "name": "IC2:itemToolHoe",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [],
+    "harvestLevel": []
+  },
+  {
+    "id": 251,
+    "name": "IC2:blockScaffold",
+    "effectivness": 1.0
+  },
+  {
+    "id": 325,
+    "name": "minecraft:bucket",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4433,
+    "name": "Forestry:refractoryIce",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4154,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsiron",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4181,
+    "name": "IC2:itemupgradekit",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4297,
+    "name": "IC2:reactorPlatingExplosive",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4320,
+    "name": "IC2:itemToolPainter",
+    "effectivness": 1.0
+  },
+  {
+    "id": 256,
+    "name": "minecraft:iron_shovel",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [
+      "shovel"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 220,
+    "name": "BuildCraft|Energy:blockRedPlasma",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4583,
+    "name": "ForestryExtras:item.fe.comb.normal",
+    "effectivness": 1.0
+  },
+  {
+    "id": 87,
+    "name": "minecraft:netherrack",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4324,
+    "name": "IC2:itemToolPainterBrown",
+    "effectivness": 1.0
+  },
+  {
+    "id": 315,
+    "name": "minecraft:golden_chestplate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 332,
+    "name": "minecraft:snowball",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4278,
+    "name": "IC2:itemTinCan",
+    "effectivness": 1.0
+  },
+  {
+    "id": 10,
+    "name": "minecraft:flowing_lava",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4251,
+    "name": "IC2:itemArmorNanoLegs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4342,
+    "name": "IC2:itemDebug",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4543,
+    "name": "GraviSuite:advLappack",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4236,
+    "name": "IC2:obscurator",
+    "effectivness": 1.0
+  },
+  {
+    "id": 259,
+    "name": "minecraft:flint_and_steel",
+    "effectivness": 1.0
+  },
+  {
+    "id": 265,
+    "name": "minecraft:iron_ingot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4369,
+    "name": "Forestry:fertilizerBio",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4149,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsclay",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4408,
+    "name": "Forestry:canEmpty",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4188,
+    "name": "IC2:itemTurningBlanks",
+    "effectivness": 1.0
+  },
+  {
+    "id": 193,
+    "name": "appliedenergistics2:tile.BlockCellWorkbench",
+    "effectivness": 1.0
+  },
+  {
+    "id": 137,
+    "name": "minecraft:command_block",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4580,
+    "name": "ForestryExtras:item.fe.comb.pig",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4569,
+    "name": "advancedcraft:itemBookGreen",
+    "effectivness": 1.0
+  },
+  {
+    "id": 374,
+    "name": "minecraft:glass_bottle",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4160,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepowerwood",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4218,
+    "name": "IC2:itemToolBronzeHoe",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4581,
+    "name": "ForestryExtras:item.fe.comb.cow",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4502,
+    "name": "ForestryExtras:item.fe.item.mutatedIronStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 320,
+    "name": "minecraft:cooked_porkchop",
+    "effectivness": 1.0
+  },
+  {
+    "id": 42,
+    "name": "minecraft:iron_block",
+    "effectivness": 1.0
+  },
+  {
+    "id": 458,
+    "name": "Forestry:apiculture",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4263,
+    "name": "IC2:itemSolarHelmet",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4425,
+    "name": "Forestry:waxCapsuleSeedOil",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4497,
+    "name": "ForestryExtras:item.fe.item.emeraldStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 260,
+    "name": "minecraft:apple",
+    "effectivness": 1.0
+  },
+  {
+    "id": 343,
+    "name": "minecraft:furnace_minecart",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4516,
+    "name": "ForestryExtras:item.fe.frame.frameAlfium",
+    "effectivness": 1.0
+  },
+  {
+    "id": 460,
+    "name": "Forestry:candle",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4376,
+    "name": "Forestry:wrench",
+    "effectivness": 1.0
+  },
+  {
+    "id": 307,
+    "name": "minecraft:iron_chestplate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4339,
+    "name": "IC2:itemDoorAlloy",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4484,
+    "name": "ForestryExtras:item.fe.item.draconicIngot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4362,
+    "name": "IC2:itemsteelrotor",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4186,
+    "name": "IC2:itemPlates",
+    "effectivness": 1.0
+  },
+  {
+    "id": 390,
+    "name": "minecraft:flower_pot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4471,
+    "name": "Forestry:pollenFertile",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4579,
+    "name": "ForestryExtras:item.fe.comb.carrot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4126,
+    "name": "BuildCraft|Core:wrenchItem",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4,
+    "name": "minecraft:cobblestone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 135,
+    "name": "minecraft:birch_stairs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4193,
+    "name": "IC2:itemIngot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4540,
+    "name": "GraviSuite:graviChestPlate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 156,
+    "name": "minecraft:quartz_stairs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 203,
+    "name": "appliedenergistics2:tile.BlockCraftingMonitor",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4280,
+    "name": "IC2:reactorMOXSimple",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4329,
+    "name": "IC2:itemToolPainterDarkGrey",
+    "effectivness": 1.0
+  },
+  {
+    "id": 188,
+    "name": "appliedenergistics2:tile.BlockCableBus",
+    "effectivness": 1.0
+  },
+  {
+    "id": 281,
+    "name": "minecraft:bowl",
+    "effectivness": 1.0
+  },
+  {
+    "id": 217,
+    "name": "BuildCraft|Energy:engineBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 418,
+    "name": "minecraft:golden_horse_armor",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4415,
+    "name": "Forestry:canWater",
+    "effectivness": 1.0
+  },
+  {
+    "id": 154,
+    "name": "minecraft:hopper",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4133,
+    "name": "BuildCraft|Energy:bucketFuel",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4214,
+    "name": "IC2:itemToolBronzePickaxe",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [
+      "pickaxe"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 4476,
+    "name": "Forestry:beverage",
+    "effectivness": 1.0
+  },
+  {
+    "id": 60,
+    "name": "minecraft:farmland",
+    "effectivness": 1.0
+  },
+  {
+    "id": 112,
+    "name": "minecraft:nether_brick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4108,
+    "name": "appliedenergistics2:item.ToolNetherQuartzWrench",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4390,
+    "name": "Forestry:solderingIron",
+    "effectivness": 1.0
+  },
+  {
+    "id": 86,
+    "name": "minecraft:pumpkin",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4532,
+    "name": "ForestryExtras:item.fe.frame.frameSilver",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4288,
+    "name": "IC2:reactorMOXQuaddepleted",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4658,
+    "name": "wanditems:itemWand",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4211,
+    "name": "IC2:itemOreIridium",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4385,
+    "name": "Forestry:bituminousPeat",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4556,
+    "name": "IronChest:woodIronUpgrade",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4109,
+    "name": "appliedenergistics2:item.ToolNetherQuartzCuttingKnife",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4594,
+    "name": "IC2NuclearControl:ItemUpgrade",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4474,
+    "name": "Forestry:grafterProven",
+    "effectivness": 1.0
+  },
+  {
+    "id": 182,
+    "name": "appliedenergistics2:tile.BlockSkyCompass",
+    "effectivness": 1.0
+  },
+  {
+    "id": 123,
+    "name": "minecraft:redstone_lamp",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4232,
+    "name": "IC2:itemToolMiningLaser",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [],
+    "harvestLevel": []
+  },
+  {
+    "id": 4219,
+    "name": "IC2:itemToolWrench",
+    "effectivness": 1.0
+  },
+  {
+    "id": 363,
+    "name": "minecraft:beef",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4519,
+    "name": "ForestryExtras:item.fe.scoop.scoopReinforced",
+    "effectivness": 1.0
+  },
+  {
+    "id": 77,
+    "name": "minecraft:stone_button",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4364,
+    "name": "IC2:itemSteamTurbine",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4443,
+    "name": "Forestry:bucketHoney",
+    "effectivness": 1.0
+  },
+  {
+    "id": 97,
+    "name": "minecraft:monster_egg",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4190,
+    "name": "IC2:itemDustSmall",
+    "effectivness": 1.0
+  },
+  {
+    "id": 191,
+    "name": "appliedenergistics2:tile.BlockChest",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4571,
+    "name": "economy:economyShopWrench",
+    "effectivness": 1.0
+  },
+  {
+    "id": 314,
+    "name": "minecraft:golden_helmet",
+    "effectivness": 1.0
+  },
+  {
+    "id": 345,
+    "name": "minecraft:compass",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4120,
+    "name": "appliedenergistics2:item.ItemCrystalSeed",
+    "effectivness": 1.0
+  },
+  {
+    "id": 457,
+    "name": "Forestry:fluid.short.mead",
+    "effectivness": 1.0
+  },
+  {
+    "id": 324,
+    "name": "minecraft:wooden_door",
+    "effectivness": 1.0
+  },
+  {
+    "id": 130,
+    "name": "minecraft:ender_chest",
+    "effectivness": 1.0
+  },
+  {
+    "id": 279,
+    "name": "minecraft:diamond_axe",
+    "material": "EMERALD",
+    "effectivness": 1.0,
+    "toolClass": [
+      "axe"
+    ],
+    "harvestLevel": [
+      3
+    ]
+  },
+  {
+    "id": 4173,
+    "name": "BuildCraft|Transport:pipePlug",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4492,
+    "name": "ForestryExtras:item.fe.item.goshen ingot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 40,
+    "name": "minecraft:red_mushroom",
+    "effectivness": 1.0
+  },
+  {
+    "id": 498,
+    "name": "Forestry:ffarm",
+    "effectivness": 1.0
+  },
+  {
+    "id": 479,
+    "name": "Forestry:planks",
+    "effectivness": 1.0
+  },
+  {
+    "id": 387,
+    "name": "minecraft:written_book",
+    "effectivness": 1.0
+  },
+  {
+    "id": 396,
+    "name": "minecraft:golden_carrot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 273,
+    "name": "minecraft:stone_shovel",
+    "material": "STONE",
+    "effectivness": 1.0,
+    "toolClass": [
+      "shovel"
+    ],
+    "harvestLevel": [
+      1
+    ]
+  },
+  {
+    "id": 17,
+    "name": "minecraft:log",
+    "effectivness": 1.0
+  },
+  {
+    "id": 415,
+    "name": "IC2:blockreactorvessel",
+    "effectivness": 1.0
+  },
+  {
+    "id": 456,
+    "name": "Forestry:fluid.seedoil",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4319,
+    "name": "IC2:itemBiochaff",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4429,
+    "name": "Forestry:refractoryEmpty",
+    "effectivness": 1.0
+  },
+  {
+    "id": 370,
+    "name": "minecraft:ghast_tear",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4469,
+    "name": "Forestry:scoop",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4612,
+    "name": "ProjRed|Illumination:projectred.illumination.cagelamp.inv",
+    "effectivness": 1.0
+  },
+  {
+    "id": 248,
+    "name": "IC2:blockReinforcedFoam",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4125,
+    "name": "appliedenergistics2:item.ItemMultiPart",
+    "effectivness": 1.0
+  },
+  {
+    "id": 299,
+    "name": "minecraft:leather_chestplate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 511,
+    "name": "wildcaves3:SandstoneSalactite",
+    "effectivness": 1.0
+  },
+  {
+    "id": 443,
+    "name": "IC2:fluidSteam",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4303,
+    "name": "IC2:reactorVentCore",
+    "effectivness": 1.0
+  },
+  {
+    "id": 392,
+    "name": "minecraft:potato",
+    "effectivness": 1.0
+  },
+  {
+    "id": 412,
+    "name": "IC2:blockReactorFluidPort",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4194,
+    "name": "IC2:reactorLithiumCell",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4208,
+    "name": "IC2:itemPartCarbonFibre",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4523,
+    "name": "ForestryExtras:item.fe.item.bronzeStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 148,
+    "name": "minecraft:heavy_weighted_pressure_plate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4456,
+    "name": "Forestry:frameImpregnated",
+    "effectivness": 1.0
+  },
+  {
+    "id": 297,
+    "name": "minecraft:bread",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4112,
+    "name": "appliedenergistics2:item.ToolNetworkTool",
+    "effectivness": 1.0
+  },
+  {
+    "id": 27,
+    "name": "minecraft:golden_rail",
+    "effectivness": 1.0
+  },
+  {
+    "id": 430,
+    "name": "IC2:blockMiningTip",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4205,
+    "name": "IC2:itemPartCircuit",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4189,
+    "name": "IC2:itemTurningBlanksWood",
+    "effectivness": 1.0
+  },
+  {
+    "id": 521,
+    "name": "IC2NuclearControl:blockNuclearControlLight",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4501,
+    "name": "ForestryExtras:item.fe.item.reinforcedStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 43,
+    "name": "minecraft:double_stone_slab",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4147,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsvoid",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4161,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepowercobblestone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4113,
+    "name": "appliedenergistics2:item.ItemCreativeStorageCell",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4565,
+    "name": "ForgeMicroblock:sawIron",
+    "effectivness": 1.0
+  },
+  {
+    "id": 308,
+    "name": "minecraft:iron_leggings",
+    "effectivness": 1.0
+  },
+  {
+    "id": 200,
+    "name": "appliedenergistics2:tile.BlockCreativeEnergyCell",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4123,
+    "name": "appliedenergistics2:item.ItemPaintBall",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4333,
+    "name": "IC2:itemToolPainterCloud",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4353,
+    "name": "IC2:itemMugEmpty",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4498,
+    "name": "ForestryExtras:item.fe.item.goldStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4552,
+    "name": "IronChest:copperSilverUpgrade",
+    "effectivness": 1.0
+  },
+  {
+    "id": 198,
+    "name": "appliedenergistics2:tile.BlockEnergyCell",
+    "effectivness": 1.0
+  },
+  {
+    "id": 357,
+    "name": "minecraft:cookie",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4221,
+    "name": "IC2:itemFoamSprayer",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4374,
+    "name": "Forestry:ingotTin",
+    "effectivness": 1.0
+  },
+  {
+    "id": 382,
+    "name": "minecraft:speckled_melon",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4597,
+    "name": "IC2NuclearControl:Item55ReactorCard",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4393,
+    "name": "Forestry:oakStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4411,
+    "name": "Forestry:canHoney",
+    "effectivness": 1.0
+  },
+  {
+    "id": 337,
+    "name": "minecraft:clay_ball",
+    "effectivness": 1.0
+  },
+  {
+    "id": 322,
+    "name": "minecraft:golden_apple",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4379,
+    "name": "Forestry:hardenedMachine",
+    "effectivness": 1.0
+  },
+  {
+    "id": 438,
+    "name": "IC2:fluidPahoehoeLava",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4643,
+    "name": "ProjRed|Exploration:projectred.exploration.sicklesapphire",
+    "material": "SAPPHIRE",
+    "effectivness": 1.0,
+    "toolClass": [],
+    "harvestLevel": []
+  },
+  {
+    "id": 61,
+    "name": "minecraft:furnace",
+    "effectivness": 1.0
+  },
+  {
+    "id": 30,
+    "name": "minecraft:web",
+    "effectivness": 1.0
+  },
+  {
+    "id": 106,
+    "name": "minecraft:vine",
+    "effectivness": 1.0
+  },
+  {
+    "id": 454,
+    "name": "Forestry:fluid.juice",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4317,
+    "name": "IC2:itemScrapbox",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4097,
+    "name": "appliedenergistics2:item.ToolCertusQuartzHoe",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4405,
+    "name": "Forestry:beeswax",
+    "effectivness": 1.0
+  },
+  {
+    "id": 301,
+    "name": "minecraft:leather_boots",
+    "effectivness": 1.0
+  },
+  {
+    "id": 339,
+    "name": "minecraft:paper",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4572,
+    "name": "ForestryExtras:item.fe.comb.draconic",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4635,
+    "name": "ProjRed|Exploration:projectred.exploration.sawruby",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4327,
+    "name": "IC2:itemToolPainterCyan",
+    "effectivness": 1.0
+  },
+  {
+    "id": 66,
+    "name": "minecraft:rail",
+    "effectivness": 1.0
+  },
+  {
+    "id": 288,
+    "name": "minecraft:feather",
+    "effectivness": 1.0
+  },
+  {
+    "id": 211,
+    "name": "appliedenergistics2:tile.FluixStairBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 310,
+    "name": "minecraft:diamond_helmet",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4237,
+    "name": "IC2:itemFreq",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4359,
+    "name": "IC2:itemMugBooze",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4539,
+    "name": "ForestryExtras:item.fe.nugget.legendary",
+    "effectivness": 1.0
+  },
+  {
+    "id": 304,
+    "name": "minecraft:chainmail_leggings",
+    "effectivness": 1.0
+  },
+  {
+    "id": 138,
+    "name": "minecraft:beacon",
+    "effectivness": 1.0
+  },
+  {
+    "id": 350,
+    "name": "minecraft:cooked_fished",
+    "effectivness": 1.0
+  },
+  {
+    "id": 413,
+    "name": "IC2:blockReactorAccessHatch",
+    "effectivness": 1.0
+  },
+  {
+    "id": 321,
+    "name": "minecraft:painting",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4358,
+    "name": "IC2:itemBarrel",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4604,
+    "name": "ProjRed|Core:projectred.core.datacard",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4233,
+    "name": "IC2:itemToolMEter",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4554,
+    "name": "IronChest:copperIronUpgrade",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4591,
+    "name": "IC2NuclearControl:ItemMultipleSensorLocationCard",
+    "effectivness": 1.0
+  },
+  {
+    "id": 194,
+    "name": "appliedenergistics2:tile.BlockCondenser",
+    "effectivness": 1.0
+  },
+  {
+    "id": 393,
+    "name": "minecraft:baked_potato",
+    "effectivness": 1.0
+  },
+  {
+    "id": 284,
+    "name": "minecraft:golden_shovel",
+    "material": "GOLD",
+    "effectivness": 1.0,
+    "toolClass": [
+      "shovel"
+    ],
+    "harvestLevel": [
+      0
+    ]
+  },
+  {
+    "id": 159,
+    "name": "minecraft:stained_hardened_clay",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4338,
+    "name": "IC2:itemCoin",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4156,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsemerald",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4306,
+    "name": "IC2:reactorVentDiamond",
+    "effectivness": 1.0
+  },
+  {
+    "id": 72,
+    "name": "minecraft:wooden_pressure_plate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 340,
+    "name": "minecraft:book",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4640,
+    "name": "ProjRed|Exploration:projectred.exploration.sickleiron",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [],
+    "harvestLevel": []
+  },
+  {
+    "id": 4609,
+    "name": "ProjRed|Illumination:projectred.illumination.fixture",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4661,
+    "name": "Forestry:item.PipeItemsPropolis",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4243,
+    "name": "IC2:itemArmorRubBoots",
+    "effectivness": 1.0
+  },
+  {
+    "id": 329,
+    "name": "minecraft:saddle",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4260,
+    "name": "IC2:itemArmorAdvBatpack",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4168,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepowersandstone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4506,
+    "name": "ForestryExtras:item.fe.item.itariusStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 11,
+    "name": "minecraft:lava",
+    "effectivness": 1.0
+  },
+  {
+    "id": 108,
+    "name": "minecraft:brick_stairs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 499,
+    "name": "Forestry:lepidopterology",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4247,
+    "name": "IC2:itemArmorBronzeBoots",
+    "effectivness": 1.0
+  },
+  {
+    "id": 461,
+    "name": "Forestry:stump",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4479,
+    "name": "Forestry:infuser",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4644,
+    "name": "ProjRed|Exploration:projectred.exploration.sickleperidot",
+    "material": "PERIDOT",
+    "effectivness": 1.0,
+    "toolClass": [],
+    "harvestLevel": []
+  },
+  {
+    "id": 4121,
+    "name": "appliedenergistics2:item.ItemEncodedPattern",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4197,
+    "name": "IC2:itemMOX",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4505,
+    "name": "ForestryExtras:item.fe.item.witheriaStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 303,
+    "name": "minecraft:chainmail_chestplate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4301,
+    "name": "IC2:reactorHeatSwitchDiamond",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4624,
+    "name": "ProjRed|Exploration:projectred.exploration.hoeperidot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 16,
+    "name": "minecraft:coal_ore",
+    "effectivness": 1.0
+  },
+  {
+    "id": 165,
+    "name": "appliedenergistics2:tile.OreQuartz",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4603,
+    "name": "ProjRed|Core:projectred.core.wiredebugger",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4599,
+    "name": "IC2NuclearControl:CardAppeng",
+    "effectivness": 1.0
+  },
+  {
+    "id": 151,
+    "name": "minecraft:daylight_detector",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4155,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsgold",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4295,
+    "name": "IC2:reactorPlating",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4475,
+    "name": "Forestry:honeyedSlice",
+    "effectivness": 1.0
+  },
+  {
+    "id": 425,
+    "name": "IC2:blockMachine2",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4144,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemslapis",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4524,
+    "name": "ForestryExtras:item.fe.item.copperStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 426,
+    "name": "IC2:blockMachine3",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4361,
+    "name": "IC2:itemironrotor",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4574,
+    "name": "ForestryExtras:item.fe.comb.reinforced",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4286,
+    "name": "IC2:reactorMOXSimpledepleted",
+    "effectivness": 1.0
+  },
+  {
+    "id": 84,
+    "name": "minecraft:jukebox",
+    "effectivness": 1.0
+  },
+  {
+    "id": 145,
+    "name": "minecraft:anvil",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4152,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsstone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4310,
+    "name": "IC2:reactorCondensatorLap",
+    "effectivness": 1.0
+  },
+  {
+    "id": 247,
+    "name": "IC2:blockDoorAlloy",
+    "effectivness": 1.0
+  },
+  {
+    "id": 185,
+    "name": "appliedenergistics2:tile.BlockInscriber",
+    "effectivness": 1.0
+  },
+  {
+    "id": 100,
+    "name": "minecraft:red_mushroom_block",
+    "effectivness": 1.0
+  },
+  {
+    "id": 316,
+    "name": "minecraft:golden_leggings",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4265,
+    "name": "IC2:itemNightvisionGoggles",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4632,
+    "name": "ProjRed|Exploration:projectred.exploration.swordsapphire",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4617,
+    "name": "ProjRed|Exploration:projectred.exploration.woolgin",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4623,
+    "name": "ProjRed|Exploration:projectred.exploration.hoesapphire",
+    "effectivness": 1.0
+  },
+  {
+    "id": 139,
+    "name": "minecraft:cobblestone_wall",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4453,
+    "name": "Forestry:habitatLocator",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4522,
+    "name": "ForestryExtras:item.fe.grafter.grafterDraconic",
+    "effectivness": 1.0
+  },
+  {
+    "id": 2265,
+    "name": "minecraft:record_ward",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4266,
+    "name": "IC2:itemBatREDischarged",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4383,
+    "name": "Forestry:peat",
+    "effectivness": 1.0
+  },
+  {
+    "id": 95,
+    "name": "minecraft:stained_glass",
+    "effectivness": 1.0
+  },
+  {
+    "id": 209,
+    "name": "appliedenergistics2:tile.SkyStoneBrickStairBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 252,
+    "name": "IC2:blockIronScaffold",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4096,
+    "name": "appliedenergistics2:item.ToolCertusQuartzAxe",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [
+      "axe"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 22,
+    "name": "minecraft:lapis_block",
+    "effectivness": 1.0
+  },
+  {
+    "id": 277,
+    "name": "minecraft:diamond_shovel",
+    "material": "EMERALD",
+    "effectivness": 1.0,
+    "toolClass": [
+      "shovel"
+    ],
+    "harvestLevel": [
+      3
+    ]
+  },
+  {
+    "id": 141,
+    "name": "minecraft:carrots",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4345,
+    "name": "IC2:itemWeed",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4563,
+    "name": "ForgeMicroblock:microblock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4436,
+    "name": "Forestry:refractoryWater",
+    "effectivness": 1.0
+  },
+  {
+    "id": 82,
+    "name": "minecraft:clay",
+    "effectivness": 1.0
+  },
+  {
+    "id": 300,
+    "name": "minecraft:leather_leggings",
+    "effectivness": 1.0
+  },
+  {
+    "id": 385,
+    "name": "minecraft:fire_charge",
+    "effectivness": 1.0
+  },
+  {
+    "id": 14,
+    "name": "minecraft:gold_ore",
+    "effectivness": 1.0
+  },
+  {
+    "id": 338,
+    "name": "minecraft:reeds",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4438,
+    "name": "Forestry:refractoryFuel",
+    "effectivness": 1.0
+  },
+  {
+    "id": 269,
+    "name": "minecraft:wooden_shovel",
+    "material": "WOOD",
+    "effectivness": 1.0,
+    "toolClass": [
+      "shovel"
+    ],
+    "harvestLevel": [
+      0
+    ]
+  },
+  {
+    "id": 4165,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepowergold",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4370,
+    "name": "Forestry:fertilizerCompound",
+    "effectivness": 1.0
+  },
+  {
+    "id": 204,
+    "name": "appliedenergistics2:tile.BlockMolecularAssembler",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4483,
+    "name": "Forestry:caterpillarGE",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4589,
+    "name": "IC2NuclearControl:ItemSensorLocationCard",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4276,
+    "name": "IC2:itemCable",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4150,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidswood",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4223,
+    "name": "IC2:itemToolForgeHammer",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4622,
+    "name": "ProjRed|Exploration:projectred.exploration.hoeruby",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4124,
+    "name": "appliedenergistics2:item.ItemMultiMaterial",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4107,
+    "name": "appliedenergistics2:item.ToolNetherQuartzSword",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4229,
+    "name": "IC2:itemToolChainsaw",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [
+      "sword",
+      "shears",
+      "axe"
+    ],
+    "harvestLevel": [
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "id": 173,
+    "name": "minecraft:coal_block",
+    "effectivness": 1.0
+  },
+  {
+    "id": 352,
+    "name": "minecraft:bone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4209,
+    "name": "IC2:itemPartCarbonMesh",
+    "effectivness": 1.0
+  },
+  {
+    "id": 359,
+    "name": "minecraft:shears",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4315,
+    "name": "IC2:itemSlag",
+    "effectivness": 1.0
+  },
+  {
+    "id": 2266,
+    "name": "minecraft:record_11",
+    "effectivness": 1.0
+  },
+  {
+    "id": 142,
+    "name": "minecraft:potatoes",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4311,
+    "name": "IC2:itemPartCoalBall",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4651,
+    "name": "ProjRed|Exploration:projectred.exploration.sapphirechestplate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 293,
+    "name": "minecraft:diamond_hoe",
+    "effectivness": 1.0
+  },
+  {
+    "id": 88,
+    "name": "minecraft:soul_sand",
+    "effectivness": 1.0
+  },
+  {
+    "id": 523,
+    "name": "ProjRed|Illumination:projectred.illumination.lamp",
+    "effectivness": 1.0
+  },
+  {
+    "id": 519,
+    "name": "economyore:economyOre",
+    "effectivness": 1.0
+  },
+  {
+    "id": 224,
+    "name": "BuildCraft|Factory:frameBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4344,
+    "name": "IC2:itemWeedingTrowel",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4557,
+    "name": "IronChest:woodCopperUpgrade",
+    "effectivness": 1.0
+  },
+  {
+    "id": 364,
+    "name": "minecraft:cooked_beef",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4332,
+    "name": "IC2:itemToolPainterYellow",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4314,
+    "name": "IC2:itemPartIndustrialDiamond",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4261,
+    "name": "IC2:itemArmorEnergypack",
+    "effectivness": 1.0
+  },
+  {
+    "id": 190,
+    "name": "appliedenergistics2:tile.BlockDrive",
+    "effectivness": 1.0
+  },
+  {
+    "id": 368,
+    "name": "minecraft:ender_pearl",
+    "effectivness": 1.0
+  },
+  {
+    "id": 522,
+    "name": "IC2NuclearControl:networkLink",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4187,
+    "name": "IC2:itemDensePlates",
+    "effectivness": 1.0
+  },
+  {
+    "id": 424,
+    "name": "IC2:blockMachine",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4582,
+    "name": "ForestryExtras:item.fe.comb.sheep",
+    "effectivness": 1.0
+  },
+  {
+    "id": 164,
+    "name": "minecraft:dark_oak_stairs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4141,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsgold",
+    "effectivness": 1.0
+  },
+  {
+    "id": 136,
+    "name": "minecraft:jungle_stairs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 176,
+    "name": "appliedenergistics2:tile.BlockQuartzGlass",
+    "effectivness": 1.0
+  },
+  {
+    "id": 227,
+    "name": "BuildCraft|Factory:floodGateBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 170,
+    "name": "minecraft:hay_block",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4533,
+    "name": "ForestryExtras:item.fe.frame.frameSteel",
+    "effectivness": 1.0
+  },
+  {
+    "id": 222,
+    "name": "BuildCraft|Factory:plainPipeBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 501,
+    "name": "ForestryExtras:reinforcedBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 65,
+    "name": "minecraft:ladder",
+    "effectivness": 1.0
+  },
+  {
+    "id": 62,
+    "name": "minecraft:lit_furnace",
+    "effectivness": 1.0
+  },
+  {
+    "id": 2,
+    "name": "minecraft:grass",
+    "effectivness": 1.0
+  },
+  {
+    "id": 403,
+    "name": "minecraft:enchanted_book",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4642,
+    "name": "ProjRed|Exploration:projectred.exploration.sickleruby",
+    "material": "RUBY",
+    "effectivness": 1.0,
+    "toolClass": [],
+    "harvestLevel": []
+  },
+  {
+    "id": 4601,
+    "name": "ProjRed|Core:projectred.core.drawplate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4139,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsquartz",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4416,
+    "name": "Forestry:canLava",
+    "effectivness": 1.0
+  },
+  {
+    "id": 153,
+    "name": "minecraft:quartz_ore",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4445,
+    "name": "Forestry:bucketJuice",
+    "effectivness": 1.0
+  },
+  {
+    "id": 267,
+    "name": "minecraft:iron_sword",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4422,
+    "name": "Forestry:waxCapsuleHoney",
+    "effectivness": 1.0
+  },
+  {
+    "id": 1,
+    "name": "minecraft:stone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4514,
+    "name": "ForestryExtras:item.fe.frame.frameDraconic",
+    "effectivness": 1.0
+  },
+  {
+    "id": 189,
+    "name": "appliedenergistics2:tile.BlockController",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4184,
+    "name": "IC2:itemCrushedOre",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4157,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsdiamond",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4525,
+    "name": "ForestryExtras:item.fe.item.leadStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 452,
+    "name": "Forestry:fluid.honey",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4118,
+    "name": "appliedenergistics2:item.ItemBasicStorageCell.64k",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4375,
+    "name": "Forestry:ingotBronze",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4290,
+    "name": "IC2:reactorUraniumDualdepleted",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4283,
+    "name": "IC2:reactorUraniumSimple",
+    "effectivness": 1.0
+  },
+  {
+    "id": 515,
+    "name": "advancedcraft:workbench",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4129,
+    "name": "BuildCraft|Core:ironGearItem",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4196,
+    "name": "IC2:itemUran",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4323,
+    "name": "IC2:itemToolPainterGreen",
+    "effectivness": 1.0
+  },
+  {
+    "id": 230,
+    "name": "BuildCraft|Transport:filteredBufferBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4575,
+    "name": "ForestryExtras:item.fe.comb.witheria",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4536,
+    "name": "ForestryExtras:item.fe.nugget.reinforced",
+    "effectivness": 1.0
+  },
+  {
+    "id": 419,
+    "name": "minecraft:diamond_horse_armor",
+    "effectivness": 1.0
+  },
+  {
+    "id": 235,
+    "name": "IC2:blockOreTin",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4192,
+    "name": "IC2:itemDust2",
+    "effectivness": 1.0
+  },
+  {
+    "id": 422,
+    "name": "minecraft:command_block_minecart",
+    "effectivness": 1.0
+  },
+  {
+    "id": 423,
+    "name": "IC2:blockChargepad",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4291,
+    "name": "IC2:reactorUraniumQuaddepleted",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4252,
+    "name": "IC2:itemArmorNanoBoots",
+    "effectivness": 1.0
+  },
+  {
+    "id": 280,
+    "name": "minecraft:stick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4377,
+    "name": "Forestry:pipette",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4531,
+    "name": "ForestryExtras:item.fe.frame.frameLead",
+    "effectivness": 1.0
+  },
+  {
+    "id": 101,
+    "name": "minecraft:iron_bars",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4239,
+    "name": "IC2:windmeter",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [],
+    "harvestLevel": []
+  },
+  {
+    "id": 4203,
+    "name": "IC2:itemFuelRod",
+    "effectivness": 1.0
+  },
+  {
+    "id": 354,
+    "name": "minecraft:cake",
+    "effectivness": 1.0
+  },
+  {
+    "id": 245,
+    "name": "IC2:blockBasalt",
+    "effectivness": 1.0
+  },
+  {
+    "id": 520,
+    "name": "IC2NuclearControl:blockNuclearControlMain",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4341,
+    "name": "IC2:itemGrinPowder",
+    "effectivness": 1.0
+  },
+  {
+    "id": 160,
+    "name": "minecraft:stained_glass_pane",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4462,
+    "name": "Forestry:royalJelly",
+    "effectivness": 1.0
+  },
+  {
+    "id": 196,
+    "name": "appliedenergistics2:tile.BlockVibrationChamber",
+    "effectivness": 1.0
+  },
+  {
+    "id": 294,
+    "name": "minecraft:golden_hoe",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4578,
+    "name": "ForestryExtras:item.fe.comb.potato",
+    "effectivness": 1.0
+  },
+  {
+    "id": 214,
+    "name": "appliedenergistics2:tile.QuartzPillarStairBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 431,
+    "name": "IC2:blockPersonal",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4127,
+    "name": "BuildCraft|Core:woodenGearItem",
+    "effectivness": 1.0
+  },
+  {
+    "id": 495,
+    "name": "Forestry:factory",
+    "effectivness": 1.0
+  },
+  {
+    "id": 258,
+    "name": "minecraft:iron_axe",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [
+      "axe"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 4272,
+    "name": "IC2:itemBatChargeRE",
+    "effectivness": 1.0
+  },
+  {
+    "id": 174,
+    "name": "minecraft:packed_ice",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4351,
+    "name": "IC2:itemTerraWart",
+    "effectivness": 1.0
+  },
+  {
+    "id": 206,
+    "name": "appliedenergistics2:tile.BlockPaint",
+    "effectivness": 1.0
+  },
+  {
+    "id": 2257,
+    "name": "minecraft:record_cat",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4098,
+    "name": "appliedenergistics2:item.ToolCertusQuartzSpade",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [
+      "shovel"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 4392,
+    "name": "Forestry:carton",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4593,
+    "name": "IC2NuclearControl:ItemTimeCard",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4631,
+    "name": "ProjRed|Exploration:projectred.exploration.swordruby",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4367,
+    "name": "IC2:itemAdvIronBlockCuttingBlade",
+    "effectivness": 1.0
+  },
+  {
+    "id": 13,
+    "name": "minecraft:gravel",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4330,
+    "name": "IC2:itemToolPainterPink",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4659,
+    "name": "wanditems:itemInfo",
+    "effectivness": 1.0
+  },
+  {
+    "id": 80,
+    "name": "minecraft:snow",
+    "effectivness": 1.0
+  },
+  {
+    "id": 2267,
+    "name": "minecraft:record_wait",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4657,
+    "name": "ProjRed|Exploration:projectred.exploration.peridotboots",
+    "effectivness": 1.0
+  },
+  {
+    "id": 405,
+    "name": "minecraft:netherbrick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4259,
+    "name": "IC2:itemArmorBatpack",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4159,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsvoid",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4512,
+    "name": "ForestryExtras:item.fe.frame.frameReinforced",
+    "effectivness": 1.0
+  },
+  {
+    "id": 54,
+    "name": "minecraft:chest",
+    "effectivness": 1.0
+  },
+  {
+    "id": 509,
+    "name": "statues:statues.showcase",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4431,
+    "name": "Forestry:refractoryBiomass",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4510,
+    "name": "ForestryExtras:item.fe.frame.frameDiamond",
+    "effectivness": 1.0
+  },
+  {
+    "id": 451,
+    "name": "Forestry:fluid.glass",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4100,
+    "name": "appliedenergistics2:item.ToolCertusQuartzSword",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4458,
+    "name": "Forestry:honeyDrop",
+    "effectivness": 1.0
+  },
+  {
+    "id": 7,
+    "name": "minecraft:bedrock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 128,
+    "name": "minecraft:sandstone_stairs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4513,
+    "name": "ForestryExtras:item.fe.frame.frameWitheria",
+    "effectivness": 1.0
+  },
+  {
+    "id": 147,
+    "name": "minecraft:light_weighted_pressure_plate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4137,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemscobblestone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 98,
+    "name": "minecraft:stonebrick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4299,
+    "name": "IC2:reactorHeatSwitchCore",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4414,
+    "name": "Forestry:canSeedOil",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4386,
+    "name": "Forestry:gearBronze",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4400,
+    "name": "Forestry:kitPickaxe",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4494,
+    "name": "ForestryExtras:item.fe.item.coalStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 334,
+    "name": "minecraft:leather",
+    "effectivness": 1.0
+  },
+  {
+    "id": 152,
+    "name": "minecraft:redstone_block",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4347,
+    "name": "IC2:itemCropnalyzer",
+    "effectivness": 1.0
+  },
+  {
+    "id": 238,
+    "name": "IC2:blockRubWood",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4212,
+    "name": "IC2:itemPartIridium",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4546,
+    "name": "GraviSuite:graviTool",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [],
+    "harvestLevel": []
+  },
+  {
+    "id": 114,
+    "name": "minecraft:nether_brick_stairs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4639,
+    "name": "ProjRed|Exploration:projectred.exploration.sicklestone",
+    "material": "STONE",
+    "effectivness": 1.0,
+    "toolClass": [],
+    "harvestLevel": []
+  },
+  {
+    "id": 111,
+    "name": "minecraft:waterlily",
+    "effectivness": 1.0
+  },
+  {
+    "id": 2262,
+    "name": "minecraft:record_mellohi",
+    "effectivness": 1.0
+  },
+  {
+    "id": 408,
+    "name": "minecraft:hopper_minecart",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4487,
+    "name": "ForestryExtras:item.fe.item.mutatedIronIngot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 506,
+    "name": "IronChest:BlockIronChest",
+    "effectivness": 1.0
+  },
+  {
+    "id": 2258,
+    "name": "minecraft:record_blocks",
+    "effectivness": 1.0
+  },
+  {
+    "id": 365,
+    "name": "minecraft:chicken",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4183,
+    "name": "IC2:itemCasing",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4653,
+    "name": "ProjRed|Exploration:projectred.exploration.sapphireboots",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4207,
+    "name": "IC2:itemPartAlloy",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4432,
+    "name": "Forestry:refractoryHoney",
+    "effectivness": 1.0
+  },
+  {
+    "id": 395,
+    "name": "minecraft:map",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4356,
+    "name": "IC2:itemMugCoffee",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4357,
+    "name": "IC2:itemHops",
+    "effectivness": 1.0
+  },
+  {
+    "id": 386,
+    "name": "minecraft:writable_book",
+    "effectivness": 1.0
+  },
+  {
+    "id": 282,
+    "name": "minecraft:mushroom_stew",
+    "effectivness": 1.0
+  },
+  {
+    "id": 31,
+    "name": "minecraft:tallgrass",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4384,
+    "name": "Forestry:ash",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4610,
+    "name": "ProjRed|Illumination:projectred.illumination.fixture.inv",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4298,
+    "name": "IC2:reactorHeatSwitch",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4417,
+    "name": "Forestry:canFuel",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4629,
+    "name": "ProjRed|Exploration:projectred.exploration.shovelsapphire",
+    "material": "SAPPHIRE",
+    "effectivness": 1.0,
+    "toolClass": [
+      "shovel"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 239,
+    "name": "IC2:blockRubLeaves",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4488,
+    "name": "ForestryExtras:item.fe.item.legendaryIngot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 2259,
+    "name": "minecraft:record_chirp",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4424,
+    "name": "Forestry:waxCapsuleJuice",
+    "effectivness": 1.0
+  },
+  {
+    "id": 397,
+    "name": "minecraft:skull",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4478,
+    "name": "Forestry:honeyPot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4227,
+    "name": "IC2:itemToolDDrill",
+    "material": "EMERALD",
+    "effectivness": 1.0,
+    "toolClass": [
+      "pickaxe",
+      "shovel"
+    ],
+    "harvestLevel": [
+      3,
+      3
+    ]
+  },
+  {
+    "id": 326,
+    "name": "minecraft:water_bucket",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4254,
+    "name": "IC2:itemArmorQuantumChestplate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 436,
+    "name": "IC2:fluidCoolant",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4447,
+    "name": "Forestry:bucketShortMead",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4596,
+    "name": "IC2NuclearControl:ItemLiquidArrayLocationCard",
+    "effectivness": 1.0
+  },
+  {
+    "id": 261,
+    "name": "minecraft:bow",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4101,
+    "name": "appliedenergistics2:item.ToolCertusQuartzWrench",
+    "effectivness": 1.0
+  },
+  {
+    "id": 242,
+    "name": "IC2:blockRubber",
+    "effectivness": 1.0
+  },
+  {
+    "id": 494,
+    "name": "Forestry:engine",
+    "effectivness": 1.0
+  },
+  {
+    "id": 356,
+    "name": "minecraft:repeater",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4508,
+    "name": "ForestryExtras:item.fe.frame.frameIron",
+    "effectivness": 1.0
+  },
+  {
+    "id": 402,
+    "name": "minecraft:firework_charge",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4626,
+    "name": "ProjRed|Exploration:projectred.exploration.pickaxesapphire",
+    "material": "SAPPHIRE",
+    "effectivness": 1.0,
+    "toolClass": [
+      "pickaxe"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 4360,
+    "name": "IC2:itemwoodrotor",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4135,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemswood",
+    "effectivness": 1.0
+  },
+  {
+    "id": 236,
+    "name": "IC2:blockOreUran",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4234,
+    "name": "IC2:itemScanner",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4490,
+    "name": "ForestryExtras:item.fe.item.ryu ingot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4132,
+    "name": "BuildCraft|Energy:bucketOil",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4371,
+    "name": "Forestry:apatite",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4115,
+    "name": "appliedenergistics2:item.ItemBasicStorageCell.1k",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4228,
+    "name": "IC2:itemToolIridiumDrill",
+    "material": "EMERALD",
+    "effectivness": 1.0,
+    "toolClass": [
+      "pickaxe",
+      "shovel"
+    ],
+    "harvestLevel": [
+      100,
+      100
+    ]
+  },
+  {
+    "id": 2256,
+    "name": "minecraft:record_13",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4449,
+    "name": "Forestry:beeDroneGE",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4177,
+    "name": "BuildCraft|Silicon:redstoneCrystal",
+    "effectivness": 1.0
+  },
+  {
+    "id": 229,
+    "name": "BuildCraft|Factory:blockHopper",
+    "effectivness": 1.0
+  },
+  {
+    "id": 449,
+    "name": "Forestry:fluid.bioethanol",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4244,
+    "name": "IC2:itemArmorBronzeHelmet",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4395,
+    "name": "Forestry:brokenBronzePickaxe",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4294,
+    "name": "IC2:reactorCoolantSix",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4365,
+    "name": "IC2:itemSteamTurbineBlade",
+    "effectivness": 1.0
+  },
+  {
+    "id": 514,
+    "name": "wildcaves3:FossilBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4163,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepowerquartz",
+    "effectivness": 1.0
+  },
+  {
+    "id": 210,
+    "name": "appliedenergistics2:tile.SkyStoneSmallBrickStairBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 441,
+    "name": "IC2:fluidDistilledWater",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4457,
+    "name": "Forestry:frameProven",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4389,
+    "name": "Forestry:chipsets",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4534,
+    "name": "ForestryExtras:item.fe.frame.frameTin",
+    "effectivness": 1.0
+  },
+  {
+    "id": 169,
+    "name": "appliedenergistics2:tile.BlockQuartzChiseled",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4337,
+    "name": "IC2:upgradeModule",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4592,
+    "name": "IC2NuclearControl:ItemEnergyArrayLocationCard",
+    "effectivness": 1.0
+  },
+  {
+    "id": 400,
+    "name": "minecraft:pumpkin_pie",
+    "effectivness": 1.0
+  },
+  {
+    "id": 333,
+    "name": "minecraft:boat",
+    "effectivness": 1.0
+  },
+  {
+    "id": 70,
+    "name": "minecraft:stone_pressure_plate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 157,
+    "name": "minecraft:activator_rail",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4420,
+    "name": "Forestry:waxCapsuleEthanol",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4255,
+    "name": "IC2:itemArmorQuantumLegs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4485,
+    "name": "ForestryExtras:item.fe.item.reinforcedIngot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 231,
+    "name": "BuildCraft|Transport:pipeBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4468,
+    "name": "Forestry:apiaristBoots",
+    "effectivness": 1.0
+  },
+  {
+    "id": 378,
+    "name": "minecraft:magma_cream",
+    "effectivness": 1.0
+  },
+  {
+    "id": 179,
+    "name": "appliedenergistics2:tile.BlockFluix",
+    "effectivness": 1.0
+  },
+  {
+    "id": 8,
+    "name": "minecraft:flowing_water",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4448,
+    "name": "Forestry:beeQueenGE",
+    "effectivness": 1.0
+  },
+  {
+    "id": 113,
+    "name": "minecraft:nether_brick_fence",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4491,
+    "name": "ForestryExtras:item.fe.item.itarius ingot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 283,
+    "name": "minecraft:golden_sword",
+    "effectivness": 1.0
+  },
+  {
+    "id": 133,
+    "name": "minecraft:emerald_block",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4561,
+    "name": "statues:statues.item.showcase",
+    "effectivness": 1.0
+  },
+  {
+    "id": 12,
+    "name": "minecraft:sand",
+    "effectivness": 1.0
+  },
+  {
+    "id": 517,
+    "name": "economy:shopBlockBought",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4368,
+    "name": "IC2:itemDiamondBlockCuttingBlade",
+    "effectivness": 1.0
+  },
+  {
+    "id": 116,
+    "name": "minecraft:enchanting_table",
+    "effectivness": 1.0
+  },
+  {
+    "id": 480,
+    "name": "Forestry:planks2",
+    "effectivness": 1.0
+  },
+  {
+    "id": 67,
+    "name": "minecraft:stone_stairs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4305,
+    "name": "IC2:reactorVentSpread",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4460,
+    "name": "Forestry:propolis",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4245,
+    "name": "IC2:itemArmorBronzeChestplate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4116,
+    "name": "appliedenergistics2:item.ItemBasicStorageCell.4k",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4195,
+    "name": "IC2:itemTritiumCell",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4326,
+    "name": "IC2:itemToolPainterPurple",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4117,
+    "name": "appliedenergistics2:item.ItemBasicStorageCell.16k",
+    "effectivness": 1.0
+  },
+  {
+    "id": 85,
+    "name": "minecraft:fence",
+    "effectivness": 1.0
+  },
+  {
+    "id": 302,
+    "name": "minecraft:chainmail_helmet",
+    "effectivness": 1.0
+  },
+  {
+    "id": 384,
+    "name": "minecraft:experience_bottle",
+    "effectivness": 1.0
+  },
+  {
+    "id": 525,
+    "name": "ProjRed|Exploration:projectred.exploration.ore",
+    "effectivness": 1.0
+  },
+  {
+    "id": 24,
+    "name": "minecraft:sandstone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4470,
+    "name": "Forestry:sapling",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4621,
+    "name": "ProjRed|Exploration:projectred.exploration.axeperidot",
+    "material": "PERIDOT",
+    "effectivness": 1.0,
+    "toolClass": [
+      "axe"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 4652,
+    "name": "ProjRed|Exploration:projectred.exploration.sapphireleggings",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4627,
+    "name": "ProjRed|Exploration:projectred.exploration.pickaxeperidot",
+    "material": "PERIDOT",
+    "effectivness": 1.0,
+    "toolClass": [
+      "pickaxe"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 4293,
+    "name": "IC2:reactorCoolantTriple",
+    "effectivness": 1.0
+  },
+  {
+    "id": 268,
+    "name": "minecraft:wooden_sword",
+    "effectivness": 1.0
+  },
+  {
+    "id": 448,
+    "name": "Forestry:stained",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4220,
+    "name": "IC2:itemToolCutter",
+    "effectivness": 1.0
+  },
+  {
+    "id": 505,
+    "name": "GraviSuite:BlockRelocatorPortal",
+    "effectivness": 1.0
+  },
+  {
+    "id": 254,
+    "name": "IC2:blockCable",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4246,
+    "name": "IC2:itemArmorBronzeLegs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4402,
+    "name": "Forestry:decayingWheat",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4541,
+    "name": "GraviSuite:advNanoChestPlate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4401,
+    "name": "Forestry:mouldyWheat",
+    "effectivness": 1.0
+  },
+  {
+    "id": 161,
+    "name": "minecraft:leaves2",
+    "effectivness": 1.0
+  },
+  {
+    "id": 355,
+    "name": "minecraft:bed",
+    "effectivness": 1.0
+  },
+  {
+    "id": 360,
+    "name": "minecraft:melon",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4287,
+    "name": "IC2:reactorMOXDualdepleted",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4598,
+    "name": "IC2NuclearControl:KitAppeng",
+    "effectivness": 1.0
+  },
+  {
+    "id": 462,
+    "name": "Forestry:alveary",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4171,
+    "name": "BuildCraft|Transport:pipeGate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4618,
+    "name": "ProjRed|Exploration:projectred.exploration.lilyseed",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4296,
+    "name": "IC2:reactorPlatingHeat",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4606,
+    "name": "ProjRed|Transmission:projectred.transmission.framewire",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4304,
+    "name": "IC2:reactorVentGold",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4646,
+    "name": "ProjRed|Exploration:projectred.exploration.rubyhelmet",
+    "effectivness": 1.0
+  },
+  {
+    "id": 91,
+    "name": "minecraft:lit_pumpkin",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4656,
+    "name": "ProjRed|Exploration:projectred.exploration.peridotleggings",
+    "effectivness": 1.0
+  },
+  {
+    "id": 399,
+    "name": "minecraft:nether_star",
+    "effectivness": 1.0
+  },
+  {
+    "id": 377,
+    "name": "minecraft:blaze_powder",
+    "effectivness": 1.0
+  },
+  {
+    "id": 126,
+    "name": "minecraft:wooden_slab",
+    "effectivness": 1.0
+  },
+  {
+    "id": 336,
+    "name": "minecraft:brick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4289,
+    "name": "IC2:reactorUraniumSimpledepleted",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4122,
+    "name": "appliedenergistics2:item.ToolColorApplicator",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4248,
+    "name": "IC2:itemArmorAlloyChestplate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4216,
+    "name": "IC2:itemToolBronzeSword",
+    "effectivness": 1.0
+  },
+  {
+    "id": 389,
+    "name": "minecraft:item_frame",
+    "effectivness": 1.0
+  },
+  {
+    "id": 226,
+    "name": "BuildCraft|Factory:pumpBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4302,
+    "name": "IC2:reactorVent",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4620,
+    "name": "ProjRed|Exploration:projectred.exploration.axesapphire",
+    "material": "SAPPHIRE",
+    "effectivness": 1.0,
+    "toolClass": [
+      "axe"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 442,
+    "name": "IC2:fluidSuperheatedSteam",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4381,
+    "name": "Forestry:craftingMaterial",
+    "effectivness": 1.0
+  },
+  {
+    "id": 272,
+    "name": "minecraft:stone_sword",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4528,
+    "name": "ForestryExtras:item.fe.item.tinStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 348,
+    "name": "minecraft:glowstone_dust",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4335,
+    "name": "IC2:itemToolPainterOrange",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4336,
+    "name": "IC2:itemToolPainterWhite",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4382,
+    "name": "Forestry:naturalistHelmet",
+    "effectivness": 1.0
+  },
+  {
+    "id": 375,
+    "name": "minecraft:spider_eye",
+    "effectivness": 1.0
+  },
+  {
+    "id": 513,
+    "name": "wildcaves3:Flora",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4241,
+    "name": "IC2:itemArmorHazmatChestplate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 317,
+    "name": "minecraft:golden_boots",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4455,
+    "name": "Forestry:frameUntreated",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4363,
+    "name": "IC2:itemwcarbonrotor",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4169,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipestructurecobblestone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 497,
+    "name": "Forestry:mushroom",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4253,
+    "name": "IC2:itemArmorQuantumHelmet",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4182,
+    "name": "IC2:itemRecipePart",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4442,
+    "name": "Forestry:bucketGlass",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4300,
+    "name": "IC2:reactorHeatSwitchSpread",
+    "effectivness": 1.0
+  },
+  {
+    "id": 503,
+    "name": "ForestryExtras:legendaryBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 512,
+    "name": "wildcaves3:Decorations",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4625,
+    "name": "ProjRed|Exploration:projectred.exploration.pickaxeruby",
+    "material": "RUBY",
+    "effectivness": 1.0,
+    "toolClass": [
+      "pickaxe"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 490,
+    "name": "Forestry:saplingGE",
+    "effectivness": 1.0
+  },
+  {
+    "id": 20,
+    "name": "minecraft:glass",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4264,
+    "name": "IC2:itemStaticBoots",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4538,
+    "name": "ForestryExtras:item.fe.nugget.mutated iron",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4199,
+    "name": "IC2:itemPlutoniumSmall",
+    "effectivness": 1.0
+  },
+  {
+    "id": 312,
+    "name": "minecraft:diamond_leggings",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4313,
+    "name": "IC2:itemPartCoalChunk",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4413,
+    "name": "Forestry:canJuice",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4198,
+    "name": "IC2:itemPlutonium",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4602,
+    "name": "ProjRed|Core:projectred.core.screwdriver",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4406,
+    "name": "Forestry:refractoryWax",
+    "effectivness": 1.0
+  },
+  {
+    "id": 496,
+    "name": "Forestry:factory2",
+    "effectivness": 1.0
+  },
+  {
+    "id": 429,
+    "name": "IC2:blockMiningPipe",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4633,
+    "name": "ProjRed|Exploration:projectred.exploration.swordperidot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4372,
+    "name": "Forestry:researchNote",
+    "effectivness": 1.0
+  },
+  {
+    "id": 29,
+    "name": "minecraft:sticky_piston",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4507,
+    "name": "ForestryExtras:item.fe.frame.frameCoal",
+    "effectivness": 1.0
+  },
+  {
+    "id": 184,
+    "name": "appliedenergistics2:tile.BlockCrank",
+    "effectivness": 1.0
+  },
+  {
+    "id": 446,
+    "name": "Forestry:resources",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4605,
+    "name": "ProjRed|Transmission:projectred.transmission.wire",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4607,
+    "name": "ProjRed|Illumination:projectred.illumination.lantern",
+    "effectivness": 1.0
+  },
+  {
+    "id": 524,
+    "name": "ProjRed|Illumination:projectred.illumination.airousLight",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4210,
+    "name": "IC2:itemPartCarbonPlate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 23,
+    "name": "minecraft:dispenser",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4439,
+    "name": "Forestry:refractoryOil",
+    "effectivness": 1.0
+  },
+  {
+    "id": 232,
+    "name": "BuildCraft|Silicon:laserBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 371,
+    "name": "minecraft:gold_nugget",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4213,
+    "name": "IC2:itemTreetap",
+    "effectivness": 1.0
+  },
+  {
+    "id": 73,
+    "name": "minecraft:redstone_ore",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4225,
+    "name": "IC2:itemcrystalmemory",
+    "effectivness": 1.0
+  },
+  {
+    "id": 96,
+    "name": "minecraft:trapdoor",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4322,
+    "name": "IC2:itemToolPainterRed",
+    "effectivness": 1.0
+  },
+  {
+    "id": 172,
+    "name": "minecraft:hardened_clay",
+    "effectivness": 1.0
+  },
+  {
+    "id": 306,
+    "name": "minecraft:iron_helmet",
+    "effectivness": 1.0
+  },
+  {
+    "id": 199,
+    "name": "appliedenergistics2:tile.BlockDenseEnergyCell",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4595,
+    "name": "IC2NuclearControl:ItemTextCard",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4404,
+    "name": "Forestry:phosphor",
+    "effectivness": 1.0
+  },
+  {
+    "id": 215,
+    "name": "BuildCraft|Core:eternalSpring",
+    "effectivness": 1.0
+  },
+  {
+    "id": 414,
+    "name": "IC2:blockReactorRedstonePort",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4577,
+    "name": "ForestryExtras:item.fe.comb.clayious",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4526,
+    "name": "ForestryExtras:item.fe.item.silverStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 369,
+    "name": "minecraft:blaze_rod",
+    "effectivness": 1.0
+  },
+  {
+    "id": 361,
+    "name": "minecraft:pumpkin_seeds",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4434,
+    "name": "Forestry:refractoryJuice",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4162,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepowerstone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 510,
+    "name": "wildcaves3:StoneStalactite",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4106,
+    "name": "appliedenergistics2:item.ToolNetherQuartzPickaxe",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [
+      "pickaxe"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 4238,
+    "name": "IC2:itemNanoSaber",
+    "material": "EMERALD",
+    "effectivness": 1.0,
+    "toolClass": [
+      "sword"
+    ],
+    "harvestLevel": [
+      3
+    ]
+  },
+  {
+    "id": 221,
+    "name": "BuildCraft|Factory:miningWellBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 516,
+    "name": "economy:shopBlockSell",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4645,
+    "name": "ProjRed|Exploration:projectred.exploration.sicklediamond",
+    "material": "EMERALD",
+    "effectivness": 1.0,
+    "toolClass": [],
+    "harvestLevel": []
+  },
+  {
+    "id": 4397,
+    "name": "Forestry:bronzePickaxe",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4454,
+    "name": "Forestry:imprinter",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4110,
+    "name": "appliedenergistics2:item.ToolBiometricCard",
+    "effectivness": 1.0
+  },
+  {
+    "id": 471,
+    "name": "Forestry:fireproofLog1",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4537,
+    "name": "ForestryExtras:item.fe.nugget.witheria",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4547,
+    "name": "GraviSuite:advDDrill",
+    "material": "EMERALD",
+    "effectivness": 1.0,
+    "toolClass": [
+      "pickaxe",
+      "shovel"
+    ],
+    "harvestLevel": [
+      3,
+      3
+    ]
+  },
+  {
+    "id": 475,
+    "name": "Forestry:fireproofLog5",
+    "effectivness": 1.0
+  },
+  {
+    "id": 358,
+    "name": "minecraft:filled_map",
+    "effectivness": 1.0
+  },
+  {
+    "id": 474,
+    "name": "Forestry:fireproofLog4",
+    "effectivness": 1.0
+  },
+  {
+    "id": 473,
+    "name": "Forestry:fireproofLog3",
+    "effectivness": 1.0
+  },
+  {
+    "id": 295,
+    "name": "minecraft:wheat_seeds",
+    "effectivness": 1.0
+  },
+  {
+    "id": 472,
+    "name": "Forestry:fireproofLog2",
+    "effectivness": 1.0
+  },
+  {
+    "id": 420,
+    "name": "minecraft:lead",
+    "effectivness": 1.0
+  },
+  {
+    "id": 478,
+    "name": "Forestry:fireproofLog8",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4131,
+    "name": "BuildCraft|Core:diamondGearItem",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4423,
+    "name": "Forestry:waxCapsuleIce",
+    "effectivness": 1.0
+  },
+  {
+    "id": 477,
+    "name": "Forestry:fireproofLog7",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4530,
+    "name": "ForestryExtras:item.fe.frame.frameCopper",
+    "effectivness": 1.0
+  },
+  {
+    "id": 476,
+    "name": "Forestry:fireproofLog6",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4180,
+    "name": "IC2:itemFluidCell",
+    "effectivness": 1.0
+  },
+  {
+    "id": 18,
+    "name": "minecraft:leaves",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4151,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidscobblestone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 143,
+    "name": "minecraft:wooden_button",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4496,
+    "name": "ForestryExtras:item.fe.item.draconicStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 342,
+    "name": "minecraft:chest_minecart",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4143,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsobsidian",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4394,
+    "name": "Forestry:woodPulp",
+    "effectivness": 1.0
+  },
+  {
+    "id": 391,
+    "name": "minecraft:carrot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4235,
+    "name": "IC2:itemScannerAdv",
+    "effectivness": 1.0
+  },
+  {
+    "id": 168,
+    "name": "appliedenergistics2:tile.BlockQuartzPillar",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4550,
+    "name": "IronChest:ironGoldUpgrade",
+    "effectivness": 1.0
+  },
+  {
+    "id": 6,
+    "name": "minecraft:sapling",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4114,
+    "name": "appliedenergistics2:item.ItemViewCell",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4134,
+    "name": "BuildCraft|Transport:pipeWaterproof",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4349,
+    "name": "IC2:itemCellHydrant",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4588,
+    "name": "IC2NuclearControl:ItemMultipleSensorKit",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4153,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsquartz",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4268,
+    "name": "IC2:itemAdvBat",
+    "effectivness": 1.0
+  },
+  {
+    "id": 313,
+    "name": "minecraft:diamond_boots",
+    "effectivness": 1.0
+  },
+  {
+    "id": 244,
+    "name": "IC2:blockAlloy",
+    "effectivness": 1.0
+  },
+  {
+    "id": 433,
+    "name": "IC2:blockBarrel",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4328,
+    "name": "IC2:itemToolPainterLightGrey",
+    "effectivness": 1.0
+  },
+  {
+    "id": 180,
+    "name": "appliedenergistics2:tile.BlockSkyStone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 90,
+    "name": "minecraft:portal",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4451,
+    "name": "Forestry:beeLarvaeGE",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4568,
+    "name": "advancedcraft:itemBookBlue",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4573,
+    "name": "ForestryExtras:item.fe.comb.legendary",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4166,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepowerdiamond",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4567,
+    "name": "ForgeMicroblock:stoneRod",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4175,
+    "name": "BuildCraft|Transport:gateCopier",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4391,
+    "name": "Forestry:thermionicTubes",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4564,
+    "name": "ForgeMicroblock:sawStone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4446,
+    "name": "Forestry:bucketSeedoil",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4388,
+    "name": "Forestry:gearTin",
+    "effectivness": 1.0
+  },
+  {
+    "id": 171,
+    "name": "minecraft:carpet",
+    "effectivness": 1.0
+  },
+  {
+    "id": 432,
+    "name": "IC2:blockCrop",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4174,
+    "name": "BuildCraft|Transport:pipeLens",
+    "effectivness": 1.0
+  },
+  {
+    "id": 367,
+    "name": "minecraft:rotten_flesh",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4316,
+    "name": "IC2:itemScrap",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4257,
+    "name": "IC2:itemArmorJetpack",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4613,
+    "name": "ProjRed|Illumination:projectred.illumination.cagelamp2",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4140,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsiron",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4103,
+    "name": "appliedenergistics2:item.ToolNetherQuartzAxe",
+    "material": "IRON",
+    "effectivness": 1.0,
+    "toolClass": [
+      "axe"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 484,
+    "name": "Forestry:slabs2",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4354,
+    "name": "IC2:itemCofeeBeans",
+    "effectivness": 1.0
+  },
+  {
+    "id": 249,
+    "name": "IC2:blockFoam",
+    "effectivness": 1.0
+  },
+  {
+    "id": 483,
+    "name": "Forestry:slabs1",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4544,
+    "name": "GraviSuite:advJetpack",
+    "effectivness": 1.0
+  },
+  {
+    "id": 335,
+    "name": "minecraft:milk_bucket",
+    "effectivness": 1.0
+  },
+  {
+    "id": 486,
+    "name": "Forestry:slabs4",
+    "effectivness": 1.0
+  },
+  {
+    "id": 485,
+    "name": "Forestry:slabs3",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4308,
+    "name": "IC2:reactorReflectorThick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4275,
+    "name": "IC2:itemBatChargeLamaCrystal",
+    "effectivness": 1.0
+  },
+  {
+    "id": 527,
+    "name": "ProjRed|Exploration:projectred.exploration.stonewalls",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4477,
+    "name": "Forestry:ambrosia",
+    "effectivness": 1.0
+  },
+  {
+    "id": 181,
+    "name": "appliedenergistics2:tile.BlockSkyChest",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4410,
+    "name": "Forestry:canBiomass",
+    "effectivness": 1.0
+  },
+  {
+    "id": 464,
+    "name": "Forestry:log2",
+    "effectivness": 1.0
+  },
+  {
+    "id": 465,
+    "name": "Forestry:log3",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4615,
+    "name": "ProjRed|Illumination:projectred.illumination.lightbutton",
+    "effectivness": 1.0
+  },
+  {
+    "id": 463,
+    "name": "Forestry:log1",
+    "effectivness": 1.0
+  },
+  {
+    "id": 468,
+    "name": "Forestry:log6",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4204,
+    "name": "IC2:itemRTGPellet",
+    "effectivness": 1.0
+  },
+  {
+    "id": 469,
+    "name": "Forestry:log7",
+    "effectivness": 1.0
+  },
+  {
+    "id": 466,
+    "name": "Forestry:log4",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4499,
+    "name": "ForestryExtras:item.fe.item.ironStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 467,
+    "name": "Forestry:log5",
+    "effectivness": 1.0
+  },
+  {
+    "id": 470,
+    "name": "Forestry:log8",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4387,
+    "name": "Forestry:gearCopper",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4230,
+    "name": "IC2:itemToolWrenchElectric",
+    "effectivness": 1.0
+  },
+  {
+    "id": 285,
+    "name": "minecraft:golden_pickaxe",
+    "material": "GOLD",
+    "effectivness": 1.0,
+    "toolClass": [
+      "pickaxe"
+    ],
+    "harvestLevel": [
+      0
+    ]
+  },
+  {
+    "id": 4373,
+    "name": "Forestry:ingotCopper",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4486,
+    "name": "ForestryExtras:item.fe.item.witheriaIngot",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4558,
+    "name": "IronChest:diamondObsidianUpgrade",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4201,
+    "name": "IC2:itemUran235small",
+    "effectivness": 1.0
+  },
+  {
+    "id": 216,
+    "name": "BuildCraft|Builders:buildToolBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4191,
+    "name": "IC2:itemDust",
+    "effectivness": 1.0
+  },
+  {
+    "id": 99,
+    "name": "minecraft:brown_mushroom_block",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4307,
+    "name": "IC2:reactorReflector",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4553,
+    "name": "IronChest:silverGoldUpgrade",
+    "effectivness": 1.0
+  },
+  {
+    "id": 344,
+    "name": "minecraft:egg",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4560,
+    "name": "statues:statues.marteau",
+    "effectivness": 1.0
+  },
+  {
+    "id": 410,
+    "name": "IC2:blockGenerator",
+    "effectivness": 1.0
+  },
+  {
+    "id": 290,
+    "name": "minecraft:wooden_hoe",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4481,
+    "name": "Forestry:butterflyGE",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4465,
+    "name": "Forestry:apiaristHelmet",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4102,
+    "name": "appliedenergistics2:item.ToolCertusQuartzCuttingKnife",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4418,
+    "name": "Forestry:canOil",
+    "effectivness": 1.0
+  },
+  {
+    "id": 76,
+    "name": "minecraft:redstone_torch",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4279,
+    "name": "IC2:itemTinCanFilled",
+    "effectivness": 1.0
+  },
+  {
+    "id": 48,
+    "name": "minecraft:mossy_cobblestone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 121,
+    "name": "minecraft:end_stone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 482,
+    "name": "Forestry:fireproofPlanks2",
+    "effectivness": 1.0
+  },
+  {
+    "id": 481,
+    "name": "Forestry:fireproofPlanks1",
+    "effectivness": 1.0
+  },
+  {
+    "id": 183,
+    "name": "appliedenergistics2:tile.BlockGrinder",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4461,
+    "name": "Forestry:honeydew",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4355,
+    "name": "IC2:itemCofeePowder",
+    "effectivness": 1.0
+  },
+  {
+    "id": 388,
+    "name": "minecraft:emerald",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4399,
+    "name": "Forestry:kitShovel",
+    "effectivness": 1.0
+  },
+  {
+    "id": 56,
+    "name": "minecraft:diamond_ore",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4426,
+    "name": "Forestry:waxCapsuleWater",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4242,
+    "name": "IC2:itemArmorHazmatLeggings",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4440,
+    "name": "Forestry:bucketEthanol",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4527,
+    "name": "ForestryExtras:item.fe.item.steelStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 271,
+    "name": "minecraft:wooden_axe",
+    "material": "WOOD",
+    "effectivness": 1.0,
+    "toolClass": [
+      "axe"
+    ],
+    "harvestLevel": [
+      0
+    ]
+  },
+  {
+    "id": 4412,
+    "name": "Forestry:canIce",
+    "effectivness": 1.0
+  },
+  {
+    "id": 102,
+    "name": "minecraft:glass_pane",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4650,
+    "name": "ProjRed|Exploration:projectred.exploration.sapphirehelmet",
+    "effectivness": 1.0
+  },
+  {
+    "id": 528,
+    "name": "ProjRed|Exploration:projectred.exploration.lily",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4119,
+    "name": "appliedenergistics2:item.ItemFacade",
+    "effectivness": 1.0
+  },
+  {
+    "id": 240,
+    "name": "IC2:blockRubSapling",
+    "effectivness": 1.0
+  },
+  {
+    "id": 38,
+    "name": "minecraft:red_flower",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4619,
+    "name": "ProjRed|Exploration:projectred.exploration.axeruby",
+    "material": "RUBY",
+    "effectivness": 1.0,
+    "toolClass": [
+      "axe"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 291,
+    "name": "minecraft:stone_hoe",
+    "effectivness": 1.0
+  },
+  {
+    "id": 500,
+    "name": "ForestryExtras:draconicBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4548,
+    "name": "GraviSuite:advChainsaw",
+    "material": "EMERALD",
+    "effectivness": 1.0,
+    "toolClass": [
+      "axe"
+    ],
+    "harvestLevel": [
+      3
+    ]
+  },
+  {
+    "id": 4570,
+    "name": "advancedcraft:itemBookRed",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4284,
+    "name": "IC2:reactorUraniumDual",
+    "effectivness": 1.0
+  },
+  {
+    "id": 107,
+    "name": "minecraft:fence_gate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 81,
+    "name": "minecraft:cactus",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4167,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepoweremerald",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4515,
+    "name": "ForestryExtras:item.fe.frame.frameMutation",
+    "effectivness": 1.0
+  },
+  {
+    "id": 37,
+    "name": "minecraft:yellow_flower",
+    "effectivness": 1.0
+  },
+  {
+    "id": 52,
+    "name": "minecraft:mob_spawner",
+    "effectivness": 1.0
+  },
+  {
+    "id": 349,
+    "name": "minecraft:fish",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4482,
+    "name": "Forestry:serumGE",
+    "effectivness": 1.0
+  },
+  {
+    "id": 2260,
+    "name": "minecraft:record_far",
+    "effectivness": 1.0
+  },
+  {
+    "id": 383,
+    "name": "minecraft:spawn_egg",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4325,
+    "name": "IC2:itemToolPainterBlue",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4403,
+    "name": "Forestry:mulch",
+    "effectivness": 1.0
+  },
+  {
+    "id": 330,
+    "name": "minecraft:iron_door",
+    "effectivness": 1.0
+  },
+  {
+    "id": 178,
+    "name": "appliedenergistics2:tile.BlockQuartzTorch",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4430,
+    "name": "Forestry:refractoryEthanol",
+    "effectivness": 1.0
+  },
+  {
+    "id": 488,
+    "name": "Forestry:fences2",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4158,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidssandstone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 351,
+    "name": "minecraft:dye",
+    "effectivness": 1.0
+  },
+  {
+    "id": 212,
+    "name": "appliedenergistics2:tile.QuartzStairBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4628,
+    "name": "ProjRed|Exploration:projectred.exploration.shovelruby",
+    "material": "RUBY",
+    "effectivness": 1.0,
+    "toolClass": [
+      "shovel"
+    ],
+    "harvestLevel": [
+      2
+    ]
+  },
+  {
+    "id": 4282,
+    "name": "IC2:reactorMOXQuad",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4206,
+    "name": "IC2:itemPartCircuitAdv",
+    "effectivness": 1.0
+  },
+  {
+    "id": 428,
+    "name": "IC2:blockLuminator",
+    "effectivness": 1.0
+  },
+  {
+    "id": 47,
+    "name": "minecraft:bookshelf",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4647,
+    "name": "ProjRed|Exploration:projectred.exploration.rubychestplate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4273,
+    "name": "IC2:itemBatChargeAdv",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4164,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepoweriron",
+    "effectivness": 1.0
+  },
+  {
+    "id": 502,
+    "name": "ForestryExtras:mutatedIronBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4511,
+    "name": "ForestryExtras:item.fe.frame.frameEmerald",
+    "effectivness": 1.0
+  },
+  {
+    "id": 341,
+    "name": "minecraft:slime_ball",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4292,
+    "name": "IC2:reactorCoolantSimple",
+    "effectivness": 1.0
+  },
+  {
+    "id": 79,
+    "name": "minecraft:ice",
+    "effectivness": 1.0
+  },
+  {
+    "id": 380,
+    "name": "minecraft:cauldron",
+    "effectivness": 1.0
+  },
+  {
+    "id": 398,
+    "name": "minecraft:carrot_on_a_stick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4240,
+    "name": "IC2:itemArmorHazmatHelmet",
+    "effectivness": 1.0
+  },
+  {
+    "id": 89,
+    "name": "minecraft:glowstone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4334,
+    "name": "IC2:itemToolPainterMagenta",
+    "effectivness": 1.0
+  },
+  {
+    "id": 35,
+    "name": "minecraft:wool",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4464,
+    "name": "Forestry:beeCombs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 103,
+    "name": "minecraft:melon_block",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4584,
+    "name": "IC2NuclearControl:ItemToolThermometer",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4473,
+    "name": "Forestry:grafter",
+    "effectivness": 1.0
+  },
+  {
+    "id": 379,
+    "name": "minecraft:brewing_stand",
+    "effectivness": 1.0
+  },
+  {
+    "id": 353,
+    "name": "minecraft:sugar",
+    "effectivness": 1.0
+  },
+  {
+    "id": 45,
+    "name": "minecraft:brick_block",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4480,
+    "name": "Forestry:flutterlyzer",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4495,
+    "name": "ForestryExtras:item.fe.item.diamondStick",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4128,
+    "name": "BuildCraft|Core:stoneGearItem",
+    "effectivness": 1.0
+  },
+  {
+    "id": 407,
+    "name": "minecraft:tnt_minecart",
+    "effectivness": 1.0
+  },
+  {
+    "id": 9,
+    "name": "minecraft:water",
+    "effectivness": 1.0
+  },
+  {
+    "id": 250,
+    "name": "IC2:blockWall",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4172,
+    "name": "BuildCraft|Transport:pipeFacade",
+    "effectivness": 1.0
+  },
+  {
+    "id": 44,
+    "name": "minecraft:stone_slab",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4398,
+    "name": "Forestry:bronzeShovel",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4614,
+    "name": "ProjRed|Illumination:projectred.illumination.cagelamp2.inv",
+    "effectivness": 1.0
+  },
+  {
+    "id": 205,
+    "name": "appliedenergistics2:tile.BlockLightDetector",
+    "effectivness": 1.0
+  },
+  {
+    "id": 237,
+    "name": "IC2:blockOreLead",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4611,
+    "name": "ProjRed|Illumination:projectred.illumination.cagelamp",
+    "effectivness": 1.0
+  },
+  {
+    "id": 401,
+    "name": "minecraft:fireworks",
+    "effectivness": 1.0
+  },
+  {
+    "id": 125,
+    "name": "minecraft:double_wooden_slab",
+    "effectivness": 1.0
+  },
+  {
+    "id": 319,
+    "name": "minecraft:porkchop",
+    "effectivness": 1.0
+  },
+  {
+    "id": 376,
+    "name": "minecraft:fermented_spider_eye",
+    "effectivness": 1.0
+  },
+  {
+    "id": 219,
+    "name": "BuildCraft|Energy:blockFuel",
+    "effectivness": 1.0
+  },
+  {
+    "id": 127,
+    "name": "minecraft:cocoa",
+    "effectivness": 1.0
+  },
+  {
+    "id": 366,
+    "name": "minecraft:cooked_chicken",
+    "effectivness": 1.0
+  },
+  {
+    "id": 327,
+    "name": "minecraft:lava_bucket",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4340,
+    "name": "IC2:itemPartCFPowder",
+    "effectivness": 1.0
+  },
+  {
+    "id": 274,
+    "name": "minecraft:stone_pickaxe",
+    "material": "STONE",
+    "effectivness": 1.0,
+    "toolClass": [
+      "pickaxe"
+    ],
+    "harvestLevel": [
+      1
+    ]
+  },
+  {
+    "id": 4249,
+    "name": "IC2:itemArmorNanoHelmet",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4138,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsstone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 15,
+    "name": "minecraft:iron_ore",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4576,
+    "name": "ForestryExtras:item.fe.comb.mutated",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4467,
+    "name": "Forestry:apiaristLegs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 445,
+    "name": "Forestry:soil",
+    "effectivness": 1.0
+  },
+  {
+    "id": 435,
+    "name": "IC2:fluidConstructionFoam",
+    "effectivness": 1.0
+  },
+  {
+    "id": 2261,
+    "name": "minecraft:record_mall",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4312,
+    "name": "IC2:itemPartCoalBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 228,
+    "name": "BuildCraft|Factory:refineryBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4520,
+    "name": "ForestryExtras:item.fe.scoop.scoopDraconic",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4444,
+    "name": "Forestry:bucketIce",
+    "effectivness": 1.0
+  },
+  {
+    "id": 33,
+    "name": "minecraft:piston",
+    "effectivness": 1.0
+  },
+  {
+    "id": 264,
+    "name": "minecraft:diamond",
+    "effectivness": 1.0
+  },
+  {
+    "id": 459,
+    "name": "Forestry:beehives",
+    "effectivness": 1.0
+  },
+  {
+    "id": 406,
+    "name": "minecraft:quartz",
+    "effectivness": 1.0
+  },
+  {
+    "id": 439,
+    "name": "IC2:fluidBiomass",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4331,
+    "name": "IC2:itemToolPainterLime",
+    "effectivness": 1.0
+  },
+  {
+    "id": 270,
+    "name": "minecraft:wooden_pickaxe",
+    "material": "WOOD",
+    "effectivness": 1.0,
+    "toolClass": [
+      "pickaxe"
+    ],
+    "harvestLevel": [
+      0
+    ]
+  },
+  {
+    "id": 4111,
+    "name": "appliedenergistics2:item.ToolMemoryCard",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4608,
+    "name": "ProjRed|Illumination:projectred.illumination.lantern.inv",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4587,
+    "name": "IC2NuclearControl:ItemEnergySensorKit",
+    "effectivness": 1.0
+  },
+  {
+    "id": 225,
+    "name": "BuildCraft|Factory:tankBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 404,
+    "name": "minecraft:comparator",
+    "effectivness": 1.0
+  },
+  {
+    "id": 318,
+    "name": "minecraft:flint",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4179,
+    "name": "IC2:itemRubber",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4452,
+    "name": "Forestry:beealyzer",
+    "effectivness": 1.0
+  },
+  {
+    "id": 175,
+    "name": "minecraft:double_plant",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4421,
+    "name": "Forestry:waxCapsuleBiomass",
+    "effectivness": 1.0
+  },
+  {
+    "id": 21,
+    "name": "minecraft:lapis_ore",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4407,
+    "name": "Forestry:fruits",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4555,
+    "name": "IronChest:diamondCrystalUpgrade",
+    "effectivness": 1.0
+  },
+  {
+    "id": 328,
+    "name": "minecraft:minecart",
+    "effectivness": 1.0
+  },
+  {
+    "id": 51,
+    "name": "minecraft:fire",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4380,
+    "name": "Forestry:impregnatedCasing",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4409,
+    "name": "Forestry:canEthanol",
+    "effectivness": 1.0
+  },
+  {
+    "id": 2264,
+    "name": "minecraft:record_strad",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4145,
+    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsdaizuli",
+    "effectivness": 1.0
+  },
+  {
+    "id": 58,
+    "name": "minecraft:crafting_table",
+    "effectivness": 1.0
+  },
+  {
+    "id": 331,
+    "name": "minecraft:redstone",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4262,
+    "name": "IC2:itemArmorCFPack",
+    "effectivness": 1.0
+  },
+  {
+    "id": 233,
+    "name": "BuildCraft|Silicon:laserTableBlock",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4435,
+    "name": "Forestry:refractorySeedOil",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4655,
+    "name": "ProjRed|Exploration:projectred.exploration.peridotchestplate",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4222,
+    "name": "IC2:itemToolbox",
+    "effectivness": 1.0
+  },
+  {
+    "id": 109,
+    "name": "minecraft:stone_brick_stairs",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4521,
+    "name": "ForestryExtras:item.fe.grafter.grafterReinforced",
+    "effectivness": 1.0
+  },
+  {
+    "id": 2263,
+    "name": "minecraft:record_stal",
+    "effectivness": 1.0
+  },
+  {
+    "id": 4428,
+    "name": "Forestry:waxCapsuleOil",
+    "effectivness": 1.0
+  },
+  {
+    "id": 508,
+    "name": "statues:statues.statue",
+    "effectivness": 1.0
+  },
+  {
+    "id": 187,
+    "name": "appliedenergistics2:tile.BlockSecurity",
+    "effectivness": 1.0
+  }
+]

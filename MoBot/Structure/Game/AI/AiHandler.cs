@@ -15,6 +15,7 @@ namespace MoBot.Structure.Game.AI
         public Surviver Surviver { get; } = new Surviver();
         public Mover Mover { get;} = new Mover();
 
+        private int _flyingTicks;
 
         public AiHandler()
         {
@@ -24,22 +25,23 @@ namespace MoBot.Structure.Game.AI
                 {
                     if (NetworkController.Connected && GameController.Player != null)
                     {
-                        _root.Tick(null);
-
-                        if (_root.LastStatus != RunStatus.Running)
+                        if (_root.Tick(null) != RunStatus.Running)
                         {
                             _root.Stop(null);
                             _root.Start(null);
                         }
                     }
+
                     else
                     {
-                        _threadContinue = false;
+                        _root.Stop(null);
+                        _root.Start(null);
                     }
-                    
+
                     Thread.Sleep(50);
-                }               
-            }) {IsBackground = true};
+                }
+            })
+            { IsBackground = true };
 
             CreateRoot();
             _root.Start(null);
@@ -49,7 +51,7 @@ namespace MoBot.Structure.Game.AI
 
         private void CreateRoot()
         {
-            _root = new PrioritySelector(Protector, Surviver, Mover);
+            _root = new PrioritySelector(Protector, Surviver, Mover, new TreeSharp.Action());
         }
     }
 

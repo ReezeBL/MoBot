@@ -1,0 +1,22 @@
+private static class ItemInfo{
+        public Integer id;
+        public String name;
+        public String material;
+        public float effectivness;
+        public String[] toolClass;
+        public int[] harvestLevel;
+    }
+
+    private static class BlockInfo{
+        public int id;
+        public String name;
+        public float hardness;
+        public boolean transparent;
+        public String harvestTool;
+    }
+
+    private static class MaterialInfo{
+        public String name;
+        public float effectiveness;
+        public float damage;
+    }

@@ -88,9 +88,6 @@ namespace MoBot.Structure.Game.World
 
         public bool CanMoveTo(int x, int y, int z)
         {
-            x = x < 0 ? x - 1 : x;
-            z = z < 0 ? z - 1 : z;
-
             Block floor = GetBlock(x, y, z);
             Block upper = GetBlock(x, y + 1, z);
 

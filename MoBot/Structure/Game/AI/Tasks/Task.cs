@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +12,7 @@ namespace MoBot.Structure.Game.AI.Tasks
     public class Task
     {
         protected Composite _root;
-
+        private readonly object _awaiter = new object();
         /// <summary>
         /// Определяет очереденость исполнения заданий
         /// </summary>
@@ -23,6 +25,16 @@ namespace MoBot.Structure.Game.AI.Tasks
         public static implicit operator Composite(Task obj)
         {
             return obj._root;
+        }
+
+        protected IEnumerator WaitForSeconds(long milliseconds)
+        {
+            var time = new Stopwatch();
+            time.Start();
+            while (time.ElapsedMilliseconds < milliseconds)
+            {
+                yield return _awaiter;
+            }
         }
     }
 }

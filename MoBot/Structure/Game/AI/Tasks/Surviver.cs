@@ -1,4 +1,6 @@
-﻿using TreeSharp;
+﻿using System;
+using TreeSharp;
+using Action = TreeSharp.Action;
 
 namespace MoBot.Structure.Game.AI.Tasks
 {
@@ -28,9 +30,19 @@ namespace MoBot.Structure.Game.AI.Tasks
             
         }
 
+        private bool IsDead(object context)
+        {
+            return Math.Abs(GameController.Player.Health) < 1;
+        }
+
+        private void Ressurect()
+        {
+            ActionManager.Respawn();
+        }
+
         public Surviver()
         {
-            _root = new PrioritySelector(new Decorator(IsHungry, new Action(o =>Feed())));
+            _root = new PrioritySelector(new Decorator(IsDead, new Action(o => Ressurect())), new Decorator(IsHungry, new Action(o =>Feed())));
         }
 
         public override int GetPriority()

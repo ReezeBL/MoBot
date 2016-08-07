@@ -160,7 +160,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 
                 nodes.Enqueue(start, 0);
                 start.Prev = null;
-                cost.Add(start, 0);
+                cost.Add(start, 0f);
                 while (nodes.Count > 0)
                 {
                     var current = nodes.Dequeue();
@@ -172,16 +172,16 @@ namespace MoBot.Structure.Game.AI.Pathfinding
                     foreach (var node in AdvancedNeighbours(current))
                     {
                         var next = node.Key;
-                        float nodeCost = (float)cost[current] + 1f + node.Value;
+                        var nodeCost = (float)cost[current] + 1f + node.Value;
                         if (!cost.ContainsKey(next))
                         {
-                            cost.Add(next, cost);
+                            cost.Add(next, nodeCost);
                             nodes.Enqueue(next, nodeCost + next.DistanceTo(end));
                             next.Prev = current;
                         }
-                        else if ((int)cost[next] > nodeCost)
+                        else if ((float)cost[next] > nodeCost)
                         {
-                            cost[next] = cost;
+                            cost[next] = nodeCost;
                             nodes.UpdatePriority(next, nodeCost + next.DistanceTo(end));
                             next.Prev = current;
                         }
@@ -241,7 +241,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
         private static float GetBlockWeight(int x, int y, int z)
         {
             GameBlock block = GameBlock.GetBlock(GameController.World.GetBlock(x, y, z).Id);
-            return block.Transparent ? 0 : block.Hardness;
+            return block.Transparent ? 0 : block.Hardness * 100;
         }
 
     }

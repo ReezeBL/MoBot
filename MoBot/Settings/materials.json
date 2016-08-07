@@ -1,0 +1,52 @@
+[
+  {
+    "name": "WOOD",
+    "effectiveness": 2.0,
+    "damage": 0.0
+  },
+  {
+    "name": "STONE",
+    "effectiveness": 4.0,
+    "damage": 1.0
+  },
+  {
+    "name": "IRON",
+    "effectiveness": 6.0,
+    "damage": 2.0
+  },
+  {
+    "name": "EMERALD",
+    "effectiveness": 8.0,
+    "damage": 3.0
+  },
+  {
+    "name": "GOLD",
+    "effectiveness": 12.0,
+    "damage": 0.0
+  },
+  {
+    "name": "IC2_BRONZE",
+    "effectiveness": 6.0,
+    "damage": 2.0
+  },
+  {
+    "name": "CHEAT",
+    "effectiveness": 10.0,
+    "damage": 1.0E9
+  },
+  {
+    "name": "RUBY",
+    "effectiveness": 8.0,
+    "damage": 3.0
+  },
+  {
+    "name": "SAPPHIRE",
+    "effectiveness": 8.0,
+    "damage": 3.0
+  },
+  {
+    "name": "PERIDOT",
+    "effectiveness": 7.75,
+    "damage": 2.75
+  }
+]

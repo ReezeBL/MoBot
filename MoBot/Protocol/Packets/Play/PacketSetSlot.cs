@@ -8,7 +8,7 @@ namespace MoBot.Protocol.Packets.Play
     {
         public byte WindowId;
         public short Slot;
-        public Item Item;
+        public ItemStack ItemStack;
         public override void HandlePacket(IHandler handler)
         {
             handler.HandlePacketSetSlot(this);
@@ -18,7 +18,7 @@ namespace MoBot.Protocol.Packets.Play
         {
             WindowId = buff.ReadByte();
             Slot = buff.ReadShort();
-            Item = ReadItem(buff);
+            ItemStack = ReadItem(buff);
         }
 
         public override void WritePacketData(StreamWrapper buff)

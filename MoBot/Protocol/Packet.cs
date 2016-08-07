@@ -14,13 +14,13 @@ namespace MoBot.Protocol
             return false;
         }
 
-        protected static void WriteItem(StreamWrapper buff, Item itemStack)
+        protected static void WriteItem(StreamWrapper buff, ItemStack itemStack)
         {
-            if (itemStack == null || itemStack.Id < 0)
+            if (itemStack == null || itemStack.Item.Id < 0)
                 buff.WriteShort(-1);
             else
             {
-                buff.WriteShort(itemStack.Id);
+                buff.WriteShort((short)itemStack.Item.Id);
                 buff.WriteByte(itemStack.ItemCount);
                 buff.WriteShort(itemStack.ItemDamage);
                 if (itemStack.NbtData != null)
@@ -35,10 +35,11 @@ namespace MoBot.Protocol
             }
         }
 
-        protected static Item ReadItem(StreamWrapper buff)
+        protected static ItemStack ReadItem(StreamWrapper buff)
         {
-            var item = new Item {Id = buff.ReadShort()};
-            if (item.Id < 0) return item;
+            var id = buff.ReadShort();
+            ItemStack item = new ItemStack(id);
+            if (id < 0) return item;
 
             item.ItemCount = buff.ReadByte();
             item.ItemDamage = buff.ReadShort();

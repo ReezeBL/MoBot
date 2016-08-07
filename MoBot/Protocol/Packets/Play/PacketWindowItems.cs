@@ -8,16 +8,16 @@ namespace MoBot.Protocol.Packets.Play
     {
         public byte WindowId;
         public short ItemCount;
-        public Item[] Items;
+        public ItemStack[] ItemsStack;
 
         public override void ReadPacketData(StreamWrapper buff)
         {
             WindowId = buff.ReadByte();
             ItemCount = buff.ReadShort();
-            Items = new Item[ItemCount];
+            ItemsStack = new ItemStack[ItemCount];
             for(int i = 0; i < ItemCount; i++)
             {
-                Items[i] = ReadItem(buff);
+                ItemsStack[i] = ReadItem(buff);
             }
         }
 

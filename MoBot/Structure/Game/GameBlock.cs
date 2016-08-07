@@ -10,6 +10,17 @@ namespace MoBot.Structure.Game
     {
         private static readonly Dictionary<int, GameBlock> BlockRegistry = new Dictionary<int, GameBlock>();
 
+        private class BlockInfo
+        {
+            public int id;
+            public string name;
+            public float hardness;
+            public bool transparent;
+            public string harvestTool;
+        }
+
+        public static IEnumerable<GameBlock> Blocks => BlockRegistry.Values;
+
         public static void LoadBlocks()
         {
             try
@@ -17,18 +28,19 @@ namespace MoBot.Structure.Game
                 using (var file = File.OpenText("Settings/blocks.json"))
                 using (var reader = new JsonTextReader(file))
                 {
-                    dynamic loadedData = JToken.ReadFrom(reader);
-                    foreach (var data in loadedData)
+                    var deserializer = JsonSerializer.Create();
+                    var blocks = deserializer.Deserialize<BlockInfo[]>(reader);
+                    foreach (var block in blocks)
                     {
-                        if (data.id == null) continue;
-                        var block = new GameBlock
+                        GameBlock gameBlock = new GameBlock
                         {
-                            Id = (int) data.id,
-                            Name = (string) data.name,
-                            Hardness = (float) (data.hardness.Value ?? float.MaxValue),
-                            Transparent = (bool) data.transparent
+                            Hardness = block.hardness,
+                            HarvestTool = block.harvestTool,
+                            Id = block.id,
+                            Name = block.name,
+                            Transparent = block.transparent
                         };
-                        BlockRegistry.Add(block.Id, block);
+                        BlockRegistry.Add(gameBlock.Id, gameBlock);
                     }
                 }
             }
@@ -50,5 +62,6 @@ namespace MoBot.Structure.Game
         public string Name = "";
         public float Hardness = -1.0f;
         public bool Transparent;
+        public string HarvestTool;
     }
 }

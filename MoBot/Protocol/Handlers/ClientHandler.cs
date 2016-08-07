@@ -195,7 +195,7 @@ namespace MoBot.Protocol.Handlers
         {
             if (packetWindowItems.WindowId == 0)
             {
-                packetWindowItems.Items.CopyTo(GameController.Player.Inventory, 0);
+                packetWindowItems.ItemsStack.CopyTo(GameController.Player.Inventory, 0);
             }
         }
 
@@ -207,7 +207,7 @@ namespace MoBot.Protocol.Handlers
         {
             if (packetSetSlot.WindowId == 0)
             {
-                GameController.Player.Inventory[packetSetSlot.Slot] = packetSetSlot.Item;
+                GameController.Player.Inventory[packetSetSlot.Slot] = packetSetSlot.ItemStack;
             }
         }
 

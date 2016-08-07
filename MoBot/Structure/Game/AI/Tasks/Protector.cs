@@ -13,7 +13,7 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         private bool HasTraget(object context)
         {
-            return _targetEntity == null;
+            return _targetEntity != null;
         }
 
         private void AttackTarget()

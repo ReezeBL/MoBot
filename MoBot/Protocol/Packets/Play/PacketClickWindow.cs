@@ -11,7 +11,7 @@ namespace MoBot.Protocol.Packets.Play
         public byte Button;
         public short ActionNumber;
         public byte Mode;
-        public Item ItemStack;
+        public ItemStack ItemStack;
         public override void HandlePacket(IHandler handler)
         {
             throw new NotImplementedException();

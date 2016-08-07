@@ -373,7 +373,7 @@
           <xs:element name="maxQueueSize" minOccurs="0" maxOccurs="1" type="xs:integer" />
           <xs:element name="includeNLogData" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="includeSourceInfo" minOccurs="0" maxOccurs="1" type="xs:boolean" />
-          <xs:element name="ndcItemSeparator" minOccurs="0" maxOccurs="1" type="xs:string" />
+          <xs:element name="ndcItemStackSeparator" minOccurs="0" maxOccurs="1" type="xs:string" />
           <xs:element name="parameter" minOccurs="0" maxOccurs="unbounded" type="NLog.Targets.NLogViewerParameterInfo" />
           <xs:element name="includeCallSite" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="appInfo" minOccurs="0" maxOccurs="1" type="xs:string" />
@@ -440,7 +440,7 @@
             <xs:documentation>Indicates whether to include source info (file name and line number) in the information sent over the network.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="ndcItemSeparator" type="xs:string">
+        <xs:attribute name="ndcItemStackSeparator" type="xs:string">
           <xs:annotation>
             <xs:documentation>NDC item separator.</xs:documentation>
           </xs:annotation>
@@ -1701,7 +1701,7 @@
           <xs:element name="maxQueueSize" minOccurs="0" maxOccurs="1" type="xs:integer" />
           <xs:element name="includeNLogData" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="includeSourceInfo" minOccurs="0" maxOccurs="1" type="xs:boolean" />
-          <xs:element name="ndcItemSeparator" minOccurs="0" maxOccurs="1" type="xs:string" />
+          <xs:element name="ndcItemStackSeparator" minOccurs="0" maxOccurs="1" type="xs:string" />
           <xs:element name="parameter" minOccurs="0" maxOccurs="unbounded" type="NLog.Targets.NLogViewerParameterInfo" />
           <xs:element name="includeCallSite" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="appInfo" minOccurs="0" maxOccurs="1" type="xs:string" />
@@ -1768,7 +1768,7 @@
             <xs:documentation>Indicates whether to include source info (file name and line number) in the information sent over the network.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="ndcItemSeparator" type="xs:string">
+        <xs:attribute name="ndcItemStackSeparator" type="xs:string">
           <xs:annotation>
             <xs:documentation>NDC item separator.</xs:documentation>
           </xs:annotation>
@@ -1894,10 +1894,10 @@
   </xs:complexType>
   <xs:simpleType name="System.Diagnostics.PerformanceCounterType">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="NumberOfItems32" />
-      <xs:enumeration value="NumberOfItems64" />
-      <xs:enumeration value="NumberOfItemsHEX32" />
-      <xs:enumeration value="NumberOfItemsHEX64" />
+      <xs:enumeration value="NumberOfItemsStack32" />
+      <xs:enumeration value="NumberOfItemsStack64" />
+      <xs:enumeration value="NumberOfItemsStackHEX32" />
+      <xs:enumeration value="NumberOfItemsStackHEX64" />
       <xs:enumeration value="RateOfCountsPerSecond32" />
       <xs:enumeration value="RateOfCountsPerSecond64" />
       <xs:enumeration value="CountPerTimeInterval32" />
