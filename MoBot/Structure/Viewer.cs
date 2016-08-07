@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using MoBot.Settings;
 using MoBot.Structure.Actions;
 using Newtonsoft.Json.Linq;
 
@@ -123,16 +122,16 @@ namespace MoBot.Structure
 
         private void Viewer_Load(object sender, EventArgs e)
         {
-            serverTextbox.Text = SettingsClass.ServerIp;
-            usernameTextBox.Text = SettingsClass.UserName;
+            serverTextbox.Text = Settings.ServerIp;
+            usernameTextBox.Text = Settings.UserName;
         }
 
         private void Viewer_FormClosing(object sender, FormClosingEventArgs e)
         {
-            SettingsClass.ServerIp = serverTextbox.Text;
-            SettingsClass.UserName = usernameTextBox.Text;
+            Settings.ServerIp = serverTextbox.Text;
+            Settings.UserName = usernameTextBox.Text;
 
-            SettingsClass.Serialize();
+            Settings.Serialize();
         }
     }
 }

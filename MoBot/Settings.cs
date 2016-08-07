@@ -1,27 +1,28 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace MoBot.Settings
+namespace MoBot
 {
     [Serializable]
-    public sealed class SettingsClass
+    public sealed class Settings
     {
-        private SettingsClass() { }
+        private Settings() { }
 
-        static SettingsClass()
+        static Settings()
         {
-            Instance = Deserialize() as SettingsClass ?? new SettingsClass();
+            Instance = Deserialize() as Settings ?? new Settings();
         }
 
         public static object Deserialize()
         {
-            XmlSerializer ser = new XmlSerializer(typeof(SettingsClass));
+            XmlSerializer ser = new XmlSerializer(typeof(Settings));
             try
             {
                 using (TextReader reader = new StreamReader(Path))
                 {
-                    return ser.Deserialize(reader) as SettingsClass;
+                    return ser.Deserialize(reader) as Settings;
                 }
             }
             catch (Exception)
@@ -34,7 +35,7 @@ namespace MoBot.Settings
 
         public static void Serialize()
         {
-            XmlSerializer ser = new XmlSerializer(typeof(SettingsClass));
+            XmlSerializer ser = new XmlSerializer(typeof(Settings));
             using (TextWriter writer = new StreamWriter(Path))
             {
                 ser.Serialize(writer, Instance);
@@ -42,12 +43,12 @@ namespace MoBot.Settings
         }
 
         private const string Path = "Settings/Settings.xml";
-        private static readonly SettingsClass Instance;
+        private static readonly Settings Instance;
 
         
         public string _serverIp = "";
         public string _userName = "";
-
+        public HashSet<int> _intrestedBlocks = new HashSet<int> {14,15,16,56};
         public static string ServerIp
         {
             get { return Instance._serverIp; }
@@ -58,6 +59,12 @@ namespace MoBot.Settings
         {
             get { return Instance._userName; }
             set { Instance._userName = value; }
+        }
+
+        public static HashSet<int> IntrestedBlocks
+        {
+            get { return Instance._intrestedBlocks; }
+            set { Instance._intrestedBlocks = value; }
         }
     }
 }

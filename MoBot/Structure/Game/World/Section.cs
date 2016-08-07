@@ -19,10 +19,10 @@ namespace MoBot.Structure.Game.World
             Blocks[index] = (byte)id;
         }
 
-        public Block GetBlock(int x, int y, int z)
+        public Block GetBlock(int x, int y, int z,int Cx, int Cz)
         {
             int index = x + (z * 16) + (y * 16 * 16);
-            Block thisBlock = new Block(Blocks[index], x, y, z, (int)Math.Floor(decimal.Divide(x, 16)), (int)Math.Floor(decimal.Divide(z, 16)));
+            Block thisBlock = new Block(Blocks[index], Cx*16 + x, y + Y*16, Cz * 16 + z);
 
             return thisBlock;
         }

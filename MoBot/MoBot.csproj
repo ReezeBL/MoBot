@@ -128,7 +128,7 @@
     <Compile Include="Protocol\Packets\Play\PacketWindowItems.cs" />
     <Compile Include="Protocol\Threading\BaseThread.cs" />
     <Compile Include="Protocol\Threading\WritingThread.cs" />
-    <Compile Include="Settings\SettingsClass.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Structure\Actions\ActionChatMessage.cs" />
     <Compile Include="Structure\Actions\ActionConnect.cs" />
     <Compile Include="Structure\Actions\ActionMessage.cs" />

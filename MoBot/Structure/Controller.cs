@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using MoBot.Structure.Game;
 using MoBot.Structure.Game.AI.Pathfinding;
+using MoBot.Structure.Game.World;
 
 namespace MoBot.Structure
 {
@@ -62,6 +65,14 @@ namespace MoBot.Structure
                     {
                             GameController.AiHandler.Mover.SetDestination(
                                 new PathPoint(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3])));
+                        }
+                        break;
+                    case "-test":
+                        var blocks = GameController.World.GetBlocks(Settings.IntrestedBlocks);
+                        var grouped = blocks.GroupBy(block => block.Id);
+                        foreach (var group in grouped)
+                        {
+                            Console.WriteLine($"{group.Key} : {group.Count()}");
                         }
                         break;
                     default:

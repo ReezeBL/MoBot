@@ -73,6 +73,11 @@ namespace MoBot.Structure.Game.AI.Pathfinding
             return new PathPoint(MathHelper.floor_float(vector.X), (int) vector.Y, MathHelper.floor_float(vector.Z));
         }
 
+        public static implicit operator PathPoint(Block block)
+        {
+            return new PathPoint(block.X, block.Y, block.Z);
+        }
+
         public static implicit operator Vector3(PathPoint point)
         {
             return new Vector3(point.X - 0.5f * Math.Sign(point.X), point.Y, point.Z - 0.5f * Math.Sign(point.Z));

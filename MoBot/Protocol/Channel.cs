@@ -36,6 +36,7 @@ namespace MoBot.Protocol
             28, //TODO: PacketEntityMetadata
             31, //TODO: PacketSetExperience
             32, //PacketEntityProperties
+            36,
             37, //PacketBlockBreakAnim
             40, //PacketEffect
             43,

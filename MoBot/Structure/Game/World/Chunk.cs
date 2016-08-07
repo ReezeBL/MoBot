@@ -62,13 +62,12 @@ namespace MoBot.Structure.Game.World
         }
         public int GetBlockId(int bx, int by, int bz)
         {
-            Section thisSection = GetSectionByNumber(by);
-            return thisSection.GetBlock(GetXinSection(bx), GetPositionInSection(by), GetZinSection(bz)).Id;
+            return GetBlock(bx, by, bz).Id;
         }
         public Block GetBlock(int bx, int by, int bz)
         {
             Section thisSection = GetSectionByNumber(by);
-            return thisSection.GetBlock(GetXinSection(bx), GetPositionInSection(by), GetZinSection(bz));
+            return thisSection.GetBlock(GetXinSection(bx), GetPositionInSection(by), GetZinSection(bz), X, Z);
         }
 
         public void UpdateBlock(int bx, int by, int bz, int id)
