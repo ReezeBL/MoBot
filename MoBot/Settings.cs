@@ -58,6 +58,7 @@ namespace MoBot
         public string _serverIp = "";
         public string _userName = "";
         public HashSet<int> _intrestedBlocks = new HashSet<int> {14,15,16,56};
+        public HashSet<int> _keepItemIds = new HashSet<int> {257, 278, 277, 256};
         public int _scanRange = 32;
 
         public static string ServerIp

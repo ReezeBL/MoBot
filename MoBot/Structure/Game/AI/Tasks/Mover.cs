@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Diagnostics;
 using System.Linq;
+using System.Windows.Forms;
 using MoBot.Structure.Game.AI.Pathfinding;
 using MoBot.Structure.Game.Items;
 using TreeSharp;
@@ -98,16 +99,21 @@ namespace MoBot.Structure.Game.AI.Tasks
             {
                 yield break;
             }
-            int index = 0;
-            var item = GameController.Player.Inventory.Select(stack => new {Item = stack.Item, SlotNumber = index++}).Where(slot =>
+            var items = 
+               GameController.Player.Inventory.IndexedInventory;
+            var item = items.Where(slot =>
             {
                 var lambdaTool = slot.Item as ItemTool;
                 return lambdaTool != null && lambdaTool.IsItemEffective(block);
             }).FirstOrDefault();
             if (item == null) yield break;
 
-            foreach (var p in ActionManager.ExchangeInventorySlots(item.SlotNumber, GameController.Player.HeldItem))
-                yield return p;
+            Console.WriteLine($"Selecting {item.Item.Name} at {item.Slot}");
+
+            foreach (var p in ActionManager.ExchangeInventorySlots(item.Slot, GameController.Player.HeldItem))
+            {
+                yield return _awaiter;
+            }
         }
     }
 }

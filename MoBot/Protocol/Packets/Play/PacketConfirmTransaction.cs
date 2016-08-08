@@ -6,19 +6,25 @@ namespace MoBot.Protocol.Packets.Play
     public class PacketConfirmTransaction : Packet
     {
         public bool Accepted { get; set; }
+        public byte WindowId;
+        public short ActionId;
         public override void HandlePacket(IHandler handler)
         {
-            throw new NotImplementedException();
+            handler.HandlePacketConfirmTransaction(this);
         }
 
         public override void ReadPacketData(StreamWrapper buff)
         {
-            throw new NotImplementedException();
+            WindowId = buff.ReadByte();
+            ActionId = buff.ReadShort();
+            Accepted = buff.ReadBool();
         }
 
         public override void WritePacketData(StreamWrapper buff)
         {
-            throw new NotImplementedException();
+            buff.WriteByte(WindowId);
+            buff.WriteShort(ActionId);
+            buff.WriteBool(Accepted);
         }
     }
 }

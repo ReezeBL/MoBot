@@ -30,7 +30,7 @@ namespace MoBot.Protocol.Threading
                         }
                         catch (Exception exception)
                         {
-                            Program.GetLogger().Error($"Writing thread: {exception.Message}");
+                            Program.GetLogger().Error($"Writing thread: {exception}");
                         }
                     }
                     Thread.Sleep(10);

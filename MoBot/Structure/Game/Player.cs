@@ -1,11 +1,16 @@
-﻿using MoBot.Structure.Game.Items;
+﻿using System.Linq;
+using MoBot.Structure.Game.Items;
 
 namespace MoBot.Structure.Game
 {
     public class Player : LivingEntity
     {
-        public ItemStack[] Inventory = new ItemStack[45];
-        public int HeldItem = 0;
+
+        public Container Inventory = new Container(9);
+        public Container CurrentContainer;
+
+        public int HeldItemBar = 0;
+        public int HeldItem => HeldItemBar + 36;
         public bool OnGround;
 
         public short Food;
@@ -13,30 +18,12 @@ namespace MoBot.Structure.Game
         public string Name;
 
         public Item GetHeldItem => Inventory[HeldItem].Item;
+        public ItemStack GetHeldItemStack => Inventory[HeldItem];
 
         public Player(int id, string name) : base(id)
         {
             Name = name;
-        }
-
-        public int GetItemSlot(int id)
-        {
-            for (int i = 9; i < 45; i++)
-            {
-                if (Inventory[i] != null && Inventory[i].Item.Id == id)
-                    return i;
-            }
-            return -1;
-        }
-
-        public int GetFreeSlot()
-        {
-            for (int i = 9; i < 45; i++)
-            {
-                if (Inventory[i] == null || Inventory[i].Item.Id == -1)
-                    return i;
-            }
-            return -1;
+            CurrentContainer = Inventory;
         }
 
         public override string ToString()

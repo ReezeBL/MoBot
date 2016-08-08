@@ -97,6 +97,8 @@
     <Compile Include="Protocol\Packets\Handshake\PacketEncriptionRequest.cs" />
     <Compile Include="Protocol\Packets\Play\PacketClickWindow.cs" />
     <Compile Include="Protocol\Packets\Play\PacketClientStatus.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketOpenWindow.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketPlayerBlockPlacement.cs" />
     <Compile Include="Protocol\Packets\Play\PacketPlayerDigging.cs" />
     <Compile Include="Protocol\Packets\Play\PacketSpawnPlayer.cs" />
     <Compile Include="Protocol\Packets\Play\PacketBlockChange.cs" />
@@ -144,6 +146,7 @@
     <Compile Include="Structure\Game\AI\Tasks\Protector.cs" />
     <Compile Include="Structure\Game\AI\Tasks\Surviver.cs" />
     <Compile Include="Structure\Game\AI\Tasks\Task.cs" />
+    <Compile Include="Structure\Game\Container.cs" />
     <Compile Include="Structure\Game\Entity.cs" />
     <Compile Include="Structure\Game\GameBlock.cs" />
     <Compile Include="Structure\Game\GameController.cs" />
@@ -175,7 +178,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="App.config" />
-    <Content Include="NLog.config">
+    <Content Include="Structure\NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="NLog.xsd">

@@ -12,7 +12,7 @@ namespace MoBot.Structure.Game.AI.Tasks
     public class Task
     {
         protected Composite _root;
-        private readonly object _awaiter = new object();
+        protected readonly object _awaiter = new object();
         /// <summary>
         /// Определяет очереденость исполнения заданий
         /// </summary>

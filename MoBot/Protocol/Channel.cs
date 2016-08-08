@@ -30,16 +30,18 @@ namespace MoBot.Protocol
             5,  //PacketSpawnPosition
             11, //PacketAnimation
             13, //PacketCollectItem
+            17, //PacketSpawnExperienceOrb
             18, //PacketEntityVelocity
             22, //PacketEntityLook
             25, //PacketEntityHeadLook
+            27, //PacketEntityAttach
             28, //TODO: PacketEntityMetadata
             31, //TODO: PacketSetExperience
             32, //PacketEntityProperties
-            36,
+            36, //PacketBlocAction
             37, //PacketBlockBreakAnim
             40, //PacketEffect
-            43,
+            43, //PacketChangeGameState
             41, //PacketSoundEffect
             53, //PacketUpdateTileEntity
             55, //PacketStatistics
@@ -76,6 +78,7 @@ namespace MoBot.Protocol
             {34, typeof(PacketMultiBlockChange)},
             {35, typeof(PacketBlockChange)},
             {38, typeof(PacketMapChunk)},
+            {45, typeof(PacketOpenWindow) },
             {47, typeof(PacketSetSlot)},
             {48, typeof(PacketWindowItems)},
             {50, typeof(PacketConfirmTransaction)},
@@ -95,13 +98,14 @@ namespace MoBot.Protocol
         {
             {typeof(PacketKeepAlive), 0},
             {typeof(PacketChat), 1},
-            {typeof(PacketUseEntity), 2 },
+            {typeof(PacketUseEntity), 2},
             {typeof(PacketPlayerPosLook), 6},
-            {typeof(PacketPlayerDigging), 7 },
+            {typeof(PacketPlayerDigging), 7},
+            {typeof(PacketPlayerBlockPlacement), 8},
             {typeof(PacketHeldItemChange), 9},
             {typeof(PacketClickWindow), 14},
             {typeof(PacketConfirmTransaction), 15},
-            {typeof(PacketClientStatus), 22 },
+            {typeof(PacketClientStatus), 22},
             {typeof(PacketCustomPayload), 23}
         };
 

@@ -2,6 +2,8 @@
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using MoBot.Protocol.Packets.Play;
 using MoBot.Structure.Game;
 using MoBot.Structure.Game.AI.Pathfinding;
 using MoBot.Structure.Game.World;
@@ -49,23 +51,23 @@ namespace MoBot.Structure
                     {
                         var sb = new StringBuilder();
                         sb.AppendLine("Player inventory:");
-                        for(var i = 1;i<=4;i++)
-                        {
-                            for(var  j=0;j<9;j++)
-                                sb.Append($"{i * 9 + j} : {GameController.Player.Inventory[i * 9 + j]} ");
-                            sb.AppendLine();
-                        }
+                        sb.Append(GameController.Player.CurrentContainer);
                         Console.WriteLine(sb.ToString());
                     }
                         break;
                     case "-swap":
-                        ActionManager.ExchangeInventorySlots(int.Parse(split[1]), int.Parse(split[2]));
+                        foreach(var p in ActionManager.ExchangeInventorySlots(int.Parse(split[1]), int.Parse(split[2])))
+                            Thread.Sleep(50);
                         break;
                     case "-move":
                     {
                             GameController.AiHandler.Mover.SetShovelDestination(
                                 new PathPoint(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3])));
                         }
+                        break;
+
+                    case "-testOpen":
+                        NetworkController.SendPacket(new PacketPlayerBlockPlacement {Face = 0, Item = GameController.Player.Inventory[GameController.Player.HeldItem], X = int.Parse(split[1]), Y = int.Parse(split[2]), Z = int.Parse(split[3]) });
                         break;
                     case "-test":
                         var block = GameController.World.SearchBlock(Settings.IntrestedBlocks);

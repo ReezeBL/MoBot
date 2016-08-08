@@ -34,12 +34,14 @@ namespace MoBot.Structure.Game
                     {
                         GameBlock gameBlock = new GameBlock
                         {
-                            Hardness = block.hardness,
+                            Hardness = block.hardness > 0 ? block.hardness : 10000,
                             HarvestTool = block.harvestTool,
                             Id = block.id,
                             Name = block.name,
                             Transparent = block.transparent
                         };
+                        if (gameBlock.Name == "Лава")
+                            gameBlock.Transparent = false;
                         BlockRegistry.Add(gameBlock.Id, gameBlock);
                     }
                 }

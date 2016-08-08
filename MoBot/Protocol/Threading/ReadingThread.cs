@@ -30,7 +30,7 @@ namespace MoBot.Protocol.Threading
                     }
                     catch (Exception exception)
                     {
-                        Program.GetLogger().Error($"Reading thread: {exception.Message}");
+                        Program.GetLogger().Error($"Reading thread: {exception}");
                     }
                 }
             })
@@ -49,7 +49,7 @@ namespace MoBot.Protocol.Threading
                     }
                     catch (Exception exception)
                     {
-                        Program.GetLogger().Error($"Processing thread: {exception.Message}");
+                        Program.GetLogger().Error($"Processing thread: {exception}");
                     }
                     Thread.Sleep(50);
                 }

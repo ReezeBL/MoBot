@@ -31,27 +31,12 @@ namespace MoBot
             return JsonConvert.DeserializeObject<T>(JsonConvert.SerializeObject(source), deserializeSettings);
         }
 
-        public static T Clone<T>(T source)
+        public static void Swap(ref object first, ref object second)
         {
-            if (!typeof(T).IsSerializable)
-            {
-                throw new ArgumentException("The type must be serializable.", nameof(source));
-            }
-
-            // Don't serialize a null object, simply return the default for that object
-            if (ReferenceEquals(source, null))
-            {
-                return default(T);
-            }
-
-            IFormatter formatter = new BinaryFormatter();
-            Stream stream = new MemoryStream();
-            using (stream)
-            {
-                formatter.Serialize(stream, source);
-                stream.Seek(0, SeekOrigin.Begin);
-                return (T)formatter.Deserialize(stream);
-            }
+            object tmp = first;
+            first = second;
+            second = tmp;
         }
+        
     }
 }

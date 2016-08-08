@@ -104,13 +104,14 @@ namespace MoBot.Structure.Game
         {
             NetworkController.SendPacket(new PacketClickWindow
                 {
-                    WindowId = 0,
+                    WindowId = GameController.Player.CurrentContainer.WindowId,
                     Mode = 0,
                     ActionNumber = (short) _transactionId++,
                     Button = 0,
                     Slot = (short) slot,
-                    ItemStack = GameController.Player.Inventory[slot]
+                    ItemStack = GameController.Player.CurrentContainer[slot]
                 });
+            GameController.Player.CurrentContainer.HandleClick((short)slot);
         }
 
         public static IEnumerable ExchangeInventorySlots(int slot1, int slot2)

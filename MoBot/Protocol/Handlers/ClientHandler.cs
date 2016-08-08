@@ -176,7 +176,7 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketHeldItemChange(PacketHeldItemChange packetHeldItemChange)
         {
-            GameController.Player.HeldItem = packetHeldItemChange.Slot;
+            GameController.Player.HeldItemBar = packetHeldItemChange.Slot;
         }
 
         public void HandlePacketPlayerPosLook(PacketPlayerPosLook packetPlayerPosLook)
@@ -193,21 +193,29 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketWindowItems(PacketWindowItems packetWindowItems)
         {
-            if (packetWindowItems.WindowId == 0)
-            {
-                packetWindowItems.ItemsStack.CopyTo(GameController.Player.Inventory, 0);
-            }
+            for (int i = 0; i < packetWindowItems.ItemCount; i++)
+                GameController.Player.CurrentContainer[i] = packetWindowItems.ItemsStack[i];
         }
 
         public void HandlePacketRespawn(PacketRespawn packetRespawn)
         {
         }
 
+        public void HandlePacketOpenWindow(PacketOpenWindow packetOpenWindow)
+        {
+            var player = GameController.Player;
+            player.CurrentContainer = new Container(packetOpenWindow.SlotNumber, player.Inventory, (byte)packetOpenWindow.WindowId);
+        }
+
         public void HandlePacketSetSlot(PacketSetSlot packetSetSlot)
         {
-            if (packetSetSlot.WindowId == 0)
+            try
             {
-                GameController.Player.Inventory[packetSetSlot.Slot] = packetSetSlot.ItemStack;
+                GameController.Player.CurrentContainer[packetSetSlot.Slot] = packetSetSlot.ItemStack;
+            }
+            catch (Exception e)
+            {
+                Program.GetLogger().Warn($"Failed to set slot {packetSetSlot.Slot} in window {packetSetSlot.WindowId}, exception {e}");
             }
         }
 
