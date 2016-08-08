@@ -45,6 +45,8 @@ namespace MoBot.Structure.Game.AI.Tasks
         private IEnumerator Routine(PathPoint destination)
         {
             Path path = PathFinder.Shovel(GameController.Player.Position, destination);
+            if(path == null)
+                yield break;
             foreach (var point in path)
             {
                 while (!GameController.World.CanMoveTo(point.X, point.Y, point.Z))

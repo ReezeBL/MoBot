@@ -81,6 +81,9 @@ namespace MoBot.Structure
                             Console.WriteLine("Failed to find blocks");
                         }                     
                         break;
+                    case "-dig":
+                        GameController.AiHandler.Digger.enableDig = !GameController.AiHandler.Digger.enableDig;
+                        break;
                     default:
                     {
                         NetworkController.NotifyViewer("Unknown command!");

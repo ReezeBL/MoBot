@@ -14,6 +14,7 @@ namespace MoBot.Structure.Game.AI
         public Protector Protector { get; } = new Protector();
         public Surviver Surviver { get; } = new Surviver();
         public Mover Mover { get;} = new Mover();
+        public Digger Digger { get; } = new Digger();
 
         private int _flyingTicks;
 
@@ -51,7 +52,7 @@ namespace MoBot.Structure.Game.AI
 
         private void CreateRoot()
         {
-            _root = new PrioritySelector(Protector, Surviver, Mover, new TreeSharp.Action());
+            _root = new PrioritySelector(Protector, Surviver, Mover, Digger);
         }
     }
 
