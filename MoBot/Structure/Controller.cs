@@ -67,7 +67,10 @@ namespace MoBot.Structure
                         break;
 
                     case "-testOpen":
-                        NetworkController.SendPacket(new PacketPlayerBlockPlacement {Face = 0, Item = GameController.Player.Inventory[GameController.Player.HeldItem], X = int.Parse(split[1]), Y = int.Parse(split[2]), Z = int.Parse(split[3]) });
+                        ActionManager.RightClick(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3]));
+                        break;
+                    case "-testClose":
+                        ActionManager.CloseWindow();
                         break;
                     case "-test":
                         var block = GameController.World.SearchBlock(Settings.IntrestedBlocks);

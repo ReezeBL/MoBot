@@ -91,6 +91,7 @@
     <Compile Include="Protocol\Handlers\ClientHandler.cs" />
     <Compile Include="Protocol\Handlers\IHandler.cs" />
     <Compile Include="Protocol\PacketRespawn.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketCloseWindow.cs" />
     <Compile Include="Protocol\Packets\Play\PacketConfirmTransaction.cs" />
     <Compile Include="Protocol\Packets\Handshake\PacketLoginSuccess.cs" />
     <Compile Include="Protocol\Packet.cs" />
@@ -178,9 +179,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="App.config" />
-    <Content Include="Structure\NLog.config">
+    <None Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>

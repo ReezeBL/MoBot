@@ -30,7 +30,7 @@ namespace MoBot.Structure.Game
             WindowId = windowId;
         }
 
-        public ItemStack this[short n]
+        public ItemStack this[int n]
         {
             get
             {
@@ -43,19 +43,13 @@ namespace MoBot.Structure.Game
             {
                 if (n == -1)
                     CursorItem = value;
-                if (n >= _capacity)
+                else if (n >= _capacity)
                     _inventory[n - _capacity] = value;
                 else
                     _items[n] = value;
             }
         }
 
-        public ItemStack this[int n]
-        {
-            get { return this[(short) n]; }
-            set { this[(short) n] = value; }
-
-        }
         public IEnumerable<IndexedItem> IndexedInventory
         {
             get
@@ -100,7 +94,7 @@ namespace MoBot.Structure.Game
             return sb.ToString();
         }
 
-        public void HandleClick(short slot)
+        public void HandleClick(int slot)
         {
             var tmp = this[slot];
             this[slot] = CursorItem;

@@ -207,6 +207,11 @@ namespace MoBot.Protocol.Handlers
             player.CurrentContainer = new Container(packetOpenWindow.SlotNumber, player.Inventory, (byte)packetOpenWindow.WindowId);
         }
 
+        public void HandlePacketCloseWindow(PacketCloseWindow packetCloseWindow)
+        {
+            GameController.Player.CurrentContainer = GameController.Player.Inventory;
+        }
+
         public void HandlePacketSetSlot(PacketSetSlot packetSetSlot)
         {
             try

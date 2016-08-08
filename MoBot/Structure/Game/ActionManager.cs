@@ -206,5 +206,16 @@ namespace MoBot.Structure.Game
         {
             NetworkController.SendPacket(new PacketPlayerDigging { Status = 2, X = x, Y = (byte)y, Z = z, Face = 0 });
         }
+
+        public static void RightClick(int x, int y, int z)
+        {
+            NetworkController.SendPacket(new PacketPlayerBlockPlacement { Face = 0, Item = GameController.Player.Inventory[GameController.Player.HeldItem], X = x, Y = y, Z = z});
+        }
+
+        public static void CloseWindow()
+        {
+            NetworkController.SendPacket(new PacketCloseWindow {WindowId = GameController.Player.CurrentContainer.WindowId});
+            GameController.Player.CurrentContainer = GameController.Player.Inventory;
+        }
     }
 }
