@@ -113,12 +113,12 @@ namespace MoBot.Structure.Game
                 });
         }
 
-        public static void ExchangeInventorySlots(int slot1, int slot2)
+        public static IEnumerable ExchangeInventorySlots(int slot1, int slot2)
         {
             ClickInventorySlot(slot1);
-            Thread.Sleep(100);
+            yield return null;
             ClickInventorySlot(slot2);
-            Thread.Sleep(100);
+            yield return null;
             ClickInventorySlot(slot1);
         }
 

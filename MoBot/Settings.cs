@@ -1,7 +1,9 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace MoBot
 {
@@ -17,12 +19,13 @@ namespace MoBot
 
         public static object Deserialize()
         {
-            XmlSerializer ser = new XmlSerializer(typeof(Settings));
+            JsonSerializer serializer = JsonSerializer.CreateDefault();
             try
             {
-                using (TextReader reader = new StreamReader(Path))
+                using (TextReader stream = new StreamReader(Path))
+                using (JsonTextReader reader = new JsonTextReader(stream) )
                 {
-                    return ser.Deserialize(reader) as Settings;
+                    return serializer.Deserialize<Settings>(reader);
                 }
             }
             catch (Exception)
@@ -35,20 +38,28 @@ namespace MoBot
 
         public static void Serialize()
         {
-            XmlSerializer ser = new XmlSerializer(typeof(Settings));
-            using (TextWriter writer = new StreamWriter(Path))
+            JsonSerializer serializer = JsonSerializer.Create(new JsonSerializerSettings {Formatting = Formatting.Indented});
+            using (TextWriter stream = new StreamWriter(Path))
+            using (JsonTextWriter writer = new JsonTextWriter(stream))
             {
-                ser.Serialize(writer, Instance);
+                serializer.Serialize(writer, Instance);
             }
         }
 
-        private const string Path = "Settings/Settings.xml";
+        private const string Path = "Settings/Settings.json";
+        public const string BlocksPath = "Settings/blocks.json";
+        public const string ItemsPath = "Settings/items.json";
+        public const string MaterialsPath = "Settings/materials.json";
+        public const string UserIdsPath = "Settings/UserIDS.xml";
+
         private static readonly Settings Instance;
 
         
         public string _serverIp = "";
         public string _userName = "";
         public HashSet<int> _intrestedBlocks = new HashSet<int> {14,15,16,56};
+        public int _scanRange = 32;
+
         public static string ServerIp
         {
             get { return Instance._serverIp; }
@@ -65,6 +76,12 @@ namespace MoBot
         {
             get { return Instance._intrestedBlocks; }
             set { Instance._intrestedBlocks = value; }
+        }
+
+        public static int ScanRange
+        {
+            get { return Instance._scanRange; }
+            set { Instance._scanRange = value; }
         }
     }
 }

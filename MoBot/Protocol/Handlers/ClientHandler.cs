@@ -353,7 +353,7 @@ namespace MoBot.Protocol.Handlers
         private static string GetUserSession()
         {
             var document = new XmlDocument();
-            document.Load("Settings/UserIDS.xml");
+            document.Load(Settings.UserIdsPath);
             var root = document.DocumentElement;
             var id = "";
             Debug.Assert(root != null, "root != null");

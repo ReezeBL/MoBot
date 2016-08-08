@@ -17,7 +17,7 @@ namespace MoBot.Structure.Game.Items
         {
             Dictionary<string, float> materials = new Dictionary<string, float>();
 
-            using (var file = File.OpenText("Settings/materials.json"))
+            using (var file = File.OpenText(Settings.MaterialsPath))
             using (var reader = new JsonTextReader(file))
             {
                 var deserializer = JsonSerializer.Create();
@@ -28,7 +28,7 @@ namespace MoBot.Structure.Game.Items
                 }
             }
 
-            using (var file = File.OpenText("Settings/items.json"))
+            using (var file = File.OpenText(Settings.ItemsPath))
             using (var reader = new JsonTextReader(file))
             {
                 var deserializer = JsonSerializer.Create();

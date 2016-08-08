@@ -63,17 +63,23 @@ namespace MoBot.Structure
                         break;
                     case "-move":
                     {
-                            GameController.AiHandler.Mover.SetDestination(
+                            GameController.AiHandler.Mover.SetShovelDestination(
                                 new PathPoint(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3])));
                         }
                         break;
                     case "-test":
-                        var blocks = GameController.World.GetBlocks(Settings.IntrestedBlocks);
-                        var grouped = blocks.GroupBy(block => block.Id);
-                        foreach (var group in grouped)
+                        var block = GameController.World.SearchBlock(Settings.IntrestedBlocks);
+                        if (block != null)
                         {
-                            Console.WriteLine($"{group.Key} : {group.Count()}");
+                            var playerPos = (PathPoint) GameController.Player.Position;
+                            double distance = playerPos.DistanceTo(block);
+                            Console.WriteLine(
+                                $"{GameBlock.GetBlock(block.Id).Name} {{{block.X}|{block.Y}|{block.Z}}}\r\nDistance: {distance}");
                         }
+                        else
+                        {
+                            Console.WriteLine("Failed to find blocks");
+                        }                     
                         break;
                     default:
                     {

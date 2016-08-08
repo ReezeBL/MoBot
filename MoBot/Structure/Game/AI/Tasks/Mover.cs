@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Diagnostics;
+using System.Linq;
 using MoBot.Structure.Game.AI.Pathfinding;
 using MoBot.Structure.Game.Items;
 using TreeSharp;
@@ -25,6 +26,11 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         public void SetDestination(PathPoint endPoint)
         {
+            _mover = ActionManager.MoveRoutineS(endPoint);
+        }
+
+        public void SetShovelDestination(PathPoint endPoint)
+        {
             _mover = Routine(endPoint);
         }
 
@@ -45,39 +51,12 @@ namespace MoBot.Structure.Game.AI.Tasks
                 {
                     if (!GameController.World.IsBlockFree(point.X, point.Y + 1, point.Z))
                     {
-                        GameBlock block = GameController.World.GetBlock(point.X, point.Y + 1, point.Z);
-                        Console.WriteLine($"Digging down block {block.Id}:{block.Name}");
-                        ActionManager.StartDigging(point.X, point.Y + 1, point.Z);
-
-                        float power = GameController.Player.GetHeldItem.GetItemStrength(block);
-                        long waitTime = Item.GetWaitTime(power);
-
-                        Console.WriteLine($"Idle for {waitTime} ms");
-                        var s = WaitForSeconds(waitTime + 50);
-                        while (s.MoveNext())
-                            yield return s.Current;
-
-                        ActionManager.FinishDigging(point.X, point.Y + 1, point.Z);
+                        foreach (var p in DigTo(point.X, point.Y + 1, point.Z)) yield return p;
                         continue;
                     }
 
-                    if (!GameController.World.IsBlockFree(point.X, point.Y, point.Z))
-                    {
-                        GameBlock block = GameController.World.GetBlock(point.X, point.Y, point.Z);
-                        Console.WriteLine($"Digging down block {block.Id}:{block.Name}");
-                        ActionManager.StartDigging(point.X, point.Y, point.Z);
-
-                        float power = GameController.Player.GetHeldItem.GetItemStrength(block);
-                        long waitTime = Item.GetWaitTime(power);
-
-                        Console.WriteLine($"Idle for {waitTime} ms");
-                        var s = WaitForSeconds(waitTime + 50);
-                        while (s.MoveNext())
-                            yield return s.Current;
-
-                        ActionManager.FinishDigging(point.X, point.Y, point.Z);
-                        continue;
-                    }
+                    if (GameController.World.IsBlockFree(point.X, point.Y, point.Z)) continue;
+                    foreach (var p in DigTo(point.X, point.Y, point.Z)) yield return p;
                 }
 
                 Console.WriteLine("Moving");
@@ -85,6 +64,48 @@ namespace MoBot.Structure.Game.AI.Tasks
                 for(int i=0;i<2;i++)
                     yield return null;
             }
+        }
+
+        private IEnumerable DigTo(int x, int y, int z)
+        {
+            GameBlock block = GameController.World.GetBlock(x, y, z);
+            Console.WriteLine($"Digging down block {block.Id}:{block.Name}");
+
+            foreach (var p in SwitchTool(block)) yield return p;
+
+            ActionManager.StartDigging(x, y, z);
+
+            float power = GameController.Player.GetHeldItem.GetItemStrength(block);
+            long waitTime = Item.GetWaitTime(power);
+
+            Console.WriteLine($"Idle for {waitTime} ms");
+            var seconds = WaitForSeconds(waitTime + 50);
+
+            while (seconds.MoveNext())
+                yield return seconds.Current;
+
+            ActionManager.FinishDigging(x, y, z);
+        }
+
+        private IEnumerable SwitchTool(GameBlock block)
+        {
+            var heldItem = GameController.Player.GetHeldItem;
+            var tool = heldItem as ItemTool;
+
+            if (tool != null && tool.IsItemEffective(block))
+            {
+                yield break;
+            }
+            int index = 0;
+            var item = GameController.Player.Inventory.Select(stack => new {Item = stack.Item, SlotNumber = index++}).Where(slot =>
+            {
+                var lambdaTool = slot.Item as ItemTool;
+                return lambdaTool != null && lambdaTool.IsItemEffective(block);
+            }).FirstOrDefault();
+            if (item == null) yield break;
+
+            foreach (var p in ActionManager.ExchangeInventorySlots(item.SlotNumber, GameController.Player.HeldItem))
+                yield return p;
         }
     }
 }

@@ -91,6 +91,92 @@ namespace MoBot.Structure.Game.World
             }
         }
 
+        public Block SearchBlock(HashSet<int> ids)
+        {
+            Block result;
+            int X = MathHelper.floor_float(GameController.Player.X);
+            int Z = MathHelper.floor_float(GameController.Player.Z);
+            int Y = (int) GameController.Player.Y;
+
+            int maxDistance = Settings.ScanRange;
+
+            if (Check(X, Y, Z, ids, out result))
+                return result;
+
+            for (int d = 1; d < maxDistance; d++)
+            {
+                for (int i = 0; i <= d; i++)
+                {
+                    for (int j = 0; j <= d - i; j++)
+                    {
+                        int x1 = X + i;
+                        int z1 = Z + j;
+                        int y1 = Y + (d - i - j);
+
+                        if (Check(x1, y1, z1, ids, out result))
+                            return result;
+
+                        x1 = X - i;
+                        z1 = Z + j;
+                        y1 = Y + (d - i - j);
+
+                        if (Check(x1, y1, z1, ids, out result))
+                            return result;
+
+                        x1 = X + i;
+                        z1 = Z - j;
+                        y1 = Y + (d - i - j);
+
+                        if (Check(x1, y1, z1, ids, out result))
+                            return result;
+
+                        x1 = X + i;
+                        z1 = Z + j;
+                        y1 = Y - (d - i - j);
+
+                        if (Check(x1, y1, z1, ids, out result))
+                            return result;
+
+                        x1 = X - i;
+                        z1 = Z - j;
+                        y1 = Y + (d - i - j);
+
+                        if (Check(x1, y1, z1, ids, out result))
+                            return result;
+
+                        x1 = X - i;
+                        z1 = Z + j;
+                        y1 = Y - (d - i - j);
+
+                        if (Check(x1, y1, z1, ids, out result))
+                            return result;
+
+                        x1 = X + i;
+                        z1 = Z - j;
+                        y1 = Y - (d - i - j);
+
+                        if (Check(x1, y1, z1, ids, out result))
+                            return result;
+
+                        x1 = X - i;
+                        z1 = Z - j;
+                        y1 = Y - (d - i - j);
+
+                        if (Check(x1, y1, z1, ids, out result))
+                            return result;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        private bool Check(int x, int y, int z, HashSet<int> ids, out Block result)
+        {
+            result = GetBlock(x, y, z);
+            return result != null && ids.Contains(result.Id);
+        }
+
         public Chunk GetChunk(int x, int z)
         {
             lock (_monitor)

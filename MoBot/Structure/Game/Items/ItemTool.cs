@@ -12,7 +12,7 @@ namespace MoBot.Structure.Game.Items
         public HashSet<string> ToolClasses;
         public int[] ClassLevels;
 
-        private bool IsItemEffective(GameBlock block)
+        public bool IsItemEffective(GameBlock block)
         {
             return ToolClasses.Contains(block.HarvestTool);
         }

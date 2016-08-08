@@ -11,7 +11,8 @@ namespace MoBot.Protocol.Threading
         public Queue<Packet> SendingQueue { get; } = new Queue<Packet>();
         private Thread Thread { get; }
         public WritingThread()
-        {            
+        {           
+             
             Thread = new Thread(() =>
             {
                 while (Process)
@@ -32,7 +33,7 @@ namespace MoBot.Protocol.Threading
                             Program.GetLogger().Error($"Writing thread: {exception.Message}");
                         }
                     }
-                    Thread.Sleep(50);
+                    Thread.Sleep(10);
                 }
             }) {IsBackground = true};
             Thread.Start();

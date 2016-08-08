@@ -25,7 +25,7 @@ namespace MoBot.Structure.Game
         {
             try
             {
-                using (var file = File.OpenText("Settings/blocks.json"))
+                using (var file = File.OpenText(Settings.BlocksPath))
                 using (var reader = new JsonTextReader(file))
                 {
                     var deserializer = JsonSerializer.Create();
