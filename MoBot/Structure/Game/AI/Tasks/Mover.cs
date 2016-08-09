@@ -72,14 +72,15 @@ namespace MoBot.Structure.Game.AI.Tasks
         private IEnumerable DigTo(int x, int y, int z)
         {
             GameBlock block = GameController.World.GetBlock(x, y, z);
+            Item heldItem = GameController.Player.GetHeldItem;
+
             Console.WriteLine($"Digging down block {block.Id}:{block.Name}");
 
             foreach (var p in SwitchTool(block)) yield return p;
 
             ActionManager.StartDigging(x, y, z);
 
-            float power = GameController.Player.GetHeldItem.GetItemStrength(block);
-            long waitTime = Item.GetWaitTime(power);
+            long waitTime = Item.GetWaitTime(block, heldItem);
 
             Console.WriteLine($"Idle for {waitTime} ms");
             var seconds = WaitForSeconds(waitTime + 50);
@@ -95,7 +96,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             var heldItem = GameController.Player.GetHeldItem;
             var tool = heldItem as ItemTool;
 
-            if (tool != null && tool.IsItemEffective(block))
+            if (tool != null && tool.CanHarvest(block))
             {
                 yield break;
             }
@@ -104,7 +105,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             var item = items.Where(slot =>
             {
                 var lambdaTool = slot.Item as ItemTool;
-                return lambdaTool != null && lambdaTool.IsItemEffective(block);
+                return lambdaTool != null && lambdaTool.CanHarvest(block);
             }).FirstOrDefault();
             if (item == null) yield break;
 
@@ -114,6 +115,9 @@ namespace MoBot.Structure.Game.AI.Tasks
             {
                 yield return _awaiter;
             }
+
+            yield return _awaiter;
+            yield return _awaiter;
         }
     }
 }

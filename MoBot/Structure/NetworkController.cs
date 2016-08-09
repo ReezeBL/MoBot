@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Net.Sockets;
+using System.Threading;
+using System.Threading.Tasks;
 using MoBot.Protocol;
 using MoBot.Protocol.Handlers;
 using MoBot.Protocol.Packets.Handshake;
@@ -40,6 +42,11 @@ namespace MoBot.Structure
             return _instance;
         }
 
+        public static async void ConnectAsync(string serverIp, int port, string name, int delay = 0)
+        {
+            await Task.Run(() => { Thread.Sleep(delay); Connect(serverIp, port, name); });
+        }
+
         public static void Connect(string serverIp, int port, string name)
         {
             try
@@ -48,6 +55,10 @@ namespace MoBot.Structure
 
                 var instance = GetInstance();
                 dynamic response = Ping(serverIp, port);
+
+                if (response.players.online >= response.players.max)
+                    throw new Exception("Server is full!");
+
                 ModList = response.modinfo.modList;
                 var client = new TcpClient(serverIp, port);
                 MainChannel = new Channel(client.GetStream(), Channel.State.Login);
@@ -76,8 +87,9 @@ namespace MoBot.Structure
             }
             catch (Exception exception)
             {
+                Disconnect();
                 Console.WriteLine(exception.ToString());
-                NotifyViewer("Unable to connect to server!");
+                NotifyViewer($"Unable to connect to server! \r\n {exception.Message}");
             }
         }
 

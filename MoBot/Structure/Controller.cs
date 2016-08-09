@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -67,24 +68,20 @@ namespace MoBot.Structure
                         break;
 
                     case "-testOpen":
-                        ActionManager.RightClick(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3]));
-                        break;
+                        {
+                            ActionManager.RightClick(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3]));
+                            break;
+                        }
                     case "-testClose":
                         ActionManager.CloseWindow();
                         break;
                     case "-test":
-                        var block = GameController.World.SearchBlock(Settings.IntrestedBlocks);
-                        if (block != null)
+                        var ids = new HashSet<int> {54,130,146,181,191,506};
+                        var blocks = GameController.World.SearchBlocks(ids);
+                        foreach (var block in blocks)
                         {
-                            var playerPos = (PathPoint) GameController.Player.Position;
-                            double distance = playerPos.DistanceTo(block);
-                            Console.WriteLine(
-                                $"{GameBlock.GetBlock(block.Id).Name} {{{block.X}|{block.Y}|{block.Z}}}\r\nDistance: {distance}");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Failed to find blocks");
-                        }                     
+                            Console.WriteLine(block);
+                        }           
                         break;
                     case "-dig":
                         GameController.AiHandler.Digger.enableDig = !GameController.AiHandler.Digger.enableDig;
@@ -98,12 +95,12 @@ namespace MoBot.Structure
             }
         }
 
-        public void HandleConnect(string username, string serverIp)
+        public void HandleConnect(string username, string serverIp, int delay = 0)
         {
             if (NetworkController.Connected)
                 return;
             var split = serverIp.Split(':');
-            NetworkController.Connect(split[0], int.Parse(split[1]), username);
+            NetworkController.ConnectAsync(split[0], int.Parse(split[1]), username, delay);
         }
     }
 }

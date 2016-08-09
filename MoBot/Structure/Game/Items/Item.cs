@@ -86,28 +86,24 @@ namespace MoBot.Structure.Game.Items
         public String Name;
         public int Id;
 
-        protected virtual float GetItemEffectivness(GameBlock block)
+        public virtual bool CanHarvest(GameBlock block)
+        {
+            return false;
+        }
+
+        public virtual float GetItemStrength(GameBlock block)
         {
             return 1.0f;
         }
 
-        public float GetItemStrength(GameBlock block)
+        public static long GetWaitTime(GameBlock block, Item item)
         {
-            if (block.Hardness < 0)
-                return 0;
-            return GetItemEffectivness(block) / block.Hardness / 100;
-        }
+            float damagePerTick = item.GetItemStrength(block) / block.Hardness / (item.CanHarvest(block) ? 30 : 100);
+            if (!GameController.Player.OnGround)
+                damagePerTick /= 5;
 
-        public static long GetWaitTime(float itemEffectivness)
-        {
-            var time = .0;
-            var ticks = 0;
-            while (time < 1)
-            {
-                time += itemEffectivness;
-                ticks++;
-            }
-            return (long)ticks * 50;
+            int ticks = (int)Math.Round(1.0 / damagePerTick, MidpointRounding.AwayFromZero);
+            return ticks * 50 + 100;
         }
 
     }

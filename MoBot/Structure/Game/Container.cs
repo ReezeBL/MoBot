@@ -10,7 +10,7 @@ namespace MoBot.Structure.Game
     {
         private readonly ItemStack[] _items;
         private readonly ItemStack[] _inventory;
-
+        private readonly object _monitor = new object();
         public ItemStack CursorItem { get; private set; }
         public readonly byte WindowId;
         private readonly int _capacity;
@@ -34,19 +34,25 @@ namespace MoBot.Structure.Game
         {
             get
             {
-                if (n == -1)
-                    return CursorItem;
-                return n >= _capacity ? _inventory[n - _capacity] : _items[n];
+                lock (_monitor)
+                {
+                    if (n == -1)
+                        return CursorItem;
+                    return n >= _capacity ? _inventory[n - _capacity] : _items[n];
+                }
             }
 
             set
             {
-                if (n == -1)
-                    CursorItem = value;
-                else if (n >= _capacity)
-                    _inventory[n - _capacity] = value;
-                else
-                    _items[n] = value;
+                lock (_monitor)
+                {
+                    if (n == -1)
+                        CursorItem = value;
+                    else if (n >= _capacity)
+                        _inventory[n - _capacity] = value;
+                    else
+                        _items[n] = value;
+                }
             }
         }
 
@@ -55,7 +61,10 @@ namespace MoBot.Structure.Game
             get
             {
                 int index = _capacity;
-                return _inventory.Select(item => new IndexedItem {Item = item.Item, Slot = index++});
+                lock (_monitor)
+                {
+                    return _inventory.Select(item => new IndexedItem {Item = item.Item, Slot = index++});
+                }
             }
         }
 
@@ -80,15 +89,18 @@ namespace MoBot.Structure.Game
         {
             StringBuilder sb = new StringBuilder();
 
-            for (int i = 0; i < _capacity; i++)
-                sb.Append($"{i} : {_items[i]} ");
-            sb.AppendLine();
-
-            for (var i = 0; i < 4; i++)
+            lock (_monitor)
             {
-                for (var j = 0; j < 9; j++)
-                    sb.Append($"{_capacity + i * 9 + j} : {_inventory[i * 9 + j]} ");
+                for (int i = 0; i < _capacity; i++)
+                    sb.Append($"{i} : {_items[i]} ");
                 sb.AppendLine();
+
+                for (var i = 0; i < 4; i++)
+                {
+                    for (var j = 0; j < 9; j++)
+                        sb.Append($"{_capacity + i*9 + j} : {_inventory[i*9 + j]} ");
+                    sb.AppendLine();
+                }
             }
 
             return sb.ToString();

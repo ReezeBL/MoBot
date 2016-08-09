@@ -193,8 +193,9 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketWindowItems(PacketWindowItems packetWindowItems)
         {
-            for (int i = 0; i < packetWindowItems.ItemCount; i++)
-                GameController.Player.CurrentContainer[i] = packetWindowItems.ItemsStack[i];
+            var container = GameController.Player.GetContainer(packetWindowItems.WindowId);
+            for (var i = 0; i < packetWindowItems.ItemCount; i++)
+                container[i] = packetWindowItems.ItemsStack[i];
         }
 
         public void HandlePacketRespawn(PacketRespawn packetRespawn)
@@ -204,23 +205,24 @@ namespace MoBot.Protocol.Handlers
         public void HandlePacketOpenWindow(PacketOpenWindow packetOpenWindow)
         {
             var player = GameController.Player;
-            player.CurrentContainer = new Container(packetOpenWindow.SlotNumber, player.Inventory, (byte)packetOpenWindow.WindowId);
+            player.CreateContainer(packetOpenWindow.WindowId, packetOpenWindow.SlotNumber);
         }
 
         public void HandlePacketCloseWindow(PacketCloseWindow packetCloseWindow)
         {
-            GameController.Player.CurrentContainer = GameController.Player.Inventory;
+            GameController.Player.CloseContainer(packetCloseWindow.WindowId);
         }
 
         public void HandlePacketSetSlot(PacketSetSlot packetSetSlot)
         {
             try
             {
-                GameController.Player.CurrentContainer[packetSetSlot.Slot] = packetSetSlot.ItemStack;
+                GameController.Player.GetContainer(packetSetSlot.WindowId)[packetSetSlot.Slot] = packetSetSlot.ItemStack;
             }
             catch (Exception e)
             {
-                Program.GetLogger().Warn($"Failed to set slot {packetSetSlot.Slot} in window {packetSetSlot.WindowId}, exception {e}");
+                Program.GetLogger()
+                    .Warn($"Failed to set slot {packetSetSlot.Slot} in window {packetSetSlot.WindowId}, exception {e}");
             }
         }
 

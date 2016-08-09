@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using MoBot.Structure.Game.AI.Pathfinding;
 
 namespace MoBot.Structure.Game.World
 {
@@ -20,6 +23,14 @@ namespace MoBot.Structure.Game.World
         public static implicit operator GameBlock(Block block)
         {
             return GameBlock.GetBlock(block.Id);
+        }
+
+        public override string ToString()
+        {
+            var playerPos = (PathPoint)GameController.Player.Position;
+            double distance = playerPos.DistanceTo(this);
+            return
+                $"{GameBlock.GetBlock(Id).Name} {{{X}|{Y}|{Z}}}\r\nDistance: {distance}";
         }
     }
 }

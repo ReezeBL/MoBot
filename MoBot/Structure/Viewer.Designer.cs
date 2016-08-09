@@ -39,6 +39,7 @@ namespace MoBot.Structure
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.serverTextbox = new System.Windows.Forms.TextBox();
+            this.reconnectCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // consoleWindow
@@ -53,7 +54,7 @@ namespace MoBot.Structure
             // 
             // buttonConnect
             // 
-            this.buttonConnect.Location = new System.Drawing.Point(457, 251);
+            this.buttonConnect.Location = new System.Drawing.Point(457, 184);
             this.buttonConnect.Name = "buttonConnect";
             this.buttonConnect.Size = new System.Drawing.Size(135, 36);
             this.buttonConnect.TabIndex = 1;
@@ -110,12 +111,23 @@ namespace MoBot.Structure
             this.serverTextbox.Size = new System.Drawing.Size(130, 20);
             this.serverTextbox.TabIndex = 4;
             // 
+            // reconnectCheckBox
+            // 
+            this.reconnectCheckBox.AutoSize = true;
+            this.reconnectCheckBox.Location = new System.Drawing.Point(457, 227);
+            this.reconnectCheckBox.Name = "reconnectCheckBox";
+            this.reconnectCheckBox.Size = new System.Drawing.Size(99, 17);
+            this.reconnectCheckBox.TabIndex = 6;
+            this.reconnectCheckBox.Text = "Auto reconnect";
+            this.reconnectCheckBox.UseVisualStyleBackColor = true;
+            // 
             // Viewer
             // 
             this.AcceptButton = this.buttonSendMessage;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(604, 336);
+            this.Controls.Add(this.reconnectCheckBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.serverTextbox);
@@ -146,5 +158,6 @@ namespace MoBot.Structure
         private Label label1;
         private Label label2;
         private TextBox serverTextbox;
+        private CheckBox reconnectCheckBox;
     }
 }

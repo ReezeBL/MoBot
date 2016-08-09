@@ -93,14 +93,19 @@ namespace MoBot.Structure.Game.World
 
         public Block SearchBlock(HashSet<int> ids)
         {
-            Block result;
-            int X = MathHelper.floor_float(GameController.Player.X);
-            int Z = MathHelper.floor_float(GameController.Player.Z);
-            int Y = (int) GameController.Player.Y;
+            int x = MathHelper.floor_float(GameController.Player.X);
+            int z = MathHelper.floor_float(GameController.Player.Z);
+            int y = (int) GameController.Player.Y;
 
+            return SearchBlock(x,y,z, ids.Contains);
+        }
+
+        public Block SearchBlock(int x, int y, int z, Func<int, bool> idPredicate )
+        {
+            Block result;
             int maxDistance = Settings.ScanRange;
 
-            if (Check(X, Y, Z, ids, out result))
+            if (Check(x, y, z, idPredicate, out result))
                 return result;
 
             for (int d = 1; d < maxDistance; d++)
@@ -109,60 +114,60 @@ namespace MoBot.Structure.Game.World
                 {
                     for (int j = 0; j <= d - i; j++)
                     {
-                        int x1 = X + i;
-                        int z1 = Z + j;
-                        int y1 = Y + (d - i - j);
+                        int x1 = x + i;
+                        int z1 = z + j;
+                        int y1 = y + (d - i - j);
 
-                        if (Check(x1, y1, z1, ids, out result))
+                        if (Check(x1, y1, z1, idPredicate, out result))
                             return result;
 
-                        x1 = X - i;
-                        z1 = Z + j;
-                        y1 = Y + (d - i - j);
+                        x1 = x - i;
+                        z1 = z + j;
+                        y1 = y + (d - i - j);
 
-                        if (Check(x1, y1, z1, ids, out result))
+                        if (Check(x1, y1, z1, idPredicate, out result))
                             return result;
 
-                        x1 = X + i;
-                        z1 = Z - j;
-                        y1 = Y + (d - i - j);
+                        x1 = x + i;
+                        z1 = z - j;
+                        y1 = y + (d - i - j);
 
-                        if (Check(x1, y1, z1, ids, out result))
+                        if (Check(x1, y1, z1, idPredicate, out result))
                             return result;
 
-                        x1 = X + i;
-                        z1 = Z + j;
-                        y1 = Y - (d - i - j);
+                        x1 = x + i;
+                        z1 = z + j;
+                        y1 = y - (d - i - j);
 
-                        if (Check(x1, y1, z1, ids, out result))
+                        if (Check(x1, y1, z1, idPredicate, out result))
                             return result;
 
-                        x1 = X - i;
-                        z1 = Z - j;
-                        y1 = Y + (d - i - j);
+                        x1 = x - i;
+                        z1 = z - j;
+                        y1 = y + (d - i - j);
 
-                        if (Check(x1, y1, z1, ids, out result))
+                        if (Check(x1, y1, z1, idPredicate, out result))
                             return result;
 
-                        x1 = X - i;
-                        z1 = Z + j;
-                        y1 = Y - (d - i - j);
+                        x1 = x - i;
+                        z1 = z + j;
+                        y1 = y - (d - i - j);
 
-                        if (Check(x1, y1, z1, ids, out result))
+                        if (Check(x1, y1, z1, idPredicate, out result))
                             return result;
 
-                        x1 = X + i;
-                        z1 = Z - j;
-                        y1 = Y - (d - i - j);
+                        x1 = x + i;
+                        z1 = z - j;
+                        y1 = y - (d - i - j);
 
-                        if (Check(x1, y1, z1, ids, out result))
+                        if (Check(x1, y1, z1, idPredicate, out result))
                             return result;
 
-                        x1 = X - i;
-                        z1 = Z - j;
-                        y1 = Y - (d - i - j);
+                        x1 = x - i;
+                        z1 = z - j;
+                        y1 = y - (d - i - j);
 
-                        if (Check(x1, y1, z1, ids, out result))
+                        if (Check(x1, y1, z1, idPredicate, out result))
                             return result;
                     }
                 }
@@ -171,10 +176,97 @@ namespace MoBot.Structure.Game.World
             return result;
         }
 
-        private bool Check(int x, int y, int z, HashSet<int> ids, out Block result)
+        public List<Block> SearchBlocks(int x, int y, int z, Func<int, bool> idPredicate)
+        {
+            HashSet<Block> result = new HashSet<Block>();
+            Block tmp;
+
+            int maxDistance = Settings.ScanRange;
+
+            if (Check(x, y, z, idPredicate, out tmp))
+                result.Add(tmp);
+
+            for (int d = 1; d < maxDistance; d++)
+            {
+                for (int i = 0; i <= d; i++)
+                {
+                    for (int j = 0; j <= d - i; j++)
+                    {
+                        int x1 = x + i;
+                        int z1 = z + j;
+                        int y1 = y + (d - i - j);
+
+                        if (Check(x1, y1, z1, idPredicate, out tmp))
+                            result.Add(tmp);
+
+                        x1 = x - i;
+                        z1 = z + j;
+                        y1 = y + (d - i - j);
+
+                        if (Check(x1, y1, z1, idPredicate, out tmp))
+                            result.Add(tmp);
+
+                        x1 = x + i;
+                        z1 = z - j;
+                        y1 = y + (d - i - j);
+
+                        if (Check(x1, y1, z1, idPredicate, out tmp))
+                            result.Add(tmp);
+
+                        x1 = x + i;
+                        z1 = z + j;
+                        y1 = y - (d - i - j);
+
+                        if (Check(x1, y1, z1, idPredicate, out tmp))
+                            result.Add(tmp);
+
+                        x1 = x - i;
+                        z1 = z - j;
+                        y1 = y + (d - i - j);
+
+                        if (Check(x1, y1, z1, idPredicate, out tmp))
+                            result.Add(tmp);
+
+                        x1 = x - i;
+                        z1 = z + j;
+                        y1 = y - (d - i - j);
+
+                        if (Check(x1, y1, z1, idPredicate, out tmp))
+                            result.Add(tmp);
+
+                        x1 = x + i;
+                        z1 = z - j;
+                        y1 = y - (d - i - j);
+
+                        if (Check(x1, y1, z1, idPredicate, out tmp))
+                            result.Add(tmp);
+
+                        x1 = x - i;
+                        z1 = z - j;
+                        y1 = y - (d - i - j);
+
+                        if (Check(x1, y1, z1, idPredicate, out tmp))
+                            result.Add(tmp);
+                    }
+                }
+            }
+
+            return result.ToList();
+        }
+
+        public List<Block> SearchBlocks(HashSet<int> ids)
+        {
+            int x = MathHelper.floor_float(GameController.Player.X);
+            int z = MathHelper.floor_float(GameController.Player.Z);
+            int y = (int)GameController.Player.Y;
+
+            return SearchBlocks(x,y,z, ids.Contains);
+        }
+
+        private bool Check(int x, int y, int z, Func<int, bool> idPredicate , out Block result)
         {
             result = GetBlock(x, y, z);
-            return result != null && ids.Contains(result.Id);
+            return result != null && idPredicate(result.Id);
         }
 
         public Chunk GetChunk(int x, int z)

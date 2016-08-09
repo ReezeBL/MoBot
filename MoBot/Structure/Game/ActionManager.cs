@@ -215,7 +215,7 @@ namespace MoBot.Structure.Game
         public static void CloseWindow()
         {
             NetworkController.SendPacket(new PacketCloseWindow {WindowId = GameController.Player.CurrentContainer.WindowId});
-            GameController.Player.CurrentContainer = GameController.Player.Inventory;
+            GameController.Player.CloseContainer(GameController.Player.CurrentContainer.WindowId);
         }
     }
 }

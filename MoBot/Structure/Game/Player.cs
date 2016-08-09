@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 using MoBot.Structure.Game.Items;
 
 namespace MoBot.Structure.Game
@@ -6,8 +8,8 @@ namespace MoBot.Structure.Game
     public class Player : LivingEntity
     {
 
-        public Container Inventory = new Container(9);
-        public Container CurrentContainer;
+        public Container Inventory => _containers[0];
+        public Container CurrentContainer { get; private set; }
 
         public int HeldItemBar = 0;
         public int HeldItem => HeldItemBar + 36;
@@ -20,10 +22,32 @@ namespace MoBot.Structure.Game
         public Item GetHeldItem => Inventory[HeldItem].Item;
         public ItemStack GetHeldItemStack => Inventory[HeldItem];
 
+        private readonly Dictionary<int, Container> _containers = new Dictionary<int, Container> {{0, new Container(9)}, {255, new Container(1)} };
+
+        public void CreateContainer(int windowId, int capacity)
+        {
+            _containers.Add(windowId, new Container(capacity, Inventory, (byte)windowId));
+            CurrentContainer = _containers[windowId];
+        }
+
+        public void CloseContainer(int windowId)
+        {
+            if (windowId == 0)
+                return;
+
+            _containers.Remove(windowId);
+            CurrentContainer = _containers[0];
+        }
+
+        public Container GetContainer(int windowId)
+        {
+            return _containers[windowId];
+        }
+
         public Player(int id, string name) : base(id)
         {
             Name = name;
-            CurrentContainer = Inventory;
+            CurrentContainer = _containers[0];
         }
 
         public override string ToString()

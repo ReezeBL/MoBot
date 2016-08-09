@@ -45,6 +45,17 @@ namespace MoBot.Structure
                 var connect = actionConnect;
                 if (connect.Connected)
                     Putsc($"Client connected!{Environment.NewLine}", Color.DarkGoldenrod);
+                else
+                {
+                    if (reconnectCheckBox.Checked)
+                    {
+                        MainController.HandleConnect(usernameTextBox.Text, serverTextbox.Text, 3000);
+                    }
+                    else
+                    {
+                        buttonConnect.Enabled = true;
+                    }
+                }
             }
             else if (value is ActionMessage)
             {
@@ -90,6 +101,7 @@ namespace MoBot.Structure
         private void buttonConnect_Click(object sender, EventArgs e)
         {
             MainController.HandleConnect(usernameTextBox.Text, serverTextbox.Text);
+            //buttonConnect.Enabled = false;
         }
 
         private void buttonSendMessage_Click(object sender, EventArgs e)
@@ -124,12 +136,14 @@ namespace MoBot.Structure
         {
             serverTextbox.Text = Settings.ServerIp;
             usernameTextBox.Text = Settings.UserName;
+            reconnectCheckBox.Checked = Settings.AutoReconnect;
         }
 
         private void Viewer_FormClosing(object sender, FormClosingEventArgs e)
         {
             Settings.ServerIp = serverTextbox.Text;
             Settings.UserName = usernameTextBox.Text;
+            Settings.AutoReconnect = reconnectCheckBox.Checked;
 
             Settings.Serialize();
         }

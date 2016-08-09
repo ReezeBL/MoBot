@@ -12,14 +12,14 @@ namespace MoBot.Structure.Game.Items
         public HashSet<string> ToolClasses;
         public int[] ClassLevels;
 
-        public bool IsItemEffective(GameBlock block)
+        public override bool CanHarvest(GameBlock block)
         {
             return ToolClasses.Contains(block.HarvestTool);
         }
 
-        protected override float GetItemEffectivness(GameBlock block)
+        public override float GetItemStrength(GameBlock block)
         {
-            return IsItemEffective(block) ? Effectivness : base.GetItemEffectivness(block);
+            return CanHarvest(block) ? Effectivness : base.GetItemStrength(block);
         }
     }
 }
