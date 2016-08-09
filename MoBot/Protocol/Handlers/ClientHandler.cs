@@ -159,9 +159,6 @@ namespace MoBot.Protocol.Handlers
                     });
                 }
                     break;
-                default:
-                    _log.Info($"Unhandled FmlDescriptor : {discriminator}");
-                    break;
             }
         }
 

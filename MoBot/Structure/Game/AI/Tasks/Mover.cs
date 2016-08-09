@@ -82,6 +82,9 @@ namespace MoBot.Structure.Game.AI.Tasks
             foreach (var tick in DigBlock(block))
                 yield return tick;
             ActionManager.FinishDigging(x, y, z);
+
+            for (int i = 0; i < 6; i++)
+                yield return null;
         }
 
         private IEnumerable SwitchTool(GameBlock block)

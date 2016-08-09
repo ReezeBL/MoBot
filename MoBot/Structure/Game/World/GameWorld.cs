@@ -102,11 +102,8 @@ namespace MoBot.Structure.Game.World
 
         public Block SearchBlock(int x, int y, int z, Func<int, bool> idPredicate )
         {
-            Block result;
+            Block result = null;
             int maxDistance = Settings.ScanRange;
-
-            if (Check(x, y, z, idPredicate, out result))
-                return result;
 
             for (int d = 1; d < maxDistance; d++)
             {

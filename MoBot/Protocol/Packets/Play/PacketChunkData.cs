@@ -26,6 +26,7 @@ namespace MoBot.Protocol.Packets.Play
             Length = buff.ReadInt();
             ChunkData = buff.ReadBytes(Length);
             Chunk = new Chunk(X, Z, pbitmap, abitmap, groundUp, true);
+
             RemoveChunk = pbitmap == 0;
         }
 

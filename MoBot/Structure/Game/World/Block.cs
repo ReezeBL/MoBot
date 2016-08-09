@@ -7,11 +7,11 @@ namespace MoBot.Structure.Game.World
 {
     public class Block
     {
-        public int Id;
+        public readonly int Id;
         public string Name;
-        public int X;
-        public int Y;
-        public int Z;
+        public readonly int X;
+        public readonly int Y;
+        public readonly int Z;
         public Block(int id, int x, int y, int z)
         {
             Id = id;
@@ -23,6 +23,11 @@ namespace MoBot.Structure.Game.World
         public static implicit operator GameBlock(Block block)
         {
             return GameBlock.GetBlock(block.Id);
+        }
+
+        public override int GetHashCode()
+        {
+            return Y & 255 | (X & 32767) << 8 | (Z & 32767) << 24 | (X < 0 ? int.MinValue : 0) | (Z < 0 ? 32768 : 0);
         }
 
         public override string ToString()

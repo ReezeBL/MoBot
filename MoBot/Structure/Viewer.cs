@@ -79,11 +79,9 @@ namespace MoBot.Structure
                         else if (obj != null)
                         {
                             JToken token = obj;
-                            Color color;
 
-                            string colorName = token.Value<string>("color");
-                            if (!Colors.TryGetValue(colorName, out color))
-                                color = Color.FromName(colorName);
+                            string colorName = token.Value<string>("color") ?? "";
+                            var color = Color.FromName(colorName);
 
                             Putsc($"{token.Value<string>("text")}", color);
                         }
