@@ -57,8 +57,9 @@ namespace MoBot
         
         public string _serverIp = "";
         public string _userName = "";
-        public HashSet<int> _intrestedBlocks = new HashSet<int> {14,15,16,56};
-        public HashSet<int> _keepItemIds = new HashSet<int> {257, 278, 277, 256};
+        public string _homewarp = "";
+        public HashSet<int> _intrestedBlocks = new HashSet<int>();
+        public HashSet<int> _keepItemIds = new HashSet<int> ();
         public int _scanRange = 32;
         public bool _autoReconnect = false;
 
@@ -86,10 +87,22 @@ namespace MoBot
             set { Instance._scanRange = value; }
         }
 
+        public static HashSet<int> KeepItems
+        {
+            get { return Instance._keepItemIds; }
+            set { Instance._keepItemIds = value; }
+        }
+
         public static bool AutoReconnect
         {
             get { return Instance._autoReconnect; }
             set { Instance._autoReconnect = value; }
+        }
+
+        public static string HomeWarp
+        {
+            get { return Instance._homewarp; }
+            set { Instance._homewarp = value; }
         }
     }
 }

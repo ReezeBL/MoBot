@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 using MoBot.Structure.Game.Items;
 
 namespace MoBot.Structure.Game
@@ -68,6 +67,18 @@ namespace MoBot.Structure.Game
             }
         }
 
+        public IEnumerable<IndexedItem> IndexedContainer
+        {
+            get
+            {
+                int index = 0;
+                lock (_monitor)
+                {
+                    return _items.Select(item => new IndexedItem {Item = item.Item, Slot = index++});
+                }
+            }
+        }
+
         public int ContainerFreeSlot
         {
             get
@@ -75,6 +86,19 @@ namespace MoBot.Structure.Game
                 for(int i=0;i<_capacity;i++)
                     if (_items[i] == null || _items[i].Item.Id == -1)
                         return i;
+                return -1;
+            }
+        }
+
+        public int InventoryFreeSlot
+        {
+            get
+            {
+                for (int i = 0; i < 36; i++)
+                {
+                    if(_items[i] == null || _items[i].Item.Id == -1)
+                        return _capacity + i;
+                }
                 return -1;
             }
         }

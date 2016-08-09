@@ -116,8 +116,9 @@ namespace MoBot.Structure.Game.AI.Tasks
                 yield return _awaiter;
             }
 
-            yield return _awaiter;
-            yield return _awaiter;
+            var pp = WaitForSeconds(300);
+            while (pp.MoveNext())
+                yield return pp.Current;
         }
     }
 }
