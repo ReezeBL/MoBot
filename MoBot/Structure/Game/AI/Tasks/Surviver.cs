@@ -2,6 +2,7 @@
 using System.Collections;
 using MoBot.Structure.Game.AI.Pathfinding;
 using MoBot.Structure.Game.World;
+using NLog;
 using TreeSharp;
 using Action = TreeSharp.Action;
 
@@ -18,9 +19,10 @@ namespace MoBot.Structure.Game.AI.Tasks
         public string RemoveCheckpoint;
 
         public PathPoint Chest = new PathPoint(-4533, 65, -1318);
-        public bool Debug;
+        public bool Store;
 
         private IEnumerator _routine;
+        private Logger _logger = Program.GetLogger();
 
         private bool IsHungry(object context)
         {
@@ -29,11 +31,11 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         private bool InventoryIsFool(object context)
         {
-            var res =  GameController.Player.CurrentContainer.InventoryFreeSlot == -1 || Debug;
+            var res =  GameController.Player.CurrentContainer.InventoryFreeSlot == -1 || Store;
 
             if (!res) return false;
 
-            Debug = false;
+            Store = false;
             _routine = Routine();
             return true;
         }
@@ -52,6 +54,7 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         private IEnumerator Routine()
         {
+            _logger.Info("Perform homerun");
             ActionManager.SendChatMessage(RemoveCheckpoint);
 
             var ss = WaitForSeconds(3500);
@@ -107,12 +110,16 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         public Surviver()
         {
+            _root = new PrioritySelector(new Decorator(IsDead, new Action(o => Ressurect())), new Decorator(IsHungry, new Action(o => Feed())), new Decorator(InventoryIsFool, new Action(RunRoutine)));
+        }
+
+        public void GenerateStrings()
+        {
             string name = GameController.Player.Name;
             TeleportCheckpoint = $"/warp blpoint{name}";
             TeleportHome = $"/warp {Settings.HomeWarp}";
             CreateCheckpoint = $"/warp pcreate blpoint{name}";
             RemoveCheckpoint = $"/warp remove blpoint{name}";
-            _root = new PrioritySelector(new Decorator(IsDead, new Action(o => Ressurect())), new Decorator(IsHungry, new Action(o =>Feed())), new Decorator(InventoryIsFool, new Action(RunRoutine)));
         }
 
         public override int GetPriority()

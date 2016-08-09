@@ -97,8 +97,8 @@ namespace MoBot.Structure
         {           
             var networkController = GetInstance();
             networkController._viewer.OnNext(new ActionConnect { Connected = false});
-            networkController._threadWrite.Stop();
-            networkController._threadRead.Stop();
+            networkController._threadWrite?.Stop();
+            networkController._threadRead?.Stop();
             Connected = false;
         }
 

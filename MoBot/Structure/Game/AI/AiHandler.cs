@@ -17,6 +17,7 @@ namespace MoBot.Structure.Game.AI
         public Digger Digger { get; } = new Digger();
 
         private int _flyingTicks;
+        private bool _paused = true;
 
         public AiHandler()
         {
@@ -26,6 +27,14 @@ namespace MoBot.Structure.Game.AI
                 {
                     if (NetworkController.Connected && GameController.Player != null)
                     {
+                        if (_paused)
+                        {
+                            _paused = false;
+                            Surviver.GenerateStrings();
+                            _root.Stop(null);
+                            _root.Start(null);
+                        }
+
                         if (_root.Tick(null) != RunStatus.Running)
                         {
                             _root.Stop(null);
@@ -35,8 +44,7 @@ namespace MoBot.Structure.Game.AI
 
                     else
                     {
-                        _root.Stop(null);
-                        _root.Start(null);
+                        _paused = true;
                     }
 
                     Thread.Sleep(50);

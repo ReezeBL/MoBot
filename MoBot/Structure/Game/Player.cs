@@ -22,6 +22,16 @@ namespace MoBot.Structure.Game
         public Item GetHeldItem => Inventory[HeldItem].Item;
         public ItemStack GetHeldItemStack => Inventory[HeldItem];
 
+        public float GetDigSpeed(GameBlock block)
+        {
+            Item heldItem = GetHeldItem;
+            float strength = heldItem.GetItemStrength(block) / block.Hardness / (heldItem.CanHarvest(block) ? 30 : 100);
+
+            if (!OnGround) strength /= 5;
+
+            return strength;
+        }
+
         private readonly Dictionary<int, Container> _containers = new Dictionary<int, Container> {{0, new Container(9)}, {255, new Container(1)} };
 
         public void CreateContainer(int windowId, int capacity)

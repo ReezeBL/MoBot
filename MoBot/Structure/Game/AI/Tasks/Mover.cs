@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using MoBot.Structure.Game.AI.Pathfinding;
 using MoBot.Structure.Game.Items;
+using NLog;
 using TreeSharp;
 using Action = TreeSharp.Action;
 
@@ -13,7 +14,7 @@ namespace MoBot.Structure.Game.AI.Tasks
     public class Mover : Task
     {
         private IEnumerator _mover;
-        
+        private Logger _logger = Program.GetLogger();
 
         private bool DoNext(object context)
         {
@@ -62,7 +63,7 @@ namespace MoBot.Structure.Game.AI.Tasks
                     foreach (var p in DigTo(point.X, point.Y, point.Z)) yield return p;
                 }
 
-                Console.WriteLine("Moving");
+                Console.WriteLine($"Moving to {point}");
                 ActionManager.SetPlayerPos(point);
                 for(int i=0;i<2;i++)
                     yield return null;
@@ -72,22 +73,14 @@ namespace MoBot.Structure.Game.AI.Tasks
         private IEnumerable DigTo(int x, int y, int z)
         {
             GameBlock block = GameController.World.GetBlock(x, y, z);
-            Item heldItem = GameController.Player.GetHeldItem;
 
-            Console.WriteLine($"Digging down block {block.Id}:{block.Name}");
+            Console.WriteLine($"Digging block {block.Name} : {{{x} | {y} | {z} }}");
 
             foreach (var p in SwitchTool(block)) yield return p;
 
             ActionManager.StartDigging(x, y, z);
-
-            long waitTime = Item.GetWaitTime(block, heldItem);
-
-            Console.WriteLine($"Idle for {waitTime} ms");
-            var seconds = WaitForSeconds(waitTime + 50);
-
-            while (seconds.MoveNext())
-                yield return seconds.Current;
-
+            foreach (var tick in DigBlock(block))
+                yield return tick;
             ActionManager.FinishDigging(x, y, z);
         }
 
@@ -116,9 +109,17 @@ namespace MoBot.Structure.Game.AI.Tasks
                 yield return _awaiter;
             }
 
-            var pp = WaitForSeconds(300);
-            while (pp.MoveNext())
-                yield return pp.Current;
+            yield return _awaiter;
+        }
+
+        private IEnumerable DigBlock(GameBlock block)
+        {
+            float blockHealth = 1f;
+            while (blockHealth > 0)
+            {
+                blockHealth -= GameController.Player.GetDigSpeed(block);
+                yield return _awaiter;
+            }
         }
     }
 }
