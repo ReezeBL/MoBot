@@ -4,17 +4,13 @@ namespace MoBot.Structure.Game.World
 {
     public class Block
     {
-        public int Id;
-        public string Name;
-        public readonly int X;
-        public readonly int Y;
-        public readonly int Z;
-        public Block(int id, int x, int y, int z)
+        public short Id;
+        public byte Meta;
+        public Block(int id, int meta = 0)
         {
-            Id = id;
-            X = x;
-            Y = y;
-            Z = z;
+            Id = (short)id;
+            Meta = (byte) meta;
+
         }
 
         public static implicit operator GameBlock(Block block)
@@ -22,17 +18,10 @@ namespace MoBot.Structure.Game.World
             return GameBlock.GetBlock(block.Id);
         }
 
-        public override int GetHashCode()
-        {
-            return Y & 255 | (X & 32767) << 8 | (Z & 32767) << 24 | (X < 0 ? int.MinValue : 0) | (Z < 0 ? 32768 : 0);
-        }
-
         public override string ToString()
         {
-            var playerPos = (PathPoint)GameController.Player.Position;
-            double distance = playerPos.DistanceTo(this);
             return
-                $"{GameBlock.GetBlock(Id).Name} {{{X}|{Y}|{Z}}}\r\nDistance: {distance}";
+                $"{GameBlock.GetBlock(Id).Name}";
         }
     }
 }

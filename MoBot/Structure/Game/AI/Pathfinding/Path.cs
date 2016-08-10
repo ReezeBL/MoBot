@@ -3,18 +3,18 @@ using System.Collections.Generic;
 
 namespace MoBot.Structure.Game.AI.Pathfinding
 {
-    public class Path : IEnumerable<PathPoint>
+    public class Path : IEnumerable<Location>
     {
-        readonly IEnumerable<PathPoint> _wayPoints;
-        private readonly IEnumerator<PathPoint> _enumerator;
+        readonly IEnumerable<Location> _wayPoints;
+        private readonly IEnumerator<Location> _enumerator;
         
 
-        public Path(IEnumerable<PathPoint> list)
+        public Path(IEnumerable<Location> list)
         {
             _wayPoints = list;
         }
 
-        public Path(IEnumerator<PathPoint> pathGenerator)
+        public Path(IEnumerator<Location> pathGenerator)
         {
             _enumerator = pathGenerator;
         }       
@@ -22,7 +22,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
         {
         }
 
-        public IEnumerator<PathPoint> GetEnumerator()
+        public IEnumerator<Location> GetEnumerator()
         {
             return _enumerator ?? _wayPoints.GetEnumerator();
         }

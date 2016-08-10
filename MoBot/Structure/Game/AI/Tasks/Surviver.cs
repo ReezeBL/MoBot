@@ -18,7 +18,7 @@ namespace MoBot.Structure.Game.AI.Tasks
         public string CreateCheckpoint;
         public string RemoveCheckpoint;
 
-        public PathPoint Chest = new PathPoint(-4533, 65, -1318);
+        public Location Chest = new Location(-4533, 65, -1318);
         public bool Store;
 
         private IEnumerator _routine;

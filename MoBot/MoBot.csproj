@@ -172,7 +172,7 @@
     <Compile Include="Structure\Game\AI\AiHandler.cs" />
     <Compile Include="Structure\Game\AI\Pathfinding\Path.cs" />
     <Compile Include="Structure\Game\AI\Pathfinding\PathFinder.cs" />
-    <Compile Include="Structure\Game\AI\Pathfinding\PathPoint.cs" />
+    <Compile Include="Structure\Game\AI\Pathfinding\Location.cs" />
     <Compile Include="Structure\Game\AI\Tasks\Digger.cs" />
     <Compile Include="Structure\Game\AI\Tasks\Mover.cs" />
     <Compile Include="Structure\Game\AI\Tasks\Protector.cs" />

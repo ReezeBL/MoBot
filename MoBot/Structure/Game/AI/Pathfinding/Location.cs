@@ -6,34 +6,22 @@ using Priority_Queue;
 
 namespace MoBot.Structure.Game.AI.Pathfinding
 {
-    public class PathPoint : FastPriorityQueueNode
+    public class Location : FastPriorityQueueNode
     {
-        [DataMember]
         public readonly int X;
-
-        [DataMember]
         public readonly int Y;
-
-        [DataMember]
         public readonly int Z;
 
-        public PathPoint(Block block)
-        {
-            X = block.X;
-            Y = block.Y;
-            Z = block.Z;
-        }
-
-        public PathPoint(Entity entity)
+        public Location(Entity entity)
         {
             X = (int) entity.X;
             Y = (int) entity.Y;
             Z = (int) entity.Z;
         }
 
-        public PathPoint() { }
+        public Location() { }
 
-        public double DistanceTo(PathPoint other)
+        public double DistanceTo(Location other)
         {
             return Math.Sqrt((X - other.X) * (X - other.X) + (Y - other.Y) * (Y - other.Y) + (Z - other.Z) * (Z - other.Z));
         }
@@ -49,7 +37,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 
         public override bool Equals(object obj)
         {
-            var point = obj as PathPoint;
+            var point = obj as Location;
             if (point == null) return false;
             var other = point;
             return X == other.X && Y == other.Y && Z == other.Z;
@@ -59,26 +47,21 @@ namespace MoBot.Structure.Game.AI.Pathfinding
         {
             return $"({X} | {Y} | {Z})";
         }
-        public PathPoint Prev;
+        public Location Prev;
 
-        public PathPoint(int x, int y, int z)
+        public Location(int x, int y, int z)
         {
             X = x;
             Y = y;
             Z = z;
         }
 
-        public static implicit operator PathPoint(Vector3 vector)
+        public static implicit operator Location(Vector3 vector)
         {
-            return new PathPoint(MathHelper.floor_float(vector.X), (int) vector.Y, MathHelper.floor_float(vector.Z));
+            return new Location(MathHelper.floor_float(vector.X), (int) vector.Y, MathHelper.floor_float(vector.Z));
         }
 
-        public static implicit operator PathPoint(Block block)
-        {
-            return new PathPoint(block.X, block.Y, block.Z);
-        }
-
-        public static implicit operator Vector3(PathPoint point)
+        public static implicit operator Vector3(Location point)
         {
             return new Vector3(point.X - 0.5f * Math.Sign(point.X), point.Y, point.Z - 0.5f * Math.Sign(point.Z));
         }

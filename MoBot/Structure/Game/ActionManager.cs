@@ -123,14 +123,14 @@ namespace MoBot.Structure.Game
             ClickInventorySlot(slot1);
         }
 
-        public static void MoveToLocation(PathPoint endPoint)
+        public static void MoveToLocation(Location endPoint)
         {
             var path = PathFinder.DynamicPath(GameController.Player, endPoint);
             foreach(var point in path)             
                 SmoothMove(point);
 
         }
-        public static void MoveToLocationS(PathPoint endPoint)
+        public static void MoveToLocationS(Location endPoint)
         {
             var path = PathFinder.StaticPath(GameController.Player, endPoint);
             foreach (var point in path)
@@ -139,7 +139,7 @@ namespace MoBot.Structure.Game
             }
         }
 
-        public static IEnumerator MoveRoutineS(PathPoint endPoint)
+        public static IEnumerator MoveRoutineS(Location endPoint)
         {
             var path = PathFinder.StaticPath(GameController.Player, endPoint);
             foreach (var point in path)
@@ -148,14 +148,14 @@ namespace MoBot.Structure.Game
             }
         }
 
-        private static void SmoothMoveWrapper(PathPoint point)
+        private static void SmoothMoveWrapper(Location point)
         {
             var handler = SmoothMove(point);
             while (handler.MoveNext())
                 Thread.Sleep(50);
         } 
 
-        private static IEnumerator SmoothMove(PathPoint point)
+        private static IEnumerator SmoothMove(Location point)
         {
             var speed = 0.6f;          
             var player = GameController.Player;           
@@ -187,12 +187,12 @@ namespace MoBot.Structure.Game
             NetworkController.SendPacket(new PacketUseEntity {TargetId = id, Type = 1});
         }
 
-        public static void StartDigging(PathPoint place)
+        public static void StartDigging(Location place)
         {
             NetworkController.SendPacket(new PacketPlayerDigging {Status =  0, X = place.X, Y = (byte) place.Y, Z = place.Z, Face =  0});
         }
 
-        public static void FinishDigging(PathPoint place)
+        public static void FinishDigging(Location place)
         {
             NetworkController.SendPacket(new PacketPlayerDigging { Status = 2, X = place.X, Y = (byte)place.Y, Z = place.Z, Face = 0 });
         }

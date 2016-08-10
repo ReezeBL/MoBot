@@ -26,12 +26,12 @@ namespace MoBot.Structure.Game.AI.Tasks
             _root = new Action(RoutineTick);
         }
 
-        public void SetDestination(PathPoint endPoint)
+        public void SetDestination(Location endPoint)
         {
             _mover = StartRoutine(ActionManager.MoveRoutineS(endPoint));
         }
 
-        public void SetShovelDestination(PathPoint endPoint)
+        public void SetShovelDestination(Location endPoint)
         {
             _mover = StartRoutine(Routine(endPoint));
         }
@@ -44,7 +44,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             return _mover.Current != null ? RunStatus.Running : RunStatus.Success;
         }
 
-        private IEnumerator Routine(PathPoint destination)
+        private IEnumerator Routine(Location destination)
         {
             Path path = PathFinder.Shovel(GameController.Player.Position, destination);
             if(path == null)

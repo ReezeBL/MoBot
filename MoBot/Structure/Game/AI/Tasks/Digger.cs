@@ -15,15 +15,15 @@ namespace MoBot.Structure.Game.AI.Tasks
         private readonly Logger _logger = Program.GetLogger();
         private void SetupDigger(object context)
         {
-            var block = GameController.World.SearchBlock(Settings.IntrestedBlocks);
-            if (block != null)
+            var location = GameController.World.SearchBlock(Settings.IntrestedBlocks);
+            if (location != null)
             {
-                var playerPos = (PathPoint)GameController.Player.Position;
-                double distance = playerPos.DistanceTo(block);
+                var playerPos = (Location)GameController.Player.Position;
+                double distance = playerPos.DistanceTo(location);
                 Console.WriteLine(
-                    $"Target: {GameBlock.GetBlock(block.Id).Name} {{{block.X}|{block.Y}|{block.Z}}}\r\nDistance: {distance}");
+                    $"Target: {GameBlock.GetBlock(GameController.World.GetBlock(location).Id).Name} {{{location.X}|{location.Y}|{location.Z}}}\r\nDistance: {distance}");
 
-                GameController.AiHandler.Mover.SetShovelDestination(block);
+                GameController.AiHandler.Mover.SetShovelDestination(location);
             }
         }
 

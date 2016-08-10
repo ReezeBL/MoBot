@@ -63,7 +63,7 @@ namespace MoBot.Structure
                     case "-move":
                     {
                             GameController.AiHandler.Mover.SetShovelDestination(
-                                new PathPoint(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3])));
+                                new Location(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3])));
                         }
                         break;
 

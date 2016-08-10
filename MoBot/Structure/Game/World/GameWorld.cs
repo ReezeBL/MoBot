@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
+using MoBot.Structure.Game.AI.Pathfinding;
 
 namespace MoBot.Structure.Game.World
 {
@@ -85,14 +86,19 @@ namespace MoBot.Structure.Game.World
             return this[x >> 4, z >> 4]?.GetBlock(x & 15, y, z & 15);
         }
 
+        public Block GetBlock(Location location)
+        {
+            return GetBlock(location.X, location.Y, location.Z);
+        }
+
         public void UpdateBlock(int x, int y, int z, int id)
         {
             var block = GetBlock(x, y, z);
             if (block != null)
-                block.Id = id;
+                block.Id = (short)id;
         }
 
-        public Block SearchBlock(HashSet<int> ids)
+        public Location SearchBlock(HashSet<int> ids)
         {
             int x = MathHelper.floor_float(GameController.Player.X);
             int z = MathHelper.floor_float(GameController.Player.Z);
@@ -101,9 +107,9 @@ namespace MoBot.Structure.Game.World
             return SearchBlock(x,y,z, ids.Contains);
         }
 
-        public Block SearchBlock(int x, int y, int z, Func<int, bool> idPredicate )
+        public Location SearchBlock(int x, int y, int z, Func<int, bool> idPredicate )
         {
-            Block result = null;
+            Location result = null;
             int maxDistance = Settings.ScanRange;
 
             for (int d = 1; d < maxDistance; d++)
@@ -174,10 +180,10 @@ namespace MoBot.Structure.Game.World
             return result;
         }
 
-        public List<Block> SearchBlocks(int x, int y, int z, Func<int, bool> idPredicate)
+        public List<Location> SearchBlocks(int x, int y, int z, Func<int, bool> idPredicate)
         {
-            HashSet<Block> result = new HashSet<Block>();
-            Block tmp;
+            HashSet<Location> result = new HashSet<Location>();
+            Location tmp;
 
             int maxDistance = Settings.ScanRange;
 
@@ -252,7 +258,7 @@ namespace MoBot.Structure.Game.World
             return result.ToList();
         }
 
-        public List<Block> SearchBlocks(HashSet<int> ids)
+        public List<Location> SearchBlocks(HashSet<int> ids)
         {
             int x = MathHelper.floor_float(GameController.Player.X);
             int z = MathHelper.floor_float(GameController.Player.Z);
@@ -261,10 +267,16 @@ namespace MoBot.Structure.Game.World
             return SearchBlocks(x,y,z, ids.Contains);
         }
 
-        private bool Check(int x, int y, int z, Func<int, bool> idPredicate , out Block result)
+        private bool Check(int x, int y, int z, Func<int, bool> idPredicate , out Location result)
         {
-            result = GetBlock(x, y, z);
-            return result != null && idPredicate(result.Id);
+            var block = GetBlock(x, y, z);
+            if (block != null && idPredicate(block.Id))
+            {
+                result = new Location(x,y,z);
+                return true;
+            }
+            result = null;
+            return false;
         }
 
 
