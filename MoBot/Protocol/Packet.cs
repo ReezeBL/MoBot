@@ -25,10 +25,10 @@ namespace MoBot.Protocol
                 buff.WriteShort((short)itemStack.Item.Id);
                 buff.WriteByte(itemStack.ItemCount);
                 buff.WriteShort(itemStack.ItemDamage);
-                if (itemStack.NbtData != null)
+                if (itemStack.NbtRoot != null)
                 {
-                    var writer = new NbtFile(itemStack.NbtData);
-                    writer.SaveToStream(buff.GetStream(), NbtCompression.GZip);
+                    buff.WriteShort((short)itemStack.NbtData.Length);
+                    buff.WriteBytes(itemStack.NbtData);
                 }
                 else
                 {
@@ -48,12 +48,13 @@ namespace MoBot.Protocol
             var nbtLength = buff.ReadShort();
             if (nbtLength < 0)
                 return item;
-            var buffer = buff.ReadBytes(nbtLength);
+
+            item.NbtData = buff.ReadBytes(nbtLength);
 
             var reader = new NbtFile() {BigEndian =  true};
-            reader.LoadFromBuffer(buffer, 0, nbtLength, NbtCompression.AutoDetect);
+            reader.LoadFromBuffer(item.NbtData, 0, nbtLength, NbtCompression.AutoDetect);
 
-            item.NbtData = reader.RootTag;
+            item.NbtRoot = reader.RootTag;
             return item;
         }
     }

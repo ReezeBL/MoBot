@@ -10,8 +10,8 @@ namespace MoBot.Structure.Game
         public byte ItemCount;
         public short ItemDamage;
 
-        public NbtCompound NbtData;
-
+        public NbtCompound NbtRoot;
+        public byte[] NbtData;
         public ItemStack(int id)
         {
             Item = Item.GetItem(id);
