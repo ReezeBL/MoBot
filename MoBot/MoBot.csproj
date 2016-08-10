@@ -74,6 +74,10 @@
       <HintPath>..\packages\BouncyCastle.1.7.0\lib\Net40-Client\BouncyCastle.Crypto.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="fNbt, Version=0.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\fNbt.0.6.3\lib\net35-client\fNbt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -156,7 +160,7 @@
     <Compile Include="Protocol\Packets\Play\PacketWindowItems.cs" />
     <Compile Include="Protocol\Threading\BaseThread.cs" />
     <Compile Include="Protocol\Threading\WritingThread.cs" />
-    <Compile Include="Scripts\ImportAttribue.cs" />
+    <Compile Include="Scripts\ImportHandler.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Structure\Actions\ActionChatMessage.cs" />
     <Compile Include="Structure\Actions\ActionConnect.cs" />

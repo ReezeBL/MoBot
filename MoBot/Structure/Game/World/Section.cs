@@ -4,27 +4,26 @@ namespace MoBot.Structure.Game.World
 {
     public class Section
     {
-        public byte[] Blocks;
-        public byte Y;
+        private readonly Block[,,] _data = new Block[16,16,16];
+        private readonly int[,,] _rawData = new int[16,16,16];
 
-        public Section(byte y)
+        private readonly int X, Y, Z;
+
+        public Section(byte[] blocks, int offset, int cx, int cy, int cz)
         {
-            Y = y;
-            Blocks = new byte[4096];
+            X = cx;
+            Y = cy;
+            Z = cz;
+
+            for(int y = 0;y<16;y++)
+                for(int z=0;z<16;z++)
+                    for (int x = 0; x < 16; x++)
+                        _rawData[x,y,z] = blocks[offset + x + (z * 16) + (y * 16 * 16)];
         }
 
-        public void SetBlock(int x, int y, int z, int id)
+        public Block GetBlock(int x, int y, int z)
         {
-            int index = x + (z * 16) + (y * 256);
-            Blocks[index] = (byte)id;
-        }
-
-        public Block GetBlock(int x, int y, int z,int Cx, int Cz)
-        {
-            int index = x + (z * 16) + (y * 16 * 16);
-            Block thisBlock = new Block(Blocks[index], Cx*16 + x, y + Y*16, Cz * 16 + z);
-
-            return thisBlock;
+            return _data[x, y, z] ?? (_data[x,y,z] = new Block(_rawData[x,y,z], x + X*16, y+Y*16, z+Z*16));
         }
     }
 }

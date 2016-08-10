@@ -1,6 +1,5 @@
 ﻿using System;
 using System.CodeDom.Compiler;
-using System.Collections.Specialized;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -53,27 +52,27 @@ namespace MoBot
             string[] executables = Directory.GetFiles(path, "*.exe");
 
 
-            foreach (var script in Directory.GetFiles(Path.Combine(path, Settings.ScriptsPath), "*.cs"))
+            var scripts = Directory.GetFiles(Path.Combine(path, Settings.ScriptsPath), "*.cs", SearchOption.AllDirectories);
             {
                 CompilerParameters parameters = new CompilerParameters
                 {
                     GenerateExecutable = false,
                     GenerateInMemory = true,
-                    OutputAssembly = script
                 };
 
                 parameters.ReferencedAssemblies.AddRange(dlls);
                 parameters.ReferencedAssemblies.AddRange(executables);
                 parameters.ReferencedAssemblies.Add("System.dll");
+                parameters.ReferencedAssemblies.Add("System.Core.dll");
 
-                CompilerResults result = provider.CompileAssemblyFromFile(parameters, script);
+                CompilerResults result = provider.CompileAssemblyFromFile(parameters, scripts);
                 if (result.Errors.HasErrors)
                 {
                     StringBuilder sb = new StringBuilder();
-                    sb.AppendLine($"Failed to compile {script}");
+                    sb.AppendLine($"Failed to compile");
                     foreach (CompilerError error in result.Errors)
                     {
-                        sb.AppendLine($"Error ({error.ErrorNumber}): {error.ErrorText}");
+                        sb.AppendLine($"Error in {error.FileName} ({error.ErrorNumber}): {error.ErrorText}");
                     }
                     Console.WriteLine(sb);
                 }
@@ -82,7 +81,7 @@ namespace MoBot
                     Assembly assembly = result.CompiledAssembly;
                     var methods = assembly.GetTypes()
                       .SelectMany(t => t.GetMethods())
-                      .Where(m => m.GetCustomAttributes(typeof(ImportAttribue.PreInit), false).Length > 0)
+                      .Where(m => m.GetCustomAttributes(typeof(ImportHandler.PreInit), false).Length > 0)
                       .ToArray();
                     foreach (var method in methods)
                     {

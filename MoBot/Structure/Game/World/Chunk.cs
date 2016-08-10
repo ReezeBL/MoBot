@@ -1,17 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 
 namespace MoBot.Structure.Game.World
 {
     public class Chunk
     {
-        public int X, Z, NumBlocks, ABlocks;
+        public readonly int X, Z;
+        private readonly int _numBlocks;
+        private readonly int _aBlocks;
+
         public bool Lighting, Groundup;
         public List<Section> Sections;
 
         public short Pbitmap, Abitmap;
-        private byte[] _blocks;
+
+        private readonly Section[] _sections = new Section[16];
 
         public Chunk(int x, int z, short pbitmap, short abitmap, bool inLighting, bool groundup)
         {
@@ -24,83 +29,58 @@ namespace MoBot.Structure.Game.World
             Z = z;
             Sections = new List<Section>();
 
-            NumBlocks = 0;
-            ABlocks = 0;
+            _numBlocks = 0;
+            _aBlocks = 0;
 
             for (int i = 0; i < 16; i++)
             {
                 if (!Convert.ToBoolean(pbitmap & (1 << i))) continue;
-                NumBlocks++; // "Sections"
-                Sections.Add(new Section((byte)i));
+                _numBlocks++; // "Sections"
             }
 
             for (int i = 0; i < 16; i++)
             {
                 if (Convert.ToBoolean(abitmap & (1 << i)))
                 {
-                    ABlocks++;
+                    _aBlocks++;
                 }
             }        
-            NumBlocks = NumBlocks * 4096;           
+            _numBlocks = _numBlocks * 4096;           
         }
-        private void Populate()
+        private void Populate(byte[] blocks)
         {
-           int offset = 0, current = 0;
-
+            int offset = 0;
             for (int i = 0; i < 16; i++)
             {
                 if (!Convert.ToBoolean(Pbitmap & (1 << i))) continue;
-                byte[] temp = new byte[4096];
 
-                Array.Copy(_blocks, offset, temp, 0, 4096);
-                Section mySection = Sections[current];
-
-                mySection.Blocks = temp;
+                _sections[i] = new Section(blocks, offset, X, i, Z);
                 offset += 4096;
-                current += 1;
             }
         }
-        public int GetBlockId(int bx, int by, int bz)
+        public Block GetBlock(int bx, int y, int bz)
         {
-            return GetBlock(bx, by, bz).Id;
-        }
-        public Block GetBlock(int bx, int by, int bz)
-        {
-            Section thisSection = GetSectionByNumber(by);
-            return thisSection.GetBlock(GetXinSection(bx), GetPositionInSection(by), GetZinSection(bz), X, Z);
+            return _sections[y >> 4]?.GetBlock(bx, GetPositionInSection(y & 15), bz);
         }
 
-        public void UpdateBlock(int bx, int by, int bz, int id)
-        {           
-            Section thisSection = GetSectionByNumber(by);
-            thisSection.SetBlock(GetXinSection(bx), GetPositionInSection(by), GetZinSection(bz), id);
-        }
         public byte[] GetData(byte[] deCompressed)
         {           
-            _blocks = new byte[NumBlocks];
-            int removeable = NumBlocks + ABlocks * 2048;
+            byte[] blocks = new byte[_numBlocks];
+            int removeable = _numBlocks + _aBlocks * 2048;
 
             if (Lighting)
-                removeable += (NumBlocks / 2);
+                removeable += (_numBlocks / 2);
             if (Groundup)
                 removeable += 256;
-            Array.Copy(deCompressed, 0, _blocks, 0, NumBlocks);
-            var temp = new byte[deCompressed.Length - (NumBlocks + removeable)];
-            Array.Copy(deCompressed, (NumBlocks + removeable), temp, 0, temp.Length);
-            Populate();
+
+            Array.Copy(deCompressed, 0, blocks, 0, _numBlocks);
+            var temp = new byte[deCompressed.Length - (_numBlocks + removeable)];
+            Array.Copy(deCompressed, (_numBlocks + removeable), temp, 0, temp.Length);
+            Populate(blocks);
             return temp;
         }
 
         #region Helping Methods
-        private Section GetSectionByNumber(int blockY)
-        {
-            Section thisSection = Sections.FirstOrDefault(y => y.Y == blockY/16);
-            if (thisSection != null) return thisSection;
-            thisSection = new Section((byte)(blockY / 16));
-            Sections.Add(thisSection);
-
-            return thisSection;
-        }
         private int GetXinSection(int blockX)
         {
             return blockX - (X * 16);

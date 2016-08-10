@@ -1,4 +1,6 @@
-﻿using MoBot.Protocol.Handlers;
+﻿using System;
+using fNbt;
+using MoBot.Protocol.Handlers;
 using MoBot.Structure.Game;
 
 namespace MoBot.Protocol
@@ -25,8 +27,8 @@ namespace MoBot.Protocol
                 buff.WriteShort(itemStack.ItemDamage);
                 if (itemStack.NbtData != null)
                 {
-                    buff.WriteShort((short) itemStack.NbtData.Length);
-                    buff.WriteBytes(itemStack.NbtData);
+                    var writer = new NbtFile(itemStack.NbtData);
+                    writer.SaveToStream(buff.GetStream(), NbtCompression.GZip);
                 }
                 else
                 {
@@ -46,7 +48,12 @@ namespace MoBot.Protocol
             var nbtLength = buff.ReadShort();
             if (nbtLength < 0)
                 return item;
-            item.NbtData = buff.ReadBytes(nbtLength);
+            var buffer = buff.ReadBytes(nbtLength);
+
+            var reader = new NbtFile() {BigEndian =  true};
+            reader.LoadFromBuffer(buffer, 0, nbtLength, NbtCompression.AutoDetect);
+
+            item.NbtData = reader.RootTag;
             return item;
         }
     }

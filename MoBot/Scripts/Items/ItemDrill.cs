@@ -1,10 +1,10 @@
 ﻿using MoBot.Structure.Game.Items;
 
-namespace MoBot.Scripts
+namespace MoBot.Scripts.Items
 {
     public class ItemDrill : ItemTool
     {
-        [ImportAttribue.PreInit]
+        [ImportHandler.PreInit]
         public static void Import()
         {
             Extension.Add("IC2:itemToolDrill", new ItemDrill());

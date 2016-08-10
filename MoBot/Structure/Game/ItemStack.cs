@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using fNbt;
 using MoBot.Structure.Game.Items;
 
 namespace MoBot.Structure.Game
@@ -9,12 +10,12 @@ namespace MoBot.Structure.Game
         public byte ItemCount;
         public short ItemDamage;
 
+        public NbtCompound NbtData;
+
         public ItemStack(int id)
         {
             Item = Item.GetItem(id);
         }
-
-        public byte[] NbtData;
 
         public override string ToString()
         {

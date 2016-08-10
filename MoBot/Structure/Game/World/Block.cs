@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using MoBot.Structure.Game.AI.Pathfinding;
+﻿using MoBot.Structure.Game.AI.Pathfinding;
 
 namespace MoBot.Structure.Game.World
 {
     public class Block
     {
-        public readonly int Id;
+        public int Id;
         public string Name;
         public readonly int X;
         public readonly int Y;

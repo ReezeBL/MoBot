@@ -57,7 +57,12 @@ namespace MoBot.Structure
                 dynamic response = Ping(serverIp, port);
 
                 if (response.players.online >= response.players.max)
-                    throw new Exception("Server is full!");
+                {
+                    NotifyViewer("Server is full");
+                    Disconnect();
+                    return;
+                }
+                    
 
                 ModList = response.modinfo.modList;
                 var client = new TcpClient(serverIp, port);
