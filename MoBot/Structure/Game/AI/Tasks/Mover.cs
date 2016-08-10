@@ -72,7 +72,7 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         private IEnumerator DigTo(int x, int y, int z)
         {
-            GameBlock block = GameController.World.GetBlock(x, y, z);
+            GameBlock block = GameBlock.GetBlock(GameController.World.GetBlock(x, y, z));
 
             Console.WriteLine($"Digging block {block.Name} : {{{x} | {y} | {z} }}");
 

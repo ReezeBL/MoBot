@@ -240,10 +240,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 
         private static float GetBlockWeight(int x, int y, int z)
         {
-            var wblock = GameController.World.GetBlock(x, y, z);
-            if (wblock == null)
-                return 0;
-            GameBlock block = GameBlock.GetBlock(GameController.World.GetBlock(x, y, z).Id);
+            GameBlock block = GameBlock.GetBlock(GameController.World.GetBlock(x, y, z));
             return (block == null || block.Transparent) ? 0 : block.Hardness * 5;
         }
 

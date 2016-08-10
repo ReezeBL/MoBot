@@ -40,11 +40,16 @@ namespace MoBot.Structure.Game
                             Name = block.name,
                             Transparent = block.transparent
                         };
-                        if (gameBlock.Name == "Лава")
-                            gameBlock.Transparent = false;
                         BlockRegistry.Add(gameBlock.Id, gameBlock);
                     }
                 }
+
+                BlockRegistry.Add(-1, new GameBlock() {
+                    Hardness = 0,
+                    Id = -1,
+                    Name = "air",
+                    Transparent = true
+                });
             }
             catch (FileNotFoundException exception)
             {
@@ -62,7 +67,7 @@ namespace MoBot.Structure.Game
           
         public int Id;
         public string Name = "";
-        public float Hardness = -1.0f;
+        public float Hardness = 10000f;
         public bool Transparent;
         public string HarvestTool;
     }

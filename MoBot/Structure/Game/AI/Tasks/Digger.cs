@@ -21,7 +21,7 @@ namespace MoBot.Structure.Game.AI.Tasks
                 var playerPos = (Location)GameController.Player.Position;
                 double distance = playerPos.DistanceTo(location);
                 Console.WriteLine(
-                    $"Target: {GameBlock.GetBlock(GameController.World.GetBlock(location).Id).Name} {{{location.X}|{location.Y}|{location.Z}}}\r\nDistance: {distance}");
+                    $"Target: {GameBlock.GetBlock(GameController.World.GetBlock(location)).Name} {{{location.X}|{location.Y}|{location.Z}}}\r\nDistance: {distance}");
 
                 GameController.AiHandler.Mover.SetShovelDestination(location);
             }

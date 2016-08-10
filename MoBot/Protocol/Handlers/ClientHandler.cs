@@ -290,7 +290,7 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketBlockChange(PacketBlockChange packetBlockChange)
         {
-            GameController.World.UpdateBlock(packetBlockChange.X, packetBlockChange.Y, packetBlockChange.Z,
+            GameController.World.SetBlock(packetBlockChange.X, packetBlockChange.Y, packetBlockChange.Z,
                 packetBlockChange.BlockId);
             GameController.World.Invalidate();
         }
@@ -318,7 +318,7 @@ namespace MoBot.Protocol.Handlers
                     var x = short1 >> 12 & 15;
                     var z = short1 >> 8 & 15;
                     var y = short1 & 255;
-                    GameController.World.UpdateBlock(chunkX + x, y, chunkZ + z, id);
+                    GameController.World.SetBlock(chunkX + x, y, chunkZ + z, id);
                 }
             }
             GameController.World.Invalidate();

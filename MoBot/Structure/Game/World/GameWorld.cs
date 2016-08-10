@@ -81,21 +81,19 @@ namespace MoBot.Structure.Game.World
             this[x, z] = null;
         }
 
-        public Block GetBlock(int x, int y, int z)
+        public int GetBlock(int x, int y, int z)
         {
-            return this[x >> 4, z >> 4]?.GetBlock(x & 15, y, z & 15);
+            return this[x >> 4, z >> 4]?.GetBlock(x & 15, y, z & 15) ?? -1;
         }
 
-        public Block GetBlock(Location location)
+        public int GetBlock(Location location)
         {
             return GetBlock(location.X, location.Y, location.Z);
         }
 
-        public void UpdateBlock(int x, int y, int z, int id)
+        public void SetBlock(int x, int y, int z, int id)
         {
-            var block = GetBlock(x, y, z);
-            if (block != null)
-                block.Id = (short)id;
+            this[x >> 4, z >> 4]?.SetBlock(x & 15, y, z & 15, id);
         }
 
         public Location SearchBlock(HashSet<int> ids)
@@ -269,8 +267,8 @@ namespace MoBot.Structure.Game.World
 
         private bool Check(int x, int y, int z, Func<int, bool> idPredicate , out Location result)
         {
-            var block = GetBlock(x, y, z);
-            if (block != null && idPredicate(block.Id))
+            var id = GetBlock(x, y, z);
+            if (idPredicate(id))
             {
                 result = new Location(x,y,z);
                 return true;
@@ -290,8 +288,8 @@ namespace MoBot.Structure.Game.World
 
         public bool CanMoveTo(int x, int y, int z)
         {
-            Block floor = GetBlock(x, y, z);
-            Block upper = GetBlock(x, y + 1, z);
+            var floor = GetBlock(x, y, z);
+            var upper = GetBlock(x, y + 1, z);
 
             return IsBlockFree(floor) && IsBlockFree(upper);
         }
@@ -301,9 +299,9 @@ namespace MoBot.Structure.Game.World
             return IsBlockFree(GetBlock(x, y, z));
         }
 
-        private static bool IsBlockFree(Block b)
+        private static bool IsBlockFree(int id)
         {
-            return b == null || GameBlock.GetBlock(b.Id).Transparent;
+            return GameBlock.GetBlock(id).Transparent;
         }
     }
 }

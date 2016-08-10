@@ -58,9 +58,14 @@ namespace MoBot.Structure.Game.World
                 offset += 4096;
             }
         }
-        public Block GetBlock(int bx, int y, int bz)
+        public int GetBlock(int bx, int y, int bz)
         {
-            return _sections[y >> 4]?.GetBlock(bx, GetPositionInSection(y & 15), bz);
+            return _sections[y >> 4]?.GetBlock(bx, GetPositionInSection(y & 15), bz) ?? -1;
+        }
+
+        public void SetBlock(int bx, int y, int bz, int id)
+        {
+            _sections[y >> 4]?.SetBlock(bx, GetPositionInSection(y & 15), bz, id);
         }
 
         public byte[] GetData(byte[] deCompressed)
