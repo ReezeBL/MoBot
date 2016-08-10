@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace MoBot.Structure.Game.Items
 {
     public class Item
     {
-
+        protected static readonly Dictionary<string, Item> Extension = new Dictionary<string, Item>();
         private static readonly Dictionary<int, Item> ItemRegistry = new Dictionary<int, Item>();
 
         public static void LoadItems()
@@ -35,8 +32,15 @@ namespace MoBot.Structure.Game.Items
                 var items = deserializer.Deserialize<ItemInfo[]>(reader);
                 foreach (var item in items)
                 {
+                    
                     Item reg;
-                    if (item.toolClass != null)
+                    if (Extension.ContainsKey(item.name))
+                    {
+                        reg = Extension[item.name];
+                        reg.Id = item.id;
+
+                    }
+                    else if (item.toolClass != null)
                     {
                         reg = new ItemTool
                         {
