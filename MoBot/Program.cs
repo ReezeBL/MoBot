@@ -44,50 +44,63 @@ namespace MoBot
 
         private static void LoadScripts()
         {
-            CSharpCodeProvider provider = new CSharpCodeProvider();
-            string path = Path.GetDirectoryName(Application.ExecutablePath);
-            Debug.Assert(path != null, "Invalid path");
-
-            string[] dlls = Directory.GetFiles(path, "*.dll");
-            string[] executables = Directory.GetFiles(path, "*.exe");
-
-
-            var scripts = Directory.GetFiles(Path.Combine(path, Settings.ScriptsPath), "*.cs", SearchOption.AllDirectories);
+            try
             {
-                CompilerParameters parameters = new CompilerParameters
-                {
-                    GenerateExecutable = false,
-                    GenerateInMemory = true,
-                };
+                CSharpCodeProvider provider = new CSharpCodeProvider();
+                string path = Path.GetDirectoryName(Application.ExecutablePath);
+                Debug.Assert(path != null, "Invalid path");
 
-                parameters.ReferencedAssemblies.AddRange(dlls);
-                parameters.ReferencedAssemblies.AddRange(executables);
-                parameters.ReferencedAssemblies.Add("System.dll");
-                parameters.ReferencedAssemblies.Add("System.Core.dll");
+                string[] dlls = Directory.GetFiles(path, "*.dll");
+                string[] executables = Directory.GetFiles(path, "*.exe");
 
-                CompilerResults result = provider.CompileAssemblyFromFile(parameters, scripts);
-                if (result.Errors.HasErrors)
+
+                var scripts = Directory.GetFiles(Path.Combine(path, Settings.ScriptsPath), "*.cs",
+                    SearchOption.AllDirectories);
                 {
-                    StringBuilder sb = new StringBuilder();
-                    sb.AppendLine($"Failed to compile");
-                    foreach (CompilerError error in result.Errors)
+                    CompilerParameters parameters = new CompilerParameters
                     {
-                        sb.AppendLine($"Error in {error.FileName} ({error.ErrorNumber}): {error.ErrorText}");
-                    }
-                    Console.WriteLine(sb);
-                }
-                else
-                {
-                    Assembly assembly = result.CompiledAssembly;
-                    var methods = assembly.GetTypes()
-                      .SelectMany(t => t.GetMethods())
-                      .Where(m => m.GetCustomAttributes(typeof(ImportHandler.PreInit), false).Length > 0)
-                      .ToArray();
-                    foreach (var method in methods)
+                        GenerateExecutable = false,
+                        GenerateInMemory = true,
+                    };
+
+                    parameters.ReferencedAssemblies.AddRange(dlls);
+                    parameters.ReferencedAssemblies.AddRange(executables);
+                    parameters.ReferencedAssemblies.Add("System.dll");
+                    parameters.ReferencedAssemblies.Add("System.Core.dll");
+                    parameters.ReferencedAssemblies.Add("System.ComponentModel.Composition.dll");
+                    parameters.ReferencedAssemblies.Add("System.ComponentModel.DataAnnotations.dll");
+                    parameters.ReferencedAssemblies.Add("System.Runtime.Serialization.dll");
+                    parameters.ReferencedAssemblies.Add("System.Xml.Linq.dll");
+                    parameters.ReferencedAssemblies.Add("Microsoft.CSharp.dll");
+
+                    CompilerResults result = provider.CompileAssemblyFromFile(parameters, scripts);
+                    if (result.Errors.HasErrors)
                     {
-                        method.Invoke(null, null);
+                        StringBuilder sb = new StringBuilder();
+                        sb.AppendLine($"Failed to compile");
+                        foreach (CompilerError error in result.Errors)
+                        {
+                            sb.AppendLine($"Error in {error.FileName} ({error.ErrorNumber}): {error.ErrorText}");
+                        }
+                        Console.WriteLine(sb);
+                    }
+                    else
+                    {
+                        Assembly assembly = result.CompiledAssembly;
+                        var methods = assembly.GetTypes()
+                            .SelectMany(t => t.GetMethods())
+                            .Where(m => m.GetCustomAttributes(typeof(ImportHandler.PreInit), false).Length > 0)
+                            .ToArray();
+                        foreach (var method in methods)
+                        {
+                            method.Invoke(null, null);
+                        }
                     }
                 }
+            }
+            catch (Exception)
+            {
+                
             }
         }
     }

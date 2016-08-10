@@ -24,8 +24,10 @@ namespace MoBot.Structure.Game
 
         public float GetDigSpeed(GameBlock block)
         {
-            Item heldItem = GetHeldItem;
-            float strength = heldItem.GetItemStrength(block) / block.Hardness / (heldItem.CanHarvest(block) ? 30 : 100);
+            ItemStack heldItemStack = Inventory[HeldItem];
+            Item heldItem = heldItemStack.Item;
+
+            float strength = heldItem.GetItemStrength(heldItemStack, block) / block.Hardness / (heldItem.CanHarvest(block) ? 30 : 100);
 
             if (!OnGround) strength /= 5;
 

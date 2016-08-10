@@ -74,6 +74,10 @@
       <HintPath>..\packages\BouncyCastle.1.7.0\lib\Net40-Client\BouncyCastle.Crypto.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="fNbt, Version=0.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\fNbt.0.6.3\lib\net35-client\fNbt.dll</HintPath>
+    </Reference>
     <Reference Include="MoBot, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\MoBot.exe</HintPath>
@@ -134,6 +138,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions />
+  <PropertyGroup>
+    <PostBuildEvent>del $(TargetPath)</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

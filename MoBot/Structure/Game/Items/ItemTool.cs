@@ -17,9 +17,9 @@ namespace MoBot.Structure.Game.Items
             return ToolClasses.Contains(block.HarvestTool);
         }
 
-        public override float GetItemStrength(GameBlock block)
+        public override float GetItemStrength(ItemStack stack, GameBlock block)
         {
-            return CanHarvest(block) ? Effectivness : base.GetItemStrength(block);
+            return CanHarvest(block) ? Effectivness : base.GetItemStrength(stack, block);
         }
     }
 }

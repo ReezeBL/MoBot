@@ -62,7 +62,7 @@ namespace MoBot
         public HashSet<int> _intrestedBlocks = new HashSet<int>();
         public HashSet<int> _keepItemIds = new HashSet<int> ();
         public int _scanRange = 32;
-        public bool _autoReconnect = false;
+        public bool _autoReconnect;
 
         public static string ServerIp
         {

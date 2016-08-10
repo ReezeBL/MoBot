@@ -95,19 +95,9 @@ namespace MoBot.Structure.Game.Items
             return false;
         }
 
-        public virtual float GetItemStrength(GameBlock block)
+        public virtual float GetItemStrength(ItemStack stack, GameBlock block)
         {
             return 1.0f;
-        }
-
-        public static long GetWaitTime(GameBlock block, Item item)
-        {
-            float damagePerTick = item.GetItemStrength(block) / block.Hardness / (item.CanHarvest(block) ? 30 : 100);
-            if (!GameController.Player.OnGround)
-                damagePerTick /= 5;
-
-            int ticks = (int)Math.Round(1.0 / damagePerTick, MidpointRounding.AwayFromZero);
-            return ticks * 50 + 100;
         }
 
     }
