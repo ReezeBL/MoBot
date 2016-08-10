@@ -80,10 +80,12 @@ namespace MoBot.Structure
                         break;
                     case "-test":
                         var ids = new HashSet<int> {54,130,146,181,191,506};
-                        var blocks = GameController.World.SearchBlocks(ids);
-                        foreach (var block in blocks)
+                        var locations = GameController.World.SearchBlocks(ids);
+                        Location playerLocation = GameController.Player.Position;
+                        foreach (var location in locations)
                         {
-                            Console.WriteLine(block);
+                            var block = GameBlock.GetBlock(GameController.World.GetBlock(location));
+                            Console.WriteLine($"{block.Name} {location} \r\nDistance: {location.DistanceTo(playerLocation)}");
                         }           
                         break;
                     case "-dig":

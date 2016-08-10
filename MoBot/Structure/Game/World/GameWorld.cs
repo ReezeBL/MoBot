@@ -267,6 +267,11 @@ namespace MoBot.Structure.Game.World
 
         private bool Check(int x, int y, int z, Func<int, bool> idPredicate , out Location result)
         {
+            if (y < 0)
+            {
+                result = null;
+                return false;
+            }
             var id = GetBlock(x, y, z);
             if (idPredicate(id))
             {

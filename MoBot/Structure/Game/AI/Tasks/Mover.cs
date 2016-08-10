@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections;
-using System.Diagnostics;
 using System.Linq;
-using System.Windows.Forms;
 using MoBot.Structure.Game.AI.Pathfinding;
 using MoBot.Structure.Game.Items;
-using NLog;
 using TreeSharp;
 using Action = TreeSharp.Action;
 
@@ -14,12 +11,6 @@ namespace MoBot.Structure.Game.AI.Tasks
     public class Mover : Task
     {
         private IEnumerator _mover;
-        private Logger _logger = Program.GetLogger();
-
-        private bool DoNext(object context)
-        {
-            return _mover != null && _mover.MoveNext();
-        }
 
         public Mover()
         {
@@ -73,7 +64,6 @@ namespace MoBot.Structure.Game.AI.Tasks
         private IEnumerator DigTo(int x, int y, int z)
         {
             GameBlock block = GameBlock.GetBlock(GameController.World.GetBlock(x, y, z));
-
             Console.WriteLine($"Digging block {block.Name} : {{{x} | {y} | {z} }}");
 
             yield return SwitchTool(block);
