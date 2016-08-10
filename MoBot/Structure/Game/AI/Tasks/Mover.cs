@@ -28,12 +28,12 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         public void SetDestination(PathPoint endPoint)
         {
-            _mover = ActionManager.MoveRoutineS(endPoint);
+            _mover = StartRoutine(ActionManager.MoveRoutineS(endPoint));
         }
 
         public void SetShovelDestination(PathPoint endPoint)
         {
-            _mover = Routine(endPoint);
+            _mover = StartRoutine(Routine(endPoint));
         }
 
         private RunStatus RoutineTick(object context)
@@ -55,12 +55,12 @@ namespace MoBot.Structure.Game.AI.Tasks
                 {
                     if (!GameController.World.IsBlockFree(point.X, point.Y + 1, point.Z))
                     {
-                        foreach (var p in DigTo(point.X, point.Y + 1, point.Z)) yield return p;
+                        yield return DigTo(point.X, point.Y + 1, point.Z);
                         continue;
                     }
 
                     if (GameController.World.IsBlockFree(point.X, point.Y, point.Z)) continue;
-                    foreach (var p in DigTo(point.X, point.Y, point.Z)) yield return p;
+                    yield return DigTo(point.X, point.Y, point.Z);
                 }
 
                 Console.WriteLine($"Moving to {point}");
@@ -70,24 +70,24 @@ namespace MoBot.Structure.Game.AI.Tasks
             }
         }
 
-        private IEnumerable DigTo(int x, int y, int z)
+        private IEnumerator DigTo(int x, int y, int z)
         {
             GameBlock block = GameController.World.GetBlock(x, y, z);
 
             Console.WriteLine($"Digging block {block.Name} : {{{x} | {y} | {z} }}");
 
-            foreach (var p in SwitchTool(block)) yield return p;
+            yield return SwitchTool(block);
 
             ActionManager.StartDigging(x, y, z);
-            foreach (var tick in DigBlock(block))
-                yield return tick;
+            yield return DigBlock(block);
+
             ActionManager.FinishDigging(x, y, z);
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 10; i++)
                 yield return null;
         }
 
-        private IEnumerable SwitchTool(GameBlock block)
+        private IEnumerator SwitchTool(GameBlock block)
         {
             var heldItem = GameController.Player.GetHeldItem;
             var tool = heldItem as ItemTool;
@@ -107,15 +107,12 @@ namespace MoBot.Structure.Game.AI.Tasks
 
             Console.WriteLine($"Selecting {item.Item.Name} at {item.Slot}");
 
-            foreach (var p in ActionManager.ExchangeInventorySlots(item.Slot, GameController.Player.HeldItem))
-            {
-                yield return _awaiter;
-            }
+            yield return ActionManager.ExchangeInventorySlots(item.Slot, GameController.Player.HeldItem);
 
             yield return _awaiter;
         }
 
-        private IEnumerable DigBlock(GameBlock block)
+        private IEnumerator DigBlock(GameBlock block)
         {
             float blockHealth = 1f;
             while (blockHealth > 0)
