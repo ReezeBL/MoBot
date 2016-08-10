@@ -22,7 +22,7 @@ namespace MoBot.Structure.Game
         public Item GetHeldItem => Inventory[HeldItem].Item;
         public ItemStack GetHeldItemStack => Inventory[HeldItem];
 
-        public float GetDigSpeed(GameBlock block)
+        public float GetDigSpeed(Block block)
         {
             ItemStack heldItemStack = Inventory[HeldItem];
             Item heldItem = heldItemStack.Item;

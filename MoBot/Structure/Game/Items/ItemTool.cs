@@ -12,12 +12,12 @@ namespace MoBot.Structure.Game.Items
         public HashSet<string> ToolClasses;
         public int[] ClassLevels;
 
-        public override bool CanHarvest(GameBlock block)
+        public override bool CanHarvest(Block block)
         {
             return ToolClasses.Contains(block.HarvestTool);
         }
 
-        public override float GetItemStrength(ItemStack stack, GameBlock block)
+        public override float GetItemStrength(ItemStack stack, Block block)
         {
             return CanHarvest(block) ? Effectivness : base.GetItemStrength(stack, block);
         }

@@ -6,9 +6,9 @@ using Newtonsoft.Json.Linq;
 
 namespace MoBot.Structure.Game
 {
-    public class GameBlock
+    public class Block
     {
-        private static readonly Dictionary<int, GameBlock> BlockRegistry = new Dictionary<int, GameBlock>();
+        private static readonly Dictionary<int, Block> BlockRegistry = new Dictionary<int, Block>();
 
         private class BlockInfo
         {
@@ -19,7 +19,7 @@ namespace MoBot.Structure.Game
             public string harvestTool;
         }
 
-        public static IEnumerable<GameBlock> Blocks => BlockRegistry.Values;
+        public static IEnumerable<Block> Blocks => BlockRegistry.Values;
 
         public static void LoadBlocks()
         {
@@ -32,7 +32,7 @@ namespace MoBot.Structure.Game
                     var blocks = deserializer.Deserialize<BlockInfo[]>(reader);
                     foreach (var block in blocks)
                     {
-                        GameBlock gameBlock = new GameBlock
+                        Block gameBlock = new Block
                         {
                             Hardness = block.hardness > 0 ? block.hardness : 10000,
                             HarvestTool = block.harvestTool,
@@ -44,7 +44,7 @@ namespace MoBot.Structure.Game
                     }
                 }
 
-                BlockRegistry.Add(-1, new GameBlock() {
+                BlockRegistry.Add(-1, new Block() {
                     Hardness = 0,
                     Id = -1,
                     Name = "air",
@@ -57,11 +57,11 @@ namespace MoBot.Structure.Game
             }
         }
           
-        public static GameBlock GetBlock(int id)
+        public static Block GetBlock(int id)
         {
-            GameBlock res;
+            Block res;
             if (!BlockRegistry.TryGetValue(id, out res))
-                res = new GameBlock { Id = id };
+                res = new Block { Id = id };
             return res;
         }
           

@@ -90,12 +90,12 @@ namespace MoBot.Structure.Game.Items
         public String Name;
         public int Id;
 
-        public virtual bool CanHarvest(GameBlock block)
+        public virtual bool CanHarvest(Block block)
         {
             return false;
         }
 
-        public virtual float GetItemStrength(ItemStack stack, GameBlock block)
+        public virtual float GetItemStrength(ItemStack stack, Block block)
         {
             return 1.0f;
         }

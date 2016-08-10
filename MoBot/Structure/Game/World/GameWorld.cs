@@ -306,7 +306,7 @@ namespace MoBot.Structure.Game.World
 
         private static bool IsBlockFree(int id)
         {
-            return GameBlock.GetBlock(id).Transparent;
+            return Block.GetBlock(id).Transparent;
         }
     }
 }

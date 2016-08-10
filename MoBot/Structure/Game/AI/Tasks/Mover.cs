@@ -63,7 +63,7 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         private IEnumerator DigTo(int x, int y, int z)
         {
-            GameBlock block = GameBlock.GetBlock(GameController.World.GetBlock(x, y, z));
+            Block block = Block.GetBlock(GameController.World.GetBlock(x, y, z));
             Console.WriteLine($"Digging block {block.Name} : {{{x} | {y} | {z} }}");
 
             yield return SwitchTool(block);
@@ -77,7 +77,7 @@ namespace MoBot.Structure.Game.AI.Tasks
                 yield return null;
         }
 
-        private IEnumerator SwitchTool(GameBlock block)
+        private IEnumerator SwitchTool(Block block)
         {
             var heldItem = GameController.Player.GetHeldItem;
             var tool = heldItem as ItemTool;
@@ -102,7 +102,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             yield return _awaiter;
         }
 
-        private IEnumerator DigBlock(GameBlock block)
+        private IEnumerator DigBlock(Block block)
         {
             float blockHealth = 1f;
             while (blockHealth > 0)

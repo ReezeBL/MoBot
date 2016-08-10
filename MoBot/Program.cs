@@ -31,7 +31,7 @@ namespace MoBot
 
             LoadScripts();
 
-            GameBlock.LoadBlocks();
+            Block.LoadBlocks();
             Item.LoadItems();
 
             NetworkController model = NetworkController.GetInstance();

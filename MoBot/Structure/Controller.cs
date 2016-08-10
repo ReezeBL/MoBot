@@ -84,7 +84,7 @@ namespace MoBot.Structure
                         Location playerLocation = GameController.Player.Position;
                         foreach (var location in locations)
                         {
-                            var block = GameBlock.GetBlock(GameController.World.GetBlock(location));
+                            var block = Block.GetBlock(GameController.World.GetBlock(location));
                             Console.WriteLine($"{block.Name} {location} \r\nDistance: {location.DistanceTo(playerLocation)}");
                         }           
                         break;

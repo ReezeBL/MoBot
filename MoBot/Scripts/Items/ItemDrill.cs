@@ -54,7 +54,7 @@ namespace MoBot.Scripts.Items
             return 0;
         }
 
-        public override float GetItemStrength(ItemStack stack, GameBlock block)
+        public override float GetItemStrength(ItemStack stack, Block block)
         {
             if (!CanHarvest(block))
                 return 1.0f;
