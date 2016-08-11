@@ -40,6 +40,10 @@ namespace MoBot.Structure.Game
                             Name = block.name,
                             Transparent = block.transparent
                         };
+
+                        if (block.name == "Вода")
+                            Water.Add(block.id);
+
                         BlockRegistry.Add(gameBlock.Id, gameBlock);
                     }
                 }
@@ -56,7 +60,9 @@ namespace MoBot.Structure.Game
                 Program.GetLogger().Warn($"Cant find {exception.FileName} file!");   
             }
         }
-          
+        
+        public static HashSet<int> Water { get; private set; } = new HashSet<int>();
+
         public static Block GetBlock(int id)
         {
             Block res;
@@ -70,5 +76,10 @@ namespace MoBot.Structure.Game
         public float Hardness = 10000f;
         public bool Transparent;
         public string HarvestTool;
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

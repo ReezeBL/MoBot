@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Text;
 using System.Threading;
-using MoBot.Protocol.Packets.Play;
 using MoBot.Structure.Game;
 using MoBot.Structure.Game.AI.Pathfinding;
-using MoBot.Structure.Game.World;
 
 namespace MoBot.Structure
 {
@@ -23,9 +19,12 @@ namespace MoBot.Structure
         public void HandleChatMessage(string message)
         {
             if (!NetworkController.Connected)
-                return;   
+                return;
+
             if (!message.StartsWith("-"))
+            {
                 ActionManager.SendChatMessage(message);
+            }
             else
             {
                 var split = message.Split(' ');
@@ -33,8 +32,8 @@ namespace MoBot.Structure
                 {
                     case "-disconnect":
                     {
-                        NetworkController.Disconnect();   
-                        NetworkController.NotifyViewer("Client diconnected!");                    
+                        NetworkController.Disconnect();
+                        NetworkController.NotifyViewer("Client diconnected!");
                     }
                         break;
                     case "-elist":
@@ -57,21 +56,22 @@ namespace MoBot.Structure
                     }
                         break;
                     case "-swap":
-                        foreach(var p in ActionManager.ExchangeInventorySlots(int.Parse(split[1]), int.Parse(split[2])))
+                        foreach (var p in ActionManager.ExchangeInventorySlots(int.Parse(split[1]), int.Parse(split[2]))
+                            )
                             Thread.Sleep(50);
                         break;
                     case "-move":
                     {
-                            GameController.AiHandler.Mover.SetShovelDestination(
-                                new Location(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3])));
-                        }
+                        GameController.AiHandler.Mover.SetShovelDestination(
+                            new Location(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3])));
+                    }
                         break;
 
                     case "-testOpen":
-                        {
-                            ActionManager.RightClick(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3]));
-                            break;
-                        }
+                    {
+                        ActionManager.RightClick(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3]));
+                        break;
+                    }
                     case "-testClose":
                         ActionManager.CloseWindow();
                         break;
@@ -79,14 +79,15 @@ namespace MoBot.Structure
                         GameController.AiHandler.Surviver.Store = true;
                         break;
                     case "-test":
-                        var ids = new HashSet<int> {54,130,146,181,191,506};
+                        var ids = new HashSet<int> {54, 130, 146, 181, 191, 506};
                         var locations = GameController.World.SearchBlocks(ids);
                         Location playerLocation = GameController.Player.Position;
                         foreach (var location in locations)
                         {
                             var block = Block.GetBlock(GameController.World.GetBlock(location));
-                            Console.WriteLine($"{block.Name} {location} \r\nDistance: {location.DistanceTo(playerLocation)}");
-                        }           
+                            Console.WriteLine(
+                                $"{block.Name} {location} \r\nDistance: {location.DistanceTo(playerLocation)}");
+                        }
                         break;
                     case "-dig":
                         GameController.AiHandler.Digger.enableDig = !GameController.AiHandler.Digger.enableDig;

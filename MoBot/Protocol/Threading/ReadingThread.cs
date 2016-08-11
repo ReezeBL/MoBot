@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Threading;
 using MoBot.Structure;
 
@@ -28,6 +29,11 @@ namespace MoBot.Protocol.Threading
                             lock (_queueLocker)
                                 _processQueue.Enqueue(packet);
                     }
+                    catch (EndOfStreamException)
+                    {
+                        NetworkController.Disconnect();
+                        NetworkController.NotifyViewer("Client diconnected!");
+                    }
                     catch (Exception exception)
                     {
                         Program.GetLogger().Error($"Reading thread: {exception}");
@@ -41,17 +47,19 @@ namespace MoBot.Protocol.Threading
                 {
                     try
                     {
-                        lock (_queueLocker)
+                        while (_processQueue.Count > 0)
                         {
-                            while (_processQueue.Count > 0)
-                                _processQueue.Dequeue().HandlePacket(NetworkController.Handler);
+                            Packet packet;
+                            lock(_queueLocker)
+                                packet = _processQueue.Dequeue();
+                            packet.HandlePacket(NetworkController.Handler);
                         }
                     }
                     catch (Exception exception)
                     {
                         Program.GetLogger().Error($"Processing thread: {exception}");
                     }
-                    Thread.Sleep(50);
+                    Thread.Sleep(10);
                 }
             })
             { IsBackground = true };

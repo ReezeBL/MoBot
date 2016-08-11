@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using MoBot.Structure.Game.AI.Pathfinding;
 using MoBot.Structure.Game.Items;
 
 namespace MoBot.Structure.Game
@@ -30,8 +31,21 @@ namespace MoBot.Structure.Game
             float strength = heldItem.GetItemStrength(heldItemStack, block) / block.Hardness / (heldItem.CanHarvest(block) ? 30 : 100);
 
             if (!OnGround) strength /= 5;
+            if (InWater()) strength /= 5;
+
+            var playerHead = Position;
+            playerHead.Y += 1.62f;
+
 
             return strength;
+        }
+
+        public bool InWater()
+        {
+            var playerHead = Position;
+            playerHead.Y += 1.62f;
+
+            return Block.Water.Contains(GameController.World.GetBlock(playerHead));
         }
 
         private readonly Dictionary<int, Container> _containers = new Dictionary<int, Container> {{0, new Container(9)}, {255, new Container(1)} };

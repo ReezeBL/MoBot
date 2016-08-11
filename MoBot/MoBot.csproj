@@ -196,10 +196,28 @@
     <Compile Include="Structure\NetworkController.cs" />
     <Compile Include="Structure\Actions\SysAction.cs" />
     <Compile Include="Protocol\Threading\ReadingThread.cs" />
-    <Compile Include="Structure\Viewer.cs">
+    <Compile Include="Structure\Windows\SelectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Structure\Viewer.Designer.cs">
+    <Compile Include="Structure\Windows\SelectionForm.Designer.cs">
+      <DependentUpon>SelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Structure\Windows\SelectionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Structure\Windows\SelectionList.Designer.cs">
+      <DependentUpon>SelectionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Structure\Windows\SettingsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Structure\Windows\SettingsWindow.Designer.cs">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Structure\Windows\Viewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Structure\Windows\Viewer.Designer.cs">
       <DependentUpon>Viewer.cs</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -228,7 +246,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Structure\Viewer.resx">
+    <EmbeddedResource Include="Structure\Windows\SelectionForm.resx">
+      <DependentUpon>SelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Structure\Windows\SelectionList.resx">
+      <DependentUpon>SelectionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Structure\Windows\SettingsWindow.resx">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Structure\Windows\Viewer.resx">
       <DependentUpon>Viewer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

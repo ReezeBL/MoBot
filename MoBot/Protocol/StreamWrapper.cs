@@ -103,7 +103,7 @@ namespace MoBot.Protocol
         public void WriteString(string val) //Writes an UTF8 string to stream
         {
             byte[] bytes = Encoding.UTF8.GetBytes(val);
-            WriteVarInt(val.Length);
+            WriteVarInt(bytes.Length);
             _writer.Write(bytes);
         }     
         public String ReadString() //Reads an UTF8 string from stream

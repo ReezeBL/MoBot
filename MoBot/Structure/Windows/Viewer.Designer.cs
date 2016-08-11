@@ -40,6 +40,7 @@ namespace MoBot.Structure
             this.label2 = new System.Windows.Forms.Label();
             this.serverTextbox = new System.Windows.Forms.TextBox();
             this.reconnectCheckBox = new System.Windows.Forms.CheckBox();
+            this.settingsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // consoleWindow
@@ -54,7 +55,7 @@ namespace MoBot.Structure
             // 
             // buttonConnect
             // 
-            this.buttonConnect.Location = new System.Drawing.Point(457, 184);
+            this.buttonConnect.Location = new System.Drawing.Point(457, 164);
             this.buttonConnect.Name = "buttonConnect";
             this.buttonConnect.Size = new System.Drawing.Size(135, 36);
             this.buttonConnect.TabIndex = 1;
@@ -67,7 +68,7 @@ namespace MoBot.Structure
             this.chatTextBox.Location = new System.Drawing.Point(12, 293);
             this.chatTextBox.Name = "chatTextBox";
             this.chatTextBox.Size = new System.Drawing.Size(427, 20);
-            this.chatTextBox.TabIndex = 2;
+            this.chatTextBox.TabIndex = 3;
             // 
             // buttonSendMessage
             // 
@@ -84,7 +85,7 @@ namespace MoBot.Structure
             this.usernameTextBox.Location = new System.Drawing.Point(462, 67);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(95, 20);
-            this.usernameTextBox.TabIndex = 4;
+            this.usernameTextBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -109,17 +110,27 @@ namespace MoBot.Structure
             this.serverTextbox.Location = new System.Drawing.Point(462, 127);
             this.serverTextbox.Name = "serverTextbox";
             this.serverTextbox.Size = new System.Drawing.Size(130, 20);
-            this.serverTextbox.TabIndex = 4;
+            this.serverTextbox.TabIndex = 2;
             // 
             // reconnectCheckBox
             // 
             this.reconnectCheckBox.AutoSize = true;
-            this.reconnectCheckBox.Location = new System.Drawing.Point(457, 227);
+            this.reconnectCheckBox.Location = new System.Drawing.Point(458, 268);
             this.reconnectCheckBox.Name = "reconnectCheckBox";
             this.reconnectCheckBox.Size = new System.Drawing.Size(99, 17);
             this.reconnectCheckBox.TabIndex = 6;
             this.reconnectCheckBox.Text = "Auto reconnect";
             this.reconnectCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // settingsButton
+            // 
+            this.settingsButton.Location = new System.Drawing.Point(457, 206);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(135, 36);
+            this.settingsButton.TabIndex = 7;
+            this.settingsButton.Text = "Settings";
+            this.settingsButton.UseVisualStyleBackColor = true;
+            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
             // Viewer
             // 
@@ -127,6 +138,7 @@ namespace MoBot.Structure
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(604, 336);
+            this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.reconnectCheckBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -159,5 +171,6 @@ namespace MoBot.Structure
         private Label label2;
         private TextBox serverTextbox;
         private CheckBox reconnectCheckBox;
+        private Button settingsButton;
     }
 }

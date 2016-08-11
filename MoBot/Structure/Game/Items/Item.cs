@@ -10,6 +10,8 @@ namespace MoBot.Structure.Game.Items
         protected static readonly Dictionary<string, Item> Extension = new Dictionary<string, Item>();
         private static readonly Dictionary<int, Item> ItemRegistry = new Dictionary<int, Item>();
 
+        public static IEnumerable<Item> Items => ItemRegistry.Values;
+
         public static void LoadItems()
         {
             Dictionary<string, float> materials = new Dictionary<string, float>();
@@ -100,5 +102,9 @@ namespace MoBot.Structure.Game.Items
             return 1.0f;
         }
 
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

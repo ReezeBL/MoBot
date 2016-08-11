@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using MoBot.Structure.Actions;
+using MoBot.Structure.Windows;
 using Newtonsoft.Json.Linq;
 
 namespace MoBot.Structure
@@ -144,6 +145,11 @@ namespace MoBot.Structure
             Settings.AutoReconnect = reconnectCheckBox.Checked;
 
             Settings.Serialize();
+        }
+
+        private void settingsButton_Click(object sender, EventArgs e)
+        {
+            new SettingsWindow().Show();
         }
     }
 }
