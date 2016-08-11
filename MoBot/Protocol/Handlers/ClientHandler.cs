@@ -185,7 +185,9 @@ namespace MoBot.Protocol.Handlers
             GameController.Player.Yaw = packetPlayerPosLook.Yaw;
             GameController.Player.Pitch = packetPlayerPosLook.Pitch;
             GameController.Player.OnGround = packetPlayerPosLook.OnGround;
+
             NetworkController.SendPacket(packetPlayerPosLook);
+            GameController.AiHandler.Mover.Restart();
         }
 
         public void HandlePacketWindowItems(PacketWindowItems packetWindowItems)

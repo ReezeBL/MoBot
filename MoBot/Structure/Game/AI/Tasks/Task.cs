@@ -12,7 +12,7 @@ namespace MoBot.Structure.Game.AI.Tasks
     public class Task
     {
         protected Composite _root;
-        protected readonly object _awaiter = new object();
+        protected static readonly object _awaiter = new object();
         /// <summary>
         /// Определяет очереденость исполнения заданий
         /// </summary>
@@ -27,7 +27,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             return obj._root;
         }
 
-        protected IEnumerator WaitForSeconds(long milliseconds)
+        public static IEnumerator WaitForSeconds(long milliseconds)
         {
             var time = new Stopwatch();
             time.Start();

@@ -43,6 +43,7 @@ namespace MoBot.Protocol
             40, //PacketEffect
             43, //PacketChangeGameState
             41, //PacketSoundEffect
+            51, //PacketUpdateSign
             53, //PacketUpdateTileEntity
             55, //PacketStatistics
             56, //PacketPlayerListItem

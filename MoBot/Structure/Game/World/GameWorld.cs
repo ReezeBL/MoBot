@@ -299,6 +299,11 @@ namespace MoBot.Structure.Game.World
             return IsBlockFree(floor) && IsBlockFree(upper);
         }
 
+        public bool IsBlockFree(Location location)
+        {
+            return IsBlockFree(GetBlock(location.X, location.Y, location.Z));
+        }
+
         public bool IsBlockFree(int x, int y, int z)
         {
             return IsBlockFree(GetBlock(x, y, z));

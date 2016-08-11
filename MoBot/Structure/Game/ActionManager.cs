@@ -4,6 +4,7 @@ using System.Threading;
 using AForge.Math;
 using MoBot.Protocol.Packets.Play;
 using MoBot.Structure.Game.AI.Pathfinding;
+using MoBot.Structure.Game.AI.Tasks;
 
 namespace MoBot.Structure.Game
 {
@@ -49,9 +50,7 @@ namespace MoBot.Structure.Game
             var dy = y - player.Y;
             var dz = z - player.Z;
             var moved = dx*dx + dy*dy + dz*dz >= 9e-4;
-            player.OnGround = Math.Abs(dy) >= 0.1;
             player.SetPosition(x,y,z);
-            UpdatePosition();
             if (moved)
                 LastMove = DateTime.Now;
         }
@@ -61,9 +60,7 @@ namespace MoBot.Structure.Game
             var player = GameController.Player;
             var dir = player.Position - newPos;
             var moved = dir.Square >= 9e-4;
-            player.OnGround = Math.Abs(dir.Y) >= 0.35;
             player.SetPosition(newPos);
-            UpdatePosition();
             if (moved)
                 LastMove = DateTime.Now;
         }
@@ -216,6 +213,16 @@ namespace MoBot.Structure.Game
         {
             NetworkController.SendPacket(new PacketCloseWindow {WindowId = GameController.Player.CurrentContainer.WindowId});
             GameController.Player.CloseContainer(GameController.Player.CurrentContainer.WindowId);
+        }
+
+        public static void UseItem()
+        {
+            NetworkController.SendPacket(new PacketPlayerBlockPlacement { Face = 255, Item = GameController.Player.GetHeldItemStack, X = -1, Y = -1, Z = -1 });
+        }
+
+        public static void SelectBeltSlot(int slot)
+        {
+            NetworkController.SendPacket(new PacketHeldItemChange {Slot = (byte)slot});
         }
     }
 }

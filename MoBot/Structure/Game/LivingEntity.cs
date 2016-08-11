@@ -4,7 +4,7 @@
     {
         
         public float Yaw, Pitch;
-        public float Health;
+        public float Health = 1;
 
         public override string ToString()
         {

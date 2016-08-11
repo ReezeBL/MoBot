@@ -42,9 +42,9 @@
             // 
             // selectButton
             // 
-            this.selectButton.Location = new System.Drawing.Point(203, 12);
+            this.selectButton.Location = new System.Drawing.Point(99, 53);
             this.selectButton.Name = "selectButton";
-            this.selectButton.Size = new System.Drawing.Size(59, 50);
+            this.selectButton.Size = new System.Drawing.Size(81, 25);
             this.selectButton.TabIndex = 1;
             this.selectButton.Text = "Select";
             this.selectButton.UseVisualStyleBackColor = true;
@@ -52,9 +52,10 @@
             // 
             // SelectionForm
             // 
+            this.AcceptButton = this.selectButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(274, 74);
+            this.ClientSize = new System.Drawing.Size(207, 90);
             this.Controls.Add(this.selectButton);
             this.Controls.Add(this.selectionList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

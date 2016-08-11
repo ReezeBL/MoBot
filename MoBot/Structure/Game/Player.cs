@@ -16,7 +16,7 @@ namespace MoBot.Structure.Game
         public int HeldItem => HeldItemBar + 36;
         public bool OnGround;
 
-        public short Food;
+        public short Food = 20;
         public float Saturation;
         public string Name;
 

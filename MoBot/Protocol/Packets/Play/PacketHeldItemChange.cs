@@ -17,7 +17,7 @@ namespace MoBot.Protocol.Packets.Play
 
         public override void WritePacketData(StreamWrapper buff)
         {
-            buff.WriteByte(Slot);
+            buff.WriteShort(Slot);
         }
     }
 }

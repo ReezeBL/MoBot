@@ -7,7 +7,7 @@ namespace MoBot.Structure.Game.Items
 {
     public class Item
     {
-        protected static readonly Dictionary<string, Item> Extension = new Dictionary<string, Item>();
+        protected static readonly Dictionary<string, Item> Extension = new Dictionary<string, Item> { { "minecraft:bread", new ItemFood() }, { "minecraft:apple", new ItemFood() } };
         private static readonly Dictionary<int, Item> ItemRegistry = new Dictionary<int, Item>();
 
         public static IEnumerable<Item> Items => ItemRegistry.Values;

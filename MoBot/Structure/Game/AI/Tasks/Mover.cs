@@ -11,14 +11,22 @@ namespace MoBot.Structure.Game.AI.Tasks
     public class Mover : Task
     {
         private IEnumerator _mover;
+        private Location _destination;
 
         public Mover()
         {
             _root = new Action(RoutineTick);
         }
 
+        public void Restart()
+        {
+            if(_destination != null)
+                _mover = StartRoutine(ActionManager.MoveRoutineS(_destination));
+        }
+
         public void SetDestination(Location endPoint)
         {
+            _destination = endPoint;
             _mover = StartRoutine(ActionManager.MoveRoutineS(endPoint));
         }
 
@@ -59,6 +67,8 @@ namespace MoBot.Structure.Game.AI.Tasks
                 for(int i=0;i<2;i++)
                     yield return null;
             }
+
+            _destination = null;
         }
 
         private IEnumerator DigTo(int x, int y, int z)
@@ -72,9 +82,8 @@ namespace MoBot.Structure.Game.AI.Tasks
             yield return DigBlock(block);
 
             ActionManager.FinishDigging(x, y, z);
+            yield return null;
 
-            for (int i = 0; i < 10; i++)
-                yield return null;
         }
 
         private IEnumerator SwitchTool(Block block)
@@ -86,13 +95,20 @@ namespace MoBot.Structure.Game.AI.Tasks
             {
                 yield break;
             }
-            var items = 
-               GameController.Player.Inventory.IndexedInventory;
-            var item = items.Where(slot =>
+            var belt = GameController.Player.Inventory.Belt;
+            var item = belt.Where(IsEffectiveTool(block)).FirstOrDefault();
+
+            if (item != null)
             {
-                var lambdaTool = slot.Item as ItemTool;
-                return lambdaTool != null && lambdaTool.CanHarvest(block);
-            }).FirstOrDefault();
+                Console.WriteLine($"Selecting {item.Item.Name} in the belt");
+                ActionManager.SelectBeltSlot(item.Slot);
+                yield return _awaiter;
+                yield break;
+            }
+
+            var items =
+               GameController.Player.Inventory.IndexedInventory;
+            item = items.Where(IsEffectiveTool(block)).FirstOrDefault();
             if (item == null) yield break;
 
             Console.WriteLine($"Selecting {item.Item.Name} at {item.Slot}");
@@ -100,6 +116,15 @@ namespace MoBot.Structure.Game.AI.Tasks
             yield return ActionManager.ExchangeInventorySlots(item.Slot, GameController.Player.HeldItem);
 
             yield return _awaiter;
+        }
+
+        private static Func<Container.IndexedItem, bool> IsEffectiveTool(Block block)
+        {
+            return slot =>
+            {
+                var lambdaTool = slot.Item as ItemTool;
+                return lambdaTool != null && lambdaTool.CanHarvest(block);
+            };
         }
 
         private IEnumerator DigBlock(Block block)

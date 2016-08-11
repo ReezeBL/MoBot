@@ -76,7 +76,7 @@ namespace MoBot.Structure
                         ActionManager.CloseWindow();
                         break;
                     case "-testReturn":
-                        GameController.AiHandler.Surviver.Store = true;
+                        GameController.AiHandler.CustomEvents.Store = true;
                         break;
                     case "-test":
                         var ids = new HashSet<int> {54, 130, 146, 181, 191, 506};
@@ -91,6 +91,9 @@ namespace MoBot.Structure
                         break;
                     case "-dig":
                         GameController.AiHandler.Digger.enableDig = !GameController.AiHandler.Digger.enableDig;
+                        break;
+                    case "-use":
+                        ActionManager.UseItem();
                         break;
                     default:
                     {

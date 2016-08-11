@@ -79,6 +79,18 @@ namespace MoBot.Structure.Game
             }
         }
 
+        public IEnumerable<IndexedItem> Belt
+        {
+            get
+            {
+                int index = 0;
+                lock (_monitor)
+                {
+                    return _inventory.Skip(27).Select(item => new IndexedItem {Item = item.Item, Slot = index++});
+                }
+            }
+        }
+
         public int ContainerFreeSlot
         {
             get
