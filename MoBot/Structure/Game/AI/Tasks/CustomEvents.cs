@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using MoBot.Structure.Game.AI.Pathfinding;
 using MoBot.Structure.Game.Items;
-using MoBot.Structure.Game.World;
 using NLog;
 using TreeSharp;
 using Action = TreeSharp.Action;
@@ -51,7 +49,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             yield return SwitchToFood();
             if (GameController.Player.GetHeldItem is ItemFood)
             {
-                Console.WriteLine($"Eating {GameController.Player.GetHeldItem.Name}");
+                _logger.Info($"Eating {GameController.Player.GetHeldItem.Name}");
                 ActionManager.UseItem();
                 for (int i = 0; i < 32; i++)
                 {
@@ -143,10 +141,12 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         private bool IsDead(object context)
         {
-            return Math.Abs(GameController.Player.Health) < 1;
+            if(GameController.Player.Health > 0) return false;
+            _routine = StartRoutine(Ressurect());
+            return true;
         }
 
-        private void Ressurect()
+        private IEnumerator Ressurect()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("You are dead!");
@@ -158,11 +158,13 @@ namespace MoBot.Structure.Game.AI.Tasks
 
             _logger.Info(sb.ToString);
             ActionManager.Respawn();
+            ActionManager.UpdatePosition();
+            yield return WaitForSeconds(1000);
         }
 
         public CustomEvents()
         {
-            _root = new PrioritySelector(new Decorator(IsDead, new Action(o => Ressurect())), new Decorator(IsHungry, new Action(RunRoutine)), new Decorator(InventoryIsFool, new Action(RunRoutine)));
+            _root = new PrioritySelector(new Decorator(IsDead, new Action(RunRoutine)), new Decorator(IsHungry, new Action(RunRoutine)), new Decorator(InventoryIsFool, new Action(RunRoutine)));
         }
 
         public void GenerateStrings()

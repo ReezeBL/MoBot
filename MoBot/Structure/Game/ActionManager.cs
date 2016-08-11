@@ -51,6 +51,7 @@ namespace MoBot.Structure.Game
             var dz = z - player.Z;
             var moved = dx*dx + dy*dy + dz*dz >= 9e-4;
             player.SetPosition(x,y,z);
+            UpdatePosition();
             if (moved)
                 LastMove = DateTime.Now;
         }
@@ -61,6 +62,7 @@ namespace MoBot.Structure.Game
             var dir = player.Position - newPos;
             var moved = dir.Square >= 9e-4;
             player.SetPosition(newPos);
+            UpdatePosition();
             if (moved)
                 LastMove = DateTime.Now;
         }

@@ -14,18 +14,33 @@ namespace MoBot.Structure.Game.AI.Tasks
     {
         public bool enableDig;
         private readonly Logger _logger = Program.GetLogger();
-
+        private readonly HashSet<Location> ignoredLocations = new HashSet<Location>();
         private void SetupDigger(object context)
         {
-            var location = GameController.World.SearchBlock(Settings.IntrestedBlocks);
-            if (location != null)
+            var locations = GameController.World.SearchBlocks(Settings.IntrestedBlocks);
+            if (locations.Count > 0)
             {
-                var playerPos = (Location) GameController.Player.Position;
-                double distance = playerPos.DistanceTo(location);
-                Console.WriteLine(
-                    $"Target: {Block.GetBlock(GameController.World.GetBlock(location)).Name} {{{location.X}|{location.Y}|{location.Z}}}\r\nDistance: {distance}");
+                Location playerPos = GameController.Player.Position;
+                foreach (var location in locations)
+                {
+                    if (ignoredLocations.Contains(location)) continue;
 
-                GameController.AiHandler.Mover.SetShovelDestination(location);
+                    double distance = playerPos.DistanceTo(location);
+                    Console.WriteLine(
+                        $"Target: {Block.GetBlock(GameController.World.GetBlock(location)).Name} {{{location.X}|{location.Y}|{location.Z}}}\r\nDistance: {distance}");
+
+
+                    var preBuild = PathFinder.Shovel(playerPos, location);
+                    if (preBuild == null)
+                    {
+                        ignoredLocations.Add(location);
+                        Console.WriteLine("Failed to buid path,ignoring this point");
+                        continue;
+                    }
+                    GameController.AiHandler.Mover.SetShovelDestination(location, preBuild);
+                    break;
+                }
+                
             }
             else
             {

@@ -30,9 +30,9 @@ namespace MoBot.Structure.Game.AI.Tasks
             _mover = StartRoutine(ActionManager.MoveRoutineS(endPoint));
         }
 
-        public void SetShovelDestination(Location endPoint)
+        public void SetShovelDestination(Location endPoint, Path preBuild = null)
         {
-            _mover = StartRoutine(Routine(endPoint));
+            _mover = StartRoutine(ShovelRoutine(endPoint, preBuild));
         }
 
         private RunStatus RoutineTick(object context)
@@ -43,9 +43,9 @@ namespace MoBot.Structure.Game.AI.Tasks
             return _mover.Current != null ? RunStatus.Running : RunStatus.Success;
         }
 
-        private IEnumerator Routine(Location destination)
+        private IEnumerator ShovelRoutine(Location destination, Path preBuild)
         {
-            Path path = PathFinder.Shovel(GameController.Player.Position, destination);
+            Path path = preBuild ?? PathFinder.Shovel(GameController.Player.Position, destination);
             if(path == null)
                 yield break;
             foreach (var point in path)
@@ -80,9 +80,12 @@ namespace MoBot.Structure.Game.AI.Tasks
 
             ActionManager.StartDigging(x, y, z);
             yield return DigBlock(block);
-
             ActionManager.FinishDigging(x, y, z);
-            yield return null;
+
+            ActionManager.UpdatePosition();
+            yield return WaitForSeconds(150);
+            ActionManager.UpdatePosition();
+            yield return WaitForSeconds(150);
 
         }
 
@@ -102,6 +105,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             {
                 Console.WriteLine($"Selecting {item.Item.Name} in the belt");
                 ActionManager.SelectBeltSlot(item.Slot);
+                ActionManager.UpdatePosition();
                 yield return _awaiter;
                 yield break;
             }
@@ -114,6 +118,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             Console.WriteLine($"Selecting {item.Item.Name} at {item.Slot}");
 
             yield return ActionManager.ExchangeInventorySlots(item.Slot, GameController.Player.HeldItem);
+            ActionManager.UpdatePosition();
 
             yield return _awaiter;
         }

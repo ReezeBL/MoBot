@@ -151,12 +151,13 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 
         #endregion
 
-        public static Path Shovel(Location start, Location end)
+        public static Path Shovel(Location start, Location end, bool includeLast = true, bool digBlocs = true, float maxDistance = 64f)
         {
             try
             {
                 FastPriorityQueue<Location> nodes = new FastPriorityQueue<Location>(65536);
                 Hashtable cost = new Hashtable();
+                bool succeed = false;
 
                 nodes.Enqueue(start, 0);
                 start.Prev = null;
@@ -167,11 +168,17 @@ namespace MoBot.Structure.Game.AI.Pathfinding
                     if (current.Equals(end))
                     {
                         end = current;
+                        succeed = true;
                         break;
                     }
                     foreach (var node in AdvancedNeighbours(current))
                     {
                         var next = node.Key;
+
+                        if(node.Value < 0) continue;
+                        if(node.Key.DistanceTo(start) > maxDistance) continue;
+                        if(!digBlocs && node.Value > 0) continue;
+
                         var nodeCost = (float)cost[current] + 1f + node.Value;
                         if (!cost.ContainsKey(next))
                         {
@@ -187,18 +194,30 @@ namespace MoBot.Structure.Game.AI.Pathfinding
                         }
                     }
                 }
+                if (!succeed)
+                {
+                    PointSet.Clear();
+                    return null;
+                }
+
                 List<Location> pathfrom = new List<Location>();
+
+                if (!includeLast)
+                    end = end.Prev;
+
                 while (end.Prev != null)
                 {
                     pathfrom.Add(end);
                     end = end.Prev;
                 }
-                pathfrom.Reverse();
+                PointSet.Clear();
+
                 return new Path(pathfrom);
             }
             catch (Exception e)
             {
                 Program.GetLogger().Error($"Cant create path! Error : {e}");
+                PointSet.Clear();
                 return null;
             }
         }
@@ -221,7 +240,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
                 },
                 {
                     CreatePoint(root.X, root.Y, root.Z - 1),
-                    GetBlockWeight(root.X, root.Y, root.Z - 1) + GetBlockWeight(root.X, root.Y - 1, root.Z + 1)
+                    GetBlockWeight(root.X, root.Y, root.Z - 1) + GetBlockWeight(root.X, root.Y + 1, root.Z - 1)
                 },
 
                 {
@@ -241,7 +260,11 @@ namespace MoBot.Structure.Game.AI.Pathfinding
         private static float GetBlockWeight(int x, int y, int z)
         {
             Block block = Block.GetBlock(GameController.World.GetBlock(x, y, z));
-            return (block == null || block.Transparent) ? 0 : block.Hardness * 5;
+            if (block.Transparent)
+                return 0;
+            if (block.Hardness < 0)
+                return -1e9f;
+            return block.Hardness*5;
         }
 
     }

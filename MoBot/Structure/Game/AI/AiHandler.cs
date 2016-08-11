@@ -44,27 +44,31 @@ namespace MoBot.Structure.Game.AI
                             _root.Start(null);
                         }
 
-                        Vector3 floor = GameController.Player.Position;
-                        Vector3 downSide = floor + new Vector3(0f, -0.033f, 0f);
-
-                        if (!GameController.World.IsBlockFree(downSide))
-                        {
+                        if (!GameController.Player.OnGround)
                             GameController.Player.OnGround = true;
-                            _flyingTicks = 0;
-                        }
-                        else
-                        {
-                            GameController.Player.OnGround = true;
-                            if ((floor - lastPos).Y >= -0.03125)
-                            {
-                                _flyingTicks ++;
-                                Console.WriteLine($"Flying ticks: {_flyingTicks}");
-                            }
-                            ActionManager.SetPlayerPos(downSide);
-                        }
+                        //Vector3 floor = GameController.Player.Position;
+                        //Vector3 downSide = floor + new Vector3(0f, -0.033f, 0f);
 
-                        lastPos = floor;
-                        ActionManager.UpdatePosition();
+                        //if (!GameController.World.IsBlockFree(downSide))
+                        //{
+                        //    GameController.Player.OnGround = true;
+                        //    _flyingTicks = 0;
+                        //}
+                        //else
+                        //{
+                        //    GameController.Player.OnGround = true;
+                        //    if ((floor - lastPos).Y >= -0.03125)
+                        //    {
+                        //        _flyingTicks ++;
+                        //        Console.WriteLine($"Flying ticks: {_flyingTicks}");
+                        //    }
+                        //    ActionManager.SetPlayerPos(downSide);
+                        //}
+
+                        //lastPos = floor;
+                        //ActionManager.UpdatePosition();
+
+
                     }
                     else
                     {

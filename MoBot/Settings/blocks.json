@@ -1,4 +1,4 @@
-[
+п»ї[
   {
     "id": 0,
     "name": "tile.air.name",
@@ -7,14 +7,14 @@
   },
   {
     "id": 1,
-    "name": "Камень",
+    "name": "РљР°РјРµРЅСЊ",
     "hardness": 1.5,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 2,
-    "name": "Блок травы",
+    "name": "Р‘Р»РѕРє С‚СЂР°РІС‹",
     "hardness": 0.6,
     "transparent": false,
     "harvestTool": "shovel"
@@ -28,14 +28,14 @@
   },
   {
     "id": 4,
-    "name": "Булыжник",
+    "name": "Р‘СѓР»С‹Р¶РЅРёРє",
     "hardness": 2.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 5,
-    "name": "Доски",
+    "name": "Р”РѕСЃРєРё",
     "hardness": 2.0,
     "transparent": false,
     "harvestTool": "axe"
@@ -48,33 +48,33 @@
   },
   {
     "id": 7,
-    "name": "Бедрок",
+    "name": "Р‘РµРґСЂРѕРє",
     "hardness": -1.0,
     "transparent": false
   },
   {
     "id": 8,
-    "name": "Вода",
+    "name": "Р’РѕРґР°",
     "hardness": 100.0,
     "transparent": true
   },
   {
     "id": 9,
-    "name": "Вода",
+    "name": "Р’РѕРґР°",
     "hardness": 100.0,
     "transparent": true
   },
   {
     "id": 10,
-    "name": "Лава",
+    "name": "Р›Р°РІР°",
     "hardness": 100.0,
-    "transparent": true
+    "transparent": false
   },
   {
     "id": 11,
-    "name": "Лава",
+    "name": "Р›Р°РІР°",
     "hardness": 100.0,
-    "transparent": true
+    "transparent": false
   },
   {
     "id": 12,
@@ -85,137 +85,137 @@
   },
   {
     "id": 13,
-    "name": "Гравий",
+    "name": "Р“СЂР°РІРёР№",
     "hardness": 0.6,
     "transparent": false,
     "harvestTool": "shovel"
   },
   {
     "id": 14,
-    "name": "Золотая руда",
+    "name": "Р—РѕР»РѕС‚Р°СЏ СЂСѓРґР°",
     "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 15,
-    "name": "Железная руда",
+    "name": "Р–РµР»РµР·РЅР°СЏ СЂСѓРґР°",
     "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 16,
-    "name": "Уголь",
+    "name": "РЈРіРѕР»СЊ",
     "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 17,
-    "name": "Дерево",
+    "name": "Р”РµСЂРµРІРѕ",
     "hardness": 2.0,
     "transparent": false,
     "harvestTool": "axe"
   },
   {
     "id": 18,
-    "name": "Листья",
+    "name": "Р›РёСЃС‚СЊСЏ",
     "hardness": 0.2,
     "transparent": false
   },
   {
     "id": 19,
-    "name": "Губка",
+    "name": "Р“СѓР±РєР°",
     "hardness": 0.6,
     "transparent": false
   },
   {
     "id": 20,
-    "name": "Стекло",
+    "name": "РЎС‚РµРєР»Рѕ",
     "hardness": 0.3,
     "transparent": false
   },
   {
     "id": 21,
-    "name": "Лазуритовая руда",
+    "name": "Р›Р°Р·СѓСЂРёС‚РѕРІР°СЏ СЂСѓРґР°",
     "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 22,
-    "name": "Блок лазурита",
+    "name": "Р‘Р»РѕРє Р»Р°Р·СѓСЂРёС‚Р°",
     "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 23,
-    "name": "Раздатчик",
+    "name": "Р Р°Р·РґР°С‚С‡РёРє",
     "hardness": 3.5,
     "transparent": false
   },
   {
     "id": 24,
-    "name": "Песчаник",
+    "name": "РџРµСЃС‡Р°РЅРёРє",
     "hardness": 0.8,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 25,
-    "name": "Нотный блок",
+    "name": "РќРѕС‚РЅС‹Р№ Р±Р»РѕРє",
     "hardness": 0.8,
     "transparent": false
   },
   {
     "id": 26,
-    "name": "Кровать",
+    "name": "РљСЂРѕРІР°С‚СЊ",
     "hardness": 0.2,
     "transparent": false
   },
   {
     "id": 27,
-    "name": "Энергорельсы",
+    "name": "Р­РЅРµСЂРіРѕСЂРµР»СЊСЃС‹",
     "hardness": 0.7,
     "transparent": true,
     "harvestTool": "pickaxe"
   },
   {
     "id": 28,
-    "name": "Рельсы с датчиком",
+    "name": "Р РµР»СЊСЃС‹ СЃ РґР°С‚С‡РёРєРѕРј",
     "hardness": 0.7,
     "transparent": true,
     "harvestTool": "pickaxe"
   },
   {
     "id": 29,
-    "name": "Липкий поршень",
+    "name": "Р›РёРїРєРёР№ РїРѕСЂС€РµРЅСЊ",
     "hardness": 0.5,
     "transparent": false
   },
   {
     "id": 30,
-    "name": "Паутина",
+    "name": "РџР°СѓС‚РёРЅР°",
     "hardness": 4.0,
     "transparent": true
   },
   {
     "id": 31,
-    "name": "Трава",
+    "name": "РўСЂР°РІР°",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 32,
-    "name": "Мертвый куст",
+    "name": "РњРµСЂС‚РІС‹Р№ РєСѓСЃС‚",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 33,
-    "name": "Поршень",
+    "name": "РџРѕСЂС€РµРЅСЊ",
     "hardness": 0.5,
     "transparent": false
   },
@@ -227,7 +227,7 @@
   },
   {
     "id": 35,
-    "name": "Шерсть",
+    "name": "РЁРµСЂСЃС‚СЊ",
     "hardness": 0.8,
     "transparent": false
   },
@@ -251,26 +251,26 @@
   },
   {
     "id": 39,
-    "name": "Гриб",
+    "name": "Р“СЂРёР±",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 40,
-    "name": "Гриб",
+    "name": "Р“СЂРёР±",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 41,
-    "name": "Золотой блок",
+    "name": "Р—РѕР»РѕС‚РѕР№ Р±Р»РѕРє",
     "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 42,
-    "name": "Железный блок",
+    "name": "Р–РµР»РµР·РЅС‹Р№ Р±Р»РѕРє",
     "hardness": 5.0,
     "transparent": false,
     "harvestTool": "pickaxe"
@@ -291,307 +291,307 @@
   },
   {
     "id": 45,
-    "name": "Кирпичи",
+    "name": "РљРёСЂРїРёС‡Рё",
     "hardness": 2.0,
     "transparent": false
   },
   {
     "id": 46,
-    "name": "Динамит",
+    "name": "Р”РёРЅР°РјРёС‚",
     "hardness": 0.0,
     "transparent": false
   },
   {
     "id": 47,
-    "name": "Книжная полка",
+    "name": "РљРЅРёР¶РЅР°СЏ РїРѕР»РєР°",
     "hardness": 1.5,
     "transparent": false,
     "harvestTool": "axe"
   },
   {
     "id": 48,
-    "name": "Замшелый булыжник",
+    "name": "Р—Р°РјС€РµР»С‹Р№ Р±СѓР»С‹Р¶РЅРёРє",
     "hardness": 2.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 49,
-    "name": "Обсидиан",
+    "name": "РћР±СЃРёРґРёР°РЅ",
     "hardness": 50.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 50,
-    "name": "Факел",
+    "name": "Р¤Р°РєРµР»",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 51,
-    "name": "Огонь",
+    "name": "РћРіРѕРЅСЊ",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 52,
-    "name": "Рассадник монстров",
+    "name": "Р Р°СЃСЃР°РґРЅРёРє РјРѕРЅСЃС‚СЂРѕРІ",
     "hardness": 5.0,
     "transparent": false
   },
   {
     "id": 53,
-    "name": "Дубовые ступеньки",
+    "name": "Р”СѓР±РѕРІС‹Рµ СЃС‚СѓРїРµРЅСЊРєРё",
     "hardness": 2.0,
     "transparent": false
   },
   {
     "id": 54,
-    "name": "Сундук",
+    "name": "РЎСѓРЅРґСѓРє",
     "hardness": 2.5,
     "transparent": false,
     "harvestTool": "axe"
   },
   {
     "id": 55,
-    "name": "Красная пыль",
+    "name": "РљСЂР°СЃРЅР°СЏ РїС‹Р»СЊ",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 56,
-    "name": "Алмазная руда",
+    "name": "РђР»РјР°Р·РЅР°СЏ СЂСѓРґР°",
     "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 57,
-    "name": "Алмазный блок",
+    "name": "РђР»РјР°Р·РЅС‹Р№ Р±Р»РѕРє",
     "hardness": 5.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 58,
-    "name": "Верстак",
+    "name": "Р’РµСЂСЃС‚Р°Рє",
     "hardness": 2.5,
     "transparent": false
   },
   {
     "id": 59,
-    "name": "Всходы",
+    "name": "Р’СЃС…РѕРґС‹",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 60,
-    "name": "Пашня",
+    "name": "РџР°С€РЅСЏ",
     "hardness": 0.6,
     "transparent": false,
     "harvestTool": "shovel"
   },
   {
     "id": 61,
-    "name": "Печь",
+    "name": "РџРµС‡СЊ",
     "hardness": 3.5,
     "transparent": false
   },
   {
     "id": 62,
-    "name": "Печь",
+    "name": "РџРµС‡СЊ",
     "hardness": 3.5,
     "transparent": false
   },
   {
     "id": 63,
-    "name": "Табличка",
+    "name": "РўР°Р±Р»РёС‡РєР°",
     "hardness": 1.0,
     "transparent": false
   },
   {
     "id": 64,
-    "name": "Деревянная дверь",
+    "name": "Р”РµСЂРµРІСЏРЅРЅР°СЏ РґРІРµСЂСЊ",
     "hardness": 3.0,
     "transparent": false
   },
   {
     "id": 65,
-    "name": "Лестница",
+    "name": "Р›РµСЃС‚РЅРёС†Р°",
     "hardness": 0.4,
     "transparent": true
   },
   {
     "id": 66,
-    "name": "Рельсы",
+    "name": "Р РµР»СЊСЃС‹",
     "hardness": 0.7,
     "transparent": true,
     "harvestTool": "pickaxe"
   },
   {
     "id": 67,
-    "name": "Ступеньки из булыжника",
+    "name": "РЎС‚СѓРїРµРЅСЊРєРё РёР· Р±СѓР»С‹Р¶РЅРёРєР°",
     "hardness": 2.0,
     "transparent": false
   },
   {
     "id": 68,
-    "name": "Табличка",
+    "name": "РўР°Р±Р»РёС‡РєР°",
     "hardness": 1.0,
     "transparent": false
   },
   {
     "id": 69,
-    "name": "Рычаг",
+    "name": "Р С‹С‡Р°Рі",
     "hardness": 0.5,
     "transparent": true
   },
   {
     "id": 70,
-    "name": "Нажимная плита",
+    "name": "РќР°Р¶РёРјРЅР°СЏ РїР»РёС‚Р°",
     "hardness": 0.5,
     "transparent": false
   },
   {
     "id": 71,
-    "name": "Железная дверь",
+    "name": "Р–РµР»РµР·РЅР°СЏ РґРІРµСЂСЊ",
     "hardness": 5.0,
     "transparent": false
   },
   {
     "id": 72,
-    "name": "Нажимная плита",
+    "name": "РќР°Р¶РёРјРЅР°СЏ РїР»РёС‚Р°",
     "hardness": 0.5,
     "transparent": false
   },
   {
     "id": 73,
-    "name": "Красная руда",
+    "name": "РљСЂР°СЃРЅР°СЏ СЂСѓРґР°",
     "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 74,
-    "name": "Красная руда",
+    "name": "РљСЂР°СЃРЅР°СЏ СЂСѓРґР°",
     "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 75,
-    "name": "Красный факел",
+    "name": "РљСЂР°СЃРЅС‹Р№ С„Р°РєРµР»",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 76,
-    "name": "Красный факел",
+    "name": "РљСЂР°СЃРЅС‹Р№ С„Р°РєРµР»",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 77,
-    "name": "Кнопка",
+    "name": "РљРЅРѕРїРєР°",
     "hardness": 0.5,
     "transparent": true
   },
   {
     "id": 78,
-    "name": "Снег",
+    "name": "РЎРЅРµРі",
     "hardness": 0.1,
     "transparent": true,
     "harvestTool": "shovel"
   },
   {
     "id": 79,
-    "name": "Лёд",
+    "name": "Р›С‘Рґ",
     "hardness": 0.5,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 80,
-    "name": "Снег",
+    "name": "РЎРЅРµРі",
     "hardness": 0.2,
     "transparent": false,
     "harvestTool": "shovel"
   },
   {
     "id": 81,
-    "name": "Кактус",
+    "name": "РљР°РєС‚СѓСЃ",
     "hardness": 0.4,
     "transparent": false
   },
   {
     "id": 82,
-    "name": "Глина",
+    "name": "Р“Р»РёРЅР°",
     "hardness": 0.6,
     "transparent": false,
     "harvestTool": "shovel"
   },
   {
     "id": 83,
-    "name": "Сахарный тростник",
+    "name": "РЎР°С…Р°СЂРЅС‹Р№ С‚СЂРѕСЃС‚РЅРёРє",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 84,
-    "name": "Проигрыватель",
+    "name": "РџСЂРѕРёРіСЂС‹РІР°С‚РµР»СЊ",
     "hardness": 2.0,
     "transparent": false
   },
   {
     "id": 85,
-    "name": "Забор",
+    "name": "Р—Р°Р±РѕСЂ",
     "hardness": 2.0,
     "transparent": false
   },
   {
     "id": 86,
-    "name": "Тыква",
+    "name": "РўС‹РєРІР°",
     "hardness": 1.0,
     "transparent": false,
     "harvestTool": "axe"
   },
   {
     "id": 87,
-    "name": "Адский камень",
+    "name": "РђРґСЃРєРёР№ РєР°РјРµРЅСЊ",
     "hardness": 0.4,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 88,
-    "name": "Песок душ",
+    "name": "РџРµСЃРѕРє РґСѓС€",
     "hardness": 0.5,
     "transparent": false,
     "harvestTool": "shovel"
   },
   {
     "id": 89,
-    "name": "Светящийся камень",
+    "name": "РЎРІРµС‚СЏС‰РёР№СЃСЏ РєР°РјРµРЅСЊ",
     "hardness": 0.3,
     "transparent": false
   },
   {
     "id": 90,
-    "name": "Портал",
+    "name": "РџРѕСЂС‚Р°Р»",
     "hardness": -1.0,
     "transparent": true
   },
   {
     "id": 91,
-    "name": "Светильник Джека",
+    "name": "РЎРІРµС‚РёР»СЊРЅРёРє Р”Р¶РµРєР°",
     "hardness": 1.0,
     "transparent": false,
     "harvestTool": "axe"
   },
   {
     "id": 92,
-    "name": "Торт",
+    "name": "РўРѕСЂС‚",
     "hardness": 0.5,
     "transparent": false
   },
@@ -609,13 +609,13 @@
   },
   {
     "id": 95,
-    "name": "Окрашенное стекло",
+    "name": "РћРєСЂР°С€РµРЅРЅРѕРµ СЃС‚РµРєР»Рѕ",
     "hardness": 0.3,
     "transparent": false
   },
   {
     "id": 96,
-    "name": "Люк",
+    "name": "Р›СЋРє",
     "hardness": 3.0,
     "transparent": false
   },
@@ -627,37 +627,37 @@
   },
   {
     "id": 98,
-    "name": "Каменные кирпичи",
+    "name": "РљР°РјРµРЅРЅС‹Рµ РєРёСЂРїРёС‡Рё",
     "hardness": 1.5,
     "transparent": false
   },
   {
     "id": 99,
-    "name": "Гриб",
+    "name": "Р“СЂРёР±",
     "hardness": 0.2,
     "transparent": false
   },
   {
     "id": 100,
-    "name": "Гриб",
+    "name": "Р“СЂРёР±",
     "hardness": 0.2,
     "transparent": false
   },
   {
     "id": 101,
-    "name": "Железные прутья",
+    "name": "Р–РµР»РµР·РЅС‹Рµ РїСЂСѓС‚СЊСЏ",
     "hardness": 5.0,
     "transparent": false
   },
   {
     "id": 102,
-    "name": "Стеклянная панель",
+    "name": "РЎС‚РµРєР»СЏРЅРЅР°СЏ РїР°РЅРµР»СЊ",
     "hardness": 0.3,
     "transparent": false
   },
   {
     "id": 103,
-    "name": "Арбуз",
+    "name": "РђСЂР±СѓР·",
     "hardness": 1.0,
     "transparent": false
   },
@@ -675,68 +675,68 @@
   },
   {
     "id": 106,
-    "name": "Лоза",
+    "name": "Р›РѕР·Р°",
     "hardness": 0.2,
     "transparent": true
   },
   {
     "id": 107,
-    "name": "Калитка",
+    "name": "РљР°Р»РёС‚РєР°",
     "hardness": 2.0,
     "transparent": false
   },
   {
     "id": 108,
-    "name": "Кирпичные ступеньки",
+    "name": "РљРёСЂРїРёС‡РЅС‹Рµ СЃС‚СѓРїРµРЅСЊРєРё",
     "hardness": 2.0,
     "transparent": false
   },
   {
     "id": 109,
-    "name": "Ступеньки из каменного кирпича",
+    "name": "РЎС‚СѓРїРµРЅСЊРєРё РёР· РєР°РјРµРЅРЅРѕРіРѕ РєРёСЂРїРёС‡Р°",
     "hardness": 1.5,
     "transparent": false
   },
   {
     "id": 110,
-    "name": "Мицелий",
+    "name": "РњРёС†РµР»РёР№",
     "hardness": 0.6,
     "transparent": false,
     "harvestTool": "shovel"
   },
   {
     "id": 111,
-    "name": "Кувшинка",
+    "name": "РљСѓРІС€РёРЅРєР°",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 112,
-    "name": "Адские кирпичи",
+    "name": "РђРґСЃРєРёРµ РєРёСЂРїРёС‡Рё",
     "hardness": 2.0,
     "transparent": false
   },
   {
     "id": 113,
-    "name": "Адский забор",
+    "name": "РђРґСЃРєРёР№ Р·Р°Р±РѕСЂ",
     "hardness": 2.0,
     "transparent": false
   },
   {
     "id": 114,
-    "name": "Адские ступеньки",
+    "name": "РђРґСЃРєРёРµ СЃС‚СѓРїРµРЅСЊРєРё",
     "hardness": 2.0,
     "transparent": false
   },
   {
     "id": 115,
-    "name": "Адский нарост",
+    "name": "РђРґСЃРєРёР№ РЅР°СЂРѕСЃС‚",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 116,
-    "name": "Стол зачарований",
+    "name": "РЎС‚РѕР» Р·Р°С‡Р°СЂРѕРІР°РЅРёР№",
     "hardness": 5.0,
     "transparent": false
   },
@@ -748,7 +748,7 @@
   },
   {
     "id": 118,
-    "name": "Котёл",
+    "name": "РљРѕС‚С‘Р»",
     "hardness": 2.0,
     "transparent": false
   },
@@ -760,31 +760,31 @@
   },
   {
     "id": 120,
-    "name": "Портал в Энд",
+    "name": "РџРѕСЂС‚Р°Р» РІ Р­РЅРґ",
     "hardness": -1.0,
     "transparent": false
   },
   {
     "id": 121,
-    "name": "Эндерняк",
+    "name": "Р­РЅРґРµСЂРЅСЏРє",
     "hardness": 3.0,
     "transparent": false
   },
   {
     "id": 122,
-    "name": "Яйцо дракона",
+    "name": "РЇР№С†Рѕ РґСЂР°РєРѕРЅР°",
     "hardness": 3.0,
     "transparent": false
   },
   {
     "id": 123,
-    "name": "Лампа",
+    "name": "Р›Р°РјРїР°",
     "hardness": 0.3,
     "transparent": false
   },
   {
     "id": 124,
-    "name": "Лампа",
+    "name": "Р›Р°РјРїР°",
     "hardness": 0.3,
     "transparent": false
   },
@@ -802,75 +802,75 @@
   },
   {
     "id": 127,
-    "name": "Какао",
+    "name": "РљР°РєР°Рѕ",
     "hardness": 0.2,
     "transparent": true
   },
   {
     "id": 128,
-    "name": "Ступеньки из песчаника",
+    "name": "РЎС‚СѓРїРµРЅСЊРєРё РёР· РїРµСЃС‡Р°РЅРёРєР°",
     "hardness": 0.8,
     "transparent": false
   },
   {
     "id": 129,
-    "name": "Изумрудная руда",
+    "name": "РР·СѓРјСЂСѓРґРЅР°СЏ СЂСѓРґР°",
     "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 130,
-    "name": "Сундук Эндера",
+    "name": "РЎСѓРЅРґСѓРє Р­РЅРґРµСЂР°",
     "hardness": 22.5,
     "transparent": false
   },
   {
     "id": 131,
-    "name": "Крюк",
+    "name": "РљСЂСЋРє",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 132,
-    "name": "Растяжка",
+    "name": "Р Р°СЃС‚СЏР¶РєР°",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 133,
-    "name": "Изумрудный блок",
+    "name": "РР·СѓРјСЂСѓРґРЅС‹Р№ Р±Р»РѕРє",
     "hardness": 5.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 134,
-    "name": "Еловые ступеньки",
+    "name": "Р•Р»РѕРІС‹Рµ СЃС‚СѓРїРµРЅСЊРєРё",
     "hardness": 2.0,
     "transparent": false
   },
   {
     "id": 135,
-    "name": "Березовые ступеньки",
+    "name": "Р‘РµСЂРµР·РѕРІС‹Рµ СЃС‚СѓРїРµРЅСЊРєРё",
     "hardness": 2.0,
     "transparent": false
   },
   {
     "id": 136,
-    "name": "Ступеньки из тропической древесины",
+    "name": "РЎС‚СѓРїРµРЅСЊРєРё РёР· С‚СЂРѕРїРёС‡РµСЃРєРѕР№ РґСЂРµРІРµСЃРёРЅС‹",
     "hardness": 2.0,
     "transparent": false
   },
   {
     "id": 137,
-    "name": "Командный блок",
+    "name": "РљРѕРјР°РЅРґРЅС‹Р№ Р±Р»РѕРє",
     "hardness": -1.0,
     "transparent": false
   },
   {
     "id": 138,
-    "name": "Маяк",
+    "name": "РњР°СЏРє",
     "hardness": 3.0,
     "transparent": false
   },
@@ -888,19 +888,19 @@
   },
   {
     "id": 141,
-    "name": "Морковь",
+    "name": "РњРѕСЂРєРѕРІСЊ",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 142,
-    "name": "Картофель",
+    "name": "РљР°СЂС‚РѕС„РµР»СЊ",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 143,
-    "name": "Кнопка",
+    "name": "РљРЅРѕРїРєР°",
     "hardness": 0.5,
     "transparent": true
   },
@@ -912,25 +912,25 @@
   },
   {
     "id": 145,
-    "name": "Наковальня",
+    "name": "РќР°РєРѕРІР°Р»СЊРЅСЏ",
     "hardness": 5.0,
     "transparent": false
   },
   {
     "id": 146,
-    "name": "Сундук-ловушка",
+    "name": "РЎСѓРЅРґСѓРє-Р»РѕРІСѓС€РєР°",
     "hardness": 2.5,
     "transparent": false
   },
   {
     "id": 147,
-    "name": "Утяжелённая нажимная пластина (Лёгкая)",
+    "name": "РЈС‚СЏР¶РµР»С‘РЅРЅР°СЏ РЅР°Р¶РёРјРЅР°СЏ РїР»Р°СЃС‚РёРЅР° (Р›С‘РіРєР°СЏ)",
     "hardness": 0.5,
     "transparent": false
   },
   {
     "id": 148,
-    "name": "Утяжелённая нажимная пластина (Тяжёлая)",
+    "name": "РЈС‚СЏР¶РµР»С‘РЅРЅР°СЏ РЅР°Р¶РёРјРЅР°СЏ РїР»Р°СЃС‚РёРЅР° (РўСЏР¶С‘Р»Р°СЏ)",
     "hardness": 0.5,
     "transparent": false
   },
@@ -948,26 +948,26 @@
   },
   {
     "id": 151,
-    "name": "Датчик дневного света",
+    "name": "Р”Р°С‚С‡РёРє РґРЅРµРІРЅРѕРіРѕ СЃРІРµС‚Р°",
     "hardness": 0.2,
     "transparent": false
   },
   {
     "id": 152,
-    "name": "Блок красного камня",
+    "name": "Р‘Р»РѕРє РєСЂР°СЃРЅРѕРіРѕ РєР°РјРЅСЏ",
     "hardness": 5.0,
     "transparent": false
   },
   {
     "id": 153,
-    "name": "Кварцевая руда",
+    "name": "РљРІР°СЂС†РµРІР°СЏ СЂСѓРґР°",
     "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 154,
-    "name": "Воронка",
+    "name": "Р’РѕСЂРѕРЅРєР°",
     "hardness": 3.0,
     "transparent": false
   },
@@ -979,20 +979,20 @@
   },
   {
     "id": 156,
-    "name": "Кварцевые ступеньки",
+    "name": "РљРІР°СЂС†РµРІС‹Рµ СЃС‚СѓРїРµРЅСЊРєРё",
     "hardness": 0.8,
     "transparent": false
   },
   {
     "id": 157,
-    "name": "Активирующие рельсы",
+    "name": "РђРєС‚РёРІРёСЂСѓСЋС‰РёРµ СЂРµР»СЊСЃС‹",
     "hardness": 0.7,
     "transparent": true,
     "harvestTool": "pickaxe"
   },
   {
     "id": 158,
-    "name": "Выбрасыватель",
+    "name": "Р’С‹Р±СЂР°СЃС‹РІР°С‚РµР»СЊ",
     "hardness": 3.5,
     "transparent": false
   },
@@ -1004,73 +1004,73 @@
   },
   {
     "id": 160,
-    "name": "Окрашенная стеклянная панель",
+    "name": "РћРєСЂР°С€РµРЅРЅР°СЏ СЃС‚РµРєР»СЏРЅРЅР°СЏ РїР°РЅРµР»СЊ",
     "hardness": 0.3,
     "transparent": false
   },
   {
     "id": 161,
-    "name": "Листья",
+    "name": "Р›РёСЃС‚СЊСЏ",
     "hardness": 0.2,
     "transparent": false
   },
   {
     "id": 162,
-    "name": "Дерево",
+    "name": "Р”РµСЂРµРІРѕ",
     "hardness": 2.0,
     "transparent": false,
     "harvestTool": "axe"
   },
   {
     "id": 163,
-    "name": "Ступеньки из древесины акации",
+    "name": "РЎС‚СѓРїРµРЅСЊРєРё РёР· РґСЂРµРІРµСЃРёРЅС‹ Р°РєР°С†РёРё",
     "hardness": 2.0,
     "transparent": false
   },
   {
     "id": 164,
-    "name": "Ступеньки из тёмного дуба",
+    "name": "РЎС‚СѓРїРµРЅСЊРєРё РёР· С‚С‘РјРЅРѕРіРѕ РґСѓР±Р°",
     "hardness": 2.0,
     "transparent": false
   },
   {
     "id": 165,
-    "name": "Руда истинного кварца",
+    "name": "Р СѓРґР° РёСЃС‚РёРЅРЅРѕРіРѕ РєРІР°СЂС†Р°",
     "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 166,
-    "name": "Заряженная руда истинного кварца",
+    "name": "Р—Р°СЂСЏР¶РµРЅРЅР°СЏ СЂСѓРґР° РёСЃС‚РёРЅРЅРѕРіРѕ РєРІР°СЂС†Р°",
     "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 167,
-    "name": "Блок истинного кварца",
+    "name": "Р‘Р»РѕРє РёСЃС‚РёРЅРЅРѕРіРѕ РєРІР°СЂС†Р°",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 168,
-    "name": "Колонна истинного кварца",
+    "name": "РљРѕР»РѕРЅРЅР° РёСЃС‚РёРЅРЅРѕРіРѕ РєРІР°СЂС†Р°",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 169,
-    "name": "Резной блок истинного кварца",
+    "name": "Р РµР·РЅРѕР№ Р±Р»РѕРє РёСЃС‚РёРЅРЅРѕРіРѕ РєРІР°СЂС†Р°",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 170,
-    "name": "Сноп сена",
+    "name": "РЎРЅРѕРї СЃРµРЅР°",
     "hardness": 0.5,
     "transparent": false
   },
@@ -1082,19 +1082,19 @@
   },
   {
     "id": 172,
-    "name": "Обожжёная глина",
+    "name": "РћР±РѕР¶Р¶С‘РЅР°СЏ РіР»РёРЅР°",
     "hardness": 1.25,
     "transparent": false
   },
   {
     "id": 173,
-    "name": "Угольный блок",
+    "name": "РЈРіРѕР»СЊРЅС‹Р№ Р±Р»РѕРє",
     "hardness": 5.0,
     "transparent": false
   },
   {
     "id": 174,
-    "name": "Плотный лёд",
+    "name": "РџР»РѕС‚РЅС‹Р№ Р»С‘Рґ",
     "hardness": 0.5,
     "transparent": false
   },
@@ -1106,210 +1106,210 @@
   },
   {
     "id": 176,
-    "name": "Кварцевое стекло",
+    "name": "РљРІР°СЂС†РµРІРѕРµ СЃС‚РµРєР»Рѕ",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 177,
-    "name": "Энергичное кварцевое стекло",
+    "name": "Р­РЅРµСЂРіРёС‡РЅРѕРµ РєРІР°СЂС†РµРІРѕРµ СЃС‚РµРєР»Рѕ",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 178,
-    "name": "Светильник из заряженного кварца",
+    "name": "РЎРІРµС‚РёР»СЊРЅРёРє РёР· Р·Р°СЂСЏР¶РµРЅРЅРѕРіРѕ РєРІР°СЂС†Р°",
     "hardness": 2.2,
     "transparent": true,
     "harvestTool": "pickaxe"
   },
   {
     "id": 179,
-    "name": "Изменчивый блок",
+    "name": "РР·РјРµРЅС‡РёРІС‹Р№ Р±Р»РѕРє",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 180,
-    "name": "Небесный камень",
+    "name": "РќРµР±РµСЃРЅС‹Р№ РєР°РјРµРЅСЊ",
     "hardness": 50.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 181,
-    "name": "Сундук из небесного камня",
+    "name": "РЎСѓРЅРґСѓРє РёР· РЅРµР±РµСЃРЅРѕРіРѕ РєР°РјРЅСЏ",
     "hardness": 50.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 182,
-    "name": "Метеоритный компас",
+    "name": "РњРµС‚РµРѕСЂРёС‚РЅС‹Р№ РєРѕРјРїР°СЃ",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 183,
-    "name": "Кварцевый дробитель",
+    "name": "РљРІР°СЂС†РµРІС‹Р№ РґСЂРѕР±РёС‚РµР»СЊ",
     "hardness": 3.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 184,
-    "name": "Деревянная рукоятка",
+    "name": "Р”РµСЂРµРІСЏРЅРЅР°СЏ СЂСѓРєРѕСЏС‚РєР°",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "axe"
   },
   {
     "id": 185,
-    "name": "Высекатель",
+    "name": "Р’С‹СЃРµРєР°С‚РµР»СЊ",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 186,
-    "name": "Зарядник",
+    "name": "Р—Р°СЂСЏРґРЅРёРє",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 187,
-    "name": "МЭ терминал безопасности",
+    "name": "РњР­ С‚РµСЂРјРёРЅР°Р» Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 188,
-    "name": "AE2 кабель и/или шина",
+    "name": "AE2 РєР°Р±РµР»СЊ Рё/РёР»Рё С€РёРЅР°",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 189,
-    "name": "МЭ контроллер",
+    "name": "РњР­ РєРѕРЅС‚СЂРѕР»Р»РµСЂ",
     "hardness": 6.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 190,
-    "name": "МЭ накопитель",
+    "name": "РњР­ РЅР°РєРѕРїРёС‚РµР»СЊ",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 191,
-    "name": "МЭ сундук",
+    "name": "РњР­ СЃСѓРЅРґСѓРє",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 192,
-    "name": "МЭ интерфейс",
+    "name": "РњР­ РёРЅС‚РµСЂС„РµР№СЃ",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 193,
-    "name": "Верстак для ячеек",
+    "name": "Р’РµСЂСЃС‚Р°Рє РґР»СЏ СЏС‡РµРµРє",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 194,
-    "name": "Конденсатор материи",
+    "name": "РљРѕРЅРґРµРЅСЃР°С‚РѕСЂ РјР°С‚РµСЂРёРё",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 195,
-    "name": "Приёмщик энергии",
+    "name": "РџСЂРёС‘РјС‰РёРє СЌРЅРµСЂРіРёРё",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 196,
-    "name": "Вибрационная камера",
+    "name": "Р’РёР±СЂР°С†РёРѕРЅРЅР°СЏ РєР°РјРµСЂР°",
     "hardness": 4.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 197,
-    "name": "Ускоритель роста кристаллов",
+    "name": "РЈСЃРєРѕСЂРёС‚РµР»СЊ СЂРѕСЃС‚Р° РєСЂРёСЃС‚Р°Р»Р»РѕРІ",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 198,
-    "name": "Энергетическая ячейка",
+    "name": "Р­РЅРµСЂРіРµС‚РёС‡РµСЃРєР°СЏ СЏС‡РµР№РєР°",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 199,
-    "name": "Плотная энергетическая ячейка",
+    "name": "РџР»РѕС‚РЅР°СЏ СЌРЅРµСЂРіРµС‚РёС‡РµСЃРєР°СЏ СЏС‡РµР№РєР°",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 200,
-    "name": "Творческая энергетическая ячейка",
+    "name": "РўРІРѕСЂС‡РµСЃРєР°СЏ СЌРЅРµСЂРіРµС‚РёС‡РµСЃРєР°СЏ СЏС‡РµР№РєР°",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 201,
-    "name": "Блок создания",
+    "name": "Р‘Р»РѕРє СЃРѕР·РґР°РЅРёСЏ",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 202,
-    "name": "1К хранилище создания",
+    "name": "1Рљ С…СЂР°РЅРёР»РёС‰Рµ СЃРѕР·РґР°РЅРёСЏ",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 203,
-    "name": "Монитор создания",
+    "name": "РњРѕРЅРёС‚РѕСЂ СЃРѕР·РґР°РЅРёСЏ",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 204,
-    "name": "Молекулярный сборщик",
+    "name": "РњРѕР»РµРєСѓР»СЏСЂРЅС‹Р№ СЃР±РѕСЂС‰РёРє",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 205,
-    "name": "Светильник обнаружения света",
+    "name": "РЎРІРµС‚РёР»СЊРЅРёРє РѕР±РЅР°СЂСѓР¶РµРЅРёСЏ СЃРІРµС‚Р°",
     "hardness": 2.2,
     "transparent": true,
     "harvestTool": "pickaxe"
@@ -1323,49 +1323,49 @@
   },
   {
     "id": 207,
-    "name": "Ступеньки из небесного камня",
+    "name": "РЎС‚СѓРїРµРЅСЊРєРё РёР· РЅРµР±РµСЃРЅРѕРіРѕ РєР°РјРЅСЏ",
     "hardness": 50.0,
     "transparent": false
   },
   {
     "id": 208,
-    "name": "Ступеньки из блока небесного камня",
+    "name": "РЎС‚СѓРїРµРЅСЊРєРё РёР· Р±Р»РѕРєР° РЅРµР±РµСЃРЅРѕРіРѕ РєР°РјРЅСЏ",
     "hardness": 50.0,
     "transparent": false
   },
   {
     "id": 209,
-    "name": "Ступеньки из кирпича небесного камня",
+    "name": "РЎС‚СѓРїРµРЅСЊРєРё РёР· РєРёСЂРїРёС‡Р° РЅРµР±РµСЃРЅРѕРіРѕ РєР°РјРЅСЏ",
     "hardness": 50.0,
     "transparent": false
   },
   {
     "id": 210,
-    "name": "Ступеньки из малого кирпича небесного камня",
+    "name": "РЎС‚СѓРїРµРЅСЊРєРё РёР· РјР°Р»РѕРіРѕ РєРёСЂРїРёС‡Р° РЅРµР±РµСЃРЅРѕРіРѕ РєР°РјРЅСЏ",
     "hardness": 50.0,
     "transparent": false
   },
   {
     "id": 211,
-    "name": "Изменчивые ступеньки",
+    "name": "РР·РјРµРЅС‡РёРІС‹Рµ СЃС‚СѓРїРµРЅСЊРєРё",
     "hardness": 2.2,
     "transparent": false
   },
   {
     "id": 212,
-    "name": "Ступеньки из истинного кварца",
+    "name": "РЎС‚СѓРїРµРЅСЊРєРё РёР· РёСЃС‚РёРЅРЅРѕРіРѕ РєРІР°СЂС†Р°",
     "hardness": 2.2,
     "transparent": false
   },
   {
     "id": 213,
-    "name": "Ступеньки из резного истинного кварца",
+    "name": "РЎС‚СѓРїРµРЅСЊРєРё РёР· СЂРµР·РЅРѕРіРѕ РёСЃС‚РёРЅРЅРѕРіРѕ РєРІР°СЂС†Р°",
     "hardness": 2.2,
     "transparent": false
   },
   {
     "id": 214,
-    "name": "Ступеньки из колонны истинного кварца",
+    "name": "РЎС‚СѓРїРµРЅСЊРєРё РёР· РєРѕР»РѕРЅРЅС‹ РёСЃС‚РёРЅРЅРѕРіРѕ РєРІР°СЂС†Р°",
     "hardness": 2.2,
     "transparent": false
   },
@@ -1389,13 +1389,13 @@
   },
   {
     "id": 218,
-    "name": "Нефть",
+    "name": "РќРµС„С‚СЊ",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 219,
-    "name": "Топливо",
+    "name": "РўРѕРїР»РёРІРѕ",
     "hardness": 0.0,
     "transparent": true
   },
@@ -1407,61 +1407,61 @@
   },
   {
     "id": 221,
-    "name": "Буровая установка",
+    "name": "Р‘СѓСЂРѕРІР°СЏ СѓСЃС‚Р°РЅРѕРІРєР°",
     "hardness": 5.0,
     "transparent": false
   },
   {
     "id": 222,
-    "name": "Буровая труба",
+    "name": "Р‘СѓСЂРѕРІР°СЏ С‚СЂСѓР±Р°",
     "hardness": 0.0,
     "transparent": false
   },
   {
     "id": 223,
-    "name": "Автоматический верстак",
+    "name": "РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРёР№ РІРµСЂСЃС‚Р°Рє",
     "hardness": 3.0,
     "transparent": false
   },
   {
     "id": 224,
-    "name": "Каркас",
+    "name": "РљР°СЂРєР°СЃ",
     "hardness": 0.5,
     "transparent": false
   },
   {
     "id": 225,
-    "name": "Цистерна",
+    "name": "Р¦РёСЃС‚РµСЂРЅР°",
     "hardness": 0.5,
     "transparent": false
   },
   {
     "id": 226,
-    "name": "Помпа",
+    "name": "РџРѕРјРїР°",
     "hardness": 5.0,
     "transparent": false
   },
   {
     "id": 227,
-    "name": "Шлюз",
+    "name": "РЁР»СЋР·",
     "hardness": 5.0,
     "transparent": false
   },
   {
     "id": 228,
-    "name": "Нефтеперегонная вышка",
+    "name": "РќРµС„С‚РµРїРµСЂРµРіРѕРЅРЅР°СЏ РІС‹С€РєР°",
     "hardness": 5.0,
     "transparent": false
   },
   {
     "id": 229,
-    "name": "Воронка",
+    "name": "Р’РѕСЂРѕРЅРєР°",
     "hardness": 5.0,
     "transparent": false
   },
   {
     "id": 230,
-    "name": "Фильтр",
+    "name": "Р¤РёР»СЊС‚СЂ",
     "hardness": 5.0,
     "transparent": false
   },
@@ -1473,7 +1473,7 @@
   },
   {
     "id": 232,
-    "name": "Лазер",
+    "name": "Р›Р°Р·РµСЂ",
     "hardness": 10.0,
     "transparent": false
   },
@@ -2787,55 +2787,55 @@
   },
   {
     "id": 449,
-    "name": "Этанол",
+    "name": "Р­С‚Р°РЅРѕР»",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 450,
-    "name": "Биомасса",
+    "name": "Р‘РёРѕРјР°СЃСЃР°",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 451,
-    "name": "Жидкое стекло",
+    "name": "Р–РёРґРєРѕРµ СЃС‚РµРєР»Рѕ",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 452,
-    "name": "Мёд",
+    "name": "РњС‘Рґ",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 453,
-    "name": "Молотый лёд",
+    "name": "РњРѕР»РѕС‚С‹Р№ Р»С‘Рґ",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 454,
-    "name": "Фруктовый сок",
+    "name": "Р¤СЂСѓРєС‚РѕРІС‹Р№ СЃРѕРє",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 455,
-    "name": "Молоко",
+    "name": "РњРѕР»РѕРєРѕ",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 456,
-    "name": "Растительное масло",
+    "name": "Р Р°СЃС‚РёС‚РµР»СЊРЅРѕРµ РјР°СЃР»Рѕ",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 457,
-    "name": "Питный мёд",
+    "name": "РџРёС‚РЅС‹Р№ РјС‘Рґ",
     "hardness": 0.0,
     "transparent": true
   },
@@ -3124,13 +3124,13 @@
   },
   {
     "id": 500,
-    "name": "Драконовский блок",
+    "name": "Р”СЂР°РєРѕРЅРѕРІСЃРєРёР№ Р±Р»РѕРє",
     "hardness": 1.0,
     "transparent": false
   },
   {
     "id": 501,
-    "name": "Усиленный блок",
+    "name": "РЈСЃРёР»РµРЅРЅС‹Р№ Р±Р»РѕРє",
     "hardness": 1.0,
     "transparent": false
   },
@@ -3172,7 +3172,7 @@
   },
   {
     "id": 508,
-    "name": "Статуя",
+    "name": "РЎС‚Р°С‚СѓСЏ",
     "hardness": 1.0,
     "transparent": false
   },
@@ -3214,31 +3214,31 @@
   },
   {
     "id": 515,
-    "name": "Улучшенный верстак",
+    "name": "РЈР»СѓС‡С€РµРЅРЅС‹Р№ РІРµСЂСЃС‚Р°Рє",
     "hardness": 2.0,
     "transparent": false
   },
   {
     "id": 516,
-    "name": "Магазин (Продажа предметов)",
+    "name": "РњР°РіР°Р·РёРЅ (РџСЂРѕРґР°Р¶Р° РїСЂРµРґРјРµС‚РѕРІ)",
     "hardness": -1.0,
     "transparent": false
   },
   {
     "id": 517,
-    "name": "Магазин (Скупка предметов)",
+    "name": "РњР°РіР°Р·РёРЅ (РЎРєСѓРїРєР° РїСЂРµРґРјРµС‚РѕРІ)",
     "hardness": -1.0,
     "transparent": false
   },
   {
     "id": 518,
-    "name": "Магазин (Предмет на Предмет)",
+    "name": "РњР°РіР°Р·РёРЅ (РџСЂРµРґРјРµС‚ РЅР° РџСЂРµРґРјРµС‚)",
     "hardness": -1.0,
     "transparent": false
   },
   {
     "id": 519,
-    "name": "Экономическая руда",
+    "name": "Р­РєРѕРЅРѕРјРёС‡РµСЃРєР°СЏ СЂСѓРґР°",
     "hardness": 3.0,
     "transparent": false
   },

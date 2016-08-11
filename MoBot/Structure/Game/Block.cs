@@ -34,7 +34,7 @@ namespace MoBot.Structure.Game
                     {
                         Block gameBlock = new Block
                         {
-                            Hardness = block.hardness > 0 ? block.hardness : 10000,
+                            Hardness = block.hardness,
                             HarvestTool = block.harvestTool,
                             Id = block.id,
                             Name = block.name,
@@ -48,7 +48,8 @@ namespace MoBot.Structure.Game
                     }
                 }
 
-                BlockRegistry.Add(-1, new Block() {
+                BlockRegistry.Add(-1, new Block
+                {
                     Hardness = 0,
                     Id = -1,
                     Name = "air",
@@ -61,7 +62,7 @@ namespace MoBot.Structure.Game
             }
         }
         
-        public static HashSet<int> Water { get; private set; } = new HashSet<int>();
+        public static HashSet<int> Water { get; } = new HashSet<int>();
 
         public static Block GetBlock(int id)
         {
@@ -73,7 +74,7 @@ namespace MoBot.Structure.Game
           
         public int Id;
         public string Name = "";
-        public float Hardness = 10000f;
+        public float Hardness = -1f;
         public bool Transparent;
         public string HarvestTool;
 
