@@ -29,6 +29,11 @@ namespace MoBot.Structure.Game.AI.Tasks
                     Console.WriteLine(
                         $"Target: {Block.GetBlock(GameController.World.GetBlock(location)).Name} {{{location.X}|{location.Y}|{location.Z}}}\r\nDistance: {distance}");
 
+                    if (distance < 1)
+                    {
+                        Console.WriteLine($"Wierd position, skipping in this turn");
+                        continue;
+                    }
 
                     var preBuild = PathFinder.Shovel(playerPos, location);
                     if (preBuild == null)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using MoBot.Protocol.Packets;
 using MoBot.Structure.Game;
 using MoBot.Structure.Game.AI.Pathfinding;
 
@@ -79,7 +80,7 @@ namespace MoBot.Structure
                         GameController.AiHandler.CustomEvents.Store = true;
                         break;
                     case "-test":
-                        var ids = new HashSet<int> {54, 130, 146, 181, 191, 506};
+                        var ids = new HashSet<int> {54, 130, 146, 181, 191, 506, };
                         var locations = GameController.World.SearchBlocks(ids);
                         Location playerLocation = GameController.Player.Position;
                         foreach (var location in locations)
@@ -91,6 +92,10 @@ namespace MoBot.Structure
                         break;
                     case "-dig":
                         GameController.AiHandler.Digger.enableDig = !GameController.AiHandler.Digger.enableDig;
+                        break;
+                    case "-stop":
+                        GameController.AiHandler.Mover.Stop();
+                        GameController.AiHandler.Digger.enableDig = false;
                         break;
                     case "-use":
                         ActionManager.UseItem();

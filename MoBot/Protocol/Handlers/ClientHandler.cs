@@ -178,20 +178,19 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketPlayerPosLook(PacketPlayerPosLook packetPlayerPosLook)
         {
-            //Console.WriteLine($"Assigning player position from {{{(int) GameController.Player.X}|{(int) GameController.Player.Y}|{(int) GameController.Player.Z}}} to {{{(int) packetPlayerPosLook.X}|{(int) (packetPlayerPosLook.Y - 1.62)}|{(int) packetPlayerPosLook.Z}}}");
-            //Console.WriteLine($"Assigning player position from {{{GameController.Player.X}|{GameController.Player.Y}|{GameController.Player.Z}}} to {{{(float)packetPlayerPosLook.X}|{(float)(packetPlayerPosLook.Y - 1.62)}|{(float)packetPlayerPosLook.Z}}}");
             GameController.Player.SetPosition(packetPlayerPosLook.X, packetPlayerPosLook.Y -= 1.62,
                 packetPlayerPosLook.Z);
             GameController.Player.Yaw = packetPlayerPosLook.Yaw;
             GameController.Player.Pitch = packetPlayerPosLook.Pitch;
             GameController.Player.OnGround = packetPlayerPosLook.OnGround;
 
+            GameController.AiHandler.Mover.Stop();
             NetworkController.SendPacket(packetPlayerPosLook);
         }
 
         public void HandlePacketWindowItems(PacketWindowItems packetWindowItems)
         {
-            var container = GameController.Player.GetContainer(packetWindowItems.WindowId);
+            var container = GameController.Player.GetContainer(packetWindowItems.WindowId) ?? GameController.Player.CreateContainer(packetWindowItems.WindowId, packetWindowItems.ItemCount - 36);
             for (var i = 0; i < packetWindowItems.ItemCount; i++)
                 container[i] = packetWindowItems.ItemsStack[i];
         }
@@ -335,7 +334,7 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketSpawnObject(PacketSpawnObject packetSpawnObject)
         {
-            var entity = GameController.CreateLivingEntity(packetSpawnObject.EntityId, packetSpawnObject.Type);
+            var entity = GameController.CreateEntity(packetSpawnObject.EntityId, packetSpawnObject.Type);
             entity?.SetPosition(packetSpawnObject.X, packetSpawnObject.Y, packetSpawnObject.Z);
         }
 

@@ -63,17 +63,12 @@ namespace MoBot
         public HashSet<int> _keepItemIds = new HashSet<int> ();
         public int _scanRange = 32;
         public bool _autoReconnect;
+        public string _backwarp = "";
 
         public static string ServerIp
         {
             get { return Instance._serverIp; }
             set { Instance._serverIp = value; }
-        }
-
-        public static string UserName
-        {
-            get { return Instance._userName; }
-            set { Instance._userName = value; }
         }
 
         public static HashSet<int> IntrestedBlocks
@@ -104,6 +99,12 @@ namespace MoBot
         {
             get { return Instance._homewarp; }
             set { Instance._homewarp = value; }
+        }
+
+        public static string BackWarp
+        {
+            get { return Instance._backwarp; }
+            set { Instance._backwarp = value; }
         }
     }
 }

@@ -50,10 +50,11 @@ namespace MoBot.Structure.Game
 
         private readonly Dictionary<int, Container> _containers = new Dictionary<int, Container> {{0, new Container(9)}, {255, new Container(1)} };
 
-        public void CreateContainer(int windowId, int capacity)
+        public Container CreateContainer(int windowId, int capacity)
         {
             _containers.Add(windowId, new Container(capacity, Inventory, (byte)windowId));
             CurrentContainer = _containers[windowId];
+            return CurrentContainer;
         }
 
         public void CloseContainer(int windowId)
@@ -67,7 +68,7 @@ namespace MoBot.Structure.Game
 
         public Container GetContainer(int windowId)
         {
-            return _containers[windowId];
+            return _containers.ContainsKey(windowId) ? _containers[windowId] : null;
         }
 
         public Player(int id, string name) : base(id)

@@ -113,7 +113,7 @@ namespace MoBot.Structure.Game
                 {
                     for (int i = 0; i < 36; i++)
                     {
-                        if (_items[i] == null || _items[i].Item.Id == -1)
+                        if (_inventory[i] == null || _inventory[i].Item.Id == -1)
                             return _capacity + i;
                     }
                 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Xml;
 using MoBot.Structure.Actions;
 using MoBot.Structure.Windows;
 using Newtonsoft.Json.Linq;
@@ -50,7 +51,7 @@ namespace MoBot.Structure
                 {
                     if (reconnectCheckBox.Checked)
                     {
-                        MainController.HandleConnect(usernameTextBox.Text, serverTextbox.Text, 3000);
+                        MainController.HandleConnect(userNames.SelectedItem.ToString(), serverTextbox.Text, 3000);
                     }
                     else
                     {
@@ -99,7 +100,7 @@ namespace MoBot.Structure
 
         private void buttonConnect_Click(object sender, EventArgs e)
         {
-            MainController.HandleConnect(usernameTextBox.Text, serverTextbox.Text);
+            MainController.HandleConnect(userNames.SelectedItem.ToString(), serverTextbox.Text);
             //buttonConnect.Enabled = false;
         }
 
@@ -134,14 +135,26 @@ namespace MoBot.Structure
         private void Viewer_Load(object sender, EventArgs e)
         {
             serverTextbox.Text = Settings.ServerIp;
-            usernameTextBox.Text = Settings.UserName;
             reconnectCheckBox.Checked = Settings.AutoReconnect;
+            XmlDocument users = new XmlDocument();
+            try
+            {
+                users.Load(Settings.UserIdsPath);
+                if (users.DocumentElement != null)
+                    foreach (XmlNode item in users.DocumentElement)
+                    {
+                        userNames.Items.Add(item?.Attributes?.GetNamedItem("name").Value ?? "");
+                    }
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
         }
 
         private void Viewer_FormClosing(object sender, FormClosingEventArgs e)
         {
             Settings.ServerIp = serverTextbox.Text;
-            Settings.UserName = usernameTextBox.Text;
             Settings.AutoReconnect = reconnectCheckBox.Checked;
 
             Settings.Serialize();
@@ -150,6 +163,11 @@ namespace MoBot.Structure
         private void settingsButton_Click(object sender, EventArgs e)
         {
             new SettingsWindow().Show();
+        }
+
+        private void userNames_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

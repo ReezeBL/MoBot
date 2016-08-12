@@ -13,9 +13,10 @@ namespace MoBot.Structure.Game.AI.Tasks
     public class CustomEvents : Task
     {
         public int MinFoodDanger = 5;
-        public double MinHealthDanger = 5;
+        public double MinHealthDanger = 8;
 
         public string TeleportHome;
+        public string TeleportBack;
         public string TeleportCheckpoint;
         public string CreateCheckpoint;
         public string RemoveCheckpoint;
@@ -57,7 +58,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             {
                 _logger.Info($"Eating {GameController.Player.GetHeldItem.Name}");
                 ActionManager.UseItem();
-                for (int i = 0; i < 32; i++)
+                for (var i = 0; i < 32; i++)
                 {
                     yield return _awaiter;
                     ActionManager.UpdatePosition();
@@ -87,7 +88,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             }
 
             var items =
-               GameController.Player.Inventory.IndexedInventory;
+                GameController.Player.Inventory.IndexedInventory;
             item = items.FirstOrDefault(slot => slot.Item is ItemFood);
 
             if (item == null)
@@ -106,7 +107,7 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         private RunStatus RunRoutine(object context)
         {
-            if(_routine == null || !_routine.MoveNext())
+            if (_routine == null || !_routine.MoveNext())
                 return RunStatus.Success;
             return RunStatus.Running;
         }
@@ -129,11 +130,9 @@ namespace MoBot.Structure.Game.AI.Tasks
             foreach (var slot in GameController.Player.CurrentContainer.IndexedInventory)
             {
                 if (Settings.KeepItems.Contains(slot.Item.Id) || slot.Item.Id == -1) continue;
-                int freeSlot = GameController.Player.CurrentContainer.ContainerFreeSlot;
+                var freeSlot = GameController.Player.CurrentContainer.ContainerFreeSlot;
 
                 if (freeSlot == -1) break;
-                Console.WriteLine($"Swappint {slot.Slot}, {freeSlot}");
-
                 yield return ActionManager.ExchangeInventorySlots(slot.Slot, freeSlot);
                 ActionManager.UpdatePosition();
                 yield return null;
@@ -150,14 +149,14 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         private bool IsDead(object context)
         {
-            if(GameController.Player.Health > 0) return false;
+            if (GameController.Player.Health > 0) return false;
             _routine = StartRoutine(Ressurect());
             return true;
         }
 
         private IEnumerator Ressurect()
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             sb.AppendLine("I'm dead!");
             sb.AppendLine("----Nearby entities: ");
             foreach (var entity in GameController.GetEntities<LivingEntity>())
@@ -177,16 +176,45 @@ namespace MoBot.Structure.Game.AI.Tasks
             yield return WaitForSeconds(1000);
         }
 
+        private bool IsInDanger(object context)
+        {
+            if (GameController.Player.Health > MinHealthDanger) return false;
+            _routine = StartRoutine(SaveFromDanger());
+            return true;
+        }
+
+        private IEnumerator SaveFromDanger()
+        {
+            _logger.Info("We are in danger, runaway home!");
+            var player = GameController.Player;
+            ActionManager.SendChatMessage(TeleportHome);
+            yield return WaitForSeconds(1000);
+            while (player.Health < 20)
+            {
+                if (player.Food < 18)
+                    yield return Feed();
+
+                ActionManager.UpdatePosition();
+                yield return null;
+            }
+            _logger.Info("We are safe now, return back to work");
+            ActionManager.SendChatMessage(TeleportBack);
+            yield return null;
+        }
+
         public CustomEvents()
         {
-            _root = new PrioritySelector(new Decorator(IsDead, new Action(RunRoutine)), new Decorator(IsHungry, new Action(RunRoutine)), new Decorator(InventoryIsFool, new Action(RunRoutine)));
+            _root = new PrioritySelector(new Decorator(IsDead, new Action(RunRoutine)),
+                new Decorator(IsInDanger, new Action(RunRoutine)),
+                new Decorator(IsHungry, new Action(RunRoutine)), new Decorator(InventoryIsFool, new Action(RunRoutine)));
         }
 
         public void GenerateStrings()
         {
-            string name = GameController.Player.Name;
+            var name = GameController.Player.Name;
             TeleportCheckpoint = $"/warp blpoint{name}";
             TeleportHome = $"/warp {Settings.HomeWarp}";
+            TeleportBack = $"/warp {Settings.BackWarp}";
             CreateCheckpoint = $"/warp pcreate blpoint{name}";
             RemoveCheckpoint = $"/warp remove blpoint{name}";
         }

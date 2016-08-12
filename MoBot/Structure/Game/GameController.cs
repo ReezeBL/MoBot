@@ -87,6 +87,14 @@ namespace MoBot.Structure.Game
             return null;
         }
 
+        public static Entity CreateEntity(int entityId, byte type)
+        {
+            Entity entity = new Entity(entityId);
+            if (GetInstance()._entities.TryAdd(entityId, entity)) return entity;
+            Console.WriteLine($"Cannot add Entity {entityId} to collection!");
+            return null;
+        }
+
         public static void Clear()
         {
             var instance = GetInstance();
