@@ -55,7 +55,7 @@ namespace MoBot.Structure
                     }
                     else
                     {
-                        buttonConnect.Enabled = true;
+                        buttonConnect.Text = "Connect";
                     }
                 }
             }
@@ -100,8 +100,23 @@ namespace MoBot.Structure
 
         private void buttonConnect_Click(object sender, EventArgs e)
         {
-            MainController.HandleConnect(userNames.SelectedItem.ToString(), serverTextbox.Text);
-            //buttonConnect.Enabled = false;
+            var username = userNames.SelectedItem;
+            if (username == null)
+            {
+                Putsc($"Username is empty!{Environment.NewLine}", Color.Black);
+                return;
+            }
+
+            if (!NetworkController.Connected)
+            {
+                MainController.HandleConnect(userNames.SelectedItem.ToString(), serverTextbox.Text);
+                buttonConnect.Text = "Disconnect";
+            }
+            else
+            {
+                NetworkController.Disconnect();
+                Putsc($"Client disconected!{Environment.NewLine}", Color.Black);
+            }
         }
 
         private void buttonSendMessage_Click(object sender, EventArgs e)

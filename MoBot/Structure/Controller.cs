@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
-using MoBot.Protocol.Packets;
 using MoBot.Structure.Game;
 using MoBot.Structure.Game.AI.Pathfinding;
 
@@ -111,8 +110,6 @@ namespace MoBot.Structure
 
         public void HandleConnect(string username, string serverIp, int delay = 0)
         {
-            if (NetworkController.Connected)
-                return;
             var split = serverIp.Split(':');
             NetworkController.ConnectAsync(split[0], int.Parse(split[1]), username, delay);
         }
