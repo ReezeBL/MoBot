@@ -225,9 +225,6 @@
   <ItemGroup>
     <Content Include="015 Beedrill.ico" />
     <Content Include="Settings\format.txt" />
-    <Content Include="Settings\UserIDS.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="App.config" />
     <None Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

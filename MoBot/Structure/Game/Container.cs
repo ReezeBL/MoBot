@@ -95,10 +95,13 @@ namespace MoBot.Structure.Game
         {
             get
             {
-                for(int i=0;i<_capacity;i++)
-                    if (_items[i] == null || _items[i].Item.Id == -1)
-                        return i;
-                return -1;
+                lock (_monitor)
+                {
+                    for (int i = 0; i < _capacity; i++)
+                        if (_items[i] == null || _items[i].Item.Id == -1)
+                            return i;
+                    return -1;
+                }
             }
         }
 
@@ -106,10 +109,13 @@ namespace MoBot.Structure.Game
         {
             get
             {
-                for (int i = 0; i < 36; i++)
+                lock (_monitor)
                 {
-                    if(_items[i] == null || _items[i].Item.Id == -1)
-                        return _capacity + i;
+                    for (int i = 0; i < 36; i++)
+                    {
+                        if (_items[i] == null || _items[i].Item.Id == -1)
+                            return _capacity + i;
+                    }
                 }
                 return -1;
             }

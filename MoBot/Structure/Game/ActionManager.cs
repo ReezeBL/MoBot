@@ -113,7 +113,7 @@ namespace MoBot.Structure.Game
             GameController.Player.CurrentContainer.HandleClick((short)slot);
         }
 
-        public static IEnumerable ExchangeInventorySlots(int slot1, int slot2)
+        public static IEnumerator ExchangeInventorySlots(int slot1, int slot2)
         {
             ClickInventorySlot(slot1);
             yield return null;
@@ -211,6 +211,11 @@ namespace MoBot.Structure.Game
             NetworkController.SendPacket(new PacketPlayerBlockPlacement { Face = 0, Item = GameController.Player.Inventory[GameController.Player.HeldItem], X = x, Y = y, Z = z});
         }
 
+        public static void RightClick(Location location)
+        {
+            NetworkController.SendPacket(new PacketPlayerBlockPlacement { Face = 0, Item = GameController.Player.Inventory[GameController.Player.HeldItem], X = location.X, Y = location.Y, Z = location.Z });
+        }
+
         public static void CloseWindow()
         {
             NetworkController.SendPacket(new PacketCloseWindow {WindowId = GameController.Player.CurrentContainer.WindowId});
@@ -225,6 +230,7 @@ namespace MoBot.Structure.Game
         public static void SelectBeltSlot(int slot)
         {
             NetworkController.SendPacket(new PacketHeldItemChange {Slot = (byte)slot});
+            GameController.Player.HeldItemBar = slot;
         }
     }
 }

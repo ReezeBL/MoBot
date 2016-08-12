@@ -26,6 +26,11 @@ namespace MoBot.Structure.Game.AI.Tasks
         private IEnumerator _routine;
         private readonly Logger _logger = Program.GetLogger();
 
+        public void Stop()
+        {
+            _routine = null;
+        }
+
         private bool IsHungry(object context)
         {
             if (GameController.Player.Food > MinFoodDanger) return false;
@@ -47,6 +52,7 @@ namespace MoBot.Structure.Game.AI.Tasks
         {
             _logger.Info("I'm hungry!");
             yield return SwitchToFood();
+
             if (GameController.Player.GetHeldItem is ItemFood)
             {
                 _logger.Info($"Eating {GameController.Player.GetHeldItem.Name}");
@@ -57,7 +63,7 @@ namespace MoBot.Structure.Game.AI.Tasks
                     ActionManager.UpdatePosition();
                 }
             }
-            yield return _awaiter;
+            yield return WaitForSeconds(300);
         }
 
         private IEnumerator SwitchToFood()
@@ -92,7 +98,8 @@ namespace MoBot.Structure.Game.AI.Tasks
             }
 
             Console.WriteLine($"Selecting {item.Item.Name} at {item.Slot}");
-            ActionManager.SelectBeltSlot(item.Slot);
+            yield return ActionManager.ExchangeInventorySlots(GameController.Player.HeldItem, item.Slot);
+            ActionManager.UpdatePosition();
 
             yield return _awaiter;
         }
@@ -108,25 +115,27 @@ namespace MoBot.Structure.Game.AI.Tasks
         {
             _logger.Info("Perform homerun");
             ActionManager.SendChatMessage(RemoveCheckpoint);
-
             yield return WaitForSeconds(4000);
+
             ActionManager.SendChatMessage(CreateCheckpoint);
-
             yield return WaitForSeconds(4000);
+
             ActionManager.SendChatMessage(TeleportHome);
-
             yield return WaitForSeconds(1000);
-            ActionManager.RightClick(Chest.X, Chest.Y, Chest.Z);
 
-            yield return WaitForSeconds(1500);
+            ActionManager.RightClick(Chest.X, Chest.Y, Chest.Z);
+            yield return WaitForSeconds(500);
 
             foreach (var slot in GameController.Player.CurrentContainer.IndexedInventory)
             {
                 if (Settings.KeepItems.Contains(slot.Item.Id) || slot.Item.Id == -1) continue;
                 int freeSlot = GameController.Player.CurrentContainer.ContainerFreeSlot;
-                if (freeSlot == -1) break;
-                yield return ActionManager.ExchangeInventorySlots(slot.Slot, freeSlot);
 
+                if (freeSlot == -1) break;
+                Console.WriteLine($"Swappint {slot.Slot}, {freeSlot}");
+
+                yield return ActionManager.ExchangeInventorySlots(slot.Slot, freeSlot);
+                ActionManager.UpdatePosition();
                 yield return null;
                 yield return null;
             }
@@ -149,7 +158,7 @@ namespace MoBot.Structure.Game.AI.Tasks
         private IEnumerator Ressurect()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("You are dead!");
+            sb.AppendLine("I'm dead!");
             sb.AppendLine("----Nearby entities: ");
             foreach (var entity in GameController.GetEntities<LivingEntity>())
             {
@@ -157,6 +166,12 @@ namespace MoBot.Structure.Game.AI.Tasks
             }
 
             _logger.Info(sb.ToString);
+
+            Console.WriteLine("Stopping routines!");
+
+            GameController.AiHandler.Mover.Stop();
+            GameController.AiHandler.Digger.enableDig = false;
+
             ActionManager.Respawn();
             ActionManager.UpdatePosition();
             yield return WaitForSeconds(1000);

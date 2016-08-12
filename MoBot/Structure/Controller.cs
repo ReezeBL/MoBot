@@ -56,13 +56,13 @@ namespace MoBot.Structure
                     }
                         break;
                     case "-swap":
-                        foreach (var p in ActionManager.ExchangeInventorySlots(int.Parse(split[1]), int.Parse(split[2]))
-                            )
+                        var p = ActionManager.ExchangeInventorySlots(int.Parse(split[1]), int.Parse(split[2]));
+                        while (p.MoveNext())
                             Thread.Sleep(50);
                         break;
                     case "-move":
                     {
-                        GameController.AiHandler.Mover.SetShovelDestination(
+                        GameController.AiHandler.Mover.SetDestination(
                             new Location(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3])));
                     }
                         break;

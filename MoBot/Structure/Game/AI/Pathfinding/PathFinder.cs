@@ -162,6 +162,11 @@ namespace MoBot.Structure.Game.AI.Pathfinding
                 nodes.Enqueue(start, 0);
                 start.Prev = null;
                 cost.Add(start, 0f);
+
+                var endCost = GetBlockWeight(end.X, end.Y, end.Z) + GetBlockWeight(end.X, end.Y + 1, end.Z);
+                if (endCost < 0)
+                    return null;
+
                 while (nodes.Count > 0)
                 {
                     var current = nodes.Dequeue();
@@ -174,6 +179,12 @@ namespace MoBot.Structure.Game.AI.Pathfinding
                     foreach (var node in AdvancedNeighbours(current))
                     {
                         var next = node.Key;
+                        if (next.Equals(end) && !includeLast)
+                        {
+                            end = current;
+                            succeed = true;
+                            break;
+                        }
 
                         if(node.Value < 0) continue;
                         if(node.Key.DistanceTo(start) > maxDistance) continue;
@@ -193,6 +204,8 @@ namespace MoBot.Structure.Game.AI.Pathfinding
                             next.Prev = current;
                         }
                     }
+                    if(succeed)
+                        break;
                 }
                 if (!succeed)
                 {
@@ -202,16 +215,13 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 
                 List<Location> pathfrom = new List<Location>();
 
-                if (!includeLast)
-                    end = end.Prev;
-
                 while (end.Prev != null)
                 {
                     pathfrom.Add(end);
                     end = end.Prev;
                 }
                 PointSet.Clear();
-
+                pathfrom.Reverse();
                 return new Path(pathfrom);
             }
             catch (Exception e)

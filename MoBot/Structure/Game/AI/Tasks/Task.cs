@@ -41,16 +41,22 @@ namespace MoBot.Structure.Game.AI.Tasks
         {
             while (routine.MoveNext())
             {
-                var current = routine.Current as IEnumerator;
-                if (current != null)
+                var current = routine.Current;
+                if (current is IEnumerator)
                 {
-                    var coroutine = StartRoutine(current);
+                    var coroutine = StartRoutine((IEnumerator)current);
+                    while (coroutine.MoveNext())
+                        yield return coroutine.Current;
+                }
+                else if (current is IEnumerable)
+                {
+                    var coroutine = StartRoutine(((IEnumerable)current).GetEnumerator());
                     while (coroutine.MoveNext())
                         yield return coroutine.Current;
                 }
                 else
                 {
-                    yield return routine.Current;
+                    yield return current;
                 }
             }
         }

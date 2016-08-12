@@ -11,23 +11,20 @@ namespace MoBot.Structure.Game.AI.Tasks
     public class Mover : Task
     {
         private IEnumerator _mover;
-        private Location _destination;
 
         public Mover()
         {
             _root = new Action(RoutineTick);
         }
 
-        public void Restart()
-        {
-            if(_destination != null)
-                _mover = StartRoutine(ActionManager.MoveRoutineS(_destination));
-        }
-
         public void SetDestination(Location endPoint)
         {
-            _destination = endPoint;
-            _mover = StartRoutine(ActionManager.MoveRoutineS(endPoint));
+            _mover = StartRoutine(MoveRoutine(endPoint));
+        }
+
+        public void Stop()
+        {
+            _mover = null;
         }
 
         public void SetShovelDestination(Location endPoint, Path preBuild = null)
@@ -41,6 +38,23 @@ namespace MoBot.Structure.Game.AI.Tasks
                 return RunStatus.Failure;
            
             return _mover.Current != null ? RunStatus.Running : RunStatus.Success;
+        }
+
+        private IEnumerator MoveRoutine(Location destination)
+        {
+            Path path = PathFinder.Shovel(GameController.Player.Position, destination, false, false);
+            if (path == null)
+            {
+                Console.WriteLine("Can't resolve path!");
+                yield break;
+            }
+            foreach (var point in path)
+            {
+                Console.WriteLine($"Moving to {point}");
+                ActionManager.SetPlayerPos(point);
+                for (int i = 0; i < 2; i++)
+                    yield return null;
+            }
         }
 
         private IEnumerator ShovelRoutine(Location destination, Path preBuild)
@@ -67,8 +81,6 @@ namespace MoBot.Structure.Game.AI.Tasks
                 for(int i=0;i<2;i++)
                     yield return null;
             }
-
-            _destination = null;
         }
 
         private IEnumerator DigTo(int x, int y, int z)
@@ -103,7 +115,7 @@ namespace MoBot.Structure.Game.AI.Tasks
 
             if (item != null)
             {
-                Console.WriteLine($"Selecting {item.Item.Name} in the belt");
+                Console.WriteLine($"Selecting {item.Item.Name} in the belt {item.Slot}");
                 ActionManager.SelectBeltSlot(item.Slot);
                 ActionManager.UpdatePosition();
                 yield return _awaiter;
