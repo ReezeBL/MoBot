@@ -51,6 +51,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             {
                 _logger.Info("Cant find any interesting blocks, diiging stopped!");
                 enableDig = false;
+                ActionManager.SendChatMessage(GameController.AiHandler.CustomEvents.TeleportHome);
             }
         }
 

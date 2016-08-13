@@ -14,6 +14,7 @@ namespace MoBot.Structure.Game
         {
             public int id;
             public string name;
+            public string rawname;
             public float hardness;
             public bool transparent;
             public string harvestTool;
@@ -38,7 +39,8 @@ namespace MoBot.Structure.Game
                             HarvestTool = block.harvestTool,
                             Id = block.id,
                             Name = block.name,
-                            Transparent = block.transparent
+                            Transparent = block.transparent,
+                            RawName =  block.rawname
                         };
 
                         if (block.name == "Вода")
@@ -73,14 +75,15 @@ namespace MoBot.Structure.Game
         }
           
         public int Id;
-        public string Name = "";
+        public string Name;
+        public string RawName;
         public float Hardness = -1f;
         public bool Transparent;
         public string HarvestTool;
 
         public override string ToString()
         {
-            return Name;
+            return Name ?? RawName ?? "";
         }
     }
 }

@@ -191,7 +191,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             yield return WaitForSeconds(1000);
             while (player.Health < 20)
             {
-                if (player.Food < 18)
+                if (player.Food < 18 && MinFoodDanger > 0)
                     yield return Feed();
 
                 ActionManager.UpdatePosition();

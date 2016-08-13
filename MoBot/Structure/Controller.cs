@@ -96,6 +96,9 @@ namespace MoBot.Structure
                         GameController.AiHandler.Mover.Stop();
                         GameController.AiHandler.Digger.enableDig = false;
                         break;
+                    case "-reset":
+                        GameController.AiHandler.CustomEvents.MinFoodDanger = 5;
+                        break;
                     case "-use":
                         ActionManager.UseItem();
                         break;

@@ -364,18 +364,7 @@ namespace MoBot.Protocol.Handlers
 
         private static string GetUserSession()
         {
-            var document = new XmlDocument();
-            document.Load(Settings.UserIdsPath);
-            var root = document.DocumentElement;
-            var id = "";
-            Debug.Assert(root != null, "root != null");
-            foreach (XmlNode child in root)
-            {
-                if (child.Attributes?.GetNamedItem("name").Value == NetworkController.Username)
-                    id = child.InnerText;
-            }
-
-            return id;
+            return Settings.Users[NetworkController.Username];
         }
 
         #region ServerHashCalculations

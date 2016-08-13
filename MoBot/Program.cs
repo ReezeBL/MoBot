@@ -1,5 +1,6 @@
 ﻿using System;
 using System.CodeDom.Compiler;
+using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -23,22 +24,47 @@ namespace MoBot
             return Log;
         }
 
-        [STAThread]
+        [DllImport("kernel32.dll")]
+        static extern IntPtr GetConsoleWindow();
+
+        [DllImport("user32.dll")]
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        static extern bool AllocConsole();
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        static extern bool FreeConsole();
+
+        const int SW_HIDE = 0;
+        const int SW_SHOW = 5;
+
         public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            AllocConsole();
+            var handle = GetConsoleWindow();
+            
+
+            Console.WriteLine("Loading scripts...");
             LoadScripts();
 
+            Console.WriteLine("Loading blocks...");
             Block.LoadBlocks();
+
+            Console.WriteLine("Loading items...");
             Item.LoadItems();
+
+            Console.WriteLine("Everything is done! Application is ready to launch!");
 
             NetworkController model = NetworkController.GetInstance();
             Controller controller = new Controller();
             Viewer viewer = new Viewer { MainController = controller };
             model.Subscribe(viewer);
             model.Subscribe(viewer);
+            FreeConsole();
             Application.Run(viewer);
         }
 
@@ -82,7 +108,7 @@ namespace MoBot
                         {
                             sb.AppendLine($"Error in {error.FileName} ({error.ErrorNumber}): {error.ErrorText}");
                         }
-                        Console.WriteLine(sb);
+                        Log.Error(sb);
                     }
                     else
                     {
@@ -100,7 +126,7 @@ namespace MoBot
             }
             catch (Exception)
             {
-                
+                // ignored
             }
         }
     }

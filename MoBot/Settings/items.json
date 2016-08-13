@@ -1,17 +1,20 @@
-﻿[
+[
   {
     "id": 394,
-    "name": "minecraft:poisonous_potato",
+    "name": "Ядовитый картофель",
+    "rawname": "minecraft:poisonous_potato",
     "effectivness": 1.0
   },
   {
     "id": 3,
-    "name": "minecraft:dirt",
+    "name": "Земля",
+    "rawname": "minecraft:dirt",
     "effectivness": 1.0
   },
   {
     "id": 4215,
-    "name": "IC2:itemToolBronzeAxe",
+    "name": "Бронзовый топор",
+    "rawname": "IC2:itemToolBronzeAxe",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [
@@ -23,72 +26,86 @@
   },
   {
     "id": 440,
-    "name": "IC2:fluidBiogas",
+    "name": "Биогаз",
+    "rawname": "IC2:fluidBiogas",
     "effectivness": 1.0
   },
   {
     "id": 4366,
-    "name": "IC2:itemIronBlockCuttingBlade",
+    "name": "Железный режущий диск",
+    "rawname": "IC2:itemIronBlockCuttingBlade",
     "effectivness": 1.0
   },
   {
     "id": 46,
-    "name": "minecraft:tnt",
+    "name": "Динамит",
+    "rawname": "minecraft:tnt",
     "effectivness": 1.0
   },
   {
     "id": 518,
-    "name": "economy:shopBlockBarter",
+    "name": "Магазин (Предмет на Предмет)",
+    "rawname": "economy:shopBlockBarter",
     "effectivness": 1.0
   },
   {
     "id": 4318,
-    "name": "IC2:itemFuelPlantBall",
+    "name": "Биомасса",
+    "rawname": "IC2:itemFuelPlantBall",
     "effectivness": 1.0
   },
   {
     "id": 4660,
-    "name": "enderbag:enderBag",
+    "name": "Рюкзак Эндера",
+    "rawname": "enderbag:enderBag",
     "effectivness": 1.0
   },
   {
     "id": 213,
-    "name": "appliedenergistics2:tile.ChiseledQuartzStairBlock",
+    "name": "Ступеньки из резного истинного кварца",
+    "rawname": "appliedenergistics2:tile.ChiseledQuartzStairBlock",
     "effectivness": 1.0
   },
   {
     "id": 192,
-    "name": "appliedenergistics2:tile.BlockInterface",
+    "name": "МЭ интерфейс",
+    "rawname": "appliedenergistics2:tile.BlockInterface",
     "effectivness": 1.0
   },
   {
     "id": 4396,
-    "name": "Forestry:brokenBronzeShovel",
+    "name": "Сломанная лопата",
+    "rawname": "Forestry:brokenBronzeShovel",
     "effectivness": 1.0
   },
   {
     "id": 4178,
-    "name": "IC2:itemHarz",
+    "name": "Латекс",
+    "rawname": "IC2:itemHarz",
     "effectivness": 1.0
   },
   {
     "id": 223,
-    "name": "BuildCraft|Factory:autoWorkbenchBlock",
+    "name": "Автоматический верстак",
+    "rawname": "BuildCraft|Factory:autoWorkbenchBlock",
     "effectivness": 1.0
   },
   {
     "id": 4285,
-    "name": "IC2:reactorUraniumQuad",
+    "name": "Счетверённый топливный стержень (Уран)",
+    "rawname": "IC2:reactorUraniumQuad",
     "effectivness": 1.0
   },
   {
     "id": 69,
-    "name": "minecraft:lever",
+    "name": "Рычаг",
+    "rawname": "minecraft:lever",
     "effectivness": 1.0
   },
   {
     "id": 4105,
-    "name": "appliedenergistics2:item.ToolNetherQuartzSpade",
+    "name": "Лопата из кварца Нижнего мира",
+    "rawname": "appliedenergistics2:item.ToolNetherQuartzSpade",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [
@@ -100,67 +117,80 @@
   },
   {
     "id": 4270,
-    "name": "IC2:itemBatLamaCrystal",
+    "name": "Лазуротроновый кристалл",
+    "rawname": "IC2:itemBatLamaCrystal",
     "effectivness": 1.0
   },
   {
     "id": 4346,
-    "name": "IC2:itemCropSeed",
+    "name": "Invalid Seeds",
+    "rawname": "IC2:itemCropSeed",
     "effectivness": 1.0
   },
   {
     "id": 4518,
-    "name": "ForestryExtras:item.fe.frame.frameLegendary",
+    "name": "Legendary Frame",
+    "rawname": "ForestryExtras:item.fe.frame.frameLegendary",
     "effectivness": 1.0
   },
   {
     "id": 78,
-    "name": "minecraft:snow_layer",
+    "name": "Снег",
+    "rawname": "minecraft:snow_layer",
     "effectivness": 1.0
   },
   {
     "id": 4466,
-    "name": "Forestry:apiaristChest",
+    "name": "Куртка пчеловода",
+    "rawname": "Forestry:apiaristChest",
     "effectivness": 1.0
   },
   {
     "id": 53,
-    "name": "minecraft:oak_stairs",
+    "name": "Дубовые ступеньки",
+    "rawname": "minecraft:oak_stairs",
     "effectivness": 1.0
   },
   {
     "id": 195,
-    "name": "appliedenergistics2:tile.BlockEnergyAcceptor",
+    "name": "Приёмщик энергии",
+    "rawname": "appliedenergistics2:tile.BlockEnergyAcceptor",
     "effectivness": 1.0
   },
   {
     "id": 455,
-    "name": "Forestry:fluid.milk",
+    "name": "Молоко",
+    "rawname": "Forestry:fluid.milk",
     "effectivness": 1.0
   },
   {
     "id": 4271,
-    "name": "IC2:itemBatSU",
+    "name": "Одноразовая батарейка",
+    "rawname": "IC2:itemBatSU",
     "effectivness": 1.0
   },
   {
     "id": 4441,
-    "name": "Forestry:bucketBiomass",
+    "name": "Ведро биомассы",
+    "rawname": "Forestry:bucketBiomass",
     "effectivness": 1.0
   },
   {
     "id": 129,
-    "name": "minecraft:emerald_ore",
+    "name": "Изумрудная руда",
+    "rawname": "minecraft:emerald_ore",
     "effectivness": 1.0
   },
   {
     "id": 241,
-    "name": "IC2:blockHarz",
+    "name": "ic2.blockHarz",
+    "rawname": "IC2:blockHarz",
     "effectivness": 1.0
   },
   {
     "id": 4630,
-    "name": "ProjRed|Exploration:projectred.exploration.shovelperidot",
+    "name": "Перидотовая лопата",
+    "rawname": "ProjRed|Exploration:projectred.exploration.shovelperidot",
     "material": "PERIDOT",
     "effectivness": 1.0,
     "toolClass": [
@@ -172,107 +202,128 @@
   },
   {
     "id": 162,
-    "name": "minecraft:log2",
+    "name": "Древесина акации",
+    "rawname": "minecraft:log2",
     "effectivness": 1.0
   },
   {
     "id": 4585,
-    "name": "IC2NuclearControl:ItemToolDigitalThermometer",
+    "name": "Цифровой термометр",
+    "rawname": "IC2NuclearControl:ItemToolDigitalThermometer",
     "effectivness": 1.0
   },
   {
     "id": 305,
-    "name": "minecraft:chainmail_boots",
+    "name": "Кольчужные ботинки",
+    "rawname": "minecraft:chainmail_boots",
     "effectivness": 1.0
   },
   {
     "id": 450,
-    "name": "Forestry:fluid.biomass",
+    "name": "Биомасса",
+    "rawname": "Forestry:fluid.biomass",
     "effectivness": 1.0
   },
   {
     "id": 4529,
-    "name": "ForestryExtras:item.fe.frame.frameBronze",
+    "name": "Бронзовая рамка",
+    "rawname": "ForestryExtras:item.fe.frame.frameBronze",
     "effectivness": 1.0
   },
   {
     "id": 167,
-    "name": "appliedenergistics2:tile.BlockQuartz",
+    "name": "Блок истинного кварца",
+    "rawname": "appliedenergistics2:tile.BlockQuartz",
     "effectivness": 1.0
   },
   {
     "id": 50,
-    "name": "minecraft:torch",
+    "name": "Факел",
+    "rawname": "minecraft:torch",
     "effectivness": 1.0
   },
   {
     "id": 4559,
-    "name": "Mantle:mantleBook",
+    "name": "Mantle:item.mantle.manual.test.name",
+    "rawname": "Mantle:mantleBook",
     "effectivness": 1.0
   },
   {
     "id": 4500,
-    "name": "ForestryExtras:item.fe.item.obsidianStick",
+    "name": "Обсидиановая палка",
+    "rawname": "ForestryExtras:item.fe.item.obsidianStick",
     "effectivness": 1.0
   },
   {
     "id": 4517,
-    "name": "ForestryExtras:item.fe.frame.frameItarius",
+    "name": "Итариевая рамка",
+    "rawname": "ForestryExtras:item.fe.frame.frameItarius",
     "effectivness": 1.0
   },
   {
     "id": 309,
-    "name": "minecraft:iron_boots",
+    "name": "Железные ботинки",
+    "rawname": "minecraft:iron_boots",
     "effectivness": 1.0
   },
   {
     "id": 4590,
-    "name": "IC2NuclearControl:ItemEnergySensorLocationCard",
+    "name": "Карта-датчик расположения энергии",
+    "rawname": "IC2NuclearControl:ItemEnergySensorLocationCard",
     "effectivness": 1.0
   },
   {
     "id": 218,
-    "name": "BuildCraft|Energy:blockOil",
+    "name": "Нефть",
+    "rawname": "BuildCraft|Energy:blockOil",
     "effectivness": 1.0
   },
   {
     "id": 4549,
-    "name": "GraviSuite:itemSimpleItem",
+    "name": "Изоляция суперпроводника",
+    "rawname": "GraviSuite:itemSimpleItem",
     "effectivness": 1.0
   },
   {
     "id": 4489,
-    "name": "ForestryExtras:item.fe.item.alfium ingot",
+    "name": "Alfium Ingot",
+    "rawname": "ForestryExtras:item.fe.item.alfium ingot",
     "effectivness": 1.0
   },
   {
     "id": 4648,
-    "name": "ProjRed|Exploration:projectred.exploration.rubyleggings",
+    "name": "Рубиновые поножи",
+    "rawname": "ProjRed|Exploration:projectred.exploration.rubyleggings",
     "effectivness": 1.0
   },
   {
     "id": 32,
-    "name": "minecraft:deadbush",
+    "name": "Мертвый куст",
+    "rawname": "minecraft:deadbush",
     "effectivness": 1.0
   },
   {
     "id": 4269,
-    "name": "IC2:itemBatCrystal",
+    "name": "Энергетический кристалл",
+    "rawname": "IC2:itemBatCrystal",
     "effectivness": 1.0
   },
   {
     "id": 453,
-    "name": "Forestry:fluid.ice",
+    "name": "Молотый лёд",
+    "rawname": "Forestry:fluid.ice",
     "effectivness": 1.0
   },
   {
     "id": 4104,
-    "name": "appliedenergistics2:item.ToolNetherQuartzHoe",
+    "name": "Мотыга из кварца Нижнего мира",
+    "rawname": "appliedenergistics2:item.ToolNetherQuartzHoe",
     "effectivness": 1.0
   },
   {
     "id": 4217,
-    "name": "IC2:itemToolBronzeSpade",
+    "name": "Бронзовая лопата",
+    "rawname": "IC2:itemToolBronzeSpade",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [
@@ -284,262 +335,314 @@
   },
   {
     "id": 323,
-    "name": "minecraft:sign",
+    "name": "Табличка",
+    "rawname": "minecraft:sign",
     "effectivness": 1.0
   },
   {
     "id": 434,
-    "name": "IC2:fluidUuMatter",
+    "name": "Жидкая материя",
+    "rawname": "IC2:fluidUuMatter",
     "effectivness": 1.0
   },
   {
     "id": 4256,
-    "name": "IC2:itemArmorQuantumBoots",
+    "name": "Квантовые ботинки",
+    "rawname": "IC2:itemArmorQuantumBoots",
     "effectivness": 1.0
   },
   {
     "id": 4419,
-    "name": "Forestry:waxCapsule",
+    "name": "Восковая капсула",
+    "rawname": "Forestry:waxCapsule",
     "effectivness": 1.0
   },
   {
     "id": 4136,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsemerald",
+    "name": "Изумрудная транспортная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsemerald",
     "effectivness": 1.0
   },
   {
     "id": 4202,
-    "name": "IC2:itemUran238",
+    "name": "Уран-238",
+    "rawname": "IC2:itemUran238",
     "effectivness": 1.0
   },
   {
     "id": 4200,
-    "name": "IC2:itemUran235",
+    "name": "Уран-235",
+    "rawname": "IC2:itemUran235",
     "effectivness": 1.0
   },
   {
     "id": 504,
-    "name": "ForestryExtras:tile.fe.block.crop checker",
+    "name": "Crop Checker",
+    "rawname": "ForestryExtras:tile.fe.block.crop checker",
     "effectivness": 1.0
   },
   {
     "id": 4250,
-    "name": "IC2:itemArmorNanoChestplate",
+    "name": "Нано-кираса",
+    "rawname": "IC2:itemArmorNanoChestplate",
     "effectivness": 1.0
   },
   {
     "id": 437,
-    "name": "IC2:fluidHotCoolant",
+    "name": "Горячий хладагент",
+    "rawname": "IC2:fluidHotCoolant",
     "effectivness": 1.0
   },
   {
     "id": 4343,
-    "name": "IC2:itemBoat",
+    "name": "Углепластиковое каноэ",
+    "rawname": "IC2:itemBoat",
     "effectivness": 1.0
   },
   {
     "id": 4437,
-    "name": "Forestry:refractoryLava",
+    "name": "Капсула лавы",
+    "rawname": "Forestry:refractoryLava",
     "effectivness": 1.0
   },
   {
     "id": 4616,
-    "name": "ProjRed|Illumination:projectred.illumination.flightbutton",
+    "name": "Белая светящаяся кнопка обратной связи",
+    "rawname": "ProjRed|Illumination:projectred.illumination.flightbutton",
     "effectivness": 1.0
   },
   {
     "id": 489,
-    "name": "Forestry:stairs",
+    "name": "Ступеньки из лиственницы",
+    "rawname": "Forestry:stairs",
     "effectivness": 1.0
   },
   {
     "id": 4459,
-    "name": "Forestry:pollen",
+    "name": "Скопление пыльцы",
+    "rawname": "Forestry:pollen",
     "effectivness": 1.0
   },
   {
     "id": 409,
-    "name": "IC2:blockHeatGenerator",
+    "name": "Твердотельный термогенератор",
+    "rawname": "IC2:blockHeatGenerator",
     "effectivness": 1.0
   },
   {
     "id": 4566,
-    "name": "ForgeMicroblock:sawDiamond",
+    "name": "Алмазная пила",
+    "rawname": "ForgeMicroblock:sawDiamond",
     "effectivness": 1.0
   },
   {
     "id": 208,
-    "name": "appliedenergistics2:tile.SkyStoneBlockStairBlock",
+    "name": "Ступеньки из блока небесного камня",
+    "rawname": "appliedenergistics2:tile.SkyStoneBlockStairBlock",
     "effectivness": 1.0
   },
   {
     "id": 4321,
-    "name": "IC2:itemToolPainterBlack",
+    "name": "Чёрный валик",
+    "rawname": "IC2:itemToolPainterBlack",
     "effectivness": 1.0
   },
   {
     "id": 155,
-    "name": "minecraft:quartz_block",
+    "name": "Кварцевый блок",
+    "rawname": "minecraft:quartz_block",
     "effectivness": 1.0
   },
   {
     "id": 263,
-    "name": "minecraft:coal",
+    "name": "Уголь",
+    "rawname": "minecraft:coal",
     "effectivness": 1.0
   },
   {
     "id": 4348,
-    "name": "IC2:itemFertilizer",
+    "name": "Удобрение",
+    "rawname": "IC2:itemFertilizer",
     "effectivness": 1.0
   },
   {
     "id": 243,
-    "name": "IC2:blockFenceIron",
+    "name": "Железный забор",
+    "rawname": "IC2:blockFenceIron",
     "effectivness": 1.0
   },
   {
     "id": 289,
-    "name": "minecraft:gunpowder",
+    "name": "Порох",
+    "rawname": "minecraft:gunpowder",
     "effectivness": 1.0
   },
   {
     "id": 120,
-    "name": "minecraft:end_portal_frame",
+    "name": "Портал в Энд",
+    "rawname": "minecraft:end_portal_frame",
     "effectivness": 1.0
   },
   {
     "id": 110,
-    "name": "minecraft:mycelium",
+    "name": "Мицелий",
+    "rawname": "minecraft:mycelium",
     "effectivness": 1.0
   },
   {
     "id": 39,
-    "name": "minecraft:brown_mushroom",
+    "name": "Гриб",
+    "rawname": "minecraft:brown_mushroom",
     "effectivness": 1.0
   },
   {
     "id": 491,
-    "name": "Forestry:leaves",
+    "name": "Листва",
+    "rawname": "Forestry:leaves",
     "effectivness": 1.0
   },
   {
     "id": 4542,
-    "name": "GraviSuite:ultimateLappack",
+    "name": "Ультимейт лаппак",
+    "rawname": "GraviSuite:ultimateLappack",
     "effectivness": 1.0
   },
   {
     "id": 4463,
-    "name": "Forestry:waxCast",
+    "name": "Восковая форма",
+    "rawname": "Forestry:waxCast",
     "effectivness": 1.0
   },
   {
     "id": 276,
-    "name": "minecraft:diamond_sword",
+    "name": "Алмазный меч",
+    "rawname": "minecraft:diamond_sword",
     "effectivness": 1.0
   },
   {
     "id": 381,
-    "name": "minecraft:ender_eye",
+    "name": "Око Эндера",
+    "rawname": "minecraft:ender_eye",
     "effectivness": 1.0
   },
   {
     "id": 4472,
-    "name": "Forestry:treealyzer",
+    "name": "Анализатор деревьев",
+    "rawname": "Forestry:treealyzer",
     "effectivness": 1.0
   },
   {
     "id": 416,
-    "name": "IC2:blockElectric",
+    "name": "Энергохранилище",
+    "rawname": "IC2:blockElectric",
     "effectivness": 1.0
   },
   {
     "id": 186,
-    "name": "appliedenergistics2:tile.BlockCharger",
+    "name": "Зарядник",
+    "rawname": "appliedenergistics2:tile.BlockCharger",
     "effectivness": 1.0
   },
   {
     "id": 19,
-    "name": "minecraft:sponge",
+    "name": "Губка",
+    "rawname": "minecraft:sponge",
     "effectivness": 1.0
   },
   {
     "id": 201,
-    "name": "appliedenergistics2:tile.BlockCraftingUnit",
+    "name": "Блок создания",
+    "rawname": "appliedenergistics2:tile.BlockCraftingUnit",
     "effectivness": 1.0
   },
   {
     "id": 287,
-    "name": "minecraft:string",
+    "name": "Нить",
+    "rawname": "minecraft:string",
     "effectivness": 1.0
   },
   {
     "id": 4281,
-    "name": "IC2:reactorMOXDual",
+    "name": "Сдвоенный топливный стержень (MOX)",
+    "rawname": "IC2:reactorMOXDual",
     "effectivness": 1.0
   },
   {
     "id": 4142,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsdiamond",
+    "name": "Алмазная транспортная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsdiamond",
     "effectivness": 1.0
   },
   {
     "id": 49,
-    "name": "minecraft:obsidian",
+    "name": "Обсидиан",
+    "rawname": "minecraft:obsidian",
     "effectivness": 1.0
   },
   {
     "id": 4352,
-    "name": "IC2:itemWeedEx",
+    "name": "Средство от сорняков",
+    "rawname": "IC2:itemWeedEx",
     "effectivness": 1.0
   },
   {
     "id": 372,
-    "name": "minecraft:nether_wart",
+    "name": "Адский нарост",
+    "rawname": "minecraft:nether_wart",
     "effectivness": 1.0
   },
   {
     "id": 4146,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemssandstone",
+    "name": "Песчаниковая транспортная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipeitemssandstone",
     "effectivness": 1.0
   },
   {
     "id": 4309,
-    "name": "IC2:reactorCondensator",
+    "name": "Красный конденсатор",
+    "rawname": "IC2:reactorCondensator",
     "effectivness": 1.0
   },
   {
     "id": 28,
-    "name": "minecraft:detector_rail",
+    "name": "Рельсы с датчиком",
+    "rawname": "minecraft:detector_rail",
     "effectivness": 1.0
   },
   {
     "id": 131,
-    "name": "minecraft:tripwire_hook",
+    "name": "Крюк",
+    "rawname": "minecraft:tripwire_hook",
     "effectivness": 1.0
   },
   {
     "id": 177,
-    "name": "appliedenergistics2:tile.BlockQuartzLamp",
+    "name": "Энергичное кварцевое стекло",
+    "rawname": "appliedenergistics2:tile.BlockQuartzLamp",
     "effectivness": 1.0
   },
   {
     "id": 158,
-    "name": "minecraft:dropper",
+    "name": "Выбрасыватель",
+    "rawname": "minecraft:dropper",
     "effectivness": 1.0
   },
   {
     "id": 447,
-    "name": "Forestry:resourceStorage",
+    "name": "Апатитовый блок",
+    "rawname": "Forestry:resourceStorage",
     "effectivness": 1.0
   },
   {
     "id": 119,
-    "name": "minecraft:end_portal",
+    "name": "tile.null.name",
+    "rawname": "minecraft:end_portal",
     "effectivness": 1.0
   },
   {
     "id": 4226,
-    "name": "IC2:itemToolDrill",
+    "name": "Шахтёрский бур",
+    "rawname": "IC2:itemToolDrill",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [
@@ -553,37 +656,44 @@
   },
   {
     "id": 4176,
-    "name": "BuildCraft|Silicon:redstoneChipset",
+    "name": "Микросхема из красного камня",
+    "rawname": "BuildCraft|Silicon:redstoneChipset",
     "effectivness": 1.0
   },
   {
     "id": 373,
-    "name": "minecraft:potion",
+    "name": "Пузырёк воды",
+    "rawname": "minecraft:potion",
     "effectivness": 1.0
   },
   {
     "id": 487,
-    "name": "Forestry:fences",
+    "name": "Забор из лиственницы",
+    "rawname": "Forestry:fences",
     "effectivness": 1.0
   },
   {
     "id": 417,
-    "name": "minecraft:iron_horse_armor",
+    "name": "Железная конская броня",
+    "rawname": "minecraft:iron_horse_armor",
     "effectivness": 1.0
   },
   {
     "id": 4148,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsemzuli",
+    "name": "Изумуритовая транспортная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsemzuli",
     "effectivness": 1.0
   },
   {
     "id": 255,
-    "name": "IC2:blockKineticGenerator",
+    "name": "Кинетический ветрогенератор",
+    "rawname": "IC2:blockKineticGenerator",
     "effectivness": 1.0
   },
   {
     "id": 278,
-    "name": "minecraft:diamond_pickaxe",
+    "name": "Алмазная кирка",
+    "rawname": "minecraft:diamond_pickaxe",
     "material": "EMERALD",
     "effectivness": 1.0,
     "toolClass": [
@@ -595,7 +705,8 @@
   },
   {
     "id": 4638,
-    "name": "ProjRed|Exploration:projectred.exploration.sicklewood",
+    "name": "Деревянный серп",
+    "rawname": "ProjRed|Exploration:projectred.exploration.sicklewood",
     "material": "WOOD",
     "effectivness": 1.0,
     "toolClass": [],
@@ -603,52 +714,62 @@
   },
   {
     "id": 5,
-    "name": "minecraft:planks",
+    "name": "Дубовые доски",
+    "rawname": "minecraft:planks",
     "effectivness": 1.0
   },
   {
     "id": 146,
-    "name": "minecraft:trapped_chest",
+    "name": "Сундук-ловушка",
+    "rawname": "minecraft:trapped_chest",
     "effectivness": 1.0
   },
   {
     "id": 202,
-    "name": "appliedenergistics2:tile.BlockCraftingStorage",
+    "name": "1К хранилище создания",
+    "rawname": "appliedenergistics2:tile.BlockCraftingStorage",
     "effectivness": 1.0
   },
   {
     "id": 234,
-    "name": "IC2:blockOreCopper",
+    "name": "Медная руда",
+    "rawname": "IC2:blockOreCopper",
     "effectivness": 1.0
   },
   {
     "id": 25,
-    "name": "minecraft:noteblock",
+    "name": "Нотный блок",
+    "rawname": "minecraft:noteblock",
     "effectivness": 1.0
   },
   {
     "id": 4274,
-    "name": "IC2:itemBatChargeCrystal",
+    "name": "Charging Energy Crystal",
+    "rawname": "IC2:itemBatChargeCrystal",
     "effectivness": 1.0
   },
   {
     "id": 4509,
-    "name": "ForestryExtras:item.fe.frame.frameGold",
+    "name": "Золотая рамка",
+    "rawname": "ForestryExtras:item.fe.frame.frameGold",
     "effectivness": 1.0
   },
   {
     "id": 292,
-    "name": "minecraft:iron_hoe",
+    "name": "Железная мотыга",
+    "rawname": "minecraft:iron_hoe",
     "effectivness": 1.0
   },
   {
     "id": 4258,
-    "name": "IC2:itemArmorJetpackElectric",
+    "name": "Электрический реактивный ранец",
+    "rawname": "IC2:itemArmorJetpackElectric",
     "effectivness": 1.0
   },
   {
     "id": 286,
-    "name": "minecraft:golden_axe",
+    "name": "Золотой топор",
+    "rawname": "minecraft:golden_axe",
     "material": "GOLD",
     "effectivness": 1.0,
     "toolClass": [
@@ -660,22 +781,26 @@
   },
   {
     "id": 298,
-    "name": "minecraft:leather_helmet",
+    "name": "Кожаный шлем",
+    "rawname": "minecraft:leather_helmet",
     "effectivness": 1.0
   },
   {
     "id": 122,
-    "name": "minecraft:dragon_egg",
+    "name": "Яйцо дракона",
+    "rawname": "minecraft:dragon_egg",
     "effectivness": 1.0
   },
   {
     "id": 166,
-    "name": "appliedenergistics2:tile.OreQuartzCharged",
+    "name": "Заряженная руда истинного кварца",
+    "rawname": "appliedenergistics2:tile.OreQuartzCharged",
     "effectivness": 1.0
   },
   {
     "id": 257,
-    "name": "minecraft:iron_pickaxe",
+    "name": "Железная кирка",
+    "rawname": "minecraft:iron_pickaxe",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [
@@ -687,52 +812,62 @@
   },
   {
     "id": 4503,
-    "name": "ForestryExtras:item.fe.item.legendaryStick",
+    "name": "Legendary Stick",
+    "rawname": "ForestryExtras:item.fe.item.legendaryStick",
     "effectivness": 1.0
   },
   {
     "id": 207,
-    "name": "appliedenergistics2:tile.SkyStoneStairBlock",
+    "name": "Ступеньки из небесного камня",
+    "rawname": "appliedenergistics2:tile.SkyStoneStairBlock",
     "effectivness": 1.0
   },
   {
     "id": 444,
-    "name": "Forestry:core",
+    "name": "Анализатор",
+    "rawname": "Forestry:core",
     "effectivness": 1.0
   },
   {
     "id": 4634,
-    "name": "ProjRed|Exploration:projectred.exploration.sawgold",
+    "name": "Золотая пила",
+    "rawname": "ProjRed|Exploration:projectred.exploration.sawgold",
     "effectivness": 1.0
   },
   {
     "id": 4649,
-    "name": "ProjRed|Exploration:projectred.exploration.rubyboots",
+    "name": "Рубиновые ботинки",
+    "rawname": "ProjRed|Exploration:projectred.exploration.rubyboots",
     "effectivness": 1.0
   },
   {
     "id": 4378,
-    "name": "Forestry:sturdyMachine",
+    "name": "Прочный корпус",
+    "rawname": "Forestry:sturdyMachine",
     "effectivness": 1.0
   },
   {
     "id": 4535,
-    "name": "ForestryExtras:item.fe.nugget.draconic",
+    "name": "Драконовский самородок",
+    "rawname": "ForestryExtras:item.fe.nugget.draconic",
     "effectivness": 1.0
   },
   {
     "id": 427,
-    "name": "IC2:blockLuminatorDark",
+    "name": "Электролампа «§cТолько крафт!§r»",
+    "rawname": "IC2:blockLuminatorDark",
     "effectivness": 1.0
   },
   {
     "id": 41,
-    "name": "minecraft:gold_block",
+    "name": "Золотой блок",
+    "rawname": "minecraft:gold_block",
     "effectivness": 1.0
   },
   {
     "id": 275,
-    "name": "minecraft:stone_axe",
+    "name": "Каменный топор",
+    "rawname": "minecraft:stone_axe",
     "material": "STONE",
     "effectivness": 1.0,
     "toolClass": [
@@ -744,7 +879,8 @@
   },
   {
     "id": 4099,
-    "name": "appliedenergistics2:item.ToolCertusQuartzPickaxe",
+    "name": "Кирка из истинного кварца",
+    "rawname": "appliedenergistics2:item.ToolCertusQuartzPickaxe",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [
@@ -756,7 +892,8 @@
   },
   {
     "id": 4545,
-    "name": "GraviSuite:vajra",
+    "name": "Ваджра",
+    "rawname": "GraviSuite:vajra",
     "material": "EMERALD",
     "effectivness": 1.0,
     "toolClass": [],
@@ -764,42 +901,50 @@
   },
   {
     "id": 526,
-    "name": "ProjRed|Exploration:projectred.exploration.stone",
+    "name": "Мрамор",
+    "rawname": "ProjRed|Exploration:projectred.exploration.stone",
     "effectivness": 1.0
   },
   {
     "id": 4267,
-    "name": "IC2:itemBatRE",
+    "name": "Аккумулятор",
+    "rawname": "IC2:itemBatRE",
     "effectivness": 1.0
   },
   {
     "id": 362,
-    "name": "minecraft:melon_seeds",
+    "name": "Семена арбуза",
+    "rawname": "minecraft:melon_seeds",
     "effectivness": 1.0
   },
   {
     "id": 4493,
-    "name": "ForestryExtras:item.fe.item.joshen ingot",
+    "name": "Joshen Ingot",
+    "rawname": "ForestryExtras:item.fe.item.joshen ingot",
     "effectivness": 1.0
   },
   {
     "id": 421,
-    "name": "minecraft:name_tag",
+    "name": "Бирка",
+    "rawname": "minecraft:name_tag",
     "effectivness": 1.0
   },
   {
     "id": 4586,
-    "name": "IC2NuclearControl:ItemRemoteSensorKit",
+    "name": "Набор с дистанционным датчиком",
+    "rawname": "IC2NuclearControl:ItemRemoteSensorKit",
     "effectivness": 1.0
   },
   {
     "id": 4600,
-    "name": "ProjRed|Core:projectred.core.part",
+    "name": "Печатная плата",
+    "rawname": "ProjRed|Core:projectred.core.part",
     "effectivness": 1.0
   },
   {
     "id": 4641,
-    "name": "ProjRed|Exploration:projectred.exploration.sicklegold",
+    "name": "Золотой серп",
+    "rawname": "ProjRed|Exploration:projectred.exploration.sicklegold",
     "material": "GOLD",
     "effectivness": 1.0,
     "toolClass": [],
@@ -807,72 +952,86 @@
   },
   {
     "id": 197,
-    "name": "appliedenergistics2:tile.BlockQuartzGrowthAccelerator",
+    "name": "Ускоритель роста кристаллов",
+    "rawname": "appliedenergistics2:tile.BlockQuartzGrowthAccelerator",
     "effectivness": 1.0
   },
   {
     "id": 311,
-    "name": "minecraft:diamond_chestplate",
+    "name": "Алмазный нагрудник",
+    "rawname": "minecraft:diamond_chestplate",
     "effectivness": 1.0
   },
   {
     "id": 346,
-    "name": "minecraft:fishing_rod",
+    "name": "Удочка",
+    "rawname": "minecraft:fishing_rod",
     "effectivness": 1.0
   },
   {
     "id": 57,
-    "name": "minecraft:diamond_block",
+    "name": "Алмазный блок",
+    "rawname": "minecraft:diamond_block",
     "effectivness": 1.0
   },
   {
     "id": 4636,
-    "name": "ProjRed|Exploration:projectred.exploration.sawsapphire",
+    "name": "Сапфировая пила",
+    "rawname": "ProjRed|Exploration:projectred.exploration.sawsapphire",
     "effectivness": 1.0
   },
   {
     "id": 266,
-    "name": "minecraft:gold_ingot",
+    "name": "Золотой слиток",
+    "rawname": "minecraft:gold_ingot",
     "effectivness": 1.0
   },
   {
     "id": 134,
-    "name": "minecraft:spruce_stairs",
+    "name": "Еловые ступеньки",
+    "rawname": "minecraft:spruce_stairs",
     "effectivness": 1.0
   },
   {
     "id": 411,
-    "name": "IC2:blockReactorChamber",
+    "name": "Реакторная камера",
+    "rawname": "IC2:blockReactorChamber",
     "effectivness": 1.0
   },
   {
     "id": 492,
-    "name": "Forestry:pods",
+    "name": "Стручок",
+    "rawname": "Forestry:pods",
     "effectivness": 1.0
   },
   {
     "id": 4551,
-    "name": "IronChest:goldDiamondUpgrade",
+    "name": "Улучшение из золотого в алмазный сундук",
+    "rawname": "IronChest:goldDiamondUpgrade",
     "effectivness": 1.0
   },
   {
     "id": 4277,
-    "name": "IC2:itemCellEmpty",
+    "name": "Пустая капсула",
+    "rawname": "IC2:itemCellEmpty",
     "effectivness": 1.0
   },
   {
     "id": 347,
-    "name": "minecraft:clock",
+    "name": "Часы",
+    "rawname": "minecraft:clock",
     "effectivness": 1.0
   },
   {
     "id": 4170,
-    "name": "BuildCraft|Transport:pipeWire",
+    "name": "Красный провод",
+    "rawname": "BuildCraft|Transport:pipeWire",
     "effectivness": 1.0
   },
   {
     "id": 4231,
-    "name": "IC2:itemTreetapElectric",
+    "name": "Электрокраник",
+    "rawname": "IC2:itemTreetapElectric",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [],
@@ -880,82 +1039,98 @@
   },
   {
     "id": 4224,
-    "name": "IC2:itemLathingTool",
+    "name": "Инструмент для обрешётки",
+    "rawname": "IC2:itemLathingTool",
     "effectivness": 1.0
   },
   {
     "id": 4427,
-    "name": "Forestry:waxCapsuleFuel",
+    "name": "Капсула топлива",
+    "rawname": "Forestry:waxCapsuleFuel",
     "effectivness": 1.0
   },
   {
     "id": 4637,
-    "name": "ProjRed|Exploration:projectred.exploration.sawperidot",
+    "name": "Перидотовая пила",
+    "rawname": "ProjRed|Exploration:projectred.exploration.sawperidot",
     "effectivness": 1.0
   },
   {
     "id": 296,
-    "name": "minecraft:wheat",
+    "name": "Пшеница",
+    "rawname": "minecraft:wheat",
     "effectivness": 1.0
   },
   {
     "id": 4130,
-    "name": "BuildCraft|Core:goldGearItem",
+    "name": "Золотая шестерня",
+    "rawname": "BuildCraft|Core:goldGearItem",
     "effectivness": 1.0
   },
   {
     "id": 163,
-    "name": "minecraft:acacia_stairs",
+    "name": "Ступеньки из древесины акации",
+    "rawname": "minecraft:acacia_stairs",
     "effectivness": 1.0
   },
   {
     "id": 4450,
-    "name": "Forestry:beePrincessGE",
+    "name": "Принцесса",
+    "rawname": "Forestry:beePrincessGE",
     "effectivness": 1.0
   },
   {
     "id": 493,
-    "name": "Forestry:arboriculture",
+    "name": "Сундук лесовода",
+    "rawname": "Forestry:arboriculture",
     "effectivness": 1.0
   },
   {
     "id": 4562,
-    "name": "statues:statues.item.palette",
+    "name": "Палитра",
+    "rawname": "statues:statues.item.palette",
     "effectivness": 1.0
   },
   {
     "id": 4654,
-    "name": "ProjRed|Exploration:projectred.exploration.peridothelmet",
+    "name": "Перидотовый шлем",
+    "rawname": "ProjRed|Exploration:projectred.exploration.peridothelmet",
     "effectivness": 1.0
   },
   {
     "id": 246,
-    "name": "IC2:blockAlloyGlass",
+    "name": "Укреплённое стекло",
+    "rawname": "IC2:blockAlloyGlass",
     "effectivness": 1.0
   },
   {
     "id": 253,
-    "name": "IC2:blockMetal",
+    "name": "Медный блок",
+    "rawname": "IC2:blockMetal",
     "effectivness": 1.0
   },
   {
     "id": 262,
-    "name": "minecraft:arrow",
+    "name": "Стрела",
+    "rawname": "minecraft:arrow",
     "effectivness": 1.0
   },
   {
     "id": 4185,
-    "name": "IC2:itemPurifiedCrushedOre",
+    "name": "Очищенная измельчённая железная руда",
+    "rawname": "IC2:itemPurifiedCrushedOre",
     "effectivness": 1.0
   },
   {
     "id": 4504,
-    "name": "ForestryExtras:item.fe.item.alfiumStick",
+    "name": "Алфиевая палка",
+    "rawname": "ForestryExtras:item.fe.item.alfiumStick",
     "effectivness": 1.0
   },
   {
     "id": 4350,
-    "name": "IC2:itemToolHoe",
+    "name": "Электромотыга",
+    "rawname": "IC2:itemToolHoe",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [],
@@ -963,42 +1138,50 @@
   },
   {
     "id": 251,
-    "name": "IC2:blockScaffold",
+    "name": "Леса",
+    "rawname": "IC2:blockScaffold",
     "effectivness": 1.0
   },
   {
     "id": 325,
-    "name": "minecraft:bucket",
+    "name": "Ведро",
+    "rawname": "minecraft:bucket",
     "effectivness": 1.0
   },
   {
     "id": 4433,
-    "name": "Forestry:refractoryIce",
+    "name": "Капсула льда",
+    "rawname": "Forestry:refractoryIce",
     "effectivness": 1.0
   },
   {
     "id": 4154,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsiron",
+    "name": "Железная жидкостная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsiron",
     "effectivness": 1.0
   },
   {
     "id": 4181,
-    "name": "IC2:itemupgradekit",
+    "name": "Набор улучшения МФЭХ",
+    "rawname": "IC2:itemupgradekit",
     "effectivness": 1.0
   },
   {
     "id": 4297,
-    "name": "IC2:reactorPlatingExplosive",
+    "name": "Сдерживающая реакторная пластина",
+    "rawname": "IC2:reactorPlatingExplosive",
     "effectivness": 1.0
   },
   {
     "id": 4320,
-    "name": "IC2:itemToolPainter",
+    "name": "Валик",
+    "rawname": "IC2:itemToolPainter",
     "effectivness": 1.0
   },
   {
     "id": 256,
-    "name": "minecraft:iron_shovel",
+    "name": "Железная лопата",
+    "rawname": "minecraft:iron_shovel",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [
@@ -1010,317 +1193,380 @@
   },
   {
     "id": 220,
-    "name": "BuildCraft|Energy:blockRedPlasma",
+    "name": "tile.blockRedPlasma.name",
+    "rawname": "BuildCraft|Energy:blockRedPlasma",
     "effectivness": 1.0
   },
   {
     "id": 4583,
-    "name": "ForestryExtras:item.fe.comb.normal",
+    "name": "Обычные соты",
+    "rawname": "ForestryExtras:item.fe.comb.normal",
     "effectivness": 1.0
   },
   {
     "id": 87,
-    "name": "minecraft:netherrack",
+    "name": "Адский камень",
+    "rawname": "minecraft:netherrack",
     "effectivness": 1.0
   },
   {
     "id": 4324,
-    "name": "IC2:itemToolPainterBrown",
+    "name": "Коричневый валик",
+    "rawname": "IC2:itemToolPainterBrown",
     "effectivness": 1.0
   },
   {
     "id": 315,
-    "name": "minecraft:golden_chestplate",
+    "name": "Золотой нагрудник",
+    "rawname": "minecraft:golden_chestplate",
     "effectivness": 1.0
   },
   {
     "id": 332,
-    "name": "minecraft:snowball",
+    "name": "Снежок",
+    "rawname": "minecraft:snowball",
     "effectivness": 1.0
   },
   {
     "id": 4278,
-    "name": "IC2:itemTinCan",
+    "name": "Консервная банка",
+    "rawname": "IC2:itemTinCan",
     "effectivness": 1.0
   },
   {
     "id": 10,
-    "name": "minecraft:flowing_lava",
+    "name": "Лава",
+    "rawname": "minecraft:flowing_lava",
     "effectivness": 1.0
   },
   {
     "id": 4251,
-    "name": "IC2:itemArmorNanoLegs",
+    "name": "Нано-поножи",
+    "rawname": "IC2:itemArmorNanoLegs",
     "effectivness": 1.0
   },
   {
     "id": 4342,
-    "name": "IC2:itemDebug",
+    "name": "Предмет отладки",
+    "rawname": "IC2:itemDebug",
     "effectivness": 1.0
   },
   {
     "id": 4543,
-    "name": "GraviSuite:advLappack",
+    "name": "Улучшенный лаппак",
+    "rawname": "GraviSuite:advLappack",
     "effectivness": 1.0
   },
   {
     "id": 4236,
-    "name": "IC2:obscurator",
+    "name": "Хамелеон",
+    "rawname": "IC2:obscurator",
     "effectivness": 1.0
   },
   {
     "id": 259,
-    "name": "minecraft:flint_and_steel",
+    "name": "Огниво",
+    "rawname": "minecraft:flint_and_steel",
     "effectivness": 1.0
   },
   {
     "id": 265,
-    "name": "minecraft:iron_ingot",
+    "name": "Железный слиток",
+    "rawname": "minecraft:iron_ingot",
     "effectivness": 1.0
   },
   {
     "id": 4369,
-    "name": "Forestry:fertilizerBio",
+    "name": "Компост",
+    "rawname": "Forestry:fertilizerBio",
     "effectivness": 1.0
   },
   {
     "id": 4149,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsclay",
+    "name": "Глиняная транспортная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsclay",
     "effectivness": 1.0
   },
   {
     "id": 4408,
-    "name": "Forestry:canEmpty",
+    "name": "Банка",
+    "rawname": "Forestry:canEmpty",
     "effectivness": 1.0
   },
   {
     "id": 4188,
-    "name": "IC2:itemTurningBlanks",
+    "name": "Iron Turning Blank",
+    "rawname": "IC2:itemTurningBlanks",
     "effectivness": 1.0
   },
   {
     "id": 193,
-    "name": "appliedenergistics2:tile.BlockCellWorkbench",
+    "name": "Верстак для ячеек",
+    "rawname": "appliedenergistics2:tile.BlockCellWorkbench",
     "effectivness": 1.0
   },
   {
     "id": 137,
-    "name": "minecraft:command_block",
+    "name": "Командный блок",
+    "rawname": "minecraft:command_block",
     "effectivness": 1.0
   },
   {
     "id": 4580,
-    "name": "ForestryExtras:item.fe.comb.pig",
+    "name": "Pig Comb",
+    "rawname": "ForestryExtras:item.fe.comb.pig",
     "effectivness": 1.0
   },
   {
     "id": 4569,
-    "name": "advancedcraft:itemBookGreen",
+    "name": "Зеленая книга знаний",
+    "rawname": "advancedcraft:itemBookGreen",
     "effectivness": 1.0
   },
   {
     "id": 374,
-    "name": "minecraft:glass_bottle",
+    "name": "Пузырёк",
+    "rawname": "minecraft:glass_bottle",
     "effectivness": 1.0
   },
   {
     "id": 4160,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepowerwood",
+    "name": "Деревянная энергетическая труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipepowerwood",
     "effectivness": 1.0
   },
   {
     "id": 4218,
-    "name": "IC2:itemToolBronzeHoe",
+    "name": "Бронзовая мотыга",
+    "rawname": "IC2:itemToolBronzeHoe",
     "effectivness": 1.0
   },
   {
     "id": 4581,
-    "name": "ForestryExtras:item.fe.comb.cow",
+    "name": "Cow Comb",
+    "rawname": "ForestryExtras:item.fe.comb.cow",
     "effectivness": 1.0
   },
   {
     "id": 4502,
-    "name": "ForestryExtras:item.fe.item.mutatedIronStick",
+    "name": "Mutated Iron Stick",
+    "rawname": "ForestryExtras:item.fe.item.mutatedIronStick",
     "effectivness": 1.0
   },
   {
     "id": 320,
-    "name": "minecraft:cooked_porkchop",
+    "name": "Жареная свинина",
+    "rawname": "minecraft:cooked_porkchop",
     "effectivness": 1.0
   },
   {
     "id": 42,
-    "name": "minecraft:iron_block",
+    "name": "Железный блок",
+    "rawname": "minecraft:iron_block",
     "effectivness": 1.0
   },
   {
     "id": 458,
-    "name": "Forestry:apiculture",
+    "name": "Пасека",
+    "rawname": "Forestry:apiculture",
     "effectivness": 1.0
   },
   {
     "id": 4263,
-    "name": "IC2:itemSolarHelmet",
+    "name": "Шлем с солнечной батареей",
+    "rawname": "IC2:itemSolarHelmet",
     "effectivness": 1.0
   },
   {
     "id": 4425,
-    "name": "Forestry:waxCapsuleSeedOil",
+    "name": "Капсула растительного масла",
+    "rawname": "Forestry:waxCapsuleSeedOil",
     "effectivness": 1.0
   },
   {
     "id": 4497,
-    "name": "ForestryExtras:item.fe.item.emeraldStick",
+    "name": "Изумрудная палка",
+    "rawname": "ForestryExtras:item.fe.item.emeraldStick",
     "effectivness": 1.0
   },
   {
     "id": 260,
-    "name": "minecraft:apple",
+    "name": "Яблоко",
+    "rawname": "minecraft:apple",
     "effectivness": 1.0
   },
   {
     "id": 343,
-    "name": "minecraft:furnace_minecart",
+    "name": "Самоходная вагонетка",
+    "rawname": "minecraft:furnace_minecart",
     "effectivness": 1.0
   },
   {
     "id": 4516,
-    "name": "ForestryExtras:item.fe.frame.frameAlfium",
+    "name": "Алфиевая рамка",
+    "rawname": "ForestryExtras:item.fe.frame.frameAlfium",
     "effectivness": 1.0
   },
   {
     "id": 460,
-    "name": "Forestry:candle",
+    "name": "Тёмная свеча",
+    "rawname": "Forestry:candle",
     "effectivness": 1.0
   },
   {
     "id": 4376,
-    "name": "Forestry:wrench",
+    "name": "Гаечный ключ",
+    "rawname": "Forestry:wrench",
     "effectivness": 1.0
   },
   {
     "id": 307,
-    "name": "minecraft:iron_chestplate",
+    "name": "Железный нагрудник",
+    "rawname": "minecraft:iron_chestplate",
     "effectivness": 1.0
   },
   {
     "id": 4339,
-    "name": "IC2:itemDoorAlloy",
+    "name": "Укреплённая дверь",
+    "rawname": "IC2:itemDoorAlloy",
     "effectivness": 1.0
   },
   {
     "id": 4484,
-    "name": "ForestryExtras:item.fe.item.draconicIngot",
+    "name": "Драконовский слиток",
+    "rawname": "ForestryExtras:item.fe.item.draconicIngot",
     "effectivness": 1.0
   },
   {
     "id": 4362,
-    "name": "IC2:itemsteelrotor",
+    "name": "Стальной ротор ветрогенератора",
+    "rawname": "IC2:itemsteelrotor",
     "effectivness": 1.0
   },
   {
     "id": 4186,
-    "name": "IC2:itemPlates",
+    "name": "Медная пластина",
+    "rawname": "IC2:itemPlates",
     "effectivness": 1.0
   },
   {
     "id": 390,
-    "name": "minecraft:flower_pot",
+    "name": "Цветочный горшок",
+    "rawname": "minecraft:flower_pot",
     "effectivness": 1.0
   },
   {
     "id": 4471,
-    "name": "Forestry:pollenFertile",
+    "name": "Unknown",
+    "rawname": "Forestry:pollenFertile",
     "effectivness": 1.0
   },
   {
     "id": 4579,
-    "name": "ForestryExtras:item.fe.comb.carrot",
+    "name": "Carrot Comb",
+    "rawname": "ForestryExtras:item.fe.comb.carrot",
     "effectivness": 1.0
   },
   {
     "id": 4126,
-    "name": "BuildCraft|Core:wrenchItem",
+    "name": "Гаечный ключ",
+    "rawname": "BuildCraft|Core:wrenchItem",
     "effectivness": 1.0
   },
   {
     "id": 4,
-    "name": "minecraft:cobblestone",
+    "name": "Булыжник",
+    "rawname": "minecraft:cobblestone",
     "effectivness": 1.0
   },
   {
     "id": 135,
-    "name": "minecraft:birch_stairs",
+    "name": "Березовые ступеньки",
+    "rawname": "minecraft:birch_stairs",
     "effectivness": 1.0
   },
   {
     "id": 4193,
-    "name": "IC2:itemIngot",
+    "name": "Медный слиток",
+    "rawname": "IC2:itemIngot",
     "effectivness": 1.0
   },
   {
     "id": 4540,
-    "name": "GraviSuite:graviChestPlate",
+    "name": "Гравитационный жилет",
+    "rawname": "GraviSuite:graviChestPlate",
     "effectivness": 1.0
   },
   {
     "id": 156,
-    "name": "minecraft:quartz_stairs",
+    "name": "Кварцевые ступеньки",
+    "rawname": "minecraft:quartz_stairs",
     "effectivness": 1.0
   },
   {
     "id": 203,
-    "name": "appliedenergistics2:tile.BlockCraftingMonitor",
+    "name": "Монитор создания",
+    "rawname": "appliedenergistics2:tile.BlockCraftingMonitor",
     "effectivness": 1.0
   },
   {
     "id": 4280,
-    "name": "IC2:reactorMOXSimple",
+    "name": "Топливный стержень (MOX)",
+    "rawname": "IC2:reactorMOXSimple",
     "effectivness": 1.0
   },
   {
     "id": 4329,
-    "name": "IC2:itemToolPainterDarkGrey",
+    "name": "Тёмно-серый валик",
+    "rawname": "IC2:itemToolPainterDarkGrey",
     "effectivness": 1.0
   },
   {
     "id": 188,
-    "name": "appliedenergistics2:tile.BlockCableBus",
+    "name": "AE2 кабель и/или шина",
+    "rawname": "appliedenergistics2:tile.BlockCableBus",
     "effectivness": 1.0
   },
   {
     "id": 281,
-    "name": "minecraft:bowl",
+    "name": "Миска",
+    "rawname": "minecraft:bowl",
     "effectivness": 1.0
   },
   {
     "id": 217,
-    "name": "BuildCraft|Energy:engineBlock",
+    "name": "Двигатель на красном камне",
+    "rawname": "BuildCraft|Energy:engineBlock",
     "effectivness": 1.0
   },
   {
     "id": 418,
-    "name": "minecraft:golden_horse_armor",
+    "name": "Золотая конская броня",
+    "rawname": "minecraft:golden_horse_armor",
     "effectivness": 1.0
   },
   {
     "id": 4415,
-    "name": "Forestry:canWater",
+    "name": "Банка воды",
+    "rawname": "Forestry:canWater",
     "effectivness": 1.0
   },
   {
     "id": 154,
-    "name": "minecraft:hopper",
+    "name": "Воронка",
+    "rawname": "minecraft:hopper",
     "effectivness": 1.0
   },
   {
     "id": 4133,
-    "name": "BuildCraft|Energy:bucketFuel",
+    "name": "Ведро топлива",
+    "rawname": "BuildCraft|Energy:bucketFuel",
     "effectivness": 1.0
   },
   {
     "id": 4214,
-    "name": "IC2:itemToolBronzePickaxe",
+    "name": "Бронзовая кирка",
+    "rawname": "IC2:itemToolBronzePickaxe",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [
@@ -1332,92 +1578,110 @@
   },
   {
     "id": 4476,
-    "name": "Forestry:beverage",
+    "name": "Питный мёд",
+    "rawname": "Forestry:beverage",
     "effectivness": 1.0
   },
   {
     "id": 60,
-    "name": "minecraft:farmland",
+    "name": "Пашня",
+    "rawname": "minecraft:farmland",
     "effectivness": 1.0
   },
   {
     "id": 112,
-    "name": "minecraft:nether_brick",
+    "name": "Адские кирпичи",
+    "rawname": "minecraft:nether_brick",
     "effectivness": 1.0
   },
   {
     "id": 4108,
-    "name": "appliedenergistics2:item.ToolNetherQuartzWrench",
+    "name": "Гаечный ключ из кварца Нижнего мира",
+    "rawname": "appliedenergistics2:item.ToolNetherQuartzWrench",
     "effectivness": 1.0
   },
   {
     "id": 4390,
-    "name": "Forestry:solderingIron",
+    "name": "Паяльник",
+    "rawname": "Forestry:solderingIron",
     "effectivness": 1.0
   },
   {
     "id": 86,
-    "name": "minecraft:pumpkin",
+    "name": "Тыква",
+    "rawname": "minecraft:pumpkin",
     "effectivness": 1.0
   },
   {
     "id": 4532,
-    "name": "ForestryExtras:item.fe.frame.frameSilver",
+    "name": "Серебрянная рамка",
+    "rawname": "ForestryExtras:item.fe.frame.frameSilver",
     "effectivness": 1.0
   },
   {
     "id": 4288,
-    "name": "IC2:reactorMOXQuaddepleted",
+    "name": "Счетверённый топливный стержень (Обеднённый MOX)",
+    "rawname": "IC2:reactorMOXQuaddepleted",
     "effectivness": 1.0
   },
   {
     "id": 4658,
-    "name": "wanditems:itemWand",
+    "name": "Топор для выделения привата",
+    "rawname": "wanditems:itemWand",
     "effectivness": 1.0
   },
   {
     "id": 4211,
-    "name": "IC2:itemOreIridium",
+    "name": "Иридиевая руда",
+    "rawname": "IC2:itemOreIridium",
     "effectivness": 1.0
   },
   {
     "id": 4385,
-    "name": "Forestry:bituminousPeat",
+    "name": "Смолистый торф",
+    "rawname": "Forestry:bituminousPeat",
     "effectivness": 1.0
   },
   {
     "id": 4556,
-    "name": "IronChest:woodIronUpgrade",
+    "name": "Улучшение из деревянного в железный сундук",
+    "rawname": "IronChest:woodIronUpgrade",
     "effectivness": 1.0
   },
   {
     "id": 4109,
-    "name": "appliedenergistics2:item.ToolNetherQuartzCuttingKnife",
+    "name": "Нож из кварца Нижнего мира",
+    "rawname": "appliedenergistics2:item.ToolNetherQuartzCuttingKnife",
     "effectivness": 1.0
   },
   {
     "id": 4594,
-    "name": "IC2NuclearControl:ItemUpgrade",
+    "name": "Улучшение «Усиление сигнала»",
+    "rawname": "IC2NuclearControl:ItemUpgrade",
     "effectivness": 1.0
   },
   {
     "id": 4474,
-    "name": "Forestry:grafterProven",
+    "name": "Проверенный садовый нож",
+    "rawname": "Forestry:grafterProven",
     "effectivness": 1.0
   },
   {
     "id": 182,
-    "name": "appliedenergistics2:tile.BlockSkyCompass",
+    "name": "Метеоритный компас",
+    "rawname": "appliedenergistics2:tile.BlockSkyCompass",
     "effectivness": 1.0
   },
   {
     "id": 123,
-    "name": "minecraft:redstone_lamp",
+    "name": "Лампа",
+    "rawname": "minecraft:redstone_lamp",
     "effectivness": 1.0
   },
   {
     "id": 4232,
-    "name": "IC2:itemToolMiningLaser",
+    "name": "Шахтёрский лазер",
+    "rawname": "IC2:itemToolMiningLaser",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [],
@@ -1425,87 +1689,104 @@
   },
   {
     "id": 4219,
-    "name": "IC2:itemToolWrench",
+    "name": "Гаечный ключ",
+    "rawname": "IC2:itemToolWrench",
     "effectivness": 1.0
   },
   {
     "id": 363,
-    "name": "minecraft:beef",
+    "name": "Сырая говядина",
+    "rawname": "minecraft:beef",
     "effectivness": 1.0
   },
   {
     "id": 4519,
-    "name": "ForestryExtras:item.fe.scoop.scoopReinforced",
+    "name": "Усиленный сачок",
+    "rawname": "ForestryExtras:item.fe.scoop.scoopReinforced",
     "effectivness": 1.0
   },
   {
     "id": 77,
-    "name": "minecraft:stone_button",
+    "name": "Кнопка",
+    "rawname": "minecraft:stone_button",
     "effectivness": 1.0
   },
   {
     "id": 4364,
-    "name": "IC2:itemSteamTurbine",
+    "name": "Паровая турбина",
+    "rawname": "IC2:itemSteamTurbine",
     "effectivness": 1.0
   },
   {
     "id": 4443,
-    "name": "Forestry:bucketHoney",
+    "name": "Ведро мёда",
+    "rawname": "Forestry:bucketHoney",
     "effectivness": 1.0
   },
   {
     "id": 97,
-    "name": "minecraft:monster_egg",
+    "name": "Камень с монстрами",
+    "rawname": "minecraft:monster_egg",
     "effectivness": 1.0
   },
   {
     "id": 4190,
-    "name": "IC2:itemDustSmall",
+    "name": "Небольшая кучка железной пыли",
+    "rawname": "IC2:itemDustSmall",
     "effectivness": 1.0
   },
   {
     "id": 191,
-    "name": "appliedenergistics2:tile.BlockChest",
+    "name": "МЭ сундук",
+    "rawname": "appliedenergistics2:tile.BlockChest",
     "effectivness": 1.0
   },
   {
     "id": 4571,
-    "name": "economy:economyShopWrench",
+    "name": "§eКлюч для снятия магазина",
+    "rawname": "economy:economyShopWrench",
     "effectivness": 1.0
   },
   {
     "id": 314,
-    "name": "minecraft:golden_helmet",
+    "name": "Золотой шлем",
+    "rawname": "minecraft:golden_helmet",
     "effectivness": 1.0
   },
   {
     "id": 345,
-    "name": "minecraft:compass",
+    "name": "Компас",
+    "rawname": "minecraft:compass",
     "effectivness": 1.0
   },
   {
     "id": 4120,
-    "name": "appliedenergistics2:item.ItemCrystalSeed",
+    "name": "Семя истинного кварца",
+    "rawname": "appliedenergistics2:item.ItemCrystalSeed",
     "effectivness": 1.0
   },
   {
     "id": 457,
-    "name": "Forestry:fluid.short.mead",
+    "name": "Питный мёд",
+    "rawname": "Forestry:fluid.short.mead",
     "effectivness": 1.0
   },
   {
     "id": 324,
-    "name": "minecraft:wooden_door",
+    "name": "Деревянная дверь",
+    "rawname": "minecraft:wooden_door",
     "effectivness": 1.0
   },
   {
     "id": 130,
-    "name": "minecraft:ender_chest",
+    "name": "Сундук Эндера",
+    "rawname": "minecraft:ender_chest",
     "effectivness": 1.0
   },
   {
     "id": 279,
-    "name": "minecraft:diamond_axe",
+    "name": "Алмазный топор",
+    "rawname": "minecraft:diamond_axe",
     "material": "EMERALD",
     "effectivness": 1.0,
     "toolClass": [
@@ -1517,42 +1798,50 @@
   },
   {
     "id": 4173,
-    "name": "BuildCraft|Transport:pipePlug",
+    "name": "Заглушка для труб",
+    "rawname": "BuildCraft|Transport:pipePlug",
     "effectivness": 1.0
   },
   {
     "id": 4492,
-    "name": "ForestryExtras:item.fe.item.goshen ingot",
+    "name": "Goshen Ingot",
+    "rawname": "ForestryExtras:item.fe.item.goshen ingot",
     "effectivness": 1.0
   },
   {
     "id": 40,
-    "name": "minecraft:red_mushroom",
+    "name": "Гриб",
+    "rawname": "minecraft:red_mushroom",
     "effectivness": 1.0
   },
   {
     "id": 498,
-    "name": "Forestry:ffarm",
+    "name": "Блок фермы",
+    "rawname": "Forestry:ffarm",
     "effectivness": 1.0
   },
   {
     "id": 479,
-    "name": "Forestry:planks",
+    "name": "Доски из лиственницы",
+    "rawname": "Forestry:planks",
     "effectivness": 1.0
   },
   {
     "id": 387,
-    "name": "minecraft:written_book",
+    "name": "Завершенная книга",
+    "rawname": "minecraft:written_book",
     "effectivness": 1.0
   },
   {
     "id": 396,
-    "name": "minecraft:golden_carrot",
+    "name": "Золотая морковь",
+    "rawname": "minecraft:golden_carrot",
     "effectivness": 1.0
   },
   {
     "id": 273,
-    "name": "minecraft:stone_shovel",
+    "name": "Каменная лопата",
+    "rawname": "minecraft:stone_shovel",
     "material": "STONE",
     "effectivness": 1.0,
     "toolClass": [
@@ -1564,272 +1853,326 @@
   },
   {
     "id": 17,
-    "name": "minecraft:log",
+    "name": "Дуб",
+    "rawname": "minecraft:log",
     "effectivness": 1.0
   },
   {
     "id": 415,
-    "name": "IC2:blockreactorvessel",
+    "name": "Реакторный корпус",
+    "rawname": "IC2:blockreactorvessel",
     "effectivness": 1.0
   },
   {
     "id": 456,
-    "name": "Forestry:fluid.seedoil",
+    "name": "Растительное масло",
+    "rawname": "Forestry:fluid.seedoil",
     "effectivness": 1.0
   },
   {
     "id": 4319,
-    "name": "IC2:itemBiochaff",
+    "name": "Отходы",
+    "rawname": "IC2:itemBiochaff",
     "effectivness": 1.0
   },
   {
     "id": 4429,
-    "name": "Forestry:refractoryEmpty",
+    "name": "Огнеупорная капсула",
+    "rawname": "Forestry:refractoryEmpty",
     "effectivness": 1.0
   },
   {
     "id": 370,
-    "name": "minecraft:ghast_tear",
+    "name": "Слеза Гаста",
+    "rawname": "minecraft:ghast_tear",
     "effectivness": 1.0
   },
   {
     "id": 4469,
-    "name": "Forestry:scoop",
+    "name": "Сачок",
+    "rawname": "Forestry:scoop",
     "effectivness": 1.0
   },
   {
     "id": 4612,
-    "name": "ProjRed|Illumination:projectred.illumination.cagelamp.inv",
+    "name": "Инверторная белая защищённая лампа",
+    "rawname": "ProjRed|Illumination:projectred.illumination.cagelamp.inv",
     "effectivness": 1.0
   },
   {
     "id": 248,
-    "name": "IC2:blockReinforcedFoam",
+    "name": "Укреплённая строительная пена",
+    "rawname": "IC2:blockReinforcedFoam",
     "effectivness": 1.0
   },
   {
     "id": 4125,
-    "name": "appliedenergistics2:item.ItemMultiPart",
+    "name": "МЭ стеклянный кабель - Белый",
+    "rawname": "appliedenergistics2:item.ItemMultiPart",
     "effectivness": 1.0
   },
   {
     "id": 299,
-    "name": "minecraft:leather_chestplate",
+    "name": "Кожаная куртка",
+    "rawname": "minecraft:leather_chestplate",
     "effectivness": 1.0
   },
   {
     "id": 511,
-    "name": "wildcaves3:SandstoneSalactite",
+    "name": "Песчаный сталактит",
+    "rawname": "wildcaves3:SandstoneSalactite",
     "effectivness": 1.0
   },
   {
     "id": 443,
-    "name": "IC2:fluidSteam",
+    "name": "Пар",
+    "rawname": "IC2:fluidSteam",
     "effectivness": 1.0
   },
   {
     "id": 4303,
-    "name": "IC2:reactorVentCore",
+    "name": "Реакторный теплоотвод",
+    "rawname": "IC2:reactorVentCore",
     "effectivness": 1.0
   },
   {
     "id": 392,
-    "name": "minecraft:potato",
+    "name": "Картофель",
+    "rawname": "minecraft:potato",
     "effectivness": 1.0
   },
   {
     "id": 412,
-    "name": "IC2:blockReactorFluidPort",
+    "name": "Реакторный насос",
+    "rawname": "IC2:blockReactorFluidPort",
     "effectivness": 1.0
   },
   {
     "id": 4194,
-    "name": "IC2:reactorLithiumCell",
+    "name": "Топливный стержень (Литий)",
+    "rawname": "IC2:reactorLithiumCell",
     "effectivness": 1.0
   },
   {
     "id": 4208,
-    "name": "IC2:itemPartCarbonFibre",
+    "name": "Углеволокно",
+    "rawname": "IC2:itemPartCarbonFibre",
     "effectivness": 1.0
   },
   {
     "id": 4523,
-    "name": "ForestryExtras:item.fe.item.bronzeStick",
+    "name": "Бронзовая палка",
+    "rawname": "ForestryExtras:item.fe.item.bronzeStick",
     "effectivness": 1.0
   },
   {
     "id": 148,
-    "name": "minecraft:heavy_weighted_pressure_plate",
+    "name": "Утяжелённая нажимная пластина (Тяжёлая)",
+    "rawname": "minecraft:heavy_weighted_pressure_plate",
     "effectivness": 1.0
   },
   {
     "id": 4456,
-    "name": "Forestry:frameImpregnated",
+    "name": "Пропитанная рамка",
+    "rawname": "Forestry:frameImpregnated",
     "effectivness": 1.0
   },
   {
     "id": 297,
-    "name": "minecraft:bread",
+    "name": "Хлеб",
+    "rawname": "minecraft:bread",
     "effectivness": 1.0
   },
   {
     "id": 4112,
-    "name": "appliedenergistics2:item.ToolNetworkTool",
+    "name": "Сетевой инструмент",
+    "rawname": "appliedenergistics2:item.ToolNetworkTool",
     "effectivness": 1.0
   },
   {
     "id": 27,
-    "name": "minecraft:golden_rail",
+    "name": "Энергорельсы",
+    "rawname": "minecraft:golden_rail",
     "effectivness": 1.0
   },
   {
     "id": 430,
-    "name": "IC2:blockMiningTip",
+    "name": "Буровая труба",
+    "rawname": "IC2:blockMiningTip",
     "effectivness": 1.0
   },
   {
     "id": 4205,
-    "name": "IC2:itemPartCircuit",
+    "name": "Электросхема",
+    "rawname": "IC2:itemPartCircuit",
     "effectivness": 1.0
   },
   {
     "id": 4189,
-    "name": "IC2:itemTurningBlanksWood",
+    "name": "Деревянная заготовка",
+    "rawname": "IC2:itemTurningBlanksWood",
     "effectivness": 1.0
   },
   {
     "id": 521,
-    "name": "IC2NuclearControl:blockNuclearControlLight",
+    "name": "Белый светильник",
+    "rawname": "IC2NuclearControl:blockNuclearControlLight",
     "effectivness": 1.0
   },
   {
     "id": 4501,
-    "name": "ForestryExtras:item.fe.item.reinforcedStick",
+    "name": "Усиленная палка",
+    "rawname": "ForestryExtras:item.fe.item.reinforcedStick",
     "effectivness": 1.0
   },
   {
     "id": 43,
-    "name": "minecraft:double_stone_slab",
+    "name": "Каменная плита",
+    "rawname": "minecraft:double_stone_slab",
     "effectivness": 1.0
   },
   {
     "id": 4147,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsvoid",
+    "name": "Пустотная транспортная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsvoid",
     "effectivness": 1.0
   },
   {
     "id": 4161,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepowercobblestone",
+    "name": "Булыжниковая энергетическая труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipepowercobblestone",
     "effectivness": 1.0
   },
   {
     "id": 4113,
-    "name": "appliedenergistics2:item.ItemCreativeStorageCell",
+    "name": "Творческая МЭ ячейка хранения",
+    "rawname": "appliedenergistics2:item.ItemCreativeStorageCell",
     "effectivness": 1.0
   },
   {
     "id": 4565,
-    "name": "ForgeMicroblock:sawIron",
+    "name": "Железная пила",
+    "rawname": "ForgeMicroblock:sawIron",
     "effectivness": 1.0
   },
   {
     "id": 308,
-    "name": "minecraft:iron_leggings",
+    "name": "Железные поножи",
+    "rawname": "minecraft:iron_leggings",
     "effectivness": 1.0
   },
   {
     "id": 200,
-    "name": "appliedenergistics2:tile.BlockCreativeEnergyCell",
+    "name": "Творческая энергетическая ячейка",
+    "rawname": "appliedenergistics2:tile.BlockCreativeEnergyCell",
     "effectivness": 1.0
   },
   {
     "id": 4123,
-    "name": "appliedenergistics2:item.ItemPaintBall",
+    "name": "Шар с краской - Белый",
+    "rawname": "appliedenergistics2:item.ItemPaintBall",
     "effectivness": 1.0
   },
   {
     "id": 4333,
-    "name": "IC2:itemToolPainterCloud",
+    "name": "Голубой валик",
+    "rawname": "IC2:itemToolPainterCloud",
     "effectivness": 1.0
   },
   {
     "id": 4353,
-    "name": "IC2:itemMugEmpty",
+    "name": "Каменная кружка",
+    "rawname": "IC2:itemMugEmpty",
     "effectivness": 1.0
   },
   {
     "id": 4498,
-    "name": "ForestryExtras:item.fe.item.goldStick",
+    "name": "Золотая палка",
+    "rawname": "ForestryExtras:item.fe.item.goldStick",
     "effectivness": 1.0
   },
   {
     "id": 4552,
-    "name": "IronChest:copperSilverUpgrade",
+    "name": "Улучшение из медного в серебряный сундук",
+    "rawname": "IronChest:copperSilverUpgrade",
     "effectivness": 1.0
   },
   {
     "id": 198,
-    "name": "appliedenergistics2:tile.BlockEnergyCell",
+    "name": "Энергетическая ячейка",
+    "rawname": "appliedenergistics2:tile.BlockEnergyCell",
     "effectivness": 1.0
   },
   {
     "id": 357,
-    "name": "minecraft:cookie",
+    "name": "Печенье",
+    "rawname": "minecraft:cookie",
     "effectivness": 1.0
   },
   {
     "id": 4221,
-    "name": "IC2:itemFoamSprayer",
+    "name": "Распылитель строительной пены",
+    "rawname": "IC2:itemFoamSprayer",
     "effectivness": 1.0
   },
   {
     "id": 4374,
-    "name": "Forestry:ingotTin",
+    "name": "Оловянный слиток",
+    "rawname": "Forestry:ingotTin",
     "effectivness": 1.0
   },
   {
     "id": 382,
-    "name": "minecraft:speckled_melon",
+    "name": "Сверкающий арбуз",
+    "rawname": "minecraft:speckled_melon",
     "effectivness": 1.0
   },
   {
     "id": 4597,
-    "name": "IC2NuclearControl:Item55ReactorCard",
+    "name": "Карта-датчик расположения 5x5 реактора",
+    "rawname": "IC2NuclearControl:Item55ReactorCard",
     "effectivness": 1.0
   },
   {
     "id": 4393,
-    "name": "Forestry:oakStick",
+    "name": "Полированная палка",
+    "rawname": "Forestry:oakStick",
     "effectivness": 1.0
   },
   {
     "id": 4411,
-    "name": "Forestry:canHoney",
+    "name": "Банка мёда",
+    "rawname": "Forestry:canHoney",
     "effectivness": 1.0
   },
   {
     "id": 337,
-    "name": "minecraft:clay_ball",
+    "name": "Глина",
+    "rawname": "minecraft:clay_ball",
     "effectivness": 1.0
   },
   {
     "id": 322,
-    "name": "minecraft:golden_apple",
+    "name": "Золотое яблоко",
+    "rawname": "minecraft:golden_apple",
     "effectivness": 1.0
   },
   {
     "id": 4379,
-    "name": "Forestry:hardenedMachine",
+    "name": "Укреплённый корпус",
+    "rawname": "Forestry:hardenedMachine",
     "effectivness": 1.0
   },
   {
     "id": 438,
-    "name": "IC2:fluidPahoehoeLava",
+    "name": "Базальтовая лава",
+    "rawname": "IC2:fluidPahoehoeLava",
     "effectivness": 1.0
   },
   {
     "id": 4643,
-    "name": "ProjRed|Exploration:projectred.exploration.sicklesapphire",
+    "name": "Сапфировый серп",
+    "rawname": "ProjRed|Exploration:projectred.exploration.sicklesapphire",
     "material": "SAPPHIRE",
     "effectivness": 1.0,
     "toolClass": [],
@@ -1837,162 +2180,194 @@
   },
   {
     "id": 61,
-    "name": "minecraft:furnace",
+    "name": "Печь",
+    "rawname": "minecraft:furnace",
     "effectivness": 1.0
   },
   {
     "id": 30,
-    "name": "minecraft:web",
+    "name": "Паутина",
+    "rawname": "minecraft:web",
     "effectivness": 1.0
   },
   {
     "id": 106,
-    "name": "minecraft:vine",
+    "name": "Лоза",
+    "rawname": "minecraft:vine",
     "effectivness": 1.0
   },
   {
     "id": 454,
-    "name": "Forestry:fluid.juice",
+    "name": "Фруктовый сок",
+    "rawname": "Forestry:fluid.juice",
     "effectivness": 1.0
   },
   {
     "id": 4317,
-    "name": "IC2:itemScrapbox",
+    "name": "Коробка с утильсырьём",
+    "rawname": "IC2:itemScrapbox",
     "effectivness": 1.0
   },
   {
     "id": 4097,
-    "name": "appliedenergistics2:item.ToolCertusQuartzHoe",
+    "name": "Мотыга из истинного кварца",
+    "rawname": "appliedenergistics2:item.ToolCertusQuartzHoe",
     "effectivness": 1.0
   },
   {
     "id": 4405,
-    "name": "Forestry:beeswax",
+    "name": "Пчелиный воск",
+    "rawname": "Forestry:beeswax",
     "effectivness": 1.0
   },
   {
     "id": 301,
-    "name": "minecraft:leather_boots",
+    "name": "Кожаные ботинки",
+    "rawname": "minecraft:leather_boots",
     "effectivness": 1.0
   },
   {
     "id": 339,
-    "name": "minecraft:paper",
+    "name": "Бумага",
+    "rawname": "minecraft:paper",
     "effectivness": 1.0
   },
   {
     "id": 4572,
-    "name": "ForestryExtras:item.fe.comb.draconic",
+    "name": "Драконовские соты.name",
+    "rawname": "ForestryExtras:item.fe.comb.draconic",
     "effectivness": 1.0
   },
   {
     "id": 4635,
-    "name": "ProjRed|Exploration:projectred.exploration.sawruby",
+    "name": "Рубиновая пила",
+    "rawname": "ProjRed|Exploration:projectred.exploration.sawruby",
     "effectivness": 1.0
   },
   {
     "id": 4327,
-    "name": "IC2:itemToolPainterCyan",
+    "name": "Бирюзовый валик",
+    "rawname": "IC2:itemToolPainterCyan",
     "effectivness": 1.0
   },
   {
     "id": 66,
-    "name": "minecraft:rail",
+    "name": "Рельсы",
+    "rawname": "minecraft:rail",
     "effectivness": 1.0
   },
   {
     "id": 288,
-    "name": "minecraft:feather",
+    "name": "Перо",
+    "rawname": "minecraft:feather",
     "effectivness": 1.0
   },
   {
     "id": 211,
-    "name": "appliedenergistics2:tile.FluixStairBlock",
+    "name": "Изменчивые ступеньки",
+    "rawname": "appliedenergistics2:tile.FluixStairBlock",
     "effectivness": 1.0
   },
   {
     "id": 310,
-    "name": "minecraft:diamond_helmet",
+    "name": "Алмазный шлем",
+    "rawname": "minecraft:diamond_helmet",
     "effectivness": 1.0
   },
   {
     "id": 4237,
-    "name": "IC2:itemFreq",
+    "name": "Частотный связыватель",
+    "rawname": "IC2:itemFreq",
     "effectivness": 1.0
   },
   {
     "id": 4359,
-    "name": "IC2:itemMugBooze",
+    "name": "Zero",
+    "rawname": "IC2:itemMugBooze",
     "effectivness": 1.0
   },
   {
     "id": 4539,
-    "name": "ForestryExtras:item.fe.nugget.legendary",
+    "name": "Legendary Nugget",
+    "rawname": "ForestryExtras:item.fe.nugget.legendary",
     "effectivness": 1.0
   },
   {
     "id": 304,
-    "name": "minecraft:chainmail_leggings",
+    "name": "Кольчужные поножи",
+    "rawname": "minecraft:chainmail_leggings",
     "effectivness": 1.0
   },
   {
     "id": 138,
-    "name": "minecraft:beacon",
+    "name": "Маяк",
+    "rawname": "minecraft:beacon",
     "effectivness": 1.0
   },
   {
     "id": 350,
-    "name": "minecraft:cooked_fished",
+    "name": "Приготовленная рыба",
+    "rawname": "minecraft:cooked_fished",
     "effectivness": 1.0
   },
   {
     "id": 413,
-    "name": "IC2:blockReactorAccessHatch",
+    "name": "Реакторный люк",
+    "rawname": "IC2:blockReactorAccessHatch",
     "effectivness": 1.0
   },
   {
     "id": 321,
-    "name": "minecraft:painting",
+    "name": "Картина",
+    "rawname": "minecraft:painting",
     "effectivness": 1.0
   },
   {
     "id": 4358,
-    "name": "IC2:itemBarrel",
+    "name": "Пустая бочка",
+    "rawname": "IC2:itemBarrel",
     "effectivness": 1.0
   },
   {
     "id": 4604,
-    "name": "ProjRed|Core:projectred.core.datacard",
+    "name": "Карта памяти",
+    "rawname": "ProjRed|Core:projectred.core.datacard",
     "effectivness": 1.0
   },
   {
     "id": 4233,
-    "name": "IC2:itemToolMEter",
+    "name": "Ваттметр",
+    "rawname": "IC2:itemToolMEter",
     "effectivness": 1.0
   },
   {
     "id": 4554,
-    "name": "IronChest:copperIronUpgrade",
+    "name": "Улучшение из медного в железный сундук",
+    "rawname": "IronChest:copperIronUpgrade",
     "effectivness": 1.0
   },
   {
     "id": 4591,
-    "name": "IC2NuclearControl:ItemMultipleSensorLocationCard",
+    "name": "Карта-датчик расположения счётчика",
+    "rawname": "IC2NuclearControl:ItemMultipleSensorLocationCard",
     "effectivness": 1.0
   },
   {
     "id": 194,
-    "name": "appliedenergistics2:tile.BlockCondenser",
+    "name": "Конденсатор материи",
+    "rawname": "appliedenergistics2:tile.BlockCondenser",
     "effectivness": 1.0
   },
   {
     "id": 393,
-    "name": "minecraft:baked_potato",
+    "name": "Печёный картофель",
+    "rawname": "minecraft:baked_potato",
     "effectivness": 1.0
   },
   {
     "id": 284,
-    "name": "minecraft:golden_shovel",
+    "name": "Золотая лопата",
+    "rawname": "minecraft:golden_shovel",
     "material": "GOLD",
     "effectivness": 1.0,
     "toolClass": [
@@ -2004,37 +2379,44 @@
   },
   {
     "id": 159,
-    "name": "minecraft:stained_hardened_clay",
+    "name": "Белая обожжённая глина",
+    "rawname": "minecraft:stained_hardened_clay",
     "effectivness": 1.0
   },
   {
     "id": 4338,
-    "name": "IC2:itemCoin",
+    "name": "Промышленная монета",
+    "rawname": "IC2:itemCoin",
     "effectivness": 1.0
   },
   {
     "id": 4156,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsemerald",
+    "name": "Изумрудная жидкостная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsemerald",
     "effectivness": 1.0
   },
   {
     "id": 4306,
-    "name": "IC2:reactorVentDiamond",
+    "name": "Улучшенный теплоотвод",
+    "rawname": "IC2:reactorVentDiamond",
     "effectivness": 1.0
   },
   {
     "id": 72,
-    "name": "minecraft:wooden_pressure_plate",
+    "name": "Нажимная плита",
+    "rawname": "minecraft:wooden_pressure_plate",
     "effectivness": 1.0
   },
   {
     "id": 340,
-    "name": "minecraft:book",
+    "name": "Книга",
+    "rawname": "minecraft:book",
     "effectivness": 1.0
   },
   {
     "id": 4640,
-    "name": "ProjRed|Exploration:projectred.exploration.sickleiron",
+    "name": "Железный серп",
+    "rawname": "ProjRed|Exploration:projectred.exploration.sickleiron",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [],
@@ -2042,72 +2424,86 @@
   },
   {
     "id": 4609,
-    "name": "ProjRed|Illumination:projectred.illumination.fixture",
+    "name": "Белый светильник",
+    "rawname": "ProjRed|Illumination:projectred.illumination.fixture",
     "effectivness": 1.0
   },
   {
     "id": 4661,
-    "name": "Forestry:item.PipeItemsPropolis",
+    "name": "Труба пчеловода",
+    "rawname": "Forestry:item.PipeItemsPropolis",
     "effectivness": 1.0
   },
   {
     "id": 4243,
-    "name": "IC2:itemArmorRubBoots",
+    "name": "Резиновые ботинки",
+    "rawname": "IC2:itemArmorRubBoots",
     "effectivness": 1.0
   },
   {
     "id": 329,
-    "name": "minecraft:saddle",
+    "name": "Седло",
+    "rawname": "minecraft:saddle",
     "effectivness": 1.0
   },
   {
     "id": 4260,
-    "name": "IC2:itemArmorAdvBatpack",
+    "name": "Продвинутый аккумуляторный ранец",
+    "rawname": "IC2:itemArmorAdvBatpack",
     "effectivness": 1.0
   },
   {
     "id": 4168,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepowersandstone",
+    "name": "Песчаниковая энергетическая труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipepowersandstone",
     "effectivness": 1.0
   },
   {
     "id": 4506,
-    "name": "ForestryExtras:item.fe.item.itariusStick",
+    "name": "Итариевая палка",
+    "rawname": "ForestryExtras:item.fe.item.itariusStick",
     "effectivness": 1.0
   },
   {
     "id": 11,
-    "name": "minecraft:lava",
+    "name": "Лава",
+    "rawname": "minecraft:lava",
     "effectivness": 1.0
   },
   {
     "id": 108,
-    "name": "minecraft:brick_stairs",
+    "name": "Кирпичные ступеньки",
+    "rawname": "minecraft:brick_stairs",
     "effectivness": 1.0
   },
   {
     "id": 499,
-    "name": "Forestry:lepidopterology",
+    "name": "Сундук лепидоптеролога",
+    "rawname": "Forestry:lepidopterology",
     "effectivness": 1.0
   },
   {
     "id": 4247,
-    "name": "IC2:itemArmorBronzeBoots",
+    "name": "Бронзовые ботинки",
+    "rawname": "IC2:itemArmorBronzeBoots",
     "effectivness": 1.0
   },
   {
     "id": 461,
-    "name": "Forestry:stump",
+    "name": "Потухшая свеча",
+    "rawname": "Forestry:stump",
     "effectivness": 1.0
   },
   {
     "id": 4479,
-    "name": "Forestry:infuser",
+    "name": "Наполнитель",
+    "rawname": "Forestry:infuser",
     "effectivness": 1.0
   },
   {
     "id": 4644,
-    "name": "ProjRed|Exploration:projectred.exploration.sickleperidot",
+    "name": "Перидотовый серп",
+    "rawname": "ProjRed|Exploration:projectred.exploration.sickleperidot",
     "material": "PERIDOT",
     "effectivness": 1.0,
     "toolClass": [],
@@ -2115,217 +2511,260 @@
   },
   {
     "id": 4121,
-    "name": "appliedenergistics2:item.ItemEncodedPattern",
+    "name": "Кодированный шаблон",
+    "rawname": "appliedenergistics2:item.ItemEncodedPattern",
     "effectivness": 1.0
   },
   {
     "id": 4197,
-    "name": "IC2:itemMOX",
+    "name": "Ядерное топливо MOX",
+    "rawname": "IC2:itemMOX",
     "effectivness": 1.0
   },
   {
     "id": 4505,
-    "name": "ForestryExtras:item.fe.item.witheriaStick",
+    "name": "Иссушающая палка",
+    "rawname": "ForestryExtras:item.fe.item.witheriaStick",
     "effectivness": 1.0
   },
   {
     "id": 303,
-    "name": "minecraft:chainmail_chestplate",
+    "name": "Кольчуга",
+    "rawname": "minecraft:chainmail_chestplate",
     "effectivness": 1.0
   },
   {
     "id": 4301,
-    "name": "IC2:reactorHeatSwitchDiamond",
+    "name": "Продвинутый теплообменник",
+    "rawname": "IC2:reactorHeatSwitchDiamond",
     "effectivness": 1.0
   },
   {
     "id": 4624,
-    "name": "ProjRed|Exploration:projectred.exploration.hoeperidot",
+    "name": "Перидотовая мотыга",
+    "rawname": "ProjRed|Exploration:projectred.exploration.hoeperidot",
     "effectivness": 1.0
   },
   {
     "id": 16,
-    "name": "minecraft:coal_ore",
+    "name": "Уголь",
+    "rawname": "minecraft:coal_ore",
     "effectivness": 1.0
   },
   {
     "id": 165,
-    "name": "appliedenergistics2:tile.OreQuartz",
+    "name": "Руда истинного кварца",
+    "rawname": "appliedenergistics2:tile.OreQuartz",
     "effectivness": 1.0
   },
   {
     "id": 4603,
-    "name": "ProjRed|Core:projectred.core.wiredebugger",
+    "name": "Отладчик проводов",
+    "rawname": "ProjRed|Core:projectred.core.wiredebugger",
     "effectivness": 1.0
   },
   {
     "id": 4599,
-    "name": "IC2NuclearControl:CardAppeng",
+    "name": "Applied Energistics Card",
+    "rawname": "IC2NuclearControl:CardAppeng",
     "effectivness": 1.0
   },
   {
     "id": 151,
-    "name": "minecraft:daylight_detector",
+    "name": "Датчик дневного света",
+    "rawname": "minecraft:daylight_detector",
     "effectivness": 1.0
   },
   {
     "id": 4155,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsgold",
+    "name": "Золотая жидкостная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsgold",
     "effectivness": 1.0
   },
   {
     "id": 4295,
-    "name": "IC2:reactorPlating",
+    "name": "Реакторная обшивка",
+    "rawname": "IC2:reactorPlating",
     "effectivness": 1.0
   },
   {
     "id": 4475,
-    "name": "Forestry:honeyedSlice",
+    "name": "Бутерброд с мёдом",
+    "rawname": "Forestry:honeyedSlice",
     "effectivness": 1.0
   },
   {
     "id": 425,
-    "name": "IC2:blockMachine2",
+    "name": "Модуль телепорта",
+    "rawname": "IC2:blockMachine2",
     "effectivness": 1.0
   },
   {
     "id": 4144,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemslapis",
+    "name": "Лазуритовая транспортная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipeitemslapis",
     "effectivness": 1.0
   },
   {
     "id": 4524,
-    "name": "ForestryExtras:item.fe.item.copperStick",
+    "name": "Медная палка",
+    "rawname": "ForestryExtras:item.fe.item.copperStick",
     "effectivness": 1.0
   },
   {
     "id": 426,
-    "name": "IC2:blockMachine3",
+    "name": "Парогенератор",
+    "rawname": "IC2:blockMachine3",
     "effectivness": 1.0
   },
   {
     "id": 4361,
-    "name": "IC2:itemironrotor",
+    "name": "Железный ротор ветрогенератора",
+    "rawname": "IC2:itemironrotor",
     "effectivness": 1.0
   },
   {
     "id": 4574,
-    "name": "ForestryExtras:item.fe.comb.reinforced",
+    "name": "Усиленные соты.name",
+    "rawname": "ForestryExtras:item.fe.comb.reinforced",
     "effectivness": 1.0
   },
   {
     "id": 4286,
-    "name": "IC2:reactorMOXSimpledepleted",
+    "name": "Топливный стержень (Обеднённый MOX)",
+    "rawname": "IC2:reactorMOXSimpledepleted",
     "effectivness": 1.0
   },
   {
     "id": 84,
-    "name": "minecraft:jukebox",
+    "name": "Проигрыватель",
+    "rawname": "minecraft:jukebox",
     "effectivness": 1.0
   },
   {
     "id": 145,
-    "name": "minecraft:anvil",
+    "name": "Наковальня",
+    "rawname": "minecraft:anvil",
     "effectivness": 1.0
   },
   {
     "id": 4152,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsstone",
+    "name": "Каменная жидкостная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsstone",
     "effectivness": 1.0
   },
   {
     "id": 4310,
-    "name": "IC2:reactorCondensatorLap",
+    "name": "Лазуритовый конденсатор",
+    "rawname": "IC2:reactorCondensatorLap",
     "effectivness": 1.0
   },
   {
     "id": 247,
-    "name": "IC2:blockDoorAlloy",
+    "name": "tile.blockDoorAlloy.name",
+    "rawname": "IC2:blockDoorAlloy",
     "effectivness": 1.0
   },
   {
     "id": 185,
-    "name": "appliedenergistics2:tile.BlockInscriber",
+    "name": "Высекатель",
+    "rawname": "appliedenergistics2:tile.BlockInscriber",
     "effectivness": 1.0
   },
   {
     "id": 100,
-    "name": "minecraft:red_mushroom_block",
+    "name": "Гриб",
+    "rawname": "minecraft:red_mushroom_block",
     "effectivness": 1.0
   },
   {
     "id": 316,
-    "name": "minecraft:golden_leggings",
+    "name": "Золотые поножи",
+    "rawname": "minecraft:golden_leggings",
     "effectivness": 1.0
   },
   {
     "id": 4265,
-    "name": "IC2:itemNightvisionGoggles",
+    "name": "Прибор ночного видения",
+    "rawname": "IC2:itemNightvisionGoggles",
     "effectivness": 1.0
   },
   {
     "id": 4632,
-    "name": "ProjRed|Exploration:projectred.exploration.swordsapphire",
+    "name": "Сапфировый меч",
+    "rawname": "ProjRed|Exploration:projectred.exploration.swordsapphire",
     "effectivness": 1.0
   },
   {
     "id": 4617,
-    "name": "ProjRed|Exploration:projectred.exploration.woolgin",
+    "name": "Чесалка",
+    "rawname": "ProjRed|Exploration:projectred.exploration.woolgin",
     "effectivness": 1.0
   },
   {
     "id": 4623,
-    "name": "ProjRed|Exploration:projectred.exploration.hoesapphire",
+    "name": "Сапфировая мотыга",
+    "rawname": "ProjRed|Exploration:projectred.exploration.hoesapphire",
     "effectivness": 1.0
   },
   {
     "id": 139,
-    "name": "minecraft:cobblestone_wall",
+    "name": "Каменная ограда",
+    "rawname": "minecraft:cobblestone_wall",
     "effectivness": 1.0
   },
   {
     "id": 4453,
-    "name": "Forestry:habitatLocator",
+    "name": "Определитель ареала",
+    "rawname": "Forestry:habitatLocator",
     "effectivness": 1.0
   },
   {
     "id": 4522,
-    "name": "ForestryExtras:item.fe.grafter.grafterDraconic",
+    "name": "Драконовский садовый нож",
+    "rawname": "ForestryExtras:item.fe.grafter.grafterDraconic",
     "effectivness": 1.0
   },
   {
     "id": 2265,
-    "name": "minecraft:record_ward",
+    "name": "Пластинка",
+    "rawname": "minecraft:record_ward",
     "effectivness": 1.0
   },
   {
     "id": 4266,
-    "name": "IC2:itemBatREDischarged",
+    "name": "Незаряженный аккумулятор",
+    "rawname": "IC2:itemBatREDischarged",
     "effectivness": 1.0
   },
   {
     "id": 4383,
-    "name": "Forestry:peat",
+    "name": "Торф",
+    "rawname": "Forestry:peat",
     "effectivness": 1.0
   },
   {
     "id": 95,
-    "name": "minecraft:stained_glass",
+    "name": "Белое стекло",
+    "rawname": "minecraft:stained_glass",
     "effectivness": 1.0
   },
   {
     "id": 209,
-    "name": "appliedenergistics2:tile.SkyStoneBrickStairBlock",
+    "name": "Ступеньки из кирпича небесного камня",
+    "rawname": "appliedenergistics2:tile.SkyStoneBrickStairBlock",
     "effectivness": 1.0
   },
   {
     "id": 252,
-    "name": "IC2:blockIronScaffold",
+    "name": "Железные леса",
+    "rawname": "IC2:blockIronScaffold",
     "effectivness": 1.0
   },
   {
     "id": 4096,
-    "name": "appliedenergistics2:item.ToolCertusQuartzAxe",
+    "name": "Топор из истинного кварца",
+    "rawname": "appliedenergistics2:item.ToolCertusQuartzAxe",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [
@@ -2337,12 +2776,14 @@
   },
   {
     "id": 22,
-    "name": "minecraft:lapis_block",
+    "name": "Блок лазурита",
+    "rawname": "minecraft:lapis_block",
     "effectivness": 1.0
   },
   {
     "id": 277,
-    "name": "minecraft:diamond_shovel",
+    "name": "Алмазная лопата",
+    "rawname": "minecraft:diamond_shovel",
     "material": "EMERALD",
     "effectivness": 1.0,
     "toolClass": [
@@ -2354,57 +2795,68 @@
   },
   {
     "id": 141,
-    "name": "minecraft:carrots",
+    "name": "Морковь",
+    "rawname": "minecraft:carrots",
     "effectivness": 1.0
   },
   {
     "id": 4345,
-    "name": "IC2:itemWeed",
+    "name": "Сорняк",
+    "rawname": "IC2:itemWeed",
     "effectivness": 1.0
   },
   {
     "id": 4563,
-    "name": "ForgeMicroblock:microblock",
+    "name": "Unnamed",
+    "rawname": "ForgeMicroblock:microblock",
     "effectivness": 1.0
   },
   {
     "id": 4436,
-    "name": "Forestry:refractoryWater",
+    "name": "Капсула воды",
+    "rawname": "Forestry:refractoryWater",
     "effectivness": 1.0
   },
   {
     "id": 82,
-    "name": "minecraft:clay",
+    "name": "Глина",
+    "rawname": "minecraft:clay",
     "effectivness": 1.0
   },
   {
     "id": 300,
-    "name": "minecraft:leather_leggings",
+    "name": "Кожаные штаны",
+    "rawname": "minecraft:leather_leggings",
     "effectivness": 1.0
   },
   {
     "id": 385,
-    "name": "minecraft:fire_charge",
+    "name": "Огненный шар",
+    "rawname": "minecraft:fire_charge",
     "effectivness": 1.0
   },
   {
     "id": 14,
-    "name": "minecraft:gold_ore",
+    "name": "Золотая руда",
+    "rawname": "minecraft:gold_ore",
     "effectivness": 1.0
   },
   {
     "id": 338,
-    "name": "minecraft:reeds",
+    "name": "Сахарный тростник",
+    "rawname": "minecraft:reeds",
     "effectivness": 1.0
   },
   {
     "id": 4438,
-    "name": "Forestry:refractoryFuel",
+    "name": "Капсула топлива",
+    "rawname": "Forestry:refractoryFuel",
     "effectivness": 1.0
   },
   {
     "id": 269,
-    "name": "minecraft:wooden_shovel",
+    "name": "Деревянная лопата",
+    "rawname": "minecraft:wooden_shovel",
     "material": "WOOD",
     "effectivness": 1.0,
     "toolClass": [
@@ -2416,62 +2868,74 @@
   },
   {
     "id": 4165,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepowergold",
+    "name": "Золотая энергетическая труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipepowergold",
     "effectivness": 1.0
   },
   {
     "id": 4370,
-    "name": "Forestry:fertilizerCompound",
+    "name": "Минеральное удобрение",
+    "rawname": "Forestry:fertilizerCompound",
     "effectivness": 1.0
   },
   {
     "id": 204,
-    "name": "appliedenergistics2:tile.BlockMolecularAssembler",
+    "name": "Молекулярный сборщик",
+    "rawname": "appliedenergistics2:tile.BlockMolecularAssembler",
     "effectivness": 1.0
   },
   {
     "id": 4483,
-    "name": "Forestry:caterpillarGE",
+    "name": "???",
+    "rawname": "Forestry:caterpillarGE",
     "effectivness": 1.0
   },
   {
     "id": 4589,
-    "name": "IC2NuclearControl:ItemSensorLocationCard",
+    "name": "Карта-датчик расположения реактора",
+    "rawname": "IC2NuclearControl:ItemSensorLocationCard",
     "effectivness": 1.0
   },
   {
     "id": 4276,
-    "name": "IC2:itemCable",
+    "name": "Изолированный медный провод",
+    "rawname": "IC2:itemCable",
     "effectivness": 1.0
   },
   {
     "id": 4150,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidswood",
+    "name": "Деревянная жидкостная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipefluidswood",
     "effectivness": 1.0
   },
   {
     "id": 4223,
-    "name": "IC2:itemToolForgeHammer",
+    "name": "Кузнечный молот",
+    "rawname": "IC2:itemToolForgeHammer",
     "effectivness": 1.0
   },
   {
     "id": 4622,
-    "name": "ProjRed|Exploration:projectred.exploration.hoeruby",
+    "name": "Рубиновая мотыга",
+    "rawname": "ProjRed|Exploration:projectred.exploration.hoeruby",
     "effectivness": 1.0
   },
   {
     "id": 4124,
-    "name": "appliedenergistics2:item.ItemMultiMaterial",
+    "name": "Кристалл истинного кварца",
+    "rawname": "appliedenergistics2:item.ItemMultiMaterial",
     "effectivness": 1.0
   },
   {
     "id": 4107,
-    "name": "appliedenergistics2:item.ToolNetherQuartzSword",
+    "name": "Меч из кварца Нижнего мира",
+    "rawname": "appliedenergistics2:item.ToolNetherQuartzSword",
     "effectivness": 1.0
   },
   {
     "id": 4229,
-    "name": "IC2:itemToolChainsaw",
+    "name": "Электропила",
+    "rawname": "IC2:itemToolChainsaw",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [
@@ -2487,202 +2951,242 @@
   },
   {
     "id": 173,
-    "name": "minecraft:coal_block",
+    "name": "Угольный блок",
+    "rawname": "minecraft:coal_block",
     "effectivness": 1.0
   },
   {
     "id": 352,
-    "name": "minecraft:bone",
+    "name": "Кость",
+    "rawname": "minecraft:bone",
     "effectivness": 1.0
   },
   {
     "id": 4209,
-    "name": "IC2:itemPartCarbonMesh",
+    "name": "Углеткань",
+    "rawname": "IC2:itemPartCarbonMesh",
     "effectivness": 1.0
   },
   {
     "id": 359,
-    "name": "minecraft:shears",
+    "name": "Ножницы",
+    "rawname": "minecraft:shears",
     "effectivness": 1.0
   },
   {
     "id": 4315,
-    "name": "IC2:itemSlag",
+    "name": "Шлак",
+    "rawname": "IC2:itemSlag",
     "effectivness": 1.0
   },
   {
     "id": 2266,
-    "name": "minecraft:record_11",
+    "name": "Пластинка",
+    "rawname": "minecraft:record_11",
     "effectivness": 1.0
   },
   {
     "id": 142,
-    "name": "minecraft:potatoes",
+    "name": "Картофель",
+    "rawname": "minecraft:potatoes",
     "effectivness": 1.0
   },
   {
     "id": 4311,
-    "name": "IC2:itemPartCoalBall",
+    "name": "Угольный шарик",
+    "rawname": "IC2:itemPartCoalBall",
     "effectivness": 1.0
   },
   {
     "id": 4651,
-    "name": "ProjRed|Exploration:projectred.exploration.sapphirechestplate",
+    "name": "Сапфировая кираса",
+    "rawname": "ProjRed|Exploration:projectred.exploration.sapphirechestplate",
     "effectivness": 1.0
   },
   {
     "id": 293,
-    "name": "minecraft:diamond_hoe",
+    "name": "Алмазная мотыга",
+    "rawname": "minecraft:diamond_hoe",
     "effectivness": 1.0
   },
   {
     "id": 88,
-    "name": "minecraft:soul_sand",
+    "name": "Песок душ",
+    "rawname": "minecraft:soul_sand",
     "effectivness": 1.0
   },
   {
     "id": 523,
-    "name": "ProjRed|Illumination:projectred.illumination.lamp",
+    "name": "Белая лампа",
+    "rawname": "ProjRed|Illumination:projectred.illumination.lamp",
     "effectivness": 1.0
   },
   {
     "id": 519,
-    "name": "economyore:economyOre",
+    "name": "Экономическая руда",
+    "rawname": "economyore:economyOre",
     "effectivness": 1.0
   },
   {
     "id": 224,
-    "name": "BuildCraft|Factory:frameBlock",
+    "name": "Каркас",
+    "rawname": "BuildCraft|Factory:frameBlock",
     "effectivness": 1.0
   },
   {
     "id": 4344,
-    "name": "IC2:itemWeedingTrowel",
+    "name": "Совок для прополки",
+    "rawname": "IC2:itemWeedingTrowel",
     "effectivness": 1.0
   },
   {
     "id": 4557,
-    "name": "IronChest:woodCopperUpgrade",
+    "name": "Улучшение из деревянного в медный сундук",
+    "rawname": "IronChest:woodCopperUpgrade",
     "effectivness": 1.0
   },
   {
     "id": 364,
-    "name": "minecraft:cooked_beef",
+    "name": "Стейк",
+    "rawname": "minecraft:cooked_beef",
     "effectivness": 1.0
   },
   {
     "id": 4332,
-    "name": "IC2:itemToolPainterYellow",
+    "name": "Жёлтый валик",
+    "rawname": "IC2:itemToolPainterYellow",
     "effectivness": 1.0
   },
   {
     "id": 4314,
-    "name": "IC2:itemPartIndustrialDiamond",
+    "name": "Промышленный алмаз",
+    "rawname": "IC2:itemPartIndustrialDiamond",
     "effectivness": 1.0
   },
   {
     "id": 4261,
-    "name": "IC2:itemArmorEnergypack",
+    "name": "Энергетический ранец",
+    "rawname": "IC2:itemArmorEnergypack",
     "effectivness": 1.0
   },
   {
     "id": 190,
-    "name": "appliedenergistics2:tile.BlockDrive",
+    "name": "МЭ накопитель",
+    "rawname": "appliedenergistics2:tile.BlockDrive",
     "effectivness": 1.0
   },
   {
     "id": 368,
-    "name": "minecraft:ender_pearl",
+    "name": "Жемчуг Эндера",
+    "rawname": "minecraft:ender_pearl",
     "effectivness": 1.0
   },
   {
     "id": 522,
-    "name": "IC2NuclearControl:networkLink",
+    "name": "ME Network Monitor",
+    "rawname": "IC2NuclearControl:networkLink",
     "effectivness": 1.0
   },
   {
     "id": 4187,
-    "name": "IC2:itemDensePlates",
+    "name": "Плотная медная пластина",
+    "rawname": "IC2:itemDensePlates",
     "effectivness": 1.0
   },
   {
     "id": 424,
-    "name": "IC2:blockMachine",
+    "name": "Основной корпус механизма",
+    "rawname": "IC2:blockMachine",
     "effectivness": 1.0
   },
   {
     "id": 4582,
-    "name": "ForestryExtras:item.fe.comb.sheep",
+    "name": "Sheep Comb",
+    "rawname": "ForestryExtras:item.fe.comb.sheep",
     "effectivness": 1.0
   },
   {
     "id": 164,
-    "name": "minecraft:dark_oak_stairs",
+    "name": "Ступеньки из тёмного дуба",
+    "rawname": "minecraft:dark_oak_stairs",
     "effectivness": 1.0
   },
   {
     "id": 4141,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsgold",
+    "name": "Золотая транспортная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsgold",
     "effectivness": 1.0
   },
   {
     "id": 136,
-    "name": "minecraft:jungle_stairs",
+    "name": "Ступеньки из тропической древесины",
+    "rawname": "minecraft:jungle_stairs",
     "effectivness": 1.0
   },
   {
     "id": 176,
-    "name": "appliedenergistics2:tile.BlockQuartzGlass",
+    "name": "Кварцевое стекло",
+    "rawname": "appliedenergistics2:tile.BlockQuartzGlass",
     "effectivness": 1.0
   },
   {
     "id": 227,
-    "name": "BuildCraft|Factory:floodGateBlock",
+    "name": "Шлюз",
+    "rawname": "BuildCraft|Factory:floodGateBlock",
     "effectivness": 1.0
   },
   {
     "id": 170,
-    "name": "minecraft:hay_block",
+    "name": "Сноп сена",
+    "rawname": "minecraft:hay_block",
     "effectivness": 1.0
   },
   {
     "id": 4533,
-    "name": "ForestryExtras:item.fe.frame.frameSteel",
+    "name": "Стальная рамка",
+    "rawname": "ForestryExtras:item.fe.frame.frameSteel",
     "effectivness": 1.0
   },
   {
     "id": 222,
-    "name": "BuildCraft|Factory:plainPipeBlock",
+    "name": "Буровая труба",
+    "rawname": "BuildCraft|Factory:plainPipeBlock",
     "effectivness": 1.0
   },
   {
     "id": 501,
-    "name": "ForestryExtras:reinforcedBlock",
+    "name": "Усиленный блок",
+    "rawname": "ForestryExtras:reinforcedBlock",
     "effectivness": 1.0
   },
   {
     "id": 65,
-    "name": "minecraft:ladder",
+    "name": "Лестница",
+    "rawname": "minecraft:ladder",
     "effectivness": 1.0
   },
   {
     "id": 62,
-    "name": "minecraft:lit_furnace",
+    "name": "Печь",
+    "rawname": "minecraft:lit_furnace",
     "effectivness": 1.0
   },
   {
     "id": 2,
-    "name": "minecraft:grass",
+    "name": "Блок травы",
+    "rawname": "minecraft:grass",
     "effectivness": 1.0
   },
   {
     "id": 403,
-    "name": "minecraft:enchanted_book",
+    "name": "Зачарованная книга",
+    "rawname": "minecraft:enchanted_book",
     "effectivness": 1.0
   },
   {
     "id": 4642,
-    "name": "ProjRed|Exploration:projectred.exploration.sickleruby",
+    "name": "Рубиновый серп",
+    "rawname": "ProjRed|Exploration:projectred.exploration.sickleruby",
     "material": "RUBY",
     "effectivness": 1.0,
     "toolClass": [],
@@ -2690,187 +3194,224 @@
   },
   {
     "id": 4601,
-    "name": "ProjRed|Core:projectred.core.drawplate",
+    "name": "Волока",
+    "rawname": "ProjRed|Core:projectred.core.drawplate",
     "effectivness": 1.0
   },
   {
     "id": 4139,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsquartz",
+    "name": "Кварцевая транспортная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsquartz",
     "effectivness": 1.0
   },
   {
     "id": 4416,
-    "name": "Forestry:canLava",
+    "name": "Банка лавы",
+    "rawname": "Forestry:canLava",
     "effectivness": 1.0
   },
   {
     "id": 153,
-    "name": "minecraft:quartz_ore",
+    "name": "Кварцевая руда",
+    "rawname": "minecraft:quartz_ore",
     "effectivness": 1.0
   },
   {
     "id": 4445,
-    "name": "Forestry:bucketJuice",
+    "name": "Ведро фруктового сока",
+    "rawname": "Forestry:bucketJuice",
     "effectivness": 1.0
   },
   {
     "id": 267,
-    "name": "minecraft:iron_sword",
+    "name": "Железный меч",
+    "rawname": "minecraft:iron_sword",
     "effectivness": 1.0
   },
   {
     "id": 4422,
-    "name": "Forestry:waxCapsuleHoney",
+    "name": "Капсула мёда",
+    "rawname": "Forestry:waxCapsuleHoney",
     "effectivness": 1.0
   },
   {
     "id": 1,
-    "name": "minecraft:stone",
+    "name": "Камень",
+    "rawname": "minecraft:stone",
     "effectivness": 1.0
   },
   {
     "id": 4514,
-    "name": "ForestryExtras:item.fe.frame.frameDraconic",
+    "name": "Драконовская рамка",
+    "rawname": "ForestryExtras:item.fe.frame.frameDraconic",
     "effectivness": 1.0
   },
   {
     "id": 189,
-    "name": "appliedenergistics2:tile.BlockController",
+    "name": "МЭ контроллер",
+    "rawname": "appliedenergistics2:tile.BlockController",
     "effectivness": 1.0
   },
   {
     "id": 4184,
-    "name": "IC2:itemCrushedOre",
+    "name": "Измельчённая железная руда",
+    "rawname": "IC2:itemCrushedOre",
     "effectivness": 1.0
   },
   {
     "id": 4157,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsdiamond",
+    "name": "Алмазная жидкостная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsdiamond",
     "effectivness": 1.0
   },
   {
     "id": 4525,
-    "name": "ForestryExtras:item.fe.item.leadStick",
+    "name": "Свинцовая палка",
+    "rawname": "ForestryExtras:item.fe.item.leadStick",
     "effectivness": 1.0
   },
   {
     "id": 452,
-    "name": "Forestry:fluid.honey",
+    "name": "Мёд",
+    "rawname": "Forestry:fluid.honey",
     "effectivness": 1.0
   },
   {
     "id": 4118,
-    "name": "appliedenergistics2:item.ItemBasicStorageCell.64k",
+    "name": "64К МЭ ячейка хранения",
+    "rawname": "appliedenergistics2:item.ItemBasicStorageCell.64k",
     "effectivness": 1.0
   },
   {
     "id": 4375,
-    "name": "Forestry:ingotBronze",
+    "name": "Бронзовый слиток",
+    "rawname": "Forestry:ingotBronze",
     "effectivness": 1.0
   },
   {
     "id": 4290,
-    "name": "IC2:reactorUraniumDualdepleted",
+    "name": "Сдвоенный топливный стержень (Обеднённый уран)",
+    "rawname": "IC2:reactorUraniumDualdepleted",
     "effectivness": 1.0
   },
   {
     "id": 4283,
-    "name": "IC2:reactorUraniumSimple",
+    "name": "Топливный стержень (Уран)",
+    "rawname": "IC2:reactorUraniumSimple",
     "effectivness": 1.0
   },
   {
     "id": 515,
-    "name": "advancedcraft:workbench",
+    "name": "Улучшенный верстак",
+    "rawname": "advancedcraft:workbench",
     "effectivness": 1.0
   },
   {
     "id": 4129,
-    "name": "BuildCraft|Core:ironGearItem",
+    "name": "Железная шестерня",
+    "rawname": "BuildCraft|Core:ironGearItem",
     "effectivness": 1.0
   },
   {
     "id": 4196,
-    "name": "IC2:itemUran",
+    "name": "Обогащённое урановое ядерное топливо",
+    "rawname": "IC2:itemUran",
     "effectivness": 1.0
   },
   {
     "id": 4323,
-    "name": "IC2:itemToolPainterGreen",
+    "name": "Зелёный валик",
+    "rawname": "IC2:itemToolPainterGreen",
     "effectivness": 1.0
   },
   {
     "id": 230,
-    "name": "BuildCraft|Transport:filteredBufferBlock",
+    "name": "Фильтр",
+    "rawname": "BuildCraft|Transport:filteredBufferBlock",
     "effectivness": 1.0
   },
   {
     "id": 4575,
-    "name": "ForestryExtras:item.fe.comb.witheria",
+    "name": "Witheria Comb",
+    "rawname": "ForestryExtras:item.fe.comb.witheria",
     "effectivness": 1.0
   },
   {
     "id": 4536,
-    "name": "ForestryExtras:item.fe.nugget.reinforced",
+    "name": "Усиленный самородок",
+    "rawname": "ForestryExtras:item.fe.nugget.reinforced",
     "effectivness": 1.0
   },
   {
     "id": 419,
-    "name": "minecraft:diamond_horse_armor",
+    "name": "Алмазная конская броня",
+    "rawname": "minecraft:diamond_horse_armor",
     "effectivness": 1.0
   },
   {
     "id": 235,
-    "name": "IC2:blockOreTin",
+    "name": "Оловянная руда",
+    "rawname": "IC2:blockOreTin",
     "effectivness": 1.0
   },
   {
     "id": 4192,
-    "name": "IC2:itemDust2",
+    "name": "Диоксид кремния",
+    "rawname": "IC2:itemDust2",
     "effectivness": 1.0
   },
   {
     "id": 422,
-    "name": "minecraft:command_block_minecart",
+    "name": "Вагонетка с командным блоком",
+    "rawname": "minecraft:command_block_minecart",
     "effectivness": 1.0
   },
   {
     "id": 423,
-    "name": "IC2:blockChargepad",
+    "name": "Заряжающая плита (Энергохранилище)",
+    "rawname": "IC2:blockChargepad",
     "effectivness": 1.0
   },
   {
     "id": 4291,
-    "name": "IC2:reactorUraniumQuaddepleted",
+    "name": "Счетверённый топливный стержень (Обеднённый уран)",
+    "rawname": "IC2:reactorUraniumQuaddepleted",
     "effectivness": 1.0
   },
   {
     "id": 4252,
-    "name": "IC2:itemArmorNanoBoots",
+    "name": "Нано-ботинки",
+    "rawname": "IC2:itemArmorNanoBoots",
     "effectivness": 1.0
   },
   {
     "id": 280,
-    "name": "minecraft:stick",
+    "name": "Палка",
+    "rawname": "minecraft:stick",
     "effectivness": 1.0
   },
   {
     "id": 4377,
-    "name": "Forestry:pipette",
+    "name": "Пипетка",
+    "rawname": "Forestry:pipette",
     "effectivness": 1.0
   },
   {
     "id": 4531,
-    "name": "ForestryExtras:item.fe.frame.frameLead",
+    "name": "Свинцовая рамка",
+    "rawname": "ForestryExtras:item.fe.frame.frameLead",
     "effectivness": 1.0
   },
   {
     "id": 101,
-    "name": "minecraft:iron_bars",
+    "name": "Железные прутья",
+    "rawname": "minecraft:iron_bars",
     "effectivness": 1.0
   },
   {
     "id": 4239,
-    "name": "IC2:windmeter",
+    "name": "Ветромер",
+    "rawname": "IC2:windmeter",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [],
@@ -2878,77 +3419,92 @@
   },
   {
     "id": 4203,
-    "name": "IC2:itemFuelRod",
+    "name": "Топливный стержень (Пустой)",
+    "rawname": "IC2:itemFuelRod",
     "effectivness": 1.0
   },
   {
     "id": 354,
-    "name": "minecraft:cake",
+    "name": "Торт",
+    "rawname": "minecraft:cake",
     "effectivness": 1.0
   },
   {
     "id": 245,
-    "name": "IC2:blockBasalt",
+    "name": "Базальт",
+    "rawname": "IC2:blockBasalt",
     "effectivness": 1.0
   },
   {
     "id": 520,
-    "name": "IC2NuclearControl:blockNuclearControlMain",
+    "name": "Датчик температуры",
+    "rawname": "IC2NuclearControl:blockNuclearControlMain",
     "effectivness": 1.0
   },
   {
     "id": 4341,
-    "name": "IC2:itemGrinPowder",
+    "name": "Токсичная пыль",
+    "rawname": "IC2:itemGrinPowder",
     "effectivness": 1.0
   },
   {
     "id": 160,
-    "name": "minecraft:stained_glass_pane",
+    "name": "Белая стеклянная панель",
+    "rawname": "minecraft:stained_glass_pane",
     "effectivness": 1.0
   },
   {
     "id": 4462,
-    "name": "Forestry:royalJelly",
+    "name": "Маточное молочко",
+    "rawname": "Forestry:royalJelly",
     "effectivness": 1.0
   },
   {
     "id": 196,
-    "name": "appliedenergistics2:tile.BlockVibrationChamber",
+    "name": "Вибрационная камера",
+    "rawname": "appliedenergistics2:tile.BlockVibrationChamber",
     "effectivness": 1.0
   },
   {
     "id": 294,
-    "name": "minecraft:golden_hoe",
+    "name": "Золотая мотыга",
+    "rawname": "minecraft:golden_hoe",
     "effectivness": 1.0
   },
   {
     "id": 4578,
-    "name": "ForestryExtras:item.fe.comb.potato",
+    "name": "Potato Comb",
+    "rawname": "ForestryExtras:item.fe.comb.potato",
     "effectivness": 1.0
   },
   {
     "id": 214,
-    "name": "appliedenergistics2:tile.QuartzPillarStairBlock",
+    "name": "Ступеньки из колонны истинного кварца",
+    "rawname": "appliedenergistics2:tile.QuartzPillarStairBlock",
     "effectivness": 1.0
   },
   {
     "id": 431,
-    "name": "IC2:blockPersonal",
+    "name": "Личный сейф",
+    "rawname": "IC2:blockPersonal",
     "effectivness": 1.0
   },
   {
     "id": 4127,
-    "name": "BuildCraft|Core:woodenGearItem",
+    "name": "Деревянная шестерня",
+    "rawname": "BuildCraft|Core:woodenGearItem",
     "effectivness": 1.0
   },
   {
     "id": 495,
-    "name": "Forestry:factory",
+    "name": "Разливочный механизм",
+    "rawname": "Forestry:factory",
     "effectivness": 1.0
   },
   {
     "id": 258,
-    "name": "minecraft:iron_axe",
+    "name": "Железный топор",
+    "rawname": "minecraft:iron_axe",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [
@@ -2960,32 +3516,38 @@
   },
   {
     "id": 4272,
-    "name": "IC2:itemBatChargeRE",
+    "name": "Charging RE Battery",
+    "rawname": "IC2:itemBatChargeRE",
     "effectivness": 1.0
   },
   {
     "id": 174,
-    "name": "minecraft:packed_ice",
+    "name": "Плотный лёд",
+    "rawname": "minecraft:packed_ice",
     "effectivness": 1.0
   },
   {
     "id": 4351,
-    "name": "IC2:itemTerraWart",
+    "name": "Земляной нарост",
+    "rawname": "IC2:itemTerraWart",
     "effectivness": 1.0
   },
   {
     "id": 206,
-    "name": "appliedenergistics2:tile.BlockPaint",
+    "name": "tile.appliedenergistics2.BlockPaint.name",
+    "rawname": "appliedenergistics2:tile.BlockPaint",
     "effectivness": 1.0
   },
   {
     "id": 2257,
-    "name": "minecraft:record_cat",
+    "name": "Пластинка",
+    "rawname": "minecraft:record_cat",
     "effectivness": 1.0
   },
   {
     "id": 4098,
-    "name": "appliedenergistics2:item.ToolCertusQuartzSpade",
+    "name": "Лопата из истинного кварца",
+    "rawname": "appliedenergistics2:item.ToolCertusQuartzSpade",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [
@@ -2997,192 +3559,230 @@
   },
   {
     "id": 4392,
-    "name": "Forestry:carton",
+    "name": "Картон",
+    "rawname": "Forestry:carton",
     "effectivness": 1.0
   },
   {
     "id": 4593,
-    "name": "IC2NuclearControl:ItemTimeCard",
+    "name": "Карта со временем",
+    "rawname": "IC2NuclearControl:ItemTimeCard",
     "effectivness": 1.0
   },
   {
     "id": 4631,
-    "name": "ProjRed|Exploration:projectred.exploration.swordruby",
+    "name": "Рубиновый меч",
+    "rawname": "ProjRed|Exploration:projectred.exploration.swordruby",
     "effectivness": 1.0
   },
   {
     "id": 4367,
-    "name": "IC2:itemAdvIronBlockCuttingBlade",
+    "name": "Стальной режущий диск",
+    "rawname": "IC2:itemAdvIronBlockCuttingBlade",
     "effectivness": 1.0
   },
   {
     "id": 13,
-    "name": "minecraft:gravel",
+    "name": "Гравий",
+    "rawname": "minecraft:gravel",
     "effectivness": 1.0
   },
   {
     "id": 4330,
-    "name": "IC2:itemToolPainterPink",
+    "name": "Розовый валик",
+    "rawname": "IC2:itemToolPainterPink",
     "effectivness": 1.0
   },
   {
     "id": 4659,
-    "name": "wanditems:itemInfo",
+    "name": "Бирка для проверки привата",
+    "rawname": "wanditems:itemInfo",
     "effectivness": 1.0
   },
   {
     "id": 80,
-    "name": "minecraft:snow",
+    "name": "Снег",
+    "rawname": "minecraft:snow",
     "effectivness": 1.0
   },
   {
     "id": 2267,
-    "name": "minecraft:record_wait",
+    "name": "Пластинка",
+    "rawname": "minecraft:record_wait",
     "effectivness": 1.0
   },
   {
     "id": 4657,
-    "name": "ProjRed|Exploration:projectred.exploration.peridotboots",
+    "name": "Перидотовые ботинки",
+    "rawname": "ProjRed|Exploration:projectred.exploration.peridotboots",
     "effectivness": 1.0
   },
   {
     "id": 405,
-    "name": "minecraft:netherbrick",
+    "name": "Адский кирпич",
+    "rawname": "minecraft:netherbrick",
     "effectivness": 1.0
   },
   {
     "id": 4259,
-    "name": "IC2:itemArmorBatpack",
+    "name": "Аккумуляторный ранец",
+    "rawname": "IC2:itemArmorBatpack",
     "effectivness": 1.0
   },
   {
     "id": 4159,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsvoid",
+    "name": "Пустотная жидкостная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsvoid",
     "effectivness": 1.0
   },
   {
     "id": 4512,
-    "name": "ForestryExtras:item.fe.frame.frameReinforced",
+    "name": "Усиленная рамка",
+    "rawname": "ForestryExtras:item.fe.frame.frameReinforced",
     "effectivness": 1.0
   },
   {
     "id": 54,
-    "name": "minecraft:chest",
+    "name": "Сундук",
+    "rawname": "minecraft:chest",
     "effectivness": 1.0
   },
   {
     "id": 509,
-    "name": "statues:statues.showcase",
+    "name": "tile.statues.showcase.name",
+    "rawname": "statues:statues.showcase",
     "effectivness": 1.0
   },
   {
     "id": 4431,
-    "name": "Forestry:refractoryBiomass",
+    "name": "Капсула биомассы",
+    "rawname": "Forestry:refractoryBiomass",
     "effectivness": 1.0
   },
   {
     "id": 4510,
-    "name": "ForestryExtras:item.fe.frame.frameDiamond",
+    "name": "Алмазная рамка",
+    "rawname": "ForestryExtras:item.fe.frame.frameDiamond",
     "effectivness": 1.0
   },
   {
     "id": 451,
-    "name": "Forestry:fluid.glass",
+    "name": "Жидкое стекло",
+    "rawname": "Forestry:fluid.glass",
     "effectivness": 1.0
   },
   {
     "id": 4100,
-    "name": "appliedenergistics2:item.ToolCertusQuartzSword",
+    "name": "Меч из истинного кварца",
+    "rawname": "appliedenergistics2:item.ToolCertusQuartzSword",
     "effectivness": 1.0
   },
   {
     "id": 4458,
-    "name": "Forestry:honeyDrop",
+    "name": "Капля мёда",
+    "rawname": "Forestry:honeyDrop",
     "effectivness": 1.0
   },
   {
     "id": 7,
-    "name": "minecraft:bedrock",
+    "name": "Бедрок",
+    "rawname": "minecraft:bedrock",
     "effectivness": 1.0
   },
   {
     "id": 128,
-    "name": "minecraft:sandstone_stairs",
+    "name": "Ступеньки из песчаника",
+    "rawname": "minecraft:sandstone_stairs",
     "effectivness": 1.0
   },
   {
     "id": 4513,
-    "name": "ForestryExtras:item.fe.frame.frameWitheria",
+    "name": "Иссушающая рамка",
+    "rawname": "ForestryExtras:item.fe.frame.frameWitheria",
     "effectivness": 1.0
   },
   {
     "id": 147,
-    "name": "minecraft:light_weighted_pressure_plate",
+    "name": "Утяжелённая нажимная пластина (Лёгкая)",
+    "rawname": "minecraft:light_weighted_pressure_plate",
     "effectivness": 1.0
   },
   {
     "id": 4137,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemscobblestone",
+    "name": "Булыжниковая транспортная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipeitemscobblestone",
     "effectivness": 1.0
   },
   {
     "id": 98,
-    "name": "minecraft:stonebrick",
+    "name": "Каменные кирпичи",
+    "rawname": "minecraft:stonebrick",
     "effectivness": 1.0
   },
   {
     "id": 4299,
-    "name": "IC2:reactorHeatSwitchCore",
+    "name": "Реакторный теплообменник",
+    "rawname": "IC2:reactorHeatSwitchCore",
     "effectivness": 1.0
   },
   {
     "id": 4414,
-    "name": "Forestry:canSeedOil",
+    "name": "Банка растительного масла",
+    "rawname": "Forestry:canSeedOil",
     "effectivness": 1.0
   },
   {
     "id": 4386,
-    "name": "Forestry:gearBronze",
+    "name": "Бронзовая шестерня",
+    "rawname": "Forestry:gearBronze",
     "effectivness": 1.0
   },
   {
     "id": 4400,
-    "name": "Forestry:kitPickaxe",
+    "name": "Сборная кирка",
+    "rawname": "Forestry:kitPickaxe",
     "effectivness": 1.0
   },
   {
     "id": 4494,
-    "name": "ForestryExtras:item.fe.item.coalStick",
+    "name": "Угольная палка",
+    "rawname": "ForestryExtras:item.fe.item.coalStick",
     "effectivness": 1.0
   },
   {
     "id": 334,
-    "name": "minecraft:leather",
+    "name": "Кожа",
+    "rawname": "minecraft:leather",
     "effectivness": 1.0
   },
   {
     "id": 152,
-    "name": "minecraft:redstone_block",
+    "name": "Блок красного камня",
+    "rawname": "minecraft:redstone_block",
     "effectivness": 1.0
   },
   {
     "id": 4347,
-    "name": "IC2:itemCropnalyzer",
+    "name": "Анализатор агрокультур",
+    "rawname": "IC2:itemCropnalyzer",
     "effectivness": 1.0
   },
   {
     "id": 238,
-    "name": "IC2:blockRubWood",
+    "name": "Древесина гевеи",
+    "rawname": "IC2:blockRubWood",
     "effectivness": 1.0
   },
   {
     "id": 4212,
-    "name": "IC2:itemPartIridium",
+    "name": "Укреплённая иридиевая пластина",
+    "rawname": "IC2:itemPartIridium",
     "effectivness": 1.0
   },
   {
     "id": 4546,
-    "name": "GraviSuite:graviTool",
+    "name": "Гравитул",
+    "rawname": "GraviSuite:graviTool",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [],
@@ -3190,12 +3790,14 @@
   },
   {
     "id": 114,
-    "name": "minecraft:nether_brick_stairs",
+    "name": "Адские ступеньки",
+    "rawname": "minecraft:nether_brick_stairs",
     "effectivness": 1.0
   },
   {
     "id": 4639,
-    "name": "ProjRed|Exploration:projectred.exploration.sicklestone",
+    "name": "Каменный серп",
+    "rawname": "ProjRed|Exploration:projectred.exploration.sicklestone",
     "material": "STONE",
     "effectivness": 1.0,
     "toolClass": [],
@@ -3203,112 +3805,134 @@
   },
   {
     "id": 111,
-    "name": "minecraft:waterlily",
+    "name": "Кувшинка",
+    "rawname": "minecraft:waterlily",
     "effectivness": 1.0
   },
   {
     "id": 2262,
-    "name": "minecraft:record_mellohi",
+    "name": "Пластинка",
+    "rawname": "minecraft:record_mellohi",
     "effectivness": 1.0
   },
   {
     "id": 408,
-    "name": "minecraft:hopper_minecart",
+    "name": "Вагонетка с загрузочной воронкой",
+    "rawname": "minecraft:hopper_minecart",
     "effectivness": 1.0
   },
   {
     "id": 4487,
-    "name": "ForestryExtras:item.fe.item.mutatedIronIngot",
+    "name": "Mutated Iron Ingot",
+    "rawname": "ForestryExtras:item.fe.item.mutatedIronIngot",
     "effectivness": 1.0
   },
   {
     "id": 506,
-    "name": "IronChest:BlockIronChest",
+    "name": "Железный сундук",
+    "rawname": "IronChest:BlockIronChest",
     "effectivness": 1.0
   },
   {
     "id": 2258,
-    "name": "minecraft:record_blocks",
+    "name": "Пластинка",
+    "rawname": "minecraft:record_blocks",
     "effectivness": 1.0
   },
   {
     "id": 365,
-    "name": "minecraft:chicken",
+    "name": "Курятина",
+    "rawname": "minecraft:chicken",
     "effectivness": 1.0
   },
   {
     "id": 4183,
-    "name": "IC2:itemCasing",
+    "name": "Медная оболочка",
+    "rawname": "IC2:itemCasing",
     "effectivness": 1.0
   },
   {
     "id": 4653,
-    "name": "ProjRed|Exploration:projectred.exploration.sapphireboots",
+    "name": "Сапфировые ботинки",
+    "rawname": "ProjRed|Exploration:projectred.exploration.sapphireboots",
     "effectivness": 1.0
   },
   {
     "id": 4207,
-    "name": "IC2:itemPartAlloy",
+    "name": "Композит",
+    "rawname": "IC2:itemPartAlloy",
     "effectivness": 1.0
   },
   {
     "id": 4432,
-    "name": "Forestry:refractoryHoney",
+    "name": "Капсула мёда",
+    "rawname": "Forestry:refractoryHoney",
     "effectivness": 1.0
   },
   {
     "id": 395,
-    "name": "minecraft:map",
+    "name": "Чистая карта",
+    "rawname": "minecraft:map",
     "effectivness": 1.0
   },
   {
     "id": 4356,
-    "name": "IC2:itemMugCoffee",
+    "name": "Холодный кофе",
+    "rawname": "IC2:itemMugCoffee",
     "effectivness": 1.0
   },
   {
     "id": 4357,
-    "name": "IC2:itemHops",
+    "name": "Хмель",
+    "rawname": "IC2:itemHops",
     "effectivness": 1.0
   },
   {
     "id": 386,
-    "name": "minecraft:writable_book",
+    "name": "Книга и перо",
+    "rawname": "minecraft:writable_book",
     "effectivness": 1.0
   },
   {
     "id": 282,
-    "name": "minecraft:mushroom_stew",
+    "name": "Тушеные грибы",
+    "rawname": "minecraft:mushroom_stew",
     "effectivness": 1.0
   },
   {
     "id": 31,
-    "name": "minecraft:tallgrass",
+    "name": "Куст",
+    "rawname": "minecraft:tallgrass",
     "effectivness": 1.0
   },
   {
     "id": 4384,
-    "name": "Forestry:ash",
+    "name": "Зола",
+    "rawname": "Forestry:ash",
     "effectivness": 1.0
   },
   {
     "id": 4610,
-    "name": "ProjRed|Illumination:projectred.illumination.fixture.inv",
+    "name": "Инверторный белый светильник",
+    "rawname": "ProjRed|Illumination:projectred.illumination.fixture.inv",
     "effectivness": 1.0
   },
   {
     "id": 4298,
-    "name": "IC2:reactorHeatSwitch",
+    "name": "Теплообменник",
+    "rawname": "IC2:reactorHeatSwitch",
     "effectivness": 1.0
   },
   {
     "id": 4417,
-    "name": "Forestry:canFuel",
+    "name": "Банка топлива",
+    "rawname": "Forestry:canFuel",
     "effectivness": 1.0
   },
   {
     "id": 4629,
-    "name": "ProjRed|Exploration:projectred.exploration.shovelsapphire",
+    "name": "Сапфировая лопата",
+    "rawname": "ProjRed|Exploration:projectred.exploration.shovelsapphire",
     "material": "SAPPHIRE",
     "effectivness": 1.0,
     "toolClass": [
@@ -3320,37 +3944,44 @@
   },
   {
     "id": 239,
-    "name": "IC2:blockRubLeaves",
+    "name": "Листва гевеи",
+    "rawname": "IC2:blockRubLeaves",
     "effectivness": 1.0
   },
   {
     "id": 4488,
-    "name": "ForestryExtras:item.fe.item.legendaryIngot",
+    "name": "Legendary Ingot",
+    "rawname": "ForestryExtras:item.fe.item.legendaryIngot",
     "effectivness": 1.0
   },
   {
     "id": 2259,
-    "name": "minecraft:record_chirp",
+    "name": "Пластинка",
+    "rawname": "minecraft:record_chirp",
     "effectivness": 1.0
   },
   {
     "id": 4424,
-    "name": "Forestry:waxCapsuleJuice",
+    "name": "Капсула сока",
+    "rawname": "Forestry:waxCapsuleJuice",
     "effectivness": 1.0
   },
   {
     "id": 397,
-    "name": "minecraft:skull",
+    "name": "Череп",
+    "rawname": "minecraft:skull",
     "effectivness": 1.0
   },
   {
     "id": 4478,
-    "name": "Forestry:honeyPot",
+    "name": "Горшочек мёда",
+    "rawname": "Forestry:honeyPot",
     "effectivness": 1.0
   },
   {
     "id": 4227,
-    "name": "IC2:itemToolDDrill",
+    "name": "Алмазный бур",
+    "rawname": "IC2:itemToolDDrill",
     "material": "EMERALD",
     "effectivness": 1.0,
     "toolClass": [
@@ -3364,67 +3995,80 @@
   },
   {
     "id": 326,
-    "name": "minecraft:water_bucket",
+    "name": "Ведро воды",
+    "rawname": "minecraft:water_bucket",
     "effectivness": 1.0
   },
   {
     "id": 4254,
-    "name": "IC2:itemArmorQuantumChestplate",
+    "name": "Квантовая кираса",
+    "rawname": "IC2:itemArmorQuantumChestplate",
     "effectivness": 1.0
   },
   {
     "id": 436,
-    "name": "IC2:fluidCoolant",
+    "name": "Хладагент",
+    "rawname": "IC2:fluidCoolant",
     "effectivness": 1.0
   },
   {
     "id": 4447,
-    "name": "Forestry:bucketShortMead",
+    "name": "Ведро питного мёда",
+    "rawname": "Forestry:bucketShortMead",
     "effectivness": 1.0
   },
   {
     "id": 4596,
-    "name": "IC2NuclearControl:ItemLiquidArrayLocationCard",
+    "name": "Карта-датчик расположения массива жидкости",
+    "rawname": "IC2NuclearControl:ItemLiquidArrayLocationCard",
     "effectivness": 1.0
   },
   {
     "id": 261,
-    "name": "minecraft:bow",
+    "name": "Лук",
+    "rawname": "minecraft:bow",
     "effectivness": 1.0
   },
   {
     "id": 4101,
-    "name": "appliedenergistics2:item.ToolCertusQuartzWrench",
+    "name": "Гаечный ключ из истинного кварца",
+    "rawname": "appliedenergistics2:item.ToolCertusQuartzWrench",
     "effectivness": 1.0
   },
   {
     "id": 242,
-    "name": "IC2:blockRubber",
+    "name": "Резиновый лист",
+    "rawname": "IC2:blockRubber",
     "effectivness": 1.0
   },
   {
     "id": 494,
-    "name": "Forestry:engine",
+    "name": "Электродвигатель",
+    "rawname": "Forestry:engine",
     "effectivness": 1.0
   },
   {
     "id": 356,
-    "name": "minecraft:repeater",
+    "name": "Повторитель",
+    "rawname": "minecraft:repeater",
     "effectivness": 1.0
   },
   {
     "id": 4508,
-    "name": "ForestryExtras:item.fe.frame.frameIron",
+    "name": "Железная рамка",
+    "rawname": "ForestryExtras:item.fe.frame.frameIron",
     "effectivness": 1.0
   },
   {
     "id": 402,
-    "name": "minecraft:firework_charge",
+    "name": "Звёздочка",
+    "rawname": "minecraft:firework_charge",
     "effectivness": 1.0
   },
   {
     "id": 4626,
-    "name": "ProjRed|Exploration:projectred.exploration.pickaxesapphire",
+    "name": "Сапфировая кирка",
+    "rawname": "ProjRed|Exploration:projectred.exploration.pickaxesapphire",
     "material": "SAPPHIRE",
     "effectivness": 1.0,
     "toolClass": [
@@ -3436,47 +4080,56 @@
   },
   {
     "id": 4360,
-    "name": "IC2:itemwoodrotor",
+    "name": "Деревянный ротор ветрогенератора",
+    "rawname": "IC2:itemwoodrotor",
     "effectivness": 1.0
   },
   {
     "id": 4135,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemswood",
+    "name": "Деревянная транспортная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipeitemswood",
     "effectivness": 1.0
   },
   {
     "id": 236,
-    "name": "IC2:blockOreUran",
+    "name": "Урановая руда",
+    "rawname": "IC2:blockOreUran",
     "effectivness": 1.0
   },
   {
     "id": 4234,
-    "name": "IC2:itemScanner",
+    "name": "КР сканер",
+    "rawname": "IC2:itemScanner",
     "effectivness": 1.0
   },
   {
     "id": 4490,
-    "name": "ForestryExtras:item.fe.item.ryu ingot",
+    "name": "Ryu Ingot",
+    "rawname": "ForestryExtras:item.fe.item.ryu ingot",
     "effectivness": 1.0
   },
   {
     "id": 4132,
-    "name": "BuildCraft|Energy:bucketOil",
+    "name": "Ведро нефти",
+    "rawname": "BuildCraft|Energy:bucketOil",
     "effectivness": 1.0
   },
   {
     "id": 4371,
-    "name": "Forestry:apatite",
+    "name": "Апатит",
+    "rawname": "Forestry:apatite",
     "effectivness": 1.0
   },
   {
     "id": 4115,
-    "name": "appliedenergistics2:item.ItemBasicStorageCell.1k",
+    "name": "1К МЭ ячейка хранения",
+    "rawname": "appliedenergistics2:item.ItemBasicStorageCell.1k",
     "effectivness": 1.0
   },
   {
     "id": 4228,
-    "name": "IC2:itemToolIridiumDrill",
+    "name": "Иридиевый бур",
+    "rawname": "IC2:itemToolIridiumDrill",
     "material": "EMERALD",
     "effectivness": 1.0,
     "toolClass": [
@@ -3490,287 +4143,344 @@
   },
   {
     "id": 2256,
-    "name": "minecraft:record_13",
+    "name": "Пластинка",
+    "rawname": "minecraft:record_13",
     "effectivness": 1.0
   },
   {
     "id": 4449,
-    "name": "Forestry:beeDroneGE",
+    "name": "item.for.beeDroneGE.name",
+    "rawname": "Forestry:beeDroneGE",
     "effectivness": 1.0
   },
   {
     "id": 4177,
-    "name": "BuildCraft|Silicon:redstoneCrystal",
+    "name": "Красный кристалл",
+    "rawname": "BuildCraft|Silicon:redstoneCrystal",
     "effectivness": 1.0
   },
   {
     "id": 229,
-    "name": "BuildCraft|Factory:blockHopper",
+    "name": "Воронка",
+    "rawname": "BuildCraft|Factory:blockHopper",
     "effectivness": 1.0
   },
   {
     "id": 449,
-    "name": "Forestry:fluid.bioethanol",
+    "name": "Этанол",
+    "rawname": "Forestry:fluid.bioethanol",
     "effectivness": 1.0
   },
   {
     "id": 4244,
-    "name": "IC2:itemArmorBronzeHelmet",
+    "name": "Бронзовый шлем",
+    "rawname": "IC2:itemArmorBronzeHelmet",
     "effectivness": 1.0
   },
   {
     "id": 4395,
-    "name": "Forestry:brokenBronzePickaxe",
+    "name": "Сломанная кирка",
+    "rawname": "Forestry:brokenBronzePickaxe",
     "effectivness": 1.0
   },
   {
     "id": 4294,
-    "name": "IC2:reactorCoolantSix",
+    "name": "Охлаждающий стержень 60к",
+    "rawname": "IC2:reactorCoolantSix",
     "effectivness": 1.0
   },
   {
     "id": 4365,
-    "name": "IC2:itemSteamTurbineBlade",
+    "name": "Лопасть паровой турбины",
+    "rawname": "IC2:itemSteamTurbineBlade",
     "effectivness": 1.0
   },
   {
     "id": 514,
-    "name": "wildcaves3:FossilBlock",
+    "name": "Окаменелость",
+    "rawname": "wildcaves3:FossilBlock",
     "effectivness": 1.0
   },
   {
     "id": 4163,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepowerquartz",
+    "name": "Кварцевая энергетическая труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipepowerquartz",
     "effectivness": 1.0
   },
   {
     "id": 210,
-    "name": "appliedenergistics2:tile.SkyStoneSmallBrickStairBlock",
+    "name": "Ступеньки из малого кирпича небесного камня",
+    "rawname": "appliedenergistics2:tile.SkyStoneSmallBrickStairBlock",
     "effectivness": 1.0
   },
   {
     "id": 441,
-    "name": "IC2:fluidDistilledWater",
+    "name": "Дистиллированная вода",
+    "rawname": "IC2:fluidDistilledWater",
     "effectivness": 1.0
   },
   {
     "id": 4457,
-    "name": "Forestry:frameProven",
+    "name": "Проверенная рамка",
+    "rawname": "Forestry:frameProven",
     "effectivness": 1.0
   },
   {
     "id": 4389,
-    "name": "Forestry:chipsets",
+    "name": "Основная печатная плата",
+    "rawname": "Forestry:chipsets",
     "effectivness": 1.0
   },
   {
     "id": 4534,
-    "name": "ForestryExtras:item.fe.frame.frameTin",
+    "name": "Оловянная рамка",
+    "rawname": "ForestryExtras:item.fe.frame.frameTin",
     "effectivness": 1.0
   },
   {
     "id": 169,
-    "name": "appliedenergistics2:tile.BlockQuartzChiseled",
+    "name": "Резной блок истинного кварца",
+    "rawname": "appliedenergistics2:tile.BlockQuartzChiseled",
     "effectivness": 1.0
   },
   {
     "id": 4337,
-    "name": "IC2:upgradeModule",
+    "name": "Улучшение «Ускоритель»",
+    "rawname": "IC2:upgradeModule",
     "effectivness": 1.0
   },
   {
     "id": 4592,
-    "name": "IC2NuclearControl:ItemEnergyArrayLocationCard",
+    "name": "Карта-датчик расположения массива с энергией",
+    "rawname": "IC2NuclearControl:ItemEnergyArrayLocationCard",
     "effectivness": 1.0
   },
   {
     "id": 400,
-    "name": "minecraft:pumpkin_pie",
+    "name": "Тыквенный пирог",
+    "rawname": "minecraft:pumpkin_pie",
     "effectivness": 1.0
   },
   {
     "id": 333,
-    "name": "minecraft:boat",
+    "name": "Лодка",
+    "rawname": "minecraft:boat",
     "effectivness": 1.0
   },
   {
     "id": 70,
-    "name": "minecraft:stone_pressure_plate",
+    "name": "Нажимная плита",
+    "rawname": "minecraft:stone_pressure_plate",
     "effectivness": 1.0
   },
   {
     "id": 157,
-    "name": "minecraft:activator_rail",
+    "name": "Активирующие рельсы",
+    "rawname": "minecraft:activator_rail",
     "effectivness": 1.0
   },
   {
     "id": 4420,
-    "name": "Forestry:waxCapsuleEthanol",
+    "name": "Капсула этанола",
+    "rawname": "Forestry:waxCapsuleEthanol",
     "effectivness": 1.0
   },
   {
     "id": 4255,
-    "name": "IC2:itemArmorQuantumLegs",
+    "name": "Квантовые поножи",
+    "rawname": "IC2:itemArmorQuantumLegs",
     "effectivness": 1.0
   },
   {
     "id": 4485,
-    "name": "ForestryExtras:item.fe.item.reinforcedIngot",
+    "name": "Усиленный слиток",
+    "rawname": "ForestryExtras:item.fe.item.reinforcedIngot",
     "effectivness": 1.0
   },
   {
     "id": 231,
-    "name": "BuildCraft|Transport:pipeBlock",
+    "name": "tile.pipeBlock.name",
+    "rawname": "BuildCraft|Transport:pipeBlock",
     "effectivness": 1.0
   },
   {
     "id": 4468,
-    "name": "Forestry:apiaristBoots",
+    "name": "Ботинки пчеловода",
+    "rawname": "Forestry:apiaristBoots",
     "effectivness": 1.0
   },
   {
     "id": 378,
-    "name": "minecraft:magma_cream",
+    "name": "Сгусток магмы",
+    "rawname": "minecraft:magma_cream",
     "effectivness": 1.0
   },
   {
     "id": 179,
-    "name": "appliedenergistics2:tile.BlockFluix",
+    "name": "Изменчивый блок",
+    "rawname": "appliedenergistics2:tile.BlockFluix",
     "effectivness": 1.0
   },
   {
     "id": 8,
-    "name": "minecraft:flowing_water",
+    "name": "Вода",
+    "rawname": "minecraft:flowing_water",
     "effectivness": 1.0
   },
   {
     "id": 4448,
-    "name": "Forestry:beeQueenGE",
+    "name": "Королева",
+    "rawname": "Forestry:beeQueenGE",
     "effectivness": 1.0
   },
   {
     "id": 113,
-    "name": "minecraft:nether_brick_fence",
+    "name": "Адский забор",
+    "rawname": "minecraft:nether_brick_fence",
     "effectivness": 1.0
   },
   {
     "id": 4491,
-    "name": "ForestryExtras:item.fe.item.itarius ingot",
+    "name": "Itarius Ingot",
+    "rawname": "ForestryExtras:item.fe.item.itarius ingot",
     "effectivness": 1.0
   },
   {
     "id": 283,
-    "name": "minecraft:golden_sword",
+    "name": "Золотой меч",
+    "rawname": "minecraft:golden_sword",
     "effectivness": 1.0
   },
   {
     "id": 133,
-    "name": "minecraft:emerald_block",
+    "name": "Изумрудный блок",
+    "rawname": "minecraft:emerald_block",
     "effectivness": 1.0
   },
   {
     "id": 4561,
-    "name": "statues:statues.item.showcase",
+    "name": "Витрина",
+    "rawname": "statues:statues.item.showcase",
     "effectivness": 1.0
   },
   {
     "id": 12,
-    "name": "minecraft:sand",
+    "name": "Песок",
+    "rawname": "minecraft:sand",
     "effectivness": 1.0
   },
   {
     "id": 517,
-    "name": "economy:shopBlockBought",
+    "name": "Магазин (Скупка предметов)",
+    "rawname": "economy:shopBlockBought",
     "effectivness": 1.0
   },
   {
     "id": 4368,
-    "name": "IC2:itemDiamondBlockCuttingBlade",
+    "name": "Алмазный режущий диск",
+    "rawname": "IC2:itemDiamondBlockCuttingBlade",
     "effectivness": 1.0
   },
   {
     "id": 116,
-    "name": "minecraft:enchanting_table",
+    "name": "Стол зачарований",
+    "rawname": "minecraft:enchanting_table",
     "effectivness": 1.0
   },
   {
     "id": 480,
-    "name": "Forestry:planks2",
+    "name": "Доски из гибискуса",
+    "rawname": "Forestry:planks2",
     "effectivness": 1.0
   },
   {
     "id": 67,
-    "name": "minecraft:stone_stairs",
+    "name": "Ступеньки из булыжника",
+    "rawname": "minecraft:stone_stairs",
     "effectivness": 1.0
   },
   {
     "id": 4305,
-    "name": "IC2:reactorVentSpread",
+    "name": "Компонентный теплоотвод",
+    "rawname": "IC2:reactorVentSpread",
     "effectivness": 1.0
   },
   {
     "id": 4460,
-    "name": "Forestry:propolis",
+    "name": "Прополис",
+    "rawname": "Forestry:propolis",
     "effectivness": 1.0
   },
   {
     "id": 4245,
-    "name": "IC2:itemArmorBronzeChestplate",
+    "name": "Бронзовая кираса",
+    "rawname": "IC2:itemArmorBronzeChestplate",
     "effectivness": 1.0
   },
   {
     "id": 4116,
-    "name": "appliedenergistics2:item.ItemBasicStorageCell.4k",
+    "name": "4К МЭ ячейка хранения",
+    "rawname": "appliedenergistics2:item.ItemBasicStorageCell.4k",
     "effectivness": 1.0
   },
   {
     "id": 4195,
-    "name": "IC2:itemTritiumCell",
+    "name": "Топливный стержень (Тритий)",
+    "rawname": "IC2:itemTritiumCell",
     "effectivness": 1.0
   },
   {
     "id": 4326,
-    "name": "IC2:itemToolPainterPurple",
+    "name": "Фиолетовый валик",
+    "rawname": "IC2:itemToolPainterPurple",
     "effectivness": 1.0
   },
   {
     "id": 4117,
-    "name": "appliedenergistics2:item.ItemBasicStorageCell.16k",
+    "name": "16К МЭ ячейка хранения",
+    "rawname": "appliedenergistics2:item.ItemBasicStorageCell.16k",
     "effectivness": 1.0
   },
   {
     "id": 85,
-    "name": "minecraft:fence",
+    "name": "Забор",
+    "rawname": "minecraft:fence",
     "effectivness": 1.0
   },
   {
     "id": 302,
-    "name": "minecraft:chainmail_helmet",
+    "name": "Койф",
+    "rawname": "minecraft:chainmail_helmet",
     "effectivness": 1.0
   },
   {
     "id": 384,
-    "name": "minecraft:experience_bottle",
+    "name": "Пузырёк опыта",
+    "rawname": "minecraft:experience_bottle",
     "effectivness": 1.0
   },
   {
     "id": 525,
-    "name": "ProjRed|Exploration:projectred.exploration.ore",
+    "name": "Рубиновая руда",
+    "rawname": "ProjRed|Exploration:projectred.exploration.ore",
     "effectivness": 1.0
   },
   {
     "id": 24,
-    "name": "minecraft:sandstone",
+    "name": "Песчаник",
+    "rawname": "minecraft:sandstone",
     "effectivness": 1.0
   },
   {
     "id": 4470,
-    "name": "Forestry:sapling",
+    "name": "Unknown",
+    "rawname": "Forestry:sapling",
     "effectivness": 1.0
   },
   {
     "id": 4621,
-    "name": "ProjRed|Exploration:projectred.exploration.axeperidot",
+    "name": "Перидотовый топор",
+    "rawname": "ProjRed|Exploration:projectred.exploration.axeperidot",
     "material": "PERIDOT",
     "effectivness": 1.0,
     "toolClass": [
@@ -3782,12 +4492,14 @@
   },
   {
     "id": 4652,
-    "name": "ProjRed|Exploration:projectred.exploration.sapphireleggings",
+    "name": "Сапфировые поножи",
+    "rawname": "ProjRed|Exploration:projectred.exploration.sapphireleggings",
     "effectivness": 1.0
   },
   {
     "id": 4627,
-    "name": "ProjRed|Exploration:projectred.exploration.pickaxeperidot",
+    "name": "Перидотовая кирка",
+    "rawname": "ProjRed|Exploration:projectred.exploration.pickaxeperidot",
     "material": "PERIDOT",
     "effectivness": 1.0,
     "toolClass": [
@@ -3799,182 +4511,218 @@
   },
   {
     "id": 4293,
-    "name": "IC2:reactorCoolantTriple",
+    "name": "Охлаждающий стержень 30к",
+    "rawname": "IC2:reactorCoolantTriple",
     "effectivness": 1.0
   },
   {
     "id": 268,
-    "name": "minecraft:wooden_sword",
+    "name": "Деревянный меч",
+    "rawname": "minecraft:wooden_sword",
     "effectivness": 1.0
   },
   {
     "id": 448,
-    "name": "Forestry:stained",
+    "name": "Белое стекло",
+    "rawname": "Forestry:stained",
     "effectivness": 1.0
   },
   {
     "id": 4220,
-    "name": "IC2:itemToolCutter",
+    "name": "Кусачки",
+    "rawname": "IC2:itemToolCutter",
     "effectivness": 1.0
   },
   {
     "id": 505,
-    "name": "GraviSuite:BlockRelocatorPortal",
+    "name": "Портал Релокатора.name",
+    "rawname": "GraviSuite:BlockRelocatorPortal",
     "effectivness": 1.0
   },
   {
     "id": 254,
-    "name": "IC2:blockCable",
+    "name": "ic2.blockCable",
+    "rawname": "IC2:blockCable",
     "effectivness": 1.0
   },
   {
     "id": 4246,
-    "name": "IC2:itemArmorBronzeLegs",
+    "name": "Бронзовые поножи",
+    "rawname": "IC2:itemArmorBronzeLegs",
     "effectivness": 1.0
   },
   {
     "id": 4402,
-    "name": "Forestry:decayingWheat",
+    "name": "Загнивающая пшеница",
+    "rawname": "Forestry:decayingWheat",
     "effectivness": 1.0
   },
   {
     "id": 4541,
-    "name": "GraviSuite:advNanoChestPlate",
+    "name": "Улучшенный наножилет",
+    "rawname": "GraviSuite:advNanoChestPlate",
     "effectivness": 1.0
   },
   {
     "id": 4401,
-    "name": "Forestry:mouldyWheat",
+    "name": "Плесневелая пшеница",
+    "rawname": "Forestry:mouldyWheat",
     "effectivness": 1.0
   },
   {
     "id": 161,
-    "name": "minecraft:leaves2",
+    "name": "Листья акации",
+    "rawname": "minecraft:leaves2",
     "effectivness": 1.0
   },
   {
     "id": 355,
-    "name": "minecraft:bed",
+    "name": "Кровать",
+    "rawname": "minecraft:bed",
     "effectivness": 1.0
   },
   {
     "id": 360,
-    "name": "minecraft:melon",
+    "name": "Арбуз",
+    "rawname": "minecraft:melon",
     "effectivness": 1.0
   },
   {
     "id": 4287,
-    "name": "IC2:reactorMOXDualdepleted",
+    "name": "Сдвоенный топливный стержень (Обеднённый MOX)",
+    "rawname": "IC2:reactorMOXDualdepleted",
     "effectivness": 1.0
   },
   {
     "id": 4598,
-    "name": "IC2NuclearControl:KitAppeng",
+    "name": "Applied Energistics Monitor Kit",
+    "rawname": "IC2NuclearControl:KitAppeng",
     "effectivness": 1.0
   },
   {
     "id": 462,
-    "name": "Forestry:alveary",
+    "name": "Пчелиный улей",
+    "rawname": "Forestry:alveary",
     "effectivness": 1.0
   },
   {
     "id": 4171,
-    "name": "BuildCraft|Transport:pipeGate",
+    "name": "Основной гейт",
+    "rawname": "BuildCraft|Transport:pipeGate",
     "effectivness": 1.0
   },
   {
     "id": 4618,
-    "name": "ProjRed|Exploration:projectred.exploration.lilyseed",
+    "name": "Семя белой отклоняющейся лилии",
+    "rawname": "ProjRed|Exploration:projectred.exploration.lilyseed",
     "effectivness": 1.0
   },
   {
     "id": 4296,
-    "name": "IC2:reactorPlatingHeat",
+    "name": "Теплоёмкая реакторная пластина",
+    "rawname": "IC2:reactorPlatingHeat",
     "effectivness": 1.0
   },
   {
     "id": 4606,
-    "name": "ProjRed|Transmission:projectred.transmission.framewire",
+    "name": "Провод из красного сплава в оболочке",
+    "rawname": "ProjRed|Transmission:projectred.transmission.framewire",
     "effectivness": 1.0
   },
   {
     "id": 4304,
-    "name": "IC2:reactorVentGold",
+    "name": "Разогнанный теплоотвод",
+    "rawname": "IC2:reactorVentGold",
     "effectivness": 1.0
   },
   {
     "id": 4646,
-    "name": "ProjRed|Exploration:projectred.exploration.rubyhelmet",
+    "name": "Рубиновый шлем",
+    "rawname": "ProjRed|Exploration:projectred.exploration.rubyhelmet",
     "effectivness": 1.0
   },
   {
     "id": 91,
-    "name": "minecraft:lit_pumpkin",
+    "name": "Светильник Джека",
+    "rawname": "minecraft:lit_pumpkin",
     "effectivness": 1.0
   },
   {
     "id": 4656,
-    "name": "ProjRed|Exploration:projectred.exploration.peridotleggings",
+    "name": "Перидотовые поножи",
+    "rawname": "ProjRed|Exploration:projectred.exploration.peridotleggings",
     "effectivness": 1.0
   },
   {
     "id": 399,
-    "name": "minecraft:nether_star",
+    "name": "Адская звезда",
+    "rawname": "minecraft:nether_star",
     "effectivness": 1.0
   },
   {
     "id": 377,
-    "name": "minecraft:blaze_powder",
+    "name": "Огненный порошок",
+    "rawname": "minecraft:blaze_powder",
     "effectivness": 1.0
   },
   {
     "id": 126,
-    "name": "minecraft:wooden_slab",
+    "name": "Дубовая плита",
+    "rawname": "minecraft:wooden_slab",
     "effectivness": 1.0
   },
   {
     "id": 336,
-    "name": "minecraft:brick",
+    "name": "Кирпич",
+    "rawname": "minecraft:brick",
     "effectivness": 1.0
   },
   {
     "id": 4289,
-    "name": "IC2:reactorUraniumSimpledepleted",
+    "name": "Топливный стержень (Обеднённый уран)",
+    "rawname": "IC2:reactorUraniumSimpledepleted",
     "effectivness": 1.0
   },
   {
     "id": 4122,
-    "name": "appliedenergistics2:item.ToolColorApplicator",
+    "name": "Аппликатор цвета - Пустой",
+    "rawname": "appliedenergistics2:item.ToolColorApplicator",
     "effectivness": 1.0
   },
   {
     "id": 4248,
-    "name": "IC2:itemArmorAlloyChestplate",
+    "name": "Композитный доспех",
+    "rawname": "IC2:itemArmorAlloyChestplate",
     "effectivness": 1.0
   },
   {
     "id": 4216,
-    "name": "IC2:itemToolBronzeSword",
+    "name": "Бронзовый меч",
+    "rawname": "IC2:itemToolBronzeSword",
     "effectivness": 1.0
   },
   {
     "id": 389,
-    "name": "minecraft:item_frame",
+    "name": "Рамка",
+    "rawname": "minecraft:item_frame",
     "effectivness": 1.0
   },
   {
     "id": 226,
-    "name": "BuildCraft|Factory:pumpBlock",
+    "name": "Помпа",
+    "rawname": "BuildCraft|Factory:pumpBlock",
     "effectivness": 1.0
   },
   {
     "id": 4302,
-    "name": "IC2:reactorVent",
+    "name": "Теплоотвод",
+    "rawname": "IC2:reactorVent",
     "effectivness": 1.0
   },
   {
     "id": 4620,
-    "name": "ProjRed|Exploration:projectred.exploration.axesapphire",
+    "name": "Сапфировый топор",
+    "rawname": "ProjRed|Exploration:projectred.exploration.axesapphire",
     "material": "SAPPHIRE",
     "effectivness": 1.0,
     "toolClass": [
@@ -3986,117 +4734,140 @@
   },
   {
     "id": 442,
-    "name": "IC2:fluidSuperheatedSteam",
+    "name": "Перегретый пар",
+    "rawname": "IC2:fluidSuperheatedSteam",
     "effectivness": 1.0
   },
   {
     "id": 4381,
-    "name": "Forestry:craftingMaterial",
+    "name": "Пульсирующая пыль",
+    "rawname": "Forestry:craftingMaterial",
     "effectivness": 1.0
   },
   {
     "id": 272,
-    "name": "minecraft:stone_sword",
+    "name": "Каменный меч",
+    "rawname": "minecraft:stone_sword",
     "effectivness": 1.0
   },
   {
     "id": 4528,
-    "name": "ForestryExtras:item.fe.item.tinStick",
+    "name": "Оловянная палка",
+    "rawname": "ForestryExtras:item.fe.item.tinStick",
     "effectivness": 1.0
   },
   {
     "id": 348,
-    "name": "minecraft:glowstone_dust",
+    "name": "Светящаяся пыль",
+    "rawname": "minecraft:glowstone_dust",
     "effectivness": 1.0
   },
   {
     "id": 4335,
-    "name": "IC2:itemToolPainterOrange",
+    "name": "Оранжевый валик",
+    "rawname": "IC2:itemToolPainterOrange",
     "effectivness": 1.0
   },
   {
     "id": 4336,
-    "name": "IC2:itemToolPainterWhite",
+    "name": "Белый валик",
+    "rawname": "IC2:itemToolPainterWhite",
     "effectivness": 1.0
   },
   {
     "id": 4382,
-    "name": "Forestry:naturalistHelmet",
+    "name": "Очки",
+    "rawname": "Forestry:naturalistHelmet",
     "effectivness": 1.0
   },
   {
     "id": 375,
-    "name": "minecraft:spider_eye",
+    "name": "Паучий глаз",
+    "rawname": "minecraft:spider_eye",
     "effectivness": 1.0
   },
   {
     "id": 513,
-    "name": "wildcaves3:Flora",
+    "name": "Огнешляпка",
+    "rawname": "wildcaves3:Flora",
     "effectivness": 1.0
   },
   {
     "id": 4241,
-    "name": "IC2:itemArmorHazmatChestplate",
+    "name": "Защитная куртка",
+    "rawname": "IC2:itemArmorHazmatChestplate",
     "effectivness": 1.0
   },
   {
     "id": 317,
-    "name": "minecraft:golden_boots",
+    "name": "Золотые ботинки",
+    "rawname": "minecraft:golden_boots",
     "effectivness": 1.0
   },
   {
     "id": 4455,
-    "name": "Forestry:frameUntreated",
+    "name": "Необработанная рамка",
+    "rawname": "Forestry:frameUntreated",
     "effectivness": 1.0
   },
   {
     "id": 4363,
-    "name": "IC2:itemwcarbonrotor",
+    "name": "Углеволоконный ротор ветрогенератора",
+    "rawname": "IC2:itemwcarbonrotor",
     "effectivness": 1.0
   },
   {
     "id": 4169,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipestructurecobblestone",
+    "name": "Структурная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipestructurecobblestone",
     "effectivness": 1.0
   },
   {
     "id": 497,
-    "name": "Forestry:mushroom",
+    "name": "Гриб",
+    "rawname": "Forestry:mushroom",
     "effectivness": 1.0
   },
   {
     "id": 4253,
-    "name": "IC2:itemArmorQuantumHelmet",
+    "name": "Квантовый шлем",
+    "rawname": "IC2:itemArmorQuantumHelmet",
     "effectivness": 1.0
   },
   {
     "id": 4182,
-    "name": "IC2:itemRecipePart",
+    "name": "Катушка",
+    "rawname": "IC2:itemRecipePart",
     "effectivness": 1.0
   },
   {
     "id": 4442,
-    "name": "Forestry:bucketGlass",
+    "name": "Ведро жидкого стекла",
+    "rawname": "Forestry:bucketGlass",
     "effectivness": 1.0
   },
   {
     "id": 4300,
-    "name": "IC2:reactorHeatSwitchSpread",
+    "name": "Компонентный теплообменник",
+    "rawname": "IC2:reactorHeatSwitchSpread",
     "effectivness": 1.0
   },
   {
     "id": 503,
-    "name": "ForestryExtras:legendaryBlock",
+    "name": "Legendary Block",
+    "rawname": "ForestryExtras:legendaryBlock",
     "effectivness": 1.0
   },
   {
     "id": 512,
-    "name": "wildcaves3:Decorations",
+    "name": "Сосулька",
+    "rawname": "wildcaves3:Decorations",
     "effectivness": 1.0
   },
   {
     "id": 4625,
-    "name": "ProjRed|Exploration:projectred.exploration.pickaxeruby",
+    "name": "Рубиновая кирка",
+    "rawname": "ProjRed|Exploration:projectred.exploration.pickaxeruby",
     "material": "RUBY",
     "effectivness": 1.0,
     "toolClass": [
@@ -4108,237 +4879,284 @@
   },
   {
     "id": 490,
-    "name": "Forestry:saplingGE",
+    "name": "Саженец",
+    "rawname": "Forestry:saplingGE",
     "effectivness": 1.0
   },
   {
     "id": 20,
-    "name": "minecraft:glass",
+    "name": "Стекло",
+    "rawname": "minecraft:glass",
     "effectivness": 1.0
   },
   {
     "id": 4264,
-    "name": "IC2:itemStaticBoots",
+    "name": "Электростатические ботинки",
+    "rawname": "IC2:itemStaticBoots",
     "effectivness": 1.0
   },
   {
     "id": 4538,
-    "name": "ForestryExtras:item.fe.nugget.mutated iron",
+    "name": "Mutated Iron Nugget",
+    "rawname": "ForestryExtras:item.fe.nugget.mutated iron",
     "effectivness": 1.0
   },
   {
     "id": 4199,
-    "name": "IC2:itemPlutoniumSmall",
+    "name": "Кусочек плутония",
+    "rawname": "IC2:itemPlutoniumSmall",
     "effectivness": 1.0
   },
   {
     "id": 312,
-    "name": "minecraft:diamond_leggings",
+    "name": "Алмазные поножи",
+    "rawname": "minecraft:diamond_leggings",
     "effectivness": 1.0
   },
   {
     "id": 4313,
-    "name": "IC2:itemPartCoalChunk",
+    "name": "Куб сжатого угля",
+    "rawname": "IC2:itemPartCoalChunk",
     "effectivness": 1.0
   },
   {
     "id": 4413,
-    "name": "Forestry:canJuice",
+    "name": "Банка сока",
+    "rawname": "Forestry:canJuice",
     "effectivness": 1.0
   },
   {
     "id": 4198,
-    "name": "IC2:itemPlutonium",
+    "name": "Плутоний",
+    "rawname": "IC2:itemPlutonium",
     "effectivness": 1.0
   },
   {
     "id": 4602,
-    "name": "ProjRed|Core:projectred.core.screwdriver",
+    "name": "Отвёртка",
+    "rawname": "ProjRed|Core:projectred.core.screwdriver",
     "effectivness": 1.0
   },
   {
     "id": 4406,
-    "name": "Forestry:refractoryWax",
+    "name": "Огнеупорный воск",
+    "rawname": "Forestry:refractoryWax",
     "effectivness": 1.0
   },
   {
     "id": 496,
-    "name": "Forestry:factory2",
+    "name": "Электроламповый завод",
+    "rawname": "Forestry:factory2",
     "effectivness": 1.0
   },
   {
     "id": 429,
-    "name": "IC2:blockMiningPipe",
+    "name": "Буровая труба",
+    "rawname": "IC2:blockMiningPipe",
     "effectivness": 1.0
   },
   {
     "id": 4633,
-    "name": "ProjRed|Exploration:projectred.exploration.swordperidot",
+    "name": "Перидотовый меч",
+    "rawname": "ProjRed|Exploration:projectred.exploration.swordperidot",
     "effectivness": 1.0
   },
   {
     "id": 4372,
-    "name": "Forestry:researchNote",
+    "name": "Записки игрока Sengir",
+    "rawname": "Forestry:researchNote",
     "effectivness": 1.0
   },
   {
     "id": 29,
-    "name": "minecraft:sticky_piston",
+    "name": "Липкий поршень",
+    "rawname": "minecraft:sticky_piston",
     "effectivness": 1.0
   },
   {
     "id": 4507,
-    "name": "ForestryExtras:item.fe.frame.frameCoal",
+    "name": "Угольная рамка",
+    "rawname": "ForestryExtras:item.fe.frame.frameCoal",
     "effectivness": 1.0
   },
   {
     "id": 184,
-    "name": "appliedenergistics2:tile.BlockCrank",
+    "name": "Деревянная рукоятка",
+    "rawname": "appliedenergistics2:tile.BlockCrank",
     "effectivness": 1.0
   },
   {
     "id": 446,
-    "name": "Forestry:resources",
+    "name": "Апатитовая руда",
+    "rawname": "Forestry:resources",
     "effectivness": 1.0
   },
   {
     "id": 4605,
-    "name": "ProjRed|Transmission:projectred.transmission.wire",
+    "name": "Провод из красного сплава",
+    "rawname": "ProjRed|Transmission:projectred.transmission.wire",
     "effectivness": 1.0
   },
   {
     "id": 4607,
-    "name": "ProjRed|Illumination:projectred.illumination.lantern",
+    "name": "Белый фонарь",
+    "rawname": "ProjRed|Illumination:projectred.illumination.lantern",
     "effectivness": 1.0
   },
   {
     "id": 524,
-    "name": "ProjRed|Illumination:projectred.illumination.airousLight",
+    "name": "tile.projectred.illumination.airousLight|0.name",
+    "rawname": "ProjRed|Illumination:projectred.illumination.airousLight",
     "effectivness": 1.0
   },
   {
     "id": 4210,
-    "name": "IC2:itemPartCarbonPlate",
+    "name": "Углепластик",
+    "rawname": "IC2:itemPartCarbonPlate",
     "effectivness": 1.0
   },
   {
     "id": 23,
-    "name": "minecraft:dispenser",
+    "name": "Раздатчик",
+    "rawname": "minecraft:dispenser",
     "effectivness": 1.0
   },
   {
     "id": 4439,
-    "name": "Forestry:refractoryOil",
+    "name": "Капсула нефти",
+    "rawname": "Forestry:refractoryOil",
     "effectivness": 1.0
   },
   {
     "id": 232,
-    "name": "BuildCraft|Silicon:laserBlock",
+    "name": "Лазер",
+    "rawname": "BuildCraft|Silicon:laserBlock",
     "effectivness": 1.0
   },
   {
     "id": 371,
-    "name": "minecraft:gold_nugget",
+    "name": "Золотой самородок",
+    "rawname": "minecraft:gold_nugget",
     "effectivness": 1.0
   },
   {
     "id": 4213,
-    "name": "IC2:itemTreetap",
+    "name": "Краник",
+    "rawname": "IC2:itemTreetap",
     "effectivness": 1.0
   },
   {
     "id": 73,
-    "name": "minecraft:redstone_ore",
+    "name": "Красная руда",
+    "rawname": "minecraft:redstone_ore",
     "effectivness": 1.0
   },
   {
     "id": 4225,
-    "name": "IC2:itemcrystalmemory",
+    "name": "Кристалл памяти",
+    "rawname": "IC2:itemcrystalmemory",
     "effectivness": 1.0
   },
   {
     "id": 96,
-    "name": "minecraft:trapdoor",
+    "name": "Люк",
+    "rawname": "minecraft:trapdoor",
     "effectivness": 1.0
   },
   {
     "id": 4322,
-    "name": "IC2:itemToolPainterRed",
+    "name": "Красный валик",
+    "rawname": "IC2:itemToolPainterRed",
     "effectivness": 1.0
   },
   {
     "id": 172,
-    "name": "minecraft:hardened_clay",
+    "name": "Обожжёная глина",
+    "rawname": "minecraft:hardened_clay",
     "effectivness": 1.0
   },
   {
     "id": 306,
-    "name": "minecraft:iron_helmet",
+    "name": "Железный шлем",
+    "rawname": "minecraft:iron_helmet",
     "effectivness": 1.0
   },
   {
     "id": 199,
-    "name": "appliedenergistics2:tile.BlockDenseEnergyCell",
+    "name": "Плотная энергетическая ячейка",
+    "rawname": "appliedenergistics2:tile.BlockDenseEnergyCell",
     "effectivness": 1.0
   },
   {
     "id": 4595,
-    "name": "IC2NuclearControl:ItemTextCard",
+    "name": "Текстовая карта",
+    "rawname": "IC2NuclearControl:ItemTextCard",
     "effectivness": 1.0
   },
   {
     "id": 4404,
-    "name": "Forestry:phosphor",
+    "name": "Фосфор",
+    "rawname": "Forestry:phosphor",
     "effectivness": 1.0
   },
   {
     "id": 215,
-    "name": "BuildCraft|Core:eternalSpring",
+    "name": "Источник воды",
+    "rawname": "BuildCraft|Core:eternalSpring",
     "effectivness": 1.0
   },
   {
     "id": 414,
-    "name": "IC2:blockReactorRedstonePort",
+    "name": "Реакторный проводник красного сигнала",
+    "rawname": "IC2:blockReactorRedstonePort",
     "effectivness": 1.0
   },
   {
     "id": 4577,
-    "name": "ForestryExtras:item.fe.comb.clayious",
+    "name": "Clayious Comb",
+    "rawname": "ForestryExtras:item.fe.comb.clayious",
     "effectivness": 1.0
   },
   {
     "id": 4526,
-    "name": "ForestryExtras:item.fe.item.silverStick",
+    "name": "Серебряная палка",
+    "rawname": "ForestryExtras:item.fe.item.silverStick",
     "effectivness": 1.0
   },
   {
     "id": 369,
-    "name": "minecraft:blaze_rod",
+    "name": "Стержень ифрита",
+    "rawname": "minecraft:blaze_rod",
     "effectivness": 1.0
   },
   {
     "id": 361,
-    "name": "minecraft:pumpkin_seeds",
+    "name": "Семена тыквы",
+    "rawname": "minecraft:pumpkin_seeds",
     "effectivness": 1.0
   },
   {
     "id": 4434,
-    "name": "Forestry:refractoryJuice",
+    "name": "Капсула сока",
+    "rawname": "Forestry:refractoryJuice",
     "effectivness": 1.0
   },
   {
     "id": 4162,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepowerstone",
+    "name": "Каменная энергетическая труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipepowerstone",
     "effectivness": 1.0
   },
   {
     "id": 510,
-    "name": "wildcaves3:StoneStalactite",
+    "name": "Сталактит",
+    "rawname": "wildcaves3:StoneStalactite",
     "effectivness": 1.0
   },
   {
     "id": 4106,
-    "name": "appliedenergistics2:item.ToolNetherQuartzPickaxe",
+    "name": "Кирка из кварца Нижнего мира",
+    "rawname": "appliedenergistics2:item.ToolNetherQuartzPickaxe",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [
@@ -4350,7 +5168,8 @@
   },
   {
     "id": 4238,
-    "name": "IC2:itemNanoSaber",
+    "name": "Нано-сабля",
+    "rawname": "IC2:itemNanoSaber",
     "material": "EMERALD",
     "effectivness": 1.0,
     "toolClass": [
@@ -4362,17 +5181,20 @@
   },
   {
     "id": 221,
-    "name": "BuildCraft|Factory:miningWellBlock",
+    "name": "Буровая установка",
+    "rawname": "BuildCraft|Factory:miningWellBlock",
     "effectivness": 1.0
   },
   {
     "id": 516,
-    "name": "economy:shopBlockSell",
+    "name": "Магазин (Продажа предметов)",
+    "rawname": "economy:shopBlockSell",
     "effectivness": 1.0
   },
   {
     "id": 4645,
-    "name": "ProjRed|Exploration:projectred.exploration.sicklediamond",
+    "name": "Алмазный серп",
+    "rawname": "ProjRed|Exploration:projectred.exploration.sicklediamond",
     "material": "EMERALD",
     "effectivness": 1.0,
     "toolClass": [],
@@ -4380,32 +5202,38 @@
   },
   {
     "id": 4397,
-    "name": "Forestry:bronzePickaxe",
+    "name": "Кирка выживающего",
+    "rawname": "Forestry:bronzePickaxe",
     "effectivness": 1.0
   },
   {
     "id": 4454,
-    "name": "Forestry:imprinter",
+    "name": "Импринтер",
+    "rawname": "Forestry:imprinter",
     "effectivness": 1.0
   },
   {
     "id": 4110,
-    "name": "appliedenergistics2:item.ToolBiometricCard",
+    "name": "Биометрическая карта",
+    "rawname": "appliedenergistics2:item.ToolBiometricCard",
     "effectivness": 1.0
   },
   {
     "id": 471,
-    "name": "Forestry:fireproofLog1",
+    "name": "Древесина лиственницы (Огнестойкость)",
+    "rawname": "Forestry:fireproofLog1",
     "effectivness": 1.0
   },
   {
     "id": 4537,
-    "name": "ForestryExtras:item.fe.nugget.witheria",
+    "name": "Witheria Nugget",
+    "rawname": "ForestryExtras:item.fe.nugget.witheria",
     "effectivness": 1.0
   },
   {
     "id": 4547,
-    "name": "GraviSuite:advDDrill",
+    "name": "Улучшенный алмазный бур",
+    "rawname": "GraviSuite:advDDrill",
     "material": "EMERALD",
     "effectivness": 1.0,
     "toolClass": [
@@ -4419,287 +5247,344 @@
   },
   {
     "id": 475,
-    "name": "Forestry:fireproofLog5",
+    "name": "Древесина гибискуса (Огнестойкость)",
+    "rawname": "Forestry:fireproofLog5",
     "effectivness": 1.0
   },
   {
     "id": 358,
-    "name": "minecraft:filled_map",
+    "name": "Карта",
+    "rawname": "minecraft:filled_map",
     "effectivness": 1.0
   },
   {
     "id": 474,
-    "name": "Forestry:fireproofLog4",
+    "name": "Древесина ивы (Огнестойкость)",
+    "rawname": "Forestry:fireproofLog4",
     "effectivness": 1.0
   },
   {
     "id": 473,
-    "name": "Forestry:fireproofLog3",
+    "name": "Древесина хлопкового дерева (Огнестойкость)",
+    "rawname": "Forestry:fireproofLog3",
     "effectivness": 1.0
   },
   {
     "id": 295,
-    "name": "minecraft:wheat_seeds",
+    "name": "Семена пшеницы",
+    "rawname": "minecraft:wheat_seeds",
     "effectivness": 1.0
   },
   {
     "id": 472,
-    "name": "Forestry:fireproofLog2",
+    "name": "Древесина каштана (Огнестойкость)",
+    "rawname": "Forestry:fireproofLog2",
     "effectivness": 1.0
   },
   {
     "id": 420,
-    "name": "minecraft:lead",
+    "name": "Поводок",
+    "rawname": "minecraft:lead",
     "effectivness": 1.0
   },
   {
     "id": 478,
-    "name": "Forestry:fireproofLog8",
+    "name": "Древесина зебрано (Огнестойкость)",
+    "rawname": "Forestry:fireproofLog8",
     "effectivness": 1.0
   },
   {
     "id": 4131,
-    "name": "BuildCraft|Core:diamondGearItem",
+    "name": "Алмазная шестерня",
+    "rawname": "BuildCraft|Core:diamondGearItem",
     "effectivness": 1.0
   },
   {
     "id": 4423,
-    "name": "Forestry:waxCapsuleIce",
+    "name": "Капсула льда",
+    "rawname": "Forestry:waxCapsuleIce",
     "effectivness": 1.0
   },
   {
     "id": 477,
-    "name": "Forestry:fireproofLog7",
+    "name": "Древесина гигантской секвойи (Огнестойкость)",
+    "rawname": "Forestry:fireproofLog7",
     "effectivness": 1.0
   },
   {
     "id": 4530,
-    "name": "ForestryExtras:item.fe.frame.frameCopper",
+    "name": "Медная рамка",
+    "rawname": "ForestryExtras:item.fe.frame.frameCopper",
     "effectivness": 1.0
   },
   {
     "id": 476,
-    "name": "Forestry:fireproofLog6",
+    "name": "Древесина сосны (Огнестойкость)",
+    "rawname": "Forestry:fireproofLog6",
     "effectivness": 1.0
   },
   {
     "id": 4180,
-    "name": "IC2:itemFluidCell",
+    "name": "Универсальная жидкостная капсула",
+    "rawname": "IC2:itemFluidCell",
     "effectivness": 1.0
   },
   {
     "id": 18,
-    "name": "minecraft:leaves",
+    "name": "Дубовые листья",
+    "rawname": "minecraft:leaves",
     "effectivness": 1.0
   },
   {
     "id": 4151,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidscobblestone",
+    "name": "Булыжниковая жидкостная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipefluidscobblestone",
     "effectivness": 1.0
   },
   {
     "id": 143,
-    "name": "minecraft:wooden_button",
+    "name": "Кнопка",
+    "rawname": "minecraft:wooden_button",
     "effectivness": 1.0
   },
   {
     "id": 4496,
-    "name": "ForestryExtras:item.fe.item.draconicStick",
+    "name": "Драконовская палка",
+    "rawname": "ForestryExtras:item.fe.item.draconicStick",
     "effectivness": 1.0
   },
   {
     "id": 342,
-    "name": "minecraft:chest_minecart",
+    "name": "Грузовая вагонетка",
+    "rawname": "minecraft:chest_minecart",
     "effectivness": 1.0
   },
   {
     "id": 4143,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsobsidian",
+    "name": "Обсидиановая транспортная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsobsidian",
     "effectivness": 1.0
   },
   {
     "id": 4394,
-    "name": "Forestry:woodPulp",
+    "name": "Древесная масса",
+    "rawname": "Forestry:woodPulp",
     "effectivness": 1.0
   },
   {
     "id": 391,
-    "name": "minecraft:carrot",
+    "name": "Морковь",
+    "rawname": "minecraft:carrot",
     "effectivness": 1.0
   },
   {
     "id": 4235,
-    "name": "IC2:itemScannerAdv",
+    "name": "ЦР сканер",
+    "rawname": "IC2:itemScannerAdv",
     "effectivness": 1.0
   },
   {
     "id": 168,
-    "name": "appliedenergistics2:tile.BlockQuartzPillar",
+    "name": "Колонна истинного кварца",
+    "rawname": "appliedenergistics2:tile.BlockQuartzPillar",
     "effectivness": 1.0
   },
   {
     "id": 4550,
-    "name": "IronChest:ironGoldUpgrade",
+    "name": "Улучшение из железного в золотой сундук",
+    "rawname": "IronChest:ironGoldUpgrade",
     "effectivness": 1.0
   },
   {
     "id": 6,
-    "name": "minecraft:sapling",
+    "name": "Саженец дуба",
+    "rawname": "minecraft:sapling",
     "effectivness": 1.0
   },
   {
     "id": 4114,
-    "name": "appliedenergistics2:item.ItemViewCell",
+    "name": "Ячейка представления",
+    "rawname": "appliedenergistics2:item.ItemViewCell",
     "effectivness": 1.0
   },
   {
     "id": 4134,
-    "name": "BuildCraft|Transport:pipeWaterproof",
+    "name": "Уплотнитель для труб",
+    "rawname": "BuildCraft|Transport:pipeWaterproof",
     "effectivness": 1.0
   },
   {
     "id": 4349,
-    "name": "IC2:itemCellHydrant",
+    "name": "Увлажняющая капсула",
+    "rawname": "IC2:itemCellHydrant",
     "effectivness": 1.0
   },
   {
     "id": 4588,
-    "name": "IC2NuclearControl:ItemMultipleSensorKit",
+    "name": "Набор для счётчика энергии",
+    "rawname": "IC2NuclearControl:ItemMultipleSensorKit",
     "effectivness": 1.0
   },
   {
     "id": 4153,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsquartz",
+    "name": "Кварцевая жидкостная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipefluidsquartz",
     "effectivness": 1.0
   },
   {
     "id": 4268,
-    "name": "IC2:itemAdvBat",
+    "name": "Продвинутый аккумулятор",
+    "rawname": "IC2:itemAdvBat",
     "effectivness": 1.0
   },
   {
     "id": 313,
-    "name": "minecraft:diamond_boots",
+    "name": "Алмазные ботинки",
+    "rawname": "minecraft:diamond_boots",
     "effectivness": 1.0
   },
   {
     "id": 244,
-    "name": "IC2:blockAlloy",
+    "name": "Укреплённый камень",
+    "rawname": "IC2:blockAlloy",
     "effectivness": 1.0
   },
   {
     "id": 433,
-    "name": "IC2:blockBarrel",
+    "name": "ic2.blockBarrel",
+    "rawname": "IC2:blockBarrel",
     "effectivness": 1.0
   },
   {
     "id": 4328,
-    "name": "IC2:itemToolPainterLightGrey",
+    "name": "Светло-серый валик",
+    "rawname": "IC2:itemToolPainterLightGrey",
     "effectivness": 1.0
   },
   {
     "id": 180,
-    "name": "appliedenergistics2:tile.BlockSkyStone",
+    "name": "Небесный камень",
+    "rawname": "appliedenergistics2:tile.BlockSkyStone",
     "effectivness": 1.0
   },
   {
     "id": 90,
-    "name": "minecraft:portal",
+    "name": "Портал",
+    "rawname": "minecraft:portal",
     "effectivness": 1.0
   },
   {
     "id": 4451,
-    "name": "Forestry:beeLarvaeGE",
+    "name": "item.for.beeLarvaeGE.name",
+    "rawname": "Forestry:beeLarvaeGE",
     "effectivness": 1.0
   },
   {
     "id": 4568,
-    "name": "advancedcraft:itemBookBlue",
+    "name": "Синяя книга знаний",
+    "rawname": "advancedcraft:itemBookBlue",
     "effectivness": 1.0
   },
   {
     "id": 4573,
-    "name": "ForestryExtras:item.fe.comb.legendary",
+    "name": "Legendary Comb",
+    "rawname": "ForestryExtras:item.fe.comb.legendary",
     "effectivness": 1.0
   },
   {
     "id": 4166,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepowerdiamond",
+    "name": "Алмазная энергетическая труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipepowerdiamond",
     "effectivness": 1.0
   },
   {
     "id": 4567,
-    "name": "ForgeMicroblock:stoneRod",
+    "name": "Каменная палка",
+    "rawname": "ForgeMicroblock:stoneRod",
     "effectivness": 1.0
   },
   {
     "id": 4175,
-    "name": "BuildCraft|Transport:gateCopier",
+    "name": "Копировальщик гейтов",
+    "rawname": "BuildCraft|Transport:gateCopier",
     "effectivness": 1.0
   },
   {
     "id": 4391,
-    "name": "Forestry:thermionicTubes",
+    "name": "Медная электронная лампа",
+    "rawname": "Forestry:thermionicTubes",
     "effectivness": 1.0
   },
   {
     "id": 4564,
-    "name": "ForgeMicroblock:sawStone",
+    "name": "Каменная пила",
+    "rawname": "ForgeMicroblock:sawStone",
     "effectivness": 1.0
   },
   {
     "id": 4446,
-    "name": "Forestry:bucketSeedoil",
+    "name": "Ведро растительного масла",
+    "rawname": "Forestry:bucketSeedoil",
     "effectivness": 1.0
   },
   {
     "id": 4388,
-    "name": "Forestry:gearTin",
+    "name": "Оловянная шестерня",
+    "rawname": "Forestry:gearTin",
     "effectivness": 1.0
   },
   {
     "id": 171,
-    "name": "minecraft:carpet",
+    "name": "Ковёр",
+    "rawname": "minecraft:carpet",
     "effectivness": 1.0
   },
   {
     "id": 432,
-    "name": "IC2:blockCrop",
+    "name": "Жёрдочки",
+    "rawname": "IC2:blockCrop",
     "effectivness": 1.0
   },
   {
     "id": 4174,
-    "name": "BuildCraft|Transport:pipeLens",
+    "name": "Линза (Чёрный)",
+    "rawname": "BuildCraft|Transport:pipeLens",
     "effectivness": 1.0
   },
   {
     "id": 367,
-    "name": "minecraft:rotten_flesh",
+    "name": "Гнилая плоть",
+    "rawname": "minecraft:rotten_flesh",
     "effectivness": 1.0
   },
   {
     "id": 4316,
-    "name": "IC2:itemScrap",
+    "name": "Утильсырьё",
+    "rawname": "IC2:itemScrap",
     "effectivness": 1.0
   },
   {
     "id": 4257,
-    "name": "IC2:itemArmorJetpack",
+    "name": "Реактивный ранец",
+    "rawname": "IC2:itemArmorJetpack",
     "effectivness": 1.0
   },
   {
     "id": 4613,
-    "name": "ProjRed|Illumination:projectred.illumination.cagelamp2",
+    "name": "Белая лампа в клетке",
+    "rawname": "ProjRed|Illumination:projectred.illumination.cagelamp2",
     "effectivness": 1.0
   },
   {
     "id": 4140,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsiron",
+    "name": "Железная транспортная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsiron",
     "effectivness": 1.0
   },
   {
     "id": 4103,
-    "name": "appliedenergistics2:item.ToolNetherQuartzAxe",
+    "name": "Топор из кварца Нижнего мира",
+    "rawname": "appliedenergistics2:item.ToolNetherQuartzAxe",
     "material": "IRON",
     "effectivness": 1.0,
     "toolClass": [
@@ -4711,142 +5596,170 @@
   },
   {
     "id": 484,
-    "name": "Forestry:slabs2",
+    "name": "Плита из хлопкового дерева",
+    "rawname": "Forestry:slabs2",
     "effectivness": 1.0
   },
   {
     "id": 4354,
-    "name": "IC2:itemCofeeBeans",
+    "name": "Кофейные зёрна",
+    "rawname": "IC2:itemCofeeBeans",
     "effectivness": 1.0
   },
   {
     "id": 249,
-    "name": "IC2:blockFoam",
+    "name": "Строительная пена",
+    "rawname": "IC2:blockFoam",
     "effectivness": 1.0
   },
   {
     "id": 483,
-    "name": "Forestry:slabs1",
+    "name": "Плита из лиственницы",
+    "rawname": "Forestry:slabs1",
     "effectivness": 1.0
   },
   {
     "id": 4544,
-    "name": "GraviSuite:advJetpack",
+    "name": "Улучшенный электро джетапак",
+    "rawname": "GraviSuite:advJetpack",
     "effectivness": 1.0
   },
   {
     "id": 335,
-    "name": "minecraft:milk_bucket",
+    "name": "Молоко",
+    "rawname": "minecraft:milk_bucket",
     "effectivness": 1.0
   },
   {
     "id": 486,
-    "name": "Forestry:slabs4",
+    "name": "Плита из гигантской секвойи",
+    "rawname": "Forestry:slabs4",
     "effectivness": 1.0
   },
   {
     "id": 485,
-    "name": "Forestry:slabs3",
+    "name": "Плита из гибискуса",
+    "rawname": "Forestry:slabs3",
     "effectivness": 1.0
   },
   {
     "id": 4308,
-    "name": "IC2:reactorReflectorThick",
+    "name": "Утолщённый отражатель нейтронов",
+    "rawname": "IC2:reactorReflectorThick",
     "effectivness": 1.0
   },
   {
     "id": 4275,
-    "name": "IC2:itemBatChargeLamaCrystal",
+    "name": "Charging Lapotron Crystal",
+    "rawname": "IC2:itemBatChargeLamaCrystal",
     "effectivness": 1.0
   },
   {
     "id": 527,
-    "name": "ProjRed|Exploration:projectred.exploration.stonewalls",
+    "name": "Мраморная стена",
+    "rawname": "ProjRed|Exploration:projectred.exploration.stonewalls",
     "effectivness": 1.0
   },
   {
     "id": 4477,
-    "name": "Forestry:ambrosia",
+    "name": "Амброзия",
+    "rawname": "Forestry:ambrosia",
     "effectivness": 1.0
   },
   {
     "id": 181,
-    "name": "appliedenergistics2:tile.BlockSkyChest",
+    "name": "Сундук из небесного камня",
+    "rawname": "appliedenergistics2:tile.BlockSkyChest",
     "effectivness": 1.0
   },
   {
     "id": 4410,
-    "name": "Forestry:canBiomass",
+    "name": "Банка биомассы",
+    "rawname": "Forestry:canBiomass",
     "effectivness": 1.0
   },
   {
     "id": 464,
-    "name": "Forestry:log2",
+    "name": "Древесина каштана",
+    "rawname": "Forestry:log2",
     "effectivness": 1.0
   },
   {
     "id": 465,
-    "name": "Forestry:log3",
+    "name": "Древесина хлопкового дерева",
+    "rawname": "Forestry:log3",
     "effectivness": 1.0
   },
   {
     "id": 4615,
-    "name": "ProjRed|Illumination:projectred.illumination.lightbutton",
+    "name": "Белая светящаяся кнопка",
+    "rawname": "ProjRed|Illumination:projectred.illumination.lightbutton",
     "effectivness": 1.0
   },
   {
     "id": 463,
-    "name": "Forestry:log1",
+    "name": "Древесина лиственницы",
+    "rawname": "Forestry:log1",
     "effectivness": 1.0
   },
   {
     "id": 468,
-    "name": "Forestry:log6",
+    "name": "Древесина сосны",
+    "rawname": "Forestry:log6",
     "effectivness": 1.0
   },
   {
     "id": 4204,
-    "name": "IC2:itemRTGPellet",
+    "name": "Пеллета РИТЭГ-топлива",
+    "rawname": "IC2:itemRTGPellet",
     "effectivness": 1.0
   },
   {
     "id": 469,
-    "name": "Forestry:log7",
+    "name": "Древесина гигантской секвойи",
+    "rawname": "Forestry:log7",
     "effectivness": 1.0
   },
   {
     "id": 466,
-    "name": "Forestry:log4",
+    "name": "Древесина ивы",
+    "rawname": "Forestry:log4",
     "effectivness": 1.0
   },
   {
     "id": 4499,
-    "name": "ForestryExtras:item.fe.item.ironStick",
+    "name": "Железная палка",
+    "rawname": "ForestryExtras:item.fe.item.ironStick",
     "effectivness": 1.0
   },
   {
     "id": 467,
-    "name": "Forestry:log5",
+    "name": "Древесина гибискуса",
+    "rawname": "Forestry:log5",
     "effectivness": 1.0
   },
   {
     "id": 470,
-    "name": "Forestry:log8",
+    "name": "Древесина зебрано",
+    "rawname": "Forestry:log8",
     "effectivness": 1.0
   },
   {
     "id": 4387,
-    "name": "Forestry:gearCopper",
+    "name": "Медная шестерня",
+    "rawname": "Forestry:gearCopper",
     "effectivness": 1.0
   },
   {
     "id": 4230,
-    "name": "IC2:itemToolWrenchElectric",
+    "name": "Электроключ",
+    "rawname": "IC2:itemToolWrenchElectric",
     "effectivness": 1.0
   },
   {
     "id": 285,
-    "name": "minecraft:golden_pickaxe",
+    "name": "Золотая кирка",
+    "rawname": "minecraft:golden_pickaxe",
     "material": "GOLD",
     "effectivness": 1.0,
     "toolClass": [
@@ -4858,172 +5771,206 @@
   },
   {
     "id": 4373,
-    "name": "Forestry:ingotCopper",
+    "name": "Медный слиток",
+    "rawname": "Forestry:ingotCopper",
     "effectivness": 1.0
   },
   {
     "id": 4486,
-    "name": "ForestryExtras:item.fe.item.witheriaIngot",
+    "name": "Иссушающий слиток",
+    "rawname": "ForestryExtras:item.fe.item.witheriaIngot",
     "effectivness": 1.0
   },
   {
     "id": 4558,
-    "name": "IronChest:diamondObsidianUpgrade",
+    "name": "Улучшение из алмазного в обсидиановый сундук",
+    "rawname": "IronChest:diamondObsidianUpgrade",
     "effectivness": 1.0
   },
   {
     "id": 4201,
-    "name": "IC2:itemUran235small",
+    "name": "Кусочек урана-235",
+    "rawname": "IC2:itemUran235small",
     "effectivness": 1.0
   },
   {
     "id": 216,
-    "name": "BuildCraft|Builders:buildToolBlock",
+    "name": "tile.buildToolBlock.name",
+    "rawname": "BuildCraft|Builders:buildToolBlock",
     "effectivness": 1.0
   },
   {
     "id": 4191,
-    "name": "IC2:itemDust",
+    "name": "Бронзовая пыль",
+    "rawname": "IC2:itemDust",
     "effectivness": 1.0
   },
   {
     "id": 99,
-    "name": "minecraft:brown_mushroom_block",
+    "name": "Гриб",
+    "rawname": "minecraft:brown_mushroom_block",
     "effectivness": 1.0
   },
   {
     "id": 4307,
-    "name": "IC2:reactorReflector",
+    "name": "Отражатель нейтронов",
+    "rawname": "IC2:reactorReflector",
     "effectivness": 1.0
   },
   {
     "id": 4553,
-    "name": "IronChest:silverGoldUpgrade",
+    "name": "Улучшение из серебряного в золотой сундук",
+    "rawname": "IronChest:silverGoldUpgrade",
     "effectivness": 1.0
   },
   {
     "id": 344,
-    "name": "minecraft:egg",
+    "name": "Яйцо",
+    "rawname": "minecraft:egg",
     "effectivness": 1.0
   },
   {
     "id": 4560,
-    "name": "statues:statues.marteau",
+    "name": "Молот для создания статуи",
+    "rawname": "statues:statues.marteau",
     "effectivness": 1.0
   },
   {
     "id": 410,
-    "name": "IC2:blockGenerator",
+    "name": "Генератор",
+    "rawname": "IC2:blockGenerator",
     "effectivness": 1.0
   },
   {
     "id": 290,
-    "name": "minecraft:wooden_hoe",
+    "name": "Деревянная мотыга",
+    "rawname": "minecraft:wooden_hoe",
     "effectivness": 1.0
   },
   {
     "id": 4481,
-    "name": "Forestry:butterflyGE",
+    "name": "???",
+    "rawname": "Forestry:butterflyGE",
     "effectivness": 1.0
   },
   {
     "id": 4465,
-    "name": "Forestry:apiaristHelmet",
+    "name": "Защитная маска пчеловода",
+    "rawname": "Forestry:apiaristHelmet",
     "effectivness": 1.0
   },
   {
     "id": 4102,
-    "name": "appliedenergistics2:item.ToolCertusQuartzCuttingKnife",
+    "name": "Нож из истинного кварца",
+    "rawname": "appliedenergistics2:item.ToolCertusQuartzCuttingKnife",
     "effectivness": 1.0
   },
   {
     "id": 4418,
-    "name": "Forestry:canOil",
+    "name": "Банка нефти",
+    "rawname": "Forestry:canOil",
     "effectivness": 1.0
   },
   {
     "id": 76,
-    "name": "minecraft:redstone_torch",
+    "name": "Красный факел",
+    "rawname": "minecraft:redstone_torch",
     "effectivness": 1.0
   },
   {
     "id": 4279,
-    "name": "IC2:itemTinCanFilled",
+    "name": "Заполненная консервная банка",
+    "rawname": "IC2:itemTinCanFilled",
     "effectivness": 1.0
   },
   {
     "id": 48,
-    "name": "minecraft:mossy_cobblestone",
+    "name": "Замшелый булыжник",
+    "rawname": "minecraft:mossy_cobblestone",
     "effectivness": 1.0
   },
   {
     "id": 121,
-    "name": "minecraft:end_stone",
+    "name": "Эндерняк",
+    "rawname": "minecraft:end_stone",
     "effectivness": 1.0
   },
   {
     "id": 482,
-    "name": "Forestry:fireproofPlanks2",
+    "name": "Доски из гибискуса (Огнестойкость)",
+    "rawname": "Forestry:fireproofPlanks2",
     "effectivness": 1.0
   },
   {
     "id": 481,
-    "name": "Forestry:fireproofPlanks1",
+    "name": "Доски из лиственницы (Огнестойкость)",
+    "rawname": "Forestry:fireproofPlanks1",
     "effectivness": 1.0
   },
   {
     "id": 183,
-    "name": "appliedenergistics2:tile.BlockGrinder",
+    "name": "Кварцевый дробитель",
+    "rawname": "appliedenergistics2:tile.BlockGrinder",
     "effectivness": 1.0
   },
   {
     "id": 4461,
-    "name": "Forestry:honeydew",
+    "name": "Медвяная роса",
+    "rawname": "Forestry:honeydew",
     "effectivness": 1.0
   },
   {
     "id": 4355,
-    "name": "IC2:itemCofeePowder",
+    "name": "Молотый кофе",
+    "rawname": "IC2:itemCofeePowder",
     "effectivness": 1.0
   },
   {
     "id": 388,
-    "name": "minecraft:emerald",
+    "name": "Изумруд",
+    "rawname": "minecraft:emerald",
     "effectivness": 1.0
   },
   {
     "id": 4399,
-    "name": "Forestry:kitShovel",
+    "name": "Сборная лопата",
+    "rawname": "Forestry:kitShovel",
     "effectivness": 1.0
   },
   {
     "id": 56,
-    "name": "minecraft:diamond_ore",
+    "name": "Алмазная руда",
+    "rawname": "minecraft:diamond_ore",
     "effectivness": 1.0
   },
   {
     "id": 4426,
-    "name": "Forestry:waxCapsuleWater",
+    "name": "Капсула воды",
+    "rawname": "Forestry:waxCapsuleWater",
     "effectivness": 1.0
   },
   {
     "id": 4242,
-    "name": "IC2:itemArmorHazmatLeggings",
+    "name": "Защитные поножи",
+    "rawname": "IC2:itemArmorHazmatLeggings",
     "effectivness": 1.0
   },
   {
     "id": 4440,
-    "name": "Forestry:bucketEthanol",
+    "name": "Ведро этанола",
+    "rawname": "Forestry:bucketEthanol",
     "effectivness": 1.0
   },
   {
     "id": 4527,
-    "name": "ForestryExtras:item.fe.item.steelStick",
+    "name": "Стальная палка",
+    "rawname": "ForestryExtras:item.fe.item.steelStick",
     "effectivness": 1.0
   },
   {
     "id": 271,
-    "name": "minecraft:wooden_axe",
+    "name": "Деревянный топор",
+    "rawname": "minecraft:wooden_axe",
     "material": "WOOD",
     "effectivness": 1.0,
     "toolClass": [
@@ -5035,42 +5982,50 @@
   },
   {
     "id": 4412,
-    "name": "Forestry:canIce",
+    "name": "Банка льда",
+    "rawname": "Forestry:canIce",
     "effectivness": 1.0
   },
   {
     "id": 102,
-    "name": "minecraft:glass_pane",
+    "name": "Стеклянная панель",
+    "rawname": "minecraft:glass_pane",
     "effectivness": 1.0
   },
   {
     "id": 4650,
-    "name": "ProjRed|Exploration:projectred.exploration.sapphirehelmet",
+    "name": "Сапфировый шлем",
+    "rawname": "ProjRed|Exploration:projectred.exploration.sapphirehelmet",
     "effectivness": 1.0
   },
   {
     "id": 528,
-    "name": "ProjRed|Exploration:projectred.exploration.lily",
+    "name": "Отклоняющаяся лилия",
+    "rawname": "ProjRed|Exploration:projectred.exploration.lily",
     "effectivness": 1.0
   },
   {
     "id": 4119,
-    "name": "appliedenergistics2:item.ItemFacade",
+    "name": "Кабельный фасад - Стекло",
+    "rawname": "appliedenergistics2:item.ItemFacade",
     "effectivness": 1.0
   },
   {
     "id": 240,
-    "name": "IC2:blockRubSapling",
+    "name": "Саженец гевеи",
+    "rawname": "IC2:blockRubSapling",
     "effectivness": 1.0
   },
   {
     "id": 38,
-    "name": "minecraft:red_flower",
+    "name": "Мак",
+    "rawname": "minecraft:red_flower",
     "effectivness": 1.0
   },
   {
     "id": 4619,
-    "name": "ProjRed|Exploration:projectred.exploration.axeruby",
+    "name": "Рубиновый топор",
+    "rawname": "ProjRed|Exploration:projectred.exploration.axeruby",
     "material": "RUBY",
     "effectivness": 1.0,
     "toolClass": [
@@ -5082,17 +6037,20 @@
   },
   {
     "id": 291,
-    "name": "minecraft:stone_hoe",
+    "name": "Каменная мотыга",
+    "rawname": "minecraft:stone_hoe",
     "effectivness": 1.0
   },
   {
     "id": 500,
-    "name": "ForestryExtras:draconicBlock",
+    "name": "Драконовский блок",
+    "rawname": "ForestryExtras:draconicBlock",
     "effectivness": 1.0
   },
   {
     "id": 4548,
-    "name": "GraviSuite:advChainsaw",
+    "name": "Улучшенная электропила",
+    "rawname": "GraviSuite:advChainsaw",
     "material": "EMERALD",
     "effectivness": 1.0,
     "toolClass": [
@@ -5104,112 +6062,134 @@
   },
   {
     "id": 4570,
-    "name": "advancedcraft:itemBookRed",
+    "name": "Красная книга знаний",
+    "rawname": "advancedcraft:itemBookRed",
     "effectivness": 1.0
   },
   {
     "id": 4284,
-    "name": "IC2:reactorUraniumDual",
+    "name": "Сдвоенный топливный стержень (Уран)",
+    "rawname": "IC2:reactorUraniumDual",
     "effectivness": 1.0
   },
   {
     "id": 107,
-    "name": "minecraft:fence_gate",
+    "name": "Калитка",
+    "rawname": "minecraft:fence_gate",
     "effectivness": 1.0
   },
   {
     "id": 81,
-    "name": "minecraft:cactus",
+    "name": "Кактус",
+    "rawname": "minecraft:cactus",
     "effectivness": 1.0
   },
   {
     "id": 4167,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepoweremerald",
+    "name": "Изумрудная энергетическая труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipepoweremerald",
     "effectivness": 1.0
   },
   {
     "id": 4515,
-    "name": "ForestryExtras:item.fe.frame.frameMutation",
+    "name": "Мутирующая рамка",
+    "rawname": "ForestryExtras:item.fe.frame.frameMutation",
     "effectivness": 1.0
   },
   {
     "id": 37,
-    "name": "minecraft:yellow_flower",
+    "name": "Одуванчик",
+    "rawname": "minecraft:yellow_flower",
     "effectivness": 1.0
   },
   {
     "id": 52,
-    "name": "minecraft:mob_spawner",
+    "name": "Рассадник монстров",
+    "rawname": "minecraft:mob_spawner",
     "effectivness": 1.0
   },
   {
     "id": 349,
-    "name": "minecraft:fish",
+    "name": "Сырая рыба",
+    "rawname": "minecraft:fish",
     "effectivness": 1.0
   },
   {
     "id": 4482,
-    "name": "Forestry:serumGE",
+    "name": "???",
+    "rawname": "Forestry:serumGE",
     "effectivness": 1.0
   },
   {
     "id": 2260,
-    "name": "minecraft:record_far",
+    "name": "Пластинка",
+    "rawname": "minecraft:record_far",
     "effectivness": 1.0
   },
   {
     "id": 383,
-    "name": "minecraft:spawn_egg",
+    "name": "Призвать существо -",
+    "rawname": "minecraft:spawn_egg",
     "effectivness": 1.0
   },
   {
     "id": 4325,
-    "name": "IC2:itemToolPainterBlue",
+    "name": "Синий валик",
+    "rawname": "IC2:itemToolPainterBlue",
     "effectivness": 1.0
   },
   {
     "id": 4403,
-    "name": "Forestry:mulch",
+    "name": "Мульча",
+    "rawname": "Forestry:mulch",
     "effectivness": 1.0
   },
   {
     "id": 330,
-    "name": "minecraft:iron_door",
+    "name": "Железная дверь",
+    "rawname": "minecraft:iron_door",
     "effectivness": 1.0
   },
   {
     "id": 178,
-    "name": "appliedenergistics2:tile.BlockQuartzTorch",
+    "name": "Светильник из заряженного кварца",
+    "rawname": "appliedenergistics2:tile.BlockQuartzTorch",
     "effectivness": 1.0
   },
   {
     "id": 4430,
-    "name": "Forestry:refractoryEthanol",
+    "name": "Капсула этанола",
+    "rawname": "Forestry:refractoryEthanol",
     "effectivness": 1.0
   },
   {
     "id": 488,
-    "name": "Forestry:fences2",
+    "name": "Забор из гибискуса",
+    "rawname": "Forestry:fences2",
     "effectivness": 1.0
   },
   {
     "id": 4158,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipefluidssandstone",
+    "name": "Песчаниковая жидкостная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipefluidssandstone",
     "effectivness": 1.0
   },
   {
     "id": 351,
-    "name": "minecraft:dye",
+    "name": "Чернильный мешок",
+    "rawname": "minecraft:dye",
     "effectivness": 1.0
   },
   {
     "id": 212,
-    "name": "appliedenergistics2:tile.QuartzStairBlock",
+    "name": "Ступеньки из истинного кварца",
+    "rawname": "appliedenergistics2:tile.QuartzStairBlock",
     "effectivness": 1.0
   },
   {
     "id": 4628,
-    "name": "ProjRed|Exploration:projectred.exploration.shovelruby",
+    "name": "Рубиновая лопата",
+    "rawname": "ProjRed|Exploration:projectred.exploration.shovelruby",
     "material": "RUBY",
     "effectivness": 1.0,
     "toolClass": [
@@ -5221,242 +6201,289 @@
   },
   {
     "id": 4282,
-    "name": "IC2:reactorMOXQuad",
+    "name": "Счетверённый топливный стержень (MOX)",
+    "rawname": "IC2:reactorMOXQuad",
     "effectivness": 1.0
   },
   {
     "id": 4206,
-    "name": "IC2:itemPartCircuitAdv",
+    "name": "Продвинутая электросхема",
+    "rawname": "IC2:itemPartCircuitAdv",
     "effectivness": 1.0
   },
   {
     "id": 428,
-    "name": "IC2:blockLuminator",
+    "name": "Электролампа «§cТолько крафт!§r»",
+    "rawname": "IC2:blockLuminator",
     "effectivness": 1.0
   },
   {
     "id": 47,
-    "name": "minecraft:bookshelf",
+    "name": "Книжная полка",
+    "rawname": "minecraft:bookshelf",
     "effectivness": 1.0
   },
   {
     "id": 4647,
-    "name": "ProjRed|Exploration:projectred.exploration.rubychestplate",
+    "name": "Рубиновая кираса",
+    "rawname": "ProjRed|Exploration:projectred.exploration.rubychestplate",
     "effectivness": 1.0
   },
   {
     "id": 4273,
-    "name": "IC2:itemBatChargeAdv",
+    "name": "Advanced Charging Battery",
+    "rawname": "IC2:itemBatChargeAdv",
     "effectivness": 1.0
   },
   {
     "id": 4164,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipepoweriron",
+    "name": "Железная энергетическая труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipepoweriron",
     "effectivness": 1.0
   },
   {
     "id": 502,
-    "name": "ForestryExtras:mutatedIronBlock",
+    "name": "Mutated Iron Block",
+    "rawname": "ForestryExtras:mutatedIronBlock",
     "effectivness": 1.0
   },
   {
     "id": 4511,
-    "name": "ForestryExtras:item.fe.frame.frameEmerald",
+    "name": "Изумрудная рамка",
+    "rawname": "ForestryExtras:item.fe.frame.frameEmerald",
     "effectivness": 1.0
   },
   {
     "id": 341,
-    "name": "minecraft:slime_ball",
+    "name": "Сгусток слизи",
+    "rawname": "minecraft:slime_ball",
     "effectivness": 1.0
   },
   {
     "id": 4292,
-    "name": "IC2:reactorCoolantSimple",
+    "name": "Охлаждающий стержень 10к",
+    "rawname": "IC2:reactorCoolantSimple",
     "effectivness": 1.0
   },
   {
     "id": 79,
-    "name": "minecraft:ice",
+    "name": "Лёд",
+    "rawname": "minecraft:ice",
     "effectivness": 1.0
   },
   {
     "id": 380,
-    "name": "minecraft:cauldron",
+    "name": "Котёл",
+    "rawname": "minecraft:cauldron",
     "effectivness": 1.0
   },
   {
     "id": 398,
-    "name": "minecraft:carrot_on_a_stick",
+    "name": "Удочка с морковью",
+    "rawname": "minecraft:carrot_on_a_stick",
     "effectivness": 1.0
   },
   {
     "id": 4240,
-    "name": "IC2:itemArmorHazmatHelmet",
+    "name": "Шлем-акваланг",
+    "rawname": "IC2:itemArmorHazmatHelmet",
     "effectivness": 1.0
   },
   {
     "id": 89,
-    "name": "minecraft:glowstone",
+    "name": "Светящийся камень",
+    "rawname": "minecraft:glowstone",
     "effectivness": 1.0
   },
   {
     "id": 4334,
-    "name": "IC2:itemToolPainterMagenta",
+    "name": "Сиреневый валик",
+    "rawname": "IC2:itemToolPainterMagenta",
     "effectivness": 1.0
   },
   {
     "id": 35,
-    "name": "minecraft:wool",
+    "name": "Шерсть",
+    "rawname": "minecraft:wool",
     "effectivness": 1.0
   },
   {
     "id": 4464,
-    "name": "Forestry:beeCombs",
+    "name": "Медовые соты",
+    "rawname": "Forestry:beeCombs",
     "effectivness": 1.0
   },
   {
     "id": 103,
-    "name": "minecraft:melon_block",
+    "name": "Арбуз",
+    "rawname": "minecraft:melon_block",
     "effectivness": 1.0
   },
   {
     "id": 4584,
-    "name": "IC2NuclearControl:ItemToolThermometer",
+    "name": "Thermometer",
+    "rawname": "IC2NuclearControl:ItemToolThermometer",
     "effectivness": 1.0
   },
   {
     "id": 4473,
-    "name": "Forestry:grafter",
+    "name": "Садовый нож",
+    "rawname": "Forestry:grafter",
     "effectivness": 1.0
   },
   {
     "id": 379,
-    "name": "minecraft:brewing_stand",
+    "name": "Варочная стойка",
+    "rawname": "minecraft:brewing_stand",
     "effectivness": 1.0
   },
   {
     "id": 353,
-    "name": "minecraft:sugar",
+    "name": "Сахар",
+    "rawname": "minecraft:sugar",
     "effectivness": 1.0
   },
   {
     "id": 45,
-    "name": "minecraft:brick_block",
+    "name": "Кирпичи",
+    "rawname": "minecraft:brick_block",
     "effectivness": 1.0
   },
   {
     "id": 4480,
-    "name": "Forestry:flutterlyzer",
+    "name": "Анализатор бабочек",
+    "rawname": "Forestry:flutterlyzer",
     "effectivness": 1.0
   },
   {
     "id": 4495,
-    "name": "ForestryExtras:item.fe.item.diamondStick",
+    "name": "Алмазная палка",
+    "rawname": "ForestryExtras:item.fe.item.diamondStick",
     "effectivness": 1.0
   },
   {
     "id": 4128,
-    "name": "BuildCraft|Core:stoneGearItem",
+    "name": "Каменная шестерня",
+    "rawname": "BuildCraft|Core:stoneGearItem",
     "effectivness": 1.0
   },
   {
     "id": 407,
-    "name": "minecraft:tnt_minecart",
+    "name": "Вагонетка с динамитом",
+    "rawname": "minecraft:tnt_minecart",
     "effectivness": 1.0
   },
   {
     "id": 9,
-    "name": "minecraft:water",
+    "name": "Вода",
+    "rawname": "minecraft:water",
     "effectivness": 1.0
   },
   {
     "id": 250,
-    "name": "IC2:blockWall",
+    "name": "ic2.blockWall",
+    "rawname": "IC2:blockWall",
     "effectivness": 1.0
   },
   {
     "id": 4172,
-    "name": "BuildCraft|Transport:pipeFacade",
+    "rawname": "BuildCraft|Transport:pipeFacade",
     "effectivness": 1.0
   },
   {
     "id": 44,
-    "name": "minecraft:stone_slab",
+    "name": "Каменная плита",
+    "rawname": "minecraft:stone_slab",
     "effectivness": 1.0
   },
   {
     "id": 4398,
-    "name": "Forestry:bronzeShovel",
+    "name": "Лопата выживающего",
+    "rawname": "Forestry:bronzeShovel",
     "effectivness": 1.0
   },
   {
     "id": 4614,
-    "name": "ProjRed|Illumination:projectred.illumination.cagelamp2.inv",
+    "name": "Инверторная белая лампа в клетке",
+    "rawname": "ProjRed|Illumination:projectred.illumination.cagelamp2.inv",
     "effectivness": 1.0
   },
   {
     "id": 205,
-    "name": "appliedenergistics2:tile.BlockLightDetector",
+    "name": "Светильник обнаружения света",
+    "rawname": "appliedenergistics2:tile.BlockLightDetector",
     "effectivness": 1.0
   },
   {
     "id": 237,
-    "name": "IC2:blockOreLead",
+    "name": "Свинцовая руда",
+    "rawname": "IC2:blockOreLead",
     "effectivness": 1.0
   },
   {
     "id": 4611,
-    "name": "ProjRed|Illumination:projectred.illumination.cagelamp",
+    "name": "Белая защищённая лампа",
+    "rawname": "ProjRed|Illumination:projectred.illumination.cagelamp",
     "effectivness": 1.0
   },
   {
     "id": 401,
-    "name": "minecraft:fireworks",
+    "name": "Фейерверк",
+    "rawname": "minecraft:fireworks",
     "effectivness": 1.0
   },
   {
     "id": 125,
-    "name": "minecraft:double_wooden_slab",
+    "name": "Дубовая плита",
+    "rawname": "minecraft:double_wooden_slab",
     "effectivness": 1.0
   },
   {
     "id": 319,
-    "name": "minecraft:porkchop",
+    "name": "Сырая свинина",
+    "rawname": "minecraft:porkchop",
     "effectivness": 1.0
   },
   {
     "id": 376,
-    "name": "minecraft:fermented_spider_eye",
+    "name": "Маринованный паучий глаз",
+    "rawname": "minecraft:fermented_spider_eye",
     "effectivness": 1.0
   },
   {
     "id": 219,
-    "name": "BuildCraft|Energy:blockFuel",
+    "name": "Топливо",
+    "rawname": "BuildCraft|Energy:blockFuel",
     "effectivness": 1.0
   },
   {
     "id": 127,
-    "name": "minecraft:cocoa",
+    "name": "Какао",
+    "rawname": "minecraft:cocoa",
     "effectivness": 1.0
   },
   {
     "id": 366,
-    "name": "minecraft:cooked_chicken",
+    "name": "Жареная курица",
+    "rawname": "minecraft:cooked_chicken",
     "effectivness": 1.0
   },
   {
     "id": 327,
-    "name": "minecraft:lava_bucket",
+    "name": "Ведро лавы",
+    "rawname": "minecraft:lava_bucket",
     "effectivness": 1.0
   },
   {
     "id": 4340,
-    "name": "IC2:itemPartCFPowder",
+    "name": "Сжатая строительная пена",
+    "rawname": "IC2:itemPartCFPowder",
     "effectivness": 1.0
   },
   {
     "id": 274,
-    "name": "minecraft:stone_pickaxe",
+    "name": "Каменная кирка",
+    "rawname": "minecraft:stone_pickaxe",
     "material": "STONE",
     "effectivness": 1.0,
     "toolClass": [
@@ -5468,97 +6495,116 @@
   },
   {
     "id": 4249,
-    "name": "IC2:itemArmorNanoHelmet",
+    "name": "Нано-шлем",
+    "rawname": "IC2:itemArmorNanoHelmet",
     "effectivness": 1.0
   },
   {
     "id": 4138,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsstone",
+    "name": "Каменная транспортная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsstone",
     "effectivness": 1.0
   },
   {
     "id": 15,
-    "name": "minecraft:iron_ore",
+    "name": "Железная руда",
+    "rawname": "minecraft:iron_ore",
     "effectivness": 1.0
   },
   {
     "id": 4576,
-    "name": "ForestryExtras:item.fe.comb.mutated",
+    "name": "Mutated Comb",
+    "rawname": "ForestryExtras:item.fe.comb.mutated",
     "effectivness": 1.0
   },
   {
     "id": 4467,
-    "name": "Forestry:apiaristLegs",
+    "name": "Штаны пчеловода",
+    "rawname": "Forestry:apiaristLegs",
     "effectivness": 1.0
   },
   {
     "id": 445,
-    "name": "Forestry:soil",
+    "name": "Гумус",
+    "rawname": "Forestry:soil",
     "effectivness": 1.0
   },
   {
     "id": 435,
-    "name": "IC2:fluidConstructionFoam",
+    "name": "Строительная пена",
+    "rawname": "IC2:fluidConstructionFoam",
     "effectivness": 1.0
   },
   {
     "id": 2261,
-    "name": "minecraft:record_mall",
+    "name": "Пластинка",
+    "rawname": "minecraft:record_mall",
     "effectivness": 1.0
   },
   {
     "id": 4312,
-    "name": "IC2:itemPartCoalBlock",
+    "name": "Сжатый угольный шарик",
+    "rawname": "IC2:itemPartCoalBlock",
     "effectivness": 1.0
   },
   {
     "id": 228,
-    "name": "BuildCraft|Factory:refineryBlock",
+    "name": "Нефтеперегонная вышка",
+    "rawname": "BuildCraft|Factory:refineryBlock",
     "effectivness": 1.0
   },
   {
     "id": 4520,
-    "name": "ForestryExtras:item.fe.scoop.scoopDraconic",
+    "name": "Драконовский сачок",
+    "rawname": "ForestryExtras:item.fe.scoop.scoopDraconic",
     "effectivness": 1.0
   },
   {
     "id": 4444,
-    "name": "Forestry:bucketIce",
+    "name": "Ведро молотого льда",
+    "rawname": "Forestry:bucketIce",
     "effectivness": 1.0
   },
   {
     "id": 33,
-    "name": "minecraft:piston",
+    "name": "Поршень",
+    "rawname": "minecraft:piston",
     "effectivness": 1.0
   },
   {
     "id": 264,
-    "name": "minecraft:diamond",
+    "name": "Алмаз",
+    "rawname": "minecraft:diamond",
     "effectivness": 1.0
   },
   {
     "id": 459,
-    "name": "Forestry:beehives",
+    "name": "tile.for.beehives.0.name",
+    "rawname": "Forestry:beehives",
     "effectivness": 1.0
   },
   {
     "id": 406,
-    "name": "minecraft:quartz",
+    "name": "Кварц",
+    "rawname": "minecraft:quartz",
     "effectivness": 1.0
   },
   {
     "id": 439,
-    "name": "IC2:fluidBiomass",
+    "name": "Биомасса",
+    "rawname": "IC2:fluidBiomass",
     "effectivness": 1.0
   },
   {
     "id": 4331,
-    "name": "IC2:itemToolPainterLime",
+    "name": "Лаймовый валик",
+    "rawname": "IC2:itemToolPainterLime",
     "effectivness": 1.0
   },
   {
     "id": 270,
-    "name": "minecraft:wooden_pickaxe",
+    "name": "Деревянная кирка",
+    "rawname": "minecraft:wooden_pickaxe",
     "material": "WOOD",
     "effectivness": 1.0,
     "toolClass": [
@@ -5570,162 +6616,194 @@
   },
   {
     "id": 4111,
-    "name": "appliedenergistics2:item.ToolMemoryCard",
+    "name": "Карта памяти",
+    "rawname": "appliedenergistics2:item.ToolMemoryCard",
     "effectivness": 1.0
   },
   {
     "id": 4608,
-    "name": "ProjRed|Illumination:projectred.illumination.lantern.inv",
+    "name": "Инверторный белый фонарь",
+    "rawname": "ProjRed|Illumination:projectred.illumination.lantern.inv",
     "effectivness": 1.0
   },
   {
     "id": 4587,
-    "name": "IC2NuclearControl:ItemEnergySensorKit",
+    "name": "Набор для энергетического хранилища",
+    "rawname": "IC2NuclearControl:ItemEnergySensorKit",
     "effectivness": 1.0
   },
   {
     "id": 225,
-    "name": "BuildCraft|Factory:tankBlock",
+    "name": "Цистерна",
+    "rawname": "BuildCraft|Factory:tankBlock",
     "effectivness": 1.0
   },
   {
     "id": 404,
-    "name": "minecraft:comparator",
+    "name": "Компаратор",
+    "rawname": "minecraft:comparator",
     "effectivness": 1.0
   },
   {
     "id": 318,
-    "name": "minecraft:flint",
+    "name": "Кремень",
+    "rawname": "minecraft:flint",
     "effectivness": 1.0
   },
   {
     "id": 4179,
-    "name": "IC2:itemRubber",
+    "name": "Резина",
+    "rawname": "IC2:itemRubber",
     "effectivness": 1.0
   },
   {
     "id": 4452,
-    "name": "Forestry:beealyzer",
+    "name": "Анализатор пчёл",
+    "rawname": "Forestry:beealyzer",
     "effectivness": 1.0
   },
   {
     "id": 175,
-    "name": "minecraft:double_plant",
+    "name": "Подсолнух",
+    "rawname": "minecraft:double_plant",
     "effectivness": 1.0
   },
   {
     "id": 4421,
-    "name": "Forestry:waxCapsuleBiomass",
+    "name": "Капсула биомассы",
+    "rawname": "Forestry:waxCapsuleBiomass",
     "effectivness": 1.0
   },
   {
     "id": 21,
-    "name": "minecraft:lapis_ore",
+    "name": "Лазуритовая руда",
+    "rawname": "minecraft:lapis_ore",
     "effectivness": 1.0
   },
   {
     "id": 4407,
-    "name": "Forestry:fruits",
+    "name": "Вишня",
+    "rawname": "Forestry:fruits",
     "effectivness": 1.0
   },
   {
     "id": 4555,
-    "name": "IronChest:diamondCrystalUpgrade",
+    "name": "Улучшение из алмазного в кристальный сундук",
+    "rawname": "IronChest:diamondCrystalUpgrade",
     "effectivness": 1.0
   },
   {
     "id": 328,
-    "name": "minecraft:minecart",
+    "name": "Вагонетка",
+    "rawname": "minecraft:minecart",
     "effectivness": 1.0
   },
   {
     "id": 51,
-    "name": "minecraft:fire",
+    "name": "Огонь",
+    "rawname": "minecraft:fire",
     "effectivness": 1.0
   },
   {
     "id": 4380,
-    "name": "Forestry:impregnatedCasing",
+    "name": "Пропитанный корпус",
+    "rawname": "Forestry:impregnatedCasing",
     "effectivness": 1.0
   },
   {
     "id": 4409,
-    "name": "Forestry:canEthanol",
+    "name": "Банка этанола",
+    "rawname": "Forestry:canEthanol",
     "effectivness": 1.0
   },
   {
     "id": 2264,
-    "name": "minecraft:record_strad",
+    "name": "Пластинка",
+    "rawname": "minecraft:record_strad",
     "effectivness": 1.0
   },
   {
     "id": 4145,
-    "name": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsdaizuli",
+    "name": "Алмазуритовая транспортная труба",
+    "rawname": "BuildCraft|Transport:item.buildcraftPipe.pipeitemsdaizuli",
     "effectivness": 1.0
   },
   {
     "id": 58,
-    "name": "minecraft:crafting_table",
+    "name": "Верстак",
+    "rawname": "minecraft:crafting_table",
     "effectivness": 1.0
   },
   {
     "id": 331,
-    "name": "minecraft:redstone",
+    "name": "Красная пыль",
+    "rawname": "minecraft:redstone",
     "effectivness": 1.0
   },
   {
     "id": 4262,
-    "name": "IC2:itemArmorCFPack",
+    "name": "Строительный ранец",
+    "rawname": "IC2:itemArmorCFPack",
     "effectivness": 1.0
   },
   {
     "id": 233,
-    "name": "BuildCraft|Silicon:laserTableBlock",
+    "name": "Сборочный стол",
+    "rawname": "BuildCraft|Silicon:laserTableBlock",
     "effectivness": 1.0
   },
   {
     "id": 4435,
-    "name": "Forestry:refractorySeedOil",
+    "name": "Капсула растительного масла",
+    "rawname": "Forestry:refractorySeedOil",
     "effectivness": 1.0
   },
   {
     "id": 4655,
-    "name": "ProjRed|Exploration:projectred.exploration.peridotchestplate",
+    "name": "Перидотовая кираса",
+    "rawname": "ProjRed|Exploration:projectred.exploration.peridotchestplate",
     "effectivness": 1.0
   },
   {
     "id": 4222,
-    "name": "IC2:itemToolbox",
+    "name": "Модуль хранения",
+    "rawname": "IC2:itemToolbox",
     "effectivness": 1.0
   },
   {
     "id": 109,
-    "name": "minecraft:stone_brick_stairs",
+    "name": "Ступеньки из каменного кирпича",
+    "rawname": "minecraft:stone_brick_stairs",
     "effectivness": 1.0
   },
   {
     "id": 4521,
-    "name": "ForestryExtras:item.fe.grafter.grafterReinforced",
+    "name": "Усиленный садовый нож",
+    "rawname": "ForestryExtras:item.fe.grafter.grafterReinforced",
     "effectivness": 1.0
   },
   {
     "id": 2263,
-    "name": "minecraft:record_stal",
+    "name": "Пластинка",
+    "rawname": "minecraft:record_stal",
     "effectivness": 1.0
   },
   {
     "id": 4428,
-    "name": "Forestry:waxCapsuleOil",
+    "name": "Капсула нефти",
+    "rawname": "Forestry:waxCapsuleOil",
     "effectivness": 1.0
   },
   {
     "id": 508,
-    "name": "statues:statues.statue",
+    "name": "Статуя",
+    "rawname": "statues:statues.statue",
     "effectivness": 1.0
   },
   {
     "id": 187,
-    "name": "appliedenergistics2:tile.BlockSecurity",
+    "name": "МЭ терминал безопасности",
+    "rawname": "appliedenergistics2:tile.BlockSecurity",
     "effectivness": 1.0
   }
 ]

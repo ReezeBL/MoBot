@@ -36,9 +36,9 @@ namespace MoBot.Structure.Game.Items
                 {
                     
                     Item reg;
-                    if (Extension.ContainsKey(item.name))
+                    if (Extension.ContainsKey(item.rawname))
                     {
-                        reg = Extension[item.name];
+                        reg = Extension[item.rawname];
                         reg.Id = item.id;
 
                     }
@@ -58,7 +58,7 @@ namespace MoBot.Structure.Game.Items
 
                     reg.Id = item.id;
                     reg.Name = item.name;
-
+                    reg.RawName = item.rawname;
                     ItemRegistry.Add(reg.Id, reg);
                 }
             }
@@ -83,13 +83,15 @@ namespace MoBot.Structure.Game.Items
         {
             public int id;
             public string name;
+            public string rawname;
             public string material;
             public float effectivness;
             public string[] toolClass;
             public int[] harvestLevel;
         }
 
-        public String Name;
+        public string Name;
+        public string RawName;
         public int Id;
 
         public virtual bool CanHarvest(Block block)
@@ -104,7 +106,7 @@ namespace MoBot.Structure.Game.Items
 
         public override string ToString()
         {
-            return Name;
+            return Name ?? RawName ?? "";
         }
     }
 }

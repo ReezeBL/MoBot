@@ -106,5 +106,7 @@ namespace MoBot
             get { return Instance._backwarp; }
             set { Instance._backwarp = value; }
         }
+
+        public static Dictionary<string, string> Users { get; } = new Dictionary<string, string>();
     }
 }

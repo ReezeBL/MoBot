@@ -41,6 +41,7 @@ namespace MoBot.Structure
             this.reconnectCheckBox = new System.Windows.Forms.CheckBox();
             this.settingsButton = new System.Windows.Forms.Button();
             this.userNames = new System.Windows.Forms.ComboBox();
+            this.ConsoleOutput = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // consoleWindow
@@ -132,14 +133,25 @@ namespace MoBot.Structure
             this.userNames.Name = "userNames";
             this.userNames.Size = new System.Drawing.Size(129, 21);
             this.userNames.TabIndex = 8;
-            this.userNames.SelectedIndexChanged += new System.EventHandler(this.userNames_SelectedIndexChanged);
+            // 
+            // ConsoleOutput
+            // 
+            this.ConsoleOutput.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ConsoleOutput.Location = new System.Drawing.Point(12, 330);
+            this.ConsoleOutput.Name = "ConsoleOutput";
+            this.ConsoleOutput.Size = new System.Drawing.Size(579, 238);
+            this.ConsoleOutput.TabIndex = 9;
+            this.ConsoleOutput.Text = "";
             // 
             // Viewer
             // 
             this.AcceptButton = this.buttonSendMessage;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 336);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(605, 577);
+            this.Controls.Add(this.ConsoleOutput);
             this.Controls.Add(this.userNames);
             this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.reconnectCheckBox);
@@ -173,5 +185,6 @@ namespace MoBot.Structure
         private CheckBox reconnectCheckBox;
         private Button settingsButton;
         private ComboBox userNames;
+        private RichTextBox ConsoleOutput;
     }
 }
