@@ -52,6 +52,8 @@ namespace MoBot.Structure.Windows
             this.entityPage = new System.Windows.Forms.TabPage();
             this.entityList = new System.Windows.Forms.ListBox();
             this.inventoryGui = new MoBot.Structure.Windows.ContainerGui();
+            this.inventorySelectMode = new System.Windows.Forms.CheckBox();
+            this.inventoryItemInfo = new System.Windows.Forms.RichTextBox();
             this.panel2.SuspendLayout();
             this.controlPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -220,6 +222,9 @@ namespace MoBot.Structure.Windows
             // 
             // itemPage
             // 
+            this.itemPage.AutoScroll = true;
+            this.itemPage.Controls.Add(this.inventoryItemInfo);
+            this.itemPage.Controls.Add(this.inventorySelectMode);
             this.itemPage.Controls.Add(this.inventoryGui);
             this.itemPage.Location = new System.Drawing.Point(4, 22);
             this.itemPage.Name = "itemPage";
@@ -269,6 +274,24 @@ namespace MoBot.Structure.Windows
             this.inventoryGui.SelectMode = false;
             this.inventoryGui.Size = new System.Drawing.Size(0, 0);
             this.inventoryGui.TabIndex = 0;
+            // 
+            // inventorySelectMode
+            // 
+            this.inventorySelectMode.AutoSize = true;
+            this.inventorySelectMode.Location = new System.Drawing.Point(316, 78);
+            this.inventorySelectMode.Name = "inventorySelectMode";
+            this.inventorySelectMode.Size = new System.Drawing.Size(86, 17);
+            this.inventorySelectMode.TabIndex = 1;
+            this.inventorySelectMode.Text = "Select Mode";
+            this.inventorySelectMode.UseVisualStyleBackColor = true;
+            // 
+            // inventoryItemInfo
+            // 
+            this.inventoryItemInfo.Location = new System.Drawing.Point(291, 115);
+            this.inventoryItemInfo.Name = "inventoryItemInfo";
+            this.inventoryItemInfo.Size = new System.Drawing.Size(160, 141);
+            this.inventoryItemInfo.TabIndex = 2;
+            this.inventoryItemInfo.Text = "";
             // 
             // Viewer
             // 
@@ -323,5 +346,7 @@ namespace MoBot.Structure.Windows
         private TextBox foodTextbox;
         private Label labelFood;
         private ContainerGui inventoryGui;
+        private CheckBox inventorySelectMode;
+        private RichTextBox inventoryItemInfo;
     }
 }

@@ -6,6 +6,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
+using fNbt;
 using MoBot.Structure.Actions;
 using MoBot.Structure.Game;
 using Newtonsoft.Json.Linq;
@@ -41,10 +42,21 @@ namespace MoBot.Structure.Windows
             {
                 healthTextBox.DataBindings.Clear();
                 foodTextbox.DataBindings.Clear();
+                inventoryGui.DataBindings.Clear();
 
                 healthTextBox.DataBindings.Add("Text", GameController.Player, "Health", true, DataSourceUpdateMode.OnPropertyChanged);
                 foodTextbox.DataBindings.Add("Text", GameController.Player, "Food", true, DataSourceUpdateMode.OnPropertyChanged);
                 inventoryGui.DataBindings.Add("Container", GameController.Player, "CurrentContainer");
+            }
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle = cp.ExStyle | 0x2000000;
+                return cp;
             }
         }
 
@@ -188,13 +200,40 @@ namespace MoBot.Structure.Windows
             }
         }
 
+        private void FormattedItemInfo(object sender, ConvertEventArgs cevent)
+        {
+            if (cevent.DesiredType != typeof(string)) return;
+
+            var stack = cevent.Value as ItemStack;
+            if (stack?.Item == null || stack.Item.Id == -1) return;
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(stack.Item.ToString());
+            sb.AppendLine($"Item count: {stack.ItemCount}");
+            sb.AppendLine($"Item damage: {stack.ItemDamage}");
+            if (stack.NbtData != null)
+            {
+                foreach (var tag in stack.NbtRoot.Names)
+                {
+                    sb.AppendLine($"{tag} = {stack.NbtRoot[tag].StringValue}");
+                }
+            }
+            cevent.Value = sb.ToString();
+        }
+
         private void Viewer_Load(object sender, EventArgs e)
         {
             TextBoxWriter writer = new TextBoxWriter(ConsoleOutput, this);
             Console.SetOut(writer);
 
             entityList.DataSource = GameController.LivingEntities;
-            
+            inventoryGui.DataBindings.Add("SelectMode", inventorySelectMode, "Checked");
+
+            Binding bind = new Binding("Text", inventoryGui, "SelectedItem");
+            bind.Format += FormattedItemInfo;
+
+            inventoryItemInfo.DataBindings.Add(bind);
+
             XmlDocument users = new XmlDocument();
             try
             {

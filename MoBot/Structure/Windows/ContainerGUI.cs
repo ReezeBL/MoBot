@@ -6,16 +6,18 @@ using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using MoBot.Annotations;
 using MoBot.Structure.Game;
+using static System.String;
 using Container = MoBot.Structure.Game.Container;
 
 namespace MoBot.Structure.Windows
 {
     public partial class ContainerGui : UserControl, INotifyPropertyChanged
     {
-        private const int size = 30;
-        private const int dSize = 31;
+        private const int SlotSize = 30;
+        private const int DSize = 31;
         private readonly Dictionary<object, int> _buttons = new Dictionary<object, int>();
         private readonly Dictionary<int, object> _revButtons = new Dictionary<int, object>();
+        private readonly ToolTip _toolTip = new ToolTip();
         private Container _container;
         private ItemStack _selectedItem;
 
@@ -32,6 +34,16 @@ namespace MoBot.Structure.Windows
             }
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle = cp.ExStyle | 0x2000000;
+                return cp;
+            }
+        }
+
         public new Container Container
         {
             get { return _container; }
@@ -42,7 +54,9 @@ namespace MoBot.Structure.Windows
                     Invoke(new Action(ApplyContainer));
                 else
                 {
+                    SuspendLayout();
                     ApplyContainer();
+                    ResumeLayout();
                 }
             }
         }
@@ -55,57 +69,55 @@ namespace MoBot.Structure.Windows
             if (_container == null) return;
             for (int i = 0; i < _container.Capacity; i++)
             {
-                Button button = new Button
-                {
-                    Size = new Size(size, size),
-                    Location = new Point(dSize * (i%9), dSize * (i / 9)),
-                    FlatStyle = FlatStyle.Popup,
-                    Text = _container[i]?.Item.Id.ToString(),
-                    Font = new Font(FontFamily.GenericSansSerif, 6)
-                };
-                button.Click += SlotClick;
-                Controls.Add(button);
-                _buttons.Add(button, i);
-                _revButtons.Add(i, button);
+                CreateButton(i, i%9, i/9);
             }
 
             for (int i = 0; i < 36; i++)
             {
-                Button button = new Button
-                {
-                    Size = new Size(size, size),
-                    Location = new Point(dSize * (i % 9), dSize * (i / 9 + _container.Capacity / 9 + 1)),
-                    FlatStyle = FlatStyle.Popup,
-                    Text = _container[i]?.Item.Id.ToString(),
-                    Font = new Font(FontFamily.GenericSansSerif, 6)
-                };
-                button.Click += SlotClick;
-                Controls.Add(button);
-                _buttons.Add(button, i + _container.Capacity);
-                _revButtons.Add(i + _container.Capacity, button);
+                CreateButton(i + _container.Capacity, i%9, i/9 + _container.Capacity/9 + 1);
             }
-            {
-                Button button = new Button
-                {
-                    Size = new Size(size, size),
-                    Location = new Point(0, dSize*11),
-                    FlatStyle = FlatStyle.Popup,
-                    Text = _container[-1]?.Item.Id.ToString(),
-                    Font = new Font(FontFamily.GenericSansSerif, 6)
-                };
-                button.Click += SlotClick;
-                Controls.Add(button);
-                _buttons.Add(button, -1);
-                _revButtons.Add(-1, button);
-            }
-            _container.PropertyChanged += ContainerOnPropertyChanged;
+
+            _container.SlotChanged += ContainerOnPropertyChanged;
         }
 
-        private void ContainerOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
+        private void CreateButton(int i, int x, int y)
         {
-            int slotNumber = int.Parse(propertyChangedEventArgs.PropertyName);
-            var button = _revButtons[slotNumber] as Button;
-            if (button != null) button.Text = _container[slotNumber].Item.Id.ToString();
+            Button button = new Button
+            {
+                Size = new Size(SlotSize, SlotSize),
+                Location = new Point(DSize * x, DSize * y),
+                FlatStyle = FlatStyle.Popup,
+                Font = new Font(FontFamily.GenericSansSerif, 6)
+            };
+            button.Click += SlotClick;
+
+            string toolTip = _container[i]?.Item?.ToString() ?? Empty;
+            _toolTip.SetToolTip(button, toolTip);
+            button.BackColor = toolTip == Empty ? Color.Transparent : Color.LawnGreen;
+
+            Controls.Add(button);
+            _buttons.Add(button, i);
+            _revButtons.Add(i, button);
+        }
+
+        private void ContainerOnPropertyChanged(object sender, int n, ItemStack slot)
+        {
+            if (!sender.Equals(_container))
+                return;
+            if (InvokeRequired)
+            {
+                Invoke(new Action<object, int, ItemStack>(ContainerOnPropertyChanged), sender, n, slot);
+            }
+            else
+            {
+                var button = _revButtons[n] as Button;
+                if (button != null)
+                {
+                    string toolTip = slot?.Item?.ToString() ?? Empty;
+                    _toolTip.SetToolTip(button, toolTip);
+                    button.BackColor = toolTip == Empty ? Color.Transparent : Color.LawnGreen;
+                }
+            }
         }
 
         public ContainerGui()
@@ -115,14 +127,16 @@ namespace MoBot.Structure.Windows
 
         private void SlotClick(object sender, EventArgs args)
         {
-            if (SelectMode)
-            {
-                SelectedItem = _container[_buttons[sender]];
-            }
-            else
-            {
-                ActionManager.ClickInventorySlot(_buttons[sender]);
-            }
+            //if (SelectMode)
+            //{
+            //    SelectedItem = _container[_buttons[sender]];
+            //}
+            //else
+            //{
+            //    ActionManager.ClickInventorySlot(_buttons[sender]);
+            //}
+
+            SelectedItem = _container[_buttons[sender]];
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -54,7 +55,8 @@ namespace MoBot.Structure.Game
                         _inventory[n - _capacity] = value;
                     else
                         _items[n] = value;
-                    OnPropertyChanged($"{n}");
+
+                    OnSlotChanged(n, value);
                 }
             }
         }
@@ -162,11 +164,16 @@ namespace MoBot.Structure.Game
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
+        public event Action<object, int, ItemStack> SlotChanged;
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected virtual void OnSlotChanged(int n, ItemStack slot)
+        {
+            SlotChanged?.Invoke(this, n, slot);
         }
     }
 }

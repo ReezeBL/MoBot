@@ -103,6 +103,7 @@ namespace MoBot.Structure.Game
         public static void Clear()
         {
             Instance._entities.Clear();
+            LivingEntities.Clear();
             World.Clear();
             Player = null;
         }
