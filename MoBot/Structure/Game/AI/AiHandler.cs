@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Threading;
-using AForge.Math;
-using MoBot.Structure.Game.AI.Pathfinding;
 using MoBot.Structure.Game.AI.Tasks;
 using TreeSharp;
-using Action = System.Action;
 
 namespace MoBot.Structure.Game.AI
 {
@@ -20,7 +16,6 @@ namespace MoBot.Structure.Game.AI
 
         private int _flyingTicks;
         private bool _paused = true;
-        private Vector3 lastPos;
 
         public AiHandler()
         {
@@ -28,54 +23,37 @@ namespace MoBot.Structure.Game.AI
             {
                 while (_threadContinue)
                 {
-                    if (NetworkController.Connected && GameController.Player != null)
+                    try
                     {
-                        if (_paused)
+                        if (NetworkController.Connected && GameController.Player != null)
                         {
-                            _paused = false;
-                            CustomEvents.GenerateStrings();
-                            _root.Stop(null);
-                            _root.Start(null);
-                        }
+                            if (_paused)
+                            {
+                                _paused = false;
+                                CustomEvents.GenerateStrings();
+                                _root.Stop(null);
+                                _root.Start(null);
+                            }
 
-                        if (_root.Tick(null) != RunStatus.Running)
+                            if (_root.Tick(null) != RunStatus.Running)
+                            {
+                                _root.Stop(null);
+                                _root.Start(null);
+                            }
+
+                            if (!GameController.Player.OnGround)
+                                GameController.Player.OnGround = true;
+                        }
+                        else
                         {
-                            _root.Stop(null);
-                            _root.Start(null);
+                            _paused = true;
+                            _flyingTicks = 0;
                         }
-
-                        if (!GameController.Player.OnGround)
-                            GameController.Player.OnGround = true;
-                        //Vector3 floor = GameController.Player.Position;
-                        //Vector3 downSide = floor + new Vector3(0f, -0.033f, 0f);
-
-                        //if (!GameController.World.IsBlockFree(downSide))
-                        //{
-                        //    GameController.Player.OnGround = true;
-                        //    _flyingTicks = 0;
-                        //}
-                        //else
-                        //{
-                        //    GameController.Player.OnGround = true;
-                        //    if ((floor - lastPos).Y >= -0.03125)
-                        //    {
-                        //        _flyingTicks ++;
-                        //        Console.WriteLine($"Flying ticks: {_flyingTicks}");
-                        //    }
-                        //    ActionManager.SetPlayerPos(downSide);
-                        //}
-
-                        //lastPos = floor;
-                        //ActionManager.UpdatePosition();
-
-
                     }
-                    else
+                    catch (Exception e)
                     {
-                        _paused = true;
-                        _flyingTicks = 0;
+                        Program.GetLogger().Error($"AI Thread exception: {e}");
                     }
-
                     Thread.Sleep(50);
                 }
             })

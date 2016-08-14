@@ -1,11 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
+using MoBot.Annotations;
 using MoBot.Structure.Game.Items;
 
 namespace MoBot.Structure.Game
 {
-    public class Container
+    public class Container : INotifyPropertyChanged
     {
         private readonly ItemStack[] _items;
         private readonly ItemStack[] _inventory;
@@ -51,6 +54,7 @@ namespace MoBot.Structure.Game
                         _inventory[n - _capacity] = value;
                     else
                         _items[n] = value;
+                    OnPropertyChanged($"{n}");
                 }
             }
         }
@@ -121,6 +125,8 @@ namespace MoBot.Structure.Game
             }
         }
 
+        public int Capacity => _capacity;
+
         public class IndexedItem
         {
             public Item Item;
@@ -153,6 +159,14 @@ namespace MoBot.Structure.Game
             var tmp = this[slot];
             this[slot] = CursorItem;
             CursorItem = tmp;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

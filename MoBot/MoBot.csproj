@@ -201,6 +201,12 @@
     <Compile Include="Structure\NetworkController.cs" />
     <Compile Include="Structure\Actions\SysAction.cs" />
     <Compile Include="Protocol\Threading\ReadingThread.cs" />
+    <Compile Include="Structure\Windows\ContainerGUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Structure\Windows\ContainerGUI.Designer.cs">
+      <DependentUpon>ContainerGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Structure\Windows\ControlExtensions.cs" />
     <Compile Include="Structure\Windows\SelectionForm.cs">
       <SubType>Form</SubType>
@@ -254,6 +260,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Structure\Windows\ContainerGUI.resx">
+      <DependentUpon>ContainerGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Structure\Windows\SelectionForm.resx">
       <DependentUpon>SelectionForm.cs</DependentUpon>
     </EmbeddedResource>

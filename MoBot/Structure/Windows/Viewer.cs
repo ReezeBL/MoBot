@@ -44,6 +44,7 @@ namespace MoBot.Structure.Windows
 
                 healthTextBox.DataBindings.Add("Text", GameController.Player, "Health", true, DataSourceUpdateMode.OnPropertyChanged);
                 foodTextbox.DataBindings.Add("Text", GameController.Player, "Food", true, DataSourceUpdateMode.OnPropertyChanged);
+                inventoryGui.DataBindings.Add("Container", GameController.Player, "CurrentContainer");
             }
         }
 
