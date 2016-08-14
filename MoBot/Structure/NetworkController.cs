@@ -100,6 +100,7 @@ namespace MoBot.Structure
             catch (Exception exception)
             {
                 Disconnect();
+                Console.WriteLine(exception);
                 NotifyViewer($"Unable to connect to server!");
             }
         }

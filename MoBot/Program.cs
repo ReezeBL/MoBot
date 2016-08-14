@@ -12,6 +12,7 @@ using MoBot.Scripts;
 using MoBot.Structure;
 using MoBot.Structure.Game;
 using MoBot.Structure.Game.Items;
+using MoBot.Structure.Windows;
 using NLog;
 
 namespace MoBot
@@ -40,7 +41,6 @@ namespace MoBot
 
             AllocConsole();
             var handle = GetConsoleWindow();
-            
 
             Console.WriteLine("Loading scripts...");
             LoadScripts();

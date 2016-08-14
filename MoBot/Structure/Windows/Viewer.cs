@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using MoBot.Structure.Actions;
-using MoBot.Structure.Windows;
+using MoBot.Structure.Game;
 using Newtonsoft.Json.Linq;
 
-namespace MoBot.Structure
+namespace MoBot.Structure.Windows
 {
     public partial class Viewer : Form, IObserver<SysAction>
     {
@@ -24,11 +25,26 @@ namespace MoBot.Structure
             {"aqua", Color.Aqua },
             {"dark_red", Color.DarkRed },
         };
+        public List<Entity> Entities { get; set; } = new List<Entity> {new Player(0, "kek")};
 
         public Controller MainController;
         public Viewer()
         {
             InitializeComponent();
+            entityList.DoubleBuffering(true);
+            GameController.Instance.PropertyChanged += InstanceOnPropertyChanged;
+        }
+
+        private void InstanceOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
+        {
+            if (propertyChangedEventArgs.PropertyName == "Player" && GameController.Player != null)
+            {
+                healthTextBox.DataBindings.Clear();
+                foodTextbox.DataBindings.Clear();
+
+                healthTextBox.DataBindings.Add("Text", GameController.Player, "Health", true, DataSourceUpdateMode.OnPropertyChanged);
+                foodTextbox.DataBindings.Add("Text", GameController.Player, "Food", true, DataSourceUpdateMode.OnPropertyChanged);
+            }
         }
 
         public void OnCompleted()
@@ -175,6 +191,8 @@ namespace MoBot.Structure
         {
             TextBoxWriter writer = new TextBoxWriter(ConsoleOutput, this);
             Console.SetOut(writer);
+
+            entityList.DataSource = GameController.LivingEntities;
             
             XmlDocument users = new XmlDocument();
             try
@@ -269,6 +287,11 @@ namespace MoBot.Structure
         private void controlButton_Click(object sender, EventArgs e)
         {
             controlPanel.Visible = !controlPanel.Visible;
+        }
+
+        private void gameControllerBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

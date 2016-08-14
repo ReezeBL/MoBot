@@ -4,7 +4,21 @@
     {
         
         public float Yaw, Pitch;
-        public float Health = 20;
+        private float _health = 20;
+
+        public float Health
+        {
+            get
+            {
+                return _health;
+            }
+
+            set
+            {
+                _health = value;
+                OnPropertyChanged(nameof(Health));
+            }
+        }
 
         public override string ToString()
         {

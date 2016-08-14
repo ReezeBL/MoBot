@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace MoBot.Structure
+namespace MoBot.Structure.Windows
 {
     partial class Viewer
     {
@@ -45,9 +45,16 @@ namespace MoBot.Structure
             this.tabControl = new System.Windows.Forms.TabControl();
             this.itemPage = new System.Windows.Forms.TabPage();
             this.blockPage = new System.Windows.Forms.TabPage();
+            this.entityPage = new System.Windows.Forms.TabPage();
+            this.entityList = new System.Windows.Forms.ListBox();
+            this.labelHealth = new System.Windows.Forms.Label();
+            this.healthTextBox = new System.Windows.Forms.TextBox();
+            this.foodTextbox = new System.Windows.Forms.TextBox();
+            this.labelFood = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.controlPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
+            this.entityPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // consoleWindow
@@ -153,6 +160,10 @@ namespace MoBot.Structure
             // 
             // controlPanel
             // 
+            this.controlPanel.Controls.Add(this.foodTextbox);
+            this.controlPanel.Controls.Add(this.labelFood);
+            this.controlPanel.Controls.Add(this.healthTextBox);
+            this.controlPanel.Controls.Add(this.labelHealth);
             this.controlPanel.Controls.Add(this.tabControl);
             this.controlPanel.Location = new System.Drawing.Point(617, 13);
             this.controlPanel.Name = "controlPanel";
@@ -164,10 +175,11 @@ namespace MoBot.Structure
             // 
             this.tabControl.Controls.Add(this.itemPage);
             this.tabControl.Controls.Add(this.blockPage);
+            this.tabControl.Controls.Add(this.entityPage);
             this.tabControl.Location = new System.Drawing.Point(11, 11);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(454, 267);
+            this.tabControl.Size = new System.Drawing.Size(454, 296);
             this.tabControl.TabIndex = 0;
             // 
             // itemPage
@@ -175,7 +187,7 @@ namespace MoBot.Structure
             this.itemPage.Location = new System.Drawing.Point(4, 22);
             this.itemPage.Name = "itemPage";
             this.itemPage.Padding = new System.Windows.Forms.Padding(3);
-            this.itemPage.Size = new System.Drawing.Size(446, 241);
+            this.itemPage.Size = new System.Drawing.Size(446, 270);
             this.itemPage.TabIndex = 0;
             this.itemPage.Text = "Inventory";
             this.itemPage.UseVisualStyleBackColor = true;
@@ -185,10 +197,62 @@ namespace MoBot.Structure
             this.blockPage.Location = new System.Drawing.Point(4, 22);
             this.blockPage.Name = "blockPage";
             this.blockPage.Padding = new System.Windows.Forms.Padding(3);
-            this.blockPage.Size = new System.Drawing.Size(446, 241);
+            this.blockPage.Size = new System.Drawing.Size(446, 512);
             this.blockPage.TabIndex = 1;
             this.blockPage.Text = "Blocks";
             this.blockPage.UseVisualStyleBackColor = true;
+            // 
+            // entityPage
+            // 
+            this.entityPage.Controls.Add(this.entityList);
+            this.entityPage.Location = new System.Drawing.Point(4, 22);
+            this.entityPage.Name = "entityPage";
+            this.entityPage.Size = new System.Drawing.Size(446, 270);
+            this.entityPage.TabIndex = 2;
+            this.entityPage.Text = "Entities";
+            this.entityPage.UseVisualStyleBackColor = true;
+            // 
+            // entityList
+            // 
+            this.entityList.FormattingEnabled = true;
+            this.entityList.Location = new System.Drawing.Point(3, 3);
+            this.entityList.Name = "entityList";
+            this.entityList.Size = new System.Drawing.Size(284, 264);
+            this.entityList.TabIndex = 0;
+            // 
+            // labelHealth
+            // 
+            this.labelHealth.AutoSize = true;
+            this.labelHealth.Location = new System.Drawing.Point(28, 329);
+            this.labelHealth.Name = "labelHealth";
+            this.labelHealth.Size = new System.Drawing.Size(38, 13);
+            this.labelHealth.TabIndex = 1;
+            this.labelHealth.Text = "Health";
+            // 
+            // healthTextBox
+            // 
+            this.healthTextBox.Location = new System.Drawing.Point(34, 349);
+            this.healthTextBox.Name = "healthTextBox";
+            this.healthTextBox.ReadOnly = true;
+            this.healthTextBox.Size = new System.Drawing.Size(143, 20);
+            this.healthTextBox.TabIndex = 2;
+            // 
+            // foodTextbox
+            // 
+            this.foodTextbox.Location = new System.Drawing.Point(34, 398);
+            this.foodTextbox.Name = "foodTextbox";
+            this.foodTextbox.ReadOnly = true;
+            this.foodTextbox.Size = new System.Drawing.Size(143, 20);
+            this.foodTextbox.TabIndex = 4;
+            // 
+            // labelFood
+            // 
+            this.labelFood.AutoSize = true;
+            this.labelFood.Location = new System.Drawing.Point(28, 378);
+            this.labelFood.Name = "labelFood";
+            this.labelFood.Size = new System.Drawing.Size(31, 13);
+            this.labelFood.TabIndex = 3;
+            this.labelFood.Text = "Food";
             // 
             // Viewer
             // 
@@ -210,7 +274,9 @@ namespace MoBot.Structure
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.controlPanel.ResumeLayout(false);
+            this.controlPanel.PerformLayout();
             this.tabControl.ResumeLayout(false);
+            this.entityPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,5 +298,11 @@ namespace MoBot.Structure
         private TabControl tabControl;
         private TabPage itemPage;
         private TabPage blockPage;
+        private TabPage entityPage;
+        private ListBox entityList;
+        private Label labelHealth;
+        private TextBox healthTextBox;
+        private TextBox foodTextbox;
+        private Label labelFood;
     }
 }
