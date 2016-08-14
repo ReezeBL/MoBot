@@ -51,7 +51,7 @@ namespace MoBot.Structure
                     Putsc($"Client connected!{Environment.NewLine}", Color.DarkGoldenrod);
                 else
                 {
-                    if (reconnectCheckBox.Checked)
+                    if (Settings.AutoReconnect)
                     {
                         Connect(3000);
                     }
@@ -126,7 +126,7 @@ namespace MoBot.Structure
                     Putsc($"Username is empty!{Environment.NewLine}", Color.Black);
                     return;
                 }
-                MainController.HandleConnect(username.ToString(), serverTextbox.Text, delay);
+                MainController.HandleConnect(username.ToString(), Settings.ServerIp, delay);
             }
         }
 
@@ -175,9 +175,7 @@ namespace MoBot.Structure
         {
             TextBoxWriter writer = new TextBoxWriter(ConsoleOutput, this);
             Console.SetOut(writer);
-
-            serverTextbox.Text = Settings.ServerIp;
-            reconnectCheckBox.Checked = Settings.AutoReconnect;
+            
             XmlDocument users = new XmlDocument();
             try
             {
@@ -201,10 +199,7 @@ namespace MoBot.Structure
 
         private void Viewer_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Settings.ServerIp = serverTextbox.Text;
-            Settings.AutoReconnect = reconnectCheckBox.Checked;
-
-            Settings.Serialize();
+            
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
@@ -269,6 +264,11 @@ namespace MoBot.Structure
             }
 
             public override Encoding Encoding => Encoding.UTF8;
+        }
+
+        private void controlButton_Click(object sender, EventArgs e)
+        {
+            controlPanel.Visible = !controlPanel.Visible;
         }
     }
 }

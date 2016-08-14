@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.ComponentModel;
 using System.Windows.Forms;
 
@@ -12,10 +13,23 @@ namespace MoBot.Structure.Windows
         public SelectionList()
         {
             InitializeComponent();
+            var menu = new ContextMenu(new[] { new MenuItem("Add..", AddClick), new MenuItem("Remove", RemoveClick) });
+            collection.ContextMenu = menu;
         }
 
 
-        public ListBox.ObjectCollection Items => collection.Items;
+        public object[] Items
+        {
+            get
+            {
+                return collection.Items.Cast<object>().ToArray();
+            }
+            set
+            {
+                collection.Items.Clear();
+                collection.Items.AddRange(value);
+            }
+        }
 
         public String LabelCaption
         {
@@ -23,15 +37,15 @@ namespace MoBot.Structure.Windows
             set { caption.Text = value; }
         }
 
-        public void SetUp(object[] globalCollection, object[] selectedItems)
+        public object[] GlobalCollection
         {
-            collection.Items.AddRange(selectedItems);
-
-            Array.Sort(globalCollection, (x, y) => string.Compare(x.ToString(), y.ToString(), StringComparison.Ordinal));
-            _globalCollection = globalCollection;
-
-            var menu = new ContextMenu(new[] {new MenuItem("Add..", AddClick), new MenuItem("Remove", RemoveClick)});
-            collection.ContextMenu = menu;
+            get { return _globalCollection; }
+            set
+            {
+                _globalCollection = value;
+                if(_globalCollection != null)
+                    Array.Sort(_globalCollection, (x, y) => string.Compare(x.ToString(), y.ToString(), StringComparison.Ordinal));
+            }
         }
 
         private void SelectionList_Load(object sender, EventArgs e)

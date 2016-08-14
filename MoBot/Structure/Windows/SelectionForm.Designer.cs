@@ -34,15 +34,17 @@
             // 
             // selectionList
             // 
+            this.selectionList.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.selectionList.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.selectionList.FormattingEnabled = true;
             this.selectionList.Location = new System.Drawing.Point(12, 26);
             this.selectionList.Name = "selectionList";
-            this.selectionList.Size = new System.Drawing.Size(168, 21);
+            this.selectionList.Size = new System.Drawing.Size(239, 21);
             this.selectionList.TabIndex = 0;
             // 
             // selectButton
             // 
-            this.selectButton.Location = new System.Drawing.Point(99, 53);
+            this.selectButton.Location = new System.Drawing.Point(170, 53);
             this.selectButton.Name = "selectButton";
             this.selectButton.Size = new System.Drawing.Size(81, 25);
             this.selectButton.TabIndex = 1;
@@ -55,7 +57,7 @@
             this.AcceptButton = this.selectButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(207, 90);
+            this.ClientSize = new System.Drawing.Size(263, 90);
             this.Controls.Add(this.selectButton);
             this.Controls.Add(this.selectionList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

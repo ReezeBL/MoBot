@@ -16,22 +16,45 @@ namespace MoBot.Structure.Windows
 
         private void SettingsWindow_Load(object sender, EventArgs e)
         {
-            keepItemsSettings.SetUp(Item.Items.ToArray<object>(), Settings.KeepItems.Select(Item.GetItem).ToArray<object>());
-            autoDiggerSettings.SetUp(Block.Blocks.ToArray<object>(), Settings.IntrestedBlocks.Select(Block.GetBlock).ToArray<object>());
+            keepItemsSettings.GlobalCollection = Item.Items.ToArray<object>();
+            keepItemsSettings.Items = Settings.KeepItems.Select(Item.GetItem).ToArray<object>();
+            autoDiggerSettings.GlobalCollection = Block.Blocks.ToArray<object>();
+            autoDiggerSettings.Items = Settings.IntrestedBlocks.Select(Block.GetBlock).ToArray<object>();
+            serverTextbox.Text = Settings.ServerIp;
+            reconnectCheckBox.Checked = Settings.AutoReconnect;
+            homeWarpText.Text = Settings.HomeWarp;
+            returnWarpText.Text = Settings.BackWarp;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            Settings.KeepItems = new HashSet<int>();
-            foreach (var item in keepItemsSettings.Items)
-                Settings.KeepItems.Add(((Item) item).Id);
-
-            Settings.IntrestedBlocks = new HashSet<int>();
-            foreach (var item in autoDiggerSettings.Items)
-                Settings.IntrestedBlocks.Add(((Block)item).Id);
+            ApplyChanges();
 
             Settings.Serialize();
             Close();
         }
+
+        private void applyButton_Click(object sender, EventArgs e)
+        {
+            ApplyChanges();
+            Close();
+        }
+
+        private void ApplyChanges()
+        {
+            Settings.KeepItems.Clear();
+            foreach (var item in keepItemsSettings.Items)
+                Settings.KeepItems.Add(((Item)item).Id);
+
+            Settings.IntrestedBlocks.Clear();
+            foreach (var item in autoDiggerSettings.Items)
+                Settings.IntrestedBlocks.Add(((Block)item).Id);
+
+            Settings.ServerIp = serverTextbox.Text;
+            Settings.AutoReconnect = reconnectCheckBox.Checked;
+            Settings.HomeWarp = homeWarpText.Text;
+            Settings.BackWarp = returnWarpText.Text;
+        }
+
     }
 }

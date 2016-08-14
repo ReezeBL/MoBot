@@ -257,13 +257,11 @@ namespace MoBot.Structure.Game.AI.Pathfinding
                     CreatePoint(root.X, root.Y + 1, root.Z),
                     GetBlockWeight(root.X, root.Y + 2, root.Z)
                 },
-
-                {
-                    CreatePoint(root.X, root.Y - 1, root.Z),
-                    GetBlockWeight(root.X, root.Y - 1, root.Z)
-                },
             };
-
+            if (root.Y > 0)
+            {
+                weightedPoints.Add(CreatePoint(root.X, root.Y - 1, root.Z), GetBlockWeight(root.X, root.Y - 1, root.Z));
+            }
             return weightedPoints;
         }
 

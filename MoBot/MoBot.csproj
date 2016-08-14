@@ -236,6 +236,8 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\MoBot.Structure.Game.AI.AiHandler.datasource" />
+    <None Include="Properties\DataSources\MoBot.Structure.Game.GameController.datasource" />
     <None Include="Settings\blocks.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -279,7 +281,7 @@
   <ProjectExtensions />
   <PropertyGroup>
     <PostBuildEvent>
-</PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

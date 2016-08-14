@@ -56,6 +56,13 @@ namespace MoBot.Structure
                 var instance = GetInstance();
                 dynamic response = Ping(serverIp, port);
 
+                if (response == null)
+                {
+                    NotifyViewer("Server is unavailible!");
+                    Disconnect();
+                    return;
+                }
+
                 if (response.players.online >= response.players.max)
                 {
                     NotifyViewer("Server is full");
@@ -93,8 +100,7 @@ namespace MoBot.Structure
             catch (Exception exception)
             {
                 Disconnect();
-                Console.WriteLine(exception.ToString());
-                NotifyViewer($"Unable to connect to server! \r\n {exception.Message}");
+                NotifyViewer($"Unable to connect to server!");
             }
         }
 
@@ -119,12 +125,16 @@ namespace MoBot.Structure
 
         public static dynamic Ping(string serverIp, int port, bool message = false)
         {
-            var client = new TcpClient(serverIp, port);
+            var client = new TcpClient();
+            if (!client.ConnectAsync(serverIp, port).Wait(2000))
+            {
+                return null;
+            }
             var channel = new Channel(client.GetStream());
             channel.SendPacket(new PacketHandshake
             {
                 Hostname = serverIp,
-                Port = (ushort) port,
+                Port = (ushort)port,
                 NextState = 1,
                 ProtocolVersion = 46
             });

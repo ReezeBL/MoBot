@@ -44,7 +44,7 @@ namespace MoBot.Structure
                         {
                             sb.AppendLine($"--{e}");
                         }
-                        NetworkController.NotifyViewer(sb.ToString());
+                        Console.WriteLine(sb.ToString());
                     }
                         break;
                     case "-inventory":
