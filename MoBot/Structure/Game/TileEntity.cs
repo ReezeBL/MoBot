@@ -12,6 +12,7 @@ namespace MoBot.Structure.Game
     {
         public Location Location;
         public NbtCompound Root;
+        public int Id;
 
         public override string ToString()
         {

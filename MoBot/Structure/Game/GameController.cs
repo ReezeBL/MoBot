@@ -46,7 +46,7 @@ namespace MoBot.Structure.Game
 
         public static TileEntity SetTileEntity(Location location, NbtCompound tag)
         {
-            TileEntity entity = null;
+            TileEntity entity;
             if (Instance._tileEntities.ContainsKey(location))
             {
                 Instance._tileEntities.TryGetValue(location, out entity);
@@ -57,10 +57,12 @@ namespace MoBot.Structure.Game
                 entity = new TileEntity
                 {
                     Location = location,
-                    Root = tag
+                    Root = tag,
+                    Id=World.GetBlock(location)
                 };
                 Instance._tileEntities.TryAdd(location, entity);
-                TileEntities.Add(entity);
+                if(entity.Id != 188)
+                    TileEntities.Add(entity);
             }
             return entity;
         }
