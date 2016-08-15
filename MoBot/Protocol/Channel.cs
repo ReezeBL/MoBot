@@ -40,13 +40,12 @@ namespace MoBot.Protocol
             30, //PacketEntityRemoveEffect
             31, //TODO: PacketSetExperience
             32, //PacketEntityProperties
-            36, //PacketBlocAction
+            36, //PacketBlockAction
             37, //PacketBlockBreakAnim
             40, //PacketEffect
             43, //PacketChangeGameState
             41, //PacketSoundEffect
             51, //PacketUpdateSign
-            53, //PacketUpdateTileEntity
             55, //PacketStatistics
             56, //PacketPlayerListItem
             62, //PacketTeams
@@ -86,6 +85,7 @@ namespace MoBot.Protocol
             {47, typeof(PacketSetSlot)},
             {48, typeof(PacketWindowItems)},
             {50, typeof(PacketConfirmTransaction)},
+            {53, typeof(PacketUpdateTileEntity)},
             {57, typeof(PacketPlayerAbilities)},
             {63, typeof(PacketCustomPayload)},
             {64, typeof(PacketDisconnect)}

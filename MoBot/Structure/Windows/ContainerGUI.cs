@@ -127,16 +127,14 @@ namespace MoBot.Structure.Windows
 
         private void SlotClick(object sender, EventArgs args)
         {
-            //if (SelectMode)
-            //{
-            //    SelectedItem = _container[_buttons[sender]];
-            //}
-            //else
-            //{
-            //    ActionManager.ClickInventorySlot(_buttons[sender]);
-            //}
-
-            SelectedItem = _container[_buttons[sender]];
+            if (SelectMode)
+            {
+                SelectedItem = _container[_buttons[sender]];
+            }
+            else
+            {
+                ActionManager.ClickInventorySlot(_buttons[sender]);
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

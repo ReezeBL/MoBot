@@ -48,16 +48,19 @@ namespace MoBot.Structure.Windows
             this.labelHealth = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.itemPage = new System.Windows.Forms.TabPage();
+            this.inventoryItemInfo = new System.Windows.Forms.RichTextBox();
+            this.inventorySelectMode = new System.Windows.Forms.CheckBox();
+            this.inventoryGui = new MoBot.Structure.Windows.ContainerGui();
             this.blockPage = new System.Windows.Forms.TabPage();
             this.entityPage = new System.Windows.Forms.TabPage();
             this.entityList = new System.Windows.Forms.ListBox();
-            this.inventoryGui = new MoBot.Structure.Windows.ContainerGui();
-            this.inventorySelectMode = new System.Windows.Forms.CheckBox();
-            this.inventoryItemInfo = new System.Windows.Forms.RichTextBox();
+            this.tileEntitiesList = new System.Windows.Forms.ListBox();
+            this.tileEntityInfo = new System.Windows.Forms.RichTextBox();
             this.panel2.SuspendLayout();
             this.controlPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.itemPage.SuspendLayout();
+            this.blockPage.SuspendLayout();
             this.entityPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -177,7 +180,7 @@ namespace MoBot.Structure.Windows
             // 
             // foodTextbox
             // 
-            this.foodTextbox.Location = new System.Drawing.Point(34, 398);
+            this.foodTextbox.Location = new System.Drawing.Point(18, 516);
             this.foodTextbox.Name = "foodTextbox";
             this.foodTextbox.ReadOnly = true;
             this.foodTextbox.Size = new System.Drawing.Size(143, 20);
@@ -186,7 +189,7 @@ namespace MoBot.Structure.Windows
             // labelFood
             // 
             this.labelFood.AutoSize = true;
-            this.labelFood.Location = new System.Drawing.Point(28, 378);
+            this.labelFood.Location = new System.Drawing.Point(12, 500);
             this.labelFood.Name = "labelFood";
             this.labelFood.Size = new System.Drawing.Size(31, 13);
             this.labelFood.TabIndex = 3;
@@ -194,7 +197,7 @@ namespace MoBot.Structure.Windows
             // 
             // healthTextBox
             // 
-            this.healthTextBox.Location = new System.Drawing.Point(34, 349);
+            this.healthTextBox.Location = new System.Drawing.Point(18, 471);
             this.healthTextBox.Name = "healthTextBox";
             this.healthTextBox.ReadOnly = true;
             this.healthTextBox.Size = new System.Drawing.Size(143, 20);
@@ -203,7 +206,7 @@ namespace MoBot.Structure.Windows
             // labelHealth
             // 
             this.labelHealth.AutoSize = true;
-            this.labelHealth.Location = new System.Drawing.Point(28, 329);
+            this.labelHealth.Location = new System.Drawing.Point(12, 451);
             this.labelHealth.Name = "labelHealth";
             this.labelHealth.Size = new System.Drawing.Size(38, 13);
             this.labelHealth.TabIndex = 1;
@@ -217,7 +220,7 @@ namespace MoBot.Structure.Windows
             this.tabControl.Location = new System.Drawing.Point(11, 11);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(462, 293);
+            this.tabControl.Size = new System.Drawing.Size(462, 437);
             this.tabControl.TabIndex = 0;
             // 
             // itemPage
@@ -229,38 +232,29 @@ namespace MoBot.Structure.Windows
             this.itemPage.Location = new System.Drawing.Point(4, 22);
             this.itemPage.Name = "itemPage";
             this.itemPage.Padding = new System.Windows.Forms.Padding(3);
-            this.itemPage.Size = new System.Drawing.Size(454, 267);
+            this.itemPage.Size = new System.Drawing.Size(454, 411);
             this.itemPage.TabIndex = 0;
             this.itemPage.Text = "Inventory";
             this.itemPage.UseVisualStyleBackColor = true;
             // 
-            // blockPage
+            // inventoryItemInfo
             // 
-            this.blockPage.Location = new System.Drawing.Point(4, 22);
-            this.blockPage.Name = "blockPage";
-            this.blockPage.Padding = new System.Windows.Forms.Padding(3);
-            this.blockPage.Size = new System.Drawing.Size(454, 267);
-            this.blockPage.TabIndex = 1;
-            this.blockPage.Text = "Blocks";
-            this.blockPage.UseVisualStyleBackColor = true;
+            this.inventoryItemInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inventoryItemInfo.Location = new System.Drawing.Point(291, 34);
+            this.inventoryItemInfo.Name = "inventoryItemInfo";
+            this.inventoryItemInfo.Size = new System.Drawing.Size(160, 371);
+            this.inventoryItemInfo.TabIndex = 2;
+            this.inventoryItemInfo.Text = "";
             // 
-            // entityPage
+            // inventorySelectMode
             // 
-            this.entityPage.Controls.Add(this.entityList);
-            this.entityPage.Location = new System.Drawing.Point(4, 22);
-            this.entityPage.Name = "entityPage";
-            this.entityPage.Size = new System.Drawing.Size(454, 267);
-            this.entityPage.TabIndex = 2;
-            this.entityPage.Text = "Entities";
-            this.entityPage.UseVisualStyleBackColor = true;
-            // 
-            // entityList
-            // 
-            this.entityList.FormattingEnabled = true;
-            this.entityList.Location = new System.Drawing.Point(3, 3);
-            this.entityList.Name = "entityList";
-            this.entityList.Size = new System.Drawing.Size(284, 264);
-            this.entityList.TabIndex = 0;
+            this.inventorySelectMode.AutoSize = true;
+            this.inventorySelectMode.Location = new System.Drawing.Point(310, 11);
+            this.inventorySelectMode.Name = "inventorySelectMode";
+            this.inventorySelectMode.Size = new System.Drawing.Size(86, 17);
+            this.inventorySelectMode.TabIndex = 1;
+            this.inventorySelectMode.Text = "Select Mode";
+            this.inventorySelectMode.UseVisualStyleBackColor = true;
             // 
             // inventoryGui
             // 
@@ -275,23 +269,52 @@ namespace MoBot.Structure.Windows
             this.inventoryGui.Size = new System.Drawing.Size(0, 0);
             this.inventoryGui.TabIndex = 0;
             // 
-            // inventorySelectMode
+            // blockPage
             // 
-            this.inventorySelectMode.AutoSize = true;
-            this.inventorySelectMode.Location = new System.Drawing.Point(316, 78);
-            this.inventorySelectMode.Name = "inventorySelectMode";
-            this.inventorySelectMode.Size = new System.Drawing.Size(86, 17);
-            this.inventorySelectMode.TabIndex = 1;
-            this.inventorySelectMode.Text = "Select Mode";
-            this.inventorySelectMode.UseVisualStyleBackColor = true;
+            this.blockPage.Controls.Add(this.tileEntityInfo);
+            this.blockPage.Controls.Add(this.tileEntitiesList);
+            this.blockPage.Location = new System.Drawing.Point(4, 22);
+            this.blockPage.Name = "blockPage";
+            this.blockPage.Padding = new System.Windows.Forms.Padding(3);
+            this.blockPage.Size = new System.Drawing.Size(454, 411);
+            this.blockPage.TabIndex = 1;
+            this.blockPage.Text = "Blocks";
+            this.blockPage.UseVisualStyleBackColor = true;
             // 
-            // inventoryItemInfo
+            // entityPage
             // 
-            this.inventoryItemInfo.Location = new System.Drawing.Point(291, 115);
-            this.inventoryItemInfo.Name = "inventoryItemInfo";
-            this.inventoryItemInfo.Size = new System.Drawing.Size(160, 141);
-            this.inventoryItemInfo.TabIndex = 2;
-            this.inventoryItemInfo.Text = "";
+            this.entityPage.Controls.Add(this.entityList);
+            this.entityPage.Location = new System.Drawing.Point(4, 22);
+            this.entityPage.Name = "entityPage";
+            this.entityPage.Size = new System.Drawing.Size(454, 411);
+            this.entityPage.TabIndex = 2;
+            this.entityPage.Text = "Entities";
+            this.entityPage.UseVisualStyleBackColor = true;
+            // 
+            // entityList
+            // 
+            this.entityList.FormattingEnabled = true;
+            this.entityList.Location = new System.Drawing.Point(3, 3);
+            this.entityList.Name = "entityList";
+            this.entityList.Size = new System.Drawing.Size(284, 407);
+            this.entityList.TabIndex = 0;
+            // 
+            // tileEntitiesList
+            // 
+            this.tileEntitiesList.FormattingEnabled = true;
+            this.tileEntitiesList.Location = new System.Drawing.Point(6, 4);
+            this.tileEntitiesList.Name = "tileEntitiesList";
+            this.tileEntitiesList.Size = new System.Drawing.Size(244, 394);
+            this.tileEntitiesList.TabIndex = 0;
+            // 
+            // tileEntityInfo
+            // 
+            this.tileEntityInfo.Location = new System.Drawing.Point(256, 3);
+            this.tileEntityInfo.Name = "tileEntityInfo";
+            this.tileEntityInfo.ReadOnly = true;
+            this.tileEntityInfo.Size = new System.Drawing.Size(183, 394);
+            this.tileEntityInfo.TabIndex = 1;
+            this.tileEntityInfo.Text = "";
             // 
             // Viewer
             // 
@@ -317,6 +340,7 @@ namespace MoBot.Structure.Windows
             this.tabControl.ResumeLayout(false);
             this.itemPage.ResumeLayout(false);
             this.itemPage.PerformLayout();
+            this.blockPage.ResumeLayout(false);
             this.entityPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -348,5 +372,7 @@ namespace MoBot.Structure.Windows
         private ContainerGui inventoryGui;
         private CheckBox inventorySelectMode;
         private RichTextBox inventoryItemInfo;
+        private RichTextBox tileEntityInfo;
+        private ListBox tileEntitiesList;
     }
 }

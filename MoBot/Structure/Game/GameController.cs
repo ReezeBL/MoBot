@@ -2,10 +2,13 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using fNbt;
 using MoBot.Annotations;
 using MoBot.Structure.Game.AI;
+using MoBot.Structure.Game.AI.Pathfinding;
 using MoBot.Structure.Game.World;
 
 namespace MoBot.Structure.Game
@@ -19,6 +22,7 @@ namespace MoBot.Structure.Game
             
         }
         private readonly ConcurrentDictionary<int, Entity> _entities = new ConcurrentDictionary<int, Entity>();
+        private readonly ConcurrentDictionary<Location, TileEntity> _tileEntities = new ConcurrentDictionary<Location, TileEntity>();
         private Player _player = new Player(0, "");
 
         public static Player Player
@@ -31,12 +35,34 @@ namespace MoBot.Structure.Game
         public static AiHandler AiHandler { get; private set; } = new AiHandler();
 
         public static IList<Entity> LivingEntities { get; } = new BindingList<Entity>();
+        public static IList<TileEntity> TileEntities { get; } = new BindingList<TileEntity>();
 
         public static Entity GetEntity(int id)
         {
             Entity res;
             Instance._entities.TryGetValue(id, out res);
             return res;
+        }
+
+        public static TileEntity SetTileEntity(Location location, NbtCompound tag)
+        {
+            TileEntity entity = null;
+            if (Instance._tileEntities.ContainsKey(location))
+            {
+                Instance._tileEntities.TryGetValue(location, out entity);
+                if (entity != null) entity.Root = tag;
+            }
+            else
+            {
+                entity = new TileEntity
+                {
+                    Location = location,
+                    Root = tag
+                };
+                Instance._tileEntities.TryAdd(location, entity);
+                TileEntities.Add(entity);
+            }
+            return entity;
         }
 
         public static Entity GetEntity()
@@ -103,6 +129,8 @@ namespace MoBot.Structure.Game
         public static void Clear()
         {
             Instance._entities.Clear();
+            Instance._tileEntities.Clear();
+            TileEntities.Clear();
             LivingEntities.Clear();
             World.Clear();
             Player = null;

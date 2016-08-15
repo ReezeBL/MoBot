@@ -139,6 +139,7 @@
     <Compile Include="Protocol\Packets\Play\PacketBlockChange.cs" />
     <Compile Include="Protocol\Packets\Play\PacketEntityStatus.cs" />
     <Compile Include="Protocol\Packets\Play\PacketSpawnObject.cs" />
+    <Compile Include="Protocol\Packets\Play\PacketUpdateTileEntity.cs" />
     <Compile Include="Protocol\StreamWrapper.cs" />
     <Compile Include="Protocol\Packets\Handshake\PacketEncriptionResponse.cs" />
     <Compile Include="Protocol\Packets\Handshake\PacketLoginStart.cs" />
@@ -194,6 +195,7 @@
     <Compile Include="Structure\Game\Mob.cs" />
     <Compile Include="Protocol\Packets\Play\PacketUseEntity.cs" />
     <Compile Include="Structure\Game\Player.cs" />
+    <Compile Include="Structure\Game\TileEntity.cs" />
     <Compile Include="Structure\Game\World\Chunk.cs" />
     <Compile Include="Structure\Game\World\Section.cs" />
     <Compile Include="Structure\Game\World\GameWorld.cs" />

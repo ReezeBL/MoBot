@@ -10,6 +10,7 @@ using fNbt;
 using MoBot.Structure.Actions;
 using MoBot.Structure.Game;
 using Newtonsoft.Json.Linq;
+using static System.String;
 
 namespace MoBot.Structure.Windows
 {
@@ -46,7 +47,7 @@ namespace MoBot.Structure.Windows
 
                 healthTextBox.DataBindings.Add("Text", GameController.Player, "Health", true, DataSourceUpdateMode.OnPropertyChanged);
                 foodTextbox.DataBindings.Add("Text", GameController.Player, "Food", true, DataSourceUpdateMode.OnPropertyChanged);
-                inventoryGui.DataBindings.Add("Container", GameController.Player, "CurrentContainer");
+                inventoryGui.DataBindings.Add("Container", GameController.Player, "CurrentContainer", true, DataSourceUpdateMode.OnPropertyChanged);
             }
         }
 
@@ -227,11 +228,14 @@ namespace MoBot.Structure.Windows
             Console.SetOut(writer);
 
             entityList.DataSource = GameController.LivingEntities;
-            inventoryGui.DataBindings.Add("SelectMode", inventorySelectMode, "Checked");
+            tileEntitiesList.DataSource = GameController.TileEntities;
 
-            Binding bind = new Binding("Text", inventoryGui, "SelectedItem");
+            tileEntitiesList.SelectedIndexChanged +=
+                (s, args) => tileEntityInfo.Text = FormatTileEntity(tileEntitiesList.SelectedItem);
+            inventorySelectMode.CheckedChanged +=
+                (s, args) => inventoryGui.SelectMode = inventorySelectMode.Checked;
+            var bind = new Binding("Text", inventoryGui, "SelectedItem");
             bind.Format += FormattedItemInfo;
-
             inventoryItemInfo.DataBindings.Add(bind);
 
             XmlDocument users = new XmlDocument();
@@ -253,6 +257,18 @@ namespace MoBot.Structure.Windows
             {
                 userNames.SelectedItem = userNames.Items.Count > 0 ? userNames.Items[0] : null;
             }
+        }
+
+        private string FormatTileEntity(object value)
+        {
+            var entity = value as TileEntity;
+            if (entity == null) return Empty;
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(entity.ToString());
+            sb.AppendLine(entity.Root.ToString("\t"));
+
+            return sb.ToString();
         }
 
         private void Viewer_FormClosing(object sender, FormClosingEventArgs e)

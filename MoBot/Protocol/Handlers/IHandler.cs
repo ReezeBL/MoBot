@@ -34,5 +34,6 @@ namespace MoBot.Protocol.Handlers
         void HandlePacketRespawn(PacketRespawn packetRespawn);
         void HandlePacketOpenWindow(PacketOpenWindow packetOpenWindow);
         void HandlePacketCloseWindow(PacketCloseWindow packetCloseWindow);
+        void HandlePacketUpdateTileEntity(PacketUpdateTileEntity packetUpdateTileEntity);
     }
 }

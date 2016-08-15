@@ -12,6 +12,7 @@ using MoBot.Protocol.Packets.Handshake;
 using MoBot.Protocol.Packets.Play;
 using MoBot.Structure;
 using MoBot.Structure.Game;
+using MoBot.Structure.Game.AI.Pathfinding;
 using Newtonsoft.Json.Linq;
 using NLog;
 using Org.BouncyCastle.Crypto;
@@ -208,6 +209,13 @@ namespace MoBot.Protocol.Handlers
         public void HandlePacketCloseWindow(PacketCloseWindow packetCloseWindow)
         {
             GameController.Player.CloseContainer(packetCloseWindow.WindowId);
+        }
+
+        public void HandlePacketUpdateTileEntity(PacketUpdateTileEntity packetUpdateTileEntity)
+        {
+            GameController.SetTileEntity(
+                new Location(packetUpdateTileEntity.X, packetUpdateTileEntity.Y, packetUpdateTileEntity.Z),
+                packetUpdateTileEntity.Root);
         }
 
         public void HandlePacketSetSlot(PacketSetSlot packetSetSlot)
