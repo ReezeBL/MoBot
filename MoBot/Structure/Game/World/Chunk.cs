@@ -47,7 +47,7 @@ namespace MoBot.Structure.Game.World
             }        
             _numBlocks = _numBlocks * 4096;           
         }
-        private void Populate(byte[] blocks)
+        private void Populate(byte[] blocks, byte[] msb)
         {
             int offset = 0;
             for (int i = 0; i < 16; i++)
@@ -56,6 +56,13 @@ namespace MoBot.Structure.Game.World
 
                 _sections[i] = new Section(blocks, offset, X, i, Z);
                 offset += 4096;
+            }
+            offset = 0;
+            for (int i = 0; i < 16; i++)
+            {
+                if(!Convert.ToBoolean(Abitmap & (1 << i) )) continue;
+                _sections[i].ApplyMsb(msb, offset);
+                offset += 2048;
             }
         }
         public int GetBlock(int bx, int y, int bz)
@@ -69,19 +76,25 @@ namespace MoBot.Structure.Game.World
         }
 
         public byte[] GetData(byte[] deCompressed)
-        {           
-            byte[] blocks = new byte[_numBlocks];
-            int removeable = _numBlocks + _aBlocks * 2048;
+        {
+            byte[] lsb = new byte[_numBlocks];
+            byte[] msb = new byte[_aBlocks * 2048];
+
+            int offset = 2 * _numBlocks;
 
             if (Lighting)
-                removeable += (_numBlocks / 2);
-            if (Groundup)
-                removeable += 256;
+                offset += (_numBlocks / 2);
 
-            Array.Copy(deCompressed, 0, blocks, 0, _numBlocks);
-            var temp = new byte[deCompressed.Length - (_numBlocks + removeable)];
-            Array.Copy(deCompressed, (_numBlocks + removeable), temp, 0, temp.Length);
-            Populate(blocks);
+            Array.Copy(deCompressed, 0, lsb, 0, lsb.Length);
+            Array.Copy(deCompressed, offset, msb, 0, msb.Length);
+
+            if (Groundup)
+                offset += 256;
+            offset += msb.Length;
+
+            var temp = new byte[deCompressed.Length - offset];
+            Array.Copy(deCompressed, offset, temp, 0, temp.Length);
+            Populate(lsb, msb);
             return temp;
         }
 
