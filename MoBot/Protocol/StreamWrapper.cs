@@ -100,6 +100,12 @@ namespace MoBot.Protocol
         {
             return _reader.ReadBytes(len);
         }
+
+        public int ReadBytes(byte[] buff)
+        {
+            return _reader.Read(buff, 0, buff.Length);
+        }
+
         public void WriteString(string val) //Writes an UTF8 string to stream
         {
             byte[] bytes = Encoding.UTF8.GetBytes(val);
@@ -116,6 +122,12 @@ namespace MoBot.Protocol
             byte[] buffer = _reader.ReadBytes(length);
             return Encoding.UTF8.GetString(buffer);
         }
+
+        public String ReadStringT()
+        {
+            return _reader.ReadString();
+        }
+
         public float ReadSingle()
         {
             return BitConverter.ToSingle(BitConverter.GetBytes(IPAddress.NetworkToHostOrder(_reader.ReadInt32())), 0);

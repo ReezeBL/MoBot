@@ -1,5 +1,6 @@
 ﻿using System;
 using System.CodeDom.Compiler;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.IO;
@@ -7,7 +8,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using Microsoft.CSharp;
+using Microsoft.CodeDom.Providers.DotNetCompilerPlatform;
+using MoBot.Protocol.Handlers;
 using MoBot.Scripts;
 using MoBot.Structure;
 using MoBot.Structure.Game;
@@ -66,7 +68,10 @@ namespace MoBot
         {
             try
             {
-                CSharpCodeProvider provider = new CSharpCodeProvider();
+                Dictionary<string, string> provOptions =
+                    new Dictionary<string, string> {{"CompilerVersion", "v5.0"}};
+
+                CodeDomProvider provider = new CSharpCodeProvider();
                 string path = Path.GetDirectoryName(Application.ExecutablePath);
                 Debug.Assert(path != null, "Invalid path");
 
@@ -118,9 +123,9 @@ namespace MoBot
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                // ignored
+               Log.Warn(e.ToString());
             }
         }
     }

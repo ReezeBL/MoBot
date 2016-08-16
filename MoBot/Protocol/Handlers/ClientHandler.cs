@@ -9,6 +9,7 @@ using System.Xml;
 using MoBot.Protocol.Packets;
 using MoBot.Protocol.Packets.Handshake;
 using MoBot.Protocol.Packets.Play;
+using MoBot.Scripts.Handlers;
 using MoBot.Structure;
 using MoBot.Structure.Game;
 using MoBot.Structure.Game.AI.Pathfinding;
@@ -23,7 +24,7 @@ namespace MoBot.Protocol.Handlers
     public class ClientHandler : IHandler
     {
         private readonly Logger _log = Program.GetLogger();
-
+        public static readonly Dictionary<string, CustomHandler> CustomHandlers = new Dictionary<string, CustomHandler> { { "FML|HS", new FmlHandshake()}, {"ic2", new IC2Handler()} };
 
         public void HandlePacketDisconnect(PacketDisconnect packetDisconnect)
         {
@@ -91,75 +92,13 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketCustomPayload(PacketCustomPayload packetCustomPayload)
         {
-            if (packetCustomPayload.Channel != "FML|HS") return;
-            var payload = new StreamWrapper(packetCustomPayload.Payload);
-            var discriminator = payload.ReadByte();
-            switch (discriminator)
+            CustomHandler handler;
+            if (!CustomHandlers.TryGetValue(packetCustomPayload.Channel, out handler))
             {
-                case 0:
-                {
-                    var answer = new StreamWrapper();
-                    var version = payload.ReadByte();
-                    answer.WriteByte(1);
-                    answer.WriteByte(version);
-                    NetworkController.SendPacket(new PacketCustomPayload
-                    {
-                        Channel = "FML|HS",
-                        MyPayload = answer.GetBlob()
-                    });
-                    answer = new StreamWrapper();
-                    answer.WriteByte(2);
-                    answer.WriteVarInt(NetworkController.ModList.Count);
-                    foreach (var jToken in NetworkController.ModList)
-                    {
-                        var obj = (JObject) jToken;
-                        answer.WriteString((string) obj["modid"]);
-                        answer.WriteString((string) obj["version"]);
-                    }
-                    NetworkController.SendPacket(new PacketCustomPayload
-                    {
-                        Channel = "FML|HS",
-                        MyPayload = answer.GetBlob()
-                    });
-                }
-                    break;
-                case 2:
-                {
-                    var answer = new StreamWrapper();
-                    answer.WriteByte(255);
-                    answer.WriteByte(2);
-                    NetworkController.SendPacket(new PacketCustomPayload
-                    {
-                        Channel = "FML|HS",
-                        MyPayload = answer.GetBlob()
-                    });
-                }
-                    break;
-                case 255:
-                {
-                    var stage = payload.ReadByte();
-                    var answer = new StreamWrapper();
-                    answer.WriteByte(255);
-                    switch (stage)
-                    {
-                        case 3:
-                            answer.WriteByte(5);
-                            break;
-                        case 2:
-                            answer.WriteByte(4);
-                            break;
-                        default:
-                            _log.Info($"Unhandled Ack Stage : {stage}");
-                            break;
-                    }
-                    NetworkController.SendPacket(new PacketCustomPayload
-                    {
-                        Channel = "FML|HS",
-                        MyPayload = answer.GetBlob()
-                    });
-                }
-                    break;
-            }
+                //Console.WriteLine(packetCustomPayload.Channel);
+                return;
+            };
+            handler.OnPacketData(packetCustomPayload.Payload);
         }
 
         public void HandlePacketJoinGame(PacketJoinGame packetJoinGame)
@@ -245,8 +184,7 @@ namespace MoBot.Protocol.Handlers
         {
             var mas = new byte[packetMapChunk.DataLength - 2];
             Array.Copy(packetMapChunk.ChunkData, 2, mas, 0, packetMapChunk.DataLength - 2);
-            var dc = new Decompressor(mas);
-            var dced = dc.Decompress();
+            var dced = Decompressor.Decompress(mas);
 
             for (var i = 0; i < packetMapChunk.ChunkNumber; i++)
             {
@@ -266,8 +204,7 @@ namespace MoBot.Protocol.Handlers
             {
                 var mas = new byte[packetChunkData.Length - 2];
                 Array.Copy(packetChunkData.ChunkData, 2, mas, 0, packetChunkData.Length - 2);
-                var dc = new Decompressor(mas);
-                var dced = dc.Decompress();
+                var dced = Decompressor.Decompress(mas);
 
                 packetChunkData.Chunk.GetData(dced);
                 GameController.World.AddChunk(packetChunkData.Chunk);

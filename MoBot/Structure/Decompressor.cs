@@ -3,19 +3,12 @@ using System.IO.Compression;
 
 namespace MoBot.Structure
 {
-    public class Decompressor
+    public static class Decompressor
     {
         // ZLib Decompressor.
-        private readonly byte[] _thisdata;
-
-        public Decompressor(byte[] data)
+        public static byte[] Decompress(byte[] data)
         {
-            _thisdata = data;
-        }
-
-        public byte[] Decompress()
-        {
-            using (var compressedStream = new MemoryStream(_thisdata))
+            using (var compressedStream = new MemoryStream(data))
             using (var zipStream = new DeflateStream(compressedStream, CompressionMode.Decompress))
             using (var resultStream = new MemoryStream())
             {

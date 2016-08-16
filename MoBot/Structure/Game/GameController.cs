@@ -44,13 +44,17 @@ namespace MoBot.Structure.Game
             return res;
         }
 
-        public static TileEntity SetTileEntity(Location location, NbtCompound tag)
+        public static TileEntity SetTileEntity(Location location, NbtCompound tag, Dictionary<string, object> tags = null)
         {
             TileEntity entity;
             if (Instance._tileEntities.ContainsKey(location))
             {
                 Instance._tileEntities.TryGetValue(location, out entity);
-                if (entity != null) entity.Root = tag;
+                if (entity != null)
+                {
+                    entity.Root = tag;
+                    entity.Tags = tags;
+                }
             }
             else
             {
@@ -58,7 +62,8 @@ namespace MoBot.Structure.Game
                 {
                     Location = location,
                     Root = tag,
-                    Id=World.GetBlock(location)
+                    Id=World.GetBlock(location),
+                    Tags = tags
                 };
                 Instance._tileEntities.TryAdd(location, entity);
                 if(entity.Id != 188)
