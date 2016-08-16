@@ -5,7 +5,7 @@ namespace MoBot.Structure.Game.World
     public class Section
     {
         //private readonly Block[,,] _data = new Block[16,16,16];
-        private readonly int[,,] _rawData = new int[16,16,16];
+        private readonly short[,,] _rawData = new short[16,16,16];
 
         private readonly int X, Y, Z;
 
@@ -28,7 +28,7 @@ namespace MoBot.Structure.Game.World
 
         public void SetBlock(int x, int y, int z, int id)
         {
-            _rawData[x, y, z] = id;
+            _rawData[x, y, z] = (short)id;
         }
     }
 }

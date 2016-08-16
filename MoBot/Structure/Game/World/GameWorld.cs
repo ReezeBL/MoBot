@@ -79,6 +79,11 @@ namespace MoBot.Structure.Game.World
         public void RemoveChunk(int x, int z)
         {
             this[x, z] = null;
+            var toRemove = GameController.TileEntities.Where(tileEntity => tileEntity.Location.X >> 4 == x && tileEntity.Location.Z >> 4 == z).ToList();
+            foreach (var tileEntity in toRemove)
+            {
+                GameController.TileEntities.Remove(tileEntity);
+            }
         }
 
         public int GetBlock(int x, int y, int z)

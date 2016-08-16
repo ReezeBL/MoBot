@@ -125,7 +125,11 @@ namespace MoBot.Protocol
 
         public String ReadStringT()
         {
-            return _reader.ReadString();
+            short length = ReadShort();
+            if(length < 0)
+                throw new IOException("The received encoded string Bytes length is less than zero! Weird string!");
+            byte[] buffer = _reader.ReadBytes(length);
+            return Encoding.UTF8.GetString(buffer);
         }
 
         public float ReadSingle()

@@ -77,9 +77,7 @@ namespace MoBot.Scripts.Handlers
                 }
                 int y = payload.ReadInt();
                 int z = payload.ReadInt();
-                Console.WriteLine($"{x} {y} {z}");
                 byte[] buff = payload.ReadBytes(payload.ReadInt());
-                Console.WriteLine(buff.Length);
                 StreamWrapper stream = new StreamWrapper(buff);
                 Dictionary<string, object> tags = new Dictionary<string, object>();
                 while (true)
@@ -97,7 +95,6 @@ namespace MoBot.Scripts.Handlers
                         GameController.SetTileEntity(location, null, tags);
                         goto label53;
                     }
-                    Console.WriteLine(field);
                     object val = Decode(stream, stream.ReadByte());
                     tags.Add(field, val);
                 }
@@ -113,6 +110,7 @@ namespace MoBot.Scripts.Handlers
                     return null;
                 case 1:
                     byte arrType = stream.ReadByte();
+                    stream.ReadBool();
                     y = stream.ReadVarInt();
                     bool isMulti = stream.ReadBool();
                     var res = new object[y];
@@ -154,7 +152,7 @@ namespace MoBot.Scripts.Handlers
                 case 14:
                     return stream.ReadStringT();
                 case 15:
-                    NbtFile reader = new NbtFile() {BigEndian = true};
+                    NbtFile reader = new NbtFile {BigEndian = true};
                     reader.LoadFromStream(stream.GetStream(), NbtCompression.AutoDetect);
                     return reader.RootTag;
                 case 16:
@@ -195,6 +193,26 @@ namespace MoBot.Scripts.Handlers
                     stream.ReadInt();
                     return null;
                 case 26:
+                    stream.ReadLong();
+                    stream.ReadLong();
+                    return null;
+                case 27:
+                    Decode(stream, 26);
+                    var name = stream.ReadStringT();
+                    return name;
+                case 28:
+                    var stacks = Decode(stream, 1);
+                    return stacks;
+                case 29:
+                    return null;
+                case 30:
+                    return null;
+                case 31:
+                    KeyValuePair<String, String> pair = new KeyValuePair<string, string>(stream.ReadStringT(), stream.ReadStringT());
+                    return pair;
+                case 32:
+                    return Decode(stream,1);
+                case 33:
                     return new object();
                 default:
                     return null;

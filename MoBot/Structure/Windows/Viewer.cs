@@ -266,7 +266,15 @@ namespace MoBot.Structure.Windows
 
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(entity.ToString());
-            sb.AppendLine(entity.Root.ToString("\t"));
+            if(entity.Root != null)
+                sb.AppendLine(entity.Root.ToString("\t"));
+            if (entity.Tags != null)
+            {
+                foreach (var tag in entity.Tags)
+                {
+                    sb.AppendLine($"{tag.Key} = {(tag.Value as NbtCompound)?.ToString("\t") ?? tag.Value?.ToString()}");
+                }
+            }
 
             return sb.ToString();
         }

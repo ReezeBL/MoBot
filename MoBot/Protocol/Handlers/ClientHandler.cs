@@ -202,9 +202,7 @@ namespace MoBot.Protocol.Handlers
             }
             else
             {
-                var mas = new byte[packetChunkData.Length - 2];
-                Array.Copy(packetChunkData.ChunkData, 2, mas, 0, packetChunkData.Length - 2);
-                var dced = Decompressor.Decompress(mas);
+                var dced = Decompressor.Decompress(packetChunkData.ChunkData.Skip(2).ToArray());
 
                 packetChunkData.Chunk.GetData(dced);
                 GameController.World.AddChunk(packetChunkData.Chunk);
