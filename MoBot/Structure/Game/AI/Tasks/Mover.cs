@@ -11,6 +11,22 @@ namespace MoBot.Structure.Game.AI.Tasks
     public class Mover : Task
     {
         private IEnumerator _mover;
+        private readonly object _monitor = new object();
+
+        private IEnumerator _Mover
+        {
+            get
+            {
+                lock(_monitor)
+                    return _mover;
+            }
+
+            set
+            {
+                lock (_monitor)
+                    _mover = value;
+            }
+        }
 
         public Mover()
         {
@@ -19,25 +35,28 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         public void SetDestination(Location endPoint)
         {
-            _mover = StartRoutine(MoveRoutine(endPoint));
+            _Mover = StartRoutine(MoveRoutine(endPoint));
         }
 
         public void Stop()
         {
-            _mover = null;
+            _Mover = null;
         }
 
         public void SetShovelDestination(Location endPoint, Path preBuild = null)
         {
-            _mover = StartRoutine(ShovelRoutine(endPoint, preBuild));
+            _Mover = StartRoutine(ShovelRoutine(endPoint, preBuild));
         }
 
         private RunStatus RoutineTick(object context)
         {
-            if(_mover == null || !_mover.MoveNext())
-                return RunStatus.Failure;
-           
-            return _mover.Current != null ? RunStatus.Running : RunStatus.Success;
+            lock (_monitor)
+            {
+                if (_Mover == null || !_Mover.MoveNext())
+                    return RunStatus.Failure;
+
+                return _Mover.Current != null ? RunStatus.Running : RunStatus.Success;
+            }
         }
 
         private IEnumerator MoveRoutine(Location destination)

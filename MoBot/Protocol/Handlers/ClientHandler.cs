@@ -9,7 +9,6 @@ using System.Xml;
 using MoBot.Protocol.Packets;
 using MoBot.Protocol.Packets.Handshake;
 using MoBot.Protocol.Packets.Play;
-using MoBot.Scripts.Handlers;
 using MoBot.Structure;
 using MoBot.Structure.Game;
 using MoBot.Structure.Game.AI.Pathfinding;
@@ -24,7 +23,7 @@ namespace MoBot.Protocol.Handlers
     public class ClientHandler : IHandler
     {
         private readonly Logger _log = Program.GetLogger();
-        public static readonly Dictionary<string, CustomHandler> CustomHandlers = new Dictionary<string, CustomHandler> { { "FML|HS", new FmlHandshake()}, {"ic2", new IC2Handler()} };
+        public static readonly Dictionary<string, CustomHandler> CustomHandlers = new Dictionary<string, CustomHandler> { { "FML|HS", new FmlHandshake()} };
 
         public void HandlePacketDisconnect(PacketDisconnect packetDisconnect)
         {

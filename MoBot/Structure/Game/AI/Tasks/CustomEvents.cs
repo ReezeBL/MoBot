@@ -24,19 +24,36 @@ namespace MoBot.Structure.Game.AI.Tasks
         public Location Chest = new Location(-4533, 65, -1318);
         public bool Store;
 
+        private readonly object _monitor = new object();
+
         private IEnumerator _routine;
         private readonly Logger _logger = Program.GetLogger();
 
+        private IEnumerator Routine
+        {
+            get
+            {
+                lock(_monitor)
+                    return _routine;
+            }
+
+            set
+            {
+                lock(_monitor)
+                    _routine = value;
+            }
+        }
+
         public void Stop()
         {
-            _routine = null;
+            Routine = null;
         }
 
         private bool IsHungry(object context)
         {
             if (GameController.Player.Food > MinFoodDanger) return false;
 
-            _routine = StartRoutine(Feed());
+            Routine = StartRoutine(Feed());
             return true;
         }
 
@@ -45,7 +62,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             if (GameController.Player.CurrentContainer.InventoryFreeSlot != -1 && !Store) return false;
 
             Store = false;
-            _routine = StartRoutine(HomeRun());
+            Routine = StartRoutine(HomeRun());
             return true;
         }
 
@@ -107,9 +124,12 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         private RunStatus RunRoutine(object context)
         {
-            if (_routine == null || !_routine.MoveNext())
-                return RunStatus.Success;
-            return RunStatus.Running;
+            lock (_monitor)
+            {
+                if (Routine == null || !Routine.MoveNext())
+                    return RunStatus.Success;
+                return RunStatus.Running;
+            }
         }
 
         private IEnumerator HomeRun()
@@ -144,13 +164,13 @@ namespace MoBot.Structure.Game.AI.Tasks
             yield return WaitForSeconds(500);
             ActionManager.SendChatMessage(TeleportCheckpoint);
 
-            yield return WaitForSeconds(1500);
+            yield return WaitForSeconds(2500);
         }
 
         private bool IsDead(object context)
         {
             if (GameController.Player.Health > 0) return false;
-            _routine = StartRoutine(Ressurect());
+            Routine = StartRoutine(Ressurect());
             return true;
         }
 
@@ -179,7 +199,7 @@ namespace MoBot.Structure.Game.AI.Tasks
         private bool IsInDanger(object context)
         {
             if (GameController.Player.Health > MinHealthDanger) return false;
-            _routine = StartRoutine(SaveFromDanger());
+            Routine = StartRoutine(SaveFromDanger());
             return true;
         }
 
@@ -199,7 +219,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             }
             _logger.Info("We are safe now, return back to work");
             ActionManager.SendChatMessage(TeleportBack);
-            yield return null;
+            yield return WaitForSeconds(2500);
         }
 
         public CustomEvents()

@@ -132,6 +132,11 @@ namespace MoBot.Protocol
             return Encoding.UTF8.GetString(buffer);
         }
 
+        public char ReadChar()
+        {
+            return _reader.ReadChar();
+        }
+
         public float ReadSingle()
         {
             return BitConverter.ToSingle(BitConverter.GetBytes(IPAddress.NetworkToHostOrder(_reader.ReadInt32())), 0);
@@ -186,5 +191,7 @@ namespace MoBot.Protocol
         {
             return _mem;
         }
+
+        public bool Eof => _reader.PeekChar() == -1;
     }
 }

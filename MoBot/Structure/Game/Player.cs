@@ -86,7 +86,7 @@ namespace MoBot.Structure.Game
 
         public Container CreateContainer(int windowId, int capacity)
         {
-            _containers.Add(windowId, new Container(capacity, Inventory, (byte) windowId));
+            _containers.Add(windowId, new Container(capacity, (byte) windowId));
             CurrentContainer = _containers[windowId];
             return CurrentContainer;
         }

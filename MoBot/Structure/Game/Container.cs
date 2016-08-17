@@ -25,11 +25,11 @@ namespace MoBot.Structure.Game
             _inventory = new ItemStack[36];
         }
 
-        public Container(int capacity, Container inventory, byte windowId = 0)
+        public Container(int capacity, byte windowId = 0)
         {
             _capacity = capacity;
             _items = new ItemStack[_capacity];
-            _inventory = inventory._inventory;
+            _inventory = new ItemStack[36];
             WindowId = windowId;
         }
 

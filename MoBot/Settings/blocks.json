@@ -1322,7 +1322,7 @@
     "name": "Паутина",
     "rawname": "minecraft:web",
     "hardness": 4.0,
-    "transparent": true
+    "transparent": false
   },
   {
     "id": 118,

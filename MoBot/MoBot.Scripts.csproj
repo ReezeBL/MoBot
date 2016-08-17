@@ -117,8 +117,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Scripts\Handlers\IC2Handler.cs" />
-    <Compile Include="Scripts\Items\ItemDrill.cs" />
+    <Compile Include="Scripts\Handlers\IC2Handler.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Scripts\Items\ItemDrill.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

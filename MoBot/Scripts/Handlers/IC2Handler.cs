@@ -62,43 +62,36 @@ namespace MoBot.Scripts.Handlers
         private void ProcessInitPacket(StreamWrapper payload)
         {
             int dimensionId = payload.ReadInt();
-            while (true)
+            while (!payload.Eof)
             {
-                label53:
-                int x;
-                try
-                {
-                    x = payload.ReadInt();
-                }
-                catch (Exception e)
-                {
-                    payload.GetStream().Close();
-                    return;
-                }
+                int x = payload.ReadInt();
                 int y = payload.ReadInt();
                 int z = payload.ReadInt();
+
                 byte[] buff = payload.ReadBytes(payload.ReadInt());
                 StreamWrapper stream = new StreamWrapper(buff);
                 Dictionary<string, object> tags = new Dictionary<string, object>();
-                while (true)
+
+                while (!stream.Eof)
                 {
-                    String field;
-                    try
-                    {
-                        field = stream.ReadStringT();
-                    }
-                    catch (Exception)
-                    {
-                        Location location = new Location(x,y,z);
-                        if (GameController.World.GetBlock(location) == -1)
-                            break;
-                        GameController.SetTileEntity(location, null, tags);
-                        goto label53;
-                    }
-                    object val = Decode(stream, stream.ReadByte());
-                    tags.Add(field, val);
+                    String field = stream.ReadStringT();
+                    object val = Decode(stream);
+                    if (tags.ContainsKey(field))
+                        tags[field] = val;
+                    else
+                        tags.Add(field, val);
                 }
+
+                Location location = new Location(x, y, z);
+                if (GameController.World.GetBlock(location) == -1)
+                    break;
+                GameController.SetTileEntity(location, null, tags);
             }
+        }
+
+        private static Object Decode(StreamWrapper stream)
+        {
+            return Decode(stream, stream.ReadByte());
         }
 
         private static object Decode(StreamWrapper stream, int type)
@@ -136,7 +129,7 @@ namespace MoBot.Scripts.Handlers
                 case 8:
                     return stream.ReadBool();
                 case 9:
-                    return (char) stream.ReadByte();
+                    return stream.ReadChar();
                 case 10:
                     return stream.ReadStringT();
                 case 11:
@@ -145,7 +138,7 @@ namespace MoBot.Scripts.Handlers
                     String item = (String) Decode(stream, 14);
                     x = stream.ReadByte();
                     short var15 = stream.ReadShort();
-                    NbtCompound tag = (NbtCompound) (Decode(stream, 15));
+                    NbtCompound tag = (NbtCompound) Decode(stream);
                     return new ItemStack(-2) {Item = new Item() {Name = item}, NbtRoot = tag, ItemCount = (byte)x, ItemDamage = var15};
                 case 13:
                     return stream.ReadStringT();
@@ -186,7 +179,7 @@ namespace MoBot.Scripts.Handlers
                 case 24:
                     stream.ReadInt();
                     stream.ReadInt();
-                    Decode(stream, 15);
+                    Decode(stream);
                     return null;
                 case 25:
                     Decode(stream, 24);
@@ -197,15 +190,20 @@ namespace MoBot.Scripts.Handlers
                     stream.ReadLong();
                     return null;
                 case 27:
-                    Decode(stream, 26);
+                    Decode(stream);
                     var name = stream.ReadStringT();
                     return name;
                 case 28:
                     var stacks = Decode(stream, 1);
                     return stacks;
                 case 29:
+                    Decode(stream);
+                    Decode(stream);
                     return null;
                 case 30:
+                    Decode(stream);
+                    Decode(stream);
+                    Decode(stream);
                     return null;
                 case 31:
                     KeyValuePair<String, String> pair = new KeyValuePair<string, string>(stream.ReadStringT(), stream.ReadStringT());

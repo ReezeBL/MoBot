@@ -83,10 +83,6 @@
       <Private>True</Private>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -180,9 +176,7 @@
     <Compile Include="Protocol\Packets\Play\PacketWindowItems.cs" />
     <Compile Include="Protocol\Threading\BaseThread.cs" />
     <Compile Include="Protocol\Threading\WritingThread.cs" />
-    <Compile Include="Scripts\Handlers\IC2Handler.cs" />
     <Compile Include="Scripts\ImportHandler.cs" />
-    <Compile Include="Scripts\Items\ItemDrill.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Structure\Actions\ActionChatMessage.cs" />
     <Compile Include="Structure\Actions\ActionConnect.cs" />
@@ -268,13 +262,13 @@
     <None Include="Properties\DataSources\MoBot.Structure.Game.AI.AiHandler.datasource" />
     <None Include="Properties\DataSources\MoBot.Structure.Game.GameController.datasource" />
     <None Include="Settings\blocks.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Settings\items.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Settings\materials.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
