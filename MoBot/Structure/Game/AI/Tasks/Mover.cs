@@ -93,6 +93,8 @@ namespace MoBot.Structure.Game.AI.Tasks
 
                     if (GameController.World.IsBlockFree(point.X, point.Y, point.Z)) continue;
                     yield return DigTo(point.X, point.Y, point.Z);
+
+                    yield return null;
                 }
 
                 Console.WriteLine($"Moving to {point}");
@@ -110,14 +112,14 @@ namespace MoBot.Structure.Game.AI.Tasks
             yield return SwitchTool(block);
 
             ActionManager.StartDigging(x, y, z);
-            yield return DigBlock(block);
+            yield return _awaiter;
+            ActionManager.UpdatePosition();
             ActionManager.FinishDigging(x, y, z);
-
+            yield return _awaiter;
             ActionManager.UpdatePosition();
-            yield return WaitForSeconds(150);
-            ActionManager.UpdatePosition();
-            yield return WaitForSeconds(150);
+            yield return DigBlock(block);
 
+            yield return WaitForSeconds(350);
         }
 
         private IEnumerator SwitchTool(Block block)
