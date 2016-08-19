@@ -83,7 +83,7 @@ namespace MoBot.Structure.Windows
                 {
                     if (Settings.AutoReconnect)
                     {
-                        Connect(3000);
+                        Connect(10000);
                     }
                     else
                     {

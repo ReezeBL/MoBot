@@ -81,6 +81,7 @@ namespace MoBot.Structure.Game.AI.Tasks
                     ActionManager.UpdatePosition();
                 }
             }
+            yield return null;
             yield return WaitForSeconds(300);
         }
 

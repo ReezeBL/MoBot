@@ -53,6 +53,8 @@ namespace MoBot.Structure.Game.AI
                     catch (Exception e)
                     {
                         Program.GetLogger().Error($"AI Thread exception: {e}");
+                        _root.Stop(null);
+                        _root.Start(null);
                     }
                     Thread.Sleep(50);
                 }

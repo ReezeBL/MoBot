@@ -55,9 +55,8 @@ namespace MoBot.Structure.Game
                         _inventory[n - _capacity] = value;
                     else
                         _items[n] = value;
-
-                    OnSlotChanged(n, value);
                 }
+                OnSlotChanged(n, value);
             }
         }
 
