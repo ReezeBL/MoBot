@@ -42,16 +42,14 @@ namespace MoBot.Scripts.Items
 
         public int GetToolMode(ItemStack stack)
         {
-            var nbtTag = stack.NbtRoot.Get("toolMode");
-            if (nbtTag != null) return nbtTag.IntValue;
-            return 0;
+            var nbtTag = stack.NbtRoot?.Get("toolMode");
+            return nbtTag?.IntValue ?? 0;
         }
 
         public double GetItemCharge(ItemStack stack)
         {
             var nbtTag = stack.NbtRoot.Get("charge");
-            if (nbtTag != null) return nbtTag.DoubleValue;
-            return 0;
+            return nbtTag?.DoubleValue ?? 0;
         }
 
         public override float GetItemStrength(ItemStack stack, Block block)
@@ -59,9 +57,7 @@ namespace MoBot.Scripts.Items
             if (!CanHarvest(block))
                 return 1.0f;
             Mode mode = (Mode) GetToolMode(stack);
-            if (energyCosts[mode] > GetItemCharge(stack))
-                return 1.0f;
-            return effectivness[mode];
+            return energyCosts[mode] > GetItemCharge(stack) ? 1.0f : effectivness[mode];
         }
 
         public ItemAdvancedDrill()

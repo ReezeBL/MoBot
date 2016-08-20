@@ -35,12 +35,7 @@ namespace MoBot.Structure
             return null;
         }
 
-        public static NetworkController GetInstance()
-        {
-            if (_instance == null)
-                return _instance = new NetworkController();
-            return _instance;
-        }
+        public static NetworkController Instance => _instance ?? (_instance = new NetworkController());
 
         public static async void ConnectAsync(string serverIp, int port, string name, int delay = 0)
         {
@@ -52,8 +47,6 @@ namespace MoBot.Structure
             try
             {
                 #region InitVariables
-
-                var instance = GetInstance();
                 dynamic response = Ping(serverIp, port);
 
                 if (response == null)
@@ -77,14 +70,14 @@ namespace MoBot.Structure
                 Username = name;
                 GameController.Clear();
                 Handler = new ClientHandler();
-                instance._threadWrite = new WritingThread();
-                instance._threadRead = new ReadingThread();
+                Instance._threadWrite = new WritingThread();
+                Instance._threadRead = new ReadingThread();
 
                 #endregion
 
                 #region BeginConnect
 
-                instance._viewer.OnNext(new ActionConnect {Connected = true});
+                Instance._viewer.OnNext(new ActionConnect {Connected = true});
                 SendPacket(new PacketHandshake
                 {
                     Hostname = serverIp,
@@ -101,27 +94,26 @@ namespace MoBot.Structure
             {
                 Disconnect();
                 Console.WriteLine(exception);
-                NotifyViewer($"Unable to connect to server!");
+                NotifyViewer("Unable to connect to server!");
             }
         }
 
         public static void Disconnect()
         {           
-            var networkController = GetInstance();
-            networkController._viewer.OnNext(new ActionConnect { Connected = false});
-            networkController._threadWrite?.Stop();
-            networkController._threadRead?.Stop();
+            Instance._viewer.OnNext(new ActionConnect { Connected = false});
+            Instance._threadWrite?.Stop();
+            Instance._threadRead?.Stop();
             Connected = false;
         }
 
         public static void NotifyViewer(string message)
         {
-            GetInstance()._viewer.OnNext(new ActionMessage {Message = message});
+            Instance._viewer.OnNext(new ActionMessage {Message = message});
         }
 
         public static void NotifyChatMessage(string message)
         {
-            GetInstance()._viewer.OnNext(new ActionChatMessage { JsonMessage = message });
+            Instance._viewer.OnNext(new ActionChatMessage { JsonMessage = message });
         }
 
         public static dynamic Ping(string serverIp, int port, bool message = false)
@@ -131,31 +123,37 @@ namespace MoBot.Structure
             {
                 return null;
             }
-            var channel = new Channel(client.GetStream());
-            channel.SendPacket(new PacketHandshake
+            try
             {
-                Hostname = serverIp,
-                Port = (ushort)port,
-                NextState = 1,
-                ProtocolVersion = 46
-            });
-            channel.SendPacket(new EmptyPacket());
-            var result = channel.GetPacket() as PacketResponse;
-            if (result == null) return null;
-            dynamic response = JObject.Parse(result.JsonResponse);
-            client.Close();
-            if (message)
-                NotifyViewer(string.Format("Name: {1}\nProtocol: {0}\nOnline: {2}", response.version.protocol,
-                    response.description, response.players.online));
-            return response;
+                var channel = new Channel(client.GetStream());
+                channel.SendPacket(new PacketHandshake
+                {
+                    Hostname = serverIp,
+                    Port = (ushort) port,
+                    NextState = 1,
+                    ProtocolVersion = 46
+                });
+                channel.SendPacket(new EmptyPacket());
+                var result = channel.GetPacket() as PacketResponse;
+                if (result == null) return null;
+                dynamic response = JObject.Parse(result.JsonResponse);
+                client.Close();
+                if (message)
+                    NotifyViewer(string.Format("Name: {1}\nProtocol: {0}\nOnline: {2}", response.version.protocol,
+                        response.description, response.players.online));
+                return response;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public static void SendPacket(Packet packet)
         {
-            var instance = GetInstance();
-            lock (instance._threadWrite.QueueLocker)
+            lock (Instance._threadWrite.QueueLocker)
             {
-                instance._threadWrite.SendingQueue.Enqueue(packet);
+                Instance._threadWrite.SendingQueue.Enqueue(packet);
             }
         }
     }

@@ -67,7 +67,7 @@ namespace MoBot.Structure.Game
                 int index = _capacity;
                 lock (_monitor)
                 {
-                    return _inventory.Select(item => new IndexedItem {Item = item.Item, Slot = index++});
+                    return _inventory.Select(item => new IndexedItem {Item = item?.Item, Slot = index++});
                 }
             }
         }
@@ -79,7 +79,7 @@ namespace MoBot.Structure.Game
                 int index = 0;
                 lock (_monitor)
                 {
-                    return _items.Select(item => new IndexedItem {Item = item.Item, Slot = index++});
+                    return _items.Select(item => new IndexedItem {Item = item?.Item, Slot = index++});
                 }
             }
         }
@@ -91,7 +91,7 @@ namespace MoBot.Structure.Game
                 int index = 0;
                 lock (_monitor)
                 {
-                    return _inventory.Skip(27).Select(item => new IndexedItem {Item = item.Item, Slot = index++});
+                    return _inventory.Skip(27).Select(item => new IndexedItem {Item = item?.Item, Slot = index++});
                 }
             }
         }

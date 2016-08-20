@@ -12,8 +12,8 @@ namespace MoBot.Structure.Game.AI.Tasks
 {
     public class CustomEvents : Task
     {
-        public int MinFoodDanger = 5;
-        public double MinHealthDanger = 8;
+        public int MinFoodDanger = 16;
+        public double MinHealthDanger = 12;
 
         public string TeleportHome;
         public string TeleportBack;
@@ -21,7 +21,7 @@ namespace MoBot.Structure.Game.AI.Tasks
         public string CreateCheckpoint;
         public string RemoveCheckpoint;
 
-        public Location Chest = new Location(-4533, 65, -1318);
+        public static Location Chest = new Location(-4533, 65, -1318);
         public bool Store;
 
         private readonly object _monitor = new object();
@@ -66,7 +66,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             return true;
         }
 
-        private IEnumerator Feed()
+        public IEnumerator Feed()
         {
             _logger.Info("I'm hungry!");
             yield return SwitchToFood();
@@ -135,18 +135,18 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         private IEnumerator HomeRun()
         {
-            _logger.Info("Perform homerun");
-            ActionManager.SendChatMessage(RemoveCheckpoint);
-            yield return WaitForSeconds(4000);
+            yield return SaveCurrentLocation();
+            yield return StoreItems();
 
-            ActionManager.SendChatMessage(CreateCheckpoint);
-            yield return WaitForSeconds(4000);
+            ActionManager.SendChatMessage(TeleportCheckpoint);
 
-            ActionManager.SendChatMessage(TeleportHome);
-            yield return WaitForSeconds(1000);
+            yield return WaitForSeconds(2500);
+        }
 
-            ActionManager.RightClick(Chest.X, Chest.Y, Chest.Z);
-            yield return WaitForSeconds(500);
+        public IEnumerator StoreItems()
+        {
+            ActionManager.RightClick(Chest);
+            yield return WaitForSeconds(1500);
 
             foreach (var slot in GameController.Player.CurrentContainer.IndexedInventory)
             {
@@ -156,16 +156,26 @@ namespace MoBot.Structure.Game.AI.Tasks
                 if (freeSlot == -1) break;
                 yield return ActionManager.ExchangeInventorySlots(slot.Slot, freeSlot);
                 ActionManager.UpdatePosition();
-                yield return null;
-                yield return null;
+                yield return _awaiter;
+                yield return _awaiter;
             }
 
             ActionManager.CloseWindow();
 
             yield return WaitForSeconds(500);
-            ActionManager.SendChatMessage(TeleportCheckpoint);
+        }
 
-            yield return WaitForSeconds(2500);
+        public IEnumerator SaveCurrentLocation()
+        {
+            _logger.Info("Perform homerun");
+            ActionManager.SendChatMessage(RemoveCheckpoint);
+            yield return WaitForSeconds(4000);
+
+            ActionManager.SendChatMessage(CreateCheckpoint);
+            yield return WaitForSeconds(4000);
+
+            ActionManager.SendChatMessage(TeleportHome);
+            yield return WaitForSeconds(1000);
         }
 
         private bool IsDead(object context)
@@ -207,9 +217,17 @@ namespace MoBot.Structure.Game.AI.Tasks
         private IEnumerator SaveFromDanger()
         {
             _logger.Info("We are in danger, runaway home!");
-            var player = GameController.Player;
             ActionManager.SendChatMessage(TeleportHome);
             yield return WaitForSeconds(1000);
+            yield return WaitForHealing();
+            _logger.Info("We are safe now, return back to work");
+            ActionManager.SendChatMessage(TeleportBack);
+            yield return WaitForSeconds(2500);
+        }
+
+        private IEnumerator WaitForHealing()
+        {
+            var player = GameController.Player;
             while (player.Health < 20)
             {
                 if (player.Food < 18 && MinFoodDanger > 0)
@@ -218,9 +236,6 @@ namespace MoBot.Structure.Game.AI.Tasks
                 ActionManager.UpdatePosition();
                 yield return null;
             }
-            _logger.Info("We are safe now, return back to work");
-            ActionManager.SendChatMessage(TeleportBack);
-            yield return WaitForSeconds(2500);
         }
 
         public CustomEvents()

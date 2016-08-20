@@ -1,6 +1,5 @@
 ﻿using System;
 using System.CodeDom.Compiler;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.IO;
@@ -9,7 +8,6 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.CodeDom.Providers.DotNetCompilerPlatform;
-using MoBot.Protocol.Handlers;
 using MoBot.Scripts;
 using MoBot.Structure;
 using MoBot.Structure.Game;
@@ -27,9 +25,6 @@ namespace MoBot
             return Log;
         }
 
-        [DllImport("kernel32.dll")]
-        static extern IntPtr GetConsoleWindow();
-
         [DllImport("kernel32.dll", SetLastError = true)]
         static extern bool AllocConsole();
 
@@ -42,7 +37,6 @@ namespace MoBot
             Application.SetCompatibleTextRenderingDefault(false);
 
             AllocConsole();
-            var handle = GetConsoleWindow();
 
             Console.WriteLine("Loading scripts...");
             LoadScripts();
@@ -55,7 +49,7 @@ namespace MoBot
 
             Console.WriteLine("Everything is done! Application is ready to launch!");
 
-            NetworkController model = NetworkController.GetInstance();
+            NetworkController model = NetworkController.Instance;
             Controller controller = new Controller();
             Viewer viewer = new Viewer { MainController = controller };
             model.Subscribe(viewer);
@@ -68,9 +62,6 @@ namespace MoBot
         {
             try
             {
-                Dictionary<string, string> provOptions =
-                    new Dictionary<string, string> {{"CompilerVersion", "v5.0"}};
-
                 CodeDomProvider provider = new CSharpCodeProvider();
                 string path = Path.GetDirectoryName(Application.ExecutablePath);
                 Debug.Assert(path != null, "Invalid path");
