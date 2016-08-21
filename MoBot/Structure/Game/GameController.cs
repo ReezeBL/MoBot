@@ -110,7 +110,7 @@ namespace MoBot.Structure.Game
 
         public static Mob CreateMob(int entityId, byte type = 0)
         {
-            Mob entity = new Mob(entityId) {Type = type};
+            var entity = new Mob(entityId) {Type = type};
             LivingEntities.Add(entity);
             if (Instance._entities.TryAdd(entityId, entity)) return entity;
             Console.WriteLine($"Cannot add Entity {entityId} to collection!");
@@ -119,7 +119,7 @@ namespace MoBot.Structure.Game
 
         public static LivingEntity CreateLivingEntity(int entityId, byte type)
         {
-            LivingEntity entity = new LivingEntity(entityId);
+            var entity = new LivingEntity(entityId);
             if (Instance._entities.TryAdd(entityId, entity)) return entity;
             Console.WriteLine($"Cannot add Entity {entityId} to collection!");
             return null;
@@ -127,7 +127,7 @@ namespace MoBot.Structure.Game
 
         public static Entity CreateEntity(int entityId, byte type)
         {
-            Entity entity = new Entity(entityId);
+            var entity = new Entity(entityId);
             if (Instance._entities.TryAdd(entityId, entity)) return entity;
             Console.WriteLine($"Cannot add Entity {entityId} to collection!");
             return null;

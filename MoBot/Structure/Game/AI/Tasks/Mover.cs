@@ -61,7 +61,7 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         private IEnumerator MoveRoutine(Location destination)
         {
-            Path path = PathFinder.Shovel(GameController.Player.Position, destination, false, false);
+            var path = PathFinder.Shovel(GameController.Player.Position, destination, false, false);
             if (path == null)
             {
                 Console.WriteLine("Can't resolve path!");
@@ -71,14 +71,14 @@ namespace MoBot.Structure.Game.AI.Tasks
             {
                 Console.WriteLine($"Moving to {point}");
                 ActionManager.SetPlayerPos(point);
-                for (int i = 0; i < 2; i++)
+                for (var i = 0; i < 2; i++)
                     yield return null;
             }
         }
 
         private IEnumerator ShovelRoutine(Location destination, Path preBuild)
         {
-            Path path = preBuild ?? PathFinder.Shovel(GameController.Player.Position, destination);
+            var path = preBuild ?? PathFinder.Shovel(GameController.Player.Position, destination);
             if(path == null)
                 yield break;
             foreach (var point in path)
@@ -99,14 +99,14 @@ namespace MoBot.Structure.Game.AI.Tasks
 
                 Console.WriteLine($"Moving to {point}");
                 ActionManager.SetPlayerPos(point);
-                for(int i=0;i<2;i++)
+                for(var i=0;i<2;i++)
                     yield return null;
             }
         }
 
         private IEnumerator DigTo(int x, int y, int z)
         {
-            Block block = Block.GetBlock(GameController.World.GetBlock(x, y, z));
+            var block = Block.GetBlock(GameController.World.GetBlock(x, y, z));
             Console.WriteLine($"Digging block {block.Name} : {{{x} | {y} | {z} }}");
 
             yield return SwitchTool(block);
@@ -167,7 +167,7 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         private IEnumerator DigBlock(Block block)
         {
-            float blockHealth = 1f;
+            var blockHealth = 1f;
             while (blockHealth > 0)
             {
                 blockHealth -= GameController.Player.GetDigSpeed(block);

@@ -20,9 +20,9 @@ namespace MoBot.Protocol.Packets.Play
         {
             X = buff.ReadInt();
             Z = buff.ReadInt();
-            bool groundUp = buff.ReadBool();
-            short pbitmap = buff.ReadShort();
-            short abitmap = buff.ReadShort();
+            var groundUp = buff.ReadBool();
+            var pbitmap = buff.ReadShort();
+            var abitmap = buff.ReadShort();
             Length = buff.ReadInt();
             ChunkData = buff.ReadBytes(Length);
             Chunk = new Chunk(X, Z, pbitmap, abitmap, groundUp, true);

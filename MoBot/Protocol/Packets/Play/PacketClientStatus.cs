@@ -3,9 +3,9 @@ using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketClientStatus : Packet
+    internal class PacketClientStatus : Packet
     {
-        public Byte Action;
+        public byte Action;
 
         public override void HandlePacket(IHandler handler)
         {

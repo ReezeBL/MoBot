@@ -163,9 +163,9 @@ namespace MoBot.Protocol
 
         public void EncriptChannel(byte[] secretKey)
         {
-            BufferedBlockCipher output = new BufferedBlockCipher(new CfbBlockCipher(new AesFastEngine(), 8));
+            var output = new BufferedBlockCipher(new CfbBlockCipher(new AesFastEngine(), 8));
             output.Init(true, new ParametersWithIV(new KeyParameter(secretKey), secretKey, 0, 16));
-            BufferedBlockCipher input = new BufferedBlockCipher(new CfbBlockCipher(new AesFastEngine(), 8));
+            var input = new BufferedBlockCipher(new CfbBlockCipher(new AesFastEngine(), 8));
             input.Init(false, new ParametersWithIV(new KeyParameter(secretKey), secretKey, 0, 16));
             var cipherStream = new CipherStream(_channel.GetStream(), input, output);
             _channel = new StreamWrapper(cipherStream);

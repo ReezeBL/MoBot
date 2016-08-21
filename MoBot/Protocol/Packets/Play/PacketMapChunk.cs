@@ -23,12 +23,12 @@ namespace MoBot.Protocol.Packets.Play
             Flag = buff.ReadBool();
             ChunkData = buff.ReadBytes(DataLength);
             Chunks = new Chunk[ChunkNumber];
-            for(int i=0; i<ChunkNumber; i++)
+            for(var i=0; i<ChunkNumber; i++)
             {
-                int x = buff.ReadInt();
-                int z = buff.ReadInt();
-                short pbitmap = buff.ReadShort();
-                short abitmap = buff.ReadShort();
+                var x = buff.ReadInt();
+                var z = buff.ReadInt();
+                var pbitmap = buff.ReadShort();
+                var abitmap = buff.ReadShort();
 
                 Chunks[i] = new Chunk(x, z, pbitmap, abitmap, Flag, true);
             }

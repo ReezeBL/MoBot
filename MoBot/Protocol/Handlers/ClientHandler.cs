@@ -12,7 +12,6 @@ using MoBot.Protocol.Packets.Play;
 using MoBot.Structure;
 using MoBot.Structure.Game;
 using MoBot.Structure.Game.AI.Pathfinding;
-using Newtonsoft.Json.Linq;
 using NLog;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
@@ -22,8 +21,10 @@ namespace MoBot.Protocol.Handlers
 {
     public class ClientHandler : IHandler
     {
+        public static readonly Dictionary<string, CustomHandler> CustomHandlers =
+            new Dictionary<string, CustomHandler> {{"FML|HS", new FmlHandshake()}};
+
         private readonly Logger _log = Program.GetLogger();
-        public static readonly Dictionary<string, CustomHandler> CustomHandlers = new Dictionary<string, CustomHandler> { { "FML|HS", new FmlHandshake()} };
 
         public void HandlePacketDisconnect(PacketDisconnect packetDisconnect)
         {
@@ -96,7 +97,8 @@ namespace MoBot.Protocol.Handlers
             {
                 //Console.WriteLine(packetCustomPayload.Channel);
                 return;
-            };
+            }
+            ;
             handler.OnPacketData(packetCustomPayload.Payload);
         }
 
@@ -128,7 +130,9 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketWindowItems(PacketWindowItems packetWindowItems)
         {
-            var container = GameController.Player.GetContainer(packetWindowItems.WindowId) ?? GameController.Player.CreateContainer(packetWindowItems.WindowId, packetWindowItems.ItemCount - 36);
+            var container = GameController.Player.GetContainer(packetWindowItems.WindowId) ??
+                            GameController.Player.CreateContainer(packetWindowItems.WindowId,
+                                packetWindowItems.ItemCount - 36);
             for (var i = 0; i < packetWindowItems.ItemCount; i++)
                 container[i] = packetWindowItems.ItemsStack[i];
         }
@@ -292,6 +296,11 @@ namespace MoBot.Protocol.Handlers
             NetworkController.SendPacket(packetConfirmTransaction);
         }
 
+        private static string GetUserSession()
+        {
+            return Settings.Users[NetworkController.Username];
+        }
+
         private static string PostUrl(PacketEncriptionRequest packetEncriptionRequest, byte[] secretKey, string id)
         {
             var request =
@@ -301,11 +310,6 @@ namespace MoBot.Protocol.Handlers
             if (responseStream == null) return "";
             var responseString = new StreamReader(responseStream).ReadToEnd();
             return responseString;
-        }
-
-        private static string GetUserSession()
-        {
-            return Settings.Users[NetworkController.Username];
         }
 
         #region ServerHashCalculations

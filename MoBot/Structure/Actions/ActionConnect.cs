@@ -1,6 +1,6 @@
 ﻿namespace MoBot.Structure.Actions
 {
-    class ActionConnect : SysAction
+    internal class ActionConnect : SysAction
     {
         public bool Connected;
     }

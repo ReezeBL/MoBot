@@ -32,13 +32,13 @@ namespace MoBot.Structure.Game.World
             _numBlocks = 0;
             _aBlocks = 0;
 
-            for (int i = 0; i < 16; i++)
+            for (var i = 0; i < 16; i++)
             {
                 if (!Convert.ToBoolean(pbitmap & (1 << i))) continue;
                 _numBlocks++; // "Sections"
             }
 
-            for (int i = 0; i < 16; i++)
+            for (var i = 0; i < 16; i++)
             {
                 if (Convert.ToBoolean(abitmap & (1 << i)))
                 {
@@ -49,8 +49,8 @@ namespace MoBot.Structure.Game.World
         }
         private void Populate(byte[] blocks, byte[] msb)
         {
-            int offset = 0;
-            for (int i = 0; i < 16; i++)
+            var offset = 0;
+            for (var i = 0; i < 16; i++)
             {
                 if (!Convert.ToBoolean(Pbitmap & (1 << i))) continue;
 
@@ -58,7 +58,7 @@ namespace MoBot.Structure.Game.World
                 offset += 4096;
             }
             offset = 0;
-            for (int i = 0; i < 16; i++)
+            for (var i = 0; i < 16; i++)
             {
                 if(!Convert.ToBoolean(Abitmap & (1 << i) )) continue;
                 _sections[i].ApplyMsb(msb, offset);
@@ -77,13 +77,13 @@ namespace MoBot.Structure.Game.World
 
         public byte[] GetData(byte[] deCompressed)
         {
-            byte[] lsb = new byte[_numBlocks];
-            byte[] msb = new byte[_aBlocks * 2048];
+            var lsb = new byte[_numBlocks];
+            var msb = new byte[_aBlocks * 2048];
 
-            int offset = 2 * _numBlocks;
+            var offset = 2 * _numBlocks;
 
             if (Lighting)
-                offset += (_numBlocks / 2);
+                offset += _numBlocks / 2;
 
             Array.Copy(deCompressed, 0, lsb, 0, lsb.Length);
             Array.Copy(deCompressed, offset, msb, 0, msb.Length);
@@ -101,7 +101,7 @@ namespace MoBot.Structure.Game.World
         #region Helping Methods
         private int GetXinSection(int blockX)
         {
-            return blockX - (X * 16);
+            return blockX - X * 16;
         }
         private int GetPositionInSection(int blockY)
         {
@@ -109,7 +109,7 @@ namespace MoBot.Structure.Game.World
         }
         private int GetZinSection(int blockZ)
         {
-            return blockZ - (Z * 16);
+            return blockZ - Z * 16;
         }
         #endregion
     }

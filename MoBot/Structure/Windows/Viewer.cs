@@ -16,20 +16,20 @@ namespace MoBot.Structure.Windows
 {
     public partial class Viewer : Form, IObserver<SysAction>
     {
-        private static readonly Dictionary<string, Color> Colors = new Dictionary<string, Color>()
+        private static readonly Dictionary<string, Color> Colors = new Dictionary<string, Color>
         {
             {"dark_blue", Color.DarkBlue},
-            {"gold", Color.Gold },
-            {"green", Color.Green },
-            {"red", Color.Red },
-            {"dark_green", Color.Green },
-            {"white", Color.White },
-            {"aqua", Color.Aqua },
-            {"dark_red", Color.DarkRed },
+            {"gold", Color.Gold},
+            {"green", Color.Green},
+            {"red", Color.Red},
+            {"dark_green", Color.Green},
+            {"white", Color.White},
+            {"aqua", Color.Aqua},
+            {"dark_red", Color.DarkRed}
         };
-        public List<Entity> Entities { get; set; } = new List<Entity> {new Player(0, "kek")};
 
         public Controller MainController;
+
         public Viewer()
         {
             InitializeComponent();
@@ -37,25 +37,13 @@ namespace MoBot.Structure.Windows
             GameController.Instance.PropertyChanged += InstanceOnPropertyChanged;
         }
 
-        private void InstanceOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
-        {
-            if (propertyChangedEventArgs.PropertyName == "Player" && GameController.Player != null)
-            {
-                healthTextBox.DataBindings.Clear();
-                foodTextbox.DataBindings.Clear();
-                inventoryGui.DataBindings.Clear();
-
-                healthTextBox.DataBindings.Add("Text", GameController.Player, "Health", true, DataSourceUpdateMode.OnPropertyChanged);
-                foodTextbox.DataBindings.Add("Text", GameController.Player, "Food", true, DataSourceUpdateMode.OnPropertyChanged);
-                inventoryGui.DataBindings.Add("Container", GameController.Player, "CurrentContainer", true, DataSourceUpdateMode.OnPropertyChanged);
-            }
-        }
+        public List<Entity> Entities { get; set; } = new List<Entity> {new Player(0, "kek")};
 
         protected override CreateParams CreateParams
         {
             get
             {
-                CreateParams cp = base.CreateParams;
+                var cp = base.CreateParams;
                 cp.ExStyle = cp.ExStyle | 0x2000000;
                 return cp;
             }
@@ -112,9 +100,9 @@ namespace MoBot.Structure.Windows
                         }
                         else if (obj != null)
                         {
-                            JToken token = obj;
+                            var token = obj;
 
-                            string colorName = token.Value<string>("color") ?? "";
+                            var colorName = token.Value<string>("color") ?? "";
                             var color = Color.FromName(colorName);
 
                             Putsc($"{token.Value<string>("text")}", color);
@@ -142,6 +130,13 @@ namespace MoBot.Structure.Windows
             }
         }
 
+        private void buttonSendMessage_Click(object sender, EventArgs e)
+        {
+            if (chatTextBox.Text == "") return;
+            MainController.HandleChatMessage(chatTextBox.Text);
+            chatTextBox.Text = "";
+        }
+
         private void Connect(int delay)
         {
             if (InvokeRequired)
@@ -160,6 +155,11 @@ namespace MoBot.Structure.Windows
             }
         }
 
+        private void controlButton_Click(object sender, EventArgs e)
+        {
+            controlPanel.Visible = !controlPanel.Visible;
+        }
+
         private void Disconnect()
         {
             if (InvokeRequired)
@@ -173,14 +173,71 @@ namespace MoBot.Structure.Windows
             }
         }
 
-        private void buttonSendMessage_Click(object sender, EventArgs e)
+        private void FormattedItemInfo(object sender, ConvertEventArgs cevent)
         {
-            if (chatTextBox.Text == "") return;
-            MainController.HandleChatMessage(chatTextBox.Text);
-            chatTextBox.Text = "";
+            if (cevent.DesiredType != typeof(string)) return;
+
+            var stack = cevent.Value as ItemStack;
+            if (stack?.Item == null || stack.Item.Id == -1) return;
+
+            var sb = new StringBuilder();
+            sb.AppendLine(stack.Item.ToString());
+            sb.AppendLine($"Item count: {stack.ItemCount}");
+            sb.AppendLine($"Item damage: {stack.ItemDamage}");
+            if (stack.NbtData != null)
+            {
+                foreach (var tag in stack.NbtRoot.Names)
+                {
+                    sb.AppendLine($"{tag} = {stack.NbtRoot[tag].StringValue}");
+                }
+            }
+            cevent.Value = sb.ToString();
         }
 
-        
+        private string FormatTileEntity(object value)
+        {
+            var entity = value as TileEntity;
+            if (entity == null) return Empty;
+
+            var sb = new StringBuilder();
+            sb.AppendLine(entity.ToString());
+            if (entity.Root != null)
+                sb.AppendLine(entity.Root.ToString("\t"));
+            if (entity.Tags != null)
+            {
+                foreach (var tag in entity.Tags)
+                {
+                    sb.AppendLine($"{tag.Key} = {(tag.Value as NbtCompound)?.ToString("\t") ?? tag.Value?.ToString()}");
+                }
+            }
+
+            return sb.ToString();
+        }
+
+        private void InstanceOnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
+        {
+            if (propertyChangedEventArgs.PropertyName == "Player" && GameController.Player != null)
+            {
+                healthTextBox.DataBindings.Clear();
+                foodTextbox.DataBindings.Clear();
+                inventoryGui.DataBindings.Clear();
+
+                healthTextBox.DataBindings.Add("Text", GameController.Player, "Health", true,
+                    DataSourceUpdateMode.OnPropertyChanged);
+                foodTextbox.DataBindings.Add("Text", GameController.Player, "Food", true,
+                    DataSourceUpdateMode.OnPropertyChanged);
+                inventoryGui.DataBindings.Add("Container", GameController.Player, "CurrentContainer", true,
+                    DataSourceUpdateMode.OnPropertyChanged);
+            }
+        }
+
+        private void LoadSettings()
+        {
+            if (userNames.SelectedItem != null)
+                Settings.Load(userNames.SelectedItem.ToString());
+        }
+
+
         private void Putsc(string text, Color color, string style = "")
         {
             if (InvokeRequired)
@@ -201,30 +258,23 @@ namespace MoBot.Structure.Windows
             }
         }
 
-        private void FormattedItemInfo(object sender, ConvertEventArgs cevent)
+        private void settingsButton_Click(object sender, EventArgs e)
         {
-            if (cevent.DesiredType != typeof(string)) return;
+            new SettingsWindow().Show();
+        }
 
-            var stack = cevent.Value as ItemStack;
-            if (stack?.Item == null || stack.Item.Id == -1) return;
+        private void userNames_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadSettings();
+        }
 
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(stack.Item.ToString());
-            sb.AppendLine($"Item count: {stack.ItemCount}");
-            sb.AppendLine($"Item damage: {stack.ItemDamage}");
-            if (stack.NbtData != null)
-            {
-                foreach (var tag in stack.NbtRoot.Names)
-                {
-                    sb.AppendLine($"{tag} = {stack.NbtRoot[tag].StringValue}");
-                }
-            }
-            cevent.Value = sb.ToString();
+        private void Viewer_FormClosing(object sender, FormClosingEventArgs e)
+        {
         }
 
         private void Viewer_Load(object sender, EventArgs e)
         {
-            TextBoxWriter writer = new TextBoxWriter(ConsoleOutput, this);
+            var writer = new TextBoxWriter(ConsoleOutput, this);
             Console.SetOut(writer);
 
             entityList.DataSource = GameController.LivingEntities;
@@ -238,7 +288,7 @@ namespace MoBot.Structure.Windows
             bind.Format += FormattedItemInfo;
             inventoryItemInfo.DataBindings.Add(bind);
 
-            XmlDocument users = new XmlDocument();
+            var users = new XmlDocument();
             try
             {
                 users.Load(Settings.UserIdsPath);
@@ -256,46 +306,17 @@ namespace MoBot.Structure.Windows
             finally
             {
                 userNames.SelectedItem = userNames.Items.Count > 0 ? userNames.Items[0] : null;
+                LoadSettings();
             }
-        }
-
-        private string FormatTileEntity(object value)
-        {
-            var entity = value as TileEntity;
-            if (entity == null) return Empty;
-
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(entity.ToString());
-            if(entity.Root != null)
-                sb.AppendLine(entity.Root.ToString("\t"));
-            if (entity.Tags != null)
-            {
-                foreach (var tag in entity.Tags)
-                {
-                    sb.AppendLine($"{tag.Key} = {(tag.Value as NbtCompound)?.ToString("\t") ?? tag.Value?.ToString()}");
-                }
-            }
-
-            return sb.ToString();
-        }
-
-        private void Viewer_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
-        }
-
-        private void settingsButton_Click(object sender, EventArgs e)
-        {
-            new SettingsWindow().Show();
         }
 
         private class TextBoxWriter : TextWriter
         {
-            private readonly RichTextBox _output;
             private readonly StringBuilder _builder = new StringBuilder();
+            private readonly RichTextBox _output;
+            private readonly Form _owner;
+            private readonly Action<char> _writeCharFunc;
             private readonly Action<char[], int, int> _writeFunc;
-            private Action<char> _writeCharFunc;
-            private Form _owner;
 
             public TextBoxWriter(RichTextBox output, Form owner)
             {
@@ -304,6 +325,8 @@ namespace MoBot.Structure.Windows
                 _writeFunc = Write;
                 _writeCharFunc = Write;
             }
+
+            public override Encoding Encoding => Encoding.UTF8;
 
             public override void Write(char value)
             {
@@ -318,7 +341,6 @@ namespace MoBot.Structure.Windows
                         }
                         catch (InvalidOperationException)
                         {
-                            
                         }
                 }
             }
@@ -335,7 +357,6 @@ namespace MoBot.Structure.Windows
                     }
                     catch (InvalidOperationException)
                     {
-
                     }
                     _output.ScrollToCaret();
                 }
@@ -344,18 +365,6 @@ namespace MoBot.Structure.Windows
                     _owner.Invoke(_writeFunc, buffer, index, count);
                 }
             }
-
-            public override Encoding Encoding => Encoding.UTF8;
-        }
-
-        private void controlButton_Click(object sender, EventArgs e)
-        {
-            controlPanel.Visible = !controlPanel.Visible;
-        }
-
-        private void gameControllerBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

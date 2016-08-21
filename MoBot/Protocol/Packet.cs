@@ -40,7 +40,7 @@ namespace MoBot.Protocol
         protected static ItemStack ReadItem(StreamWrapper buff)
         {
             var id = buff.ReadShort();
-            ItemStack item = new ItemStack(id);
+            var item = new ItemStack(id);
             if (id < 0) return item;
 
             item.ItemCount = buff.ReadByte();

@@ -103,9 +103,9 @@ namespace MoBot.Structure.Game.World
 
         public Location SearchBlock(HashSet<int> ids)
         {
-            int x = MathHelper.floor_float(GameController.Player.X);
-            int z = MathHelper.floor_float(GameController.Player.Z);
-            int y = (int) GameController.Player.Y;
+            var x = MathHelper.floor_float(GameController.Player.X);
+            var z = MathHelper.floor_float(GameController.Player.Z);
+            var y = (int) GameController.Player.Y;
 
             return SearchBlock(x,y,z, ids.Contains);
         }
@@ -113,17 +113,17 @@ namespace MoBot.Structure.Game.World
         public Location SearchBlock(int x, int y, int z, Func<int, bool> idPredicate )
         {
             Location result = null;
-            int maxDistance = Settings.ScanRange;
+            var maxDistance = Settings.ScanRange;
 
-            for (int d = 1; d < maxDistance; d++)
+            for (var d = 1; d < maxDistance; d++)
             {
-                for (int i = 0; i <= d; i++)
+                for (var i = 0; i <= d; i++)
                 {
-                    for (int j = 0; j <= d - i; j++)
+                    for (var j = 0; j <= d - i; j++)
                     {
-                        int x1 = x + i;
-                        int z1 = z + j;
-                        int y1 = y + (d - i - j);
+                        var x1 = x + i;
+                        var z1 = z + j;
+                        var y1 = y + (d - i - j);
 
                         if (Check(x1, y1, z1, idPredicate, out result))
                             return result;
@@ -185,23 +185,23 @@ namespace MoBot.Structure.Game.World
 
         public List<Location> SearchBlocks(int x, int y, int z, Func<int, bool> idPredicate)
         {
-            HashSet<Location> result = new HashSet<Location>();
+            var result = new HashSet<Location>();
             Location tmp;
 
-            int maxDistance = Settings.ScanRange;
+            var maxDistance = Settings.ScanRange;
 
             if (Check(x, y, z, idPredicate, out tmp))
                 result.Add(tmp);
 
-            for (int d = 1; d < maxDistance; d++)
+            for (var d = 1; d < maxDistance; d++)
             {
-                for (int i = 0; i <= d; i++)
+                for (var i = 0; i <= d; i++)
                 {
-                    for (int j = 0; j <= d - i; j++)
+                    for (var j = 0; j <= d - i; j++)
                     {
-                        int x1 = x + i;
-                        int z1 = z + j;
-                        int y1 = y + (d - i - j);
+                        var x1 = x + i;
+                        var z1 = z + j;
+                        var y1 = y + (d - i - j);
 
                         if (Check(x1, y1, z1, idPredicate, out tmp))
                             result.Add(tmp);
@@ -263,9 +263,9 @@ namespace MoBot.Structure.Game.World
 
         public List<Location> SearchBlocks(HashSet<int> ids)
         {
-            int x = MathHelper.floor_float(GameController.Player.X);
-            int z = MathHelper.floor_float(GameController.Player.Z);
-            int y = (int)GameController.Player.Y;
+            var x = MathHelper.floor_float(GameController.Player.X);
+            var z = MathHelper.floor_float(GameController.Player.Z);
+            var y = (int)GameController.Player.Y;
 
             return SearchBlocks(x,y,z, ids.Contains);
         }

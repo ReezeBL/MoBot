@@ -14,21 +14,21 @@ namespace MoBot.Structure.Game.World
             Y = cy;
             Z = cz;
 
-            for(int y = 0;y<16;y++)
-                for(int z=0;z<16;z++)
-                    for (int x = 0; x < 16; x++)
-                        _rawData[x,y,z] = blocks[offset + x + (z * 16) + (y * 16 * 16)];
+            for(var y = 0;y<16;y++)
+                for(var z=0;z<16;z++)
+                    for (var x = 0; x < 16; x++)
+                        _rawData[x,y,z] = blocks[offset + x + z * 16 + y * 16 * 16];
         }
 
         public void ApplyMsb(byte[] msbArray, int offset)
         {
-            for (int y = 0; y < 16; y++)
-                for (int z = 0; z < 16; z++)
-                    for (int x = 0; x < 16; x++)
+            for (var y = 0; y < 16; y++)
+                for (var z = 0; z < 16; z++)
+                    for (var x = 0; x < 16; x++)
                     {
-                        int index = y << 8 | z << 4 | x;
-                        int dev = index >> 1;
-                        byte b = (byte)(((index & 1) == 0) ? msbArray[offset + dev] & 15 : msbArray[offset + dev] >> 4 & 15);
+                        var index = y << 8 | z << 4 | x;
+                        var dev = index >> 1;
+                        var b = (byte)((index & 1) == 0 ? msbArray[offset + dev] & 15 : msbArray[offset + dev] >> 4 & 15);
                         _rawData[x, y, z] |= (short)(b << 8);
                     }
         

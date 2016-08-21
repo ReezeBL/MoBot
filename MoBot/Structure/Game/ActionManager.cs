@@ -92,9 +92,9 @@ namespace MoBot.Structure.Game
         public static void RotatePlayer(double x, double y, double z)
         {
             var player = GameController.Player;
-            double r = Math.Sqrt(x * x + y * y + z * z);
-            double yaw = -Math.Atan2(x, z) / Math.PI * 180;
-            double pitch = -Math.Asin(y / r) / Math.PI * 180;
+            var r = Math.Sqrt(x * x + y * y + z * z);
+            var yaw = -Math.Atan2(x, z) / Math.PI * 180;
+            var pitch = -Math.Asin(y / r) / Math.PI * 180;
             player.Yaw = (float)yaw;
             player.Pitch = (float)pitch;
         }

@@ -64,7 +64,7 @@ namespace MoBot.Structure.Game
         {
             get
             {
-                int index = _capacity;
+                var index = _capacity;
                 lock (_monitor)
                 {
                     return _inventory.Select(item => new IndexedItem {Item = item?.Item, Slot = index++});
@@ -76,7 +76,7 @@ namespace MoBot.Structure.Game
         {
             get
             {
-                int index = 0;
+                var index = 0;
                 lock (_monitor)
                 {
                     return _items.Select(item => new IndexedItem {Item = item?.Item, Slot = index++});
@@ -88,7 +88,7 @@ namespace MoBot.Structure.Game
         {
             get
             {
-                int index = 0;
+                var index = 0;
                 lock (_monitor)
                 {
                     return _inventory.Skip(27).Select(item => new IndexedItem {Item = item?.Item, Slot = index++});
@@ -102,7 +102,7 @@ namespace MoBot.Structure.Game
             {
                 lock (_monitor)
                 {
-                    for (int i = 0; i < _capacity; i++)
+                    for (var i = 0; i < _capacity; i++)
                         if (_items[i] == null || _items[i].Item.Id == -1)
                             return i;
                     return -1;
@@ -116,7 +116,7 @@ namespace MoBot.Structure.Game
             {
                 lock (_monitor)
                 {
-                    for (int i = 0; i < 36; i++)
+                    for (var i = 0; i < 36; i++)
                     {
                         if (_inventory[i] == null || _inventory[i].Item.Id == -1)
                             return _capacity + i;
@@ -136,11 +136,11 @@ namespace MoBot.Structure.Game
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
 
             lock (_monitor)
             {
-                for (int i = 0; i < _capacity; i++)
+                for (var i = 0; i < _capacity; i++)
                     sb.Append($"{i} : {_items[i]} ");
                 sb.AppendLine();
 

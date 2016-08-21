@@ -18,7 +18,7 @@ namespace MoBot.Protocol.Packets.Play
             EntityId = buff.ReadVarInt();
             buff.ReadString();
             Name = buff.ReadString();
-            int len = buff.ReadVarInt();
+            var len = buff.ReadVarInt();
             for (var i = 0; i < len; i++) 
             {
                 buff.ReadString();

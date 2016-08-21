@@ -10,7 +10,7 @@ using NLog;
 
 namespace MoBot.Protocol.Handlers
 {
-    class FmlHandshake : CustomHandler
+    internal class FmlHandshake : CustomHandler
     {
         private readonly Logger _log = Program.GetLogger();
 

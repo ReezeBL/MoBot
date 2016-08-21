@@ -16,7 +16,7 @@ namespace MoBot.Protocol.Packets.Handshake
         public override void ReadPacketData(StreamWrapper buff)
         {
             ServerId = buff.ReadString();
-            short length = buff.ReadShort();
+            var length = buff.ReadShort();
             Key = buff.ReadBytes(length);
             length = buff.ReadShort();
             Token = buff.ReadBytes(length);

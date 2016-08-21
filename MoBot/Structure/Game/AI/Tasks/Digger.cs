@@ -25,7 +25,7 @@ namespace MoBot.Structure.Game.AI.Tasks
                 {
                     if (ignoredLocations.Contains(location)) continue;
 
-                    double distance = playerPos.DistanceTo(location);
+                    var distance = playerPos.DistanceTo(location);
                     Console.WriteLine(
                         $"Target: {Block.GetBlock(GameController.World.GetBlock(location)).Name} {{{location.X}|{location.Y}|{location.Z}}}\r\nDistance: {distance}");
 

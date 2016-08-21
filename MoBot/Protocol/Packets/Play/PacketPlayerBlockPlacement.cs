@@ -9,7 +9,7 @@ using MoBot.Structure.Game;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketPlayerBlockPlacement : Packet
+    internal class PacketPlayerBlockPlacement : Packet
     {
         public int X, Y, Z;
         public ItemStack Item;

@@ -14,7 +14,7 @@ namespace MoBot.Structure.Game.Items
 
         public static void LoadItems()
         {
-            Dictionary<string, float> materials = new Dictionary<string, float>();
+            var materials = new Dictionary<string, float>();
 
             using (var file = File.OpenText(Settings.MaterialsPath))
             using (var reader = new JsonTextReader(file))
@@ -74,7 +74,7 @@ namespace MoBot.Structure.Game.Items
 
         private class MaterialInfo
         {
-            public String name;
+            public string name;
             public float effectiveness;
             public float damage;
         }

@@ -33,7 +33,7 @@ namespace MoBot.Structure.Game
                     var blocks = deserializer.Deserialize<BlockInfo[]>(reader);
                     foreach (var block in blocks)
                     {
-                        Block gameBlock = new Block
+                        var gameBlock = new Block
                         {
                             Hardness = block.hardness,
                             HarvestTool = block.harvestTool,

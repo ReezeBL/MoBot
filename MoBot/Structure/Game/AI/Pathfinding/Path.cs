@@ -5,7 +5,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 {
     public class Path : IEnumerable<Location>
     {
-        readonly IEnumerable<Location> _wayPoints;
+        private readonly IEnumerable<Location> _wayPoints;
         private readonly IEnumerator<Location> _enumerator;
         
 

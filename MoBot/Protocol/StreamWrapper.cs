@@ -108,27 +108,27 @@ namespace MoBot.Protocol
 
         public void WriteString(string val) //Writes an UTF8 string to stream
         {
-            byte[] bytes = Encoding.UTF8.GetBytes(val);
+            var bytes = Encoding.UTF8.GetBytes(val);
             WriteVarInt(bytes.Length);
             _writer.Write(bytes);
         }     
-        public String ReadString() //Reads an UTF8 string from stream
+        public string ReadString() //Reads an UTF8 string from stream
         {
-            int length = ReadVarInt();
+            var length = ReadVarInt();
             if (length < 0)
             {
                 throw new IOException("The received encoded string Bytes length is less than zero! Weird string!");
             }
-            byte[] buffer = _reader.ReadBytes(length);
+            var buffer = _reader.ReadBytes(length);
             return Encoding.UTF8.GetString(buffer);
         }
 
-        public String ReadStringT()
+        public string ReadStringT()
         {
-            short length = ReadShort();
+            var length = ReadShort();
             if(length < 0)
                 throw new IOException("The received encoded string Bytes length is less than zero! Weird string!");
-            byte[] buffer = _reader.ReadBytes(length);
+            var buffer = _reader.ReadBytes(length);
             return Encoding.UTF8.GetString(buffer);
         }
 
@@ -143,7 +143,7 @@ namespace MoBot.Protocol
         }
         public void WriteSingle(float val)
         {
-            _writer.Write(IPAddress.HostToNetworkOrder((BitConverter.ToInt32(BitConverter.GetBytes(val), 0))));
+            _writer.Write(IPAddress.HostToNetworkOrder(BitConverter.ToInt32(BitConverter.GetBytes(val), 0)));
         }
         public double ReadDouble()
         {
@@ -184,7 +184,7 @@ namespace MoBot.Protocol
 
         public void Clear()
         {
-            Task t = _mem.FlushAsync();
+            var t = _mem.FlushAsync();
             t.Wait();
         }
         public Stream GetStream()

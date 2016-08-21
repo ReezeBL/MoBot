@@ -52,10 +52,10 @@ namespace MoBot.Structure.Windows
             this.inventorySelectMode = new System.Windows.Forms.CheckBox();
             this.inventoryGui = new MoBot.Structure.Windows.ContainerGui();
             this.blockPage = new System.Windows.Forms.TabPage();
+            this.tileEntityInfo = new System.Windows.Forms.RichTextBox();
+            this.tileEntitiesList = new System.Windows.Forms.ListBox();
             this.entityPage = new System.Windows.Forms.TabPage();
             this.entityList = new System.Windows.Forms.ListBox();
-            this.tileEntitiesList = new System.Windows.Forms.ListBox();
-            this.tileEntityInfo = new System.Windows.Forms.RichTextBox();
             this.panel2.SuspendLayout();
             this.controlPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -127,6 +127,7 @@ namespace MoBot.Structure.Windows
             this.userNames.Name = "userNames";
             this.userNames.Size = new System.Drawing.Size(135, 21);
             this.userNames.TabIndex = 8;
+            this.userNames.SelectedIndexChanged += new System.EventHandler(this.userNames_SelectedIndexChanged);
             // 
             // ConsoleOutput
             // 
@@ -281,6 +282,23 @@ namespace MoBot.Structure.Windows
             this.blockPage.Text = "Blocks";
             this.blockPage.UseVisualStyleBackColor = true;
             // 
+            // tileEntityInfo
+            // 
+            this.tileEntityInfo.Location = new System.Drawing.Point(256, 3);
+            this.tileEntityInfo.Name = "tileEntityInfo";
+            this.tileEntityInfo.ReadOnly = true;
+            this.tileEntityInfo.Size = new System.Drawing.Size(183, 394);
+            this.tileEntityInfo.TabIndex = 1;
+            this.tileEntityInfo.Text = "";
+            // 
+            // tileEntitiesList
+            // 
+            this.tileEntitiesList.FormattingEnabled = true;
+            this.tileEntitiesList.Location = new System.Drawing.Point(6, 4);
+            this.tileEntitiesList.Name = "tileEntitiesList";
+            this.tileEntitiesList.Size = new System.Drawing.Size(244, 394);
+            this.tileEntitiesList.TabIndex = 0;
+            // 
             // entityPage
             // 
             this.entityPage.Controls.Add(this.entityList);
@@ -298,23 +316,6 @@ namespace MoBot.Structure.Windows
             this.entityList.Name = "entityList";
             this.entityList.Size = new System.Drawing.Size(284, 407);
             this.entityList.TabIndex = 0;
-            // 
-            // tileEntitiesList
-            // 
-            this.tileEntitiesList.FormattingEnabled = true;
-            this.tileEntitiesList.Location = new System.Drawing.Point(6, 4);
-            this.tileEntitiesList.Name = "tileEntitiesList";
-            this.tileEntitiesList.Size = new System.Drawing.Size(244, 394);
-            this.tileEntitiesList.TabIndex = 0;
-            // 
-            // tileEntityInfo
-            // 
-            this.tileEntityInfo.Location = new System.Drawing.Point(256, 3);
-            this.tileEntityInfo.Name = "tileEntityInfo";
-            this.tileEntityInfo.ReadOnly = true;
-            this.tileEntityInfo.Size = new System.Drawing.Size(183, 394);
-            this.tileEntityInfo.TabIndex = 1;
-            this.tileEntityInfo.Text = "";
             // 
             // Viewer
             // 

@@ -7,7 +7,7 @@ using MoBot.Structure;
 
 namespace MoBot.Protocol.Threading
 {
-    class ReadingThread : BaseThread
+    internal class ReadingThread : BaseThread
     {
         private readonly object _queueLocker = new object();
         private Thread ReadThread { get; }

@@ -11,7 +11,7 @@ namespace MoBot.Protocol.Packets.Play
     {
         public int WorldId;
         public int WindowId;
-        public String WindowName;
+        public string WindowName;
         public int SlotNumber;
         public bool HasCustomInventory;
         public int EntityId;

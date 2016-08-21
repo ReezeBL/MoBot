@@ -3,7 +3,7 @@ using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Handshake
 {
-    class PacketHandshake : Packet
+    internal class PacketHandshake : Packet
     {
         public int ProtocolVersion;
         public string Hostname;

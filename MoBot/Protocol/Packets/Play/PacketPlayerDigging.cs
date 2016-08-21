@@ -3,7 +3,7 @@ using MoBot.Protocol.Handlers;
 
 namespace MoBot.Protocol.Packets.Play
 {
-    class PacketPlayerDigging : Packet
+    internal class PacketPlayerDigging : Packet
     {
         public byte Status;
         public int X;

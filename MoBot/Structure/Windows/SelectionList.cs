@@ -31,7 +31,7 @@ namespace MoBot.Structure.Windows
             }
         }
 
-        public String LabelCaption
+        public string LabelCaption
         {
             get { return caption.Text; }
             set { caption.Text = value; }

@@ -15,7 +15,7 @@ namespace MoBot.Protocol.Packets.Play
             WindowId = buff.ReadByte();
             ItemCount = buff.ReadShort();
             ItemsStack = new ItemStack[ItemCount];
-            for(int i = 0; i < ItemCount; i++)
+            for(var i = 0; i < ItemCount; i++)
             {
                 ItemsStack[i] = ReadItem(buff);
             }

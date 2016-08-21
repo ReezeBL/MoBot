@@ -38,7 +38,7 @@ namespace MoBot.Structure.Windows
         {
             get
             {
-                CreateParams cp = base.CreateParams;
+                var cp = base.CreateParams;
                 cp.ExStyle = cp.ExStyle | 0x2000000;
                 return cp;
             }
@@ -67,12 +67,12 @@ namespace MoBot.Structure.Windows
             _revButtons.Clear();
             Controls.Clear();
             if (_container == null) return;
-            for (int i = 0; i < _container.Capacity; i++)
+            for (var i = 0; i < _container.Capacity; i++)
             {
                 CreateButton(i, i%9, i/9);
             }
 
-            for (int i = 0; i < 36; i++)
+            for (var i = 0; i < 36; i++)
             {
                 CreateButton(i + _container.Capacity, i%9, i/9 + _container.Capacity/9 + 1);
             }
@@ -82,7 +82,7 @@ namespace MoBot.Structure.Windows
 
         private void CreateButton(int i, int x, int y)
         {
-            Button button = new Button
+            var button = new Button
             {
                 Size = new Size(SlotSize, SlotSize),
                 Location = new Point(DSize * x, DSize * y),
@@ -91,7 +91,7 @@ namespace MoBot.Structure.Windows
             };
             button.Click += SlotClick;
 
-            string toolTip = _container[i]?.Item?.ToString() ?? Empty;
+            var toolTip = _container[i]?.Item?.ToString() ?? Empty;
             _toolTip.SetToolTip(button, toolTip);
             button.BackColor = toolTip == Empty ? Color.Transparent : Color.LawnGreen;
 
@@ -113,7 +113,7 @@ namespace MoBot.Structure.Windows
                 var button = _revButtons[n] as Button;
                 if (button != null)
                 {
-                    string toolTip = slot?.Item?.ToString() ?? Empty;
+                    var toolTip = slot?.Item?.ToString() ?? Empty;
                     _toolTip.SetToolTip(button, toolTip);
                     button.BackColor = toolTip == Empty ? Color.Transparent : Color.LawnGreen;
                 }

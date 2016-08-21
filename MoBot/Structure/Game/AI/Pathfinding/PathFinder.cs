@@ -27,7 +27,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
             try
             {
                 Frontier.Clear();
-                Hashtable startCost = new Hashtable();
+                var startCost = new Hashtable();
                 Frontier.Enqueue(start, 0);
                 start.Prev = null;
                 startCost.Add(start, 0);
@@ -41,7 +41,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
                     }
                     foreach (var next in GetNeighbours(current))
                     {
-                        int cost = (int) startCost[current] + 1;
+                        var cost = (int) startCost[current] + 1;
                         if (!startCost.ContainsKey(next))
                         {
                             startCost.Add(next, cost);
@@ -56,7 +56,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
                         }
                     }
                 }
-                List<Location> pathfrom = new List<Location>();
+                var pathfrom = new List<Location>();
                 while (end.Prev != null)
                 {
                     pathfrom.Add(end);
@@ -106,8 +106,8 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 
         private static IEnumerable<Location> GetNeighbours(Location point)
         {
-            List<Location> candidats = new List<Location>();
-            int canJump = GameController.World.CanMoveTo(point.X, point.Y + 1, point.Z) ? 1 : 0;
+            var candidats = new List<Location>();
+            var canJump = GameController.World.CanMoveTo(point.X, point.Y + 1, point.Z) ? 1 : 0;
             candidats.Add(GetSafePoint(point.X + 1, point.Y, point.Z, canJump));
             candidats.Add(GetSafePoint(point.X - 1, point.Y, point.Z, canJump));
             candidats.Add(GetSafePoint(point.X, point.Y, point.Z + 1, canJump));
@@ -155,9 +155,9 @@ namespace MoBot.Structure.Game.AI.Pathfinding
         {
             try
             {
-                FastPriorityQueue<Location> nodes = new FastPriorityQueue<Location>(65536);
-                Hashtable cost = new Hashtable();
-                bool succeed = false;
+                var nodes = new FastPriorityQueue<Location>(65536);
+                var cost = new Hashtable();
+                var succeed = false;
 
                 nodes.Enqueue(start, 0);
                 start.Prev = null;
@@ -213,7 +213,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
                     return null;
                 }
 
-                List<Location> pathfrom = new List<Location>();
+                var pathfrom = new List<Location>();
 
                 while (end.Prev != null)
                 {
@@ -234,7 +234,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 
         public static IEnumerable<KeyValuePair<Location, float>> AdvancedNeighbours(Location root)
         {
-            Dictionary<Location, float> weightedPoints = new Dictionary<Location, float>()
+            var weightedPoints = new Dictionary<Location, float>()
             {
                 {
                     CreatePoint(root.X + 1, root.Y, root.Z),
@@ -267,7 +267,7 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 
         private static float GetBlockWeight(int x, int y, int z)
         {
-            Block block = Block.GetBlock(GameController.World.GetBlock(x, y, z));
+            var block = Block.GetBlock(GameController.World.GetBlock(x, y, z));
             if (block.Transparent)
                 return 0;
             if (block.Hardness < 0)

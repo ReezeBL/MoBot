@@ -114,6 +114,12 @@ namespace MoBot.Structure
         public void HandleConnect(string username, string serverIp, int delay = 0)
         {
             var split = serverIp.Split(':');
+            if (split.Length != 2)
+            {
+                Console.WriteLine("Invalid server string format!");
+                NetworkController.Disconnect();
+                return;
+            }
             NetworkController.ConnectAsync(split[0], int.Parse(split[1]), username, delay);
         }
     }
