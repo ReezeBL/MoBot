@@ -21,9 +21,9 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 
         public Location() { }
 
-        public double DistanceTo(Location other)
+        public float DistanceTo(Location other)
         {
-            return Math.Sqrt((X - other.X) * (X - other.X) + (Y - other.Y) * (Y - other.Y) + (Z - other.Z) * (Z - other.Z));
+            return (float)Math.Sqrt((X - other.X) * (X - other.X) + (Y - other.Y) * (Y - other.Y) + (Z - other.Z) * (Z - other.Z));
         }
         public override int GetHashCode()
         {

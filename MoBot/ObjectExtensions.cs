@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -38,5 +39,16 @@ namespace MoBot
             second = tmp;
         }
         
+    }
+
+    public static class DbCommandExtensionMethods
+    {
+        public static void AddParameter(this IDbCommand command, string name, object value = null)
+        {
+            var parameter = command.CreateParameter();
+            parameter.ParameterName = name;
+            parameter.Value = value;
+            command.Parameters.Add(parameter);
+        }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.IO.Compression;
 using System.Linq;
 using fNbt;
 using MoBot.Protocol;
@@ -11,8 +9,6 @@ using MoBot.Structure;
 using MoBot.Structure.Game;
 using MoBot.Structure.Game.AI.Pathfinding;
 using MoBot.Structure.Game.Items;
-using MoBot.Structure.Game.World;
-using Org.BouncyCastle.Cms;
 
 namespace MoBot.Scripts.Handlers
 {

@@ -1,19 +1,19 @@
-﻿using System;
-using System.CodeDom.Compiler;
-using System.Runtime.InteropServices;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Windows.Forms;
-using Microsoft.CodeDom.Providers.DotNetCompilerPlatform;
+﻿using Microsoft.CodeDom.Providers.DotNetCompilerPlatform;
 using MoBot.Scripts;
 using MoBot.Structure;
 using MoBot.Structure.Game;
 using MoBot.Structure.Game.Items;
 using MoBot.Structure.Windows;
 using NLog;
+using System;
+using System.CodeDom.Compiler;
+using System.Data.SQLite;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Windows.Forms;
 
 namespace MoBot
 {
@@ -26,11 +26,12 @@ namespace MoBot
         }
 
         [DllImport("kernel32.dll", SetLastError = true)]
-        static extern bool AllocConsole();
+        private static extern bool AllocConsole();
 
         [DllImport("kernel32.dll", SetLastError = true)]
-        static extern bool FreeConsole();
-        [STAThread]
+        private static extern bool FreeConsole();
+
+        [MTAThread]
         public static void Main()
         {
             Application.EnableVisualStyles();
@@ -44,17 +45,23 @@ namespace MoBot
             Console.WriteLine("Loading blocks...");
             Block.LoadBlocks();
 
+            using (var connection = new SQLiteConnection("Data Source=GameInfo.db3;"))
+            {
+                connection.Open();
+                Block.WriteBlocksToDb(connection);
+            }
+
             Console.WriteLine("Loading items...");
             Item.LoadItems();
 
             Console.WriteLine("Everything is done! Application is ready to launch!");
 
-            NetworkController model = NetworkController.Instance;
-            Controller controller = new Controller();
-            Viewer viewer = new Viewer { MainController = controller };
-            model.Subscribe(viewer);
+            var model = NetworkController.Instance;
+            var controller = new Controller();
+            var viewer = new Viewer { MainController = controller };
             model.Subscribe(viewer);
             FreeConsole();
+
             Application.Run(viewer);
         }
 
@@ -63,17 +70,18 @@ namespace MoBot
             try
             {
                 CodeDomProvider provider = new CSharpCodeProvider();
-                string path = Path.GetDirectoryName(Application.ExecutablePath);
+                var path = Path.GetDirectoryName(Application.ExecutablePath);
                 Debug.Assert(path != null, "Invalid path");
 
-                string[] dlls = Directory.GetFiles(path, "*.dll");
-                string[] executables = Directory.GetFiles(path, "*.exe");
+                path = Path.Combine(path, "lib");
+                var dlls = Directory.GetFiles(path, "*.dll");
+                var executables = Directory.GetFiles(path, "*.exe");
 
 
                 var scripts = Directory.GetFiles(Path.Combine(path, Settings.ScriptsPath), "*.cs",
                     SearchOption.AllDirectories);
                 {
-                    CompilerParameters parameters = new CompilerParameters
+                    var parameters = new CompilerParameters
                     {
                         GenerateExecutable = false,
                         GenerateInMemory = true,
@@ -102,7 +110,7 @@ namespace MoBot
                     }
                     else
                     {
-                        Assembly assembly = result.CompiledAssembly;
+                        var assembly = result.CompiledAssembly;
                         var methods = assembly.GetTypes()
                             .SelectMany(t => t.GetMethods())
                             .Where(m => m.GetCustomAttributes(typeof(ImportHandler.PreInit), false).Length > 0)
