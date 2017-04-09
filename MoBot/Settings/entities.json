@@ -1,0 +1,278 @@
+[
+  {
+    "id": 1,
+    "name": "Item"
+  },
+  {
+    "id": 2,
+    "name": "XPOrb"
+  },
+  {
+    "id": 3,
+    "name": "Blizz"
+  },
+  {
+    "id": 4,
+    "name": "Blitz"
+  },
+  {
+    "id": 5,
+    "name": "Basalz"
+  },
+  {
+    "id": 8,
+    "name": "LeashKnot"
+  },
+  {
+    "id": 9,
+    "name": "Painting"
+  },
+  {
+    "id": 10,
+    "name": "Arrow"
+  },
+  {
+    "id": 11,
+    "name": "Snowball"
+  },
+  {
+    "id": 12,
+    "name": "Fireball"
+  },
+  {
+    "id": 13,
+    "name": "SmallFireball"
+  },
+  {
+    "id": 14,
+    "name": "ThrownEnderpearl"
+  },
+  {
+    "id": 15,
+    "name": "EyeOfEnderSignal"
+  },
+  {
+    "id": 16,
+    "name": "ThrownPotion"
+  },
+  {
+    "id": 17,
+    "name": "ThrownExpBottle"
+  },
+  {
+    "id": 18,
+    "name": "ItemFrame"
+  },
+  {
+    "id": 19,
+    "name": "WitherSkull"
+  },
+  {
+    "id": 20,
+    "name": "PrimedTnt"
+  },
+  {
+    "id": 21,
+    "name": "FallingSand"
+  },
+  {
+    "id": 22,
+    "name": "FireworksRocketEntity"
+  },
+  {
+    "id": 40,
+    "name": "MinecartCommandBlock"
+  },
+  {
+    "id": 41,
+    "name": "Boat"
+  },
+  {
+    "id": 42,
+    "name": "MinecartRideable"
+  },
+  {
+    "id": 43,
+    "name": "MinecartChest"
+  },
+  {
+    "id": 44,
+    "name": "MinecartFurnace"
+  },
+  {
+    "id": 45,
+    "name": "MinecartTNT"
+  },
+  {
+    "id": 46,
+    "name": "MinecartHopper"
+  },
+  {
+    "id": 47,
+    "name": "MinecartSpawner"
+  },
+  {
+    "id": 48,
+    "name": "Mob"
+  },
+  {
+    "id": 49,
+    "name": "Monster"
+  },
+  {
+    "id": 50,
+    "name": "Creeper"
+  },
+  {
+    "id": 51,
+    "name": "Skeleton"
+  },
+  {
+    "id": 52,
+    "name": "Spider"
+  },
+  {
+    "id": 53,
+    "name": "Giant"
+  },
+  {
+    "id": 54,
+    "name": "Zombie"
+  },
+  {
+    "id": 55,
+    "name": "Slime"
+  },
+  {
+    "id": 56,
+    "name": "Ghast"
+  },
+  {
+    "id": 57,
+    "name": "PigZombie"
+  },
+  {
+    "id": 58,
+    "name": "Enderman"
+  },
+  {
+    "id": 59,
+    "name": "CaveSpider"
+  },
+  {
+    "id": 60,
+    "name": "Silverfish"
+  },
+  {
+    "id": 61,
+    "name": "Blaze"
+  },
+  {
+    "id": 62,
+    "name": "LavaSlime"
+  },
+  {
+    "id": 63,
+    "name": "EnderDragon"
+  },
+  {
+    "id": 64,
+    "name": "WitherBoss"
+  },
+  {
+    "id": 65,
+    "name": "Bat"
+  },
+  {
+    "id": 66,
+    "name": "Witch"
+  },
+  {
+    "id": 90,
+    "name": "Pig"
+  },
+  {
+    "id": 91,
+    "name": "Sheep"
+  },
+  {
+    "id": 92,
+    "name": "Cow"
+  },
+  {
+    "id": 93,
+    "name": "Chicken"
+  },
+  {
+    "id": 94,
+    "name": "Squid"
+  },
+  {
+    "id": 95,
+    "name": "Wolf"
+  },
+  {
+    "id": 96,
+    "name": "MushroomCow"
+  },
+  {
+    "id": 97,
+    "name": "SnowMan"
+  },
+  {
+    "id": 98,
+    "name": "Ozelot"
+  },
+  {
+    "id": 99,
+    "name": "VillagerGolem"
+  },
+  {
+    "id": 100,
+    "name": "EntityHorse"
+  },
+  {
+    "id": 120,
+    "name": "Villager"
+  },
+  {
+    "id": 200,
+    "name": "EnderCrystal"
+  },
+  {
+    "id": 256,
+    "name": "GalacticraftCore.EvolvedSpider"
+  },
+  {
+    "id": 257,
+    "name": "GalacticraftCore.EvolvedZombie"
+  },
+  {
+    "id": 258,
+    "name": "GalacticraftCore.EvolvedCreeper"
+  },
+  {
+    "id": 259,
+    "name": "GalacticraftCore.EvolvedSkeleton"
+  },
+  {
+    "id": 260,
+    "name": "GalacticraftCore.EvolvedSkeletonBoss"
+  },
+  {
+    "id": 261,
+    "name": "GalacticraftCore.AlienVillager"
+  },
+  {
+    "id": 262,
+    "name": "GalacticraftMars.Sludgeling"
+  },
+  {
+    "id": 263,
+    "name": "GalacticraftMars.Slimeling"
+  },
+  {
+    "id": 264,
+    "name": "GalacticraftMars.CreeperBoss"
+  }
+]

@@ -113,7 +113,7 @@ namespace MoBot.Structure.Game
 
         public override string ToString()
         {
-            return $"Player: {Name}, ({MathHelper.floor_float(X)} | {(int) Y} | {MathHelper.floor_float(Z)})";
+            return $"Player: {Name}, ({MathHelper.FloorFloat(X)} | {(int) Y} | {MathHelper.FloorFloat(Z)})";
         }
     }
 }

@@ -1,973 +1,1504 @@
 [
   {
-    "id": 20,
-    "name": "Стекло",
-    "rawname": "minecraft:glass",
-    "hardness": 0.3,
-    "transparent": false
+    "id": 0,
+    "rawname": "tile.air",
+    "hardness": 0.0,
+    "transparent": true
   },
   {
-    "id": 67,
-    "name": "Ступеньки из булыжника",
-    "rawname": "minecraft:stone_stairs",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 462,
-    "name": "Пчелиный улей",
-    "rawname": "Forestry:alveary",
-    "hardness": 1.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 444,
-    "name": "Анализатор",
-    "rawname": "Forestry:core",
+    "id": 1,
+    "name": "Камень",
+    "rawname": "tile.stone",
     "hardness": 1.5,
-    "transparent": false
+    "transparent": false,
+    "harvestTool": "pickaxe"
   },
   {
-    "id": 97,
-    "name": "Камень с монстрами",
-    "rawname": "minecraft:monster_egg",
-    "hardness": 0.75,
-    "transparent": false
+    "id": 2,
+    "name": "Блок травы",
+    "rawname": "tile.grass",
+    "hardness": 0.6,
+    "transparent": false,
+    "harvestTool": "shovel"
   },
   {
-    "id": 117,
-    "rawname": "minecraft:brewing_stand",
-    "hardness": 0.5,
-    "transparent": false
-  },
-  {
-    "id": 501,
-    "name": "Усиленный блок",
-    "rawname": "ForestryExtras:reinforcedBlock",
-    "hardness": 1.0,
-    "transparent": false
-  },
-  {
-    "id": 88,
-    "name": "Песок душ",
-    "rawname": "minecraft:soul_sand",
+    "id": 3,
+    "name": "Земля",
+    "rawname": "tile.dirt",
     "hardness": 0.5,
     "transparent": false,
     "harvestTool": "shovel"
   },
   {
-    "id": 504,
-    "name": "Crop Checker",
-    "rawname": "ForestryExtras:tile.fe.block.crop checker",
-    "hardness": 1.0,
-    "transparent": false
-  },
-  {
-    "id": 47,
-    "name": "Книжная полка",
-    "rawname": "minecraft:bookshelf",
-    "hardness": 1.5,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 107,
-    "name": "Калитка",
-    "rawname": "minecraft:fence_gate",
+    "id": 4,
+    "name": "Булыжник",
+    "rawname": "tile.stonebrick",
     "hardness": 2.0,
-    "transparent": false
+    "transparent": false,
+    "harvestTool": "pickaxe"
   },
   {
-    "id": 489,
-    "name": "Ступеньки из лиственницы",
-    "rawname": "Forestry:stairs",
+    "id": 5,
+    "name": "Дубовые доски",
+    "rawname": "tile.wood",
     "hardness": 2.0,
     "transparent": false,
     "harvestTool": "axe"
   },
   {
-    "id": 129,
-    "name": "Изумрудная руда",
-    "rawname": "minecraft:emerald_ore",
-    "hardness": 3.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 237,
-    "name": "Свинцовая руда",
-    "rawname": "IC2:blockOreLead",
-    "hardness": 2.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 89,
-    "name": "Светящийся камень",
-    "rawname": "minecraft:glowstone",
-    "hardness": 0.3,
-    "transparent": false
-  },
-  {
-    "id": 136,
-    "name": "Ступеньки из тропической древесины",
-    "rawname": "minecraft:jungle_stairs",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 211,
-    "name": "Изменчивые ступеньки",
-    "rawname": "appliedenergistics2:tile.FluixStairBlock",
-    "hardness": 2.2,
-    "transparent": false
-  },
-  {
-    "id": 461,
-    "name": "Потухшая свеча",
-    "rawname": "Forestry:stump",
+    "id": 6,
+    "name": "Саженец дуба",
+    "rawname": "tile.sapling",
     "hardness": 0.0,
     "transparent": true
   },
   {
-    "id": 102,
-    "name": "Стеклянная панель",
-    "rawname": "minecraft:glass_pane",
-    "hardness": 0.3,
-    "transparent": false
-  },
-  {
-    "id": 224,
-    "name": "Каркас",
-    "rawname": "BuildCraft|Factory:frameBlock",
-    "hardness": 0.5,
-    "transparent": false
-  },
-  {
-    "id": 158,
-    "name": "Выбрасыватель",
-    "rawname": "minecraft:dropper",
-    "hardness": 3.5,
-    "transparent": false
-  },
-  {
-    "id": 57,
-    "name": "Алмазный блок",
-    "rawname": "minecraft:diamond_block",
-    "hardness": 5.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 416,
-    "name": "Энергохранилище",
-    "rawname": "IC2:blockElectric",
-    "hardness": 1.5,
-    "transparent": false
-  },
-  {
-    "id": 38,
-    "name": "Мак",
-    "rawname": "minecraft:red_flower",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 226,
-    "name": "Помпа",
-    "rawname": "BuildCraft|Factory:pumpBlock",
-    "hardness": 5.0,
-    "transparent": false
-  },
-  {
-    "id": 434,
-    "name": "Жидкая материя",
-    "rawname": "IC2:fluidUuMatter",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 517,
-    "name": "Магазин (Скупка предметов)",
-    "rawname": "economy:shopBlockBought",
+    "id": 7,
+    "name": "Бедрок",
+    "rawname": "tile.bedrock",
     "hardness": -1.0,
     "transparent": false
   },
   {
-    "id": 147,
-    "name": "Утяжелённая нажимная пластина (Лёгкая)",
-    "rawname": "minecraft:light_weighted_pressure_plate",
+    "id": 8,
+    "name": "Вода",
+    "rawname": "tile.water",
+    "hardness": 100.0,
+    "transparent": true
+  },
+  {
+    "id": 9,
+    "name": "Вода",
+    "rawname": "tile.water",
+    "hardness": 100.0,
+    "transparent": true
+  },
+  {
+    "id": 10,
+    "name": "Лава",
+    "rawname": "tile.lava",
+    "hardness": 100.0,
+    "transparent": true
+  },
+  {
+    "id": 11,
+    "name": "Лава",
+    "rawname": "tile.lava",
+    "hardness": 100.0,
+    "transparent": true
+  },
+  {
+    "id": 12,
+    "name": "Песок",
+    "rawname": "tile.sand",
     "hardness": 0.5,
-    "transparent": false
-  },
-  {
-    "id": 241,
-    "name": "ic2.blockHarz",
-    "rawname": "IC2:blockHarz",
-    "hardness": 1.6,
-    "transparent": true
-  },
-  {
-    "id": 87,
-    "name": "Адский камень",
-    "rawname": "minecraft:netherrack",
-    "hardness": 0.4,
     "transparent": false,
-    "harvestTool": "pickaxe"
+    "harvestTool": "shovel"
   },
   {
-    "id": 95,
-    "name": "Белое стекло",
-    "rawname": "minecraft:stained_glass",
-    "hardness": 0.3,
-    "transparent": false
-  },
-  {
-    "id": 171,
-    "name": "Ковёр",
-    "rawname": "minecraft:carpet",
-    "hardness": 0.1,
-    "transparent": true
-  },
-  {
-    "id": 180,
-    "name": "Небесный камень",
-    "rawname": "appliedenergistics2:tile.BlockSkyStone",
-    "hardness": 50.0,
+    "id": 13,
+    "name": "Гравий",
+    "rawname": "tile.gravel",
+    "hardness": 0.6,
     "transparent": false,
-    "harvestTool": "pickaxe"
+    "harvestTool": "shovel"
   },
   {
-    "id": 199,
-    "name": "Плотная энергетическая ячейка",
-    "rawname": "appliedenergistics2:tile.BlockDenseEnergyCell",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 486,
-    "name": "Плита из гигантской секвойи",
-    "rawname": "Forestry:slabs4",
-    "hardness": 2.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 160,
-    "name": "Белая стеклянная панель",
-    "rawname": "minecraft:stained_glass_pane",
-    "hardness": 0.3,
-    "transparent": false
-  },
-  {
-    "id": 130,
-    "name": "Сундук Эндера",
-    "rawname": "minecraft:ender_chest",
-    "hardness": 22.5,
-    "transparent": false
-  },
-  {
-    "id": 488,
-    "name": "Забор из гибискуса",
-    "rawname": "Forestry:fences2",
-    "hardness": 2.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 134,
-    "name": "Еловые ступеньки",
-    "rawname": "minecraft:spruce_stairs",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 465,
-    "name": "Древесина хлопкового дерева",
-    "rawname": "Forestry:log3",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 466,
-    "name": "Древесина ивы",
-    "rawname": "Forestry:log4",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 503,
-    "name": "Legendary Block",
-    "rawname": "ForestryExtras:legendaryBlock",
-    "hardness": 1.0,
-    "transparent": false
-  },
-  {
-    "id": 157,
-    "name": "Активирующие рельсы",
-    "rawname": "minecraft:activator_rail",
-    "hardness": 0.7,
-    "transparent": true,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 423,
-    "name": "Заряжающая плита (Энергохранилище)",
-    "rawname": "IC2:blockChargepad",
-    "hardness": 1.5,
-    "transparent": false
-  },
-  {
-    "id": 467,
-    "name": "Древесина гибискуса",
-    "rawname": "Forestry:log5",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 468,
-    "name": "Древесина сосны",
-    "rawname": "Forestry:log6",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 485,
-    "name": "Плита из гибискуса",
-    "rawname": "Forestry:slabs3",
-    "hardness": 2.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 484,
-    "name": "Плита из хлопкового дерева",
-    "rawname": "Forestry:slabs2",
-    "hardness": 2.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 463,
-    "name": "Древесина лиственницы",
-    "rawname": "Forestry:log1",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 483,
-    "name": "Плита из лиственницы",
-    "rawname": "Forestry:slabs1",
-    "hardness": 2.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 464,
-    "name": "Древесина каштана",
-    "rawname": "Forestry:log2",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 227,
-    "name": "Шлюз",
-    "rawname": "BuildCraft|Factory:floodGateBlock",
-    "hardness": 5.0,
-    "transparent": false
-  },
-  {
-    "id": 410,
-    "name": "Генератор",
-    "rawname": "IC2:blockGenerator",
+    "id": 14,
+    "name": "Золотая руда",
+    "rawname": "tile.oreGold",
     "hardness": 3.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 15,
+    "name": "Железная руда",
+    "rawname": "tile.oreIron",
+    "hardness": 3.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 16,
+    "name": "Уголь",
+    "rawname": "tile.oreCoal",
+    "hardness": 3.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 17,
+    "name": "Дуб",
+    "rawname": "tile.log",
+    "hardness": 2.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 18,
+    "name": "Дубовые листья",
+    "rawname": "tile.leaves",
+    "hardness": 0.2,
     "transparent": false
   },
   {
-    "id": 493,
-    "name": "Сундук лесовода",
-    "rawname": "Forestry:arboriculture",
-    "hardness": 1.5,
+    "id": 19,
+    "name": "Губка",
+    "rawname": "tile.sponge",
+    "hardness": 0.6,
+    "transparent": false
+  },
+  {
+    "id": 20,
+    "name": "Стекло",
+    "rawname": "tile.glass",
+    "hardness": 0.3,
+    "transparent": false
+  },
+  {
+    "id": 21,
+    "name": "Лазуритовая руда",
+    "rawname": "tile.oreLapis",
+    "hardness": 3.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 22,
+    "name": "Блок лазурита",
+    "rawname": "tile.blockLapis",
+    "hardness": 3.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 23,
+    "name": "Раздатчик",
+    "rawname": "tile.dispenser",
+    "hardness": 3.5,
     "transparent": false
   },
   {
     "id": 24,
     "name": "Песчаник",
-    "rawname": "minecraft:sandstone",
+    "rawname": "tile.sandStone",
     "hardness": 0.8,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
-    "id": 120,
-    "name": "Портал в Энд",
-    "rawname": "minecraft:end_portal_frame",
-    "hardness": -1.0,
+    "id": 25,
+    "name": "Нотный блок",
+    "rawname": "tile.musicBlock",
+    "hardness": 0.8,
     "transparent": false
   },
   {
-    "id": 96,
-    "name": "Люк",
-    "rawname": "minecraft:trapdoor",
-    "hardness": 3.0,
+    "id": 26,
+    "name": "Кровать",
+    "rawname": "tile.bed",
+    "hardness": 0.2,
     "transparent": false
   },
   {
-    "id": 132,
-    "rawname": "minecraft:tripwire",
-    "hardness": 0.0,
+    "id": 27,
+    "name": "Энергорельсы",
+    "rawname": "tile.goldenRail",
+    "hardness": 0.7,
+    "transparent": true,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 28,
+    "name": "Рельсы с датчиком",
+    "rawname": "tile.detectorRail",
+    "hardness": 0.7,
+    "transparent": true,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 29,
+    "name": "Липкий поршень",
+    "rawname": "tile.pistonStickyBase",
+    "hardness": 0.5,
+    "transparent": false
+  },
+  {
+    "id": 30,
+    "name": "Паутина",
+    "rawname": "tile.web",
+    "hardness": 4.0,
     "transparent": true
   },
   {
-    "id": 469,
-    "name": "Древесина гигантской секвойи",
-    "rawname": "Forestry:log7",
+    "id": 31,
+    "name": "Куст",
+    "rawname": "tile.tallgrass",
     "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
+    "transparent": true
   },
   {
     "id": 32,
     "name": "Мертвый куст",
-    "rawname": "minecraft:deadbush",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 470,
-    "name": "Древесина зебрано",
-    "rawname": "Forestry:log8",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 109,
-    "name": "Ступеньки из каменного кирпича",
-    "rawname": "minecraft:stone_brick_stairs",
-    "hardness": 1.5,
-    "transparent": false
-  },
-  {
-    "id": 123,
-    "name": "Лампа",
-    "rawname": "minecraft:redstone_lamp",
-    "hardness": 0.3,
-    "transparent": false
-  },
-  {
-    "id": 189,
-    "name": "МЭ контроллер",
-    "rawname": "appliedenergistics2:tile.BlockController",
-    "hardness": 6.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 255,
-    "name": "Кинетический ветрогенератор",
-    "rawname": "IC2:blockKineticGenerator",
-    "hardness": 3.0,
-    "transparent": false
-  },
-  {
-    "id": 191,
-    "name": "МЭ сундук",
-    "rawname": "appliedenergistics2:tile.BlockChest",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 105,
-    "rawname": "minecraft:melon_stem",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 175,
-    "name": "Подсолнух",
-    "rawname": "minecraft:double_plant",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 163,
-    "name": "Ступеньки из древесины акации",
-    "rawname": "minecraft:acacia_stairs",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 127,
-    "name": "Какао",
-    "rawname": "minecraft:cocoa",
-    "hardness": 0.2,
-    "transparent": true
-  },
-  {
-    "id": 151,
-    "name": "Датчик дневного света",
-    "rawname": "minecraft:daylight_detector",
-    "hardness": 0.2,
-    "transparent": false
-  },
-  {
-    "id": 165,
-    "name": "Руда истинного кварца",
-    "rawname": "appliedenergistics2:tile.OreQuartz",
-    "hardness": 3.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 164,
-    "name": "Ступеньки из тёмного дуба",
-    "rawname": "minecraft:dark_oak_stairs",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 58,
-    "name": "Верстак",
-    "rawname": "minecraft:crafting_table",
-    "hardness": 2.5,
-    "transparent": false
-  },
-  {
-    "id": 84,
-    "name": "Проигрыватель",
-    "rawname": "minecraft:jukebox",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 254,
-    "name": "ic2.blockCable",
-    "rawname": "IC2:blockCable",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 446,
-    "name": "Апатитовая руда",
-    "rawname": "Forestry:resources",
-    "hardness": 3.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 137,
-    "name": "Командный блок",
-    "rawname": "minecraft:command_block",
-    "hardness": -1.0,
-    "transparent": false
-  },
-  {
-    "id": 168,
-    "name": "Колонна истинного кварца",
-    "rawname": "appliedenergistics2:tile.BlockQuartzPillar",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 149,
-    "rawname": "minecraft:unpowered_comparator",
+    "rawname": "tile.deadbush",
     "hardness": 0.0,
     "transparent": true
   },
   {
     "id": 33,
     "name": "Поршень",
-    "rawname": "minecraft:piston",
+    "rawname": "tile.pistonBase",
     "hardness": 0.5,
     "transparent": false
   },
   {
-    "id": 159,
-    "name": "Белая обожжённая глина",
-    "rawname": "minecraft:stained_hardened_clay",
-    "hardness": 1.25,
-    "transparent": false
-  },
-  {
-    "id": 184,
-    "name": "Деревянная рукоятка",
-    "rawname": "appliedenergistics2:tile.BlockCrank",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 495,
-    "name": "Разливочный механизм",
-    "rawname": "Forestry:factory",
-    "hardness": 1.5,
-    "transparent": false
-  },
-  {
-    "id": 42,
-    "name": "Железный блок",
-    "rawname": "minecraft:iron_block",
-    "hardness": 5.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 479,
-    "name": "Доски из лиственницы",
-    "rawname": "Forestry:planks",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 77,
-    "name": "Кнопка",
-    "rawname": "minecraft:stone_button",
+    "id": 34,
+    "rawname": "tile.null",
     "hardness": 0.5,
-    "transparent": true
-  },
-  {
-    "id": 37,
-    "name": "Одуванчик",
-    "rawname": "minecraft:yellow_flower",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 44,
-    "name": "Каменная плита",
-    "rawname": "minecraft:stone_slab",
-    "hardness": 2.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 66,
-    "name": "Рельсы",
-    "rawname": "minecraft:rail",
-    "hardness": 0.7,
-    "transparent": true,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 146,
-    "name": "Сундук-ловушка",
-    "rawname": "minecraft:trapped_chest",
-    "hardness": 2.5,
     "transparent": false
   },
   {
-    "id": 27,
-    "name": "Энергорельсы",
-    "rawname": "minecraft:golden_rail",
-    "hardness": 0.7,
-    "transparent": true,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 188,
-    "name": "AE2 кабель и/или шина",
-    "rawname": "appliedenergistics2:tile.BlockCableBus",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 526,
-    "name": "Мрамор",
-    "rawname": "ProjRed|Exploration:projectred.exploration.stone",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 145,
-    "name": "Наковальня",
-    "rawname": "minecraft:anvil",
-    "hardness": 5.0,
-    "transparent": false
-  },
-  {
-    "id": 502,
-    "name": "Mutated Iron Block",
-    "rawname": "ForestryExtras:mutatedIronBlock",
-    "hardness": 1.0,
-    "transparent": false
-  },
-  {
-    "id": 524,
-    "name": "tile.projectred.illumination.airousLight|0.name",
-    "rawname": "ProjRed|Illumination:projectred.illumination.airousLight",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 500,
-    "name": "Драконовский блок",
-    "rawname": "ForestryExtras:draconicBlock",
-    "hardness": 1.0,
-    "transparent": false
-  },
-  {
-    "id": 411,
-    "name": "Реакторная камера",
-    "rawname": "IC2:blockReactorChamber",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 210,
-    "name": "Ступеньки из малого кирпича небесного камня",
-    "rawname": "appliedenergistics2:tile.SkyStoneSmallBrickStairBlock",
-    "hardness": 50.0,
-    "transparent": false
-  },
-  {
-    "id": 86,
-    "name": "Тыква",
-    "rawname": "minecraft:pumpkin",
-    "hardness": 1.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 106,
-    "name": "Лоза",
-    "rawname": "minecraft:vine",
-    "hardness": 0.2,
-    "transparent": true
-  },
-  {
-    "id": 19,
-    "name": "Губка",
-    "rawname": "minecraft:sponge",
-    "hardness": 0.6,
-    "transparent": false
-  },
-  {
-    "id": 438,
-    "name": "Базальтовая лава",
-    "rawname": "IC2:fluidPahoehoeLava",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 458,
-    "name": "Пасека",
-    "rawname": "Forestry:apiculture",
-    "hardness": 1.5,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 525,
-    "name": "Рубиновая руда",
-    "rawname": "ProjRed|Exploration:projectred.exploration.ore",
-    "hardness": 3.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 505,
-    "name": "Портал Релокатора.name",
-    "rawname": "GraviSuite:BlockRelocatorPortal",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 233,
-    "name": "Сборочный стол",
-    "rawname": "BuildCraft|Silicon:laserTableBlock",
-    "hardness": 10.0,
-    "transparent": false
-  },
-  {
-    "id": 443,
-    "name": "Пар",
-    "rawname": "IC2:fluidSteam",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 25,
-    "name": "Нотный блок",
-    "rawname": "minecraft:noteblock",
+    "id": 35,
+    "name": "Шерсть",
+    "rawname": "tile.cloth",
     "hardness": 0.8,
     "transparent": false
   },
   {
     "id": 36,
-    "rawname": "minecraft:piston_extension",
+    "rawname": "tile.null",
     "hardness": -1.0,
     "transparent": false
   },
   {
-    "id": 162,
-    "name": "Древесина акации",
-    "rawname": "minecraft:log2",
-    "hardness": 2.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 244,
-    "name": "Укреплённый камень",
-    "rawname": "IC2:blockAlloy",
-    "hardness": 80.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 515,
-    "name": "Улучшенный верстак",
-    "rawname": "advancedcraft:workbench",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 59,
-    "rawname": "minecraft:wheat",
+    "id": 37,
+    "name": "Одуванчик",
+    "rawname": "tile.flower1",
     "hardness": 0.0,
     "transparent": true
   },
   {
-    "id": 155,
-    "name": "Кварцевый блок",
-    "rawname": "minecraft:quartz_block",
-    "hardness": 0.8,
+    "id": 38,
+    "name": "Мак",
+    "rawname": "tile.flower2",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 39,
+    "name": "Гриб",
+    "rawname": "tile.mushroom",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 40,
+    "name": "Гриб",
+    "rawname": "tile.mushroom",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 41,
+    "name": "Золотой блок",
+    "rawname": "tile.blockGold",
+    "hardness": 3.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 42,
+    "name": "Железный блок",
+    "rawname": "tile.blockIron",
+    "hardness": 5.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 43,
+    "name": "Каменная плита",
+    "rawname": "tile.stoneSlab",
+    "hardness": 2.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 44,
+    "name": "Каменная плита",
+    "rawname": "tile.stoneSlab",
+    "hardness": 2.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 45,
+    "name": "Кирпичи",
+    "rawname": "tile.brick",
+    "hardness": 2.0,
     "transparent": false
   },
   {
-    "id": 409,
-    "name": "Твердотельный термогенератор",
-    "rawname": "IC2:blockHeatGenerator",
+    "id": 46,
+    "name": "Динамит",
+    "rawname": "tile.tnt",
+    "hardness": 0.0,
+    "transparent": false
+  },
+  {
+    "id": 47,
+    "name": "Книжная полка",
+    "rawname": "tile.bookshelf",
+    "hardness": 1.5,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 48,
+    "name": "Замшелый булыжник",
+    "rawname": "tile.stoneMoss",
+    "hardness": 2.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 49,
+    "name": "Обсидиан",
+    "rawname": "tile.obsidian",
+    "hardness": 50.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 50,
+    "name": "Факел",
+    "rawname": "tile.torch",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 51,
+    "name": "Огонь",
+    "rawname": "tile.fire",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 52,
+    "rawname": "tile.mobSpawner",
+    "hardness": 5.0,
+    "transparent": false
+  },
+  {
+    "id": 53,
+    "name": "Дубовые ступеньки",
+    "rawname": "tile.stairsWood",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 54,
+    "name": "Сундук",
+    "rawname": "tile.chest",
+    "hardness": 2.5,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 55,
+    "name": "Красная пыль",
+    "rawname": "tile.redstoneDust",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 56,
+    "name": "Алмазная руда",
+    "rawname": "tile.oreDiamond",
     "hardness": 3.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 57,
+    "name": "Алмазный блок",
+    "rawname": "tile.blockDiamond",
+    "hardness": 5.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 58,
+    "name": "Верстак",
+    "rawname": "tile.workbench",
+    "hardness": 2.5,
+    "transparent": false
+  },
+  {
+    "id": 59,
+    "name": "Семена пшеницы",
+    "rawname": "tile.crops",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 60,
+    "name": "Земля",
+    "rawname": "tile.farmland",
+    "hardness": 0.6,
+    "transparent": false,
+    "harvestTool": "shovel"
+  },
+  {
+    "id": 61,
+    "name": "Печь",
+    "rawname": "tile.furnace",
+    "hardness": 3.5,
     "transparent": false
   },
   {
     "id": 62,
     "name": "Печь",
-    "rawname": "minecraft:lit_furnace",
+    "rawname": "tile.furnace",
     "hardness": 3.5,
     "transparent": false
   },
   {
-    "id": 104,
-    "rawname": "minecraft:pumpkin_stem",
-    "hardness": 0.0,
+    "id": 63,
+    "name": "Табличка",
+    "rawname": "tile.sign",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 64,
+    "name": "Деревянная дверь",
+    "rawname": "tile.doorWood",
+    "hardness": 3.0,
+    "transparent": false
+  },
+  {
+    "id": 65,
+    "name": "Лестница",
+    "rawname": "tile.ladder",
+    "hardness": 0.4,
     "transparent": true
   },
   {
-    "id": 197,
-    "name": "Ускоритель роста кристаллов",
-    "rawname": "appliedenergistics2:tile.BlockQuartzGrowthAccelerator",
-    "hardness": 2.2,
-    "transparent": false,
+    "id": 66,
+    "name": "Рельсы",
+    "rawname": "tile.rail",
+    "hardness": 0.7,
+    "transparent": true,
     "harvestTool": "pickaxe"
   },
   {
-    "id": 139,
-    "name": "Каменная ограда",
-    "rawname": "minecraft:cobblestone_wall",
+    "id": 67,
+    "name": "Ступеньки из булыжника",
+    "rawname": "tile.stairsStone",
     "hardness": 2.0,
     "transparent": false
   },
   {
-    "id": 209,
-    "name": "Ступеньки из кирпича небесного камня",
-    "rawname": "appliedenergistics2:tile.SkyStoneBrickStairBlock",
-    "hardness": 50.0,
+    "id": 68,
+    "name": "Табличка",
+    "rawname": "tile.sign",
+    "hardness": 1.0,
     "transparent": false
   },
   {
-    "id": 455,
-    "name": "Молоко",
-    "rawname": "Forestry:fluid.milk",
+    "id": 69,
+    "name": "Рычаг",
+    "rawname": "tile.lever",
+    "hardness": 0.5,
+    "transparent": true
+  },
+  {
+    "id": 70,
+    "name": "Нажимная плита",
+    "rawname": "tile.pressurePlate",
+    "hardness": 0.5,
+    "transparent": false
+  },
+  {
+    "id": 71,
+    "name": "Железная дверь",
+    "rawname": "tile.doorIron",
+    "hardness": 5.0,
+    "transparent": false
+  },
+  {
+    "id": 72,
+    "name": "Нажимная плита",
+    "rawname": "tile.pressurePlate",
+    "hardness": 0.5,
+    "transparent": false
+  },
+  {
+    "id": 73,
+    "name": "Красная руда",
+    "rawname": "tile.oreRedstone",
+    "hardness": 3.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 74,
+    "rawname": "tile.oreRedstone",
+    "hardness": 3.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 75,
+    "name": "Красный факел",
+    "rawname": "tile.notGate",
     "hardness": 0.0,
     "transparent": true
   },
   {
-    "id": 3,
-    "name": "Земля",
-    "rawname": "minecraft:dirt",
+    "id": 76,
+    "name": "Красный факел",
+    "rawname": "tile.notGate",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 77,
+    "name": "Кнопка",
+    "rawname": "tile.button",
+    "hardness": 0.5,
+    "transparent": true
+  },
+  {
+    "id": 78,
+    "name": "Снег",
+    "rawname": "tile.snow",
+    "hardness": 0.1,
+    "transparent": true,
+    "harvestTool": "shovel"
+  },
+  {
+    "id": 79,
+    "name": "Лёд",
+    "rawname": "tile.ice",
+    "hardness": 0.5,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 80,
+    "name": "Снег",
+    "rawname": "tile.snow",
+    "hardness": 0.2,
+    "transparent": false,
+    "harvestTool": "shovel"
+  },
+  {
+    "id": 81,
+    "name": "Кактус",
+    "rawname": "tile.cactus",
+    "hardness": 0.4,
+    "transparent": false
+  },
+  {
+    "id": 82,
+    "name": "Глина",
+    "rawname": "tile.clay",
+    "hardness": 0.6,
+    "transparent": false,
+    "harvestTool": "shovel"
+  },
+  {
+    "id": 83,
+    "name": "Сахарный тростник",
+    "rawname": "tile.reeds",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 84,
+    "name": "Проигрыватель",
+    "rawname": "tile.jukebox",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 85,
+    "name": "Забор",
+    "rawname": "tile.fence",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 86,
+    "name": "Тыква",
+    "rawname": "tile.pumpkin",
+    "hardness": 1.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 87,
+    "name": "Адский камень",
+    "rawname": "tile.hellrock",
+    "hardness": 0.4,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 88,
+    "name": "Песок душ",
+    "rawname": "tile.hellsand",
     "hardness": 0.5,
     "transparent": false,
     "harvestTool": "shovel"
   },
   {
-    "id": 496,
-    "name": "Электроламповый завод",
-    "rawname": "Forestry:factory2",
-    "hardness": 1.5,
+    "id": 89,
+    "name": "Светящийся камень",
+    "rawname": "tile.lightgem",
+    "hardness": 0.3,
     "transparent": false
   },
   {
-    "id": 498,
-    "name": "Блок фермы",
-    "rawname": "Forestry:ffarm",
+    "id": 90,
+    "rawname": "tile.portal",
+    "hardness": -1.0,
+    "transparent": true
+  },
+  {
+    "id": 91,
+    "name": "Светильник Джека",
+    "rawname": "tile.litpumpkin",
     "hardness": 1.0,
     "transparent": false,
-    "harvestTool": "pickaxe"
+    "harvestTool": "axe"
   },
   {
-    "id": 100,
-    "name": "Гриб",
-    "rawname": "minecraft:red_mushroom_block",
-    "hardness": 0.2,
+    "id": 92,
+    "name": "Торт",
+    "rawname": "tile.cake",
+    "hardness": 0.5,
     "transparent": false
   },
   {
-    "id": 453,
-    "name": "Молотый лёд",
-    "rawname": "Forestry:fluid.ice",
+    "id": 93,
+    "name": "Повторитель",
+    "rawname": "tile.diode",
     "hardness": 0.0,
     "transparent": true
   },
   {
-    "id": 108,
-    "name": "Кирпичные ступеньки",
-    "rawname": "minecraft:brick_stairs",
-    "hardness": 2.0,
+    "id": 94,
+    "name": "Повторитель",
+    "rawname": "tile.diode",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 95,
+    "name": "Белое стекло",
+    "rawname": "tile.stainedGlass",
+    "hardness": 0.3,
     "transparent": false
   },
   {
-    "id": 246,
-    "name": "Укреплённое стекло",
-    "rawname": "IC2:blockAlloyGlass",
+    "id": 96,
+    "name": "Люк",
+    "rawname": "tile.trapdoor",
+    "hardness": 3.0,
+    "transparent": false
+  },
+  {
+    "id": 97,
+    "name": "Камень с монстрами",
+    "rawname": "tile.monsterStoneEgg",
+    "hardness": 0.75,
+    "transparent": false
+  },
+  {
+    "id": 98,
+    "name": "Каменные кирпичи",
+    "rawname": "tile.stonebricksmooth",
+    "hardness": 1.5,
+    "transparent": false
+  },
+  {
+    "id": 99,
+    "name": "Гриб",
+    "rawname": "tile.mushroom",
+    "hardness": 0.2,
+    "transparent": false
+  },
+  {
+    "id": 100,
+    "name": "Гриб",
+    "rawname": "tile.mushroom",
+    "hardness": 0.2,
+    "transparent": false
+  },
+  {
+    "id": 101,
+    "name": "Железные прутья",
+    "rawname": "tile.fenceIron",
     "hardness": 5.0,
     "transparent": false
   },
   {
-    "id": 514,
-    "name": "Окаменелость",
-    "rawname": "wildcaves3:FossilBlock",
+    "id": 102,
+    "name": "Стеклянная панель",
+    "rawname": "tile.thinGlass",
+    "hardness": 0.3,
+    "transparent": false
+  },
+  {
+    "id": 103,
+    "name": "Арбуз",
+    "rawname": "tile.melon",
     "hardness": 1.0,
     "transparent": false
   },
   {
-    "id": 80,
-    "name": "Снег",
-    "rawname": "minecraft:snow",
+    "id": 104,
+    "name": "Семена тыквы",
+    "rawname": "tile.pumpkinStem",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 105,
+    "name": "Семена арбуза",
+    "rawname": "tile.pumpkinStem",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 106,
+    "name": "Лоза",
+    "rawname": "tile.vine",
     "hardness": 0.2,
+    "transparent": true
+  },
+  {
+    "id": 107,
+    "name": "Калитка",
+    "rawname": "tile.fenceGate",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 108,
+    "name": "Кирпичные ступеньки",
+    "rawname": "tile.stairsBrick",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 109,
+    "name": "Ступеньки из каменного кирпича",
+    "rawname": "tile.stairsStoneBrickSmooth",
+    "hardness": 1.5,
+    "transparent": false
+  },
+  {
+    "id": 110,
+    "name": "Мицелий",
+    "rawname": "tile.mycel",
+    "hardness": 0.6,
     "transparent": false,
     "harvestTool": "shovel"
   },
   {
+    "id": 111,
+    "name": "Кувшинка",
+    "rawname": "tile.waterlily",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 112,
+    "name": "Адские кирпичи",
+    "rawname": "tile.netherBrick",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 113,
+    "name": "Адский забор",
+    "rawname": "tile.netherFence",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 114,
+    "name": "Адские ступеньки",
+    "rawname": "tile.stairsNetherBrick",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 115,
+    "name": "Адский нарост",
+    "rawname": "tile.netherStalk",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 116,
+    "name": "Стол зачарований",
+    "rawname": "tile.enchantmentTable",
+    "hardness": 5.0,
+    "transparent": false
+  },
+  {
+    "id": 117,
+    "name": "Варочная стойка",
+    "rawname": "tile.brewingStand",
+    "hardness": 0.5,
+    "transparent": false
+  },
+  {
+    "id": 118,
+    "name": "Котёл",
+    "rawname": "tile.cauldron",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 119,
+    "rawname": "tile.null",
+    "hardness": -1.0,
+    "transparent": true
+  },
+  {
+    "id": 120,
+    "name": "Портал в Энд",
+    "rawname": "tile.endPortalFrame",
+    "hardness": -1.0,
+    "transparent": false
+  },
+  {
+    "id": 121,
+    "name": "Эндерняк",
+    "rawname": "tile.whiteStone",
+    "hardness": 3.0,
+    "transparent": false
+  },
+  {
+    "id": 122,
+    "rawname": "tile.dragonEgg",
+    "hardness": 3.0,
+    "transparent": false
+  },
+  {
+    "id": 123,
+    "name": "Лампа",
+    "rawname": "tile.redstoneLight",
+    "hardness": 0.3,
+    "transparent": false
+  },
+  {
+    "id": 124,
+    "name": "Лампа",
+    "rawname": "tile.redstoneLight",
+    "hardness": 0.3,
+    "transparent": false
+  },
+  {
+    "id": 125,
+    "name": "Дубовая плита",
+    "rawname": "tile.woodSlab",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 126,
+    "name": "Дубовая плита",
+    "rawname": "tile.woodSlab",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 127,
+    "name": "Чернильный мешок",
+    "rawname": "tile.cocoa",
+    "hardness": 0.2,
+    "transparent": true
+  },
+  {
+    "id": 128,
+    "name": "Ступеньки из песчаника",
+    "rawname": "tile.stairsSandStone",
+    "hardness": 0.8,
+    "transparent": false
+  },
+  {
+    "id": 129,
+    "name": "Изумрудная руда",
+    "rawname": "tile.oreEmerald",
+    "hardness": 3.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 130,
+    "name": "Сундук Эндера",
+    "rawname": "tile.enderChest",
+    "hardness": 22.5,
+    "transparent": false
+  },
+  {
+    "id": 131,
+    "name": "Крюк",
+    "rawname": "tile.tripWireSource",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 132,
+    "name": "Нить",
+    "rawname": "tile.tripWire",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 133,
+    "name": "Изумрудный блок",
+    "rawname": "tile.blockEmerald",
+    "hardness": 5.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 134,
+    "name": "Еловые ступеньки",
+    "rawname": "tile.stairsWoodSpruce",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 135,
+    "name": "Березовые ступеньки",
+    "rawname": "tile.stairsWoodBirch",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 136,
+    "name": "Ступеньки из тропической древесины",
+    "rawname": "tile.stairsWoodJungle",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 137,
+    "name": "Командный блок",
+    "rawname": "tile.commandBlock",
+    "hardness": -1.0,
+    "transparent": false
+  },
+  {
+    "id": 138,
+    "name": "Маяк",
+    "rawname": "tile.beacon",
+    "hardness": 3.0,
+    "transparent": false
+  },
+  {
+    "id": 139,
+    "name": "Каменная ограда",
+    "rawname": "tile.cobbleWall",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 140,
+    "rawname": "tile.flowerPot",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 141,
+    "name": "Морковь",
+    "rawname": "tile.carrots",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 142,
+    "name": "Картофель",
+    "rawname": "tile.potatoes",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 143,
+    "name": "Кнопка",
+    "rawname": "tile.button",
+    "hardness": 0.5,
+    "transparent": true
+  },
+  {
+    "id": 144,
+    "name": "Череп",
+    "rawname": "tile.skull",
+    "hardness": 1.0,
+    "transparent": true
+  },
+  {
+    "id": 145,
+    "name": "Наковальня",
+    "rawname": "tile.anvil",
+    "hardness": 5.0,
+    "transparent": false
+  },
+  {
+    "id": 146,
+    "name": "Сундук-ловушка",
+    "rawname": "tile.chestTrap",
+    "hardness": 2.5,
+    "transparent": false
+  },
+  {
+    "id": 147,
+    "name": "Утяжелённая нажимная пластина (Лёгкая)",
+    "rawname": "tile.weightedPlate_light",
+    "hardness": 0.5,
+    "transparent": false
+  },
+  {
+    "id": 148,
+    "name": "Утяжелённая нажимная пластина (Тяжёлая)",
+    "rawname": "tile.weightedPlate_heavy",
+    "hardness": 0.5,
+    "transparent": false
+  },
+  {
+    "id": 149,
+    "name": "Компаратор",
+    "rawname": "tile.comparator",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 150,
+    "name": "Компаратор",
+    "rawname": "tile.comparator",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 151,
+    "name": "Датчик дневного света",
+    "rawname": "tile.daylightDetector",
+    "hardness": 0.2,
+    "transparent": false
+  },
+  {
+    "id": 152,
+    "name": "Блок красного камня",
+    "rawname": "tile.blockRedstone",
+    "hardness": 5.0,
+    "transparent": false
+  },
+  {
+    "id": 153,
+    "name": "Кварцевая руда",
+    "rawname": "tile.netherquartz",
+    "hardness": 3.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 154,
+    "name": "Воронка",
+    "rawname": "tile.hopper",
+    "hardness": 3.0,
+    "transparent": false
+  },
+  {
+    "id": 155,
+    "name": "Кварцевый блок",
+    "rawname": "tile.quartzBlock",
+    "hardness": 0.8,
+    "transparent": false
+  },
+  {
+    "id": 156,
+    "name": "Кварцевые ступеньки",
+    "rawname": "tile.stairsQuartz",
+    "hardness": 0.8,
+    "transparent": false
+  },
+  {
+    "id": 157,
+    "name": "Активирующие рельсы",
+    "rawname": "tile.activatorRail",
+    "hardness": 0.7,
+    "transparent": true,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 158,
+    "name": "Выбрасыватель",
+    "rawname": "tile.dropper",
+    "hardness": 3.5,
+    "transparent": false
+  },
+  {
+    "id": 159,
+    "name": "Белая обожжённая глина",
+    "rawname": "tile.clayHardenedStained",
+    "hardness": 1.25,
+    "transparent": false
+  },
+  {
+    "id": 160,
+    "name": "Белая стеклянная панель",
+    "rawname": "tile.thinStainedGlass",
+    "hardness": 0.3,
+    "transparent": false
+  },
+  {
+    "id": 161,
+    "name": "Листья акации",
+    "rawname": "tile.leaves",
+    "hardness": 0.2,
+    "transparent": false
+  },
+  {
+    "id": 162,
+    "name": "Древесина акации",
+    "rawname": "tile.log",
+    "hardness": 2.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 163,
+    "name": "Ступеньки из древесины акации",
+    "rawname": "tile.stairsWoodAcacia",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 164,
+    "name": "Ступеньки из тёмного дуба",
+    "rawname": "tile.stairsWoodDarkOak",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 165,
+    "name": "Руда истинного кварца",
+    "rawname": "tile.appliedenergistics2.OreQuartz",
+    "hardness": 3.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 166,
+    "name": "Заряженная руда истинного кварца",
+    "rawname": "tile.appliedenergistics2.OreQuartzCharged",
+    "hardness": 3.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 167,
+    "name": "Блок истинного кварца",
+    "rawname": "tile.appliedenergistics2.BlockQuartz",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 168,
+    "name": "Колонна истинного кварца",
+    "rawname": "tile.appliedenergistics2.BlockQuartzPillar",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 169,
+    "name": "Резной блок истинного кварца",
+    "rawname": "tile.appliedenergistics2.BlockQuartzChiseled",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 170,
+    "name": "Сноп сена",
+    "rawname": "tile.hayBlock",
+    "hardness": 0.5,
+    "transparent": false
+  },
+  {
+    "id": 171,
+    "name": "Ковёр",
+    "rawname": "tile.woolCarpet",
+    "hardness": 0.1,
+    "transparent": true
+  },
+  {
+    "id": 172,
+    "name": "Обожжёная глина",
+    "rawname": "tile.clayHardened",
+    "hardness": 1.25,
+    "transparent": false
+  },
+  {
+    "id": 173,
+    "name": "Угольный блок",
+    "rawname": "tile.blockCoal",
+    "hardness": 5.0,
+    "transparent": false
+  },
+  {
+    "id": 174,
+    "name": "Плотный лёд",
+    "rawname": "tile.icePacked",
+    "hardness": 0.5,
+    "transparent": false
+  },
+  {
+    "id": 175,
+    "name": "Подсолнух",
+    "rawname": "tile.doublePlant",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 176,
+    "name": "Кварцевое стекло",
+    "rawname": "tile.appliedenergistics2.BlockQuartzGlass",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 177,
+    "name": "Энергичное кварцевое стекло",
+    "rawname": "tile.appliedenergistics2.BlockQuartzLamp",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 178,
+    "name": "Светильник из заряженного кварца",
+    "rawname": "tile.appliedenergistics2.BlockQuartzTorch",
+    "hardness": 2.2,
+    "transparent": true,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 179,
+    "name": "Изменчивый блок",
+    "rawname": "tile.appliedenergistics2.BlockFluix",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 180,
+    "name": "Небесный камень",
+    "rawname": "tile.appliedenergistics2.BlockSkyStone",
+    "hardness": 50.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 181,
+    "name": "Сундук из небесного камня",
+    "rawname": "tile.appliedenergistics2.BlockSkyChest",
+    "hardness": 50.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 182,
+    "name": "Метеоритный компас",
+    "rawname": "tile.appliedenergistics2.BlockSkyCompass",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 183,
+    "name": "Кварцевый дробитель",
+    "rawname": "tile.appliedenergistics2.BlockGrinder",
+    "hardness": 3.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 184,
+    "name": "Деревянная рукоятка",
+    "rawname": "tile.appliedenergistics2.BlockCrank",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 185,
+    "name": "Высекатель",
+    "rawname": "tile.appliedenergistics2.BlockInscriber",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 186,
+    "name": "Зарядник",
+    "rawname": "tile.appliedenergistics2.BlockCharger",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 187,
+    "name": "МЭ терминал безопасности",
+    "rawname": "tile.appliedenergistics2.BlockSecurity",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 188,
+    "name": "AE2 кабель и/или шина",
+    "rawname": "tile.appliedenergistics2.BlockCableBus",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 189,
+    "name": "МЭ контроллер",
+    "rawname": "tile.appliedenergistics2.BlockController",
+    "hardness": 6.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 190,
+    "name": "МЭ накопитель",
+    "rawname": "tile.appliedenergistics2.BlockDrive",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 191,
+    "name": "МЭ сундук",
+    "rawname": "tile.appliedenergistics2.BlockChest",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
     "id": 192,
     "name": "МЭ интерфейс",
-    "rawname": "appliedenergistics2:tile.BlockInterface",
+    "rawname": "tile.appliedenergistics2.BlockInterface",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 193,
+    "name": "Верстак для ячеек",
+    "rawname": "tile.appliedenergistics2.BlockCellWorkbench",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 194,
+    "name": "Конденсатор материи",
+    "rawname": "tile.appliedenergistics2.BlockCondenser",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 195,
+    "name": "Приёмщик энергии",
+    "rawname": "tile.appliedenergistics2.BlockEnergyAcceptor",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 196,
+    "name": "Вибрационная камера",
+    "rawname": "tile.appliedenergistics2.BlockVibrationChamber",
+    "hardness": 4.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 197,
+    "name": "Ускоритель роста кристаллов",
+    "rawname": "tile.appliedenergistics2.BlockQuartzGrowthAccelerator",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 198,
+    "name": "Энергетическая ячейка",
+    "rawname": "tile.appliedenergistics2.BlockEnergyCell",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 199,
+    "name": "Плотная энергетическая ячейка",
+    "rawname": "tile.appliedenergistics2.BlockDenseEnergyCell",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 200,
+    "name": "Творческая энергетическая ячейка",
+    "rawname": "tile.appliedenergistics2.BlockCreativeEnergyCell",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 201,
+    "name": "Блок создания",
+    "rawname": "tile.appliedenergistics2.BlockCraftingUnit",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 202,
+    "name": "1К хранилище создания",
+    "rawname": "tile.appliedenergistics2.BlockCraftingStorage",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 203,
+    "name": "Монитор создания",
+    "rawname": "tile.appliedenergistics2.BlockCraftingMonitor",
+    "hardness": 2.2,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 204,
+    "name": "Молекулярный сборщик",
+    "rawname": "tile.appliedenergistics2.BlockMolecularAssembler",
     "hardness": 2.2,
     "transparent": false,
     "harvestTool": "pickaxe"
@@ -975,1715 +1506,1829 @@
   {
     "id": 205,
     "name": "Светильник обнаружения света",
-    "rawname": "appliedenergistics2:tile.BlockLightDetector",
+    "rawname": "tile.appliedenergistics2.BlockLightDetector",
     "hardness": 2.2,
     "transparent": true,
     "harvestTool": "pickaxe"
-  },
-  {
-    "id": 71,
-    "rawname": "minecraft:iron_door",
-    "hardness": 5.0,
-    "transparent": false
-  },
-  {
-    "id": 218,
-    "name": "Нефть",
-    "rawname": "BuildCraft|Energy:blockOil",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 60,
-    "name": "Пашня",
-    "rawname": "minecraft:farmland",
-    "hardness": 0.6,
-    "transparent": false,
-    "harvestTool": "shovel"
-  },
-  {
-    "id": 431,
-    "name": "Личный сейф",
-    "rawname": "IC2:blockPersonal",
-    "hardness": -1.0,
-    "transparent": false
-  },
-  {
-    "id": 72,
-    "name": "Нажимная плита",
-    "rawname": "minecraft:wooden_pressure_plate",
-    "hardness": 0.5,
-    "transparent": false
-  },
-  {
-    "id": 110,
-    "name": "Мицелий",
-    "rawname": "minecraft:mycelium",
-    "hardness": 0.6,
-    "transparent": false,
-    "harvestTool": "shovel"
-  },
-  {
-    "id": 128,
-    "name": "Ступеньки из песчаника",
-    "rawname": "minecraft:sandstone_stairs",
-    "hardness": 0.8,
-    "transparent": false
-  },
-  {
-    "id": 61,
-    "name": "Печь",
-    "rawname": "minecraft:furnace",
-    "hardness": 3.5,
-    "transparent": false
-  },
-  {
-    "id": 48,
-    "name": "Замшелый булыжник",
-    "rawname": "minecraft:mossy_cobblestone",
-    "hardness": 2.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 435,
-    "name": "Строительная пена",
-    "rawname": "IC2:fluidConstructionFoam",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 112,
-    "name": "Адские кирпичи",
-    "rawname": "minecraft:nether_brick",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 156,
-    "name": "Кварцевые ступеньки",
-    "rawname": "minecraft:quartz_stairs",
-    "hardness": 0.8,
-    "transparent": false
-  },
-  {
-    "id": 442,
-    "name": "Перегретый пар",
-    "rawname": "IC2:fluidSuperheatedSteam",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 513,
-    "name": "Огнешляпка",
-    "rawname": "wildcaves3:Flora",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 41,
-    "name": "Золотой блок",
-    "rawname": "minecraft:gold_block",
-    "hardness": 3.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 9,
-    "name": "Вода",
-    "rawname": "minecraft:water",
-    "hardness": 100.0,
-    "transparent": true
-  },
-  {
-    "id": 122,
-    "name": "Яйцо дракона",
-    "rawname": "minecraft:dragon_egg",
-    "hardness": 3.0,
-    "transparent": false
-  },
-  {
-    "id": 195,
-    "name": "Приёмщик энергии",
-    "rawname": "appliedenergistics2:tile.BlockEnergyAcceptor",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 497,
-    "name": "Гриб",
-    "rawname": "Forestry:mushroom",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 507,
-    "rawname": "ForgeMultipart:block",
-    "hardness": 0.0,
-    "transparent": false
-  },
-  {
-    "id": 46,
-    "name": "Динамит",
-    "rawname": "minecraft:tnt",
-    "hardness": 0.0,
-    "transparent": false
-  },
-  {
-    "id": 64,
-    "rawname": "minecraft:wooden_door",
-    "hardness": 3.0,
-    "transparent": false
-  },
-  {
-    "id": 113,
-    "name": "Адский забор",
-    "rawname": "minecraft:nether_brick_fence",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 177,
-    "name": "Энергичное кварцевое стекло",
-    "rawname": "appliedenergistics2:tile.BlockQuartzLamp",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 114,
-    "name": "Адские ступеньки",
-    "rawname": "minecraft:nether_brick_stairs",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 185,
-    "name": "Высекатель",
-    "rawname": "appliedenergistics2:tile.BlockInscriber",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 235,
-    "name": "Оловянная руда",
-    "rawname": "IC2:blockOreTin",
-    "hardness": 3.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 251,
-    "name": "Леса",
-    "rawname": "IC2:blockScaffold",
-    "hardness": 0.5,
-    "transparent": false
-  },
-  {
-    "id": 430,
-    "name": "Буровая труба",
-    "rawname": "IC2:blockMiningTip",
-    "hardness": 6.0,
-    "transparent": false
-  },
-  {
-    "id": 69,
-    "name": "Рычаг",
-    "rawname": "minecraft:lever",
-    "hardness": 0.5,
-    "transparent": true
-  },
-  {
-    "id": 243,
-    "name": "Железный забор",
-    "rawname": "IC2:blockFenceIron",
-    "hardness": 1.5,
-    "transparent": false
-  },
-  {
-    "id": 29,
-    "name": "Липкий поршень",
-    "rawname": "minecraft:sticky_piston",
-    "hardness": 0.5,
-    "transparent": false
-  },
-  {
-    "id": 0,
-    "rawname": "minecraft:air",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 7,
-    "name": "Бедрок",
-    "rawname": "minecraft:bedrock",
-    "hardness": -1.0,
-    "transparent": false
-  },
-  {
-    "id": 194,
-    "name": "Конденсатор материи",
-    "rawname": "appliedenergistics2:tile.BlockCondenser",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 439,
-    "name": "Биомасса",
-    "rawname": "IC2:fluidBiomass",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 2,
-    "name": "Блок травы",
-    "rawname": "minecraft:grass",
-    "hardness": 0.6,
-    "transparent": false,
-    "harvestTool": "shovel"
-  },
-  {
-    "id": 144,
-    "rawname": "minecraft:skull",
-    "hardness": 1.0,
-    "transparent": true
-  },
-  {
-    "id": 90,
-    "name": "Портал",
-    "rawname": "minecraft:portal",
-    "hardness": -1.0,
-    "transparent": true
-  },
-  {
-    "id": 142,
-    "name": "Картофель",
-    "rawname": "minecraft:potatoes",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 17,
-    "name": "Дуб",
-    "rawname": "minecraft:log",
-    "hardness": 2.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 448,
-    "name": "Белое стекло",
-    "rawname": "Forestry:stained",
-    "hardness": 0.3,
-    "transparent": false
-  },
-  {
-    "id": 135,
-    "name": "Березовые ступеньки",
-    "rawname": "minecraft:birch_stairs",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 433,
-    "name": "ic2.blockBarrel",
-    "rawname": "IC2:blockBarrel",
-    "hardness": 1.0,
-    "transparent": false
-  },
-  {
-    "id": 133,
-    "name": "Изумрудный блок",
-    "rawname": "minecraft:emerald_block",
-    "hardness": 5.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 121,
-    "name": "Эндерняк",
-    "rawname": "minecraft:end_stone",
-    "hardness": 3.0,
-    "transparent": false
-  },
-  {
-    "id": 167,
-    "name": "Блок истинного кварца",
-    "rawname": "appliedenergistics2:tile.BlockQuartz",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 30,
-    "name": "Паутина",
-    "rawname": "minecraft:web",
-    "hardness": 4.0,
-    "transparent": false
-  },
-  {
-    "id": 118,
-    "rawname": "minecraft:cauldron",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 457,
-    "name": "Питный мёд",
-    "rawname": "Forestry:fluid.short.mead",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 176,
-    "name": "Кварцевое стекло",
-    "rawname": "appliedenergistics2:tile.BlockQuartzGlass",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 516,
-    "name": "Магазин (Продажа предметов)",
-    "rawname": "economy:shopBlockSell",
-    "hardness": -1.0,
-    "transparent": false
-  },
-  {
-    "id": 181,
-    "name": "Сундук из небесного камня",
-    "rawname": "appliedenergistics2:tile.BlockSkyChest",
-    "hardness": 50.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 203,
-    "name": "Монитор создания",
-    "rawname": "appliedenergistics2:tile.BlockCraftingMonitor",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 4,
-    "name": "Булыжник",
-    "rawname": "minecraft:cobblestone",
-    "hardness": 2.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 65,
-    "name": "Лестница",
-    "rawname": "minecraft:ladder",
-    "hardness": 0.4,
-    "transparent": true
-  },
-  {
-    "id": 428,
-    "name": "Электролампа «§cТолько крафт!§r»",
-    "rawname": "IC2:blockLuminator",
-    "hardness": 0.3,
-    "transparent": false
-  },
-  {
-    "id": 154,
-    "name": "Воронка",
-    "rawname": "minecraft:hopper",
-    "hardness": 3.0,
-    "transparent": false
-  },
-  {
-    "id": 250,
-    "name": "ic2.blockWall",
-    "rawname": "IC2:blockWall",
-    "hardness": 3.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 183,
-    "name": "Кварцевый дробитель",
-    "rawname": "appliedenergistics2:tile.BlockGrinder",
-    "hardness": 3.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 451,
-    "name": "Жидкое стекло",
-    "rawname": "Forestry:fluid.glass",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 93,
-    "rawname": "minecraft:unpowered_repeater",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 219,
-    "name": "Топливо",
-    "rawname": "BuildCraft|Energy:blockFuel",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 229,
-    "name": "Воронка",
-    "rawname": "BuildCraft|Factory:blockHopper",
-    "hardness": 5.0,
-    "transparent": false
-  },
-  {
-    "id": 232,
-    "name": "Лазер",
-    "rawname": "BuildCraft|Silicon:laserBlock",
-    "hardness": 10.0,
-    "transparent": false
-  },
-  {
-    "id": 471,
-    "name": "Древесина лиственницы (Огнестойкость)",
-    "rawname": "Forestry:fireproofLog1",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 212,
-    "name": "Ступеньки из истинного кварца",
-    "rawname": "appliedenergistics2:tile.QuartzStairBlock",
-    "hardness": 2.2,
-    "transparent": false
-  },
-  {
-    "id": 472,
-    "name": "Древесина каштана (Огнестойкость)",
-    "rawname": "Forestry:fireproofLog2",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 450,
-    "name": "Биомасса",
-    "rawname": "Forestry:fluid.biomass",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 475,
-    "name": "Древесина гибискуса (Огнестойкость)",
-    "rawname": "Forestry:fireproofLog5",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 476,
-    "name": "Древесина сосны (Огнестойкость)",
-    "rawname": "Forestry:fireproofLog6",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 245,
-    "name": "Базальт",
-    "rawname": "IC2:blockBasalt",
-    "hardness": 20.0,
-    "transparent": false
-  },
-  {
-    "id": 473,
-    "name": "Древесина хлопкового дерева (Огнестойкость)",
-    "rawname": "Forestry:fireproofLog3",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 166,
-    "name": "Заряженная руда истинного кварца",
-    "rawname": "appliedenergistics2:tile.OreQuartzCharged",
-    "hardness": 3.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 474,
-    "name": "Древесина ивы (Огнестойкость)",
-    "rawname": "Forestry:fireproofLog4",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 21,
-    "name": "Лазуритовая руда",
-    "rawname": "minecraft:lapis_ore",
-    "hardness": 3.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 477,
-    "name": "Древесина гигантской секвойи (Огнестойкость)",
-    "rawname": "Forestry:fireproofLog7",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 78,
-    "name": "Снег",
-    "rawname": "minecraft:snow_layer",
-    "hardness": 0.1,
-    "transparent": true,
-    "harvestTool": "shovel"
-  },
-  {
-    "id": 478,
-    "name": "Древесина зебрано (Огнестойкость)",
-    "rawname": "Forestry:fireproofLog8",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 528,
-    "name": "Отклоняющаяся лилия",
-    "rawname": "ProjRed|Exploration:projectred.exploration.lily",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 414,
-    "name": "Реакторный проводник красного сигнала",
-    "rawname": "IC2:blockReactorRedstonePort",
-    "hardness": 40.0,
-    "transparent": false
-  },
-  {
-    "id": 74,
-    "rawname": "minecraft:lit_redstone_ore",
-    "hardness": 3.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 179,
-    "name": "Изменчивый блок",
-    "rawname": "appliedenergistics2:tile.BlockFluix",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 11,
-    "name": "Лава",
-    "rawname": "minecraft:lava",
-    "hardness": -1.0,
-    "transparent": false
-  },
-  {
-    "id": 230,
-    "name": "Фильтр",
-    "rawname": "BuildCraft|Transport:filteredBufferBlock",
-    "hardness": 5.0,
-    "transparent": false
-  },
-  {
-    "id": 111,
-    "name": "Кувшинка",
-    "rawname": "minecraft:waterlily",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 413,
-    "name": "Реакторный люк",
-    "rawname": "IC2:blockReactorAccessHatch",
-    "hardness": 40.0,
-    "transparent": false
   },
   {
     "id": 206,
     "name": "tile.appliedenergistics2.BlockPaint.name",
-    "rawname": "appliedenergistics2:tile.BlockPaint",
+    "rawname": "tile.appliedenergistics2.BlockPaint",
     "hardness": 2.2,
     "transparent": true,
     "harvestTool": "pickaxe"
   },
   {
-    "id": 14,
-    "name": "Золотая руда",
-    "rawname": "minecraft:gold_ore",
-    "hardness": 3.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 511,
-    "name": "Песчаный сталактит",
-    "rawname": "wildcaves3:SandstoneSalactite",
-    "hardness": 0.8,
-    "transparent": false
-  },
-  {
-    "id": 248,
-    "name": "Укреплённая строительная пена",
-    "rawname": "IC2:blockReinforcedFoam",
-    "hardness": 0.01,
-    "transparent": false
-  },
-  {
-    "id": 445,
-    "name": "Гумус",
-    "rawname": "Forestry:soil",
-    "hardness": 0.5,
-    "transparent": false,
-    "harvestTool": "shovel"
-  },
-  {
-    "id": 143,
-    "name": "Кнопка",
-    "rawname": "minecraft:wooden_button",
-    "hardness": 0.5,
-    "transparent": true
-  },
-  {
-    "id": 252,
-    "name": "Железные леса",
-    "rawname": "IC2:blockIronScaffold",
-    "hardness": 0.8,
-    "transparent": false
-  },
-  {
-    "id": 415,
-    "name": "Реакторный корпус",
-    "rawname": "IC2:blockreactorvessel",
-    "hardness": 40.0,
-    "transparent": false
-  },
-  {
-    "id": 73,
-    "name": "Красная руда",
-    "rawname": "minecraft:redstone_ore",
-    "hardness": 3.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 487,
-    "name": "Забор из лиственницы",
-    "rawname": "Forestry:fences",
-    "hardness": 2.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 196,
-    "name": "Вибрационная камера",
-    "rawname": "appliedenergistics2:tile.BlockVibrationChamber",
-    "hardness": 4.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 161,
-    "name": "Листья акации",
-    "rawname": "minecraft:leaves2",
-    "hardness": 0.2,
-    "transparent": false
-  },
-  {
-    "id": 98,
-    "name": "Каменные кирпичи",
-    "rawname": "minecraft:stonebrick",
-    "hardness": 1.5,
-    "transparent": false
-  },
-  {
-    "id": 518,
-    "name": "Магазин (Предмет на Предмет)",
-    "rawname": "economy:shopBlockBarter",
-    "hardness": -1.0,
-    "transparent": false
-  },
-  {
-    "id": 519,
-    "name": "Экономическая руда",
-    "rawname": "economyore:economyOre",
-    "hardness": 3.0,
-    "transparent": false
-  },
-  {
-    "id": 436,
-    "name": "Хладагент",
-    "rawname": "IC2:fluidCoolant",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 221,
-    "name": "Буровая установка",
-    "rawname": "BuildCraft|Factory:miningWellBlock",
-    "hardness": 5.0,
-    "transparent": false
-  },
-  {
-    "id": 225,
-    "name": "Цистерна",
-    "rawname": "BuildCraft|Factory:tankBlock",
-    "hardness": 0.5,
-    "transparent": false
-  },
-  {
-    "id": 491,
-    "name": "Листва",
-    "rawname": "Forestry:leaves",
-    "hardness": 0.2,
-    "transparent": false
-  },
-  {
-    "id": 53,
-    "name": "Дубовые ступеньки",
-    "rawname": "minecraft:oak_stairs",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 172,
-    "name": "Обожжёная глина",
-    "rawname": "minecraft:hardened_clay",
-    "hardness": 1.25,
-    "transparent": false
-  },
-  {
-    "id": 178,
-    "name": "Светильник из заряженного кварца",
-    "rawname": "appliedenergistics2:tile.BlockQuartzTorch",
-    "hardness": 2.2,
-    "transparent": true,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 138,
-    "name": "Маяк",
-    "rawname": "minecraft:beacon",
-    "hardness": 3.0,
-    "transparent": false
-  },
-  {
-    "id": 85,
-    "name": "Забор",
-    "rawname": "minecraft:fence",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 68,
-    "rawname": "minecraft:wall_sign",
-    "hardness": 1.0,
-    "transparent": false
-  },
-  {
-    "id": 34,
-    "rawname": "minecraft:piston_head",
-    "hardness": 0.5,
-    "transparent": false
-  },
-  {
-    "id": 91,
-    "name": "Светильник Джека",
-    "rawname": "minecraft:lit_pumpkin",
-    "hardness": 1.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 126,
-    "name": "Дубовая плита",
-    "rawname": "minecraft:wooden_slab",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 521,
-    "name": "Белый светильник",
-    "rawname": "IC2NuclearControl:blockNuclearControlLight",
-    "hardness": 0.3,
-    "transparent": false
-  },
-  {
-    "id": 35,
-    "name": "Шерсть",
-    "rawname": "minecraft:wool",
-    "hardness": 0.8,
-    "transparent": false
-  },
-  {
-    "id": 223,
-    "name": "Автоматический верстак",
-    "rawname": "BuildCraft|Factory:autoWorkbenchBlock",
-    "hardness": 3.0,
-    "transparent": false
-  },
-  {
-    "id": 119,
-    "name": "tile.null.name",
-    "rawname": "minecraft:end_portal",
-    "hardness": -1.0,
-    "transparent": true
-  },
-  {
-    "id": 49,
-    "name": "Обсидиан",
-    "rawname": "minecraft:obsidian",
+    "id": 207,
+    "name": "Ступеньки из небесного камня",
+    "rawname": "tile.appliedenergistics2.SkyStoneStairBlock",
     "hardness": 50.0,
+    "transparent": false
+  },
+  {
+    "id": 208,
+    "name": "Ступеньки из блока небесного камня",
+    "rawname": "tile.appliedenergistics2.SkyStoneBlockStairBlock",
+    "hardness": 50.0,
+    "transparent": false
+  },
+  {
+    "id": 209,
+    "name": "Ступеньки из кирпича небесного камня",
+    "rawname": "tile.appliedenergistics2.SkyStoneBrickStairBlock",
+    "hardness": 50.0,
+    "transparent": false
+  },
+  {
+    "id": 210,
+    "name": "Ступеньки из малого кирпича небесного камня",
+    "rawname": "tile.appliedenergistics2.SkyStoneSmallBrickStairBlock",
+    "hardness": 50.0,
+    "transparent": false
+  },
+  {
+    "id": 211,
+    "name": "Изменчивые ступеньки",
+    "rawname": "tile.appliedenergistics2.FluixStairBlock",
+    "hardness": 2.2,
+    "transparent": false
+  },
+  {
+    "id": 212,
+    "name": "Ступеньки из истинного кварца",
+    "rawname": "tile.appliedenergistics2.QuartzStairBlock",
+    "hardness": 2.2,
+    "transparent": false
+  },
+  {
+    "id": 213,
+    "name": "Ступеньки из резного истинного кварца",
+    "rawname": "tile.appliedenergistics2.ChiseledQuartzStairBlock",
+    "hardness": 2.2,
+    "transparent": false
+  },
+  {
+    "id": 214,
+    "name": "Ступеньки из колонны истинного кварца",
+    "rawname": "tile.appliedenergistics2.QuartzPillarStairBlock",
+    "hardness": 2.2,
+    "transparent": false
+  },
+  {
+    "id": 215,
+    "name": "Медная руда",
+    "rawname": "blockOreCopper",
+    "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
-    "id": 523,
-    "name": "Белая лампа",
-    "rawname": "ProjRed|Illumination:projectred.illumination.lamp",
-    "hardness": 0.5,
-    "transparent": false
-  },
-  {
-    "id": 512,
-    "name": "Сосулька",
-    "rawname": "wildcaves3:Decorations",
-    "hardness": 0.0,
-    "transparent": false
-  },
-  {
-    "id": 242,
-    "name": "Резиновый лист",
-    "rawname": "IC2:blockRubber",
-    "hardness": 0.8,
-    "transparent": false
-  },
-  {
-    "id": 412,
-    "name": "Реакторный насос",
-    "rawname": "IC2:blockReactorFluidPort",
-    "hardness": 40.0,
-    "transparent": false
-  },
-  {
-    "id": 15,
-    "name": "Железная руда",
-    "rawname": "minecraft:iron_ore",
+    "id": 216,
+    "name": "Оловянная руда",
+    "rawname": "blockOreTin",
     "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
     "id": 217,
-    "name": "Двигатель на красном камне",
-    "rawname": "BuildCraft|Energy:engineBlock",
-    "hardness": 5.0,
-    "transparent": false
-  },
-  {
-    "id": 492,
-    "name": "Стручок",
-    "rawname": "Forestry:pods",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 94,
-    "rawname": "minecraft:powered_repeater",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 454,
-    "name": "Фруктовый сок",
-    "rawname": "Forestry:fluid.juice",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 214,
-    "name": "Ступеньки из колонны истинного кварца",
-    "rawname": "appliedenergistics2:tile.QuartzPillarStairBlock",
-    "hardness": 2.2,
-    "transparent": false
-  },
-  {
-    "id": 186,
-    "name": "Зарядник",
-    "rawname": "appliedenergistics2:tile.BlockCharger",
-    "hardness": 2.2,
+    "name": "Урановая руда",
+    "rawname": "blockOreUran",
+    "hardness": 4.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
-    "id": 460,
-    "name": "Тёмная свеча",
-    "rawname": "Forestry:candle",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 103,
-    "name": "Арбуз",
-    "rawname": "minecraft:melon_block",
-    "hardness": 1.0,
-    "transparent": false
-  },
-  {
-    "id": 490,
-    "name": "Саженец",
-    "rawname": "Forestry:saplingGE",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 456,
-    "name": "Растительное масло",
-    "rawname": "Forestry:fluid.seedoil",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 247,
-    "name": "tile.blockDoorAlloy.name",
-    "rawname": "IC2:blockDoorAlloy",
-    "hardness": 50.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 459,
-    "name": "tile.for.beehives.0.name",
-    "rawname": "Forestry:beehives",
-    "hardness": 1.0,
-    "transparent": false,
-    "harvestTool": "scoop"
-  },
-  {
-    "id": 22,
-    "name": "Блок лазурита",
-    "rawname": "minecraft:lapis_block",
-    "hardness": 3.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 207,
-    "name": "Ступеньки из небесного камня",
-    "rawname": "appliedenergistics2:tile.SkyStoneStairBlock",
-    "hardness": 50.0,
-    "transparent": false
-  },
-  {
-    "id": 216,
-    "name": "tile.buildToolBlock.name",
-    "rawname": "BuildCraft|Builders:buildToolBlock",
-    "hardness": 0.0,
-    "transparent": false
-  },
-  {
-    "id": 5,
-    "name": "Дубовые доски",
-    "rawname": "minecraft:planks",
+    "id": 218,
+    "name": "Свинцовая руда",
+    "rawname": "blockOreLead",
     "hardness": 2.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 219,
+    "name": "Древесина гевеи",
+    "rawname": "blockRubWood",
+    "hardness": 1.0,
     "transparent": false,
     "harvestTool": "axe"
   },
   {
-    "id": 201,
-    "name": "Блок создания",
-    "rawname": "appliedenergistics2:tile.BlockCraftingUnit",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 215,
-    "name": "Источник воды",
-    "rawname": "BuildCraft|Core:eternalSpring",
-    "hardness": -1.0,
-    "transparent": false
-  },
-  {
-    "id": 508,
-    "name": "Статуя",
-    "rawname": "statues:statues.statue",
-    "hardness": 1.0,
-    "transparent": false
-  },
-  {
-    "id": 40,
-    "name": "Гриб",
-    "rawname": "minecraft:red_mushroom",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 43,
-    "name": "Каменная плита",
-    "rawname": "minecraft:double_stone_slab",
-    "hardness": 2.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 115,
-    "rawname": "minecraft:nether_wart",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 124,
-    "rawname": "minecraft:lit_redstone_lamp",
-    "hardness": 0.3,
-    "transparent": false
-  },
-  {
-    "id": 152,
-    "name": "Блок красного камня",
-    "rawname": "minecraft:redstone_block",
-    "hardness": 5.0,
-    "transparent": false
-  },
-  {
-    "id": 427,
-    "name": "Электролампа «§cТолько крафт!§r»",
-    "rawname": "IC2:blockLuminatorDark",
-    "hardness": 0.3,
-    "transparent": false
-  },
-  {
-    "id": 170,
-    "name": "Сноп сена",
-    "rawname": "minecraft:hay_block",
-    "hardness": 0.5,
-    "transparent": false
-  },
-  {
-    "id": 28,
-    "name": "Рельсы с датчиком",
-    "rawname": "minecraft:detector_rail",
-    "hardness": 0.7,
-    "transparent": true,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 75,
-    "rawname": "minecraft:unlit_redstone_torch",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 131,
-    "name": "Крюк",
-    "rawname": "minecraft:tripwire_hook",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 213,
-    "name": "Ступеньки из резного истинного кварца",
-    "rawname": "appliedenergistics2:tile.ChiseledQuartzStairBlock",
-    "hardness": 2.2,
-    "transparent": false
-  },
-  {
-    "id": 31,
-    "name": "Куст",
-    "rawname": "minecraft:tallgrass",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 140,
-    "rawname": "minecraft:flower_pot",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 45,
-    "name": "Кирпичи",
-    "rawname": "minecraft:brick_block",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 150,
-    "rawname": "minecraft:powered_comparator",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
     "id": 220,
-    "name": "tile.blockRedPlasma.name",
-    "rawname": "BuildCraft|Energy:blockRedPlasma",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 499,
-    "name": "Сундук лепидоптеролога",
-    "rawname": "Forestry:lepidopterology",
-    "hardness": 1.5,
-    "transparent": false
-  },
-  {
-    "id": 153,
-    "name": "Кварцевая руда",
-    "rawname": "minecraft:quartz_ore",
-    "hardness": 3.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 101,
-    "name": "Железные прутья",
-    "rawname": "minecraft:iron_bars",
-    "hardness": 5.0,
-    "transparent": false
-  },
-  {
-    "id": 253,
-    "name": "Медный блок",
-    "rawname": "IC2:blockMetal",
-    "hardness": 4.0,
-    "transparent": false
-  },
-  {
-    "id": 81,
-    "name": "Кактус",
-    "rawname": "minecraft:cactus",
-    "hardness": 0.4,
-    "transparent": false
-  },
-  {
-    "id": 437,
-    "name": "Горячий хладагент",
-    "rawname": "IC2:fluidHotCoolant",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 234,
-    "name": "Медная руда",
-    "rawname": "IC2:blockOreCopper",
-    "hardness": 3.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 8,
-    "name": "Вода",
-    "rawname": "minecraft:flowing_water",
-    "hardness": 100.0,
-    "transparent": true
-  },
-  {
-    "id": 79,
-    "name": "Лёд",
-    "rawname": "minecraft:ice",
-    "hardness": 0.5,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 18,
-    "name": "Дубовые листья",
-    "rawname": "minecraft:leaves",
+    "name": "Листва гевеи",
+    "rawname": "tile.blockRubLeaves",
     "hardness": 0.2,
     "transparent": false
   },
   {
-    "id": 83,
-    "rawname": "minecraft:reeds",
+    "id": 221,
+    "name": "Саженец гевеи",
+    "rawname": "blockRubSapling",
     "hardness": 0.0,
     "transparent": true
   },
   {
-    "id": 425,
-    "name": "Модуль телепорта",
-    "rawname": "IC2:blockMachine2",
-    "hardness": 2.0,
+    "id": 222,
+    "name": "ic2.blockHarz",
+    "rawname": "blockHarz",
+    "hardness": 1.6,
+    "transparent": true
+  },
+  {
+    "id": 223,
+    "name": "Резиновый лист",
+    "rawname": "blockRubber",
+    "hardness": 0.8,
     "transparent": false
   },
   {
-    "id": 520,
-    "name": "Датчик температуры",
-    "rawname": "IC2NuclearControl:blockNuclearControlMain",
-    "hardness": 0.5,
+    "id": 224,
+    "name": "Железный забор",
+    "rawname": "blockFenceIron",
+    "hardness": 1.5,
     "transparent": false
   },
   {
-    "id": 426,
-    "name": "Парогенератор",
-    "rawname": "IC2:blockMachine3",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 82,
-    "name": "Глина",
-    "rawname": "minecraft:clay",
-    "hardness": 0.6,
+    "id": 225,
+    "name": "Укреплённый камень",
+    "rawname": "blockAlloy",
+    "hardness": 80.0,
     "transparent": false,
-    "harvestTool": "shovel"
+    "harvestTool": "pickaxe"
   },
   {
-    "id": 174,
-    "name": "Плотный лёд",
-    "rawname": "minecraft:packed_ice",
-    "hardness": 0.5,
+    "id": 226,
+    "name": "Базальт",
+    "rawname": "blockBasalt",
+    "hardness": 20.0,
+    "transparent": false
+  },
+  {
+    "id": 227,
+    "name": "Укреплённое стекло",
+    "rawname": "blockAlloyGlass",
+    "hardness": 5.0,
     "transparent": false
   },
   {
     "id": 228,
-    "name": "Нефтеперегонная вышка",
-    "rawname": "BuildCraft|Factory:refineryBlock",
-    "hardness": 5.0,
-    "transparent": false
-  },
-  {
-    "id": 447,
-    "name": "Апатитовый блок",
-    "rawname": "Forestry:resourceStorage",
-    "hardness": 3.0,
+    "name": "Железная дверь",
+    "rawname": "tile.blockDoorAlloy",
+    "hardness": 50.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
-    "id": 26,
-    "rawname": "minecraft:bed",
-    "hardness": 0.2,
+    "id": 229,
+    "name": "Укреплённая строительная пена",
+    "rawname": "blockReinforcedFoam",
+    "hardness": 0.01,
     "transparent": false
   },
   {
-    "id": 193,
-    "name": "Верстак для ячеек",
-    "rawname": "appliedenergistics2:tile.BlockCellWorkbench",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 449,
-    "name": "Этанол",
-    "rawname": "Forestry:fluid.bioethanol",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 6,
-    "name": "Саженец дуба",
-    "rawname": "minecraft:sapling",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 39,
-    "name": "Гриб",
-    "rawname": "minecraft:brown_mushroom",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 202,
-    "name": "1К хранилище создания",
-    "rawname": "appliedenergistics2:tile.BlockCraftingStorage",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 12,
-    "name": "Песок",
-    "rawname": "minecraft:sand",
-    "hardness": 0.5,
-    "transparent": false,
-    "harvestTool": "shovel"
-  },
-  {
-    "id": 173,
-    "name": "Угольный блок",
-    "rawname": "minecraft:coal_block",
-    "hardness": 5.0,
-    "transparent": false
-  },
-  {
-    "id": 148,
-    "name": "Утяжелённая нажимная пластина (Тяжёлая)",
-    "rawname": "minecraft:heavy_weighted_pressure_plate",
-    "hardness": 0.5,
-    "transparent": false
-  },
-  {
-    "id": 506,
-    "name": "Железный сундук",
-    "rawname": "IronChest:BlockIronChest",
-    "hardness": 3.0,
-    "transparent": false
-  },
-  {
-    "id": 116,
-    "name": "Стол зачарований",
-    "rawname": "minecraft:enchanting_table",
-    "hardness": 5.0,
-    "transparent": false
-  },
-  {
-    "id": 440,
-    "name": "Биогаз",
-    "rawname": "IC2:fluidBiogas",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 182,
-    "name": "Метеоритный компас",
-    "rawname": "appliedenergistics2:tile.BlockSkyCompass",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 239,
-    "name": "Листва гевеи",
-    "rawname": "IC2:blockRubLeaves",
-    "hardness": 0.2,
-    "transparent": false
-  },
-  {
-    "id": 204,
-    "name": "Молекулярный сборщик",
-    "rawname": "appliedenergistics2:tile.BlockMolecularAssembler",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 510,
-    "name": "Сталактит",
-    "rawname": "wildcaves3:StoneStalactite",
-    "hardness": 0.8,
-    "transparent": false
-  },
-  {
-    "id": 432,
-    "name": "Жёрдочки",
-    "rawname": "IC2:blockCrop",
-    "hardness": 0.8,
-    "transparent": true
-  },
-  {
-    "id": 13,
-    "name": "Гравий",
-    "rawname": "minecraft:gravel",
-    "hardness": 0.6,
-    "transparent": false,
-    "harvestTool": "shovel"
-  },
-  {
-    "id": 16,
-    "name": "Уголь",
-    "rawname": "minecraft:coal_ore",
-    "hardness": 3.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 222,
-    "name": "Буровая труба",
-    "rawname": "BuildCraft|Factory:plainPipeBlock",
-    "hardness": 0.0,
-    "transparent": false
-  },
-  {
-    "id": 187,
-    "name": "МЭ терминал безопасности",
-    "rawname": "appliedenergistics2:tile.BlockSecurity",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 125,
-    "name": "Дубовая плита",
-    "rawname": "minecraft:double_wooden_slab",
-    "hardness": 2.0,
-    "transparent": false
-  },
-  {
-    "id": 494,
-    "name": "Электродвигатель",
-    "rawname": "Forestry:engine",
-    "hardness": 1.5,
-    "transparent": false
-  },
-  {
-    "id": 56,
-    "name": "Алмазная руда",
-    "rawname": "minecraft:diamond_ore",
-    "hardness": 3.0,
-    "transparent": false,
-    "harvestTool": "pickaxe"
-  },
-  {
-    "id": 522,
-    "name": "ME Network Monitor",
-    "rawname": "IC2NuclearControl:networkLink",
-    "hardness": 1.0,
+    "id": 230,
+    "name": "Строительная пена",
+    "rawname": "blockFoam",
+    "hardness": 0.01,
     "transparent": false
   },
   {
     "id": 231,
-    "name": "tile.pipeBlock.name",
-    "rawname": "BuildCraft|Transport:pipeBlock",
-    "hardness": 0.25,
-    "transparent": false
-  },
-  {
-    "id": 200,
-    "name": "Творческая энергетическая ячейка",
-    "rawname": "appliedenergistics2:tile.BlockCreativeEnergyCell",
-    "hardness": 2.2,
+    "name": "ic2.blockWall",
+    "rawname": "blockWall",
+    "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
-    "id": 23,
-    "name": "Раздатчик",
-    "rawname": "minecraft:dispenser",
-    "hardness": 3.5,
+    "id": 232,
+    "name": "Леса",
+    "rawname": "blockScaffold",
+    "hardness": 0.5,
     "transparent": false
   },
   {
-    "id": 54,
-    "name": "Сундук",
-    "rawname": "minecraft:chest",
-    "hardness": 2.5,
+    "id": 233,
+    "name": "Железные леса",
+    "rawname": "blockIronScaffold",
+    "hardness": 0.8,
+    "transparent": false
+  },
+  {
+    "id": 234,
+    "name": "Медный блок",
+    "rawname": "blockMetal",
+    "hardness": 4.0,
+    "transparent": false
+  },
+  {
+    "id": 235,
+    "name": "ic2.blockCable",
+    "rawname": "blockCable",
+    "hardness": 0.0,
     "transparent": false,
     "harvestTool": "axe"
   },
   {
     "id": 236,
-    "name": "Урановая руда",
-    "rawname": "IC2:blockOreUran",
+    "name": "Кинетический ветрогенератор",
+    "rawname": "blockKineticGenerator",
+    "hardness": 3.0,
+    "transparent": false
+  },
+  {
+    "id": 237,
+    "name": "Твердотельный термогенератор",
+    "rawname": "blockHeatGenerator",
+    "hardness": 3.0,
+    "transparent": false
+  },
+  {
+    "id": 238,
+    "name": "Генератор",
+    "rawname": "blockGenerator",
+    "hardness": 3.0,
+    "transparent": false
+  },
+  {
+    "id": 239,
+    "name": "Реакторная камера",
+    "rawname": "blockReactorChamber",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 240,
+    "name": "Реакторный насос",
+    "rawname": "blockReactorFluidPort",
+    "hardness": 40.0,
+    "transparent": false
+  },
+  {
+    "id": 241,
+    "name": "Реакторный люк",
+    "rawname": "blockReactorAccessHatch",
+    "hardness": 40.0,
+    "transparent": false
+  },
+  {
+    "id": 242,
+    "name": "Реакторный проводник красного сигнала",
+    "rawname": "blockReactorRedstonePort",
+    "hardness": 40.0,
+    "transparent": false
+  },
+  {
+    "id": 243,
+    "name": "Реакторный корпус",
+    "rawname": "blockreactorvessel",
+    "hardness": 40.0,
+    "transparent": false
+  },
+  {
+    "id": 244,
+    "name": "Энергохранилище",
+    "rawname": "blockElectric",
+    "hardness": 1.5,
+    "transparent": false
+  },
+  {
+    "id": 245,
+    "name": "Заряжающая плита (Энергохранилище)",
+    "rawname": "blockChargepad",
+    "hardness": 1.5,
+    "transparent": false
+  },
+  {
+    "id": 246,
+    "name": "Основной корпус механизма",
+    "rawname": "blockMachine",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 247,
+    "name": "Модуль телепорта",
+    "rawname": "blockMachine2",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 248,
+    "name": "Парогенератор",
+    "rawname": "blockMachine3",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 249,
+    "name": "Электролампа «§cТолько крафт!§r»",
+    "rawname": "blockLuminatorDark",
+    "hardness": 0.3,
+    "transparent": false
+  },
+  {
+    "id": 250,
+    "name": "Электролампа «§cТолько крафт!§r»",
+    "rawname": "blockLuminator",
+    "hardness": 0.3,
+    "transparent": false
+  },
+  {
+    "id": 251,
+    "name": "Буровая труба",
+    "rawname": "blockMiningPipe",
+    "hardness": 6.0,
+    "transparent": false
+  },
+  {
+    "id": 252,
+    "name": "Буровая труба",
+    "rawname": "blockMiningTip",
+    "hardness": 6.0,
+    "transparent": false
+  },
+  {
+    "id": 253,
+    "name": "Личный сейф",
+    "rawname": "blockPersonal",
+    "hardness": -1.0,
+    "transparent": false
+  },
+  {
+    "id": 254,
+    "name": "Жёрдочки",
+    "rawname": "blockCrop",
+    "hardness": 0.8,
+    "transparent": true
+  },
+  {
+    "id": 255,
+    "name": "ic2.blockBarrel",
+    "rawname": "blockBarrel",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 409,
+    "name": "Жидкая материя",
+    "rawname": "fluidUuMatter",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 410,
+    "name": "Строительная пена",
+    "rawname": "fluidConstructionFoam",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 411,
+    "name": "Хладагент",
+    "rawname": "fluidCoolant",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 412,
+    "name": "Горячий хладагент",
+    "rawname": "fluidHotCoolant",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 413,
+    "name": "Базальтовая лава",
+    "rawname": "fluidPahoehoeLava",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 414,
+    "name": "Биомасса",
+    "rawname": "fluidBiomass",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 415,
+    "name": "Биогаз",
+    "rawname": "fluidBiogas",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 416,
+    "name": "Дистиллированная вода",
+    "rawname": "fluidDistilledWater",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 423,
+    "name": "Перегретый пар",
+    "rawname": "fluidSuperheatedSteam",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 424,
+    "name": "Пар",
+    "rawname": "fluidSteam",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 425,
+    "name": "Анализатор",
+    "rawname": "tile.for.core",
+    "hardness": 1.5,
+    "transparent": false
+  },
+  {
+    "id": 426,
+    "name": "Гумус",
+    "rawname": "tile.for.soil",
+    "hardness": 0.5,
+    "transparent": false,
+    "harvestTool": "shovel"
+  },
+  {
+    "id": 427,
+    "name": "Апатитовая руда",
+    "rawname": "tile.for.resources",
+    "hardness": 3.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 428,
+    "name": "Апатитовый блок",
+    "rawname": "tile.for.resourceStorage",
+    "hardness": 3.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 429,
+    "name": "Белое стекло",
+    "rawname": "tile.for.stained",
+    "hardness": 0.3,
+    "transparent": false
+  },
+  {
+    "id": 430,
+    "name": "Этанол",
+    "rawname": "tile.forestry.fluid.bioethanol",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 431,
+    "name": "Биомасса",
+    "rawname": "tile.forestry.fluid.biomass",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 432,
+    "name": "Жидкое стекло",
+    "rawname": "tile.forestry.fluid.glass",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 433,
+    "name": "Мёд",
+    "rawname": "tile.forestry.fluid.for.honey",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 434,
+    "name": "Молотый лёд",
+    "rawname": "tile.forestry.fluid.ice",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 435,
+    "name": "Фруктовый сок",
+    "rawname": "tile.forestry.fluid.juice",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 436,
+    "name": "Молоко",
+    "rawname": "tile.forestry.fluid.milk",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 437,
+    "name": "Растительное масло",
+    "rawname": "tile.forestry.fluid.seedoil",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 438,
+    "name": "Питный мёд",
+    "rawname": "tile.forestry.fluid.short.mead",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 439,
+    "name": "Пасека",
+    "rawname": "tile.for.apiculture",
+    "hardness": 1.5,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 440,
+    "name": "tile.for.beehives.0.name",
+    "rawname": "tile.for.beehives",
+    "hardness": 1.0,
+    "transparent": false,
+    "harvestTool": "scoop"
+  },
+  {
+    "id": 441,
+    "name": "Тёмная свеча",
+    "rawname": "tile.for.candle",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 442,
+    "name": "Потухшая свеча",
+    "rawname": "tile.for.stump",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 443,
+    "name": "Пчелиный улей",
+    "rawname": "tile.for.alveary",
+    "hardness": 1.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 444,
+    "name": "Древесина лиственницы",
+    "rawname": "tile.for.log1",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 445,
+    "name": "Древесина каштана",
+    "rawname": "tile.for.log2",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 446,
+    "name": "Древесина хлопкового дерева",
+    "rawname": "tile.for.log3",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 447,
+    "name": "Древесина ивы",
+    "rawname": "tile.for.log4",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 448,
+    "name": "Древесина гибискуса",
+    "rawname": "tile.for.log5",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 449,
+    "name": "Древесина сосны",
+    "rawname": "tile.for.log6",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 450,
+    "name": "Древесина гигантской секвойи",
+    "rawname": "tile.for.log7",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 451,
+    "name": "Древесина зебрано",
+    "rawname": "tile.for.log8",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 452,
+    "name": "Древесина лиственницы (Огнестойкость)",
+    "rawname": "tile.for.fireproofLog1",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 453,
+    "name": "Древесина каштана (Огнестойкость)",
+    "rawname": "tile.for.fireproofLog2",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 454,
+    "name": "Древесина хлопкового дерева (Огнестойкость)",
+    "rawname": "tile.for.fireproofLog3",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 455,
+    "name": "Древесина ивы (Огнестойкость)",
+    "rawname": "tile.for.fireproofLog4",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 456,
+    "name": "Древесина гибискуса (Огнестойкость)",
+    "rawname": "tile.for.fireproofLog5",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 457,
+    "name": "Древесина сосны (Огнестойкость)",
+    "rawname": "tile.for.fireproofLog6",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 458,
+    "name": "Древесина гигантской секвойи (Огнестойкость)",
+    "rawname": "tile.for.fireproofLog7",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 459,
+    "name": "Древесина зебрано (Огнестойкость)",
+    "rawname": "tile.for.fireproofLog8",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 460,
+    "name": "Доски из лиственницы",
+    "rawname": "tile.for.planks",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 461,
+    "name": "Доски из гибискуса",
+    "rawname": "tile.for.planks2",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 462,
+    "name": "Доски из лиственницы (Огнестойкость)",
+    "rawname": "tile.for.fireproofPlanks1",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 463,
+    "name": "Доски из гибискуса (Огнестойкость)",
+    "rawname": "tile.for.fireproofPlanks2",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 464,
+    "name": "Плита из лиственницы",
+    "rawname": "tile.for.slabs1",
+    "hardness": 2.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 465,
+    "name": "Плита из хлопкового дерева",
+    "rawname": "tile.for.slabs2",
+    "hardness": 2.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 466,
+    "name": "Плита из гибискуса",
+    "rawname": "tile.for.slabs3",
+    "hardness": 2.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 467,
+    "name": "Плита из гигантской секвойи",
+    "rawname": "tile.for.slabs4",
+    "hardness": 2.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 468,
+    "name": "Забор из лиственницы",
+    "rawname": "tile.for.fences",
+    "hardness": 2.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 469,
+    "name": "Забор из гибискуса",
+    "rawname": "tile.for.fences2",
+    "hardness": 2.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 470,
+    "name": "Ступеньки из лиственницы",
+    "rawname": "tile.for.stairs",
+    "hardness": 2.0,
+    "transparent": false,
+    "harvestTool": "axe"
+  },
+  {
+    "id": 471,
+    "name": "Саженец",
+    "rawname": "tile.for.saplingGE",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 472,
+    "name": "Листва",
+    "rawname": "tile.for.leaves",
+    "hardness": 0.2,
+    "transparent": false
+  },
+  {
+    "id": 473,
+    "name": "Чернильный мешок",
+    "rawname": "tile.for.pods",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 474,
+    "name": "Сундук лесовода",
+    "rawname": "tile.for.arboriculture",
+    "hardness": 1.5,
+    "transparent": false
+  },
+  {
+    "id": 475,
+    "name": "Электродвигатель",
+    "rawname": "tile.for.engine",
+    "hardness": 1.5,
+    "transparent": false
+  },
+  {
+    "id": 476,
+    "name": "Разливочный механизм",
+    "rawname": "tile.for.factory",
+    "hardness": 1.5,
+    "transparent": false
+  },
+  {
+    "id": 477,
+    "name": "Электроламповый завод",
+    "rawname": "tile.for.factory2",
+    "hardness": 1.5,
+    "transparent": false
+  },
+  {
+    "id": 478,
+    "name": "Гриб",
+    "rawname": "tile.for.mushroom",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 479,
+    "name": "Блок фермы",
+    "rawname": "tile.for.ffarm",
+    "hardness": 1.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 480,
+    "name": "Сундук лепидоптеролога",
+    "rawname": "tile.for.lepidopterology",
+    "hardness": 1.5,
+    "transparent": false
+  },
+  {
+    "id": 481,
+    "name": "Драконовский блок",
+    "rawname": "tile.fe.block.draconicBlock",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 482,
+    "name": "Усиленный блок",
+    "rawname": "tile.fe.block.reinforcedBlock",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 483,
+    "name": "Mutated Iron Block",
+    "rawname": "tile.fe.block.mutatedIronBlock",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 484,
+    "name": "Legendary Block",
+    "rawname": "tile.fe.block.legendaryBlock",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 485,
+    "name": "Crop Checker",
+    "rawname": "tile.fe.block.crop checker",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 486,
+    "name": "Неочищенная нефть",
+    "rawname": "tile.crudeOilStill",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 487,
+    "name": "Топливо",
+    "rawname": "tile.fuel",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 488,
+    "name": "Взлётная площадка",
+    "rawname": "tile.landingPad",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 489,
+    "name": "Взлётная площадка",
+    "rawname": "tile.landingPadFull",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 490,
+    "name": "Факел",
+    "rawname": "tile.unlitTorch",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 491,
+    "name": "Факел",
+    "rawname": "tile.unlitTorchLit",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 492,
+    "name": "tile.breatheableAir.name",
+    "rawname": "tile.breatheableAir",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 493,
+    "name": "tile.brightAir.name",
+    "rawname": "tile.brightAir",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 494,
+    "name": "tile.brightBreathableAir.name",
+    "rawname": "tile.brightBreathableAir",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 495,
+    "name": "Кислородный сборщик",
+    "rawname": "tile.oxygenCollector",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 496,
+    "name": "Кислородный компрессор",
+    "rawname": "tile.oxygenCompressor",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 497,
+    "name": "Распределитель кислородных пузырей",
+    "rawname": "tile.distributor",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 498,
+    "name": "Уплотнитель кислорода",
+    "rawname": "tile.sealer",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 499,
+    "name": "Кислородный датчик",
+    "rawname": "tile.oxygenDetector",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 500,
+    "name": "Кислородная труба",
+    "rawname": "tile.oxygenPipe",
+    "hardness": 0.3,
+    "transparent": false
+  },
+  {
+    "id": 501,
+    "name": "Очистительный завод",
+    "rawname": "tile.refinery",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 502,
+    "name": "Загрузчик топлива",
+    "rawname": "tile.fuelLoader",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 503,
+    "name": "Грузовой загрузчик",
+    "rawname": "tile.cargo",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 504,
+    "name": "Верстак NASA",
+    "rawname": "tile.rocketWorkbench",
+    "hardness": 2.5,
+    "transparent": false
+  },
+  {
+    "id": 505,
+    "name": "tile.gcBlockCore.null.name",
+    "rawname": "tile.gcBlockCore",
+    "hardness": 0.0,
+    "transparent": false
+  },
+  {
+    "id": 506,
+    "name": "Каркас воздушного шлюза",
+    "rawname": "tile.airLockFrame",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 507,
+    "rawname": "tile.airLockSeal",
+    "hardness": 1000.0,
+    "transparent": false
+  },
+  {
+    "id": 508,
+    "name": "tile.enclosed.null.name",
+    "rawname": "tile.enclosed",
+    "hardness": 0.4,
+    "transparent": false
+  },
+  {
+    "id": 509,
+    "name": "Основание космической станции",
+    "rawname": "tile.spaceStationBase",
+    "hardness": -1.0,
+    "transparent": false
+  },
+  {
+    "id": 510,
+    "name": "tile.dummyblock.null.name",
+    "rawname": "tile.dummyblock",
+    "hardness": 0.0,
+    "transparent": false
+  },
+  {
+    "id": 511,
+    "name": "Сундук с парашютом",
+    "rawname": "tile.parachest",
+    "hardness": 3.0,
+    "transparent": false
+  },
+  {
+    "id": 512,
+    "name": "Основная солнечная панель",
+    "rawname": "tile.solar",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 513,
+    "name": "Коммуникационная тарелка",
+    "rawname": "tile.dish",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 514,
+    "name": "Угольный генератор",
+    "rawname": "tile.machine",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 515,
+    "name": "Электрический компрессор",
+    "rawname": "tile.machine2",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 516,
+    "name": "Модуль «Хранилище энергии»",
+    "rawname": "tile.machineTiered",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 517,
+    "name": "Алюминиевый провод",
+    "rawname": "tile.aluminumWire",
+    "hardness": 0.075,
+    "transparent": false
+  },
+  {
+    "id": 518,
+    "name": "Факел из светящегося камня",
+    "rawname": "tile.glowstoneTorch",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 519,
+    "name": "Упавший метеорит",
+    "rawname": "tile.fallenMeteor",
+    "hardness": 50.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 520,
+    "name": "Медная руда",
+    "rawname": "tile.moonBlock",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 521,
+    "name": "Блок сыра",
+    "rawname": "tile.cheeseBlock",
+    "hardness": 0.5,
+    "transparent": false
+  },
+  {
+    "id": 522,
+    "name": "Вращающий двигатель",
+    "rawname": "tile.spinThruster",
+    "hardness": 0.1,
+    "transparent": true
+  },
+  {
+    "id": 523,
+    "name": "Экран отображения",
+    "rawname": "tile.viewScreen",
+    "hardness": 0.1,
+    "transparent": true
+  },
+  {
+    "id": 524,
+    "name": "Телеметрический блок",
+    "rawname": "tile.telemetry",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 525,
+    "name": "Дуговая лампа",
+    "rawname": "tile.arclamp",
+    "hardness": 0.1,
+    "transparent": false
+  },
+  {
+    "id": 526,
+    "name": "Сундук с сокровищами",
+    "rawname": "tile.treasureChest",
+    "hardness": -1.0,
+    "transparent": false
+  },
+  {
+    "id": 527,
+    "name": "Оловянные ступеньки",
+    "rawname": "tile.tinStairs1",
+    "hardness": 2.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 528,
+    "name": "Оловянные ступеньки",
+    "rawname": "tile.tinStairs2",
+    "hardness": 2.0,
+    "transparent": false
+  },
+  {
+    "id": 529,
+    "name": "Ступеньки из лунного камня",
+    "rawname": "tile.moonStoneStairs",
+    "hardness": 1.5,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 530,
+    "name": "Ступеньки из кирпича лунной сокровищницы",
+    "rawname": "tile.moonBricksStairs",
     "hardness": 4.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
-    "id": 509,
-    "name": "tile.statues.showcase.name",
-    "rawname": "statues:statues.showcase",
-    "hardness": 1.0,
-    "transparent": false
-  },
-  {
-    "id": 50,
-    "name": "Факел",
-    "rawname": "minecraft:torch",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 1,
-    "name": "Камень",
-    "rawname": "minecraft:stone",
+    "id": 531,
+    "name": "Оловянная стена",
+    "rawname": "tile.wallGC",
     "hardness": 1.5,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
-    "id": 10,
-    "name": "Лава",
-    "rawname": "minecraft:flowing_lava",
+    "id": 532,
+    "name": "Каменная плита",
+    "rawname": "tile.slabGCHalf",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 533,
+    "name": "Каменная плита",
+    "rawname": "tile.slabGCDouble",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 534,
+    "name": "Сундук с сокровищами 2-го уровня",
+    "rawname": "tile.treasureT2",
     "hardness": -1.0,
     "transparent": false
   },
   {
-    "id": 190,
-    "name": "МЭ накопитель",
-    "rawname": "appliedenergistics2:tile.BlockDrive",
-    "hardness": 2.2,
+    "id": 535,
+    "name": "Сундук с сокровищами 3-го уровня",
+    "rawname": "tile.treasureT3",
+    "hardness": -1.0,
+    "transparent": false
+  },
+  {
+    "id": 536,
+    "name": "Астероидный камень",
+    "rawname": "tile.asteroidsBlock",
+    "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
-    "id": 452,
-    "name": "Мёд",
-    "rawname": "Forestry:fluid.honey",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 76,
-    "name": "Красный факел",
-    "rawname": "minecraft:redstone_torch",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 240,
-    "name": "Саженец гевеи",
-    "rawname": "IC2:blockRubSapling",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 52,
-    "name": "Рассадник монстров",
-    "rawname": "minecraft:mob_spawner",
-    "hardness": 5.0,
+    "id": 537,
+    "name": "Дорожка",
+    "rawname": "tile.walkway",
+    "hardness": 1.0,
     "transparent": false
   },
   {
-    "id": 249,
-    "name": "Строительная пена",
-    "rawname": "IC2:blockFoam",
-    "hardness": 0.01,
+    "id": 538,
+    "name": "Дорожка",
+    "rawname": "tile.walkwayWire",
+    "hardness": 1.0,
     "transparent": false
   },
   {
-    "id": 424,
-    "name": "Основной корпус механизма",
-    "rawname": "IC2:blockMachine",
+    "id": 539,
+    "name": "Дорожка",
+    "rawname": "tile.walkwayOxygenPipe",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 540,
+    "name": "Лучевой отражатель энергии",
+    "rawname": "tile.beamReflector",
+    "hardness": 0.6,
+    "transparent": false
+  },
+  {
+    "id": 541,
+    "name": "Лучевой приёмник энергии",
+    "rawname": "tile.beamReceiver",
+    "hardness": 0.6,
+    "transparent": false
+  },
+  {
+    "id": 542,
+    "name": "Короткодистанционный телепорт",
+    "rawname": "tile.telepadShort",
+    "hardness": 3.0,
+    "transparent": false
+  },
+  {
+    "id": 543,
+    "name": "tile.telepadFake.name",
+    "rawname": "tile.telepadFake",
+    "hardness": 0.0,
+    "transparent": false
+  },
+  {
+    "id": 544,
+    "name": "Плотный лёд",
+    "rawname": "tile.denseIce",
+    "hardness": 0.5,
+    "transparent": false
+  },
+  {
+    "id": 545,
+    "name": "Основание астрономического шахтёра",
+    "rawname": "tile.minerBase",
+    "hardness": 3.0,
+    "transparent": false
+  },
+  {
+    "id": 546,
+    "name": "tile.minerBaseFull.name",
+    "rawname": "tile.minerBaseFull",
+    "hardness": 3.0,
+    "transparent": false
+  },
+  {
+    "id": 547,
+    "name": "Бактериальный осадок",
+    "rawname": "tile.sludge",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 548,
+    "name": "Медная руда",
+    "rawname": "tile.mars",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 549,
+    "name": "Пещерные лианы",
+    "rawname": "tile.cavernVines",
+    "hardness": 0.1,
+    "transparent": true
+  },
+  {
+    "id": 550,
+    "name": "Красное яйцо слаймлинга",
+    "rawname": "tile.slimelingEgg",
+    "hardness": 0.75,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 551,
+    "name": "Яйцо крипера",
+    "rawname": "tile.creeperEgg",
+    "hardness": -1.0,
+    "transparent": false
+  },
+  {
+    "id": 552,
+    "name": "Терраформер",
+    "rawname": "tile.marsMachine",
+    "hardness": 1.8,
+    "transparent": false
+  },
+  {
+    "id": 553,
+    "name": "Сжижитель газа",
+    "rawname": "tile.marsMachineT2",
+    "hardness": 1.8,
+    "transparent": false
+  },
+  {
+    "id": 554,
+    "name": "Ступеньки из марсианского булыжника",
+    "rawname": "tile.marsCobblestoneStairs",
+    "hardness": 1.5,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 555,
+    "name": "Ступеньки из кирпича марсианской сокровищницы",
+    "rawname": "tile.marsDungeonBricksStairs",
+    "hardness": 4.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 556,
+    "name": "Труба для водорода",
+    "rawname": "tile.hydrogenPipe",
+    "hardness": 0.3,
+    "transparent": false
+  },
+  {
+    "id": 557,
+    "name": "Портал Релокатора.name",
+    "rawname": "tile.null",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 558,
+    "name": "Железный сундук",
+    "rawname": "tile.IronChest",
+    "hardness": 3.0,
+    "transparent": false
+  },
+  {
+    "id": 559,
+    "rawname": "tile.multipart",
+    "hardness": 0.0,
+    "transparent": false
+  },
+  {
+    "id": 560,
+    "name": "Статуя",
+    "rawname": "tile.statues.statue",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 561,
+    "name": "tile.statues.showcase.name",
+    "rawname": "tile.statues.showcase",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 562,
+    "name": "Медная руда",
+    "rawname": "tile.thermalfoundation.ore",
+    "hardness": 3.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 563,
+    "name": "Медный блок",
+    "rawname": "tile.thermalfoundation.storage",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 564,
+    "name": "Дестабилизированный красный камень",
+    "rawname": "tile.thermalfoundation.fluid.redstone",
+    "hardness": 100.0,
+    "transparent": true
+  },
+  {
+    "id": 565,
+    "name": "Заряженный светящийся камень",
+    "rawname": "tile.thermalfoundation.fluid.glowstone",
+    "hardness": 1.0,
+    "transparent": true
+  },
+  {
+    "id": 566,
+    "name": "Резонирующий эндериум",
+    "rawname": "tile.thermalfoundation.fluid.ender",
+    "hardness": 2000.0,
+    "transparent": true
+  },
+  {
+    "id": 567,
+    "name": "Пылающий пиротеум",
+    "rawname": "tile.thermalfoundation.fluid.pyrotheum",
+    "hardness": 1000.0,
+    "transparent": true
+  },
+  {
+    "id": 568,
+    "name": "Ледяной криотеум",
+    "rawname": "tile.thermalfoundation.fluid.cryotheum",
+    "hardness": 1000.0,
+    "transparent": true
+  },
+  {
+    "id": 569,
+    "name": "Невесомый аэротеум",
+    "rawname": "tile.thermalfoundation.fluid.aerotheum",
+    "hardness": 1.0,
+    "transparent": true
+  },
+  {
+    "id": 570,
+    "name": "Тектонический петротеум",
+    "rawname": "tile.thermalfoundation.fluid.petrotheum",
+    "hardness": 1000.0,
+    "transparent": true
+  },
+  {
+    "id": 571,
+    "name": "Изначальная мана",
+    "rawname": "tile.thermalfoundation.fluid.mana",
+    "hardness": 2000.0,
+    "transparent": true
+  },
+  {
+    "id": 572,
+    "name": "Пар",
+    "rawname": "tile.thermalfoundation.fluid.steam",
+    "hardness": 1.0,
+    "transparent": true
+  },
+  {
+    "id": 573,
+    "name": "Разжиженный уголь",
+    "rawname": "tile.thermalfoundation.fluid.coal",
+    "hardness": 100.0,
+    "transparent": true
+  },
+  {
+    "id": 574,
+    "name": "Свинцовая флаксовая труба",
+    "rawname": "tile.thermaldynamics.duct",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 575,
+    "name": "Основная жидкостная труба",
+    "rawname": "tile.thermaldynamics.duct",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 576,
+    "name": "Предметная труба",
+    "rawname": "tile.thermaldynamics.duct",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 577,
+    "name": "Структурная труба (Непрозрачная)",
+    "rawname": "tile.thermaldynamics.duct",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 578,
+    "name": "Виадук",
+    "rawname": "tile.thermaldynamics.duct",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 579,
+    "name": "Сталактит",
+    "rawname": "tile.stoneStalactiteBlock",
+    "hardness": 0.8,
+    "transparent": false
+  },
+  {
+    "id": 580,
+    "name": "Песчаный сталактит",
+    "rawname": "tile.sandstoneStalactiteBlock",
+    "hardness": 0.8,
+    "transparent": false
+  },
+  {
+    "id": 581,
+    "name": "Сосулька",
+    "rawname": "tile.decorationsBlock",
+    "hardness": 0.0,
+    "transparent": false
+  },
+  {
+    "id": 582,
+    "name": "Огнешляпка",
+    "rawname": "tile.floraBlock",
+    "hardness": 0.0,
+    "transparent": true
+  },
+  {
+    "id": 583,
+    "name": "Окаменелость",
+    "rawname": "tile.fossilsBlock",
+    "hardness": 1.0,
+    "transparent": false
+  },
+  {
+    "id": 584,
+    "name": "Улучшенный верстак",
+    "rawname": "tile.advancedWorkBench",
     "hardness": 2.0,
     "transparent": false
   },
   {
-    "id": 141,
-    "name": "Морковь",
-    "rawname": "minecraft:carrots",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 208,
-    "name": "Ступеньки из блока небесного камня",
-    "rawname": "appliedenergistics2:tile.SkyStoneBlockStairBlock",
-    "hardness": 50.0,
+    "id": 585,
+    "name": "Магазин (Продажа предметов)",
+    "rawname": "tile.shopBlock",
+    "hardness": -1.0,
     "transparent": false
   },
   {
-    "id": 55,
-    "rawname": "minecraft:redstone_wire",
-    "hardness": 0.0,
-    "transparent": true
-  },
-  {
-    "id": 99,
-    "name": "Гриб",
-    "rawname": "minecraft:brown_mushroom_block",
-    "hardness": 0.2,
+    "id": 586,
+    "name": "Магазин (Скупка предметов)",
+    "rawname": "tile.shopBlockBought",
+    "hardness": -1.0,
     "transparent": false
   },
   {
-    "id": 238,
-    "name": "Древесина гевеи",
-    "rawname": "IC2:blockRubWood",
-    "hardness": 1.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 429,
-    "name": "Буровая труба",
-    "rawname": "IC2:blockMiningPipe",
-    "hardness": 6.0,
+    "id": 587,
+    "name": "Магазин (Предмет на Предмет)",
+    "rawname": "tile.shopBlockBarter",
+    "hardness": -1.0,
     "transparent": false
   },
   {
-    "id": 92,
-    "rawname": "minecraft:cake",
+    "id": 588,
+    "name": "Экономическая руда",
+    "rawname": "tile.economyOre",
+    "hardness": 3.0,
+    "transparent": false
+  },
+  {
+    "id": 589,
+    "name": "Датчик температуры",
+    "rawname": "tile.null",
     "hardness": 0.5,
     "transparent": false
   },
   {
-    "id": 481,
-    "name": "Доски из лиственницы (Огнестойкость)",
-    "rawname": "Forestry:fireproofPlanks1",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
+    "id": 590,
+    "name": "Белый светильник",
+    "rawname": "tile.null",
+    "hardness": 0.3,
+    "transparent": false
   },
   {
-    "id": 169,
-    "name": "Резной блок истинного кварца",
-    "rawname": "appliedenergistics2:tile.BlockQuartzChiseled",
-    "hardness": 2.2,
-    "transparent": false,
-    "harvestTool": "pickaxe"
+    "id": 591,
+    "name": "ME Network Monitor",
+    "rawname": "tile.NetworkLink",
+    "hardness": 1.0,
+    "transparent": false
   },
   {
-    "id": 441,
-    "name": "Дистиллированная вода",
-    "rawname": "IC2:fluidDistilledWater",
+    "id": 592,
+    "name": "Белая лампа",
+    "rawname": "tile.projectred.illumination.lamp",
+    "hardness": 0.5,
+    "transparent": false
+  },
+  {
+    "id": 593,
+    "name": "tile.projectred.illumination.airousLight|0.name",
+    "rawname": "tile.projectred.illumination.airousLight",
     "hardness": 0.0,
     "transparent": true
   },
   {
-    "id": 198,
-    "name": "Энергетическая ячейка",
-    "rawname": "appliedenergistics2:tile.BlockEnergyCell",
-    "hardness": 2.2,
+    "id": 594,
+    "name": "Рубиновая руда",
+    "rawname": "tile.projectred.exploration.ore",
+    "hardness": 3.0,
     "transparent": false,
     "harvestTool": "pickaxe"
   },
   {
-    "id": 527,
+    "id": 595,
+    "name": "Мрамор",
+    "rawname": "tile.projectred.exploration.stone",
+    "hardness": 0.0,
+    "transparent": false,
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 596,
     "name": "Мраморная стена",
-    "rawname": "ProjRed|Exploration:projectred.exploration.stonewalls",
+    "rawname": "tile.projectred.exploration.stonewalls",
     "hardness": 1.5,
     "transparent": false
   },
   {
-    "id": 63,
-    "rawname": "minecraft:standing_sign",
-    "hardness": 1.0,
-    "transparent": false
-  },
-  {
-    "id": 70,
-    "name": "Нажимная плита",
-    "rawname": "minecraft:stone_pressure_plate",
-    "hardness": 0.5,
-    "transparent": false
-  },
-  {
-    "id": 480,
-    "name": "Доски из гибискуса",
-    "rawname": "Forestry:planks2",
-    "hardness": 0.0,
-    "transparent": false,
-    "harvestTool": "axe"
-  },
-  {
-    "id": 51,
-    "name": "Огонь",
-    "rawname": "minecraft:fire",
+    "id": 597,
+    "name": "Отклоняющаяся лилия",
+    "rawname": "tile.projectred.exploration.lily",
     "hardness": 0.0,
     "transparent": true
   },
   {
-    "id": 482,
-    "name": "Доски из гибискуса (Огнестойкость)",
-    "rawname": "Forestry:fireproofPlanks2",
+    "id": 598,
+    "name": "Основная красная печь",
+    "rawname": "tile.thermalexpansion.machine",
+    "hardness": 15.0,
+    "transparent": false
+  },
+  {
+    "id": 599,
+    "name": "Верстак механика",
+    "rawname": "tile.thermalexpansion.device",
+    "hardness": 15.0,
+    "transparent": false
+  },
+  {
+    "id": 600,
+    "name": "Паровой генератор",
+    "rawname": "tile.thermalexpansion.dynamo",
+    "hardness": 15.0,
+    "transparent": false
+  },
+  {
+    "id": 601,
+    "name": "Творческая энергетическая ячейка",
+    "rawname": "tile.thermalexpansion.cell",
     "hardness": 0.0,
+    "transparent": false
+  },
+  {
+    "id": 602,
+    "name": "Творческий переносной бак",
+    "rawname": "tile.thermalexpansion.tank",
+    "hardness": 0.0,
+    "transparent": false
+  },
+  {
+    "id": 603,
+    "name": "Творческий сейф",
+    "rawname": "tile.thermalexpansion.strongbox",
+    "hardness": 0.0,
+    "transparent": false
+  },
+  {
+    "id": 604,
+    "name": "Творческий тайник",
+    "rawname": "tile.thermalexpansion.cache",
+    "hardness": 15.0,
     "transparent": false,
-    "harvestTool": "axe"
+    "harvestTool": "pickaxe"
+  },
+  {
+    "id": 605,
+    "name": "Творческий верстак механика",
+    "rawname": "tile.thermalexpansion.workbench",
+    "hardness": 0.0,
+    "transparent": false
+  },
+  {
+    "id": 606,
+    "name": "Тессеракт",
+    "rawname": "tile.thermalexpansion.ender",
+    "hardness": 15.0,
+    "transparent": false
+  },
+  {
+    "id": 607,
+    "name": "Рамка пластины",
+    "rawname": "tile.thermalexpansion.plate",
+    "hardness": 15.0,
+    "transparent": false
+  },
+  {
+    "id": 608,
+    "name": "Светильник из светящегося камня",
+    "rawname": "tile.thermalexpansion.light",
+    "hardness": 3.0,
+    "transparent": false
+  },
+  {
+    "id": 609,
+    "name": "Рамка механизма (Основная)",
+    "rawname": "tile.thermalexpansion.frame",
+    "hardness": 0.0,
+    "transparent": false
+  },
+  {
+    "id": 610,
+    "name": "Закалённое стекло",
+    "rawname": "tile.thermalexpansion.glass",
+    "hardness": 3.0,
+    "transparent": false
+  },
+  {
+    "id": 611,
+    "name": "Белая минеральная шерсть",
+    "rawname": "tile.thermalexpansion.rockwool",
+    "hardness": 0.8,
+    "transparent": false
+  },
+  {
+    "id": 612,
+    "name": "Сухая творческая губка",
+    "rawname": "tile.thermalexpansion.sponge",
+    "hardness": 0.6,
+    "transparent": false
+  },
+  {
+    "id": 613,
+    "rawname": "tile.null",
+    "hardness": 0.0,
+    "transparent": false
+  },
+  {
+    "id": 614,
+    "rawname": "tile.null",
+    "hardness": 0.0,
+    "transparent": false
+  },
+  {
+    "id": 615,
+    "rawname": "tile.null",
+    "hardness": 0.0,
+    "transparent": false
+  },
+  {
+    "id": 616,
+    "rawname": "tile.null",
+    "hardness": 0.0,
+    "transparent": false
   }
 ]

@@ -24,7 +24,7 @@ namespace MoBot.Protocol.Handlers
         public static readonly Dictionary<string, CustomHandler> CustomHandlers =
             new Dictionary<string, CustomHandler> {{"FML|HS", new FmlHandshake()}};
 
-        private readonly Logger _log = Program.GetLogger();
+        private readonly Logger log = Program.GetLogger();
 
         public void HandlePacketDisconnect(PacketDisconnect packetDisconnect)
         {
@@ -52,20 +52,20 @@ namespace MoBot.Protocol.Handlers
                 var id = GetUserSession();
                 var responseString = PostUrl(packetEncriptionRequest, secretKey, id);
                 if (responseString != "OK")
-                    _log.Error("Auth failed!\nAuth username: {1}\nAuth ID:{2}\nAuth response : {0}", responseString,
+                    log.Error("Auth failed!\nAuth username: {1}\nAuth ID:{2}\nAuth response : {0}", responseString,
                         NetworkController.Username, id);
             }
             catch (WebException)
             {
-                _log.Error("Unable to connect to login server!");
+                log.Error("Unable to connect to login server!");
             }
             catch (FileNotFoundException)
             {
-                _log.Error("No UserIDS.xml file in directory!");
+                log.Error("No UserIDS.xml file in directory!");
             }
             catch (XmlException)
             {
-                _log.Error("Unable to proceed XML file");
+                log.Error("Unable to proceed XML file");
             }
 
             #endregion
@@ -98,7 +98,6 @@ namespace MoBot.Protocol.Handlers
                 //Console.WriteLine(packetCustomPayload.Channel);
                 return;
             }
-            ;
             handler.OnPacketData(packetCustomPayload.Payload);
         }
 

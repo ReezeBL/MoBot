@@ -30,6 +30,66 @@
     "damage": 2.0
   },
   {
+    "name": "steel",
+    "effectiveness": 5.0,
+    "damage": 2.0
+  },
+  {
+    "name": "titanium",
+    "effectiveness": 8.0,
+    "damage": 3.0
+  },
+  {
+    "name": "DESH",
+    "effectiveness": 5.0,
+    "damage": 2.5
+  },
+  {
+    "name": "COPPER",
+    "effectiveness": 4.0,
+    "damage": 0.75
+  },
+  {
+    "name": "TIN",
+    "effectiveness": 4.5,
+    "damage": 1.0
+  },
+  {
+    "name": "SILVER",
+    "effectiveness": 6.0,
+    "damage": 1.5
+  },
+  {
+    "name": "LEAD",
+    "effectiveness": 5.0,
+    "damage": 1.0
+  },
+  {
+    "name": "NICKEL",
+    "effectiveness": 6.5,
+    "damage": 2.5
+  },
+  {
+    "name": "ELECTRUM",
+    "effectiveness": 14.0,
+    "damage": 0.5
+  },
+  {
+    "name": "INVAR",
+    "effectiveness": 7.0,
+    "damage": 3.0
+  },
+  {
+    "name": "BRONZE",
+    "effectiveness": 6.0,
+    "damage": 2.0
+  },
+  {
+    "name": "PLATINUM",
+    "effectiveness": 9.0,
+    "damage": 4.0
+  },
+  {
     "name": "CHEAT",
     "effectiveness": 10.0,
     "damage": 1.0E9
@@ -48,5 +108,20 @@
     "name": "PERIDOT",
     "effectiveness": 7.75,
     "damage": 2.75
+  },
+  {
+    "name": "THAUMIUM",
+    "effectiveness": 7.0,
+    "damage": 2.0
+  },
+  {
+    "name": "VOID",
+    "effectiveness": 8.0,
+    "damage": 3.0
+  },
+  {
+    "name": "THAUMIUM_ELEMENTAL",
+    "effectiveness": 10.0,
+    "damage": 3.0
   }
 ]

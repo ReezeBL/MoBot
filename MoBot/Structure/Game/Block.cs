@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using System.Data.SQLite;
 using System.IO;
 using Newtonsoft.Json;
 
@@ -134,7 +133,7 @@ namespace MoBot.Structure.Game
 
         public override string ToString()
         {
-            return Name ?? RawName ?? "";
+            return Id == -1 ? "" : $"{Name ?? RawName ?? ""} ({Id})";
         }
     }
 }

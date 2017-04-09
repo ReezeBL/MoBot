@@ -31,7 +31,7 @@ namespace MoBot
         [DllImport("kernel32.dll", SetLastError = true)]
         private static extern bool FreeConsole();
 
-        [MTAThread]
+        [STAThread]
         public static void Main()
         {
             Application.EnableVisualStyles();
@@ -45,14 +45,19 @@ namespace MoBot
             Console.WriteLine("Loading blocks...");
             Block.LoadBlocks();
 
+            Console.WriteLine("Loading items...");
+            Item.LoadItems();
+
+            Console.WriteLine("Loading entites...");
+            Entity.LoadEntities();
+
             using (var connection = new SQLiteConnection("Data Source=GameInfo.db3;"))
             {
                 connection.Open();
                 Block.WriteBlocksToDb(connection);
             }
 
-            Console.WriteLine("Loading items...");
-            Item.LoadItems();
+            
 
             Console.WriteLine("Everything is done! Application is ready to launch!");
 
@@ -73,8 +78,8 @@ namespace MoBot
                 var path = Path.GetDirectoryName(Application.ExecutablePath);
                 Debug.Assert(path != null, "Invalid path");
 
-                path = Path.Combine(path, "lib");
-                var dlls = Directory.GetFiles(path, "*.dll");
+                var dllPath = Path.Combine(path, "lib");
+                var dlls = Directory.GetFiles(dllPath, "*.dll");
                 var executables = Directory.GetFiles(path, "*.exe");
 
 

@@ -103,8 +103,8 @@ namespace MoBot.Structure.Game.World
 
         public Location SearchBlock(HashSet<int> ids)
         {
-            var x = MathHelper.floor_float(GameController.Player.X);
-            var z = MathHelper.floor_float(GameController.Player.Z);
+            var x = MathHelper.FloorFloat(GameController.Player.X);
+            var z = MathHelper.FloorFloat(GameController.Player.Z);
             var y = (int) GameController.Player.Y;
 
             return SearchBlock(x,y,z, ids.Contains);
@@ -263,8 +263,8 @@ namespace MoBot.Structure.Game.World
 
         public List<Location> SearchBlocks(HashSet<int> ids)
         {
-            var x = MathHelper.floor_float(GameController.Player.X);
-            var z = MathHelper.floor_float(GameController.Player.Z);
+            var x = MathHelper.FloorFloat(GameController.Player.X);
+            var z = MathHelper.FloorFloat(GameController.Player.Z);
             var y = (int)GameController.Player.Y;
 
             return SearchBlocks(x,y,z, ids.Contains);

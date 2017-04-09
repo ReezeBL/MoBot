@@ -7,38 +7,37 @@ namespace MoBot.Structure.Game.AI
 {
     public class AiHandler
     {
-        private bool _threadContinue = true;
-        private Composite _root;
+        private bool threadContinue = true;
+        private Composite root;
         public Protector Protector { get; } = new Protector();
         public CustomEvents CustomEvents { get; } = new CustomEvents();
         public Mover Mover { get;} = new Mover();
         public Digger Digger { get; } = new Digger();
 
-        private int _flyingTicks;
-        private bool _paused = true;
+        private bool paused = true;
 
         public AiHandler()
         {
             var aiThread = new Thread(() =>
             {
-                while (_threadContinue)
+                while (threadContinue)
                 {
                     try
                     {
                         if (NetworkController.Connected && GameController.Player != null)
                         {
-                            if (_paused)
+                            if (paused)
                             {
-                                _paused = false;
+                                paused = false;
                                 CustomEvents.GenerateStrings();
-                                _root.Stop(null);
-                                _root.Start(null);
+                                root.Stop(null);
+                                root.Start(null);
                             }
 
-                            if (_root.Tick(null) != RunStatus.Running)
+                            if (root.Tick(null) != RunStatus.Running)
                             {
-                                _root.Stop(null);
-                                _root.Start(null);
+                                root.Stop(null);
+                                root.Start(null);
                             }
 
                             if (!GameController.Player.OnGround)
@@ -46,30 +45,29 @@ namespace MoBot.Structure.Game.AI
                         }
                         else
                         {
-                            _paused = true;
-                            _flyingTicks = 0;
+                            paused = true;
                         }
                     }
                     catch (Exception e)
                     {
                         Program.GetLogger().Error($"AI Thread exception: {e}");
-                        _root.Stop(null);
-                        _root.Start(null);
+                        root.Stop(null);
+                        root.Start(null);
                     }
-                    Thread.Sleep(50);
+                    Thread.Sleep(60);
                 }
             })
             { IsBackground = true };
 
             CreateRoot();
-            _root.Start(null);
+            root.Start(null);
 
             aiThread.Start();
         }
 
         private void CreateRoot()
         {
-            _root = new PrioritySelector(CustomEvents, Mover, Digger);
+            root = new PrioritySelector(CustomEvents, Mover, Digger);
         }
     }
 

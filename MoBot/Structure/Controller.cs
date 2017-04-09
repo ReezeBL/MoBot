@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading;
 using MoBot.Structure.Game;
 using MoBot.Structure.Game.AI.Pathfinding;
+using MoBot.Structure.Game.AI.Tasks;
 
 namespace MoBot.Structure
 {
@@ -72,6 +73,9 @@ namespace MoBot.Structure
                         ActionManager.RightClick(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3]));
                         break;
                     }
+                    case "-testOpenBase":
+                        ActionManager.RightClick(CustomEvents.StoreChest);
+                        break;
                     case "-testClose":
                         ActionManager.CloseWindow();
                         break;
@@ -101,6 +105,12 @@ namespace MoBot.Structure
                         break;
                     case "-use":
                         ActionManager.UseItem();
+                        break;
+                    case "-tp":
+                        ActionManager.SetPlayerPos(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3]));
+                        break;
+                    case "-u":
+                        ActionManager.UpdatePosition();
                         break;
                     default:
                     {

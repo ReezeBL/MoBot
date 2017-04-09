@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using MoBot.Annotations;
 using Newtonsoft.Json;
 
 namespace MoBot.Structure.Game.Items
 {
     public class Item
     {
-        protected static readonly Dictionary<string, Item> Extension = new Dictionary<string, Item> { { "minecraft:bread", new ItemFood() }, { "minecraft:apple", new ItemFood() } };
+        protected static readonly Dictionary<string, Item> Extension = new Dictionary<string, Item> { { "item.bread", new ItemFood() }, { "item.apple", new ItemFood() } };
         private static readonly Dictionary<int, Item> ItemRegistry = new Dictionary<int, Item>();
 
         public static IEnumerable<Item> Items => ItemRegistry.Values;
@@ -48,8 +49,10 @@ namespace MoBot.Structure.Game.Items
                         {
                             ToolClasses = new HashSet<string>(item.toolClass),
                             ClassLevels = item.harvestLevel,
-                            Effectivness = materials[item.material]
                         };
+                        if(!materials.TryGetValue(item.material, out ((ItemTool)reg).Effectivness))
+                            Program.GetLogger().Error($"Unknown material: {item.material}");
+
                     }
                     else
                     {
@@ -72,6 +75,7 @@ namespace MoBot.Structure.Game.Items
             return result;
         }
 
+        [UsedImplicitly]
         private class MaterialInfo
         {
             public string name;
@@ -79,13 +83,13 @@ namespace MoBot.Structure.Game.Items
             public float damage;
         }
 
+        [UsedImplicitly]
         private class ItemInfo
         {
             public int id;
             public string name;
             public string rawname;
             public string material;
-            public float effectivness;
             public string[] toolClass;
             public int[] harvestLevel;
         }
@@ -106,7 +110,7 @@ namespace MoBot.Structure.Game.Items
 
         public override string ToString()
         {
-            return Name ?? RawName ?? "";
+            return Id == -1 ? "" : $"{Name ?? RawName ?? ""} ({Id})";
         }
     }
 }

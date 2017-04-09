@@ -2,7 +2,6 @@ private static class ItemInfo{
         public Integer id;
         public String name;
         public String material;
-        public float effectivness;
         public String[] toolClass;
         public int[] harvestLevel;
     }
@@ -19,4 +18,9 @@ private static class ItemInfo{
         public String name;
         public float effectiveness;
         public float damage;
+    }
+
+	private static class EntityInfo{
+        public int id;
+        public String name;
     }

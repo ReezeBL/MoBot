@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MoBot.Protocol.Packets.Play;
+﻿using MoBot.Protocol.Packets.Play;
 using MoBot.Structure;
 using Newtonsoft.Json.Linq;
 using NLog;
@@ -12,7 +7,7 @@ namespace MoBot.Protocol.Handlers
 {
     internal class FmlHandshake : CustomHandler
     {
-        private readonly Logger _log = Program.GetLogger();
+        private readonly Logger log = Program.GetLogger();
 
         public override void OnPacketData(byte[] payloadData)
         {
@@ -33,12 +28,11 @@ namespace MoBot.Protocol.Handlers
                         });
                         answer = new StreamWrapper();
                         answer.WriteByte(2);
-                        answer.WriteVarInt(NetworkController.ModList.Count);
-                        foreach (var jToken in NetworkController.ModList)
+                        answer.WriteVarInt(NetworkController.ModList.Length);
+                        foreach (var modInfo in NetworkController.ModList)
                         {
-                            var obj = (JObject)jToken;
-                            answer.WriteString((string)obj["modid"]);
-                            answer.WriteString((string)obj["version"]);
+                            answer.WriteString(modInfo.modid);
+                            answer.WriteString(modInfo.version);
                         }
                         NetworkController.SendPacket(new PacketCustomPayload
                         {
@@ -73,7 +67,7 @@ namespace MoBot.Protocol.Handlers
                                 answer.WriteByte(4);
                                 break;
                             default:
-                                _log.Info($"Unhandled Ack Stage : {stage}");
+                                log.Info($"Unhandled Ack Stage : {stage}");
                                 break;
                         }
                         NetworkController.SendPacket(new PacketCustomPayload

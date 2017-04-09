@@ -13,6 +13,8 @@ namespace MoBot
         private const string Path = "Settings/Settings.json";
         public const string BlocksPath = "Settings/blocks.json";
         public const string ItemsPath = "Settings/items.json";
+        public const string EntitiesPath = "Settings/entities.json";
+        public const string ModsPath = "Settings/mods.json";
         public const string ScriptsPath = "Scripts";
         public const string MaterialsPath = "Settings/materials.json";
         public const string UserIdsPath = "Settings/UserIDS.xml";

@@ -68,7 +68,7 @@ namespace MoBot.Scripts.Items
         [ImportHandler.PreInit]
         public static void Import()
         {
-            Extension.Add("GraviSuite:advDDrill", new ItemAdvancedDrill());
+            Extension.Add("item.advDDrill", new ItemAdvancedDrill());
         }
     }
 }

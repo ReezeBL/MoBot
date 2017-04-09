@@ -2,13 +2,13 @@
 {
     public class MathHelper
     {
-        public static int floor_double(double p)
+        public static int FloorDouble(double p)
         {
             var i = (int)p;
             return i;
         }
 
-        public static int floor_float(float p)
+        public static int FloorFloat(float p)
         {
             var i = (int) p;
             return i < 0 ? i - 1 : i;

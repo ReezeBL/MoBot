@@ -1,12 +1,45 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
 using System.Runtime.CompilerServices;
 using AForge.Math;
 using MoBot.Annotations;
+using Newtonsoft.Json;
 
 namespace MoBot.Structure.Game
 {
     public class Entity : INotifyPropertyChanged
     {
+        protected static Dictionary<int, string> EntityNames = new Dictionary<int, string>();
+
+        private class EntityInfo
+        {
+            public int id;
+            public string name;
+        }
+
+        public static void LoadEntities()
+        {
+            try
+            {
+                using (var file = File.OpenText(Settings.EntitiesPath))
+                using (var reader = new JsonTextReader(file))
+                {
+                    var deserializer = JsonSerializer.Create();
+                    var entities = deserializer.Deserialize<EntityInfo[]>(reader);
+                    foreach (var entityInfo in entities)
+                    {
+                        EntityNames.Add(entityInfo.id, entityInfo.name);
+                    }
+                }
+            }
+            catch (FileNotFoundException exception)
+            {
+                Program.GetLogger().Warn($"Cant find {exception.FileName} file!");
+            }
+        }
+
         public float X => Position.X;
         public float Y => Position.Y;
         public float Z => Position.Z;

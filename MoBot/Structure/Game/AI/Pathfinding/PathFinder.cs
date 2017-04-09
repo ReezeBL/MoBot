@@ -18,8 +18,8 @@ namespace MoBot.Structure.Game.AI.Pathfinding
         {
             return
                 StaticPath(
-                    new Location(MathHelper.floor_double(entity.X), MathHelper.floor_double(entity.Y),
-                        MathHelper.floor_double(entity.Z)), end);
+                    new Location(MathHelper.FloorDouble(entity.X), MathHelper.FloorDouble(entity.Y),
+                        MathHelper.FloorDouble(entity.Z)), end);
         }
 
         public static Path StaticPath(Location start, Location end)

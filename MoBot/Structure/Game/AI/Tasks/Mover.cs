@@ -10,21 +10,21 @@ namespace MoBot.Structure.Game.AI.Tasks
 {
     public class Mover : Task
     {
-        private IEnumerator _mover;
-        private readonly object _monitor = new object();
+        private IEnumerator mover;
+        private readonly object monitor = new object();
 
         private IEnumerator _Mover
         {
             get
             {
-                lock(_monitor)
-                    return _mover;
+                lock(monitor)
+                    return mover;
             }
 
             set
             {
-                lock (_monitor)
-                    _mover = value;
+                lock (monitor)
+                    mover = value;
             }
         }
 
@@ -50,7 +50,7 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         private RunStatus RoutineTick(object context)
         {
-            lock (_monitor)
+            lock (monitor)
             {
                 if (_Mover == null || !_Mover.MoveNext())
                     return RunStatus.Failure;
@@ -71,8 +71,8 @@ namespace MoBot.Structure.Game.AI.Tasks
             {
                 Console.WriteLine($"Moving to {point}");
                 ActionManager.SetPlayerPos(point);
-                for (var i = 0; i < 2; i++)
-                    yield return null;
+                yield return null;
+                yield return null;
             }
         }
 
@@ -99,8 +99,8 @@ namespace MoBot.Structure.Game.AI.Tasks
 
                 Console.WriteLine($"Moving to {point}");
                 ActionManager.SetPlayerPos(point);
-                for(var i=0;i<2;i++)
-                    yield return null;
+                yield return null;
+                yield return null;
             }
         }
 

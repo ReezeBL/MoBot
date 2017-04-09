@@ -58,12 +58,12 @@ namespace MoBot.Structure.Game.AI.Pathfinding
 
         public static implicit operator Location(Vector3 vector)
         {
-            return new Location(MathHelper.floor_float(vector.X), (int) vector.Y, MathHelper.floor_float(vector.Z));
+            return new Location(MathHelper.FloorFloat(vector.X), (int) vector.Y, MathHelper.FloorFloat(vector.Z));
         }
 
         public static implicit operator Vector3(Location point)
         {
-            return new Vector3(point.X - 0.5f * Math.Sign(point.X), point.Y, point.Z - 0.5f * Math.Sign(point.Z));
+            return new Vector3(point.X + 0.5f, point.Y, point.Z + 0.5f);
         }
     }
 }
