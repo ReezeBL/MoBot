@@ -2,7 +2,7 @@
 using MoBot.Structure.Game;
 using MoBot.Structure.Game.Items;
 
-namespace MoBot.Scripts.Items
+namespace MoBot.Scripts.IndustrialCraft
 {
     public class ItemAdvancedDrill : ItemTool
     {
@@ -62,12 +62,6 @@ namespace MoBot.Scripts.Items
         public ItemAdvancedDrill()
         {
             ToolClasses = new HashSet<string> {"shovel", "pickaxe"};
-        }
-
-        [ImportHandler.PreInit]
-        public static void Import()
-        {
-            Extension.Add("item.advDDrill", new ItemAdvancedDrill());
         }
     }
 }

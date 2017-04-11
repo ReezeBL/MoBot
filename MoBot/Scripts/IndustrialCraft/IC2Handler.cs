@@ -10,16 +10,10 @@ using MoBot.Structure.Game;
 using MoBot.Structure.Game.AI.Pathfinding;
 using MoBot.Structure.Game.Items;
 
-namespace MoBot.Scripts.Handlers
+namespace MoBot.Scripts.IndustrialCraft
 {
     class IC2Handler : CustomHandler
     {
-        [ImportHandler.PreInit]
-        public static void Init()
-        {
-            ClientHandler.CustomHandlers.Add("ic2", new IC2Handler());
-        }
-
         private MemoryStream data;
 
         public override void OnPacketData(byte[] payloadData)

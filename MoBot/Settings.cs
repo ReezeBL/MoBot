@@ -23,6 +23,7 @@ namespace MoBot
 
         [JsonRequired] private readonly Dictionary<string, SettingsWrapper> nameBindings =
             new Dictionary<string, SettingsWrapper>();
+        [JsonRequired] private readonly Dictionary<string, string> compiledModules = new Dictionary<string, string>();
 
         private SettingsWrapper currentSettings;
 
@@ -35,6 +36,8 @@ namespace MoBot
         {
         }
 
+
+        public static Dictionary<string, string> CompiledModules => Instance.compiledModules;
 
         public static string ServerIp
         {
