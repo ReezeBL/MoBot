@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using MoBot.Annotations;
 using Newtonsoft.Json;
 
 namespace MoBot.Structure.Game.Items
@@ -75,7 +73,6 @@ namespace MoBot.Structure.Game.Items
             return result;
         }
 
-        [UsedImplicitly]
         private class MaterialInfo
         {
             public string name;
@@ -83,7 +80,6 @@ namespace MoBot.Structure.Game.Items
             public float damage;
         }
 
-        [UsedImplicitly]
         private class ItemInfo
         {
             public int id;

@@ -120,4 +120,7 @@
   <data name="Program_Main_Loading_scripts" xml:space="preserve">
     <value>Loading scripts...</value>
   </data>
+  <data name="Connect" xml:space="preserve">
+    <value>Connect</value>
+  </data>
 </root>

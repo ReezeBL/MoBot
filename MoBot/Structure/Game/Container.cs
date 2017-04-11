@@ -4,15 +4,14 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
-using MoBot.Annotations;
 using MoBot.Structure.Game.Items;
 
 namespace MoBot.Structure.Game
 {
     public class Container : INotifyPropertyChanged
     {
-        private readonly ItemStack[] _items;
-        private readonly ItemStack[] _inventory;
+        private readonly ItemStack[] items;
+        private readonly ItemStack[] inventory;
         private readonly object _monitor = new object();
         public ItemStack CursorItem { get; private set; }
         public readonly byte WindowId;
@@ -21,15 +20,15 @@ namespace MoBot.Structure.Game
         public Container(int capacity)
         {
             _capacity = capacity;
-            _items = new ItemStack[_capacity];
-            _inventory = new ItemStack[36];
+            items = new ItemStack[_capacity];
+            inventory = new ItemStack[36];
         }
 
         public Container(int capacity, byte windowId = 0)
         {
             _capacity = capacity;
-            _items = new ItemStack[_capacity];
-            _inventory = new ItemStack[36];
+            items = new ItemStack[_capacity];
+            inventory = new ItemStack[36];
             WindowId = windowId;
         }
 
@@ -41,7 +40,7 @@ namespace MoBot.Structure.Game
                 {
                     if (n == -1)
                         return CursorItem;
-                    return n >= _capacity ? _inventory[n - _capacity] : _items[n];
+                    return n >= _capacity ? inventory[n - _capacity] : items[n];
                 }
             }
 
@@ -52,9 +51,9 @@ namespace MoBot.Structure.Game
                     if (n == -1)
                         CursorItem = value;
                     else if (n >= _capacity)
-                        _inventory[n - _capacity] = value;
+                        inventory[n - _capacity] = value;
                     else
-                        _items[n] = value;
+                        items[n] = value;
                 }
                 OnSlotChanged(n, value);
             }
@@ -67,7 +66,7 @@ namespace MoBot.Structure.Game
                 var index = _capacity;
                 lock (_monitor)
                 {
-                    return _inventory.Select(item => new IndexedItem {Item = item?.Item, Slot = index++});
+                    return inventory.Select(item => new IndexedItem {Item = item?.Item, Slot = index++});
                 }
             }
         }
@@ -79,7 +78,7 @@ namespace MoBot.Structure.Game
                 var index = 0;
                 lock (_monitor)
                 {
-                    return _items.Select(item => new IndexedItem {Item = item?.Item, Slot = index++});
+                    return items.Select(item => new IndexedItem {Item = item?.Item, Slot = index++});
                 }
             }
         }
@@ -91,7 +90,7 @@ namespace MoBot.Structure.Game
                 var index = 0;
                 lock (_monitor)
                 {
-                    return _inventory.Skip(27).Select(item => new IndexedItem {Item = item?.Item, Slot = index++});
+                    return inventory.Skip(27).Select(item => new IndexedItem {Item = item?.Item, Slot = index++});
                 }
             }
         }
@@ -103,7 +102,7 @@ namespace MoBot.Structure.Game
                 lock (_monitor)
                 {
                     for (var i = 0; i < _capacity; i++)
-                        if (_items[i] == null || _items[i].Item.Id == -1)
+                        if (items[i] == null || items[i].Item.Id == -1)
                             return i;
                     return -1;
                 }
@@ -118,7 +117,7 @@ namespace MoBot.Structure.Game
                 {
                     for (var i = 0; i < 36; i++)
                     {
-                        if (_inventory[i] == null || _inventory[i].Item.Id == -1)
+                        if (inventory[i] == null || inventory[i].Item.Id == -1)
                             return _capacity + i;
                     }
                 }
@@ -141,13 +140,13 @@ namespace MoBot.Structure.Game
             lock (_monitor)
             {
                 for (var i = 0; i < _capacity; i++)
-                    sb.Append($"{i} : {_items[i]} ");
+                    sb.Append($"{i} : {items[i]} ");
                 sb.AppendLine();
 
                 for (var i = 0; i < 4; i++)
                 {
                     for (var j = 0; j < 9; j++)
-                        sb.Append($"{_capacity + i*9 + j} : {_inventory[i*9 + j]} ");
+                        sb.Append($"{_capacity + i*9 + j} : {inventory[i*9 + j]} ");
                     sb.AppendLine();
                 }
             }
@@ -164,7 +163,7 @@ namespace MoBot.Structure.Game
 
         public event PropertyChangedEventHandler PropertyChanged;
         public event Action<object, int, ItemStack> SlotChanged;
-        [NotifyPropertyChangedInvocator]
+
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

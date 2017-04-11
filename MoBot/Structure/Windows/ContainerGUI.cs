@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
-using MoBot.Annotations;
 using MoBot.Structure.Game;
 using static System.String;
 using Container = MoBot.Structure.Game.Container;
@@ -25,7 +24,7 @@ namespace MoBot.Structure.Windows
 
         public ItemStack SelectedItem
         {
-            get { return _selectedItem; }
+            get => _selectedItem;
             set
             {
                 if (Equals(value, _selectedItem)) return;
@@ -139,7 +138,6 @@ namespace MoBot.Structure.Windows
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

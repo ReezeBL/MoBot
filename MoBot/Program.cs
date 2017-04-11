@@ -7,7 +7,6 @@ using MoBot.Structure.Windows;
 using NLog;
 using System;
 using System.CodeDom.Compiler;
-using System.Data.SQLite;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -50,14 +49,6 @@ namespace MoBot
 
             Console.WriteLine("Loading entites...");
             Entity.LoadEntities();
-
-            using (var connection = new SQLiteConnection("Data Source=GameInfo.db3;"))
-            {
-                connection.Open();
-                Block.WriteBlocksToDb(connection);
-            }
-
-            
 
             Console.WriteLine("Everything is done! Application is ready to launch!");
 

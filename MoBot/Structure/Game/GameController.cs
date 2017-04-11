@@ -2,11 +2,9 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using fNbt;
-using MoBot.Annotations;
 using MoBot.Structure.Game.AI;
 using MoBot.Structure.Game.AI.Pathfinding;
 using MoBot.Structure.Game.World;
@@ -15,24 +13,24 @@ namespace MoBot.Structure.Game
 {
     public class GameController : INotifyPropertyChanged
     {
-        private static GameController _instance;
-        public static GameController Instance => _instance ?? (_instance = new GameController());
+        private static GameController instance;
+        public static GameController Instance => instance ?? (instance = new GameController());
         private GameController()
         {
             
         }
-        private readonly ConcurrentDictionary<int, Entity> _entities = new ConcurrentDictionary<int, Entity>();
-        private readonly ConcurrentDictionary<Location, TileEntity> _tileEntities = new ConcurrentDictionary<Location, TileEntity>();
+        private readonly ConcurrentDictionary<int, Entity> entities = new ConcurrentDictionary<int, Entity>();
+        private readonly ConcurrentDictionary<Location, TileEntity> tileEntities = new ConcurrentDictionary<Location, TileEntity>();
         private Player _player = new Player(0, "");
 
         public static Player Player
         {
-            get { return Instance._player; }
+            get => Instance._player;
             private set { Instance._player = value; Instance.OnPropertyChanged(nameof(Player)); }
         }
 
         public static GameWorld World { get; } = new GameWorld();      
-        public static AiHandler AiHandler { get; private set; } = new AiHandler();
+        public static AiHandler AiHandler { get; } = new AiHandler();
 
         public static IList<Entity> LivingEntities { get; } = new BindingList<Entity>();
         public static IList<TileEntity> TileEntities { get; } = new BindingList<TileEntity>();
@@ -40,16 +38,16 @@ namespace MoBot.Structure.Game
         public static Entity GetEntity(int id)
         {
             Entity res;
-            Instance._entities.TryGetValue(id, out res);
+            Instance.entities.TryGetValue(id, out res);
             return res;
         }
 
         public static TileEntity SetTileEntity(Location location, NbtCompound tag, Dictionary<string, object> tags = null)
         {
             TileEntity entity;
-            if (Instance._tileEntities.ContainsKey(location))
+            if (Instance.tileEntities.ContainsKey(location))
             {
-                Instance._tileEntities.TryGetValue(location, out entity);
+                Instance.tileEntities.TryGetValue(location, out entity);
                 if (entity != null)
                 {
                     entity.Root = tag;
@@ -65,7 +63,7 @@ namespace MoBot.Structure.Game
                     Id = World.GetBlock(location),
                     Tags = tags
                 };
-                Instance._tileEntities.TryAdd(location, entity);
+                Instance.tileEntities.TryAdd(location, entity);
                 if (entity.Id == 432)
                     TileEntities.Add(entity);
             }
@@ -74,23 +72,23 @@ namespace MoBot.Structure.Game
 
         public static Entity GetEntity()
         {
-            return Instance._entities.Values.FirstOrDefault();
+            return Instance.entities.Values.FirstOrDefault();
         }
 
         public static Entity GetEntity<T>() where T : Entity
         {
-            return Instance._entities.Values.OfType<T>().FirstOrDefault();
+            return Instance.entities.Values.OfType<T>().FirstOrDefault();
         }
 
         public static IEnumerable<T> GetEntities<T>()
         {
-            return Instance._entities.Values.OfType<T>();
+            return Instance.entities.Values.OfType<T>();
         }
 
         public static void RemoveEntity(int id)
         {
             Entity entity;
-            Instance._entities.TryRemove(id, out entity);
+            Instance.entities.TryRemove(id, out entity);
             LivingEntities.Remove(entity);
         }
 
@@ -103,7 +101,7 @@ namespace MoBot.Structure.Game
         {
             var player = new Player(uid, name);
             LivingEntities.Add(player);
-            if (Instance._entities.TryAdd(uid, player)) return player;
+            if (Instance.entities.TryAdd(uid, player)) return player;
             Console.WriteLine($"Cannot add Entity {uid} to collection!");
             return null;
         }
@@ -112,7 +110,7 @@ namespace MoBot.Structure.Game
         {
             var entity = new Mob(entityId) {Type = type};
             LivingEntities.Add(entity);
-            if (Instance._entities.TryAdd(entityId, entity)) return entity;
+            if (Instance.entities.TryAdd(entityId, entity)) return entity;
             Console.WriteLine($"Cannot add Entity {entityId} to collection!");
             return null;
         }
@@ -120,7 +118,7 @@ namespace MoBot.Structure.Game
         public static LivingEntity CreateLivingEntity(int entityId, byte type)
         {
             var entity = new LivingEntity(entityId);
-            if (Instance._entities.TryAdd(entityId, entity)) return entity;
+            if (Instance.entities.TryAdd(entityId, entity)) return entity;
             Console.WriteLine($"Cannot add Entity {entityId} to collection!");
             return null;
         }
@@ -128,15 +126,15 @@ namespace MoBot.Structure.Game
         public static Entity CreateEntity(int entityId, byte type)
         {
             var entity = new Entity(entityId);
-            if (Instance._entities.TryAdd(entityId, entity)) return entity;
+            if (Instance.entities.TryAdd(entityId, entity)) return entity;
             Console.WriteLine($"Cannot add Entity {entityId} to collection!");
             return null;
         }
 
         public static void Clear()
         {
-            Instance._entities.Clear();
-            Instance._tileEntities.Clear();
+            Instance.entities.Clear();
+            Instance.tileEntities.Clear();
             TileEntities.Clear();
             LivingEntities.Clear();
             World.Clear();
@@ -145,7 +143,6 @@ namespace MoBot.Structure.Game
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
