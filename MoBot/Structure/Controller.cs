@@ -94,11 +94,11 @@ namespace MoBot.Structure
                         }
                         break;
                     case "-dig":
-                        GameController.AiHandler.Digger.enableDig = !GameController.AiHandler.Digger.enableDig;
+                        GameController.AiHandler.Digger.EnableDig = !GameController.AiHandler.Digger.EnableDig;
                         break;
                     case "-stop":
                         GameController.AiHandler.Mover.Stop();
-                        GameController.AiHandler.Digger.enableDig = false;
+                        GameController.AiHandler.Digger.EnableDig = false;
                         break;
                     case "-reset":
                         GameController.AiHandler.CustomEvents.MinFoodDanger = 5;

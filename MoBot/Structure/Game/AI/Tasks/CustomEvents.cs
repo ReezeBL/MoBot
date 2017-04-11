@@ -31,7 +31,7 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         public CustomEvents()
         {
-            _root = new PrioritySelector(new Decorator(IsDead, new Action(RunRoutine)),
+            Root = new PrioritySelector(new Decorator(IsDead, new Action(RunRoutine)),
                 new Decorator(IsInDanger, new Action(RunRoutine)),
                 new Decorator(IsHungry, new Action(RunRoutine)), new Decorator(InventoryIsFool, new Action(RunRoutine)));
         }
@@ -62,7 +62,7 @@ namespace MoBot.Structure.Game.AI.Tasks
                 ActionManager.UseItem();
                 for (var i = 0; i < 32; i++)
                 {
-                    yield return _awaiter;
+                    yield return Awaiter;
                     ActionManager.UpdatePosition();
                 }
             }
@@ -116,8 +116,8 @@ namespace MoBot.Structure.Game.AI.Tasks
                 if (freeSlot == -1) break;
                 yield return ActionManager.ExchangeInventorySlots(slot.Slot, freeSlot);
                 ActionManager.UpdatePosition();
-                yield return _awaiter;
-                yield return _awaiter;
+                yield return Awaiter;
+                yield return Awaiter;
             }
 
             ActionManager.CloseWindow();
@@ -181,7 +181,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             Console.WriteLine("Stopping routines!");
 
             GameController.AiHandler.Mover.Stop();
-            GameController.AiHandler.Digger.enableDig = false;
+            GameController.AiHandler.Digger.EnableDig = false;
 
             ActionManager.Respawn();
             ActionManager.UpdatePosition();
@@ -225,7 +225,7 @@ namespace MoBot.Structure.Game.AI.Tasks
                 Console.WriteLine($"Selecting {item.Item.Name} in the belt at {item.Slot}");
                 ActionManager.SelectBeltSlot(item.Slot);
 
-                yield return _awaiter;
+                yield return Awaiter;
                 yield break;
             }
 
@@ -244,7 +244,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             yield return ActionManager.ExchangeInventorySlots(GameController.Player.HeldItem, item.Slot);
             ActionManager.UpdatePosition();
 
-            yield return _awaiter;
+            yield return Awaiter;
         }
 
         private IEnumerator WaitForHealing()

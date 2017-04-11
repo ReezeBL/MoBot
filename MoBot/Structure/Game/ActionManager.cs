@@ -4,13 +4,12 @@ using System.Threading;
 using AForge.Math;
 using MoBot.Protocol.Packets.Play;
 using MoBot.Structure.Game.AI.Pathfinding;
-using MoBot.Structure.Game.AI.Tasks;
 
 namespace MoBot.Structure.Game
 {
     public class ActionManager
     {
-        private static int _transactionId = 1;       
+        private static int transactionId = 1;       
         public static DateTime LastMove = DateTime.Now;
 
         private ActionManager()
@@ -105,7 +104,7 @@ namespace MoBot.Structure.Game
                 {
                     WindowId = GameController.Player.CurrentContainer.WindowId,
                     Mode = 0,
-                    ActionNumber = (short) _transactionId++,
+                    ActionNumber = (short) transactionId++,
                     Button = 0,
                     Slot = (short) slot,
                     ItemStack = GameController.Player.CurrentContainer[slot]

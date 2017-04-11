@@ -14,21 +14,21 @@ namespace MoBot.Structure.Windows
     {
         private const int SlotSize = 30;
         private const int DSize = 31;
-        private readonly Dictionary<object, int> _buttons = new Dictionary<object, int>();
-        private readonly Dictionary<int, object> _revButtons = new Dictionary<int, object>();
-        private readonly ToolTip _toolTip = new ToolTip();
-        private Container _container;
-        private ItemStack _selectedItem;
+        private readonly Dictionary<object, int> buttons = new Dictionary<object, int>();
+        private readonly Dictionary<int, object> revButtons = new Dictionary<int, object>();
+        private readonly ToolTip toolTip = new ToolTip();
+        private Container container;
+        private ItemStack selectedItem;
 
         public bool SelectMode { get; set; } = false;
 
         public ItemStack SelectedItem
         {
-            get => _selectedItem;
+            get => selectedItem;
             set
             {
-                if (Equals(value, _selectedItem)) return;
-                _selectedItem = value;
+                if (Equals(value, selectedItem)) return;
+                selectedItem = value;
                 OnPropertyChanged();
             }
         }
@@ -45,10 +45,10 @@ namespace MoBot.Structure.Windows
 
         public new Container Container
         {
-            get { return _container; }
+            get => container;
             set
             {
-                _container = value;
+                container = value;
                 if(InvokeRequired)
                     Invoke(new Action(ApplyContainer));
                 else
@@ -62,21 +62,21 @@ namespace MoBot.Structure.Windows
 
         private void ApplyContainer()
         {
-            _buttons.Clear();
-            _revButtons.Clear();
+            buttons.Clear();
+            revButtons.Clear();
             Controls.Clear();
-            if (_container == null) return;
-            for (var i = 0; i < _container.Capacity; i++)
+            if (container == null) return;
+            for (var i = 0; i < container.Capacity; i++)
             {
                 CreateButton(i, i%9, i/9);
             }
 
             for (var i = 0; i < 36; i++)
             {
-                CreateButton(i + _container.Capacity, i%9, i/9 + _container.Capacity/9 + 1);
+                CreateButton(i + container.Capacity, i%9, i/9 + container.Capacity/9 + 1);
             }
 
-            _container.SlotChanged += ContainerOnPropertyChanged;
+            container.SlotChanged += ContainerOnPropertyChanged;
         }
 
         private void CreateButton(int i, int x, int y)
@@ -90,18 +90,18 @@ namespace MoBot.Structure.Windows
             };
             button.Click += SlotClick;
 
-            var toolTip = _container[i]?.Item?.ToString() ?? Empty;
-            _toolTip.SetToolTip(button, toolTip);
-            button.BackColor = toolTip == Empty ? Color.Transparent : Color.LawnGreen;
+            var itemToolTip = container[i]?.Item?.ToString() ?? Empty;
+            toolTip.SetToolTip(button, itemToolTip);
+            button.BackColor = itemToolTip == Empty ? Color.Transparent : Color.LawnGreen;
 
             Controls.Add(button);
-            _buttons.Add(button, i);
-            _revButtons.Add(i, button);
+            buttons.Add(button, i);
+            revButtons.Add(i, button);
         }
 
         private void ContainerOnPropertyChanged(object sender, int n, ItemStack slot)
         {
-            if (!sender.Equals(_container))
+            if (!sender.Equals(container))
                 return;
             if (InvokeRequired)
             {
@@ -109,12 +109,12 @@ namespace MoBot.Structure.Windows
             }
             else
             {
-                var button = _revButtons[n] as Button;
+                var button = revButtons[n] as Button;
                 if (button != null)
                 {
-                    var toolTip = slot?.Item?.ToString() ?? Empty;
-                    _toolTip.SetToolTip(button, toolTip);
-                    button.BackColor = toolTip == Empty ? Color.Transparent : Color.LawnGreen;
+                    var itemToolTip = slot?.Item?.ToString() ?? Empty;
+                    toolTip.SetToolTip(button, itemToolTip);
+                    button.BackColor = itemToolTip == Empty ? Color.Transparent : Color.LawnGreen;
                 }
             }
         }
@@ -128,11 +128,11 @@ namespace MoBot.Structure.Windows
         {
             if (SelectMode)
             {
-                SelectedItem = _container[_buttons[sender]];
+                SelectedItem = container[buttons[sender]];
             }
             else
             {
-                ActionManager.ClickInventorySlot(_buttons[sender]);
+                ActionManager.ClickInventorySlot(buttons[sender]);
             }
         }
 

@@ -5,14 +5,14 @@ namespace MoBot.Structure.Game
 {
     public class Player : LivingEntity
     {
-        public Container Inventory => _containers[0];
+        public Container Inventory => containers[0];
 
         public Container CurrentContainer
         {
-            get { return _currentContainer; }
+            get => currentContainer;
             private set
             {
-                _currentContainer = value;
+                currentContainer = value;
                 OnPropertyChanged(nameof(CurrentContainer));
             }
         }
@@ -21,8 +21,8 @@ namespace MoBot.Structure.Game
         public int HeldItem => HeldItemBar + 36;
         public bool OnGround;
 
-        private short _food = 20;
-        private float _saturation;
+        private short food = 20;
+        private float saturation;
         public string Name;
 
         public Item GetHeldItem => Inventory[HeldItem].Item;
@@ -30,22 +30,22 @@ namespace MoBot.Structure.Game
 
         public short Food
         {
-            get { return _food; }
+            get => food;
 
             set
             {
-                _food = value;
+                food = value;
                 OnPropertyChanged(nameof(Food));
             }
         }
 
         public float Saturation
         {
-            get { return _saturation; }
+            get => saturation;
 
             set
             {
-                _saturation = value;
+                saturation = value;
                 OnPropertyChanged(nameof(Saturation));
             }
         }
@@ -76,18 +76,18 @@ namespace MoBot.Structure.Game
             return Block.Water.Contains(GameController.World.GetBlock(playerHead));
         }
 
-        private readonly Dictionary<int, Container> _containers = new Dictionary<int, Container>
+        private readonly Dictionary<int, Container> containers = new Dictionary<int, Container>
         {
             {0, new Container(9)},
             {255, new Container(1)}
         };
 
-        private Container _currentContainer;
+        private Container currentContainer;
 
         public Container CreateContainer(int windowId, int capacity)
         {
-            _containers.Add(windowId, new Container(capacity, (byte) windowId));
-            CurrentContainer = _containers[windowId];
+            containers.Add(windowId, new Container(capacity, (byte) windowId));
+            CurrentContainer = containers[windowId];
             return CurrentContainer;
         }
 
@@ -96,19 +96,19 @@ namespace MoBot.Structure.Game
             if (windowId == 0)
                 return;
 
-            _containers.Remove(windowId);
-            CurrentContainer = _containers[0];
+            containers.Remove(windowId);
+            CurrentContainer = containers[0];
         }
 
         public Container GetContainer(int windowId)
         {
-            return _containers.ContainsKey(windowId) ? _containers[windowId] : null;
+            return containers.ContainsKey(windowId) ? containers[windowId] : null;
         }
 
         public Player(int id, string name) : base(id)
         {
             Name = name;
-            CurrentContainer = _containers[0];
+            CurrentContainer = containers[0];
         }
 
         public override string ToString()

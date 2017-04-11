@@ -2,16 +2,15 @@
 using System.IO;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace MoBot.Protocol
 {
     //Provides combined Network stream reading and writing
     public class StreamWrapper : IDisposable
     {
-        private readonly Stream _mem = new MemoryStream(); //Allocated memory stream
-        private readonly BinaryReader _reader;
-        private readonly BinaryWriter _writer;
+        private readonly Stream stream = new MemoryStream(); //Allocated memory stream
+        private readonly BinaryReader reader;
+        private readonly BinaryWriter writer;
 
         public struct Buffer
         {
@@ -20,20 +19,20 @@ namespace MoBot.Protocol
         }
         public StreamWrapper()
         {
-            _reader = new BinaryReader(_mem);
-            _writer = new BinaryWriter(_mem);
+            reader = new BinaryReader(stream);
+            writer = new BinaryWriter(stream);
         }
         public StreamWrapper(byte[] data)
         {
-            _mem = new MemoryStream(data);
-            _reader = new BinaryReader(_mem);
-            _writer = new BinaryWriter(_mem);
+            stream = new MemoryStream(data);
+            reader = new BinaryReader(stream);
+            writer = new BinaryWriter(stream);
         }
         public StreamWrapper(Stream s)
         {
-            _mem = s;
-            _reader = new BinaryReader(s);
-            _writer = new BinaryWriter(s);
+            stream = s;
+            reader = new BinaryReader(s);
+            writer = new BinaryWriter(s);
         }
 
         public int ReadVarInt() // Reads variable length int to stream
@@ -66,51 +65,51 @@ namespace MoBot.Protocol
         }
         public byte ReadByte()
         {
-            return _reader.ReadByte();
+            return reader.ReadByte();
         }
         public void WriteByte(byte b)
         {
-            _writer.Write(b);
+            writer.Write(b);
         }
         public void WriteInt(int val)
         {
-            _writer.Write(IPAddress.HostToNetworkOrder(val));
+            writer.Write(IPAddress.HostToNetworkOrder(val));
         }
         public int ReadInt()
         {
-            return IPAddress.NetworkToHostOrder(_reader.ReadInt32());
+            return IPAddress.NetworkToHostOrder(reader.ReadInt32());
         }
         public void WriteShort(short val)
         {
-            _writer.Write(IPAddress.HostToNetworkOrder(val));
+            writer.Write(IPAddress.HostToNetworkOrder(val));
         }
         public short ReadShort()
         {
-            return IPAddress.NetworkToHostOrder(_reader.ReadInt16());
+            return IPAddress.NetworkToHostOrder(reader.ReadInt16());
         }
         public void WriteBytes(byte[] val)
         {
-            _writer.Write(val);
+            writer.Write(val);
         }
         public void WriteBytes(Buffer val)
         {
-            _writer.Write(val.Bytes, 0, (int)val.ActualLength);
+            writer.Write(val.Bytes, 0, (int)val.ActualLength);
         }
         public byte[] ReadBytes(int len)
         {
-            return _reader.ReadBytes(len);
+            return reader.ReadBytes(len);
         }
 
         public int ReadBytes(byte[] buff)
         {
-            return _reader.Read(buff, 0, buff.Length);
+            return reader.Read(buff, 0, buff.Length);
         }
 
         public void WriteString(string val) //Writes an UTF8 string to stream
         {
             var bytes = Encoding.UTF8.GetBytes(val);
             WriteVarInt(bytes.Length);
-            _writer.Write(bytes);
+            writer.Write(bytes);
         }     
         public string ReadString() //Reads an UTF8 string from stream
         {
@@ -119,7 +118,7 @@ namespace MoBot.Protocol
             {
                 throw new IOException("The received encoded string Bytes length is less than zero! Weird string!");
             }
-            var buffer = _reader.ReadBytes(length);
+            var buffer = reader.ReadBytes(length);
             return Encoding.UTF8.GetString(buffer);
         }
 
@@ -128,70 +127,70 @@ namespace MoBot.Protocol
             var length = ReadShort();
             if(length < 0)
                 throw new IOException("The received encoded string Bytes length is less than zero! Weird string!");
-            var buffer = _reader.ReadBytes(length);
+            var buffer = reader.ReadBytes(length);
             return Encoding.UTF8.GetString(buffer);
         }
 
         public char ReadChar()
         {
-            return _reader.ReadChar();
+            return reader.ReadChar();
         }
 
         public float ReadSingle()
         {
-            return BitConverter.ToSingle(BitConverter.GetBytes(IPAddress.NetworkToHostOrder(_reader.ReadInt32())), 0);
+            return BitConverter.ToSingle(BitConverter.GetBytes(IPAddress.NetworkToHostOrder(reader.ReadInt32())), 0);
         }
         public void WriteSingle(float val)
         {
-            _writer.Write(IPAddress.HostToNetworkOrder(BitConverter.ToInt32(BitConverter.GetBytes(val), 0)));
+            writer.Write(IPAddress.HostToNetworkOrder(BitConverter.ToInt32(BitConverter.GetBytes(val), 0)));
         }
         public double ReadDouble()
         {
-            return BitConverter.Int64BitsToDouble(IPAddress.NetworkToHostOrder(_reader.ReadInt64()));
+            return BitConverter.Int64BitsToDouble(IPAddress.NetworkToHostOrder(reader.ReadInt64()));
         }
         public void WriteDouble(double val)
         {
-            _writer.Write(IPAddress.HostToNetworkOrder(BitConverter.DoubleToInt64Bits(val)));
+            writer.Write(IPAddress.HostToNetworkOrder(BitConverter.DoubleToInt64Bits(val)));
         }
         public bool ReadBool()
         {
-            return _reader.ReadBoolean();
+            return reader.ReadBoolean();
         }
         public void WriteBool(bool val)
         {
-            _writer.Write(val);
+            writer.Write(val);
         }
         public void WriteLong(long val)
         {
-            _writer.Write(IPAddress.HostToNetworkOrder(val));
+            writer.Write(IPAddress.HostToNetworkOrder(val));
         }
         public long ReadLong()
         {
-            return IPAddress.NetworkToHostOrder(_reader.ReadInt64());
+            return IPAddress.NetworkToHostOrder(reader.ReadInt64());
         }
         public Buffer GetBlob()//Return contains of memory stream
         {
-            var memoryStream = _mem as MemoryStream;
+            var memoryStream = stream as MemoryStream;
             if (memoryStream != null)
-                return new Buffer { ActualLength = _mem.Length, Bytes = memoryStream.GetBuffer() };
+                return new Buffer { ActualLength = stream.Length, Bytes = memoryStream.GetBuffer() };
             return new Buffer();
         }
 
         public void Dispose()
         {
-            _mem?.Dispose();
+            stream?.Dispose();
         }
 
         public void Clear()
         {
-            var t = _mem.FlushAsync();
+            var t = stream.FlushAsync();
             t.Wait();
         }
         public Stream GetStream()
         {
-            return _mem;
+            return stream;
         }
 
-        public bool Eof => _reader.PeekChar() == -1;
+        public bool Eof => reader.PeekChar() == -1;
     }
 }

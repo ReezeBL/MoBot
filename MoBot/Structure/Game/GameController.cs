@@ -21,12 +21,12 @@ namespace MoBot.Structure.Game
         }
         private readonly ConcurrentDictionary<int, Entity> entities = new ConcurrentDictionary<int, Entity>();
         private readonly ConcurrentDictionary<Location, TileEntity> tileEntities = new ConcurrentDictionary<Location, TileEntity>();
-        private Player _player = new Player(0, "");
+        private Player player = new Player(0, "");
 
         public static Player Player
         {
-            get => Instance._player;
-            private set { Instance._player = value; Instance.OnPropertyChanged(nameof(Player)); }
+            get => Instance.player;
+            private set { Instance.player = value; Instance.OnPropertyChanged(nameof(Player)); }
         }
 
         public static GameWorld World { get; } = new GameWorld();      

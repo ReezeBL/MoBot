@@ -4,18 +4,15 @@
     {
         
         public float Yaw, Pitch;
-        private float _health = 20;
+        private float health = 20;
 
         public float Health
         {
-            get
-            {
-                return _health;
-            }
+            get => health;
 
             set
             {
-                _health = value;
+                health = value;
                 OnPropertyChanged(nameof(Health));
             }
         }

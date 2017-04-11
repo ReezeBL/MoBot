@@ -38,44 +38,44 @@ namespace MoBot
 
         public static string ServerIp
         {
-            get { return Instance.currentSettings.ServerIp; }
-            set { Instance.currentSettings.ServerIp = value; }
+            get => Instance.currentSettings.ServerIp;
+            set => Instance.currentSettings.ServerIp = value;
         }
 
         public static HashSet<int> IntrestedBlocks
         {
-            get { return Instance.currentSettings.IntrestedBlocks; }
-            set { Instance.currentSettings.IntrestedBlocks = value; }
+            get => Instance.currentSettings.IntrestedBlocks;
+            set => Instance.currentSettings.IntrestedBlocks = value;
         }
 
         public static int ScanRange
         {
-            get { return Instance.currentSettings.ScanRange; }
-            set { Instance.currentSettings.ScanRange = value; }
+            get => Instance.currentSettings.ScanRange;
+            set => Instance.currentSettings.ScanRange = value;
         }
 
         public static HashSet<int> KeepItems
         {
-            get { return Instance.currentSettings.KeepItemIds; }
-            set { Instance.currentSettings.KeepItemIds = value; }
+            get => Instance.currentSettings.KeepItemIds;
+            set => Instance.currentSettings.KeepItemIds = value;
         }
 
         public static bool AutoReconnect
         {
-            get { return Instance.currentSettings.AutoReconnect; }
-            set { Instance.currentSettings.AutoReconnect = value; }
+            get => Instance.currentSettings.AutoReconnect;
+            set => Instance.currentSettings.AutoReconnect = value;
         }
 
         public static string HomeWarp
         {
-            get { return Instance.currentSettings.HomeWarp; }
-            set { Instance.currentSettings.HomeWarp = value; }
+            get => Instance.currentSettings.HomeWarp;
+            set => Instance.currentSettings.HomeWarp = value;
         }
 
         public static string BackWarp
         {
-            get { return Instance.currentSettings.BackWarp; }
-            set { Instance.currentSettings.BackWarp = value; }
+            get => Instance.currentSettings.BackWarp;
+            set => Instance.currentSettings.BackWarp = value;
         }
 
         public static Dictionary<string, string> Users { get; } = new Dictionary<string, string>();

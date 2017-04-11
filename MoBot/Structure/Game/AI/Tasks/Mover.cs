@@ -30,7 +30,7 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         public Mover()
         {
-            _root = new Action(RoutineTick);
+            Root = new Action(RoutineTick);
         }
 
         public void SetDestination(Location endPoint)
@@ -112,10 +112,10 @@ namespace MoBot.Structure.Game.AI.Tasks
             yield return SwitchTool(block);
 
             ActionManager.StartDigging(x, y, z);
-            yield return _awaiter;
+            yield return Awaiter;
             ActionManager.UpdatePosition();
             ActionManager.FinishDigging(x, y, z);
-            yield return _awaiter;
+            yield return Awaiter;
             ActionManager.UpdatePosition();
             yield return DigBlock(block);
 
@@ -139,7 +139,7 @@ namespace MoBot.Structure.Game.AI.Tasks
                 Console.WriteLine($"Selecting {item.Item.Name} in the belt {item.Slot}");
                 ActionManager.SelectBeltSlot(item.Slot);
                 ActionManager.UpdatePosition();
-                yield return _awaiter;
+                yield return Awaiter;
                 yield break;
             }
 
@@ -153,7 +153,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             yield return ActionManager.ExchangeInventorySlots(item.Slot, GameController.Player.HeldItem);
             ActionManager.UpdatePosition();
 
-            yield return _awaiter;
+            yield return Awaiter;
         }
 
         private static Func<Container.IndexedItem, bool> IsEffectiveTool(Block block)
@@ -171,7 +171,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             while (blockHealth > 0)
             {
                 blockHealth -= GameController.Player.GetDigSpeed(block);
-                yield return _awaiter;
+                yield return Awaiter;
             }
         }
     }

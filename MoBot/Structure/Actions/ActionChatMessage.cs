@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MoBot.Structure.Actions
+﻿namespace MoBot.Structure.Actions
 {
     public class ActionChatMessage : SysAction
     {

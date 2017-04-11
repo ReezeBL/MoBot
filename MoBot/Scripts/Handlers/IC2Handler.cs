@@ -36,7 +36,7 @@ namespace MoBot.Scripts.Handlers
                         {
                             data = new MemoryStream();
                         }
-                        byte[] tmp = new byte[4096];
+                        var tmp = new byte[4096];
                         int count;
                         while ((count = payload.ReadBytes(tmp)) > 0)
                             data.Write(tmp, 0, count);

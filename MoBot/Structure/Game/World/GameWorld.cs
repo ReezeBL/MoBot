@@ -1,28 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Windows.Forms;
 using MoBot.Structure.Game.AI.Pathfinding;
 
 namespace MoBot.Structure.Game.World
 {
     public class GameWorld
     {
-        private readonly List<Chunk> _chunks = new List<Chunk>();
-        private readonly Dictionary<int, Dictionary<int, Chunk>> _chunkDictionary = new Dictionary<int, Dictionary<int, Chunk>>();
-        private readonly object _monitor = new object();
-        private readonly object _validationLocker = new object();
-        private int _validation;
+        private readonly Dictionary<int, Dictionary<int, Chunk>> chunkDictionary = new Dictionary<int, Dictionary<int, Chunk>>();
+        private readonly object monitor = new object();
+        private readonly object validationLocker = new object();
+        private int validation;
 
         public Chunk this[int x, int y]
         {
             get
             {
-                if (_chunkDictionary.ContainsKey(x))
+                if (chunkDictionary.ContainsKey(x))
                 {
-                    var xChunk = _chunkDictionary[x];
+                    var xChunk = chunkDictionary[x];
                     if (xChunk.ContainsKey(y))
                         return xChunk[y];
                 }
@@ -30,9 +26,9 @@ namespace MoBot.Structure.Game.World
             }
             set
             {
-                if (_chunkDictionary.ContainsKey(x))
+                if (chunkDictionary.ContainsKey(x))
                 {
-                    var xChunk = _chunkDictionary[x];
+                    var xChunk = chunkDictionary[x];
                     if (xChunk.ContainsKey(y))
                         xChunk[y] = value;
                     else
@@ -41,7 +37,7 @@ namespace MoBot.Structure.Game.World
                 else
                 {
                     var xChunk = new Dictionary<int, Chunk> {{y, value}};
-                    _chunkDictionary.Add(x, xChunk);
+                    chunkDictionary.Add(x, xChunk);
                 }
             }
         }
@@ -51,16 +47,16 @@ namespace MoBot.Structure.Game.World
         {
             get
             {
-                lock (_validationLocker)
+                lock (validationLocker)
                 {
-                    return _validation;
+                    return validation;
                 }
             }
             private set
             {
-                lock (_validationLocker)
+                lock (validationLocker)
                 {
-                    _validation = value;
+                    validation = value;
                 }
             }
         }
@@ -290,9 +286,9 @@ namespace MoBot.Structure.Game.World
 
         public void Clear()
         {
-            lock (_monitor)
+            lock (monitor)
             {
-                _chunks.Clear();
+                chunkDictionary.Clear();
             }
         }
 

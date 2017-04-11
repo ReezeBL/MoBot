@@ -22,9 +22,9 @@ namespace MoBot.Protocol
             Ping
         }
 
-        private StreamWrapper _channel;
+        private StreamWrapper channel;
 
-        private readonly HashSet<int> _ignoredIds = new HashSet<int> {
+        private readonly HashSet<int> ignoredIds = new HashSet<int> {
             3,  //PacketTimeUpdate
             4,  //PacketEntityEquipment
             5,  //PacketSpawnPosition
@@ -49,16 +49,17 @@ namespace MoBot.Protocol
             55, //PacketStatistics
             56, //PacketPlayerListItem
             62, //PacketTeams
+            -26, //Говно с экскалибура
         };
 
-        private readonly Dictionary<int, Type> _loginMap = new Dictionary<int, Type>
+        private readonly Dictionary<int, Type> loginMap = new Dictionary<int, Type>
         {
             {0, typeof(PacketDisconnect)},
             {1, typeof(PacketEncriptionRequest)},
             {2, typeof(PacketLoginSuccess)}
         };
 
-        private readonly Dictionary<int, Type> _playMap = new Dictionary<int, Type>
+        private readonly Dictionary<int, Type> playMap = new Dictionary<int, Type>
         {
             {0, typeof(PacketKeepAlive)},
             {1, typeof(PacketJoinGame)},
@@ -91,14 +92,14 @@ namespace MoBot.Protocol
             {64, typeof(PacketDisconnect)}
         };
 
-        private readonly Dictionary<Type, int> _reverseLoginMap = new Dictionary<Type, int>
+        private readonly Dictionary<Type, int> reverseLoginMap = new Dictionary<Type, int>
         {
             {typeof(PacketHandshake), 0},
             {typeof(PacketLoginStart), 0},
             {typeof(PacketEncriptionResponse), 1}
         };
 
-        private readonly Dictionary<Type, int> _reversePlayMap = new Dictionary<Type, int>()
+        private readonly Dictionary<Type, int> reversePlayMap = new Dictionary<Type, int>()
         {
             {typeof(PacketKeepAlive), 0},
             {typeof(PacketChat), 1},
@@ -114,29 +115,29 @@ namespace MoBot.Protocol
             {typeof(PacketCustomPayload), 23}
         };
 
-        private readonly Dictionary<Type, int> _reversePingMap = new Dictionary<Type, int>()
+        private readonly Dictionary<Type, int> reversePingMap = new Dictionary<Type, int>()
         {
             {typeof(PacketHandshake), 0 },
             {typeof(EmptyPacket), 0 }
         };
 
-        private readonly Dictionary<int, Type> _pingMap = new Dictionary<int, Type>()
+        private readonly Dictionary<int, Type> pingMap = new Dictionary<int, Type>()
         {
             {0, typeof(PacketResponse) }
         };
 
-        private Dictionary<int, Type> _currentMap;
-        private Dictionary<Type, int> _currentReverseMap;
+        private Dictionary<int, Type> currentMap;
+        private Dictionary<Type, int> currentReverseMap;
 
         public Channel(Stream networkStream, State state)
         {
-            _channel = new StreamWrapper(networkStream);
+            channel = new StreamWrapper(networkStream);
             ChangeState(state);
         }
 
         public Channel(Stream networkStream)
         {
-            _channel = new StreamWrapper(networkStream);
+            channel = new StreamWrapper(networkStream);
             ChangeState(State.Ping);
         }
 
@@ -145,16 +146,16 @@ namespace MoBot.Protocol
             switch (state)
             {
                 case State.Login:
-                    _currentMap = _loginMap;
-                    _currentReverseMap = _reverseLoginMap;
+                    currentMap = loginMap;
+                    currentReverseMap = reverseLoginMap;
                     break;
                 case State.Play:
-                    _currentReverseMap = _reversePlayMap;
-                    _currentMap = _playMap;
+                    currentReverseMap = reversePlayMap;
+                    currentMap = playMap;
                     break;
                 case State.Ping:
-                    _currentReverseMap = _reversePingMap;
-                    _currentMap = _pingMap;
+                    currentReverseMap = reversePingMap;
+                    currentMap = pingMap;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(state), state, null);
@@ -167,37 +168,37 @@ namespace MoBot.Protocol
             output.Init(true, new ParametersWithIV(new KeyParameter(secretKey), secretKey, 0, 16));
             var input = new BufferedBlockCipher(new CfbBlockCipher(new AesFastEngine(), 8));
             input.Init(false, new ParametersWithIV(new KeyParameter(secretKey), secretKey, 0, 16));
-            var cipherStream = new CipherStream(_channel.GetStream(), input, output);
-            _channel = new StreamWrapper(cipherStream);
+            var cipherStream = new CipherStream(channel.GetStream(), input, output);
+            channel = new StreamWrapper(cipherStream);
         }
 
         public void SendPacket(Packet packet)
         {
-            if (!_currentReverseMap.ContainsKey(packet.GetType()))
+            if (!currentReverseMap.ContainsKey(packet.GetType()))
             {
                 Console.WriteLine(packet.GetType());
                 return;
             }
-            var id = _currentReverseMap[packet.GetType()];
+            var id = currentReverseMap[packet.GetType()];
             var tmp = new StreamWrapper();
             tmp.WriteVarInt(id);
             packet.WritePacketData(tmp);
 
             var buffer = tmp.GetBlob();
-            _channel.WriteVarInt((int)buffer.ActualLength);
-            _channel.WriteBytes(buffer);
+            channel.WriteVarInt((int)buffer.ActualLength);
+            channel.WriteBytes(buffer);
         }
 
         public Packet GetPacket()
         {
-            var length = _channel.ReadVarInt();
-            var data = _channel.ReadBytes(length);
+            var length = channel.ReadVarInt();
+            var data = channel.ReadBytes(length);
             var tmp = new StreamWrapper(data);
             var id = tmp.ReadVarInt();
             Type packetType;
-            if (!_currentMap.TryGetValue(id, out packetType))
+            if (!currentMap.TryGetValue(id, out packetType))
             {
-                if (!_ignoredIds.Contains(id))
+                if (!ignoredIds.Contains(id))
                     Program.GetLogger().Error($"Unknown packet id : {id}");
                 return null;
             }

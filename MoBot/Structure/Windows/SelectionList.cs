@@ -8,7 +8,7 @@ namespace MoBot.Structure.Windows
     [DefaultBindingProperty("LabelCaption")]
     public partial class SelectionList : UserControl
     {
-        private object[] _globalCollection;
+        private object[] globalCollection;
 
         public SelectionList()
         {
@@ -20,10 +20,7 @@ namespace MoBot.Structure.Windows
 
         public object[] Items
         {
-            get
-            {
-                return collection.Items.Cast<object>().ToArray();
-            }
+            get => collection.Items.Cast<object>().ToArray();
             set
             {
                 collection.Items.Clear();
@@ -33,18 +30,18 @@ namespace MoBot.Structure.Windows
 
         public string LabelCaption
         {
-            get { return caption.Text; }
-            set { caption.Text = value; }
+            get => caption.Text;
+            set => caption.Text = value;
         }
 
         public object[] GlobalCollection
         {
-            get { return _globalCollection; }
+            get => globalCollection;
             set
             {
-                _globalCollection = value;
-                if(_globalCollection != null)
-                    Array.Sort(_globalCollection, (x, y) => string.Compare(x.ToString(), y.ToString(), StringComparison.Ordinal));
+                globalCollection = value;
+                if(globalCollection != null)
+                    Array.Sort(globalCollection, (x, y) => string.Compare(x.ToString(), y.ToString(), StringComparison.Ordinal));
             }
         }
 
@@ -54,7 +51,7 @@ namespace MoBot.Structure.Windows
 
         private void AddClick(object sender, EventArgs args)
         {
-            var input = new SelectionForm(_globalCollection);
+            var input = new SelectionForm(globalCollection);
             input.ShowDialog();
             if (input.Item != null)
                 collection.Items.Add(input.Item);

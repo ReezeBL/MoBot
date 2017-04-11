@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TreeSharp;
 
 namespace MoBot.Structure.Game.AI.Tasks
 {
     public class Task
     {
-        protected Composite _root;
-        protected static readonly object _awaiter = new object();
+        protected Composite Root;
+        protected static readonly object Awaiter = new object();
         /// <summary>
         /// Определяет очереденость исполнения заданий
         /// </summary>
@@ -24,7 +19,7 @@ namespace MoBot.Structure.Game.AI.Tasks
 
         public static implicit operator Composite(Task obj)
         {
-            return obj._root;
+            return obj.Root;
         }
 
         public static IEnumerator WaitForSeconds(long milliseconds)
@@ -33,7 +28,7 @@ namespace MoBot.Structure.Game.AI.Tasks
             time.Start();
             while (time.ElapsedMilliseconds < milliseconds)
             {
-                yield return _awaiter;
+                yield return Awaiter;
             }
         }
 

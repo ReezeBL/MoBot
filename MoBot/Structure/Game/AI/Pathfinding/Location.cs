@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Runtime.Serialization;
 using AForge.Math;
-using MoBot.Structure.Game.World;
 using Priority_Queue;
 
 namespace MoBot.Structure.Game.AI.Pathfinding

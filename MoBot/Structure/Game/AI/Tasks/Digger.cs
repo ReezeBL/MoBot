@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MoBot.Structure.Game.AI.Pathfinding;
 using NLog;
 using TreeSharp;
@@ -12,8 +8,8 @@ namespace MoBot.Structure.Game.AI.Tasks
 {
     public class Digger : Task
     {
-        public bool enableDig;
-        private readonly Logger _logger = Program.GetLogger();
+        public bool EnableDig;
+        private readonly Logger logger = Program.GetLogger();
         private readonly HashSet<Location> ignoredLocations = new HashSet<Location>();
         private void SetupDigger(object context)
         {
@@ -49,15 +45,15 @@ namespace MoBot.Structure.Game.AI.Tasks
             }
             else
             {
-                _logger.Info("Cant find any interesting blocks, diiging stopped!");
-                enableDig = false;
+                logger.Info("Cant find any interesting blocks, diiging stopped!");
+                EnableDig = false;
                 ActionManager.SendChatMessage(GameController.AiHandler.CustomEvents.TeleportHome);
             }
         }
 
         public Digger()
         {
-            _root = new Decorator(o => enableDig, new TreeSharp.Action(o=> SetupDigger(o)));
+            Root = new Decorator(o => EnableDig, new TreeSharp.Action(o=> SetupDigger(o)));
         }
     }
 }

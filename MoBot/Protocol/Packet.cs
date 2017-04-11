@@ -1,5 +1,4 @@
-﻿using System;
-using fNbt;
+﻿using fNbt;
 using MoBot.Protocol.Handlers;
 using MoBot.Structure.Game;
 

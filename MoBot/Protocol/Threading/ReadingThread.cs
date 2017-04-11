@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using MoBot.Structure;
@@ -9,10 +8,10 @@ namespace MoBot.Protocol.Threading
 {
     internal class ReadingThread : BaseThread
     {
-        private readonly object _queueLocker = new object();
+        private readonly object queueLocker = new object();
         private Thread ReadThread { get; }
         private Thread ProcessThread { get; }
-        private readonly Queue<Packet> _processQueue = new Queue<Packet>();
+        private readonly Queue<Packet> processQueue = new Queue<Packet>();
         public ReadingThread()
         {           
             ReadThread = new Thread(() =>
@@ -26,8 +25,8 @@ namespace MoBot.Protocol.Threading
                         if (packet.ProceedNow())
                             packet.HandlePacket(NetworkController.Handler);
                         else
-                            lock (_queueLocker)
-                                _processQueue.Enqueue(packet);
+                            lock (queueLocker)
+                                processQueue.Enqueue(packet);
                     }
                     catch (EndOfStreamException)
                     {
@@ -47,11 +46,11 @@ namespace MoBot.Protocol.Threading
                 {
                     try
                     {
-                        while (_processQueue.Count > 0)
+                        while (processQueue.Count > 0)
                         {
                             Packet packet;
-                            lock(_queueLocker)
-                                packet = _processQueue.Dequeue();
+                            lock(queueLocker)
+                                packet = processQueue.Dequeue();
                             packet.HandlePacket(NetworkController.Handler);
                         }
                     }

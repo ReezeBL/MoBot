@@ -1,6 +1,5 @@
 ﻿using MoBot.Protocol.Packets.Play;
 using MoBot.Structure;
-using Newtonsoft.Json.Linq;
 using NLog;
 
 namespace MoBot.Protocol.Handlers
