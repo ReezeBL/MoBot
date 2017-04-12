@@ -157,7 +157,7 @@ namespace MoBot.Core.Game.AI.Pathfinding
         {
             try
             {
-                var nodes = new FastPriorityQueue<Location>(65536);
+                var nodes = new FastPriorityQueue<Location>((int)maxDistance * (int)maxDistance * 255);
                 var cost = new Hashtable();
                 var succeed = false;
 

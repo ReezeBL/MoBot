@@ -110,7 +110,9 @@ namespace MoBot.Core.Game.AI.Tasks
 
             foreach (var slot in GameController.Player.CurrentContainer.IndexedInventory)
             {
-                if (Settings.KeepItems.Contains(slot.Item.Id) || slot.Item.Id == -1) continue;
+                
+                if (slot.Item == null || Settings.KeepItems.Contains(slot.Item.Id) || slot.Item.Id == -1) continue;
+
                 var freeSlot = GameController.Player.CurrentContainer.ContainerFreeSlot;
 
                 if (freeSlot == -1) break;

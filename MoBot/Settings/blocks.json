@@ -77,15 +77,15 @@
     "id": 10,
     "name": "Лава",
     "rawname": "tile.lava",
-    "hardness": 100.0,
-    "transparent": true
+    "hardness": -1.0,
+    "transparent": false
   },
   {
     "id": 11,
     "name": "Лава",
     "rawname": "tile.lava",
-    "hardness": 100.0,
-    "transparent": true
+    "hardness": -1.0,
+    "transparent": false
   },
   {
     "id": 12,
@@ -714,7 +714,7 @@
     "id": 97,
     "name": "Камень с монстрами",
     "rawname": "tile.monsterStoneEgg",
-    "hardness": 0.75,
+    "hardness": -1.0,
     "transparent": false
   },
   {

@@ -41,13 +41,13 @@ namespace MoBot.Scripts.IndustrialCraft
 
         public int GetToolMode(ItemStack stack)
         {
-            var nbtTag = stack.NbtRoot?.Get("toolMode");
+            var nbtTag = stack?.NbtRoot?.Get("toolMode");
             return nbtTag?.IntValue ?? 0;
         }
 
         public double GetItemCharge(ItemStack stack)
         {
-            var nbtTag = stack.NbtRoot.Get("charge");
+            var nbtTag = stack?.NbtRoot?.Get("charge");
             return nbtTag?.DoubleValue ?? 0;
         }
 
