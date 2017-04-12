@@ -5,10 +5,10 @@ using System.Linq;
 using fNbt;
 using MoBot.Protocol;
 using MoBot.Protocol.Handlers;
-using MoBot.Structure;
-using MoBot.Structure.Game;
-using MoBot.Structure.Game.AI.Pathfinding;
-using MoBot.Structure.Game.Items;
+using MoBot.Core;
+using MoBot.Core.Game;
+using MoBot.Core.Game.AI.Pathfinding;
+using MoBot.Core.Game.Items;
 
 namespace MoBot.Scripts.IndustrialCraft
 {
@@ -125,11 +125,12 @@ namespace MoBot.Scripts.IndustrialCraft
                 case 11:
                     return stream.ReadVarInt();
                 case 12:
-                    String item = (String) Decode(stream, 14);
+                    var item = (string) Decode(stream, 14);
                     x = stream.ReadByte();
-                    short var15 = stream.ReadShort();
-                    NbtCompound tag = (NbtCompound) Decode(stream);
-                    return new ItemStack(-2) {Item = new Item() {Name = item}, NbtRoot = tag, ItemCount = (byte)x, ItemDamage = var15};
+                    var var15 = stream.ReadShort();
+                    var tag = (NbtCompound) Decode(stream);
+                    return null;
+                    //return new ItemStack(-2) {Item = new Item() {Name = item}, NbtRoot = tag, ItemCount = (byte)x, ItemDamage = var15};
                 case 13:
                     return stream.ReadStringT();
                 case 14:

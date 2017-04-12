@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
-using MoBot.Structure;
+using MoBot.Core;
 
 namespace MoBot.Protocol.Threading
 {
@@ -30,7 +30,7 @@ namespace MoBot.Protocol.Threading
                         }
                         catch (Exception exception)
                         {
-                            Program.GetLogger().Error($"Writing thread: {exception}");
+                            Log.Error($"Writing thread: {exception}");
                         }
                     }
                     Thread.Sleep(10);

@@ -1,5 +1,5 @@
 ﻿using MoBot.Protocol.Handlers;
-using MoBot.Structure.Game.Items;
+using MoBot.Core.Game.Items;
 
 namespace MoBot.Scripts.IndustrialCraft
 {
@@ -9,8 +9,8 @@ namespace MoBot.Scripts.IndustrialCraft
         [Initialisation]
         public void OnLoad()
         {
-            ClientHandler.CustomHandlers.Add("ic2", new IC2Handler());
-            Item.Extension.Add("item.advDDrill", new ItemAdvancedDrill());
+            ClientHandler.RegisterCustomHandler("ic2", new IC2Handler());
+            Item.RegisterItem("item.advDDrill", new ItemAdvancedDrill());
         }
     }
 }

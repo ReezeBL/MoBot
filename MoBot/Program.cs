@@ -1,8 +1,8 @@
 ﻿using MoBot.Scripts;
-using MoBot.Structure;
-using MoBot.Structure.Game;
-using MoBot.Structure.Game.Items;
-using MoBot.Structure.Windows;
+using MoBot.Core;
+using MoBot.Core.Game;
+using MoBot.Core.Game.Items;
+using MoBot.Core.Windows;
 using NLog;
 using System;
 using System.Runtime.InteropServices;
@@ -50,7 +50,7 @@ namespace MoBot
             var controller = new Controller();
             var viewer = new Viewer { MainController = controller };
             model.Subscribe(viewer);
-            //FreeConsole();
+            FreeConsole();
 
             Application.Run(viewer);
         }

@@ -1,6 +1,6 @@
 ﻿using System;
 using MoBot.Protocol.Handlers;
-using MoBot.Structure.Game.World;
+using MoBot.Core.Game.World;
 
 namespace MoBot.Protocol.Packets.Play
 {

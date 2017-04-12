@@ -1,6 +1,6 @@
 ﻿using fNbt;
 using MoBot.Protocol.Handlers;
-using MoBot.Structure.Game;
+using MoBot.Core.Game;
 
 namespace MoBot.Protocol
 {
@@ -39,8 +39,9 @@ namespace MoBot.Protocol
         protected static ItemStack ReadItem(StreamWrapper buff)
         {
             var id = buff.ReadShort();
-            var item = new ItemStack(id);
-            if (id < 0) return item;
+            var item = ItemStack.CreateItemStack(id);
+
+            if (item == null) return null;
 
             item.ItemCount = buff.ReadByte();
             item.ItemDamage = buff.ReadShort();

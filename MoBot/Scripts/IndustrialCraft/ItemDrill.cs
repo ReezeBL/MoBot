@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using MoBot.Structure.Game;
-using MoBot.Structure.Game.Items;
+using MoBot.Core.Game;
+using MoBot.Core.Game.Items;
 
 namespace MoBot.Scripts.IndustrialCraft
 {

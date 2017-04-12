@@ -9,9 +9,9 @@ using System.Xml;
 using MoBot.Protocol.Packets;
 using MoBot.Protocol.Packets.Handshake;
 using MoBot.Protocol.Packets.Play;
-using MoBot.Structure;
-using MoBot.Structure.Game;
-using MoBot.Structure.Game.AI.Pathfinding;
+using MoBot.Core;
+using MoBot.Core.Game;
+using MoBot.Core.Game.AI.Pathfinding;
 using NLog;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
@@ -21,10 +21,15 @@ namespace MoBot.Protocol.Handlers
 {
     public class ClientHandler : IHandler
     {
-        public static readonly Dictionary<string, CustomHandler> CustomHandlers =
+        protected static readonly Dictionary<string, CustomHandler> CustomHandlers =
             new Dictionary<string, CustomHandler> {{"FML|HS", new FmlHandshake()}};
 
         private readonly Logger log = Program.GetLogger();
+
+        public static void RegisterCustomHandler(string channel, CustomHandler handler)
+        {
+            CustomHandlers.Add(channel, handler);
+        }
 
         public void HandlePacketDisconnect(PacketDisconnect packetDisconnect)
         {

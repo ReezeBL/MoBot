@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
+using NLog;
 
 #pragma warning disable 169
 
@@ -20,6 +21,8 @@ namespace MoBot
         public const string UserIdsPath = "Settings/UserIDS.xml";
 
         private static readonly Settings Instance;
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+
 
         [JsonRequired] private readonly Dictionary<string, SettingsWrapper> nameBindings =
             new Dictionary<string, SettingsWrapper>();
@@ -96,7 +99,7 @@ namespace MoBot
             }
             catch (Exception)
             {
-                Program.GetLogger().Warn("There is no settings file. Created a new one");
+                Logger.Warn("There is no settings file. Created a new one");
                 return null;
             }
         }

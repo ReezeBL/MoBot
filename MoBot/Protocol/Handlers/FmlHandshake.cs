@@ -1,12 +1,12 @@
 ﻿using MoBot.Protocol.Packets.Play;
-using MoBot.Structure;
+using MoBot.Core;
 using NLog;
 
 namespace MoBot.Protocol.Handlers
 {
     internal class FmlHandshake : CustomHandler
     {
-        private readonly Logger log = Program.GetLogger();
+        private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
         public override void OnPacketData(byte[] payloadData)
         {
@@ -66,7 +66,7 @@ namespace MoBot.Protocol.Handlers
                                 answer.WriteByte(4);
                                 break;
                             default:
-                                log.Info($"Unhandled Ack Stage : {stage}");
+                                Log.Info($"Unhandled Ack Stage : {stage}");
                                 break;
                         }
                         NetworkController.SendPacket(new PacketCustomPayload

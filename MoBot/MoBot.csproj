@@ -157,69 +157,70 @@
     <None Include="Scripts\IndustrialCraft\ItemDrill.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Compile Include="Scripts\ScriptLoader.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="Structure\Actions\ActionChatMessage.cs" />
-    <Compile Include="Structure\Actions\ActionConnect.cs" />
-    <Compile Include="Structure\Actions\ActionMessage.cs" />
-    <Compile Include="Structure\Actions\SysAction.cs" />
-    <Compile Include="Structure\Controller.cs" />
-    <Compile Include="Structure\Decompressor.cs" />
-    <Compile Include="Structure\Game\ActionManager.cs" />
-    <Compile Include="Structure\Game\AI\AiHandler.cs" />
-    <Compile Include="Structure\Game\AI\Pathfinding\Location.cs" />
-    <Compile Include="Structure\Game\AI\Pathfinding\Path.cs" />
-    <Compile Include="Structure\Game\AI\Pathfinding\PathFinder.cs" />
-    <Compile Include="Structure\Game\AI\Tasks\CustomEvents.cs" />
-    <Compile Include="Structure\Game\AI\Tasks\Digger.cs" />
-    <Compile Include="Structure\Game\AI\Tasks\Mover.cs" />
-    <Compile Include="Structure\Game\AI\Tasks\Protector.cs" />
-    <Compile Include="Structure\Game\AI\Tasks\Task.cs" />
-    <Compile Include="Structure\Game\Block.cs" />
-    <Compile Include="Structure\Game\Container.cs" />
-    <Compile Include="Structure\Game\Entity.cs" />
-    <Compile Include="Structure\Game\GameController.cs" />
-    <Compile Include="Structure\Game\ItemStack.cs" />
-    <Compile Include="Structure\Game\Items\Item.cs" />
-    <Compile Include="Structure\Game\Items\ItemFood.cs" />
-    <Compile Include="Structure\Game\Items\ItemTool.cs" />
-    <Compile Include="Structure\Game\LivingEntity.cs" />
-    <Compile Include="Structure\Game\Mob.cs" />
-    <Compile Include="Structure\Game\Player.cs" />
-    <Compile Include="Structure\Game\TileEntity.cs" />
-    <Compile Include="Structure\Game\World\Chunk.cs" />
-    <Compile Include="Structure\Game\World\GameWorld.cs" />
-    <Compile Include="Structure\Game\World\Section.cs" />
-    <Compile Include="Structure\MathHelper.cs" />
-    <Compile Include="Structure\NetworkController.cs" />
-    <Compile Include="Structure\Windows\ContainerGUI.cs">
+    <Compile Include="Core\Actions\ActionChatMessage.cs" />
+    <Compile Include="Core\Actions\ActionConnect.cs" />
+    <Compile Include="Core\Actions\ActionMessage.cs" />
+    <Compile Include="Core\Actions\SysAction.cs" />
+    <Compile Include="Core\Controller.cs" />
+    <Compile Include="Core\Decompressor.cs" />
+    <Compile Include="Core\Game\ActionManager.cs" />
+    <Compile Include="Core\Game\AI\AiHandler.cs" />
+    <Compile Include="Core\Game\AI\Pathfinding\Location.cs" />
+    <Compile Include="Core\Game\AI\Pathfinding\Path.cs" />
+    <Compile Include="Core\Game\AI\Pathfinding\PathFinder.cs" />
+    <Compile Include="Core\Game\AI\Tasks\CustomEvents.cs" />
+    <Compile Include="Core\Game\AI\Tasks\Digger.cs" />
+    <Compile Include="Core\Game\AI\Tasks\Mover.cs" />
+    <Compile Include="Core\Game\AI\Tasks\Protector.cs" />
+    <Compile Include="Core\Game\AI\Tasks\Task.cs" />
+    <Compile Include="Core\Game\Block.cs" />
+    <Compile Include="Core\Game\Container.cs" />
+    <Compile Include="Core\Game\Entity.cs" />
+    <Compile Include="Core\Game\GameController.cs" />
+    <Compile Include="Core\Game\ItemStack.cs" />
+    <Compile Include="Core\Game\Items\Item.cs" />
+    <Compile Include="Core\Game\Items\ItemFood.cs" />
+    <Compile Include="Core\Game\Items\ItemTool.cs" />
+    <Compile Include="Core\Game\LivingEntity.cs" />
+    <Compile Include="Core\Game\Mob.cs" />
+    <Compile Include="Core\Game\Player.cs" />
+    <Compile Include="Core\Game\TileEntity.cs" />
+    <Compile Include="Core\Game\World\Chunk.cs" />
+    <Compile Include="Core\Game\World\GameWorld.cs" />
+    <Compile Include="Core\Game\World\Section.cs" />
+    <Compile Include="Core\MathHelper.cs" />
+    <Compile Include="Core\NetworkController.cs" />
+    <Compile Include="Core\Windows\ContainerGUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Structure\Windows\ContainerGUI.Designer.cs">
+    <Compile Include="Core\Windows\ContainerGUI.Designer.cs">
       <DependentUpon>ContainerGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Structure\Windows\ControlExtensions.cs" />
-    <Compile Include="Structure\Windows\SelectionForm.cs">
+    <Compile Include="Core\Windows\ControlExtensions.cs" />
+    <Compile Include="Core\Windows\SelectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Structure\Windows\SelectionForm.Designer.cs">
+    <Compile Include="Core\Windows\SelectionForm.Designer.cs">
       <DependentUpon>SelectionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Structure\Windows\SelectionList.cs">
+    <Compile Include="Core\Windows\SelectionList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Structure\Windows\SelectionList.Designer.cs">
+    <Compile Include="Core\Windows\SelectionList.Designer.cs">
       <DependentUpon>SelectionList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Structure\Windows\SettingsWindow.cs">
+    <Compile Include="Core\Windows\SettingsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Structure\Windows\SettingsWindow.Designer.cs">
+    <Compile Include="Core\Windows\SettingsWindow.Designer.cs">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Structure\Windows\Viewer.cs">
+    <Compile Include="Core\Windows\Viewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Structure\Windows\Viewer.Designer.cs">
+    <Compile Include="Core\Windows\Viewer.Designer.cs">
       <DependentUpon>Viewer.cs</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -253,19 +254,19 @@
     <Content Include="Settings\format.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Structure\Windows\ContainerGUI.resx">
+    <EmbeddedResource Include="Core\Windows\ContainerGUI.resx">
       <DependentUpon>ContainerGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Structure\Windows\SelectionForm.resx">
+    <EmbeddedResource Include="Core\Windows\SelectionForm.resx">
       <DependentUpon>SelectionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Structure\Windows\SelectionList.resx">
+    <EmbeddedResource Include="Core\Windows\SelectionList.resx">
       <DependentUpon>SelectionList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Structure\Windows\SettingsWindow.resx">
+    <EmbeddedResource Include="Core\Windows\SettingsWindow.resx">
       <DependentUpon>SettingsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Structure\Windows\Viewer.resx">
+    <EmbeddedResource Include="Core\Windows\Viewer.resx">
       <DependentUpon>Viewer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

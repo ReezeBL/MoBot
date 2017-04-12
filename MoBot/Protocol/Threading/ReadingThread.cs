@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
-using MoBot.Structure;
+using MoBot.Core;
+using NLog;
 
 namespace MoBot.Protocol.Threading
 {
@@ -33,9 +34,14 @@ namespace MoBot.Protocol.Threading
                         NetworkController.Disconnect();
                         NetworkController.NotifyViewer("Client diconnected!");
                     }
+                    catch (IOException)
+                    {
+                        NetworkController.Disconnect();
+                        NetworkController.NotifyViewer("Client diconnected!");
+                    }
                     catch (Exception exception)
                     {
-                        Program.GetLogger().Error($"Reading thread: {exception}");
+                        Log.Error($"Reading thread: {exception}");
                     }
                 }
             })
@@ -56,7 +62,7 @@ namespace MoBot.Protocol.Threading
                     }
                     catch (Exception exception)
                     {
-                        Program.GetLogger().Error($"Processing thread: {exception}");
+                        Log.Error($"Processing thread: {exception}");
                     }
                     Thread.Sleep(10);
                 }
