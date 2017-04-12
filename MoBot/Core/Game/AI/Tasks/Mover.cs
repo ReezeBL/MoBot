@@ -13,7 +13,7 @@ namespace MoBot.Core.Game.AI.Tasks
         private IEnumerator mover;
         private readonly object monitor = new object();
 
-        private IEnumerator _Mover
+        private IEnumerator ConcurrentMover
         {
             get
             {
@@ -35,31 +35,31 @@ namespace MoBot.Core.Game.AI.Tasks
 
         public void SetDestination(Location endPoint)
         {
-            _Mover = StartRoutine(MoveRoutine(endPoint));
+            ConcurrentMover = StartRoutine(MoveRoutine(endPoint));
         }
 
         public void Stop()
         {
-            _Mover = null;
+            ConcurrentMover = null;
         }
 
         public void SetShovelDestination(Location endPoint, Path preBuild = null)
         {
-            _Mover = StartRoutine(ShovelRoutine(endPoint, preBuild));
+            ConcurrentMover = StartRoutine(ShovelRoutine(endPoint, preBuild));
         }
 
         private RunStatus RoutineTick(object context)
         {
             lock (monitor)
             {
-                if (_Mover == null || !_Mover.MoveNext())
+                if (ConcurrentMover == null || !ConcurrentMover.MoveNext())
                     return RunStatus.Failure;
 
-                return _Mover.Current != null ? RunStatus.Running : RunStatus.Success;
+                return ConcurrentMover.Current != null ? RunStatus.Running : RunStatus.Success;
             }
         }
 
-        private IEnumerator MoveRoutine(Location destination)
+        private static IEnumerator MoveRoutine(Location destination)
         {
             var path = PathFinder.Shovel(GameController.Player.Position, destination, false, false);
             if (path == null)
@@ -90,6 +90,8 @@ namespace MoBot.Core.Game.AI.Tasks
                         yield return DigTo(point.X, point.Y + 1, point.Z);
                         continue;
                     }
+
+                    yield return null;
 
                     if (GameController.World.IsBlockFree(point.X, point.Y, point.Z)) continue;
                     yield return DigTo(point.X, point.Y, point.Z);

@@ -45,6 +45,7 @@ namespace MoBot.Core.Game.AI.Pathfinding
         {
             return $"({X} | {Y} | {Z})";
         }
+
         public Location Prev;
 
         public Location(int x, int y, int z)

@@ -10,53 +10,31 @@ namespace MoBot.Core.Game
     {
         private static readonly Dictionary<int, Block> BlockRegistry = new Dictionary<int, Block>();
 
-        private class BlockInfo
-        {
-            public int id;
-            public string name;
-            public string rawname;
-            public float hardness;
-            public bool transparent;
-            public string harvestTool;
-        }
-
         public static IEnumerable<Block> Blocks => BlockRegistry.Values;
 
         public static void LoadBlocks()
         {
             try
             {
-                using (var file = File.OpenText(Settings.BlocksPath))
-                using (var reader = new JsonTextReader(file))
+                var jsonFile = File.ReadAllText(Settings.BlocksPath);
+                dynamic data = JsonConvert.DeserializeObject(jsonFile);
+                foreach (var block in data)
                 {
-                    var deserializer = JsonSerializer.Create();
-                    var blocks = deserializer.Deserialize<BlockInfo[]>(reader);
-                    foreach (var block in blocks)
+                    var gameBlock = new Block
                     {
-                        var gameBlock = new Block
-                        {
-                            Hardness = block.hardness,
-                            HarvestTool = block.harvestTool,
-                            Id = block.id,
-                            Name = block.name,
-                            Transparent = block.transparent,
-                            RawName =  block.rawname
-                        };
+                        Hardness = block.hardness,
+                        HarvestTool = block.harvestTool,
+                        Id = block.id,
+                        Name = block.name,
+                        Transparent = block.transparent,
+                        RawName = block.rawname
+                    };
 
-                        if (block.name == "Вода")
-                            Water.Add(block.id);
+                    if (block.name == "Вода")
+                        Water.Add(gameBlock.Id);
 
-                        BlockRegistry.Add(gameBlock.Id, gameBlock);
-                    }
+                    BlockRegistry.Add(gameBlock.Id, gameBlock);
                 }
-
-                BlockRegistry.Add(-1, new Block
-                {
-                    Hardness = 0,
-                    Id = -1,
-                    Name = "air",
-                    Transparent = true
-                });
             }
             catch (FileNotFoundException exception)
             {

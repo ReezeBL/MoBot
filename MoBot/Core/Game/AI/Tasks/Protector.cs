@@ -23,7 +23,7 @@ namespace MoBot.Core.Game.AI.Tasks
 
         public Protector()
         {
-            Root = new Decorator(HasTraget, new TreeSharp.Action(o => AttackTarget()));
+            Root = new Decorator(HasTraget, new Action(o => AttackTarget()));
         }
 
         public override int GetPriority()

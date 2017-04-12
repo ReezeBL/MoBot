@@ -12,9 +12,9 @@ namespace MoBot.Core.Game.AI.Tasks
 {
     public class CustomEvents : Task
     {
-        public static Location Chest = new Location(-2857, 64, 2919);
-        public static Location StoreChest = new Location(-2858, 64, 2919);
-        private readonly Logger logger = Program.GetLogger();
+        public static readonly Location Chest = new Location(-2857, 64, 2919);
+        public static readonly Location StoreChest = new Location(-2858, 64, 2919);
+        private static readonly Logger Log = LogManager.GetCurrentClassLogger();
 
         private readonly object monitor = new object();
 
@@ -53,12 +53,12 @@ namespace MoBot.Core.Game.AI.Tasks
 
         public IEnumerator Feed()
         {
-            logger.Info("I'm hungry!");
+            Log.Info("I'm hungry!");
             yield return SwitchToFood();
 
             if (GameController.Player.GetHeldItem is ItemFood)
             {
-                logger.Info($"Eating {GameController.Player.GetHeldItem.Name}");
+                Log.Info($"Eating {GameController.Player.GetHeldItem.Name}");
                 ActionManager.UseItem();
                 for (var i = 0; i < 32; i++)
                 {
@@ -87,7 +87,7 @@ namespace MoBot.Core.Game.AI.Tasks
 
         public IEnumerator SaveCurrentLocation()
         {
-            logger.Info("Perform homerun");
+            Log.Info("Perform homerun");
             ActionManager.SendChatMessage(RemoveCheckpoint);
             yield return WaitForSeconds(4000);
 
@@ -176,7 +176,7 @@ namespace MoBot.Core.Game.AI.Tasks
                 sb.AppendLine(entity.ToString());
             }
 
-            logger.Info(sb.ToString);
+            Log.Info(sb.ToString);
 
             Console.WriteLine("Stopping routines!");
 
@@ -200,11 +200,11 @@ namespace MoBot.Core.Game.AI.Tasks
 
         private IEnumerator SaveFromDanger()
         {
-            logger.Info("We are in danger, runaway home!");
+            Log.Info("We are in danger, runaway home!");
             ActionManager.SendChatMessage(TeleportHome);
             yield return WaitForSeconds(1000);
             yield return WaitForHealing();
-            logger.Info("We are safe now, return back to work");
+            Log.Info("We are safe now, return back to work");
             ActionManager.SendChatMessage(TeleportBack);
             yield return WaitForSeconds(2500);
         }
@@ -236,7 +236,7 @@ namespace MoBot.Core.Game.AI.Tasks
             if (item == null)
             {
                 MinFoodDanger = -1;
-                logger.Info("No food in inventory! Disabling autofeeding");
+                Log.Info("No food in inventory! Disabling autofeeding");
                 yield break;
             }
 

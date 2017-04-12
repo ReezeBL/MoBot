@@ -33,7 +33,7 @@ namespace MoBot.Core.Game.AI.Tasks
                         continue;
                     }
 
-                    var preBuild = PathFinder.Shovel(playerPos, location);
+                    var preBuild = PathFinder.Shovel(playerPos, location, maxDistance: 2*Settings.ScanRange);
                     if (preBuild == null)
                     {
                         ignoredLocations.Add(location);

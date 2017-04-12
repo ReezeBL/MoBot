@@ -8,9 +8,10 @@ namespace MoBot.Core.Game.AI.Pathfinding
 {
     public static class PathFinder
     {
-        #region OldPathFinder
+        private static readonly Dictionary<int, Location> PointSet = new Dictionary<int, Location>();
+        private static readonly Dictionary<int, float> WeightSet = new Dictionary<int, float>();
 
-        private static readonly Hashtable PointSet = new Hashtable();
+        #region OldPathFinder
         private static readonly FastPriorityQueue<Location> Frontier = new FastPriorityQueue<Location>(30000);
 
         public static Path StaticPath(LivingEntity entity, Location end)
@@ -139,16 +140,18 @@ namespace MoBot.Core.Game.AI.Pathfinding
             return res;
         }
 
-        private static Location CreatePoint(int x, int y, int z)
-        {
-            var p = new Location(x, y, z);
-            if (PointSet.ContainsKey(p))
-                return PointSet[p] as Location;
-            PointSet.Add(p, p);
-            return p;
-        }
+
 
         #endregion
+
+        private static Location CreatePoint(int x, int y, int z)
+        {
+            var hash = Location.CalcHash(x, y, z);
+            if (PointSet.TryGetValue(hash, out Location result))
+                return result;
+            result = new Location(x, y, z);
+            return PointSet[hash] = result;
+        }
 
         public static Path Shovel(Location start, Location end, bool includeLast = true, bool digBlocs = true, float maxDistance = 64f)
         {
@@ -177,7 +180,7 @@ namespace MoBot.Core.Game.AI.Pathfinding
                     }
                     foreach (var node in AdvancedNeighbours(current))
                     {
-                        var next = node.Key;
+                        var next = node.Item1;
                         if (next.Equals(end) && !includeLast)
                         {
                             end = current;
@@ -185,11 +188,11 @@ namespace MoBot.Core.Game.AI.Pathfinding
                             break;
                         }
 
-                        if(node.Value < 0) continue;
-                        if(node.Key.DistanceTo(start) > maxDistance) continue;
-                        if(!digBlocs && node.Value > 0) continue;
+                        if(node.Item2 < 0) continue;
+                        if(node.Item1.DistanceTo(start) > maxDistance) continue;
+                        if(!digBlocs && node.Item2 > 0) continue;
 
-                        var nodeCost = (float)cost[current] + 1f + node.Value;
+                        var nodeCost = (float)cost[current] + 1f + node.Item2;
                         if (!cost.ContainsKey(next))
                         {
                             cost.Add(next, nodeCost);
@@ -209,6 +212,8 @@ namespace MoBot.Core.Game.AI.Pathfinding
                 if (!succeed)
                 {
                     PointSet.Clear();
+                    WeightSet.Clear();
+                    GC.Collect();
                     return null;
                 }
 
@@ -231,9 +236,9 @@ namespace MoBot.Core.Game.AI.Pathfinding
             }
         }
 
-        public static IEnumerable<KeyValuePair<Location, float>> AdvancedNeighbours(Location root)
+        public static IEnumerable<Tuple<Location, float>> AdvancedNeighbours(Location root)
         {
-            var weightedPoints = new Dictionary<Location, float>()
+            /*var weightedPoints = new Dictionary<Location, float>()
             {
                 {
                     CreatePoint(root.X + 1, root.Y, root.Z),
@@ -260,18 +265,39 @@ namespace MoBot.Core.Game.AI.Pathfinding
             if (root.Y > 0)
             {
                 weightedPoints.Add(CreatePoint(root.X, root.Y - 1, root.Z), GetBlockWeight(root.X, root.Y - 1, root.Z));
+            }*/
+
+            var weightedPoints = new List<Tuple<Location, float>>
+            {
+                Tuple.Create(CreatePoint(root.X + 1, root.Y, root.Z),
+                    GetBlockWeight(root.X + 1, root.Y, root.Z) + GetBlockWeight(root.X + 1, root.Y + 1, root.Z)),
+                Tuple.Create(CreatePoint(root.X - 1, root.Y, root.Z),
+                    GetBlockWeight(root.X - 1, root.Y, root.Z) + GetBlockWeight(root.X - 1, root.Y + 1, root.Z)),
+                Tuple.Create(CreatePoint(root.X, root.Y, root.Z + 1),
+                    GetBlockWeight(root.X, root.Y, root.Z + 1) + GetBlockWeight(root.X, root.Y + 1, root.Z + 1)),
+                Tuple.Create(CreatePoint(root.X, root.Y, root.Z - 1),
+                    GetBlockWeight(root.X, root.Y, root.Z - 1) + GetBlockWeight(root.X, root.Y + 1, root.Z - 1)),
+                Tuple.Create(CreatePoint(root.X, root.Y + 1, root.Z), GetBlockWeight(root.X, root.Y + 2, root.Z))
+            };
+            if (root.Y > 0)
+            {
+                weightedPoints.Add(Tuple.Create(CreatePoint(root.X, root.Y - 1, root.Z), GetBlockWeight(root.X, root.Y - 1, root.Z)));
             }
             return weightedPoints;
         }
 
         private static float GetBlockWeight(int x, int y, int z)
         {
+            var hash = Location.CalcHash(x, y, z);
+            if (WeightSet.TryGetValue(hash, out float weight))
+                return weight;
+
             var block = Block.GetBlock(GameController.World.GetBlock(x, y, z));
             if (block.Transparent)
-                return 0;
+                return WeightSet[hash] = 0;
             if (block.Hardness < 0)
-                return -1e9f;
-            return block.Hardness*5;
+                return WeightSet[hash] = - 1e9f;
+            return WeightSet[hash] = block.Hardness * 5;
         }
 
     }

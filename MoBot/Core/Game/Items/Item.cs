@@ -21,76 +21,51 @@ namespace MoBot.Core.Game.Items
         {
             var materials = new Dictionary<string, float>();
 
-            using (var file = File.OpenText(Settings.MaterialsPath))
-            using (var reader = new JsonTextReader(file))
+            var jsonFile = File.ReadAllText(Settings.MaterialsPath);
+            dynamic materialDump = JsonConvert.DeserializeObject(jsonFile);
+            foreach (var material in materialDump)
             {
-                var deserializer = JsonSerializer.Create();
-                var materialDump = deserializer.Deserialize<MaterialInfo[]>(reader);
-                foreach (var material in materialDump)
-                {
-                    materials.Add(material.name, material.effectiveness);
-                }
+                materials.Add((string)material.name, (float)material.effectiveness);
             }
 
-            using (var file = File.OpenText(Settings.ItemsPath))
-            using (var reader = new JsonTextReader(file))
+            jsonFile = File.ReadAllText(Settings.ItemsPath);
+            dynamic items = JsonConvert.DeserializeObject(jsonFile);
+            foreach (var item in items)
             {
-                var deserializer = JsonSerializer.Create();
-                var items = deserializer.Deserialize<ItemInfo[]>(reader);
-                foreach (var item in items)
+
+                Item reg;
+                if (Extension.ContainsKey((string)item.rawname))
                 {
-                    
-                    Item reg;
-                    if (Extension.ContainsKey(item.rawname))
-                    {
-                        reg = Extension[item.rawname];
-                        reg.Id = item.id;
-
-                    }
-                    else if (item.toolClass != null)
-                    {
-                        reg = new ItemTool
-                        {
-                            ToolClasses = new HashSet<string>(item.toolClass),
-                            ClassLevels = item.harvestLevel,
-                        };
-                        if(!materials.TryGetValue(item.material, out ((ItemTool)reg).Effectivness))
-                            Program.GetLogger().Error($"Unknown material: {item.material}");
-
-                    }
-                    else
-                    {
-                        reg = new Item();
-                    }
-
+                    reg = Extension[(string)item.rawname];
                     reg.Id = item.id;
-                    reg.Name = item.name;
-                    reg.RawName = item.rawname;
-                    ItemRegistry.Add(reg.Id, reg);
+
                 }
+                else if (item.toolClass != null)
+                {
+                    reg = new ItemTool
+                    {
+                        ToolClasses = item.toolClass.ToObject<HashSet<string>>(),
+                        ClassLevels = item.harvestLevel.ToObject<int[]>(),
+                    };
+                    if (!materials.TryGetValue((string)item.material, out ((ItemTool)reg).Effectivness))
+                        Program.GetLogger().Error($"Unknown material: {item.material}");
+
+                }
+                else
+                {
+                    reg = new Item();
+                }
+
+                reg.Id = item.id;
+                reg.Name = item.name;
+                reg.RawName = item.rawname;
+                ItemRegistry.Add(reg.Id, reg);
             }
         }
 
         public static Item GetItem(int id)
         {
             return !ItemRegistry.TryGetValue(id, out Item result) ? null : result;
-        }
-
-        private class MaterialInfo
-        {
-            public string name;
-            public float effectiveness;
-            public float damage;
-        }
-
-        private class ItemInfo
-        {
-            public int id;
-            public string name;
-            public string rawname;
-            public string material;
-            public string[] toolClass;
-            public int[] harvestLevel;
         }
 
         public string Name;

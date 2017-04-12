@@ -13,25 +13,15 @@ namespace MoBot.Core.Game
         protected static Dictionary<int, string> EntityNames = new Dictionary<int, string>();
         protected static Logger Logger = LogManager.GetCurrentClassLogger();
 
-        private class EntityInfo
-        {
-            public int id;
-            public string name;
-        }
-
         public static void LoadEntities()
         {
             try
             {
-                using (var file = File.OpenText(Settings.EntitiesPath))
-                using (var reader = new JsonTextReader(file))
+                var jsonFile = File.ReadAllText(Settings.EntitiesPath);
+                dynamic entities = JsonConvert.DeserializeObject(jsonFile);
+                foreach (var entityInfo in entities)
                 {
-                    var deserializer = JsonSerializer.Create();
-                    var entities = deserializer.Deserialize<EntityInfo[]>(reader);
-                    foreach (var entityInfo in entities)
-                    {
-                        EntityNames.Add(entityInfo.id, entityInfo.name);
-                    }
+                    EntityNames.Add((int)entityInfo.id, (string)entityInfo.name);
                 }
             }
             catch (FileNotFoundException exception)
