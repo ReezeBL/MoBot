@@ -6,6 +6,7 @@ using MoBot.Core.Windows;
 using NLog;
 using System;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace MoBot
@@ -52,7 +53,15 @@ namespace MoBot
             model.Subscribe(viewer);
             FreeConsole();
 
+
+            Application.ThreadException += OnThreadException;
             Application.Run(viewer);
+        }
+
+        private static void OnThreadException(object sender, ThreadExceptionEventArgs threadExceptionEventArgs)
+        {
+            Log.Error(threadExceptionEventArgs.Exception);
+            Environment.Exit(0);
         }
     }
 }
