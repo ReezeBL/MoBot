@@ -31,6 +31,10 @@ namespace MoBot.Core
                 var split = message.Split(' ');
                 switch (split[0])
                 {
+                    case "-help":
+                        const string helpMessage = @"Список комманд:";
+                        NetworkController.NotifyViewer(helpMessage);
+                        break;
                     case "-disconnect":
                     {
                         NetworkController.Disconnect();

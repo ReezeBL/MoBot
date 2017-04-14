@@ -8,6 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
+using MoBot.Core.Game.AI.Pathfinding;
 
 namespace MoBot
 {

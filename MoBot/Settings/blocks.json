@@ -229,7 +229,7 @@
     "name": "Паутина",
     "rawname": "tile.web",
     "hardness": 4.0,
-    "transparent": true
+    "transparent": false
   },
   {
     "id": 31,

@@ -31,6 +31,7 @@ namespace MoBot.Core.Windows
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Viewer));
             this.consoleWindow = new System.Windows.Forms.RichTextBox();
             this.buttonConnect = new System.Windows.Forms.Button();
             this.chatTextBox = new System.Windows.Forms.TextBox();
@@ -50,7 +51,7 @@ namespace MoBot.Core.Windows
             this.itemPage = new System.Windows.Forms.TabPage();
             this.inventoryItemInfo = new System.Windows.Forms.RichTextBox();
             this.inventorySelectMode = new System.Windows.Forms.CheckBox();
-            this.inventoryGui = new ContainerGui();
+            this.inventoryGui = new MoBot.Core.Windows.ContainerGui();
             this.blockPage = new System.Windows.Forms.TabPage();
             this.tileEntityInfo = new System.Windows.Forms.RichTextBox();
             this.tileEntitiesList = new System.Windows.Forms.ListBox();
@@ -329,6 +330,7 @@ namespace MoBot.Core.Windows
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ConsoleOutput);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Viewer";
             this.Text = "MoBot";

@@ -108,9 +108,9 @@ namespace MoBot.Core.Windows
             }
             else
             {
-                var button = revButtons[n] as Button;
-                if (button != null)
+                if (revButtons.TryGetValue(n, out object obj))
                 {
+                    var button = (Button)obj;
                     var itemToolTip = slot?.Item?.ToString() ?? Empty;
                     toolTip.SetToolTip(button, itemToolTip);
                     button.BackColor = itemToolTip == Empty ? Color.Transparent : Color.LawnGreen;

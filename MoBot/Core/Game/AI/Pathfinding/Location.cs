@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using AForge.Math;
 using Priority_Queue;
 
@@ -23,14 +24,17 @@ namespace MoBot.Core.Game.AI.Pathfinding
         {
             return (float)Math.Sqrt((X - other.X) * (X - other.X) + (Y - other.Y) * (Y - other.Y) + (Z - other.Z) * (Z - other.Z));
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override int GetHashCode()
         {
-            return Y & 255 | (X & 32767) << 8 | (Z & 32767) << 24 | (X < 0 ? int.MinValue : 0) | (Z < 0 ? 32768 : 0);
+            return Y & 255 | (X & 32767) << 8 | (Z & 32767) << 24;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int CalcHash(int x, int y, int z)
         {
-            return y & 255 | (x & 32767) << 8 | (z & 32767) << 24 | (x < 0 ? int.MinValue : 0) | (z < 0 ? 32768 : 0);
+            return y & 255 | (x & 32767) << 8 | (z & 32767) << 24;
         }
 
         public override bool Equals(object obj)
