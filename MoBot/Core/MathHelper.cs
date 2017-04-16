@@ -11,7 +11,7 @@
         public static int FloorFloat(float p)
         {
             var i = (int) p;
-            return i < 0 ? i - 1 : i;
+            return p < 0 ? i - 1 : i;
         }
     }
 }

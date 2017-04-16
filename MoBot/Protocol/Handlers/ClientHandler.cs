@@ -21,7 +21,7 @@ namespace MoBot.Protocol.Handlers
 {
     public class ClientHandler : IHandler
     {
-        protected static readonly Dictionary<string, CustomHandler> CustomHandlers =
+        private static readonly Dictionary<string, CustomHandler> CustomHandlers =
             new Dictionary<string, CustomHandler> {{"FML|HS", new FmlHandshake()}};
 
         private readonly Logger log = Program.GetLogger();
@@ -97,13 +97,8 @@ namespace MoBot.Protocol.Handlers
 
         public void HandlePacketCustomPayload(PacketCustomPayload packetCustomPayload)
         {
-            CustomHandler handler;
-            if (!CustomHandlers.TryGetValue(packetCustomPayload.Channel, out handler))
-            {
-                //Console.WriteLine(packetCustomPayload.Channel);
-                return;
-            }
-            handler.OnPacketData(packetCustomPayload.Payload);
+            if (CustomHandlers.TryGetValue(packetCustomPayload.Channel, out CustomHandler handler))
+                handler.OnPacketData(packetCustomPayload.Payload);
         }
 
         public void HandlePacketJoinGame(PacketJoinGame packetJoinGame)

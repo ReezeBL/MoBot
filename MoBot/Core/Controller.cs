@@ -32,7 +32,12 @@ namespace MoBot.Core
                 switch (split[0])
                 {
                     case "-help":
-                        const string helpMessage = @"Список комманд:";
+                        const string helpMessage = @"Список комманд:
+-open X Y Z - открывает сундук на координатах X Y Z
+-openBase - открывает сундук на базе
+-close - закрывает текущий инвентарь
+-returnBase - форсит складирование предметов
+-returnDig - телепортирует на сохраненную точку копания";
                         NetworkController.NotifyViewer(helpMessage);
                         break;
                     case "-disconnect":
@@ -45,7 +50,7 @@ namespace MoBot.Core
                     {
                         var sb = new StringBuilder();
                         sb.AppendLine("Nearby entities:");
-                        foreach (var e in GameController.GetEntities<LivingEntity>())
+                        foreach (var e in GameController.GetEntities<Entity>())
                         {
                             sb.AppendLine($"--{e}");
                         }
@@ -72,19 +77,22 @@ namespace MoBot.Core
                     }
                         break;
 
-                    case "-testOpen":
+                    case "-open":
                     {
                         ActionManager.RightClick(int.Parse(split[1]), int.Parse(split[2]), int.Parse(split[3]));
                         break;
                     }
-                    case "-testOpenBase":
+                    case "-openBase":
                         ActionManager.RightClick(CustomEvents.StoreChest);
                         break;
-                    case "-testClose":
+                    case "-close":
                         ActionManager.CloseWindow();
                         break;
-                    case "-testReturn":
+                    case "-returnBase":
                         GameController.AiHandler.CustomEvents.Store = true;
+                        break;
+                    case "-returnDig":
+                        ActionManager.SendChatMessage(GameController.AiHandler.CustomEvents.TeleportCheckpoint);
                         break;
                     case "-test":
                         var ids = new HashSet<int> {54, 130, 146, 181, 191, 506, };

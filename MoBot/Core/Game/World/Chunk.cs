@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace MoBot.Core.Game.World
 {
@@ -63,11 +64,14 @@ namespace MoBot.Core.Game.World
                 offset += 2048;
             }
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public int GetBlock(int bx, int y, int bz)
         {
             return sections[y >> 4]?.GetBlock(bx, GetPositionInSection(y & 15), bz) ?? -1;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetBlock(int bx, int y, int bz, int id)
         {
             sections[y >> 4]?.SetBlock(bx, GetPositionInSection(y & 15), bz, id);

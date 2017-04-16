@@ -158,7 +158,7 @@ namespace MoBot.Core.Game.AI.Pathfinding
             try
             {
                 var nodes = new FastPriorityQueue<Location>((int)maxDistance * (int)maxDistance * 255);
-                var cost = new Hashtable();
+                var cost = new Dictionary<Location, float>();
                 var succeed = false;
 
                 nodes.Enqueue(start, 0);
@@ -192,14 +192,14 @@ namespace MoBot.Core.Game.AI.Pathfinding
                         if(node.Item1.DistanceTo(start) > maxDistance) continue;
                         if(!digBlocs && node.Item2 > 0) continue;
 
-                        var nodeCost = (float)cost[current] + 1f + node.Item2;
-                        if (!cost.ContainsKey(next))
+                        var nodeCost = cost[current] + 1f + node.Item2;
+                        if (!cost.TryGetValue(next, out float nextCost))
                         {
                             cost.Add(next, nodeCost);
                             nodes.Enqueue(next, nodeCost + next.DistanceTo(end));
                             next.Prev = current;
                         }
-                        else if ((float)cost[next] > nodeCost)
+                        else if (nextCost > nodeCost)
                         {
                             cost[next] = nodeCost;
                             nodes.UpdatePriority(next, nodeCost + next.DistanceTo(end));
@@ -224,7 +224,11 @@ namespace MoBot.Core.Game.AI.Pathfinding
                     pathfrom.Add(end);
                     end = end.Prev;
                 }
+
                 PointSet.Clear();
+                WeightSet.Clear();
+                GC.Collect();
+
                 pathfrom.Reverse();
                 return new Path(pathfrom);
             }
@@ -238,52 +242,21 @@ namespace MoBot.Core.Game.AI.Pathfinding
 
         public static IEnumerable<Tuple<Location, float>> AdvancedNeighbours(Location root)
         {
-            /*var weightedPoints = new Dictionary<Location, float>()
-            {
-                {
-                    CreatePoint(root.X + 1, root.Y, root.Z),
-                    GetBlockWeight(root.X + 1, root.Y, root.Z) + GetBlockWeight(root.X + 1, root.Y + 1, root.Z)
-                },
-                {
-                    CreatePoint(root.X - 1, root.Y, root.Z),
-                    GetBlockWeight(root.X - 1, root.Y, root.Z) + GetBlockWeight(root.X - 1, root.Y + 1, root.Z)
-                },
-                {
-                    CreatePoint(root.X, root.Y, root.Z + 1),
-                    GetBlockWeight(root.X, root.Y, root.Z + 1) + GetBlockWeight(root.X, root.Y + 1, root.Z + 1)
-                },
-                {
-                    CreatePoint(root.X, root.Y, root.Z - 1),
-                    GetBlockWeight(root.X, root.Y, root.Z - 1) + GetBlockWeight(root.X, root.Y + 1, root.Z - 1)
-                },
 
-                {
-                    CreatePoint(root.X, root.Y + 1, root.Z),
-                    GetBlockWeight(root.X, root.Y + 2, root.Z)
-                },
-            };
+            yield return Tuple.Create(CreatePoint(root.X + 1, root.Y, root.Z),
+                GetBlockWeight(root.X + 1, root.Y, root.Z) + GetBlockWeight(root.X + 1, root.Y + 1, root.Z));
+            yield return Tuple.Create(CreatePoint(root.X - 1, root.Y, root.Z),
+                GetBlockWeight(root.X - 1, root.Y, root.Z) + GetBlockWeight(root.X - 1, root.Y + 1, root.Z));
+            yield return Tuple.Create(CreatePoint(root.X, root.Y, root.Z + 1),
+                GetBlockWeight(root.X, root.Y, root.Z + 1) + GetBlockWeight(root.X, root.Y + 1, root.Z + 1));
+            yield return Tuple.Create(CreatePoint(root.X, root.Y, root.Z - 1),
+                GetBlockWeight(root.X, root.Y, root.Z - 1) + GetBlockWeight(root.X, root.Y + 1, root.Z - 1));
+            yield return Tuple.Create(CreatePoint(root.X, root.Y + 1, root.Z), GetBlockWeight(root.X, root.Y + 2, root.Z));
+
             if (root.Y > 0)
             {
-                weightedPoints.Add(CreatePoint(root.X, root.Y - 1, root.Z), GetBlockWeight(root.X, root.Y - 1, root.Z));
-            }*/
-
-            var weightedPoints = new List<Tuple<Location, float>>
-            {
-                Tuple.Create(CreatePoint(root.X + 1, root.Y, root.Z),
-                    GetBlockWeight(root.X + 1, root.Y, root.Z) + GetBlockWeight(root.X + 1, root.Y + 1, root.Z)),
-                Tuple.Create(CreatePoint(root.X - 1, root.Y, root.Z),
-                    GetBlockWeight(root.X - 1, root.Y, root.Z) + GetBlockWeight(root.X - 1, root.Y + 1, root.Z)),
-                Tuple.Create(CreatePoint(root.X, root.Y, root.Z + 1),
-                    GetBlockWeight(root.X, root.Y, root.Z + 1) + GetBlockWeight(root.X, root.Y + 1, root.Z + 1)),
-                Tuple.Create(CreatePoint(root.X, root.Y, root.Z - 1),
-                    GetBlockWeight(root.X, root.Y, root.Z - 1) + GetBlockWeight(root.X, root.Y + 1, root.Z - 1)),
-                Tuple.Create(CreatePoint(root.X, root.Y + 1, root.Z), GetBlockWeight(root.X, root.Y + 2, root.Z))
-            };
-            if (root.Y > 0)
-            {
-                weightedPoints.Add(Tuple.Create(CreatePoint(root.X, root.Y - 1, root.Z), GetBlockWeight(root.X, root.Y - 1, root.Z)));
+                yield return Tuple.Create(CreatePoint(root.X, root.Y - 1, root.Z), GetBlockWeight(root.X, root.Y - 1, root.Z));
             }
-            return weightedPoints;
         }
 
         private static float GetBlockWeight(int x, int y, int z)

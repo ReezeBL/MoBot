@@ -246,6 +246,11 @@ namespace MoBot.Core.Windows
             }
             else
             {
+                if (consoleWindow.TextLength > 65536)
+                {
+                    consoleWindow.Clear();
+                }
+
                 consoleWindow.SelectionStart = consoleWindow.TextLength;
                 consoleWindow.SelectedText = text;
                 consoleWindow.SelectionColor = color;
@@ -312,32 +317,32 @@ namespace MoBot.Core.Windows
 
         private class TextBoxWriter : TextWriter
         {
-            private readonly StringBuilder _builder = new StringBuilder();
-            private readonly RichTextBox _output;
-            private readonly Form _owner;
-            private readonly Action<char> _writeCharFunc;
-            private readonly Action<char[], int, int> _writeFunc;
+            private readonly StringBuilder builder = new StringBuilder();
+            private readonly RichTextBox output;
+            private readonly Form owner;
+            private readonly Action<char> writeCharFunc;
+            private readonly Action<char[], int, int> writeFunc;
 
             public TextBoxWriter(RichTextBox output, Form owner)
             {
-                _output = output;
-                _owner = owner;
-                _writeFunc = Write;
-                _writeCharFunc = Write;
+                this.output = output;
+                this.owner = owner;
+                writeFunc = Write;
+                writeCharFunc = Write;
             }
 
             public override Encoding Encoding => Encoding.UTF8;
 
             public override void Write(char value)
             {
-                if (_owner.InvokeRequired)
-                    _owner.Invoke(_writeCharFunc, value);
+                if (owner.InvokeRequired)
+                    owner.Invoke(writeCharFunc, value);
                 else
                 {
                     if (value != '\r')
                         try
                         {
-                            _output.AppendText(value.ToString());
+                            output.AppendText(value.ToString());
                         }
                         catch (InvalidOperationException)
                         {
@@ -347,22 +352,25 @@ namespace MoBot.Core.Windows
 
             public override void Write(char[] buffer, int index, int count)
             {
-                if (!_owner.InvokeRequired)
+                if (!owner.InvokeRequired)
                 {
-                    _builder.Clear();
-                    _builder.Append(buffer);
+                    if(output.TextLength > 65536)
+                        output.Clear();
+
+                    builder.Clear();
+                    builder.Append(buffer);
                     try
                     {
-                        _output.AppendText(_builder.ToString());
+                        output.AppendText(builder.ToString());
                     }
                     catch (InvalidOperationException)
                     {
                     }
-                    _output.ScrollToCaret();
+                    output.ScrollToCaret();
                 }
                 else
                 {
-                    _owner.Invoke(_writeFunc, buffer, index, count);
+                    owner.Invoke(writeFunc, buffer, index, count);
                 }
             }
         }

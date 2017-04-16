@@ -37,8 +37,7 @@ namespace MoBot.Core.Game
 
         public static Entity GetEntity(int id)
         {
-            Entity res;
-            Instance.entities.TryGetValue(id, out res);
+            Instance.entities.TryGetValue(id, out Entity res);
             return res;
         }
 
@@ -87,8 +86,7 @@ namespace MoBot.Core.Game
 
         public static void RemoveEntity(int id)
         {
-            Entity entity;
-            Instance.entities.TryRemove(id, out entity);
+            Instance.entities.TryRemove(id, out Entity entity);
             LivingEntities.Remove(entity);
         }
 

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace MoBot.Core.Game.World
 {
@@ -30,11 +31,13 @@ namespace MoBot.Core.Game.World
        
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public int GetBlock(int x, int y, int z)
         {
             return rawData[x, y, z];
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetBlock(int x, int y, int z, int id)
         {
             rawData[x, y, z] = (short)id;

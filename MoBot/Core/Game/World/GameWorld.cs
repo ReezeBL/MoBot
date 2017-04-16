@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using MoBot.Core.Game.AI.Pathfinding;
 
 namespace MoBot.Core.Game.World
@@ -16,23 +17,17 @@ namespace MoBot.Core.Game.World
         {
             get
             {
-                if (chunkDictionary.ContainsKey(x))
+                if (chunkDictionary.TryGetValue(x, out Dictionary<int, Chunk> xChunks) && xChunks.TryGetValue(y, out Chunk chunk))
                 {
-                    var xChunk = chunkDictionary[x];
-                    if (xChunk.ContainsKey(y))
-                        return xChunk[y];
+                    return chunk;
                 }
                 return null;
             }
             set
             {
-                if (chunkDictionary.ContainsKey(x))
+                if (chunkDictionary.TryGetValue(x, out Dictionary<int, Chunk> xChunks))
                 {
-                    var xChunk = chunkDictionary[x];
-                    if (xChunk.ContainsKey(y))
-                        xChunk[y] = value;
-                    else
-                        xChunk.Add(y, value);
+                    xChunks[y] = value;
                 }
                 else
                 {
@@ -82,16 +77,19 @@ namespace MoBot.Core.Game.World
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public int GetBlock(int x, int y, int z)
         {
             return this[x >> 4, z >> 4]?.GetBlock(x & 15, y, z & 15) ?? -1;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public int GetBlock(Location location)
         {
             return GetBlock(location.X, location.Y, location.Z);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void SetBlock(int x, int y, int z, int id)
         {
             this[x >> 4, z >> 4]?.SetBlock(x & 15, y, z & 15, id);
