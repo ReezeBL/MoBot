@@ -115,10 +115,6 @@ namespace MoBot.Core.Windows
                     toolTip.SetToolTip(button, itemToolTip);
                     button.BackColor = itemToolTip == Empty ? Color.Transparent : Color.LawnGreen;
                 }
-                else
-                {
-                    ApplyContainer();
-                }
             }
         }
 
