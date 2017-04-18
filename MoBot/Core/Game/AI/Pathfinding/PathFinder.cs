@@ -6,7 +6,7 @@ using Priority_Queue;
 
 namespace MoBot.Core.Game.AI.Pathfinding
 {
-    public static class PathFinder
+    internal static class PathFinder
     {
         private static readonly Dictionary<int, Location> PointSet = new Dictionary<int, Location>();
         private static readonly Dictionary<int, float> WeightSet = new Dictionary<int, float>();
@@ -273,5 +273,9 @@ namespace MoBot.Core.Game.AI.Pathfinding
             return WeightSet[hash] = block.Hardness * 5;
         }
 
+        internal class Context
+        {
+            
+        }
     }
 }

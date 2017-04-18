@@ -2,6 +2,6 @@
 {
     public abstract class SysAction
     {
-       
+        internal abstract void HandleAction(IActionHandler handler);
     }
 }

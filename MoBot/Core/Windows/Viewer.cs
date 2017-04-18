@@ -16,17 +16,7 @@ namespace MoBot.Core.Windows
 {
     public partial class Viewer : Form, IObserver<SysAction>
     {
-        private static readonly Dictionary<string, Color> Colors = new Dictionary<string, Color>
-        {
-            {"dark_blue", Color.DarkBlue},
-            {"gold", Color.Gold},
-            {"green", Color.Green},
-            {"red", Color.Red},
-            {"dark_green", Color.Green},
-            {"white", Color.White},
-            {"aqua", Color.Aqua},
-            {"dark_red", Color.DarkRed}
-        };
+        private readonly ViewerActionHandler handler;
 
         public Controller MainController;
 
@@ -34,7 +24,9 @@ namespace MoBot.Core.Windows
         {
             InitializeComponent();
             entityList.DoubleBuffering(true);
+
             GameController.Instance.PropertyChanged += InstanceOnPropertyChanged;
+            handler = new ViewerActionHandler(this);
         }
 
         public List<Entity> Entities { get; set; } = new List<Entity> {new Player(0, "kek")};
@@ -61,60 +53,12 @@ namespace MoBot.Core.Windows
 
         public void OnNext(SysAction value)
         {
-            var actionConnect = value as ActionConnect;
-            if (actionConnect != null)
+            if (InvokeRequired)
             {
-                var connect = actionConnect;
-                if (connect.Connected)
-                    Putsc($"Client connected!{Environment.NewLine}", Color.DarkGoldenrod);
-                else
-                {
-                    if (Settings.AutoReconnect)
-                    {
-                        Connect(10000);
-                    }
-                    else
-                    {
-                        buttonConnect.Text = "Connect";
-                    }
-                }
+                Invoke(new Action<SysAction>(OnNext), value);
+                return;
             }
-            else if (value is ActionMessage)
-            {
-                var message = (ActionMessage) value;
-                Putsc($"{message.Message}{Environment.NewLine}", Color.Black);
-            }
-            else
-            {
-                var chatMessage = value as ActionChatMessage;
-                if (chatMessage == null) return;
-                var message = chatMessage;
-                dynamic response = JObject.Parse(message.JsonMessage);
-                if (response.extra != null)
-                {
-                    foreach (var obj in (JArray) response.extra)
-                    {
-                        if (obj is JValue)
-                        {
-                            Putsc($"{obj}", Color.White);
-                        }
-                        else if (obj != null)
-                        {
-                            var token = obj;
-
-                            var colorName = token.Value<string>("color") ?? "";
-                            var color = Color.FromName(colorName);
-
-                            Putsc($"{token.Value<string>("text")}", color);
-                        }
-                    }
-                }
-                else
-                {
-                    Putsc(message.JsonMessage, Color.Black);
-                }
-                Putsc(Environment.NewLine, Color.White);
-            }
+            value.HandleAction(handler);
         }
 
         private void buttonConnect_Click(object sender, EventArgs e)
@@ -173,7 +117,7 @@ namespace MoBot.Core.Windows
             }
         }
 
-        private void FormattedItemInfo(object sender, ConvertEventArgs cevent)
+        private static void FormattedItemInfo(object sender, ConvertEventArgs cevent)
         {
             if (cevent.DesiredType != typeof(string)) return;
 
@@ -194,7 +138,7 @@ namespace MoBot.Core.Windows
             cevent.Value = sb.ToString();
         }
 
-        private string FormatTileEntity(object value)
+        private static string FormatTileEntity(object value)
         {
             var entity = value as TileEntity;
             if (entity == null) return Empty;
@@ -374,5 +318,66 @@ namespace MoBot.Core.Windows
                 }
             }
         }
+
+        private class ViewerActionHandler : IActionHandler
+        {
+            private readonly Viewer owner;
+            public ViewerActionHandler(Viewer owner)
+            {
+                this.owner = owner;
+            }
+
+            public void HandleChatMessage(ActionChatMessage message)
+            {
+                dynamic response = JObject.Parse(message.JsonMessage);
+                if (response.extra != null)
+                {
+                    foreach (var obj in (JArray)response.extra)
+                    {
+                        if (obj is JValue)
+                        {
+                            owner.Putsc($"{obj}", Color.White);
+                        }
+                        else if (obj != null)
+                        {
+                            var token = obj;
+
+                            var colorName = token.Value<string>("color") ?? "";
+                            var color = Color.FromName(colorName);
+
+                            owner.Putsc($"{token.Value<string>("text")}", color);
+                        }
+                    }
+                }
+                else
+                {
+                    owner.Putsc(message.JsonMessage, Color.Black);
+                }
+                owner.Putsc(Environment.NewLine, Color.White);
+            }
+
+            public void HandleConnect(ActionConnect connect)
+            {
+                if (connect.Connected)
+                    owner.Putsc($"Client connected!{Environment.NewLine}", Color.DarkGoldenrod);
+                else
+                {
+                    if (Settings.AutoReconnect)
+                    {
+                        owner.Connect(10000);
+                    }
+                    else
+                    {
+                        owner.buttonConnect.Text = "Connect";
+                    }
+                }
+            }
+
+            public void HandleMessage(ActionMessage message)
+            {
+                owner.Putsc($"{message.Message}{Environment.NewLine}", Color.Black);
+            }
+        }
+
     }
 }
