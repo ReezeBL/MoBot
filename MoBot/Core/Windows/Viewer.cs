@@ -9,6 +9,7 @@ using System.Xml;
 using fNbt;
 using MoBot.Core.Actions;
 using MoBot.Core.Game;
+using MoBot.Properties;
 using Newtonsoft.Json.Linq;
 using static System.String;
 
@@ -66,7 +67,7 @@ namespace MoBot.Core.Windows
             if (!NetworkController.Connected)
             {
                 Connect(0);
-                buttonConnect.Text = "Disconnect";
+                buttonConnect.Text = Resources.Viewer_buttonConnect_Click_Disconnect;
             }
             else
             {

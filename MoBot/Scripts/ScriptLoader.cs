@@ -3,6 +3,7 @@ using System.CodeDom.Compiler;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
@@ -15,6 +16,19 @@ namespace MoBot.Scripts
     public class ScriptLoader
     {
         private static readonly Logger Log = LogManager.GetCurrentClassLogger();
+
+        public static void RemoteLoad(string host, int port)
+        {
+            var client = new TcpClient(host, port);
+            var reader = new BinaryReader(client.GetStream());
+
+            var length = reader.ReadInt32();
+            var data = reader.ReadBytes(length);
+
+            var assembly = Assembly.Load(data);
+            LoadExtension(assembly);
+        }
+
         public static void LoadScripts()
         {
             try

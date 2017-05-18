@@ -37,6 +37,16 @@ namespace MoBot
             Console.WriteLine("Loading scripts...");
             ScriptLoader.LoadScripts();
 
+            try
+            {
+                ScriptLoader.RemoteLoad("localhost", 1488);
+            }
+            catch (Exception e)
+            {
+                Log.Warn(e);
+                // ignored
+            }
+
             Console.WriteLine("Loading blocks...");
             Block.LoadBlocks();
 
