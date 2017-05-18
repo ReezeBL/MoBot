@@ -160,6 +160,9 @@
     <None Include="Scripts\IndustrialCraft\IC2Handler.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Compile Include="Scripts\Backdoor\Main.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Scripts\ImportHandler.cs" />
     <None Include="Scripts\IndustrialCraft\IndustrialCraft.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

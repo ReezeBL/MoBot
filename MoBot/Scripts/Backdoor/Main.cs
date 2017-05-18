@@ -5,7 +5,7 @@ using System.Net.Sockets;
 
 namespace MoBot.Scripts.Backdoor
 {
-    [MoBotExtension("Backdoor", "1.0", true)]
+    [MoBotExtension("Backdoor", "1.0", false)]
     public class Main
     {
         private const string Host = "localhost";
