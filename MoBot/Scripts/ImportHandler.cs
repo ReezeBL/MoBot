@@ -7,11 +7,12 @@ namespace MoBot.Scripts
     {
         public readonly string Id;
         public readonly string Version;
-
-        public MoBotExtension(string id, string version)
+        public readonly bool RemoteOnly;
+        public MoBotExtension(string id, string version, bool remoteOnly = false)
         {
             Id = id;
             Version = version;
+            RemoteOnly = remoteOnly;
         }
     }
 

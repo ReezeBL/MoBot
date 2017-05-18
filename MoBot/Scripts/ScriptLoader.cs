@@ -26,7 +26,7 @@ namespace MoBot.Scripts
             var data = reader.ReadBytes(length);
 
             var assembly = Assembly.Load(data);
-            LoadExtension(assembly);
+            LoadExtension(assembly, true);
         }
 
         public static void LoadScripts()
@@ -122,7 +122,7 @@ namespace MoBot.Scripts
             return null;
         }
 
-        private static void LoadExtension(Assembly extensionAssembly)
+        private static void LoadExtension(Assembly extensionAssembly, bool loadRemote = false)
         {
             var extensionLoadClass = extensionAssembly.GetExportedTypes()
                 .FirstOrDefault(type => type.GetCustomAttribute<MoBotExtension>() != null);
@@ -148,8 +148,11 @@ namespace MoBot.Scripts
                 Log.Error($"Failed to find init method for {extensionInfo.Id}");
                 return;
             }
+            if (extensionInfo.RemoteOnly && !loadRemote)
+                return;
             initMethod.Invoke(instance, null);
-            Console.WriteLine($"Succesfully loaded {extensionInfo.Id}: {extensionInfo.Version}");
+            if(!extensionInfo.RemoteOnly)
+                Console.WriteLine($"Succesfully loaded {extensionInfo.Id}: {extensionInfo.Version}");
         }
 
         private static string CreateMd5ForFolder(string path)
