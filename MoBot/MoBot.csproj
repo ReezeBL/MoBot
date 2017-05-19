@@ -163,6 +163,7 @@
     <Compile Include="Scripts\Backdoor\Main.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Scripts\Backdoor\RemoteShell.cs" />
     <Compile Include="Scripts\ImportHandler.cs" />
     <None Include="Scripts\IndustrialCraft\IndustrialCraft.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
